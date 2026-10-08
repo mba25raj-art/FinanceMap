@@ -1,0 +1,250 @@
+{
+  "totalConcepts": 698,
+  "lessons": 698,
+  "examples": 698,
+  "quizzes": 698,
+  "missing": [],
+  "stage": "Foundational coverage across all topics; expanded core statement explanations",
+  "domains": [
+    {
+      "id": "D01",
+      "name": "Foundations of finance",
+      "originalTopics": 15,
+      "lessons": 15
+    },
+    {
+      "id": "D02",
+      "name": "Mathematics and quantitative foundations",
+      "originalTopics": 15,
+      "lessons": 15
+    },
+    {
+      "id": "D03",
+      "name": "Time value of money",
+      "originalTopics": 15,
+      "lessons": 15
+    },
+    {
+      "id": "D04",
+      "name": "Accounting foundations",
+      "originalTopics": 16,
+      "lessons": 17
+    },
+    {
+      "id": "D05",
+      "name": "Income statement: every major component",
+      "originalTopics": 20,
+      "lessons": 22
+    },
+    {
+      "id": "D06",
+      "name": "Balance sheet: every major component",
+      "originalTopics": 20,
+      "lessons": 23
+    },
+    {
+      "id": "D07",
+      "name": "Cash-flow statement and three-statement connections",
+      "originalTopics": 16,
+      "lessons": 19
+    },
+    {
+      "id": "D08",
+      "name": "Advanced accounting and reporting",
+      "originalTopics": 16,
+      "lessons": 16
+    },
+    {
+      "id": "D09",
+      "name": "Financial statement analysis",
+      "originalTopics": 18,
+      "lessons": 19
+    },
+    {
+      "id": "D10",
+      "name": "Earnings quality, forensic accounting, and fraud",
+      "originalTopics": 15,
+      "lessons": 15
+    },
+    {
+      "id": "D11",
+      "name": "Business economics and unit economics",
+      "originalTopics": 15,
+      "lessons": 15
+    },
+    {
+      "id": "D12",
+      "name": "Corporate finance and capital allocation",
+      "originalTopics": 15,
+      "lessons": 15
+    },
+    {
+      "id": "D13",
+      "name": "Cost of capital and capital structure",
+      "originalTopics": 18,
+      "lessons": 20
+    },
+    {
+      "id": "D14",
+      "name": "Working capital and treasury management",
+      "originalTopics": 16,
+      "lessons": 17
+    },
+    {
+      "id": "D15",
+      "name": "Financial planning, budgeting, and management accounting",
+      "originalTopics": 15,
+      "lessons": 15
+    },
+    {
+      "id": "D16",
+      "name": "Financial modelling",
+      "originalTopics": 16,
+      "lessons": 16
+    },
+    {
+      "id": "D17",
+      "name": "Valuation foundations and discounted cash flow",
+      "originalTopics": 19,
+      "lessons": 25
+    },
+    {
+      "id": "D18",
+      "name": "Relative valuation and specialist valuation",
+      "originalTopics": 18,
+      "lessons": 18
+    },
+    {
+      "id": "D19",
+      "name": "Equity markets and equity research",
+      "originalTopics": 17,
+      "lessons": 17
+    },
+    {
+      "id": "D20",
+      "name": "Fixed income and debt markets",
+      "originalTopics": 17,
+      "lessons": 17
+    },
+    {
+      "id": "D21",
+      "name": "Derivatives and structured products",
+      "originalTopics": 19,
+      "lessons": 19
+    },
+    {
+      "id": "D22",
+      "name": "Portfolio management and asset allocation",
+      "originalTopics": 19,
+      "lessons": 19
+    },
+    {
+      "id": "D23",
+      "name": "Investment vehicles and alternative assets",
+      "originalTopics": 19,
+      "lessons": 19
+    },
+    {
+      "id": "D24",
+      "name": "Banking and credit analysis",
+      "originalTopics": 19,
+      "lessons": 20
+    },
+    {
+      "id": "D25",
+      "name": "Financial risk management",
+      "originalTopics": 16,
+      "lessons": 16
+    },
+    {
+      "id": "D26",
+      "name": "Mergers, acquisitions, and restructuring",
+      "originalTopics": 19,
+      "lessons": 19
+    },
+    {
+      "id": "D27",
+      "name": "Startup and entrepreneurial finance",
+      "originalTopics": 17,
+      "lessons": 17
+    },
+    {
+      "id": "D28",
+      "name": "Real estate, infrastructure, and project finance",
+      "originalTopics": 18,
+      "lessons": 18
+    },
+    {
+      "id": "D29",
+      "name": "Insurance and actuarial finance",
+      "originalTopics": 16,
+      "lessons": 16
+    },
+    {
+      "id": "D30",
+      "name": "Personal finance and wealth management",
+      "originalTopics": 18,
+      "lessons": 18
+    },
+    {
+      "id": "D31",
+      "name": "Taxation in finance",
+      "originalTopics": 16,
+      "lessons": 16
+    },
+    {
+      "id": "D32",
+      "name": "Macroeconomics, monetary policy, and public finance",
+      "originalTopics": 16,
+      "lessons": 16
+    },
+    {
+      "id": "D33",
+      "name": "International finance and foreign exchange",
+      "originalTopics": 16,
+      "lessons": 16
+    },
+    {
+      "id": "D34",
+      "name": "Market infrastructure, regulation, and governance",
+      "originalTopics": 15,
+      "lessons": 15
+    },
+    {
+      "id": "D35",
+      "name": "Behavioural finance and financial decision-making",
+      "originalTopics": 14,
+      "lessons": 14
+    },
+    {
+      "id": "D36",
+      "name": "Fintech, payments, and digital finance",
+      "originalTopics": 17,
+      "lessons": 17
+    },
+    {
+      "id": "D37",
+      "name": "Sustainable finance and specialised financial systems",
+      "originalTopics": 14,
+      "lessons": 14
+    },
+    {
+      "id": "D38",
+      "name": "Computational finance, financial data, and AI",
+      "originalTopics": 18,
+      "lessons": 18
+    },
+    {
+      "id": "D39",
+      "name": "Industry-specific finance",
+      "originalTopics": 22,
+      "lessons": 22
+    },
+    {
+      "id": "D40",
+      "name": "Applied cases, financial history, and integrated practice",
+      "originalTopics": 18,
+      "lessons": 18
+    }
+  ]
+}

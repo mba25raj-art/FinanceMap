@@ -1,0 +1,21 @@
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+
+export default defineConfig({
+  base: process.env.GITHUB_PAGES_BASE || "/",
+  build: {
+    outDir: "dist/client",
+  },
+  optimizeDeps: {
+    include: ["react", "react-dom/client"],
+  },
+  server: {
+    host: "0.0.0.0",
+    watch: { usePolling: true, interval: 700 },
+    allowedHosts: ["terminal.local"],
+    warmup: {
+      clientFiles: ["./src/main.jsx"],
+    },
+  },
+  plugins: [react()],
+});
