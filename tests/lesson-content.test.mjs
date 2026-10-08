@@ -38,7 +38,9 @@ test('all 698 lesson renderings have hidden initial feedback, expanded examples,
   const {createServer}=await import('vite');
   const {createElement}=await import('react');
   const {renderToStaticMarkup}=await import('react-dom/server');
-  const server=await createServer({server:{middlewareMode:true,hmr:false},appType:'custom'});
+  const {default:react}=await import('@vitejs/plugin-react');
+  // Isolate the render harness from development warmup, polling, and dependency scanning.
+  const server=await createServer({configFile:false,plugins:[react()],server:{middlewareMode:true,hmr:false,watch:null},optimizeDeps:{noDiscovery:true,include:[]},appType:'custom'});
   try{
     const {App}=await server.ssrLoadModule('/src/App.jsx');
     for(const node of atlas.nodes){
