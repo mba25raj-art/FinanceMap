@@ -6,11 +6,12 @@ const atlas=read('../content/master-network.json');
 const lessons=read('../src/data/complete-lessons.json');
 const guides=read('../content/domain-guides.json');
 const study=read('../src/data/domain-study-guides.json');
-test('all topic pages have a complete area guide and authored topic extensions are structurally valid',()=>{
+test('all 698 topic pages have individually authored detailed lessons and separate area guides',()=>{
   assert.equal(Object.keys(study).length,40);
   let detailed=0;
   for(const n of atlas.nodes){
     const lesson=lessons[n.id];
+    assert.ok(lesson.detail,`Missing individual detailed lesson: ${n.id}`);
     assert.equal(lesson.domainGuide,n.domain,n.id);
     const guide=study[lesson.domainGuide];assert.ok(guide,n.id);
     for(const d of [guide,...(lesson.detail?[lesson.detail]:[])]){
@@ -23,9 +24,8 @@ test('all topic pages have a complete area guide and authored topic extensions a
     }
     if(lesson.detail)detailed++;
   }
-  const coverage=read('../content/lesson-coverage.json');assert.equal(detailed,coverage.detailedLessons);assert.ok(detailed>=227);
-  for(const n of atlas.nodes.filter(n=>['D01','D02','D03','D04','D05','D06','D07','D09','D13','D14','D17','D24'].includes(n.domain)))assert.ok(lessons[n.id].detail,n.id);
-  for(const n of atlas.atoms)assert.ok(lessons[n.id].detail,n.id);
+  const coverage=read('../content/lesson-coverage.json');assert.equal(detailed,coverage.detailedLessons);assert.equal(detailed,698);
+  assert.deepEqual(coverage.detailedMissing,[]);
 });
 test('every original topic and anchor has an explanation, example, unique quiz choices, and valid answer',()=>{
   assert.equal(atlas.topics.length,678);assert.equal(atlas.atoms.length,20);assert.equal(Object.keys(lessons).length,698);

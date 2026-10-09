@@ -30,3 +30,5 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Detailed lessons use authored, topic-specific material in `content/deep-lessons/*.deep`, with a case setup, sequential reasoning, result, interpretation, and application checklist. Broader domain guidance remains labelled separately. Track detailed coverage honestly until all IDs are expanded.
 
 - Full lessons open by default and appear before the topic quiz. Keep the disclosure for quick practice and preserve short statement hover definitions. Detailed coverage is derived dynamically from authored files rather than hard-coded in the UI.
+
+- All 698 IDs now have detailed topic material, using 678 authored topic records and explicit aliases for the 20 overlapping anchors. Require complete detailed coverage in tests. Continue to describe specialist material as introductory study coverage rather than complete professional manuals.
