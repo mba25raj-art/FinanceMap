@@ -1,8 +1,10 @@
 import complete from './complete-lessons.json';
 import guides from '../../content/domain-guides.json';
+import study from './domain-study-guides.json';
 import { sourceLinks as coreSources } from './lessons.js';
 export const lessons = complete;
 export const domainGuides = guides;
+export const domainStudyGuides = study;
 export const sourceLinks = {
   ...coreSources,
   foundations:{label:'CFA Institute · Investment Foundations curriculum',url:'https://www.cfainstitute.org/programs/investment-foundations-certificate'},

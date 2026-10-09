@@ -23,3 +23,8 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Quizzes must include the data needed in their visible question or scenario. Never reveal the answer key before a selection.
 - Practice filters use the latest session answer: unanswered, correct, or retry. Connected-question navigation prioritises existing atlas links and then the same domain.
 - Hypothetical tax rates, ownership structures, and simplified examples must be labelled as assumptions; current legal or filing rules require country and period-specific primary sources.
+
+## Detailed curriculum requirement
+
+- The user requires clear explanations of mechanisms, types and distinctions, and comprehensive worked examples for every topic. Preserve short hover definitions, but do not treat them as complete lessons.
+- Detailed lessons use authored, topic-specific material in `content/deep-lessons/*.deep`, with a case setup, sequential reasoning, result, interpretation, and application checklist. Broader domain guidance remains labelled separately. Track detailed coverage honestly until all IDs are expanded.

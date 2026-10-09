@@ -53,3 +53,9 @@ See `design-qa.md` and `qa/` for browser evidence and visual comparison. The fir
 ## GitHub Pages
 
 Automatic deployment is configured in `.github/workflows/deploy-pages.yml`. See [GitHub Pages setup](GITHUB_PAGES_SETUP.md) for repository setup and publishing.
+
+## Expanded teaching material
+
+All 698 pages include an authored detailed guide for their finance area, with distinctions, a worked case, ordered calculations, interpretation and application steps. Guides are stored once and explicitly labelled as broader area material. Ninety statement, cash-flow, valuation and linked anchor lessons have additional topic-specific mechanisms and cases in `content/deep-lessons/`. The remaining 608 topics retain foundational topic-specific text plus the broader guides; they still require their own long-form modules. This release does not claim equal topic-specific depth across all 698 concepts.
+
+Use the **Read the explanation, distinctions & examples** button immediately below a definition. Existing quizzes keep their feedback hidden until selection.

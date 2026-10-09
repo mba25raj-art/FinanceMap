@@ -5,6 +5,26 @@ const read = p => JSON.parse(readFileSync(new URL(p,import.meta.url),'utf8'));
 const atlas=read('../content/master-network.json');
 const lessons=read('../src/data/complete-lessons.json');
 const guides=read('../content/domain-guides.json');
+const study=read('../src/data/domain-study-guides.json');
+test('all topic pages have a complete area guide and authored topic extensions are structurally valid',()=>{
+  assert.equal(Object.keys(study).length,40);
+  let detailed=0;
+  for(const n of atlas.nodes){
+    const lesson=lessons[n.id];
+    assert.equal(lesson.domainGuide,n.domain,n.id);
+    const guide=study[lesson.domainGuide];assert.ok(guide,n.id);
+    for(const d of [guide,...(lesson.detail?[lesson.detail]:[])]){
+      assert.ok(d.explanation.length>=2,n.id);
+      assert.ok(d.types.length>=3,n.id);
+      for(const t of d.types){assert.ok(t.name.trim());assert.ok(t.explanation.trim());}
+      assert.ok(d.workedCase.setup.trim(),n.id);assert.ok(d.workedCase.steps.length>=3,n.id);
+      assert.ok(d.workedCase.result.trim(),n.id);assert.ok(d.workedCase.interpretation.trim(),n.id);
+      assert.ok(d.analysis.length>=3,n.id);
+    }
+    if(lesson.detail)detailed++;
+  }
+  assert.equal(detailed,90);
+});
 test('every original topic and anchor has an explanation, example, unique quiz choices, and valid answer',()=>{
   assert.equal(atlas.topics.length,678);assert.equal(atlas.atoms.length,20);assert.equal(Object.keys(lessons).length,698);
   for(const node of atlas.nodes){const l=lessons[node.id];assert.ok(l,`Missing ${node.id}`);for(const field of ['summary','explanation','example','question','feedback','trap','source'])assert.ok(l[field]?.trim(),`${node.id}: ${field}`);assert.equal(new Set(l.options).size,3,node.id);assert.ok(l.correct>=0&&l.correct<3,node.id);assert.ok(!/not authored|still to be written|lorem ipsum/i.test(l.summary+l.example),node.id);}
@@ -51,6 +71,8 @@ test('all 698 lesson renderings have hidden initial feedback, expanded examples,
       const expanded=renderToStaticMarkup(createElement(App,{initialRoute:route,initialDepth:true,initialAnswers:{[node.id]:lessons[node.id].correct}}));
       assert.ok(expanded.includes('A worked example'),node.id);assert.ok(expanded.includes('feedback success'),node.id);
       assert.ok(expanded.includes('Next connected question'),node.id);assert.ok(expanded.includes('How to analyse it'),node.id);
+      assert.ok(expanded.includes('BROADER STUDY GUIDE'),node.id);assert.ok(expanded.includes('Work through it step by step'),node.id);
+      if(lessons[node.id].detail)assert.ok(expanded.includes('Types and important distinctions'),node.id);
     }
     const wrong=(lessons['T17.05'].correct+1)%3;
     const retry=renderToStaticMarkup(createElement(App,{initialRoute:{view:'topics',id:'T17.05'},initialAnswers:{'T17.05':wrong}}));

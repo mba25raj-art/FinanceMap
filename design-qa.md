@@ -80,3 +80,7 @@ prior visual build result: passed
 - No claim of current browser or visual QA passing is made. The local Vite server responds successfully.
 
 final result: automated content and render checks passed; fresh browser QA blocked by disconnected preview connection
+
+## Expanded lessons release
+
+Ninety topic/anchor extensions and forty area study guides were authored. All 698 expanded pages were rendered in unanswered and answered states; quizzes retain hidden initial feedback. The production build and packaging checks pass. The browser connection was unavailable for a fresh visual/mobile review of the new reading section.

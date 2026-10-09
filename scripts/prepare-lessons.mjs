@@ -1,4 +1,5 @@
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
+import { parseDeepLessons } from './deep-lesson-format.mjs';
 import { lessons as core } from '../src/data/lessons.js';
 const read = path => JSON.parse(readFileSync(new URL(path, import.meta.url), 'utf8'));
 const atlas = read('../content/master-network.json');
@@ -6,6 +7,15 @@ const guides = read('../content/domain-guides.json');
 const prompts = read('../content/quiz-prompts.json');
 const feedback = read('../content/quiz-feedback.json');
 const output = {};
+const domainDepth = parseDeepLessons(readFileSync(new URL('../content/domain-depth.guide',import.meta.url),'utf8'));
+if(Object.keys(domainDepth).length!==atlas.domains.length) throw new Error('Every domain requires a detailed study guide');
+const deep = {};
+for (const name of readdirSync(new URL('../content/deep-lessons/', import.meta.url)).filter(n=>n.endsWith('.deep'))) {
+  for(const [id,lesson] of Object.entries(parseDeepLessons(readFileSync(new URL('../content/deep-lessons/'+name,import.meta.url),'utf8')))) {
+    if(deep[id]) throw new Error('Duplicate detailed lesson '+id);
+    deep[id] = lesson;
+  }
+}
 let ordinal = 0;
 for (const domain of atlas.domains) {
   const records = readFileSync(new URL(`../content/lessons/${domain.id}.lesson`, import.meta.url), 'utf8').trim().split(/\r?\n/);
@@ -47,15 +57,28 @@ for (const atom of atlas.atoms) {
   output[atom.id] = {...core[atom.id], stage: 'Core concept lesson'};
 }
 if (Object.keys(output).length !== 698) throw new Error('Lesson coverage must be 698/698');
+const aliases={A01:'T05.01',A02:'T06.04',A03:'T06.05',A04:'T06.13',A06:'T07.03',A07:'T07.06',A08:'T05.10',A09:'T05.11',A10:'T17.05',A11:'T17.05',A12:'T17.05',A15:'T17.03',A16:'T17.04',A18:'T07.08',A19:'T17.07'};
+for(const [id,target] of Object.entries(aliases)) if(deep[target]&&!deep[id]) deep[id]=deep[target];
+for(const [id,detail] of Object.entries(deep)) {
+  if(!output[id]) throw new Error('Unknown detailed lesson '+id);
+  output[id].detail = detail;
+  output[id].stage = 'Detailed lesson';
+}
+for(const node of atlas.nodes) output[node.id].domainGuide=node.domain;
 for (const n of atlas.nodes) {
   const l = output[n.id];
   if (!l || !l.summary || !l.example || !l.question || l.options.length !== 3 || new Set(l.options).size !== 3 || !Number.isInteger(l.correct) || l.correct < 0 || l.correct > 2) throw new Error(`Invalid assessment: ${n.id}`);
 }
 writeFileSync(new URL('../src/data/complete-lessons.json', import.meta.url), JSON.stringify(output));
+writeFileSync(new URL('../src/data/domain-study-guides.json', import.meta.url), JSON.stringify(domainDepth));
 writeFileSync(new URL('../content/lesson-coverage.json', import.meta.url), JSON.stringify({
   totalConcepts: atlas.nodes.length, lessons: Object.keys(output).length, examples: Object.keys(output).length,
   quizzes: Object.keys(output).length, missing: [],
-  stage: 'Foundational coverage across all topics; expanded core statement explanations',
+  detailedLessons:Object.keys(deep).length,
+  detailedMissing:atlas.nodes.filter(n=>!deep[n.id]).map(n=>n.id),
+  domainStudyGuides:Object.keys(domainDepth).length,
+  pagesWithExpandedStudyMaterial:atlas.nodes.length,
+  stage: '698 topic pages with detailed area guides; 90 individually expanded core lessons',
   domains: atlas.domains.map(d => ({id:d.id,name:d.name,originalTopics:d.topics.length,lessons:atlas.nodes.filter(n=>n.domain===d.id).length})),
 }, null, 2));
 console.log(`Prepared ${Object.keys(output).length} lessons, worked examples, and quizzes across ${atlas.domains.length} domains.`);
