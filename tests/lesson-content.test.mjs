@@ -23,7 +23,9 @@ test('all topic pages have a complete area guide and authored topic extensions a
     }
     if(lesson.detail)detailed++;
   }
-  assert.equal(detailed,90);
+  const coverage=read('../content/lesson-coverage.json');assert.equal(detailed,coverage.detailedLessons);assert.ok(detailed>=227);
+  for(const n of atlas.nodes.filter(n=>['D01','D02','D03','D04','D05','D06','D07','D09','D13','D14','D17','D24'].includes(n.domain)))assert.ok(lessons[n.id].detail,n.id);
+  for(const n of atlas.atoms)assert.ok(lessons[n.id].detail,n.id);
 });
 test('every original topic and anchor has an explanation, example, unique quiz choices, and valid answer',()=>{
   assert.equal(atlas.topics.length,678);assert.equal(atlas.atoms.length,20);assert.equal(Object.keys(lessons).length,698);
@@ -67,6 +69,8 @@ test('all 698 lesson renderings have hidden initial feedback, expanded examples,
       const route={view:'statements',id:node.id};
       const initial=renderToStaticMarkup(createElement(App,{initialRoute:route}));
       assert.ok(initial.includes('Topic quiz'),node.id);
+      assert.ok(initial.includes('BROADER STUDY GUIDE'),node.id);
+      assert.ok(initial.indexOf('Work through it step by step')<initial.indexOf('Topic quiz'),node.id);
       assert.ok(!initial.includes('feedback success')&&!initial.includes('feedback retry'),`Answer exposed: ${node.id}`);
       const expanded=renderToStaticMarkup(createElement(App,{initialRoute:route,initialDepth:true,initialAnswers:{[node.id]:lessons[node.id].correct}}));
       assert.ok(expanded.includes('A worked example'),node.id);assert.ok(expanded.includes('feedback success'),node.id);

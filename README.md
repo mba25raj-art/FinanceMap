@@ -18,7 +18,7 @@ npm run test:content
 npm run test:sites
 ```
 
-The starter's Worker and Sites packaging are preserved. No deployment has been created.
+The starter's Worker and Sites packaging are preserved. The public website is deployed to https://mba25raj-art.github.io/FinanceMap/.
 
 ## Experience
 
@@ -38,13 +38,13 @@ The starter's Worker and Sites packaging are preserved. No deployment has been c
 
 `content/lessons/` contains 678 topic-specific foundational lessons, examples, and quizzes. `content/domain-guides.json` provides 40 explicitly labelled analysis guides. Self-contained prompt and calculation-feedback overrides are in `quiz-prompts.json` and `quiz-feedback.json`. The 20 expanded atomic lessons and additional statement examples remain in `src/data/lessons.js`.
 
-`scripts/prepare-lessons.mjs` validates complete coverage and compiles `src/data/complete-lessons.json`. Do not edit that generated file directly. `content/lesson-coverage.json` records the current website status separately from the historical atlas metadata. Every one of the 698 concept IDs has a foundational explanation, illustrative example, and quiz. This is introductory coverage across the complete map, not a complete professional course for every specialist subject.
+`scripts/prepare-lessons.mjs` validates complete coverage and compiles `src/data/complete-lessons.json`. The generated file is excluded from git; development, builds and content tests regenerate it from the authored sources. Do not edit it directly. `content/lesson-coverage.json` records the current website status separately from the historical atlas metadata. Every one of the 698 concept IDs has a foundational explanation, illustrative example, and quiz. This is introductory coverage across the complete map, not a complete professional course for every specialist subject.
 
 Examples are illustrative, not company filings or live market data. Tax rates are assumptions; legal and reporting rules require the applicable country, period, and framework. Financial links remain distinct from preparation links. Progress uses the latest answer within the open session, and is not evidence of mastery.
 
 ## Next implementation boundaries
 
-Longer specialist modules, additional quiz difficulty levels, and source-specific company cases can extend the foundations. Cross-session progress needs a deliberate persistence/account design. No deployment has been created.
+Longer specialist modules, additional quiz difficulty levels, and source-specific company cases can extend the foundations. Cross-session progress needs a deliberate persistence/account design. The public website is deployed to https://mba25raj-art.github.io/FinanceMap/.
 
 ## Verification
 
@@ -56,6 +56,6 @@ Automatic deployment is configured in `.github/workflows/deploy-pages.yml`. See 
 
 ## Expanded teaching material
 
-All 698 pages include an authored detailed guide for their finance area, with distinctions, a worked case, ordered calculations, interpretation and application steps. Guides are stored once and explicitly labelled as broader area material. Ninety statement, cash-flow, valuation and linked anchor lessons have additional topic-specific mechanisms and cases in `content/deep-lessons/`. The remaining 608 topics retain foundational topic-specific text plus the broader guides; they still require their own long-form modules. This release does not claim equal topic-specific depth across all 698 concepts.
+All 698 pages include an authored detailed guide for their finance area, with distinctions, a worked case, ordered calculations, interpretation and application steps. Guides are stored once and explicitly labelled as broader area material. 227 foundation, accounting, statement, ratio, financing, treasury, valuation, credit and anchor lessons have additional topic-specific mechanisms and cases in `content/deep-lessons/`. The remaining 471 topics retain foundational topic-specific text plus the broader guides; they still require their own long-form modules. This release does not claim equal topic-specific depth across all 698 concepts.
 
-Use the **Read the explanation, distinctions & examples** button immediately below a definition. Existing quizzes keep their feedback hidden until selection.
+Full lessons open by default. The teaching material precedes the topic quiz; feedback stays hidden until a selection. Use **Jump to the full explanation & examples** to move directly from the definition to the reader, or collapse it for quick practice.

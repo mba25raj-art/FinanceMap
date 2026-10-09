@@ -5,3 +5,6 @@ outputs/
 *.log
 .env
 .env.*
+
+# Rebuilt from authored lesson sources before development and tests
+/src/data/complete-lessons.json

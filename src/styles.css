@@ -22,3 +22,5 @@
 .detailed-lesson section{margin:0 0 28px}.detailed-lesson p{font-size:18px;line-height:1.7}.detailed-lesson dl{margin:18px 0}.detailed-lesson dl>div{padding:14px 0;border-top:1px solid var(--line)}.detailed-lesson dt{font-weight:700;color:var(--ink);line-height:1.5}.detailed-lesson dd{margin:7px 0 0;line-height:1.65}.detailed-lesson ol{padding-left:24px;line-height:1.65}.detailed-lesson li{margin:12px 0}.worked-case{background:#eef4ee;padding:20px;border-radius:10px}.detailed-lesson .case-result{padding-top:14px;border-top:1px solid #ccdace}
 
 .lesson-entry{display:flex;gap:8px;align-items:center;text-align:left;font-size:16px;line-height:1.5;color:var(--teal);margin-top:18px;border-bottom:1px solid #c7d9d4;padding:0 0 9px}.lesson-entry svg{flex-shrink:0;width:18px}.deeper{scroll-margin-top:24px}.domain-study{padding-top:28px;margin-top:28px;border-top:2px solid var(--line)}.domain-study .study-context{font-size:15px;color:var(--muted);line-height:1.6}.domain-study>.eyebrow{line-height:1.5;display:block}
+
+@media(max-width:900px){.deeper{scroll-margin-top:150px}}

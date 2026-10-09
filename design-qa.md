@@ -84,3 +84,13 @@ final result: automated content and render checks passed; fresh browser QA block
 ## Expanded lessons release
 
 Ninety topic/anchor extensions and forty area study guides were authored. All 698 expanded pages were rendered in unanswered and answered states; quizzes retain hidden initial feedback. The production build and packaging checks pass. The browser connection was unavailable for a fresh visual/mobile review of the new reading section.
+
+## Reading-first follow-up release
+
+227 topic/anchor extensions are now authored across twelve finance areas, including every atomic anchor. Full lessons open by default, retain their disclosure, and precede the quiz. The 471 remaining original topics retain foundational topic text and explicitly labelled area guides. Current build and automated render verification cover all 698 pages; fresh browser and mobile visual verification remains unavailable. Older screenshots above describe the previous interface only.
+
+## Recovered browser verification
+
+The Chrome connection recovered. The current reading-first interface was checked at its default desktop size and at 390 × 844. Detailed explanations are expanded initially, precede the quiz and have no initial feedback. Phone screenshots confirm readable paragraph spacing; DOM checks found no horizontal overflow. The receivables quiz was tested through an incorrect choice, retry clearing feedback, and the correct choice. The viewport override was reset. The jump action now scrolls only the detail pane on desktop, preserving the statement context; phone reading uses ordinary page flow below the sticky header.
+
+The browser connection dropped again after the shortcut correction. The main desktop/phone reading and quiz checks above were observed; the final shortcut adjustment was validated by code review and build rather than a fresh browser run.
