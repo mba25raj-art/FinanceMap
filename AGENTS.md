@@ -31,4 +31,6 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 
 - Full lessons open by default and appear before the topic quiz. Keep the disclosure for quick practice and preserve short statement hover definitions. Detailed coverage is derived dynamically from authored files rather than hard-coded in the UI.
 
+- During an unanswered mystery clue, do not mount its companion worked lesson or quiz: they can disclose the case solution. Reveal them after a valid answer attempt or an explicit hint request. Hints are scoped to each clue, reset on replay, and do not advance the case. Atlas lessons retain their existing full-lesson default.
+
 - All 698 IDs now have detailed topic material, using 678 authored topic records and explicit aliases for the 20 overlapping anchors. Require complete detailed coverage in tests. Continue to describe specialist material as introductory study coverage rather than complete professional manuals.

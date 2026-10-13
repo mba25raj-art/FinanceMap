@@ -65,8 +65,8 @@ export const statementAliases = {'T06.04':'A02','T06.05':'A03','T06.13':'A04','T
 export const displayTitle = {A06:'Operating cash flow',A11:'Free cash flow to the firm',A12:'Free cash flow to equity',A13:'WACC',A19:'Discounted cash flow',A20:'Return on invested capital'};
 export const mystery = {
   title:'Profitable. So where did the cash go?',
-  intro:'A business reports ₹20 lakh of operating profit after tax. Yet only ₹7 lakh is left after reinvestment. Follow three clues to explain the gap.',
-  facts:[{label:'NOPAT',value:'₹20 lakh',note:'Operating profit after tax'},{label:'Working-capital increase',value:'₹10 lakh',note:'More cash tied up in operations'},{label:'Capex',value:'₹8 lakh',note:'Investment in equipment'}],
+  intro:'A business reports ₹20 lakh of operating profit after tax. How much cash remains after reinvestment? Follow three clues to calculate it and explain the gap.',
+  facts:[{label:'NOPAT',value:'₹20 lakh',note:'Operating profit after tax'},{label:'Working-capital increase',value:'₹10 lakh',note:'Change during this period'},{label:'Capex',value:'₹8 lakh',note:'Investment in equipment'}],
   steps:[
     {title:'The missing customer cash',question:'Receivables rise by ₹10 lakh as credit sales grow. With everything else equal, what does that do to cash available?',options:['Adds ₹10 lakh of cash','Uses ₹10 lakh of cash','Has no effect'],correct:1,why:'The sale can be in profit before cash is collected. More operating working capital ties up cash.',concept:'A05'},
     {title:'The expense without a payment',question:'NOPAT includes ₹5 lakh of depreciation. Why do we add it back when calculating FCFF?',options:['It creates ₹5 lakh of new revenue','It reverses a non-cash charge already deducted','It cancels the need for capex'],correct:1,why:'Depreciation reduced the profit starting point but was not a new payment in this period. Capex is deducted separately.',concept:'A08'},

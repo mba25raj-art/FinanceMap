@@ -127,3 +127,57 @@ test('all 698 lesson renderings have hidden initial feedback, expanded examples,
     }
   }finally{await server.close();delete globalThis.window;}
 });
+test('mystery solutions and worked lessons appear only after a valid attempt or a deliberate clue hint',async()=>{
+  globalThis.window={location:{hash:'#missions/A02'}};
+  const {createServer}=await import('vite');
+  const {createElement}=await import('react');
+  const {renderToStaticMarkup}=await import('react-dom/server');
+  const {default:react}=await import('@vitejs/plugin-react');
+  const server=await createServer({configFile:false,plugins:[react()],server:{middlewareMode:true,hmr:false,watch:null},optimizeDeps:{noDiscovery:true,include:[]},appType:'custom'});
+  try{
+    const {App}=await server.ssrLoadModule('/src/App.jsx');
+    const {default:CashMystery,MysteryLessonGate,canRevealMysteryClue}=await server.ssrLoadModule('/src/CashMystery.jsx');
+    const {mystery}=await server.ssrLoadModule('/src/data/lessons.js');
+    const render=(Component,props)=>renderToStaticMarkup(createElement(Component,props));
+    const landing=render(App,{initialRoute:{view:'missions',id:'A02'}});
+    assert.ok(landing.includes('To discover'));
+    assert.ok(!landing.includes('₹7 lakh'),'Landing exposes final amount');
+    assert.ok(!mystery.intro.includes('₹7 lakh'),'Introduction exposes final amount');
+    assert.ok(!mystery.facts.some(f=>/cash tied up/.test(f.note)),'Early fact card gives the first solution');
+    for(let step=0;step<mystery.steps.length;step++){
+      const clue=mystery.steps[step];
+      const base={step,answers:{},hints:{},complete:false};
+      const initial=render(CashMystery,base);
+      assert.ok(!initial.includes('role="status"'),'Unattempted explanation mounted');
+      assert.ok(!initial.includes(clue.why),'Unattempted solution mounted');
+      assert.ok(!initial.includes('aria-pressed="true"'),'Answer preselected');
+      assert.ok(initial.includes('disabled=""'),'Progression enabled before an answer');
+      // The candidate ₹7 answer and all calculation inputs remain visible on clue 3.
+      for(const option of clue.options)assert.ok(initial.includes(option),option);
+      const hinted=render(CashMystery,{...base,hints:{[step]:true}});
+      assert.ok(hinted.includes('Hint revealed.'));
+      assert.ok(hinted.includes(clue.why));
+      assert.ok(hinted.includes('disabled=""'),'A hint advances the case');
+      const wrong=render(CashMystery,{...base,answers:{[step]:(clue.correct+1)%clue.options.length}});
+      assert.ok(wrong.includes('Not quite.'));
+      assert.ok(wrong.includes(clue.why));
+      assert.ok(wrong.includes('disabled=""'),'Wrong answer advances the case');
+      const right=render(CashMystery,{...base,answers:{[step]:clue.correct}});
+      assert.ok(right.includes('Correct.'));
+      assert.ok(right.includes(clue.why));
+      assert.ok(!right.includes('disabled=""'),'Correct answer cannot continue');
+      for(const answer of [-1,3,1.2,'2',null,undefined])assert.equal(canRevealMysteryClue(step,{[step]:answer},{}),false);
+      if(step>0)assert.equal(canRevealMysteryClue(step,{}, {[step-1]:true}),false,'Prior hint reveals the next clue');
+    }
+    const workedLesson=createElement('p',null,lessons.A11.example);
+    const hidden=render(MysteryLessonGate,{revealed:false,topicTitle:'Free cash flow to the firm',children:workedLesson});
+    assert.ok(!hidden.includes('₹7'),'Worked answer remains in rendered/accessibility text');
+    assert.ok(hidden.includes('Open full lesson (reveals hint)'));
+    const revealed=render(MysteryLessonGate,{revealed:true,children:workedLesson});
+    assert.ok(revealed.includes('₹7'),'Opt-in lesson does not reveal the worked answer');
+    const solved=render(CashMystery,{step:2,answers:{0:1,1:1,2:2},hints:{},complete:true});
+    assert.ok(solved.includes('CASE SOLVED'));
+    assert.ok(solved.includes('₹7 lakh FCFF.'));
+    assert.ok(solved.includes('₹20 lakh NOPAT + ₹5 lakh depreciation − ₹8 lakh capex − ₹10 lakh'));
+  }finally{await server.close();delete globalThis.window;}
+});
