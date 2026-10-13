@@ -16,7 +16,7 @@ test('all six legacy views and all 698 concept IDs remain valid',()=>{
 
 test('canonical concepts, statements and exact master trail stops round-trip',()=>{
   for(const {id} of network.nodes){
-    for(const view of ['map','topics','resources'])assert.equal(parse(routeHash(view,id)).id,id);
+    for(const view of ['map','topics','resources','lesson'])assert.equal(parse(routeHash(view,id)).id,id);
     for(const statement of ['balance','income','cash']){
       const r=parse(routeHash('statements',id,{statement}));assert.equal(r.id,id);assert.equal(r.statement,statement);
     }
@@ -26,6 +26,16 @@ test('canonical concepts, statements and exact master trail stops round-trip',()
   }
   assert.equal(parse('#atlas/trails/P02?stop=7').view,'trails','P02 reference route becomes a simulation');
   assert.equal(parse('#atlas/trails/P02?stop=8').view,'atlas');
+});
+
+test('lesson detours preserve a return reference across destinations and reject invalid indices',()=>{
+  for(const view of ['atlas','lesson','map','topics','statements','trails','labs','learning','resources']){
+    const hash=routeHash(view,'A08',{returnRun:2,journeyId:'P01',stop:1});
+    const r=parse(hash);assert.equal(r.returnRun,2);assert.equal(r.view,view);
+  }
+  for(const raw of ['0','-1','1.5','NaN','9007199254740992']){
+    const r=parse(`#atlas/lessons/A08?returnRun=${raw}`);assert.equal(r.returnRun,undefined);assert.ok(r.message);
+  }
 });
 
 test('briefs and run links select screens without fabricating progress; invalid routes recover',()=>{

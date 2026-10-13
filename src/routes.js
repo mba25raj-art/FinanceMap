@@ -1,7 +1,7 @@
 const legacy = new Set(['statements', 'map', 'topics', 'missions', 'learning', 'resources']);
 const labIds = new Set(['LAB-COLLECTIONS', 'LAB-EQUIPMENT', 'LAB-FINANCING']);
 
-export function parseRoute(hash, { concepts, journeys }) {
+function parseScreen(hash, { concepts, journeys }) {
   const base = { view: 'atlas', id: 'A02', statement: 'balance' };
   const recover = message => ({ ...base, message });
   let parts, params;
@@ -20,7 +20,7 @@ export function parseRoute(hash, { concepts, journeys }) {
     if (parts[1] === 'statements' && parts.length === 4 && ['balance', 'income', 'cash'].includes(parts[2]) && concepts.has(parts[3])) {
       return { ...base, view: 'statements', statement: parts[2], id: parts[3] };
     }
-    const views = { map: 'map', topics: 'topics', sources: 'resources' };
+    const views = { map: 'map', topics: 'topics', sources: 'resources', lessons: 'lesson' };
     if (views[parts[1]] && parts.length <= 3 && (!parts[2] || concepts.has(parts[2]))) {
       return { ...base, view: views[parts[1]], id: id(parts[2]) };
     }
@@ -46,15 +46,32 @@ export function parseRoute(hash, { concepts, journeys }) {
   return recover('This destination is unavailable. Your current session record is still here.');
 }
 
-export function routeHash(view, id = 'A02', { statement = 'balance', journeyId, stop = 0, runIndex } = {}) {
+function screenHash(view, id = 'A02', { statement = 'balance', journeyId, stop = 0, runIndex } = {}) {
   const concept = encodeURIComponent(id);
   if (view === 'atlas' || view === 'labs' || view === 'learning') return `#${view}`;
   if (view === 'statements') return `#atlas/statements/${statement}/${concept}`;
   if (view === 'resources') return `#atlas/sources/${concept}`;
+  if (view === 'lesson') return `#atlas/lessons/${concept}`;
   if (view === 'map' || view === 'topics') return `#atlas/${view}/${concept}`;
   if (view === 'trails') return `#atlas/trails/${encodeURIComponent(journeyId)}?stop=${stop}&concept=${concept}`;
   if (view === 'brief') return '#simulations/P02';
   if (view === 'missions') return Number.isInteger(runIndex)
     ? `#simulations/P02?run=${runIndex+1}&concept=${concept}` : '#simulations';
   return '#atlas';
+}
+
+export function parseRoute(hash, inventory) {
+  const route = parseScreen(hash, inventory);
+  const raw = new URLSearchParams(hash.split('?')[1] || '').get('returnRun');
+  if (raw === null) return route;
+  if (!/^[1-9]\d*$/.test(raw) || !Number.isSafeInteger(Number(raw))) {
+    return { ...route, message: 'This return link is unavailable. Use My learning to find an existing run.' };
+  }
+  return { ...route, returnRun: Number(raw) - 1 };
+}
+
+export function routeHash(view, id, options = {}) {
+  const hash = screenHash(view, id, options);
+  return Number.isSafeInteger(options.returnRun) && options.returnRun >= 0
+    ? `${hash}${hash.includes('?') ? '&' : '?'}returnRun=${options.returnRun + 1}` : hash;
 }

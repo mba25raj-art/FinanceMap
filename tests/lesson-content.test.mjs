@@ -263,5 +263,19 @@ test('guided entry, case brief, resume and missing-run screens show honest next 
     assert.ok(reference.includes('STOP 1 OF 8'));
     assert.ok(!reference.includes('CASE CLUE'));
     const labs=render('labs');assert.equal((labs.match(/PLANNED LAB/g)||[]).length,3);
+    const focused=render('missions',s,{journeyId:'P02',runIndex:0,id:'A08'});
+    assert.ok(focused.includes('focused-workspace')&&focused.includes('Open full lesson'));
+    assert.ok(!focused.includes('deeper-content')&&!focused.includes('Topic quiz'),'Case workspace mounts the detailed companion lesson');
+    const full=render('lesson',s,{id:'A08',returnRun:0});
+    assert.ok(full.includes('full-lesson-view')&&full.includes('deeper-content')&&full.includes('Topic quiz'));
+    assert.ok(full.includes('Return to cash mystery')&&full.includes('clue 2 of 3'));
+    const fresh=reduce(createLearningSession(),{type:'case-start',id:'P02',clues:mystery.steps.map(c=>({correct:c.correct,optionCount:c.options.length}))});
+    const protectedLesson=render('lesson',fresh,{id:'A05',returnRun:0});
+    assert.ok(protectedLesson.includes('Open lesson as a hint'));
+    assert.ok(!protectedLesson.includes('deeper-content')&&!protectedLesson.includes('Topic quiz'),'Direct detour link bypasses unanswered-clue gate');
+    const stale=render('lesson',undefined,{id:'A08',returnRun:9});
+    assert.ok(stale.includes('This activity is unavailable in this session'));
+    assert.ok(stale.includes('deeper-content'),'Expired return context prevents free Atlas reading');
+
   }finally{await server.close();delete globalThis.window;}
 });

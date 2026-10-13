@@ -57,3 +57,11 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Resume selects an existing P02 run without adding a run or resetting choices, first responses, hints or the current clue. My learning exposes every unfinished run. Only explicit Start/Replay creates a new run; stale duplicate start commands are rejected.
 - Keep the six old hash view entry points valid. Unknown or missing run links open the brief with recovery text instead of silently creating progress. Browser Back/Forward selects routes/current records without advancing clues.
 - Atlas entry alone does not count as exploring a concept. The three planned labs and the longer Nila case must stay labelled planned, with reference lessons available and no false playable actions.
+
+## Focused workspace (Task 03.3)
+
+- P02 displays its current clue with concise support; open detailed companion content on demand in the wider Atlas lesson view. The case workspace itself never mounts that full lesson or its topic quiz. Existing Atlas lessons remain expanded by default.
+- Carry the validated originating P02 run through reference links. Return resolves its current record, preserves choices, first responses, hints and clue, and never creates a run or restores an obsolete clue snapshot. Completed runs return to their debrief.
+- Unanswered lesson detours require explicit hint opt-in, including search and browser-history navigation. Keep trying receives initial dialog focus; prevent search Enter from activating a dialog action. Escape cancels without changing hint state. Reading after an earlier attempt or retry does not add a requested hint.
+- Preserve per-route page, task and support reading positions in this session. Desktop panes scroll independently; at 900px and below, the task uses the page scroll and an inline lesson action.
+- Missing return context shows recovery without fabricating progress. Cross-session storage, financial-model periods and versioned save contracts remain deferred. P02 retains its current clue rather than a nonexistent simulation period.
