@@ -41,3 +41,12 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Case clue first-answer credit means correct before any requested hint. Preserve clue responses and hint use per run; replay begins with no answers or hints but retains earlier runs. First-answer session totals use the original response across replays.
 - A case becomes solved only through Finish after all clues have correct current selections. Count each stable case ID once per session; repeated finish events and replays cannot inflate this total. Bind progression events to a run and clue to reject stale double-clicks.
 - Once an explanation has been revealed by an answer attempt, keep it available on retry and do not relabel it as a requested hint. Never preselect answers or reveal prior solutions in a new replay.
+
+## Planned navigation (Task 03.1)
+
+- Primary destinations are Atlas, Labs, Simulations and My learning. Follow docs/implementation/task-03-1.md and its route inventory during 03.2–03.3. The planned routes are not currently implemented.
+- Atlas holds statements, detailed lessons, maps, reading trails and sources. The playable P02 three-clue case belongs in Simulations. Preserve all 24 master journey IDs and ordered nodes. Distinguish P02 reference trail and playable case by activity kind.
+- Use the reconciled three-lab scope: customer collection, equipment investment and financing comparison. The longer Nila Homeware activity has its own proposed case ID so short-mystery completion cannot imply longer-case completion.
+- Preserve all six legacy hash views, stable concept IDs and financial versus learning relationships. Displayed relationships are not automatically calculated model dependencies.
+- Lesson detours carry validated originating activity/run context through concept links. Return and Resume open that existing run without calling new-start/replay. Keep unanswered-case full lessons behind explicit hint opt-in.
+- Keep Atlas explanations expanded. Enable labs and the longer case only after their planned implementation passes. Cross-session progress remains deferred until the save contract and persistence tasks pass.
