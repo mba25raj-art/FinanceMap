@@ -1,11 +1,42 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { getQuizFeedback } from '../src/quiz-feedback.js';
 const read = p => JSON.parse(readFileSync(new URL(p,import.meta.url),'utf8'));
 const atlas=read('../content/master-network.json');
 const lessons=read('../src/data/complete-lessons.json');
 const guides=read('../content/domain-guides.json');
 const study=read('../src/data/domain-study-guides.json');
+test('feedback distinguishes the two receivables misconceptions and the supported collection effect',()=>{
+  const l=lessons.A02;
+  const revenue=getQuizFeedback(l,l.options.indexOf('Revenue rises again'));
+  const profit=getQuizFeedback(l,l.options.indexOf('Profit falls'));
+  assert.match(revenue,/sale a second time/);
+  assert.match(profit,/not an expense or a write-off/);
+  assert.notEqual(revenue,profit);
+  for(const feedback of [revenue,profit]){
+    assert.match(feedback,/Cash rises by ₹5 lakh and receivables fall by ₹5 lakh/);
+    assert.doesNotMatch(feedback,/Exactly\.|Correct\./);
+  }
+});
+test('every quiz outcome is consistent and author explanations stay attached to the selected choice',()=>{
+  for(const [id,l] of Object.entries(lessons)){
+    assert.equal(getQuizFeedback(l,undefined),null,`Feedback before attempt: ${id}`);
+    assert.match(getQuizFeedback(l,l.correct),/^Correct\. /,id);
+    for(let answer=0;answer<l.options.length;answer++){
+      if(answer===l.correct)continue;
+      const feedback=getQuizFeedback(l,answer);
+      assert.match(feedback,/^Not quite\. /,id);
+      assert.doesNotMatch(feedback,/\b(?:Exactly|Correct)[.!]/,id);
+      assert.ok(feedback.includes(`The supported answer is “${l.options[l.correct]}”.`),id);
+      if(l.incorrectFeedback?.[l.options[answer]])assert.ok(feedback.includes(l.incorrectFeedback[l.options[answer]]),id);
+    }
+  }
+  const basis=lessons['T02.01'];
+  assert.match(getQuizFeedback(basis,basis.options.indexOf('0.5')),/percentage points.*multiplying by 100/);
+  const npv=lessons['T03.12'];
+  assert.match(getQuizFeedback(npv,npv.options.indexOf('₹4.55')),/question specifies 15%/);
+});
 test('all 698 topic pages have individually authored detailed lessons and separate area guides',()=>{
   assert.equal(Object.keys(study).length,40);
   let detailed=0;
@@ -77,6 +108,16 @@ test('all 698 lesson renderings have hidden initial feedback, expanded examples,
       assert.ok(expanded.includes('Next connected question'),node.id);assert.ok(expanded.includes('How to analyse it'),node.id);
       assert.ok(expanded.includes('BROADER STUDY GUIDE'),node.id);assert.ok(expanded.includes('Work through it step by step'),node.id);
       if(lessons[node.id].detail)assert.ok(expanded.includes('Types and important distinctions'),node.id);
+      // Regression: exercise both wrong states of every lesson, not only the success path.
+      for(let choice=0;choice<lessons[node.id].options.length;choice++){
+        if(choice===lessons[node.id].correct)continue;
+        const wrongHtml=renderToStaticMarkup(createElement(App,{initialRoute:route,initialAnswers:{[node.id]:choice}}));
+        assert.ok(wrongHtml.includes('feedback retry'),node.id);
+        assert.ok(wrongHtml.includes('role="status"'),node.id);
+        assert.ok(wrongHtml.includes('Retry question'),node.id);
+        assert.ok(!wrongHtml.includes('Not quite. Exactly.')&&!wrongHtml.includes('Not quite. Correct.'),node.id);
+        if(node.id==='A02')assert.ok(wrongHtml.includes(choice===1?'sale a second time':'not an expense or a write-off'));
+      }
     }
     const wrong=(lessons['T17.05'].correct+1)%3;
     const retry=renderToStaticMarkup(createElement(App,{initialRoute:{view:'topics',id:'T17.05'},initialAnswers:{'T17.05':wrong}}));

@@ -6,6 +6,7 @@ const atlas = read('../content/master-network.json');
 const guides = read('../content/domain-guides.json');
 const prompts = read('../content/quiz-prompts.json');
 const feedback = read('../content/quiz-feedback.json');
+const incorrectFeedback = read('../content/quiz-option-feedback.json');
 const output = {};
 const domainDepth = parseDeepLessons(readFileSync(new URL('../content/domain-depth.guide',import.meta.url),'utf8'));
 if(Object.keys(domainDepth).length!==atlas.domains.length) throw new Error('Every domain requires a detailed study guide');
@@ -55,6 +56,16 @@ for (const domain of atlas.domains) {
 for (const atom of atlas.atoms) {
   if (!core[atom.id]) throw new Error(`Missing anchor lesson ${atom.id}`);
   output[atom.id] = {...core[atom.id], stage: 'Core concept lesson'};
+}
+// Key explanations by option text so rotating the choices cannot mispair them.
+for (const [id, choices] of Object.entries(incorrectFeedback)) {
+  const lesson = output[id];
+  if (!lesson) throw new Error(`Unknown feedback concept: ${id}`);
+  for (const [choice, explanation] of Object.entries(choices)) {
+    if (!lesson.options.includes(choice) || choice === lesson.options[lesson.correct]) throw new Error(`Invalid incorrect feedback choice: ${id}: ${choice}`);
+    if (typeof explanation !== 'string' || !explanation.trim() || /^(Exactly|Correct)[.!]/i.test(explanation)) throw new Error(`Invalid incorrect feedback explanation: ${id}: ${choice}`);
+  }
+  lesson.incorrectFeedback = choices;
 }
 if (Object.keys(output).length !== 698) throw new Error('Lesson coverage must be 698/698');
 const aliases={A01:'T05.01',A02:'T06.04',A03:'T06.05',A04:'T06.13',A06:'T07.03',A07:'T07.06',A08:'T05.10',A09:'T05.11',A10:'T17.05',A11:'T17.05',A12:'T17.05',A15:'T17.03',A16:'T17.04',A18:'T07.08',A19:'T17.07',A13:'T13.10',A14:'T13.01',A20:'T09.08',A05:'T14.01',A17:'T24.16'};
