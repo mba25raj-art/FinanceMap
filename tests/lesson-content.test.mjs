@@ -105,7 +105,7 @@ test('all 698 lesson renderings have hidden initial feedback, expanded examples,
       assert.ok(!initial.includes('feedback success')&&!initial.includes('feedback retry'),`Answer exposed: ${node.id}`);
       const expanded=renderToStaticMarkup(createElement(App,{initialRoute:route,initialDepth:true,initialAnswers:{[node.id]:lessons[node.id].correct}}));
       assert.ok(expanded.includes('A worked example'),node.id);assert.ok(expanded.includes('feedback success'),node.id);
-      assert.ok(expanded.includes('Next connected question'),node.id);assert.ok(expanded.includes('How to analyse it'),node.id);
+      assert.ok(expanded.includes('Next connected topic question'),node.id);assert.ok(expanded.includes('How to analyse it'),node.id);
       assert.ok(expanded.includes('BROADER STUDY GUIDE'),node.id);assert.ok(expanded.includes('Work through it step by step'),node.id);
       if(lessons[node.id].detail)assert.ok(expanded.includes('Types and important distinctions'),node.id);
       // Regression: exercise both wrong states of every lesson, not only the success path.
@@ -114,14 +114,14 @@ test('all 698 lesson renderings have hidden initial feedback, expanded examples,
         const wrongHtml=renderToStaticMarkup(createElement(App,{initialRoute:route,initialAnswers:{[node.id]:choice}}));
         assert.ok(wrongHtml.includes('feedback retry'),node.id);
         assert.ok(wrongHtml.includes('role="status"'),node.id);
-        assert.ok(wrongHtml.includes('Retry question'),node.id);
+        assert.ok(wrongHtml.includes('Retry topic question'),node.id);
         assert.ok(!wrongHtml.includes('Not quite. Exactly.')&&!wrongHtml.includes('Not quite. Correct.'),node.id);
         if(node.id==='A02')assert.ok(wrongHtml.includes(choice===1?'sale a second time':'not an expense or a write-off'));
       }
     }
     const wrong=(lessons['T17.05'].correct+1)%3;
     const retry=renderToStaticMarkup(createElement(App,{initialRoute:{view:'topics',id:'T17.05'},initialAnswers:{'T17.05':wrong}}));
-    assert.ok(retry.includes('feedback retry'));assert.ok(retry.includes('Retry question'));
+    assert.ok(retry.includes('feedback retry'));assert.ok(retry.includes('Retry topic question'));
     for(const view of ['map','topics','missions','learning','resources']){
       const html=renderToStaticMarkup(createElement(App,{initialRoute:{view,id:'T17.05'}}));assert.ok(html.length>1000,view);
     }
@@ -179,5 +179,46 @@ test('mystery solutions and worked lessons appear only after a valid attempt or 
     assert.ok(solved.includes('CASE SOLVED'));
     assert.ok(solved.includes('₹7 lakh FCFF.'));
     assert.ok(solved.includes('₹20 lakh NOPAT + ₹5 lakh depreciation − ₹8 lakh capex − ₹10 lakh'));
+    const {createLearningSession,learningSessionReducer:reduce,activeCaseRun}=await server.ssrLoadModule('/src/learning-session.js');
+    const start=s=>reduce(s,{type:'case-start',id:'P02',clues:mystery.steps.map(c=>({correct:c.correct,optionCount:c.options.length}))});
+    const act=(s,type,choice)=>reduce(s,{type,choice,run:s.activeRun,step:activeCaseRun(s).step});
+    const renderRun=s=>{const run=activeCaseRun(s);return render(CashMystery,{...run,runNumber:s.activeRun+1});};
+    let session=start(createLearningSession());
+    session=act(session,'case-answer',0);
+    const wrongRun=renderRun(session);
+    assert.ok(wrongRun.includes('First answer this run:'));
+    assert.ok(wrongRun.includes('Retry this case clue'));
+    assert.ok(wrongRun.includes('Continue to case clue 2 of 3'));
+    session=act(session,'case-retry');
+    const retryRun=renderRun(session);
+    assert.ok(retryRun.includes('Explanation from your earlier attempt.'));
+    assert.ok(!retryRun.includes('Hint revealed.'));
+    assert.ok(retryRun.includes('First answer this run:'));
+    assert.ok(retryRun.includes('disabled=""'));
+    assert.equal(canRevealMysteryClue(0,{}, {},activeCaseRun(session).responses),true);
+    session=act(session,'case-answer',1);
+    for(let step=1;step<3;step++){
+      session=act(session,'case-next');
+      session=act(session,'case-answer',mystery.steps[step].correct);
+    }
+    const ready=renderRun(session);
+    assert.ok(ready.includes('Finish case'));
+    assert.ok(ready.includes('Finish to record this case as solved.'));
+    assert.ok(ready.includes('value="3"'));
+    session=act(session,'case-finish');
+    assert.ok(renderRun(session).includes('Replay case (keeps your record)'));
+    session=start(session);
+    assert.ok(!renderRun(session).includes('role="status"'),'Replay exposes earlier solution');
+    assert.ok(!renderRun(session).includes('aria-pressed="true"'));
+    const learning=render(App,{initialRoute:{view:'learning',id:'A02'},initialSession:session});
+    assert.ok(learning.includes('<strong>0</strong><span>Topic quizzes answered</span>'));
+    assert.ok(learning.includes('<strong>3</strong><span>Case clues answered</span>'));
+    assert.ok(learning.includes('<strong>1</strong><span>Distinct cases solved</span>'));
+    assert.ok(learning.includes('<strong>2 of 3</strong> correct on the first submitted answer'));
+    assert.ok(learning.includes('Case P02 · Run 1 · finished'));
+    assert.ok(learning.includes('Case P02 · Run 2 · unfinished'));
+    assert.ok(learning.includes('Adds ₹10 lakh of cash'),'Original wrong answer absent from review');
+    assert.ok(learning.includes('refreshing or closing it resets the session'));
+
   }finally{await server.close();delete globalThis.window;}
 });

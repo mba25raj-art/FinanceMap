@@ -21,7 +21,7 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Every one of the 698 stable concept IDs now has a foundational explanation, an illustrative worked example, and a quiz with feedback. This is introductory coverage, not a claim of complete professional courses for every specialist topic.
 - Grouped lessons explain distinctions within the original heading. Keep domain analysis guides explicitly separate from topic-specific mechanics.
 - Quizzes must include the data needed in their visible question or scenario. Never reveal the answer key before a selection.
-- Practice filters use the latest session answer: unanswered, correct, or retry. Connected-question navigation prioritises existing atlas links and then the same domain.
+- Practice filters use the current session selection: unanswered, correct, or retry. Clearing a selection with Retry puts the question back in unanswered; the submitted-answer history remains in My learning. Connected-question navigation prioritises existing atlas links and then the same domain.
 - Hypothetical tax rates, ownership structures, and simplified examples must be labelled as assumptions; current legal or filing rules require country and period-specific primary sources.
 
 ## Detailed curriculum requirement
@@ -34,3 +34,10 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - During an unanswered mystery clue, do not mount its companion worked lesson or quiz: they can disclose the case solution. Reveal them after a valid answer attempt or an explicit hint request. Hints are scoped to each clue, reset on replay, and do not advance the case. Atlas lessons retain their existing full-lesson default.
 
 - All 698 IDs now have detailed topic material, using 678 authored topic records and explicit aliases for the 20 overlapping anchors. Require complete detailed coverage in tests. Continue to describe specialist material as introductory study coverage rather than complete professional manuals.
+
+## Session records and progression
+
+- Topic quizzes and case clues have separate unique-question totals. Count correct first submissions separately from correct latest submissions; retry clears a selection without deleting the response history. Neither count is a claim of mastery.
+- Case clue first-answer credit means correct before any requested hint. Preserve clue responses and hint use per run; replay begins with no answers or hints but retains earlier runs. First-answer session totals use the original response across replays.
+- A case becomes solved only through Finish after all clues have correct current selections. Count each stable case ID once per session; repeated finish events and replays cannot inflate this total. Bind progression events to a run and clue to reject stale double-clicks.
+- Once an explanation has been revealed by an answer attempt, keep it available on retry and do not relabel it as a requested hint. Never preselect answers or reveal prior solutions in a new replay.

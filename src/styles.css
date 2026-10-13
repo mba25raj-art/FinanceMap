@@ -24,3 +24,16 @@
 .lesson-entry{display:flex;gap:8px;align-items:center;text-align:left;font-size:16px;line-height:1.5;color:var(--teal);margin-top:18px;border-bottom:1px solid #c7d9d4;padding:0 0 9px}.lesson-entry svg{flex-shrink:0;width:18px}.deeper{scroll-margin-top:24px}.domain-study{padding-top:28px;margin-top:28px;border-top:2px solid var(--line)}.domain-study .study-context{font-size:15px;color:var(--muted);line-height:1.6}.domain-study>.eyebrow{line-height:1.5;display:block}
 
 @media(max-width:900px){.deeper{scroll-margin-top:150px}}
+
+/* Task 02.3: defined session counts and retained answer records */
+.learning-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.answer-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px;margin:26px 0 18px}
+.answer-summary h2{font-size:26px;margin-bottom:12px}.answer-summary p{font-size:17px;margin:9px 0;color:var(--muted)}
+.attempt-record{margin:16px 0;color:var(--muted);line-height:1.6}.quiz>.attempt-record{font-size:14px}
+.session-note{margin-top:12px}.progression-note{margin-top:16px;color:var(--muted)}.quiz>.progression-note{font-size:14px}
+.mission-progress{flex-wrap:wrap;gap:14px}.mission-progress progress{max-width:100%}
+.session-history{margin-top:20px;border-top:1px solid var(--line);padding-top:18px}
+.session-history summary{cursor:pointer;color:var(--teal);font-size:18px;line-height:1.5}
+.session-history section{padding:20px 0;border-bottom:1px solid var(--line)}.session-history h3{font-size:23px}
+.session-history h4{font-size:18px;margin:18px 0 8px}.session-history ol{padding-left:24px;line-height:1.6;font-size:15px;color:var(--muted)}
+@media(max-width:540px){.learning-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.answer-summary{grid-template-columns:1fr;gap:18px}}
