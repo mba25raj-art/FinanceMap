@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "<AUTHOR: existing master concept ID>",
+  "contentVersion": "1.0.0",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "<AUTHOR: covered>"
+    ],
+    "deferred": [
+      "<AUTHOR: deferred>"
+    ]
+  },
+  "hoverDefinition": "<AUTHOR: hoverDefinition>",
+  "objectives": [
+    {
+      "id": "<AUTHOR: id>",
+      "statement": "<AUTHOR: statement>",
+      "evidence": "<AUTHOR: evidence>",
+      "outcomeIds": [
+        "<AUTHOR: outcomeIds>"
+      ]
+    },
+    {
+      "id": "<AUTHOR: id>",
+      "statement": "<AUTHOR: statement>",
+      "evidence": "<AUTHOR: evidence>",
+      "outcomeIds": [
+        "<AUTHOR: outcomeIds>"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "<AUTHOR: entity>",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "<AUTHOR: units>"
+    ],
+    "timeframe": "<AUTHOR: timeframe>",
+    "assumptions": [
+      "<AUTHOR: assumptions>",
+      "<AUTHOR: assumptions>",
+      "<AUTHOR: assumptions>"
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "<AUTHOR: limitations>"
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "<AUTHOR: id>",
+      "paragraphs": [
+        "<AUTHOR: paragraphs>"
+      ]
+    },
+    {
+      "id": "<AUTHOR: id>",
+      "paragraphs": [
+        "<AUTHOR: paragraphs>"
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "<AUTHOR: name>",
+      "explanation": "<AUTHOR: explanation>",
+      "whenItMatters": "<AUTHOR: whenItMatters>"
+    },
+    {
+      "name": "<AUTHOR: name>",
+      "explanation": "<AUTHOR: explanation>",
+      "whenItMatters": "<AUTHOR: whenItMatters>"
+    }
+  ],
+  "workedExample": {
+    "id": "<AUTHOR: id>",
+    "scenarioId": "<AUTHOR: scenarioId>",
+    "setup": "<AUTHOR: setup>",
+    "inputs": [
+      {
+        "key": "<AUTHOR: key>",
+        "label": "<AUTHOR: label>",
+        "value": "<AUTHOR: numerical or stated qualitative input>",
+        "unit": "<AUTHOR: unit>"
+      },
+      {
+        "key": "<AUTHOR: key>",
+        "label": "<AUTHOR: label>",
+        "value": "<AUTHOR: numerical or stated qualitative input>",
+        "unit": "<AUTHOR: unit>"
+      }
+    ],
+    "steps": [
+      "<AUTHOR: steps>",
+      "<AUTHOR: steps>",
+      "<AUTHOR: steps>"
+    ],
+    "result": "<AUTHOR: result>",
+    "interpretation": "<AUTHOR: interpretation>"
+  },
+  "statementEffects": {
+    "applicability": "<AUTHOR: applicability>",
+    "explanation": "<AUTHOR: explanation>",
+    "changes": [
+      "<AUTHOR: changes>",
+      "<AUTHOR: changes>",
+      "<AUTHOR: changes>"
+    ]
+  },
+  "misconceptions": [
+    {
+      "id": "<AUTHOR: id>",
+      "claim": "<AUTHOR: claim>",
+      "correction": "<AUTHOR: correction>",
+      "diagnostic": "<AUTHOR: diagnostic>"
+    },
+    {
+      "id": "<AUTHOR: id>",
+      "claim": "<AUTHOR: claim>",
+      "correction": "<AUTHOR: correction>",
+      "diagnostic": "<AUTHOR: diagnostic>"
+    }
+  ],
+  "practice": [
+    {
+      "id": "<AUTHOR: id>",
+      "version": "<AUTHOR: version>",
+      "stage": "checkpoint",
+      "afterMechanismId": "<AUTHOR: afterMechanismId>",
+      "scenarioId": "<AUTHOR: scenarioId>",
+      "objectiveIds": [
+        "<AUTHOR: objectiveIds>"
+      ],
+      "setup": "<AUTHOR: setup>",
+      "inputs": [
+        {
+          "key": "<AUTHOR: key>",
+          "label": "<AUTHOR: label>",
+          "value": "<AUTHOR: numerical or stated qualitative input>",
+          "unit": "<AUTHOR: unit>"
+        },
+        {
+          "key": "<AUTHOR: key>",
+          "label": "<AUTHOR: label>",
+          "value": "<AUTHOR: numerical or stated qualitative input>",
+          "unit": "<AUTHOR: unit>"
+        }
+      ],
+      "question": "<AUTHOR: question>",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "<AUTHOR: id>",
+          "text": "<AUTHOR: text>",
+          "feedback": "<AUTHOR: feedback>",
+          "misconceptionId": null
+        },
+        {
+          "id": "<AUTHOR: id>",
+          "text": "<AUTHOR: text>",
+          "feedback": "<AUTHOR: feedback>",
+          "misconceptionId": "<AUTHOR: misconceptionId>"
+        },
+        {
+          "id": "<AUTHOR: id>",
+          "text": "<AUTHOR: text>",
+          "feedback": "<AUTHOR: feedback>",
+          "misconceptionId": "<AUTHOR: misconceptionId>"
+        }
+      ],
+      "correctOptionId": "<AUTHOR: correctOptionId>",
+      "solution": "<AUTHOR: solution>",
+      "hints": [
+        {
+          "text": "<AUTHOR: text>",
+          "answerRevealing": false
+        },
+        {
+          "text": "<AUTHOR: text>",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "<AUTHOR: prompt>",
+        "rubric": [
+          "<AUTHOR: rubric>",
+          "<AUTHOR: rubric>",
+          "<AUTHOR: rubric>"
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "<AUTHOR: id>",
+      "version": "<AUTHOR: version>",
+      "stage": "transfer",
+      "afterMechanismId": "<AUTHOR: afterMechanismId>",
+      "scenarioId": "<AUTHOR: scenarioId>",
+      "objectiveIds": [
+        "<AUTHOR: objectiveIds>"
+      ],
+      "setup": "<AUTHOR: setup>",
+      "inputs": [
+        {
+          "key": "<AUTHOR: key>",
+          "label": "<AUTHOR: label>",
+          "value": "<AUTHOR: numerical or stated qualitative input>",
+          "unit": "<AUTHOR: unit>"
+        },
+        {
+          "key": "<AUTHOR: key>",
+          "label": "<AUTHOR: label>",
+          "value": "<AUTHOR: numerical or stated qualitative input>",
+          "unit": "<AUTHOR: unit>"
+        }
+      ],
+      "question": "<AUTHOR: question>",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "<AUTHOR: id>",
+          "text": "<AUTHOR: text>",
+          "feedback": "<AUTHOR: feedback>",
+          "misconceptionId": null
+        },
+        {
+          "id": "<AUTHOR: id>",
+          "text": "<AUTHOR: text>",
+          "feedback": "<AUTHOR: feedback>",
+          "misconceptionId": "<AUTHOR: misconceptionId>"
+        },
+        {
+          "id": "<AUTHOR: id>",
+          "text": "<AUTHOR: text>",
+          "feedback": "<AUTHOR: feedback>",
+          "misconceptionId": "<AUTHOR: misconceptionId>"
+        }
+      ],
+      "correctOptionId": "<AUTHOR: correctOptionId>",
+      "solution": "<AUTHOR: solution>",
+      "hints": [
+        {
+          "text": "<AUTHOR: text>",
+          "answerRevealing": false
+        },
+        {
+          "text": "<AUTHOR: text>",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "<AUTHOR: prompt>",
+        "rubric": [
+          "<AUTHOR: rubric>",
+          "<AUTHOR: rubric>",
+          "<AUTHOR: rubric>"
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "<AUTHOR: edgeId>",
+      "to": "<AUTHOR: to>",
+      "kind": "learning",
+      "purpose": "<AUTHOR: purpose>",
+      "conditions": "<AUTHOR: conditions>",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "<AUTHOR: guideId>",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "<AUTHOR: questions>"
+    ],
+    "conceptIds": [
+      "<AUTHOR: conceptIds>",
+      "<AUTHOR: conceptIds>"
+    ],
+    "limitations": "<AUTHOR: limitations>"
+  },
+  "activityLinks": [
+    {
+      "id": "<AUTHOR: id>",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "<AUTHOR: purpose>"
+    }
+  ],
+  "sources": [
+    {
+      "id": "<AUTHOR: id>",
+      "title": "<AUTHOR: title>",
+      "url": "<AUTHOR: url>",
+      "role": "further-reading",
+      "supports": [],
+      "reviewedOn": null
+    }
+  ],
+  "review": {
+    "state": "draft",
+    "reviewer": null,
+    "reviewedOn": null,
+    "evidence": []
+  }
+}

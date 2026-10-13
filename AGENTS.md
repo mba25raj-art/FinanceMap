@@ -65,3 +65,11 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Unanswered lesson detours require explicit hint opt-in, including search and browser-history navigation. Keep trying receives initial dialog focus; prevent search Enter from activating a dialog action. Escape cancels without changing hint state. Reading after an earlier attempt or retry does not add a requested hint.
 - Preserve per-route page, task and support reading positions in this session. Desktop panes scroll independently; at 900px and below, the task uses the page scroll and an inline lesson action.
 - Missing return context shows recovery without fabricating progress. Cross-session storage, financial-model periods and versioned save contracts remain deferred. P02 retains its current clue rather than a nonexistent simulation period.
+
+## Lesson standard (Task 04.1)
+
+- Follow `docs/lesson-standard.md` for conversion: short hover entry, observable objectives, complete topic mechanics, relevant distinctions, explicitly scoped worked example, embedded prediction and independent transfer practice, misconceptions, conditions on connections and separate deeper/domain material.
+- The version 1 packages in `content/standards/` are authoring artefacts, not current renderer inputs. Structural validation does not establish editorial review, financial correctness, rendered spoiler protection or professional mastery. All 698 existing detailed lessons retain their current format until individually converted and reviewed.
+- New practice scenarios have distinct IDs and fresh data from the worked example. Each declares all inputs, units, assumptions, stable option/question versions, objective mapping, option-specific feedback and hint/reveal policy. Reflection uses a visible self-check rubric, not unvalidated automatic free-text grading.
+- Framework-specific claims require named framework, jurisdiction, period and reviewed primary support. Conceptual examples state their simplifications. Keep topic mechanism distinct from the labelled domain guide; preserve stable edges and the planned availability of future labs/cases.
+- Apply the standard first to receivables in 04.2; review that sample before batch conversion. Coverage registration is 04.3, not an automatic consequence of creating the standard.

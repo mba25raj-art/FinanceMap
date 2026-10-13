@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "T04.01",
+  "contentVersion": "1.0.0",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "Asset exchanges and credit-funded asset purchases preserve the accounting equation."
+    ],
+    "deferred": [
+      "Recognition, measurement, consolidation and complete reporting rules."
+    ]
+  },
+  "hoverDefinition": "Assets equal liabilities plus equity: recognised resources are financed by obligations and residual ownership.",
+  "objectives": [
+    {
+      "id": "asset-exchange",
+      "statement": "Predict total assets after a cash purchase of a qualifying machine.",
+      "evidence": "Reconcile cash plus machine without treating the payment as an immediate loss.",
+      "outcomeIds": [
+        "LO1"
+      ]
+    },
+    {
+      "id": "credit-purchase",
+      "statement": "Trace a credit inventory purchase across assets and liabilities.",
+      "evidence": "Reconcile both sides of the equation and explain why cash is unchanged.",
+      "outcomeIds": [
+        "LO1"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh"
+    ],
+    "timeframe": "Opening and immediately after one hypothetical transaction; not cumulative case rounds.",
+    "assumptions": [
+      "Each example and question starts independently.",
+      "Machine and inventory qualify as assets at their purchase cost in these simplified illustrations.",
+      "No tax, depreciation, impairment, other transactions or opening liabilities."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Accounting-identity illustration; not a complete framework-specific recognition or classification lesson."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "recognised-resources",
+      "paragraphs": [
+        "The equation compares recognised resources with creditor and owner claims. A balanced equation does not prove that an asset is recoverable or all obligations were captured."
+      ]
+    },
+    {
+      "id": "two-sided-movement",
+      "paragraphs": [
+        "A cash machine purchase replaces cash with equipment. A credit inventory purchase instead increases inventory and a supplier obligation. Identify all affected accounts before adding totals."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "Asset exchange",
+      "explanation": "One recognised asset replaces another.",
+      "whenItMatters": "Do not confuse a reduction in cash with an equal reduction in total assets."
+    },
+    {
+      "name": "Credit-funded asset purchase",
+      "explanation": "An asset and matching supplier obligation arise together.",
+      "whenItMatters": "The purchase can increase total assets without a cash payment."
+    }
+  ],
+  "workedExample": {
+    "id": "machine-walkthrough",
+    "scenarioId": "worked-machine-100-30",
+    "setup": "Start independently with cash 100, no liabilities and equity 100. Pay 30 for a qualifying machine. All figures are INR lakh.",
+    "inputs": [
+      {
+        "key": "openingCash",
+        "label": "Opening cash",
+        "value": 100,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "machineCost",
+        "label": "Machine cash cost",
+        "value": 30,
+        "unit": "INR lakh"
+      }
+    ],
+    "steps": [
+      "Opening assets 100 = liabilities 0 + equity 100.",
+      "Closing cash is 100 \u2212 30 = 70; machine is 30.",
+      "Closing assets 70 + 30 = 100; liabilities 0 + equity 100 = 100."
+    ],
+    "result": "Total assets remain 100.",
+    "interpretation": "The payment exchanges assets; later consumption or impairment is a separate event."
+  },
+  "statementEffects": {
+    "applicability": "direct",
+    "explanation": "In the worked example, cash falls 30 and equipment rises 30. No immediate profit change is assumed; the equipment payment is an investing outflow under the teaching classification.",
+    "changes": [
+      "Balance sheet: cash \u221230, equipment +30.",
+      "Income statement: no immediate expense in this isolated purchase.",
+      "Cash flow: equipment investment payment 30."
+    ]
+  },
+  "misconceptions": [
+    {
+      "id": "cash-is-all-assets",
+      "claim": "Cash falling means total assets fell by the same amount.",
+      "correction": "Include the new recognised asset as well as remaining cash.",
+      "diagnostic": "Ask which resource replaced the cash."
+    },
+    {
+      "id": "single-sided-entry",
+      "claim": "A new asset can be added without recording its payment or financing.",
+      "correction": "Record the matching cash reduction or obligation.",
+      "diagnostic": "Reconcile both sides after the event."
+    }
+  ],
+  "practice": [
+    {
+      "id": "predict-machine-total",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "recognised-resources",
+      "scenarioId": "checkpoint-machine-40-12",
+      "objectiveIds": [
+        "asset-exchange"
+      ],
+      "setup": "Separate scenario: cash and equity start at 40. Pay 12 for a qualifying machine. No other events.",
+      "inputs": [
+        {
+          "key": "openingCash",
+          "label": "Opening cash",
+          "value": 40,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "machineCost",
+          "label": "Machine cash cost",
+          "value": 12,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "What are total assets immediately after this payment?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "assets-40",
+          "text": "\u20b940 lakh",
+          "feedback": "Cash 28 plus machine 12 gives total assets 40.",
+          "misconceptionId": null
+        },
+        {
+          "id": "assets-28",
+          "text": "\u20b928 lakh",
+          "feedback": "28 is remaining cash; include the machine as another asset.",
+          "misconceptionId": "cash-is-all-assets"
+        },
+        {
+          "id": "assets-52",
+          "text": "\u20b952 lakh",
+          "feedback": "Adding the machine without reducing cash counts the purchase twice.",
+          "misconceptionId": "single-sided-entry"
+        }
+      ],
+      "correctOptionId": "assets-40",
+      "solution": "Cash = 40 \u2212 12 = 28; machine = 12; total assets = 40.",
+      "hints": [
+        {
+          "text": "Identify both the resource received and how it was funded.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Cash = 40 \u2212 12 = 28; machine = 12; total assets = 40.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Why does the cash payment leave total assets unchanged?",
+        "rubric": [
+          "Identify the affected accounts.",
+          "Explain the matching movement.",
+          "Reconcile the total using the scenario inputs."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "transfer-credit-purchase",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "two-sided-movement",
+      "scenarioId": "transfer-inventory-60-8",
+      "objectiveIds": [
+        "credit-purchase"
+      ],
+      "setup": "Separate scenario: cash and equity start at 60. Buy qualifying inventory of 8 on supplier credit, with payment due later. No other events.",
+      "inputs": [
+        {
+          "key": "openingCash",
+          "label": "Opening cash",
+          "value": 60,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "inventoryCost",
+          "label": "Credit inventory purchase",
+          "value": 8,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "Which equation describes the position immediately after purchase?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "assets-68",
+          "text": "Assets 68 = liabilities 8 + equity 60",
+          "feedback": "Cash 60 plus inventory 8 equals assets 68; the supplier claim is 8.",
+          "misconceptionId": null
+        },
+        {
+          "id": "assets-60",
+          "text": "Assets 60 = liabilities 0 + equity 60",
+          "feedback": "No cash payment occurred, but inventory and the supplier obligation still arose.",
+          "misconceptionId": "single-sided-entry"
+        },
+        {
+          "id": "assets-52",
+          "text": "Assets 52 = liabilities 0 + equity 52",
+          "feedback": "This omits the acquired inventory and incorrectly treats the credit purchase as a cash expense.",
+          "misconceptionId": "cash-is-all-assets"
+        }
+      ],
+      "correctOptionId": "assets-68",
+      "solution": "Assets = cash 60 + inventory 8 = 68; liabilities = 8; equity = 60.",
+      "hints": [
+        {
+          "text": "Identify both the resource received and how it was funded.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Assets = cash 60 + inventory 8 = 68; liabilities = 8; equity = 60.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Why is this different from the cash-funded machine purchase?",
+        "rubric": [
+          "Identify the affected accounts.",
+          "Explain the matching movement.",
+          "Reconcile the total using the scenario inputs."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E0136",
+      "to": "T04.02",
+      "kind": "learning",
+      "purpose": "Connect the balanced equation to how transactions are recorded.",
+      "conditions": "Shared study topic; it does not numerically determine an account.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D04",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "Why can a balanced statement still contain measurement errors?"
+    ],
+    "conceptIds": [
+      "T04.10",
+      "T04.15"
+    ],
+    "limitations": "Recognition and measurement judgments require their own framework-specific lessons."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "Eventually trace a sequence of operating and financing events."
+    }
+  ],
+  "sources": [
+    {
+      "id": "ifrs-reading",
+      "title": "IFRS Foundation Accounting Standards Navigator",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/",
+      "role": "further-reading",
+      "supports": [],
+      "reviewedOn": null
+    }
+  ],
+  "review": {
+    "state": "draft",
+    "reviewer": null,
+    "reviewedOn": null,
+    "evidence": []
+  }
+}

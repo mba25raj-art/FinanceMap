@@ -17,3 +17,5 @@ The shorter format uses the explicitly labelled domain guide for wider analytica
 Run `npm run prepare:content` after changes. Review the compiled lesson, example, question, assumptions, and answer together. `npm run test:content` checks all 698 records, independent numerical answers, and rendered unanswered/correct/retry states. These checks do not replace financial editorial review or browser interaction testing.
 
 The original atlas remains the topology source. `lesson-coverage.json` records current website coverage; the atlas's historical authoring-status fields are not used as the site's current lesson status.
+
+Task 04.1 defines the next authoring contract in [the lesson standard](../../docs/lesson-standard.md), with a JSON template and non-published example in `content/standards/`. These packages are not consumed by the current compiler. Validate a populated package with `node scripts/lesson-standard.mjs PATH.json`; unfinished placeholders fail. Conversion begins with the receivables sample in 04.2 and is tracked separately from existing detailed introductory coverage. Do not mark the 698 pages converted or reviewed merely because this template exists.
