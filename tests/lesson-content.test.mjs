@@ -222,3 +222,46 @@ test('mystery solutions and worked lessons appear only after a valid attempt or 
 
   }finally{await server.close();delete globalThis.window;}
 });
+
+test('guided entry, case brief, resume and missing-run screens show honest next actions',async()=>{
+  globalThis.window={location:{hash:''}};
+  const {createServer}=await import('vite');
+  const {createElement}=await import('react');
+  const {renderToStaticMarkup}=await import('react-dom/server');
+  const {default:react}=await import('@vitejs/plugin-react');
+  const server=await createServer({configFile:false,plugins:[react()],server:{middlewareMode:true,hmr:false,watch:null},optimizeDeps:{noDiscovery:true,include:[]},appType:'custom'});
+  try{
+    const {App}=await server.ssrLoadModule('/src/App.jsx');
+    const {createLearningSession,learningSessionReducer:reduce}=await server.ssrLoadModule('/src/learning-session.js');
+    const {mystery}=await server.ssrLoadModule('/src/data/lessons.js');
+    const render=(view,session,extra={})=>renderToStaticMarkup(createElement(App,{initialRoute:{view,id:'A02',...extra},initialSession:session}));
+    const entry=render('atlas');
+    assert.ok(entry.includes('GUIDED BEGINNER ROUTE')&&entry.includes('FREE EXPLORATION'));
+    assert.ok(entry.includes('No account needed'));
+    assert.ok(!entry.includes('Resume cash mystery'));
+    const brief=render('brief');
+    assert.ok(brief.includes('Estimated 10–15 minutes'));
+    assert.ok(brief.includes('Before you begin')&&brief.includes('Start cash mystery'));
+    assert.ok(!brief.includes('₹7 lakh'));
+    const emptyLearning=render('learning');
+    assert.ok(emptyLearning.includes('<strong>0</strong><span>Concepts explored</span>'),'Entry visit counts as concept exploration');
+    let s=reduce(createLearningSession(),{type:'case-start',id:'P02',clues:mystery.steps.map(c=>({correct:c.correct,optionCount:c.options.length}))});
+    s=reduce(s,{type:'case-answer',run:0,step:0,choice:0});
+    s=reduce(s,{type:'case-answer',run:0,step:0,choice:1});
+    s=reduce(s,{type:'case-next',run:0,step:0});
+    s=reduce(s,{type:'case-hint',run:0,step:1});
+    for(const view of ['atlas','brief','missions','learning'])assert.ok(render(view,s).includes('Resume cash mystery'),view);
+    const resumed=render('missions',s,{journeyId:'P02',runIndex:0,id:'A08'});
+    assert.ok(resumed.includes('CASE CLUE 2 OF 3'));
+    assert.ok(resumed.includes('Hint revealed.'));
+    assert.ok(!resumed.includes('aria-pressed="true"'));
+    const missing=render('missions',undefined,{journeyId:'P02',runIndex:9});
+    assert.ok(missing.includes('This run is not available in this session'));
+    assert.ok(missing.includes('Start cash mystery')&&!missing.includes('CASE CLUE'));
+    const reference=render('trails',s,{journeyId:'P02',stop:0});
+    assert.ok(reference.includes('ATLAS READING TRAIL'));
+    assert.ok(reference.includes('STOP 1 OF 8'));
+    assert.ok(!reference.includes('CASE CLUE'));
+    const labs=render('labs');assert.equal((labs.match(/PLANNED LAB/g)||[]).length,3);
+  }finally{await server.close();delete globalThis.window;}
+});

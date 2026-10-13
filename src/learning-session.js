@@ -12,6 +12,7 @@ export function createLearningSession(initialAnswers = {}, lessons = {}) {
 
 const validChoice = (choice, count) => Number.isInteger(choice) && choice >= 0 && choice < count;
 export const activeCaseRun = state => state.runs[state.activeRun];
+export const unfinishedCaseRuns = state => state.runs.map((run,index)=>({run,index})).filter(({run})=>run.id==='P02'&&!run.complete);
 
 export function learningSessionReducer(state, action) {
   if (action.type === 'topic-answer') {
@@ -30,9 +31,14 @@ export function learningSessionReducer(state, action) {
     return { ...state, answers };
   }
   if (action.type === 'case-start') {
+    if (action.expectedRunCount !== undefined && action.expectedRunCount !== state.runs.length) return state;
     if (!action.id || !action.clues?.length || !action.clues.every(c => validChoice(c.correct, c.optionCount))) return state;
     const run = { id: action.id, clues: action.clues, step: 0, answers: {}, hints: {}, responses: {}, complete: false };
     return { ...state, runs: [...state.runs, run], activeRun: state.runs.length };
+  }
+  if (action.type === 'case-resume') {
+    if (!Number.isInteger(action.run) || !state.runs[action.run] || state.runs[action.run].id !== 'P02' || state.activeRun === action.run) return state;
+    return { ...state, activeRun: action.run };
   }
   const run = activeCaseRun(state);
   // Bind commands to the rendered run and clue. Rapid double-clicks cannot skip a clue.

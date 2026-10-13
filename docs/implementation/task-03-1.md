@@ -168,7 +168,7 @@ Design inventory checks passed against the latest draft source: four destination
 
 Only documentation and planned-navigation instructions change in this task. Runtime code, hosting files and curriculum records are unchanged. No build or runtime test is claimed for a documentation-only change. Browser route/resume behaviour is specified for verification in 03.2–03.3, not reported as implemented.
 
-The task tracker workbook update remains pending because the local execution connection became unavailable during the update. Its latest verified version is 3, with 02.3 complete and 03.1 ready. On recovery, mark Backlog row 16 Done with this document/PR as evidence, preserve all formulas and native features, recalculate, and confirm 03.2 becomes Ready.
+Task 03.2 includes the delayed tracker writeback for this design. Its entry/resume implementation and browser evidence are recorded in task-03-2.md. The focused full-lesson/return-context workspace remains in 03.3.
 
 ### Source records
 

@@ -44,9 +44,16 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 
 ## Planned navigation (Task 03.1)
 
-- Primary destinations are Atlas, Labs, Simulations and My learning. Follow docs/implementation/task-03-1.md and its route inventory during 03.2–03.3. The planned routes are not currently implemented.
+- Primary destinations are Atlas, Labs, Simulations and My learning. Task 03.2 implements entry/catalogue, statement/map/topic/source routes, reading trails and the P02 brief/run routes. The wider full-lesson and complete return-context workspace remain in 03.3. Follow docs/implementation/task-03-1.md and task-03-2.md for the implemented boundary.
 - Atlas holds statements, detailed lessons, maps, reading trails and sources. The playable P02 three-clue case belongs in Simulations. Preserve all 24 master journey IDs and ordered nodes. Distinguish P02 reference trail and playable case by activity kind.
 - Use the reconciled three-lab scope: customer collection, equipment investment and financing comparison. The longer Nila Homeware activity has its own proposed case ID so short-mystery completion cannot imply longer-case completion.
 - Preserve all six legacy hash views, stable concept IDs and financial versus learning relationships. Displayed relationships are not automatically calculated model dependencies.
 - Lesson detours carry validated originating activity/run context through concept links. Return and Resume open that existing run without calling new-start/replay. Keep unanswered-case full lessons behind explicit hint opt-in.
 - Keep Atlas explanations expanded. Enable labs and the longer case only after their planned implementation passes. Cross-session progress remains deferred until the save contract and persistence tasks pass.
+
+## Guided entry (Task 03.2)
+
+- The default entry offers a guided beginner route and free exploration without an account. Optional prerequisite lessons return to the mystery brief. Keep the brief spoiler-free and describe the objective, prerequisites and estimated 10–15 minute duration. This is a planning estimate awaiting learner-pilot verification.
+- Resume selects an existing P02 run without adding a run or resetting choices, first responses, hints or the current clue. My learning exposes every unfinished run. Only explicit Start/Replay creates a new run; stale duplicate start commands are rejected.
+- Keep the six old hash view entry points valid. Unknown or missing run links open the brief with recovery text instead of silently creating progress. Browser Back/Forward selects routes/current records without advancing clues.
+- Atlas entry alone does not count as exploring a concept. The three planned labs and the longer Nila case must stay labelled planned, with reference lessons available and no false playable actions.

@@ -422,10 +422,5 @@
     "contextPropagatesThroughConceptLinks": true,
     "financialEdgesAreNotAutomaticallyCalculated": true
   },
-  "trackerWriteback": {
-    "status": "pending-local-execution-recovery",
-    "expectedVersion": 3,
-    "taskRow": 16
-  },
   "sourceCommit": "ea219af22a3c81dbe8fe25dcd497cc03125c6a05"
 }

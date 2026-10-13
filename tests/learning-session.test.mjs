@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { createLearningSession, learningSessionReducer as reduce, activeCaseRun, learningCounts } from '../src/learning-session.js';
+import { createLearningSession, learningSessionReducer as reduce, activeCaseRun, learningCounts, unfinishedCaseRuns } from '../src/learning-session.js';
 import { mystery } from '../src/data/lessons.js';
 
 const start = state => reduce(state, { type: 'case-start', id: 'P02', clues: mystery.steps.map(c => ({ correct: c.correct, optionCount: c.options.length })) });
@@ -94,4 +94,23 @@ test('a fresh page session has no previous answers or case completions', () => {
     topicsAnswered: 0, topicsLatestCorrect: 0, topicsFirstCorrect: 0,
     cluesAnswered: 0, cluesLatestCorrect: 0, cluesFirstCorrect: 0, casesSolved: 0, completedRuns: 0,
   });
+});
+
+test('resume selects an existing unfinished run with its exact choices, hints, step and first responses',()=>{
+  let s=start(createLearningSession());
+  s=act(s,'case-answer',0);s=act(s,'case-hint');s=act(s,'case-answer',1);s=act(s,'case-next');s=act(s,'case-answer',0);
+  const original=activeCaseRun(s),counts=learningCounts(s);
+  s=start(s);
+  assert.equal(unfinishedCaseRuns(s).length,2);
+  s=reduce(s,{type:'case-resume',run:0});
+  assert.equal(activeCaseRun(s),original);assert.equal(s.runs.length,2);
+  assert.equal(activeCaseRun(s).step,1);assert.equal(activeCaseRun(s).answers[1],0);assert.equal(activeCaseRun(s).responses[0][0].choice,0);assert.equal(activeCaseRun(s).hints[0],true);
+  assert.equal(learningCounts(s).casesSolved,counts.casesSolved);
+  for(const run of [-1,2,'0',null])assert.equal(reduce(s,{type:'case-resume',run}),s);
+});
+
+test('stale duplicate start commands cannot create two runs',()=>{
+  const empty=createLearningSession();
+  const command={type:'case-start',id:'P02',expectedRunCount:0,clues:mystery.steps.map(c=>({correct:c.correct,optionCount:c.options.length}))};
+  const s=reduce(empty,command);assert.equal(s.runs.length,1);assert.equal(reduce(s,command),s);
 });
