@@ -1,3 +1,4 @@
+import { lessonPracticeReducer } from './lesson-practice.js';
 // Session-only records. Clearing a choice for practice never deletes a response.
 export function createLearningSession(initialAnswers = {}, lessons = {}) {
   let state = { answers: {}, topics: {}, runs: [], activeRun: -1, completedCases: [] };
@@ -15,6 +16,10 @@ export const activeCaseRun = state => state.runs[state.activeRun];
 export const unfinishedCaseRuns = state => state.runs.map((run,index)=>({run,index})).filter(({run})=>run.id==='P02'&&!run.complete);
 
 export function learningSessionReducer(state, action) {
+  if(action.type.startsWith('lesson-')){
+    const previous=state.lessonPractice||{},next=lessonPracticeReducer(previous,action);
+    return next===previous?state:{...state,lessonPractice:next};
+  }
   if (action.type === 'topic-answer') {
     if (!validChoice(action.choice, action.optionCount) || !validChoice(action.correct, action.optionCount)) return state;
     if (state.answers[action.id] === action.choice) return state;

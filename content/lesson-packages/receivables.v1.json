@@ -1,0 +1,583 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "A02",
+  "contentVersion": "1.0.0",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "Recognition and collection timing; gross and net trade receivables; credit-loss allowances; covered write-offs; ageing and cash-flow interpretation."
+    ],
+    "deferred": [
+      "Detailed framework-specific measurement, significant financing components, factoring, foreign currency, tax and impairment disclosures."
+    ]
+  },
+  "hoverDefinition": "Trade receivables are customer amounts due for recognised sales. They are claims to collect cash; a loss allowance reduces their net carrying amount.",
+  "objectives": [
+    {
+      "id": "recognise-collect",
+      "statement": "Separate recognising a qualifying credit sale from collecting an existing invoice.",
+      "evidence": "Predict cash, receivables and revenue movements without recording a second sale.",
+      "outcomeIds": [
+        "LO1"
+      ]
+    },
+    {
+      "id": "gross-net",
+      "statement": "Reconcile opening balances, credit sales, collections, write-offs and a closing allowance.",
+      "evidence": "Calculate gross and net receivables and distinguish them from customer receipts.",
+      "outcomeIds": [
+        "LO1",
+        "LO3"
+      ]
+    },
+    {
+      "id": "writeoff-cash",
+      "statement": "Explain a write-off already covered by an allowance.",
+      "evidence": "Trace gross receivables and allowance together; do not invent cash or a second loss.",
+      "outcomeIds": [
+        "LO1",
+        "LO2"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh"
+    ],
+    "timeframe": "Hypothetical teaching month: opening balances, transactions during the month and closing balances. Each practice scenario restarts independently.",
+    "assumptions": [
+      "Credit sales in each scenario qualify for recognition and create unconditional customer claims.",
+      "Ordinary short-term trade credit; no significant financing component, foreign-exchange movements, returns, discounts or tax.",
+      "Write-offs are fully covered by the stated allowance immediately before removal; there are no recoveries.",
+      "Costs of inventory sold, supplier payments and other business transactions are excluded from the receivables-only examples. These are not the full company accounts."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Simplified accrual teaching examples informed by IFRS 15 and IFRS 9 principles. Full recognition, measurement, presentation and disclosure depend on the governing framework, jurisdiction and period; the rates and balances here are fictional."
+    },
+    "abbreviations": [
+      {
+        "term": "ECL",
+        "definition": "Expected credit loss: an estimate of credit-related cash shortfalls, rather than cash collected."
+      },
+      {
+        "term": "DSO",
+        "definition": "Days sales outstanding: a collection-timing indicator calculated under a stated sales and day-count convention."
+      }
+    ]
+  },
+  "mechanism": [
+    {
+      "id": "recognition-collection",
+      "paragraphs": [
+        "A trade receivable begins with a customer claim arising from a qualifying sale on credit. Nila has supplied the promised goods under the scenario rules, recognises revenue and has an unconditional right to payment. Invoicing alone is not proof that revenue has been earned: first establish that the relevant recognition conditions are met. A claim still conditional on further performance is different from a receivable.",
+        "A receivable is not cash. If Nila records a qualifying sale of 10 on credit, receivables and revenue each rise by 10, but collection is zero at that moment. Related inventory cost and tax must be considered separately when calculating actual profit. When the customer later pays 5 against that existing claim, cash rises by 5 and gross receivables fall by 5. The payment does not recognise the same sale again.",
+        "Follow the event rather than the account label: delivery and recognition explain revenue; customer settlement explains receipts. A successful collection turns one asset into another. A receivable can support reported sales while the business still lacks money to pay suppliers."
+      ]
+    },
+    {
+      "id": "gross-net",
+      "paragraphs": [
+        "Gross receivables are the customer claims before the credit-loss allowance. The allowance estimates eligible credit shortfalls; it is a reduction of the asset carrying amount, not a cash reserve stored in a bank account. Net receivables = gross receivables − loss allowance.",
+        "For example, a separate Nila balance of gross receivables 30 with an allowance of 2 has a net carrying amount of 28. The company has not collected 28 merely because the balance sheet reports it. Actual receipts depend on customer payments. A larger allowance can lower net receivables even if gross unpaid invoices and cash have not moved.",
+        "Distinguish gross exposure, expected recoverability and timing. The same net balance can hide different combinations of unpaid invoices and loss estimates. Compare both balances and their movement schedules, rather than interpreting a stable net figure as stable customer quality."
+      ]
+    },
+    {
+      "id": "allowance-writeoff",
+      "paragraphs": [
+        "A credit-loss allowance is an estimate before final removal of a customer balance. Expected-credit-loss approaches consider possible shortfalls and relevant information about customers and conditions; the illustrative allowance in this lesson is supplied, not derived from an actual credit model. An ageing matrix is one way to organise balances and estimate losses, but old balances are not automatically worthless and current invoices are not automatically risk-free.",
+        "Increasing an allowance recognises an additional credit-loss charge under the teaching assumptions. It reduces net receivables and pre-tax earnings while generating no cash receipt. It is different from a collection, which reduces the customer claim because cash was actually paid.",
+        "A write-off removes all or part of a balance when recovery is no longer reasonably expected under the governing rules. In our covered-write-off examples, both gross receivables and the existing allowance fall by the same amount. Net receivables and cash are unchanged at that instant; the loss was already allowed for. If the prior allowance is insufficient, an additional loss may need recognising. Never assume every write-off has zero new earnings impact."
+      ]
+    },
+    {
+      "id": "cash-interpretation",
+      "paragraphs": [
+        "Reconcile closing gross receivables = opening gross receivables + recognised credit sales − collections − write-offs, plus any separately identified returns, reclassifications, currency effects or other movements. Those extra movements are zero in this lesson. Then deduct the closing allowance to obtain net receivables.",
+        "Receivable growth can reflect more sales, slower collections, different terms or a changed customer mix. To investigate, compare credit sales, collections, ageing, disputes, concentration and subsequent receipts. State whether an ageing bucket measures days since invoice or days overdue; those are different clocks. DSO should use an explicitly stated sales denominator and period convention.",
+        "A fall in net receivables caused by an allowance or write-off does not release customer cash. When bridging earnings to cash, use consistent gross/net movement and non-cash adjustment conventions. Do not add back a credit-loss expense and then deduct a net receivable change that already incorporates that expense without reconciling the components. Customer receipts are also different from whole-company operating cash flow and free cash flow."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "Trade versus other receivables",
+      "explanation": "Trade balances come from ordinary customer sales. Staff advances, tax claims or loans have different origins and may require different analysis.",
+      "whenItMatters": "Do not treat every amount receivable as customer revenue or apply one collection assumption to all claims."
+    },
+    {
+      "name": "Receivable versus contract asset",
+      "explanation": "A receivable is an unconditional right to consideration; a contract asset still depends on a condition beyond the passage of time.",
+      "whenItMatters": "Recognition and presentation depend on the contract and performance, not simply whether an invoice exists."
+    },
+    {
+      "name": "Gross versus net balance",
+      "explanation": "Gross shows claims before the loss allowance; net deducts that allowance. Neither is a cash-receipt total.",
+      "whenItMatters": "A smaller net balance can result from larger expected losses rather than better collections."
+    },
+    {
+      "name": "Current, overdue and disputed invoices",
+      "explanation": "These describe payment timing or collection issues. Ageing uses a stated due-date or invoice-date basis.",
+      "whenItMatters": "Assess evidence and customer circumstances; neither age nor current status alone proves recoverability."
+    },
+    {
+      "name": "Allowance versus write-off",
+      "explanation": "An allowance estimates losses; a write-off removes a claim from its gross carrying amount. A fully covered write-off uses the existing allowance.",
+      "whenItMatters": "Avoid recognising the same covered loss twice or describing either entry as a cash collection."
+    },
+    {
+      "name": "Invoice claim versus formal note",
+      "explanation": "A formal note can set out interest and repayment terms beyond ordinary open-account customer credit.",
+      "whenItMatters": "Significant financing and instrument measurement are deferred; short-term invoice assumptions cannot be applied indiscriminately."
+    }
+  ],
+  "workedExample": {
+    "id": "nila-month",
+    "scenarioId": "nila-worked-20-50-45-2-3",
+    "setup": "A worked example: Nila opens the teaching month with gross receivables 20 and an allowance of 2. It records qualifying credit sales 50, collects 45 and writes off 2 fully covered by the opening allowance. After that write-off, the required closing allowance is 3. All figures are INR lakh; all other receivable movements are zero.",
+    "inputs": [
+      {
+        "key": "openingGross",
+        "label": "Opening gross receivables",
+        "value": 20,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "openingAllowance",
+        "label": "Opening loss allowance",
+        "value": 2,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "creditSales",
+        "label": "Recognised credit sales",
+        "value": 50,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "collections",
+        "label": "Customer receipts",
+        "value": 45,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "writeoff",
+        "label": "Covered write-off",
+        "value": 2,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "closingAllowance",
+        "label": "Required closing allowance",
+        "value": 3,
+        "unit": "INR lakh"
+      }
+    ],
+    "steps": [
+      "Opening net receivables = 20 − 2 = 18.",
+      "Closing gross receivables = 20 + 50 − 45 − 2 = 23.",
+      "The covered write-off uses 2 of the opening allowance: 2 − 2 = 0 remains before remeasurement.",
+      "To finish with allowance 3, recognise a new credit-loss charge of 3: opening 2 + charge 3 − write-off 2 = closing 3.",
+      "Closing net receivables = gross 23 − allowance 3 = 20. Customer receipts are 45, not 20 or 23.",
+      "Receivables-only bridge: recognised revenue 50 − credit-loss charge 3 = subtotal 47. Net receivables increase from 18 to 20 by 2, so 47 − 2 = receipts 45. This excludes inventory costs and every other business movement."
+    ],
+    "result": "Gross 23; allowance 3; net 20; customer receipts 45; new credit-loss charge 3.",
+    "interpretation": "Net receivables rose only 2, but gross credit sales exceeded collections by 5. The non-cash loss explains the difference. Adding the charge 3 back to subtotal 47 while subtracting only net growth 2 would incorrectly give 48; reconcile gross movements and write-offs if using a separate non-cash add-back."
+  },
+  "statementEffects": {
+    "applicability": "direct",
+    "explanation": "Isolated receivables-side effects; costs of goods sold, tax and other business movements are excluded. The cash-flow label follows the teaching classification.",
+    "changes": [
+      "Qualifying credit sale 10: gross receivables +10 and revenue +10; no customer receipt at recognition.",
+      "Collection of an existing invoice 5: cash +5, gross receivables −5; no new revenue or collection expense.",
+      "Additional allowance 1: allowance +1, net receivables −1, credit-loss expense +1; no cash movement.",
+      "Fully covered write-off 2: gross receivables −2 and allowance −2; net balance and cash unchanged at that instant.",
+      "Actual customer collections are operating receipts in this example. A cash-flow reconciliation must distinguish those receipts from non-cash credit adjustments."
+    ]
+  },
+  "misconceptions": [
+    {
+      "id": "collection-revenue",
+      "claim": "Collecting an invoice creates the same revenue again.",
+      "correction": "The recognised sale already created the customer claim. Collection exchanges that claim for cash.",
+      "diagnostic": "Ask whether this is a new earned sale or payment against an existing balance."
+    },
+    {
+      "id": "net-is-cash",
+      "claim": "A lower net receivable balance proves better cash collection.",
+      "correction": "Loss estimates and write-offs can change accounting balances without receiving money.",
+      "diagnostic": "Find the actual receipts and reconcile gross balances and the allowance separately."
+    },
+    {
+      "id": "double-writeoff-loss",
+      "claim": "Every write-off immediately reduces net assets by its face amount again.",
+      "correction": "When already fully allowed for, reduce both gross receivables and the allowance. Check for any uncovered portion.",
+      "diagnostic": "Calculate the net balance immediately before and after the covered write-off."
+    },
+    {
+      "id": "net-growth-addback",
+      "claim": "Always add the loss expense back and subtract only the net receivable increase.",
+      "correction": "That combination can double count the non-cash effect. Reconcile net or gross movements consistently.",
+      "diagnostic": "Test the bridge against actual customer receipts."
+    }
+  ],
+  "practice": [
+    {
+      "id": "collect-predict",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "recognition-collection",
+      "scenarioId": "nila-practice-9-4",
+      "objectiveIds": [
+        "recognise-collect"
+      ],
+      "setup": "Separate Nila scenario: an existing recognised customer invoice is 9. The customer pays 4 against it. There is no new sale, loss, tax or other event.",
+      "inputs": [
+        {
+          "key": "openingInvoice",
+          "label": "Existing receivable",
+          "value": 9,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "collection",
+          "label": "Customer payment",
+          "value": 4,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "What changes when Nila receives this payment?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "new-sale",
+          "text": "Cash +4 and new revenue +4",
+          "feedback": "Cash does rise by 4, but revenue was already recognised. Recording it again counts the sale a second time.",
+          "misconceptionId": "collection-revenue"
+        },
+        {
+          "id": "exchange",
+          "text": "Cash +4, receivables −4, no new revenue",
+          "feedback": "The remaining claim is 9 − 4 = 5; cash replaces part of the receivable.",
+          "misconceptionId": null
+        },
+        {
+          "id": "nothing",
+          "text": "Cash and receivables both stay unchanged",
+          "feedback": "The payment is a real receipt: cash rises and the existing claim falls.",
+          "misconceptionId": "net-is-cash"
+        }
+      ],
+      "correctOptionId": "exchange",
+      "solution": "Cash rises by 4; gross receivables fall from 9 to 5; no new revenue arises. Total assets are unchanged by this collection alone.",
+      "hints": [
+        {
+          "text": "Separate actual customer money from accounting claims and loss estimates. Identify every affected balance.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Cash rises by 4; gross receivables fall from 9 to 5; no new revenue arises. Total assets are unchanged by this collection alone.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Explain the payment to the owner without calling it a new sale.",
+        "rubric": [
+          "Name the affected accounts.",
+          "Use the stated amounts and assumptions.",
+          "Explain whether any cash actually moved."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "gross-net-transfer",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "cash-interpretation",
+      "scenarioId": "nila-practice-18-30-24-1-2.5",
+      "objectiveIds": [
+        "gross-net"
+      ],
+      "setup": "Separate Nila month: opening gross 18 and allowance 2; credit sales 30; receipts 24; covered write-off 1; required closing allowance 2.5. No other movements.",
+      "inputs": [
+        {
+          "key": "openingGross",
+          "label": "Opening gross",
+          "value": 18,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "openingAllowance",
+          "label": "Opening allowance",
+          "value": 2,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "sales",
+          "label": "Credit sales",
+          "value": 30,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "receipts",
+          "label": "Customer receipts",
+          "value": 24,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "writeoff",
+          "label": "Covered write-off",
+          "value": 1,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "closingAllowance",
+          "label": "Required closing allowance",
+          "value": 2.5,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "Which combination gives closing gross receivables, closing net receivables and customer receipts?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "reconcile",
+          "text": "Gross 23; net 20.5; receipts 24",
+          "feedback": "Gross = 18 + 30 − 24 − 1 = 23; net = 23 − 2.5 = 20.5. Actual receipts remain 24.",
+          "misconceptionId": null
+        },
+        {
+          "id": "net-cash",
+          "text": "Gross 23; net 20.5; receipts 20.5",
+          "feedback": "The accounting balances are right, but the net asset is not the amount collected. Receipts are given as 24.",
+          "misconceptionId": "net-is-cash"
+        },
+        {
+          "id": "loss-twice",
+          "text": "Gross 23; net 19.5; receipts 24",
+          "feedback": "The write-off is already deducted in gross 23. Deducting it again after the closing allowance counts that removal twice.",
+          "misconceptionId": "double-writeoff-loss"
+        }
+      ],
+      "correctOptionId": "reconcile",
+      "solution": "Closing gross = 18 + 30 − 24 − 1 = 23; closing net = 23 − 2.5 = 20.5; receipts = 24. Allowance charge = 2.5 − (2 − 1) = 1.5 under the covered-write-off assumptions.",
+      "hints": [
+        {
+          "text": "Separate actual customer money from accounting claims and loss estimates. Identify every affected balance.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Closing gross = 18 + 30 − 24 − 1 = 23; closing net = 23 − 2.5 = 20.5; receipts = 24. Allowance charge = 2.5 − (2 − 1) = 1.5 under the covered-write-off assumptions.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Which part of the movement reflects cash and which part reflects an estimate?",
+        "rubric": [
+          "Name the affected accounts.",
+          "Use the stated amounts and assumptions.",
+          "Explain whether any cash actually moved."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "writeoff-transfer",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "allowance-writeoff",
+      "scenarioId": "nila-practice-writeoff-16-3-2",
+      "objectiveIds": [
+        "writeoff-cash"
+      ],
+      "setup": "Separate Nila balance immediately before a write-off: gross receivables 16 and allowance 3. Write off 2 already fully covered by that allowance. No other transaction or receipt occurs.",
+      "inputs": [
+        {
+          "key": "gross",
+          "label": "Gross before write-off",
+          "value": 16,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "allowance",
+          "label": "Allowance before write-off",
+          "value": 3,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "writeoff",
+          "label": "Covered write-off",
+          "value": 2,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "Which statement is correct immediately after the covered write-off?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "covered",
+          "text": "Gross 14; allowance 1; net 13; no cash receipt",
+          "feedback": "Both gross and allowance fall by 2; net remains 14 − 1 = 13.",
+          "misconceptionId": null
+        },
+        {
+          "id": "second-loss",
+          "text": "Gross 14; allowance 3; net 11; no cash receipt",
+          "feedback": "Leaving the full allowance in place counts the covered loss twice. Reduce the allowance used by the write-off.",
+          "misconceptionId": "double-writeoff-loss"
+        },
+        {
+          "id": "invent-cash",
+          "text": "Net 13 and cash increases by 2",
+          "feedback": "The net balance is right, but removing a claim does not mean the customer paid 2.",
+          "misconceptionId": "net-is-cash"
+        }
+      ],
+      "correctOptionId": "covered",
+      "solution": "Before: net 16 − 3 = 13. After: gross 16 − 2 = 14 and allowance 3 − 2 = 1; net stays 13. No receipt and no additional loss are assumed because the write-off was fully covered.",
+      "hints": [
+        {
+          "text": "Separate actual customer money from accounting claims and loss estimates. Identify every affected balance.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Before: net 16 − 3 = 13. After: gross 16 − 2 = 14 and allowance 3 − 2 = 1; net stays 13. No receipt and no additional loss are assumed because the write-off was fully covered.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "What would you need to check before assuming the write-off creates no additional expense?",
+        "rubric": [
+          "Name the affected accounts.",
+          "Use the stated amounts and assumptions.",
+          "Explain whether any cash actually moved."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E2109",
+      "to": "T06.04",
+      "kind": "learning",
+      "purpose": "Atomic concept within this original grouped topic.",
+      "conditions": "Preserves the original inventory while enabling more precise navigation.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2135",
+      "to": "T04.05",
+      "kind": "financial",
+      "purpose": "Accrual accounting permits revenue and customer receivables before collection.",
+      "conditions": "Recognition criteria must first be met.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2136",
+      "to": "A01",
+      "kind": "financial",
+      "purpose": "A qualifying sale on credit records revenue and a customer receivable.",
+      "conditions": "A cash sale does not create an outstanding receivable.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2137",
+      "to": "A05",
+      "kind": "financial",
+      "purpose": "Operating receivables are one component of operating working capital.",
+      "conditions": "Exclude non-operating receivables when defining the operating perimeter.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2141",
+      "to": "T14.03",
+      "kind": "financial",
+      "purpose": "Receivable days relate customer balances to a consistent credit-sales denominator.",
+      "conditions": "Use average balances and matched periods when available.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D06",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "How do returns, discounts, significant financing, foreign currency and factoring change the roll-forward?",
+      "What evidence supports the allowance, and how do policy changes affect comparisons?"
+    ],
+    "conceptIds": [
+      "T06.04",
+      "A05",
+      "A06",
+      "T14.03"
+    ],
+    "limitations": "This introductory sample does not teach a complete reporting framework, credit-risk estimation model or factoring/derecognition analysis."
+  },
+  "activityLinks": [
+    {
+      "id": "P02",
+      "kind": "case",
+      "availability": "available",
+      "purpose": "Apply customer cash timing in the three-clue cash mystery."
+    },
+    {
+      "id": "LAB-COLLECTIONS",
+      "kind": "lab",
+      "availability": "planned",
+      "purpose": "Future customer-collection lab; supporting concepts are available now."
+    }
+  ],
+  "sources": [
+    {
+      "id": "revenue",
+      "title": "IFRS Foundation: IFRS 15 overview",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/ifrs-15-revenue-from-contracts-with-customers/",
+      "role": "primary-support",
+      "supports": [
+        "Recognition of revenue when promised goods or services transfer."
+      ],
+      "reviewedOn": "2026-10-14"
+    },
+    {
+      "id": "claims",
+      "title": "IFRS Interpretations Committee staff paper, March 2019: IFRS 15 paragraph 108 and contract-asset distinction (page 12)",
+      "url": "https://www.ifrs.org/-/media/feature/meetings/2019/march/ifric/ap3-ias-23-over-time-transfer-of-constructed-good.pdf",
+      "role": "primary-support",
+      "supports": [
+        "Unconditional customer right versus a condition beyond the passage of time."
+      ],
+      "reviewedOn": "2026-10-14"
+    },
+    {
+      "id": "credit",
+      "title": "IASB IFRS 9 impairment review background, May 2023: pages 23 and 26",
+      "url": "https://www.ifrs.org/content/dam/ifrs/project/pir-9-impairment/rfi-iasb-2023-1-ifrs9-impairment.pdf",
+      "role": "primary-support",
+      "supports": [
+        "Expected-credit-loss background and removal when recovery is no longer reasonably expected. This review document is background, not the complete governing standard."
+      ],
+      "reviewedOn": "2026-10-14"
+    }
+  ],
+  "review": {
+    "state": "draft",
+    "reviewer": null,
+    "reviewedOn": null,
+    "evidence": [
+      "Primary-source background checked 14 October 2026; examples independently reconciled by calculation tests. Sample awaits learner/content-density review before batch conversion."
+    ]
+  }
+}

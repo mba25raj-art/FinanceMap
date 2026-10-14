@@ -4,7 +4,7 @@ Task 04.1 · 13 October 2026 · Authoring specification
 
 Every lesson should help a learner explain an idea, distinguish its forms, use it with stated data and follow a meaningful connection. A short hover definition is an entry point. It never substitutes for the full explanation.
 
-This standard is the contract for the next authoring tasks. The reference site already has detailed introductory material for 698 IDs. Those pages have not yet been converted to this new practice structure. The JSON packages in `content/standards/` are authoring examples, not published lesson records. Task 04.2 applies the standard to receivables; 04.3 builds the coverage register; 04.4 converts the selected case concepts.
+This standard is the contract for the next authoring tasks. The reference site already has detailed introductory material for 698 IDs. The receivables sample (A02 and its grouped page T06.04) is now integrated from `content/lesson-packages/receivables.v1.json`; the other pages retain their existing format. The JSON packages in `content/standards/` remain non-published authoring examples. Task 04.2 applies the standard to receivables; 04.3 builds the coverage register; 04.4 converts the selected case concepts.
 
 ## 1. What the learner sees
 
@@ -93,7 +93,7 @@ Before marking a lesson reviewed, verify: (1) declared mechanism and distinction
 
 ## 7. Existing content and next handoff
 
-The existing `.lesson`, `.deep`, quiz prompt and feedback files remain the current renderer's inputs. Their summary maps to hover, deep explanations to mechanism, categories to distinctions, worked-case fields to example, and traps/option feedback to misconceptions. New objectives, explicit reporting metadata, interleaved checkpoints, transfer variants and editorial evidence require authoring during conversion. The legacy compiler must not label all 698 pages converted merely because it can populate some fields.
+The existing `.lesson`, `.deep`, quiz prompt and feedback files remain the general renderer's inputs. Receivables is the first explicit package override, validated during content preparation; it retains the legacy topic quiz and separately labelled domain guidance. Their summary maps to hover, deep explanations to mechanism, categories to distinctions, worked-case fields to example, and traps/option feedback to misconceptions. New objectives, explicit reporting metadata, interleaved checkpoints, transfer variants and editorial evidence require authoring during conversion. The legacy compiler must not label all 698 pages converted merely because it can populate some fields.
 
 Task 04.1 is complete as an authoring contract. Next, 04.2 should produce the receivables sample covering recognition, gross/net balances, collections, allowances and write-offs, using a consistent fictional business and embedded practice. Review that sample's depth and density before the five-concept batches in 04.4. The coverage register, persistence and financial model remain their own tasks.
 

@@ -4,12 +4,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "prepare:content": "node scripts/prepare-content.mjs && node scripts/prepare-lessons.mjs",
+    "prepare:content": "node scripts/prepare-content.mjs && node scripts/prepare-lessons.mjs && node scripts/lesson-standard.mjs content/lesson-packages/receivables.v1.json",
     "dev": "vite",
     "build": "npm run prepare:content && vite build && node scripts/prepare-sites-build.mjs",
     "preview": "vite preview",
     "test:sites": "node --test tests/sites-worker.test.mjs",
-    "test:content": "node --test tests/lesson-content.test.mjs tests/learning-session.test.mjs tests/routes.test.mjs tests/activity-context.test.mjs tests/lesson-standard.test.mjs",
+    "test:content": "node --test tests/lesson-content.test.mjs tests/learning-session.test.mjs tests/routes.test.mjs tests/activity-context.test.mjs tests/lesson-standard.test.mjs tests/receivables-lesson.test.mjs",
     "test:lesson-standard": "node --test tests/lesson-standard.test.mjs",
     "predev": "npm run prepare:content",
     "pretest:content": "npm run prepare:content"
