@@ -1,0 +1,394 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "T03.12",
+  "contentVersion": "1.0.0",
+  "hoverDefinition": "Net present value brings all incremental project cash flows to today and nets the investment. A positive result estimates value above the supplied required return under the stated assumptions.",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "Time-zero investment, dated incremental cash, discount factors, positive/zero/negative NPV and assumption limits."
+    ],
+    "deferred": [
+      "Capital rationing, unequal-life replacements, real options, probabilistic project risk and full rate estimation are deferred."
+    ]
+  },
+  "objectives": [
+    {
+      "id": "npv",
+      "statement": "Calculate and interpret project NPV at a supplied required return.",
+      "evidence": "Discount the correct cash date and distinguish return of capital from value above the required return.",
+      "outcomeIds": [
+        "LO5"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh",
+      "fraction"
+    ],
+    "timeframe": "Independent fictional teaching scenarios. Worked examples and practice start separately; they are not consecutive company-case rounds.",
+    "assumptions": [
+      "Cash flows are incremental and complete under the scenario, with all terminal proceeds already included where stated.",
+      "Required returns are hypothetical effective annual rates; receipts occur at year ends and investment now.",
+      "No tax, inflation, financing cash or unmentioned terminal value."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Conceptual teaching assumptions, with INR lakh as a unit rather than a jurisdiction. No tax rate, financing term, reporting classification, valuation input or management buffer is a current rule or market recommendation. Applicable framework, jurisdiction, reporting period and effective amendments require separate study."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "timeline",
+      "title": "Prepare the incremental timeline first",
+      "paragraphs": [
+        "Define the with-versus-without project cash flows, including initial investment, operating changes, working capital and terminal receipts when relevant. Keep sunk costs and unchanged allocations out. Use each cash flow once at its stated date.",
+        "NPV = sum of CF_t/(1+r)^t, including time-zero CF_0 with exponent zero. A negative initial investment is already a negative cash flow; do not subtract it twice."
+      ]
+    },
+    {
+      "id": "calculate",
+      "title": "Discount before netting",
+      "paragraphs": [
+        "At a positive required return, future receipts have lower current value. Calculate each factor from its date and retain precision through the sum. An undiscounted surplus is not NPV and can give a different decision.",
+        "Positive NPV means the modelled cash exceeds what is needed to earn the supplied required return. Zero means it earns that required return under the model, not that the project produces no cash or accounting profit."
+      ]
+    },
+    {
+      "id": "interpret",
+      "title": "Read the result with its assumptions",
+      "paragraphs": [
+        "For an independent unconstrained project, positive NPV supports acceptance under the stated objective and assumptions. Negative NPV indicates the supplied cash does not meet that return. Neither is proof that a forecast will occur.",
+        "Compare consistent horizons, risks, currencies and cash definitions. Test forecast and timing uncertainty, financing feasibility and constraints separately. A positive NPV does not make a payment schedule affordable."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "NPV and undiscounted surplus",
+      "explanation": "NPV prices the timing/required-return assumption; a nominal sum does not.",
+      "whenItMatters": "Time matters even when total receipts exceed cost."
+    },
+    {
+      "name": "Zero NPV and zero return",
+      "explanation": "Zero NPV can still pay the full required return.",
+      "whenItMatters": "Do not confuse incremental value with all project earnings."
+    },
+    {
+      "name": "Economic attractiveness and liquidity",
+      "explanation": "A valuable future stream can still require immediate funding.",
+      "whenItMatters": "Use a dated cash forecast as well as NPV."
+    }
+  ],
+  "workedExample": {
+    "id": "npv-two-year",
+    "scenarioId": "npv-two-year-worked",
+    "setup": "Pay 50 now. Receive incremental cash 30 at Year 1 end and 33 at Year 2 end, with all project receipts and terminal amounts included. Required effective annual return is 10%. No further cash occurs.",
+    "inputs": [
+      {
+        "key": "investment",
+        "label": "Investment",
+        "value": 50,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "year1",
+        "label": "Year1",
+        "value": 30,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "year2",
+        "label": "Year2",
+        "value": 33,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "rate",
+        "label": "Required annual return",
+        "value": 0.1,
+        "unit": "fraction"
+      }
+    ],
+    "steps": [
+      "Time zero is −50 and is not discounted further.",
+      "Year 1 PV = 30/1.10 = 27.272727...",
+      "Year 2 PV = 33/1.10² = 27.272727...",
+      "Total receipt PV = 54.545454...; NPV = −50 + 54.545454... = 4.545454...",
+      "Display NPV 4.55 after summing unrounded values. Undiscounted surplus is 13, a different measure.",
+      "The positive result supports the investment only under these cash, risk/return and independence assumptions."
+    ],
+    "result": "NPV +4.55 at the supplied 10% return.",
+    "interpretation": "This is estimated value above the required return, not cash already earned or available today."
+  },
+  "statementEffects": {
+    "applicability": "not-applicable",
+    "explanation": "Effects under the stated simplified scenario. Forecasts and economic values do not themselves create accounting entries.",
+    "changes": []
+  },
+  "misconceptions": [
+    {
+      "id": "nominal",
+      "claim": "Use total nominal receipts less cost as NPV.",
+      "correction": "Discount each future receipt first.",
+      "diagnostic": "Have all values been moved to today?"
+    },
+    {
+      "id": "date",
+      "claim": "Discount every receipt by one year regardless of its date.",
+      "correction": "Use the actual number of periods.",
+      "diagnostic": "When is the receipt due?"
+    },
+    {
+      "id": "zero",
+      "claim": "Zero NPV means no return at all.",
+      "correction": "It can mean the project exactly earns the assumed required return.",
+      "diagnostic": "Which return is already embedded in the discount factor?"
+    }
+  ],
+  "practice": [
+    {
+      "id": "npv-predict",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "calculate",
+      "scenarioId": "npv-predict-independent",
+      "objectiveIds": [
+        "npv"
+      ],
+      "setup": "Independent project: pay 24 now and receive 14 at each of Years 1 and 2 ends. The effective annual required return is 10%. All cash is included; no other terminal receipt occurs.",
+      "inputs": [
+        {
+          "key": "investment",
+          "label": "Investment",
+          "value": 24,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "year1",
+          "label": "Year1",
+          "value": 14,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "year2",
+          "label": "Year2",
+          "value": 14,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "rate",
+          "label": "Required annual return",
+          "value": 0.1,
+          "unit": "fraction"
+        }
+      ],
+      "question": "What NPV follows, rounded to two decimals?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "+4.00",
+          "feedback": "4 is the undiscounted surplus.",
+          "misconceptionId": "nominal"
+        },
+        {
+          "id": "correct",
+          "text": "+0.30",
+          "feedback": "NPV = −24 + 14/1.1 + 14/1.1² = 0.297520..., displayed +0.30.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "+1.45",
+          "feedback": "This discounts both receipts as if they arrive at Year 1 end.",
+          "misconceptionId": "date"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "NPV = −24 + 14/1.1 + 14/1.1² = 0.297520..., displayed +0.30.",
+      "hints": [
+        {
+          "text": "Treat the two identical receipts as two different dates.",
+          "answerRevealing": false
+        },
+        {
+          "text": "NPV = −24 + 14/1.1 + 14/1.1² = 0.297520..., displayed +0.30.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Why is the positive result much smaller than the nominal surplus?",
+        "rubric": [
+          "Use exponents 1 and 2.",
+          "Subtract the initial 24 once.",
+          "Retain precision through the sum."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "npv-transfer-zero",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "interpret",
+      "scenarioId": "npv-transfer-zero-independent",
+      "objectiveIds": [
+        "npv"
+      ],
+      "setup": "Independent project: pay 40 now; receive nothing in Year 1 and 57.6 at Year 2 end. The effective annual required return is 20%. The final receipt includes every terminal amount.",
+      "inputs": [
+        {
+          "key": "investment",
+          "label": "Investment",
+          "value": 40,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "year1",
+          "label": "Year1",
+          "value": 0,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "year2",
+          "label": "Year2",
+          "value": 57.6,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "rate",
+          "label": "Required annual return",
+          "value": 0.2,
+          "unit": "fraction"
+        }
+      ],
+      "question": "What NPV and interpretation follow?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "NPV 17.6; this is value above the required return",
+          "feedback": "17.6 ignores discounting.",
+          "misconceptionId": "nominal"
+        },
+        {
+          "id": "correct",
+          "text": "NPV 0; the project exactly earns the stated required return",
+          "feedback": "PV = 57.6/1.2² = 40; NPV = 0. Compounding the invested 40 at 20% for two years produces 57.6.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "NPV 0; the project earns no return",
+          "feedback": "The required 20% is already reflected in the discount factor.",
+          "misconceptionId": "zero"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "PV = 57.6/1.2² = 40; NPV = 0. Compounding the invested 40 at 20% for two years produces 57.6.",
+      "hints": [
+        {
+          "text": "Check the final receipt against two years of compounding.",
+          "answerRevealing": false
+        },
+        {
+          "text": "PV = 57.6/1.2² = 40; NPV = 0. Compounding the invested 40 at 20% for two years produces 57.6.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "How can zero NPV coexist with a larger final cash receipt?",
+        "rubric": [
+          "Identify the embedded required return.",
+          "Use two periods.",
+          "Keep zero incremental value distinct from zero cash return."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E0124",
+      "to": "T03.13",
+      "kind": "learning",
+      "purpose": "Study these together to compare amounts received or paid at different times on a consistent basis.",
+      "conditions": "A topical exploration link, not a claim that one determines the other.",
+      "computed": false
+    },
+    {
+      "edgeId": "E0125",
+      "to": "T02.03",
+      "kind": "learning",
+      "purpose": "Suggested starting knowledge: Simple interest and compound interest. It helps you compare amounts received or paid at different times on a consistent basis.",
+      "conditions": "Suggested learning order; learners can still explore freely.",
+      "computed": false
+    },
+    {
+      "edgeId": "E0127",
+      "to": "T03.13",
+      "kind": "learning",
+      "purpose": "Study these together to compare amounts received or paid at different times on a consistent basis.",
+      "conditions": "A topical exploration link, not a claim that one determines the other.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D03",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "How would delayed receipts or a changed risk profile alter the decision?",
+      "What constraints could prevent acceptance despite positive NPV?"
+    ],
+    "conceptIds": [
+      "T03.13",
+      "T02.03",
+      "T03.13"
+    ],
+    "limitations": "Introductory study coverage. Capital rationing, unequal-life replacements, real options, probabilistic project risk and full rate estimation are deferred."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "The connected six-round case remains a separate implementation task; these examples do not imply playable rounds."
+    }
+  ],
+  "sources": [
+    {
+      "id": "appraisal",
+      "title": "ACCA: Investment appraisal",
+      "url": "https://www.accaglobal.com/gb/en/student/exam-support-resources/prodipsust-study-resources/technical-articles/investment-appraisal.html",
+      "supports": [
+        "Background on dated incremental cash flows and NPV. Scenario inputs, discount rates and all calculations are authored assumptions, not investment recommendations."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "method": "ai-content-source-arithmetic",
+    "evidence": [
+      "B5 topic mechanics, terminology, signs, timing, source boundaries and feedback reviewed in docs/implementation/task-04-4-b5.md.",
+      "Independent worked and assessment calculations checked in tests/b5-lessons.test.mjs; shared route, version, hint and retry regressions also apply.",
+      "Scoped AI content review, not independent professional approval, interactive browser verification or learner-pilot evidence."
+    ]
+  }
+}

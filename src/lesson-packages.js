@@ -22,8 +22,19 @@ import b4_2 from '../content/lesson-packages/ebit.v1.json' with { type: 'json' }
 import b4_3 from '../content/lesson-packages/nopat.v1.json' with { type: 'json' };
 import b4_4 from '../content/lesson-packages/incremental-cash-flows.v1.json' with { type: 'json' };
 
+import b5_0 from '../content/lesson-packages/present-future-value.v1.json' with { type: 'json' };
+import b5_1 from '../content/lesson-packages/net-present-value.v1.json' with { type: 'json' };
+import b5_2 from '../content/lesson-packages/fcff.v1.json' with { type: 'json' };
+import b5_3 from '../content/lesson-packages/wacc.v1.json' with { type: 'json' };
+import b5_4 from '../content/lesson-packages/discounted-cash-flow.v1.json' with { type: 'json' };
+
 export { receivables };
 const imported = new Map([
+  ['content/lesson-packages/present-future-value.v1.json', b5_0],
+  ['content/lesson-packages/net-present-value.v1.json', b5_1],
+  ['content/lesson-packages/fcff.v1.json', b5_2],
+  ['content/lesson-packages/wacc.v1.json', b5_3],
+  ['content/lesson-packages/discounted-cash-flow.v1.json', b5_4],
   ['content/lesson-packages/capital-expenditure.v1.json', b4_0],
   ['content/lesson-packages/depreciation.v1.json', b4_1],
   ['content/lesson-packages/ebit.v1.json', b4_2],

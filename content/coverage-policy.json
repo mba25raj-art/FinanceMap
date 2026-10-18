@@ -143,6 +143,41 @@
         "T12.05"
       ],
       "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b4-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/present-future-value.v1.json",
+      "renderedConceptIds": [
+        "T03.01"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b5-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/net-present-value.v1.json",
+      "renderedConceptIds": [
+        "T03.12"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b5-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/fcff.v1.json",
+      "renderedConceptIds": [
+        "A11"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b5-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/wacc.v1.json",
+      "renderedConceptIds": [
+        "A13"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b5-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/discounted-cash-flow.v1.json",
+      "renderedConceptIds": [
+        "A19"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b5-lessons.test.mjs"
     }
   ],
   "legacyReviews": {},
