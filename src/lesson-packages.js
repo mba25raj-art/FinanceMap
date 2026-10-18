@@ -3,6 +3,11 @@ import equation from '../content/lesson-packages/accounting-equation.v1.json' wi
 import accrual from '../content/lesson-packages/cash-accrual.v1.json' with { type: 'json' };
 import cash from '../content/lesson-packages/cash-equivalents.v1.json' with { type: 'json' };
 import revenue from '../content/lesson-packages/revenue-recognition.v1.json' with { type: 'json' };
+import inventory from '../content/lesson-packages/inventory.v1.json' with { type: 'json' };
+import payables from '../content/lesson-packages/trade-payables.v1.json' with { type: 'json' };
+import workingCapital from '../content/lesson-packages/operating-working-capital.v1.json' with { type: 'json' };
+import operatingCash from '../content/lesson-packages/operating-cash-flow.v1.json' with { type: 'json' };
+import transactions from '../content/lesson-packages/three-statement-transactions.v1.json' with { type: 'json' };
 import policy from '../content/coverage-policy.json' with { type: 'json' };
 
 export { receivables };
@@ -12,6 +17,11 @@ const imported = new Map([
   ['content/lesson-packages/cash-equivalents.v1.json', cash],
   ['content/lesson-packages/revenue-recognition.v1.json', revenue],
   ['content/lesson-packages/receivables.v1.json', receivables],
+  ['content/lesson-packages/inventory.v1.json', inventory],
+  ['content/lesson-packages/trade-payables.v1.json', payables],
+  ['content/lesson-packages/operating-working-capital.v1.json', workingCapital],
+  ['content/lesson-packages/operating-cash-flow.v1.json', operatingCash],
+  ['content/lesson-packages/three-statement-transactions.v1.json', transactions],
 ]);
 export const lessonPackages = policy.packages.map(entry => {
   const lesson = imported.get(entry.file);

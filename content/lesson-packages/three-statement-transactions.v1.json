@@ -1,0 +1,470 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "T07.14",
+  "contentVersion": "1.0.0",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "Transaction-by-transaction effects of borrowing, equipment, supplier credit, credit sales, collection, settlement and depreciation; retained profit and the cash reconciliation."
+    ],
+    "deferred": [
+      "A reusable financial-model engine, full tax/lease/disposal mechanics, distributions, foreign exchange, consolidation and framework-specific disclosure presentation are deferred."
+    ]
+  },
+  "hoverDefinition": "Trace each transaction through recognised income, closing assets and obligations, and classified cash flows. Some events touch only the balance sheet immediately; all three statements must still reconcile.",
+  "objectives": [
+    {
+      "id": "trace",
+      "statement": "Trace credit sales and settlements without repeating income or expense.",
+      "evidence": "Balance asset changes against liabilities and equity while reconciling operating cash.",
+      "outcomeIds": [
+        "LO1",
+        "LO2"
+      ]
+    },
+    {
+      "id": "link",
+      "statement": "Connect profit, cash-flow categories and closing balances.",
+      "evidence": "Reconcile a complete simplified month and an independent investment/funding scenario.",
+      "outcomeIds": [
+        "LO1",
+        "LO2"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh"
+    ],
+    "timeframe": "A separate illustrative teaching month. Worked and practice scenarios start independently; they are not consecutive company-case rounds.",
+    "assumptions": [
+      "All named sales qualify for immediate revenue recognition; cost sold is assigned and supplied.",
+      "Ordinary customer/supplier cash is operating, cash equipment purchase investing and loan principal receipt financing for these conceptual scenarios.",
+      "Depreciation amounts are given; no inference about useful lives or framework compliance is required.",
+      "No tax, interest, dividends, leases, valuation changes, other balances or transactions exist unless stated. Profit changes equity with no owner distribution."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Simplified conceptual teaching scenarios in INR lakh; currency does not establish jurisdiction. Recognition, operating perimeter and cash classifications are stated assumptions. Primary public IFRS overviews provide background, not a claim of compliance. Jurisdiction, reporting period, effective amendments and complete disclosure requirements require separate study."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "event",
+      "title": "Record the economic event before reading totals",
+      "paragraphs": [
+        "For each event ask: what resource or obligation changed, did recognised income or expense arise, and did cash move? Double entry keeps assets equal to liabilities plus equity. The income statement measures performance over the period; the balance sheet shows accumulated balances at a date; the cash-flow statement explains the cash movement over that same period.",
+        "A credit purchase can affect inventory and payables without profit or cash. A credit sale can affect revenue, receivables, inventory cost and equity without a receipt. A single transaction need not have an immediate entry in all three statements."
+      ]
+    },
+    {
+      "id": "sale-settlement",
+      "title": "Separate the sale from later settlement",
+      "paragraphs": [
+        "A qualifying credit sale adds revenue and receivables at the selling price, and removes inventory into cost sold at its carrying cost. Its profit increases equity. Later collection swaps the receivable for cash; it does not earn the revenue again.",
+        "Supplier settlement swaps cash for a lower payable. It does not repeat the inventory purchase or cost sold. Under the simple operating assumptions, the indirect cash adjustments reverse the sale’s unpaid portion and connect expense to actual settlement."
+      ]
+    },
+    {
+      "id": "investment-funding",
+      "title": "Keep investment and funding separate from performance",
+      "paragraphs": [
+        "Borrowing adds cash and debt, without revenue. Buying equipment for cash exchanges one asset for another, without an immediate expense in these assumptions. Depreciation later reduces equipment’s net carrying value and profit without a current payment.",
+        "The stated loan receipt is financing cash and the equipment payment investing cash. Depreciation is reversed in the operating reconciliation because it reduced profit without current cash. It is not a second funding receipt."
+      ]
+    },
+    {
+      "id": "controls",
+      "title": "Close with three connected controls",
+      "paragraphs": [
+        "First reconcile each account roll-forward and assets = liabilities + equity. Then reconcile opening equity + profit − distributions + contributions to closing equity; this lesson has no distributions or contributions. Finally reconcile opening cash + operating + investing + financing cash to closing cash.",
+        "A balanced balance sheet alone cannot prove every account or classification is correct. Missing equal entries can still balance. Check the source events, cost/price distinction, period and cash categories, and independently total actual receipts and payments."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "Flow statement and closing stock",
+      "explanation": "Income and cash-flow statements cover a period; the balance sheet is dated.",
+      "whenItMatters": "Use the same opening/closing dates when joining them."
+    },
+    {
+      "name": "Revenue and borrowing",
+      "explanation": "Both can be associated with cash, but borrowing creates a repayment obligation rather than earned income.",
+      "whenItMatters": "Do not inflate profit with loan proceeds."
+    },
+    {
+      "name": "Equipment purchase and depreciation",
+      "explanation": "The payment acquires an asset; depreciation allocates a stated expense without a current payment.",
+      "whenItMatters": "Classify investment cash separately from the operating reconciliation."
+    },
+    {
+      "name": "Balance check and complete evidence",
+      "explanation": "Equal sides are a necessary control, not proof that every event was recognised correctly.",
+      "whenItMatters": "Also reconcile source events and cash independently."
+    }
+  ],
+  "workedExample": {
+    "id": "three-statement-month",
+    "scenarioId": "ts-worked-60-20-25-18-12-30-16-22-9-3",
+    "setup": "Open with cash 60 and inventory 20, funded by equity 80; no liabilities. Receive loan principal 25. Buy equipment for 18 cash and stock 12 on ordinary supplier credit. Recognise a credit sale of 30 with assigned inventory cost 16. Collect 22 from that customer, pay suppliers 9 and record given equipment depreciation 3. These are the only events.",
+    "inputs": [
+      {
+        "key": "openingCash",
+        "label": "Opening cash",
+        "value": 60,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "openingInventory",
+        "label": "Opening inventory",
+        "value": 20,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "loan",
+        "label": "Loan principal received",
+        "value": 25,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "equipment",
+        "label": "Equipment paid for",
+        "value": 18,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "creditPurchase",
+        "label": "Inventory received on credit",
+        "value": 12,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "sales",
+        "label": "Recognised credit sales",
+        "value": 30,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "costSold",
+        "label": "Assigned cost sold",
+        "value": 16,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "collections",
+        "label": "Customer collection",
+        "value": 22,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "supplierPayment",
+        "label": "Supplier settlement",
+        "value": 9,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "depreciation",
+        "label": "Given depreciation",
+        "value": 3,
+        "unit": "INR lakh"
+      }
+    ],
+    "steps": [
+      "Loan: cash +25 and debt +25; no profit; financing cash +25.",
+      "Equipment purchase: cash −18 and equipment +18; no immediate profit effect; investing cash −18.",
+      "Credit inventory purchase: inventory +12 and payables +12; no profit and no cash flow yet.",
+      "Credit sale: revenue +30 and receivables +30; inventory −16 and cost sold +16; profit and equity +14; immediate cash zero.",
+      "Customer collection: cash +22 and receivables −22; operating receipt +22, with no repeated revenue. Supplier settlement: cash −9 and payables −9; operating payment −9, with no repeated expense.",
+      "Depreciation: expense 3 reduces net equipment and equity by 3; no current cash payment. Final profit = 30 − 16 − 3 = 11.",
+      "Closing cash = 60 + 25 − 18 + 22 − 9 = 80; receivables = 8; inventory = 20 + 12 − 16 = 16; equipment net = 18 − 3 = 15. Assets = 119.",
+      "Payables = 12 − 9 = 3; debt = 25; equity = 80 + profit 11 = 91. Liabilities plus equity = 3 + 25 + 91 = 119.",
+      "Operating cash = 22 − 9 = 13. Indirect check: profit 11 + depreciation 3 − receivables increase 8 − inventory change (−4) + payable increase 3 = 13. Total cash change = 13 − 18 + 25 = 20, matching 80 − 60."
+    ],
+    "result": "Profit is 11; cash rises 20 to 80; closing assets and liabilities plus equity both equal 119.",
+    "interpretation": "The credit sale, collections, supplier credit, investment and borrowing each have a different route. The completed statements connect through equity, account roll-forwards and the cash reconciliation."
+  },
+  "statementEffects": {
+    "applicability": "direct",
+    "explanation": "Complete simplified statement effects for this isolated worked scenario under the stated assumptions.",
+    "changes": [
+      "Income statement: revenue 30, cost sold 16 and depreciation 3; profit 11.",
+      "Balance sheet: cash 80, receivables 8, inventory 16, equipment 15, payables 3, debt 25 and equity 91.",
+      "Cash flow: operating +13, investing −18, financing +25; total change +20."
+    ]
+  },
+  "misconceptions": [
+    {
+      "id": "sale-receipt",
+      "claim": "A credit sale immediately creates the full cash receipt.",
+      "correction": "Record the customer claim first; cash depends on collection.",
+      "diagnostic": "Was the customer payment actually received?"
+    },
+    {
+      "id": "loan-income",
+      "claim": "Borrowing creates current revenue.",
+      "correction": "Loan principal creates debt, not earned income.",
+      "diagnostic": "What repayment obligation arose?"
+    },
+    {
+      "id": "equipment-expense",
+      "claim": "Expense both equipment payment and depreciation immediately.",
+      "correction": "Under these assumptions capitalise the acquisition and recognise only the given depreciation expense.",
+      "diagnostic": "Which amount is an asset acquisition and which is this period’s consumption?"
+    },
+    {
+      "id": "cost-twice",
+      "claim": "Deduct the same inventory cost twice when tracing a sale.",
+      "correction": "Release the carrying cost once into expense; the paired asset reduction is not a second expense.",
+      "diagnostic": "Which entries are the two sides of one cost release?"
+    }
+  ],
+  "practice": [
+    {
+      "id": "ts-predict-credit-sale",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "sale-settlement",
+      "scenarioId": "ts-predict-credit-sale-scenario",
+      "objectiveIds": [
+        "trace"
+      ],
+      "setup": "Independent single-event scenario: Nila completes a qualifying credit sale of 28, releasing inventory of assigned cost 11. Opening inventory is sufficient. No cash is received, no supplier obligation changes and no tax, depreciation or other event occurs.",
+      "inputs": [
+        {
+          "key": "sales",
+          "label": "Recognised credit sale",
+          "value": 28,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "costSold",
+          "label": "Assigned cost sold",
+          "value": 11,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "receipts",
+          "label": "Cash received",
+          "value": 0,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "Which immediate statement changes follow?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "cash-sale",
+          "text": "Profit +17; receivables 0; inventory −11; cash +28",
+          "feedback": "The customer has not paid; cash cannot rise 28.",
+          "misconceptionId": "sale-receipt"
+        },
+        {
+          "id": "correct",
+          "text": "Profit +17; receivables +28; inventory −11; cash 0",
+          "feedback": "Net assets and equity rise 17, while the receivable records the unpaid sale.",
+          "misconceptionId": null
+        },
+        {
+          "id": "all-expense",
+          "text": "Profit +6; receivables +28; inventory −11; cash 0",
+          "feedback": "The stated cost sold 11 is deducted once: revenue 28 less cost 11 is 17.",
+          "misconceptionId": "cost-twice"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Profit = 28 − 11 = 17; receivables +28 and inventory −11 make net assets +17, equal to equity +17. Operating cash = 17 − receivables increase 28 − inventory change (−11) = 0.",
+      "hints": [
+        {
+          "text": "Track selling price and inventory cost as separate entries, then ask whether a bank movement exists.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Profit = 28 − 11 = 17; receivables +28 and inventory −11 make net assets +17, equal to equity +17. Operating cash = 17 − receivables increase 28 − inventory change (−11) = 0.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "How does the indirect bridge remove a sale that is still unpaid?",
+        "rubric": [
+          "Show profit and equity +17.",
+          "Reconcile net asset increase 17.",
+          "Use the inventory decrease and receivable increase once each."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "ts-transfer-equipment-loan",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "controls",
+      "scenarioId": "ts-transfer-equipment-loan-scenario",
+      "objectiveIds": [
+        "link"
+      ],
+      "setup": "Independent scenario: opening cash 35 and equity 35 are the only balances. Receive loan principal 14, buy equipment for 20 cash and recognise given depreciation 2. No revenue, inventory, tax, interest, repayment or other event occurs. Use the stated operating/investing/financing categories.",
+      "inputs": [
+        {
+          "key": "openingCash",
+          "label": "Opening cash and equity",
+          "value": 35,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "loan",
+          "label": "Loan received",
+          "value": 14,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "equipment",
+          "label": "Equipment cash purchase",
+          "value": 20,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "depreciation",
+          "label": "Given depreciation",
+          "value": 2,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "Which closing balances and cash categories reconcile?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "loan-profit",
+          "text": "Profit 12; cash 29; equipment 18; debt 14; equity 47",
+          "feedback": "The loan receipt is not revenue; equity would then fail to reconcile.",
+          "misconceptionId": "loan-income"
+        },
+        {
+          "id": "purchase-loss",
+          "text": "Loss 22; cash 29; equipment 0; debt 14; equity 13",
+          "feedback": "The equipment purchase is an asset acquisition here, not an additional current expense.",
+          "misconceptionId": "equipment-expense"
+        },
+        {
+          "id": "correct",
+          "text": "Loss 2; cash 29; equipment 18; debt 14; equity 33; operating 0, investing −20, financing +14",
+          "feedback": "Depreciation reduces profit/equipment by 2; cash follows the equipment payment and loan receipt.",
+          "misconceptionId": null
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Profit = −2; equipment net = 20 − 2 = 18; cash = 35 + 14 − 20 = 29. Assets 47 = debt 14 + equity (35 − 2) 33. Operating cash = −2 + depreciation 2 = 0; investing −20; financing +14; total −6.",
+      "hints": [
+        {
+          "text": "Separate principal funding, the asset acquisition and the stated non-cash consumption.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Profit = −2; equipment net = 20 − 2 = 18; cash = 35 + 14 − 20 = 29. Assets 47 = debt 14 + equity (35 − 2) 33. Operating cash = −2 + depreciation 2 = 0; investing −20; financing +14; total −6.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Why is the loss different from the cash decline?",
+        "rubric": [
+          "Reconcile loss 2 to operating cash 0.",
+          "Classify investment −20 and funding +14.",
+          "Balance closing assets 47 with debt and equity 47."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E0343",
+      "to": "T07.03",
+      "kind": "learning",
+      "purpose": "Study these together to reconcile accounting performance with actual cash movement.",
+      "conditions": "A topical exploration link, not a claim that one determines the other.",
+      "computed": false
+    },
+    {
+      "edgeId": "E0344",
+      "to": "T04.05",
+      "kind": "learning",
+      "purpose": "Suggested starting knowledge: Cash accounting versus accrual accounting. It helps you reconcile accounting performance with actual cash movement.",
+      "conditions": "Suggested learning order; learners can still explore freely.",
+      "computed": false
+    },
+    {
+      "edgeId": "E0743",
+      "to": "T16.03",
+      "kind": "learning",
+      "purpose": "Suggested starting knowledge: How transactions move through all three statements. It helps you connect schedules into an internally consistent and auditable model.",
+      "conditions": "Suggested learning order; learners can still explore freely.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D07",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "Which events require separate non-cash investing or financing disclosures?",
+      "How would tax, distributions, asset disposals or foreign exchange change the controls?"
+    ],
+    "conceptIds": [
+      "T07.03",
+      "T04.05",
+      "T16.03"
+    ],
+    "limitations": "Introductory study coverage. A reusable financial-model engine, full tax/lease/disposal mechanics, distributions, foreign exchange, consolidation and framework-specific disclosure presentation are deferred."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "Planned connected company case; these isolated lessons and questions do not implement its rounds or a financial model."
+    }
+  ],
+  "sources": [
+    {
+      "id": "cash-background",
+      "title": "IFRS Foundation: IAS 7 public overview",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/ias-7-statement-of-cash-flows/",
+      "role": "primary-support",
+      "supports": [
+        "Operating, investing and financing categories; direct receipts/payments and indirect non-cash/accrual adjustments; non-cash investing/financing disclosure. The overview also identifies IFRS 18 amendments. These conceptual examples do not prescribe a statutory starting subtotal or interest/dividend policy."
+      ],
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "inventory-background",
+      "title": "IFRS Foundation: IAS 2 public overview",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/ias-2-inventories/",
+      "role": "primary-support",
+      "supports": [
+        "IAS 2 background: purchase/conversion costs, cost formulas, expense on sale and lower-of-cost-and-net-realisable-value measurement. The conceptual scenarios assume their stated costs; this overview is not a complete standard or an Indian filing rule."
+      ],
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "method": "ai-content-source-arithmetic",
+    "evidence": [
+      "B2 mechanism, terminology, scope, units, source limits, feedback and independent arithmetic reviewed in docs/implementation/task-04-4-b2.md.",
+      "Worked and changed-data assessment calculations are independently recomputed in tests/b2-lessons.test.mjs. Shared route, spoiler and session-record regressions are verified separately.",
+      "Scoped AI content review; not independent professional approval, professional completeness, browser QA or learner-pilot evidence."
+    ]
+  }
+}

@@ -1,0 +1,462 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "A04",
+  "contentVersion": "1.0.0",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "Supplier-credit recognition, inventory versus service costs, credit notes, payments, payable roll-forwards and operating cash timing."
+    ],
+    "deferred": [
+      "Discount measurement, material financing components, foreign currency, derecognition and supplier-finance presentation/disclosures require framework-specific study."
+    ]
+  },
+  "hoverDefinition": "Trade payables are unpaid supplier obligations for goods or services received. Buying on credit creates the obligation; later settlement reduces cash and the payable without repeating the purchase expense.",
+  "objectives": [
+    {
+      "id": "supplier-roll",
+      "statement": "Reconcile supplier credit, credit notes and cash settlement.",
+      "evidence": "Calculate closing payables independently of the cost sold.",
+      "outcomeIds": [
+        "LO1",
+        "LO3"
+      ]
+    },
+    {
+      "id": "settlement",
+      "statement": "Trace supplier payment without repeating expense.",
+      "evidence": "Reconcile stock, profit and cash for a credit purchase followed by sale and settlement.",
+      "outcomeIds": [
+        "LO1",
+        "LO3"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh"
+    ],
+    "timeframe": "A separate illustrative teaching month. Worked and practice scenarios start independently; they are not consecutive company-case rounds.",
+    "assumptions": [
+      "Trade payables in these scenarios arise only from ordinary inventory purchases.",
+      "Goods are received and owned; all supplier returns are accepted credit notes before any stated sale.",
+      "No discounts, interest, tax, supplier-finance intermediary or foreign-currency remeasurement exists.",
+      "Supplier payments settle recorded balances; cost sold is stated separately."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Simplified conceptual teaching scenarios in INR lakh; currency does not establish jurisdiction. Recognition, operating perimeter and cash classifications are stated assumptions. Primary public IFRS overviews provide background, not a claim of compliance. Jurisdiction, reporting period, effective amendments and complete disclosure requirements require separate study."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "recognise-supplier",
+      "title": "Record what arrived and what is owed",
+      "paragraphs": [
+        "When qualifying inventory arrives on ordinary supplier credit, inventory and trade payables rise together. No cash moves. If the supplier instead provides a consumed service, the debit may be expense; if it provides equipment, it may be a long-lived asset. The liability alone does not tell you which cost belongs in current profit.",
+        "An invoice is evidence, but recognition follows goods or services received under the applicable basis. An estimate for an unbilled service may be an accrual; it must not be omitted merely because the invoice comes later."
+      ]
+    },
+    {
+      "id": "roll-forward",
+      "title": "Reconcile the supplier ledger",
+      "paragraphs": [
+        "Opening trade payables + credit purchases or qualifying supplier charges − supplier payments − accepted credit notes = closing payables in this simplified perimeter. Cash purchases do not first create a closing unpaid balance. A supplier return reduces both the recorded inventory and payable when those are the affected accounts.",
+        "Match payments to the recorded supplier balance and period. Cost of goods sold cannot automatically replace purchases: unsold inventory changes the amount bought relative to the amount expensed."
+      ]
+    },
+    {
+      "id": "settle",
+      "title": "Settle the obligation once",
+      "paragraphs": [
+        "A payment against an existing payable reduces cash and the liability. The purchase or service was already recognised; do not charge it to profit again. Whether the related stock is still on hand or already sold is a separate question.",
+        "Under the stated ordinary operating-purchase assumptions, supplier cash settlements are operating outflows. An equipment creditor or a financing arrangement needs its own analysis rather than automatic inclusion in operating working capital."
+      ]
+    },
+    {
+      "id": "terms",
+      "title": "Read payment timing alongside the business obligation",
+      "paragraphs": [
+        "An increase in ordinary trade payables can defer cash payment relative to recognised purchases; it is not revenue, forgiveness or free money. Agreed credit terms differ from overdue bills. Extending payment beyond terms can damage supply or incur costs.",
+        "Payable days should use purchases or a documented consistent proxy and matched periods. Borrowings and supplier-finance arrangements need separate classification and disclosure analysis; a label in the supplier ledger is insufficient."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "Trade payable and accrued expense",
+      "explanation": "Both can represent unpaid operating obligations, but invoice/estimation evidence and the underlying cost differ.",
+      "whenItMatters": "Reconcile the whole defined operating perimeter without double-counting an accrual."
+    },
+    {
+      "name": "Purchases and cost sold",
+      "explanation": "Purchases add stock; cost sold removes the portion used to earn sales.",
+      "whenItMatters": "Supplier payments cannot usually be reconstructed from cost sold alone."
+    },
+    {
+      "name": "Agreed credit and arrears",
+      "explanation": "Contractual payment terms are different from missed due dates.",
+      "whenItMatters": "A larger payable may signal strain rather than improved economics."
+    },
+    {
+      "name": "Supplier credit and financing debt",
+      "explanation": "Ordinary supplier terms differ from a borrowing or a changed supplier-finance arrangement.",
+      "whenItMatters": "Examine substance before including liabilities in operating working capital."
+    }
+  ],
+  "workedExample": {
+    "id": "payables-month",
+    "scenarioId": "ap-worked-50-8-6-22-2-14-25-20-17",
+    "setup": "Open with cash 50, inventory 8, trade payables 6 and equity 52. Receive inventory 22 on credit; return inventory 2 for an accepted credit note reducing that payable. Sell stock of assigned cost 14 for credit revenue 25 and collect 20. Pay suppliers 17 against recorded balances. No other event occurs.",
+    "inputs": [
+      {
+        "key": "openingCash",
+        "label": "Opening cash",
+        "value": 50,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "openingInventory",
+        "label": "Opening inventory",
+        "value": 8,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "openingPayables",
+        "label": "Opening trade payables",
+        "value": 6,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "creditPurchases",
+        "label": "Credit inventory received",
+        "value": 22,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "returns",
+        "label": "Accepted inventory return credit",
+        "value": 2,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "costSold",
+        "label": "Assigned cost sold",
+        "value": 14,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "sales",
+        "label": "Recognised credit sales",
+        "value": 25,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "collections",
+        "label": "Customer receipts",
+        "value": 20,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "payments",
+        "label": "Supplier payments",
+        "value": 17,
+        "unit": "INR lakh"
+      }
+    ],
+    "steps": [
+      "Credit receipt adds inventory 22 and payables 22. The accepted return removes inventory 2 and payables 2; neither event moves cash.",
+      "Closing trade payables = 6 + 22 − 2 − 17 = 9. The payment 17 reduces cash and an existing obligation.",
+      "Closing inventory = 8 + 22 − 2 − 14 = 14. Profit = revenue 25 − cost sold 14 = 11; payment does not expense the stock a second time.",
+      "Receivables = 25 − 20 = 5. Operating cash = collections 20 − supplier payment 17 = +3; closing cash = 53.",
+      "Balance sheet: assets 53 + 5 + 14 = 72; payables 9 + equity (52 + 11) 63 = 72.",
+      "Indirect check: profit 11 − receivables increase 5 − inventory increase 6 + payables increase 3 = operating cash 3."
+    ],
+    "result": "Payables close at 9, profit is 11 and operating cash is +3.",
+    "interpretation": "Supplier credit rose by 3 after purchases, the credit note and settlement. Only the actual payment used cash; the inventory sold determined expense."
+  },
+  "statementEffects": {
+    "applicability": "direct",
+    "explanation": "Complete simplified statement effects for this isolated worked scenario under the stated assumptions.",
+    "changes": [
+      "Income statement: sales 25 less cost sold 14 gives profit 11.",
+      "Balance sheet: cash 53, receivables 5, inventory 14, payables 9 and equity 63.",
+      "Cash flow: customer receipts 20 less supplier payments 17 gives operating +3."
+    ]
+  },
+  "misconceptions": [
+    {
+      "id": "pay-twice",
+      "claim": "A supplier settlement is a second expense.",
+      "correction": "Reduce the liability; recognise expense only for the underlying consumed resource.",
+      "diagnostic": "Was the cost already recorded?"
+    },
+    {
+      "id": "sales-purchases",
+      "claim": "Cost sold always equals purchases.",
+      "correction": "Inventory movements separate purchases from cost sold.",
+      "diagnostic": "What was left on the shelf?"
+    },
+    {
+      "id": "credit-income",
+      "claim": "A higher payable is new income or cash received.",
+      "correction": "It is an unpaid obligation; it can defer a payment without creating revenue.",
+      "diagnostic": "What still has to be settled?"
+    }
+  ],
+  "practice": [
+    {
+      "id": "ap-predict-balance",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "roll-forward",
+      "scenarioId": "ap-predict-balance-scenario",
+      "objectiveIds": [
+        "supplier-roll"
+      ],
+      "setup": "Independent scenario: opening trade payables 7, ordinary inventory received on credit 18 and supplier settlements 11. No returns, discounts or other supplier entries occur. The goods are still unsold.",
+      "inputs": [
+        {
+          "key": "openingPayables",
+          "label": "Opening trade payables",
+          "value": 7,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "purchases",
+          "label": "Credit purchases",
+          "value": 18,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "payments",
+          "label": "Supplier settlements",
+          "value": 11,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "What is the closing payable and the immediate effect of the settlement?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "correct",
+          "text": "Payables 14; cash falls 11; settlement creates no new expense",
+          "feedback": "7 + 18 − 11 = 14; the payment settles an already recorded obligation.",
+          "misconceptionId": null
+        },
+        {
+          "id": "expense",
+          "text": "Payables 14; cash falls 11; new expense 11",
+          "feedback": "The unsold stock remains an asset; settling the payable is not a new expense.",
+          "misconceptionId": "pay-twice"
+        },
+        {
+          "id": "income",
+          "text": "Payables 14; cash rises 7; income 7",
+          "feedback": "An increase in unpaid suppliers is not cash collected or income earned.",
+          "misconceptionId": "credit-income"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Closing payables = 7 + 18 − 11 = 14. Settlement reduces cash by 11 and payables by 11. No cost sold or other expense occurs because the goods remain unsold.",
+      "hints": [
+        {
+          "text": "Track the liability additions and reductions separately from profit.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Closing payables = 7 + 18 − 11 = 14. Settlement reduces cash by 11 and payables by 11. No cost sold or other expense occurs because the goods remain unsold.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Why is the 7 increase in payables not income?",
+        "rubric": [
+          "Reconcile closing 14.",
+          "Identify the actual cash outflow 11.",
+          "Retain the received unsold goods as inventory."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "ap-transfer-sale-settlement",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "settle",
+      "scenarioId": "ap-transfer-sale-settlement-scenario",
+      "objectiveIds": [
+        "supplier-roll",
+        "settlement"
+      ],
+      "setup": "Independent scenario: opening cash 30 is funded entirely by equity 30; no other balances. Buy inventory 16 on ordinary credit. Sell goods of assigned cost 10 for 18 cash, then pay suppliers 9. No other event, tax or valuation change occurs.",
+      "inputs": [
+        {
+          "key": "openingCash",
+          "label": "Opening cash",
+          "value": 30,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "purchases",
+          "label": "Inventory on credit",
+          "value": 16,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "costSold",
+          "label": "Assigned cost sold",
+          "value": 10,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "sales",
+          "label": "Cash sales",
+          "value": 18,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "payments",
+          "label": "Supplier settlements",
+          "value": 9,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "Which closing position and current profit reconcile?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "double-expense",
+          "text": "Cash 39; inventory 6; payables 7; loss 1",
+          "feedback": "Deducting payment 9 after cost sold 10 charges the supplier twice.",
+          "misconceptionId": "pay-twice"
+        },
+        {
+          "id": "correct",
+          "text": "Cash 39; inventory 6; payables 7; profit 8",
+          "feedback": "Cash is 30 + 18 − 9, stock 16 − 10, payable 16 − 9 and profit 18 − 10.",
+          "misconceptionId": null
+        },
+        {
+          "id": "all-sold",
+          "text": "Cash 39; inventory 0; payables 7; profit 2",
+          "feedback": "Only 10 of the purchased inventory was sold; 6 remains an asset.",
+          "misconceptionId": "sales-purchases"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Cash = 30 + 18 − 9 = 39; inventory = 16 − 10 = 6; payables = 16 − 9 = 7; profit = 18 − 10 = 8. Assets 45 equal payables 7 plus equity 38. Operating cash 9 equals profit 8 − inventory increase 6 + payable increase 7.",
+      "hints": [
+        {
+          "text": "Keep three ledgers: stock, supplier obligation and bank.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Cash = 30 + 18 − 9 = 39; inventory = 16 − 10 = 6; payables = 16 − 9 = 7; profit = 18 − 10 = 8. Assets 45 equal payables 7 plus equity 38. Operating cash 9 equals profit 8 − inventory increase 6 + payable increase 7.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "How does supplier credit help explain cash exceeding profit here?",
+        "rubric": [
+          "Show the 7 unpaid supplier obligation.",
+          "Do not expense the payment again.",
+          "Balance assets 45 against liabilities and equity 45."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E2111",
+      "to": "T06.13",
+      "kind": "learning",
+      "purpose": "Atomic concept within this original grouped topic.",
+      "conditions": "Preserves the original inventory while enabling more precise navigation.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2139",
+      "to": "A05",
+      "kind": "financial",
+      "purpose": "Operating supplier payables reduce operating working capital.",
+      "conditions": "Use the stated operating perimeter and transaction assumptions; this displayed relationship is not a calculated model dependency.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2143",
+      "to": "T14.03",
+      "kind": "financial",
+      "purpose": "Payable days relate supplier balances to relevant purchases or a documented cost proxy.",
+      "conditions": "Credit purchases are preferred where available.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D06",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "When should a supplier-finance balance be presented or disclosed differently from ordinary trade payables?",
+      "How do early-payment discounts and disputed invoices change the liability roll-forward?"
+    ],
+    "conceptIds": [
+      "T06.13",
+      "A05",
+      "T14.03"
+    ],
+    "limitations": "Introductory study coverage. Discount measurement, material financing components, foreign currency, derecognition and supplier-finance presentation/disclosures require framework-specific study."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "Planned connected company case; these isolated lessons and questions do not implement its rounds or a financial model."
+    }
+  ],
+  "sources": [
+    {
+      "id": "inventory-background",
+      "title": "IFRS Foundation: IAS 2 public overview",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/ias-2-inventories/",
+      "role": "primary-support",
+      "supports": [
+        "IAS 2 background: purchase/conversion costs, cost formulas, expense on sale and lower-of-cost-and-net-realisable-value measurement. The conceptual scenarios assume their stated costs; this overview is not a complete standard or an Indian filing rule."
+      ],
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "cash-background",
+      "title": "IFRS Foundation: IAS 7 public overview",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/ias-7-statement-of-cash-flows/",
+      "role": "primary-support",
+      "supports": [
+        "Operating, investing and financing categories; direct receipts/payments and indirect non-cash/accrual adjustments; non-cash investing/financing disclosure. The overview also identifies IFRS 18 amendments. These conceptual examples do not prescribe a statutory starting subtotal or interest/dividend policy."
+      ],
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "method": "ai-content-source-arithmetic",
+    "evidence": [
+      "B2 mechanism, terminology, scope, units, source limits, feedback and independent arithmetic reviewed in docs/implementation/task-04-4-b2.md.",
+      "Worked and changed-data assessment calculations are independently recomputed in tests/b2-lessons.test.mjs. Shared route, spoiler and session-record regressions are verified separately.",
+      "Scoped AI content review; not independent professional approval, professional completeness, browser QA or learner-pilot evidence."
+    ]
+  }
+}

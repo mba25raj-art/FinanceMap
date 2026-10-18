@@ -1,0 +1,487 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "A06",
+  "contentVersion": "1.0.0",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "Direct receipts/payments, an indirect net-profit bridge, depreciation, working-capital signs, consistent write-down handling and operating versus total cash change."
+    ],
+    "deferred": [
+      "Full statutory cash-flow presentation, taxes, interest/dividends, leases, supplier finance, acquisitions and IFRS 18 transition or jurisdiction-specific starting subtotals are deferred."
+    ]
+  },
+  "hoverDefinition": "Operating cash flow measures cash received and paid in operating activities under a stated classification. Reconcile profit for non-cash items and operating timing differences; it is only one part of total cash change.",
+  "objectives": [
+    {
+      "id": "reconcile",
+      "statement": "Reconcile a simplified net profit to operating cash flow and check actual receipts/payments.",
+      "evidence": "Calculate operating cash independently and separate investing and financing movements.",
+      "outcomeIds": [
+        "LO2"
+      ]
+    },
+    {
+      "id": "noncash",
+      "statement": "Avoid counting a non-cash inventory loss twice.",
+      "evidence": "Reconcile the same zero-cash write-down using two consistent bridge presentations.",
+      "outcomeIds": [
+        "LO2"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh"
+    ],
+    "timeframe": "A separate illustrative teaching month. Worked and practice scenarios start independently; they are not consecutive company-case rounds.",
+    "assumptions": [
+      "The net-profit bridge is a conceptual teaching calculation, not a prescribed statutory subtotal.",
+      "Ordinary customer collections, inventory supplier payments and wages are operating; cash equipment purchases are investing and loan principal receipts financing in the stated scenarios.",
+      "No tax, interest, dividends, leases, credit-loss allowances, asset disposals or unstated balance changes exist.",
+      "Depreciation and the transfer question’s stated inventory write-down are non-cash expenses. No non-cash item may be adjusted twice."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Simplified conceptual teaching scenarios in INR lakh; currency does not establish jurisdiction. Recognition, operating perimeter and cash classifications are stated assumptions. Primary public IFRS overviews provide background, not a claim of compliance. Jurisdiction, reporting period, effective amendments and complete disclosure requirements require separate study."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "direct",
+      "title": "Begin with the operating receipts and payments",
+      "paragraphs": [
+        "The direct view totals the stated operating customer receipts and subtracts operating supplier and employee payments. It follows money within a defined activity boundary. A profitable sale on credit is not a receipt until collected; a loan receipt is funding rather than operating cash.",
+        "Cash flow from operations differs from total cash change and from free cash flow. Equipment investment and borrowing can move the bank balance while remaining outside the operating subtotal under these assumptions."
+      ]
+    },
+    {
+      "id": "indirect",
+      "title": "Reconcile performance to settlement",
+      "paragraphs": [
+        "For these simplified scenarios, operating cash = net profit + depreciation − increase in receivables − increase in inventory + increase in ordinary operating payables. A decrease uses the opposite sign. Include every relevant operating balance; a formula with only three balances is incomplete when the business also has prepayments, accruals, tax or other movements.",
+        "Depreciation reduced profit without a current cash payment, so it is added back in this bridge. It creates no new receipt. The original equipment payment belongs to its own period and category. Similarly, removing an investing gain from profit does not erase the separate disposal proceeds, though disposals are outside these scenarios."
+      ]
+    },
+    {
+      "id": "consistent",
+      "title": "Choose a consistent treatment of non-cash balance changes",
+      "paragraphs": [
+        "Suppose inventory is written down by 4 with no purchase, sale or payment. Profit falls 4 and net inventory falls 4. Starting with profit −4 and subtracting net inventory change −4 gives cash zero: the bridge already reverses the loss.",
+        "Alternatively, add back the write-down 4 explicitly, then remove that non-cash reduction from the inventory movement so the cash-linked inventory change is zero. Both approaches give zero. Adding back 4 while also subtracting the full net inventory decrease would falsely report cash +4. The same discipline applies to allowances and other non-cash changes."
+      ]
+    },
+    {
+      "id": "total",
+      "title": "Reconcile operating cash to the closing bank balance",
+      "paragraphs": [
+        "Add the separately classified investing and financing cash flows to operating cash, then reconcile opening to closing cash. Non-cash transactions cannot be inserted as receipts or payments merely to force the balance. Actual reporting may require separate disclosure.",
+        "The public IAS 7 overview supports the direct/indirect distinction and records IFRS 18 changes to the starting subtotal and interest/dividend classification. This lesson deliberately teaches a conceptual net-profit bridge; consult the framework, applicable period and amendments before preparing a statutory statement."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "Direct and indirect",
+      "explanation": "Two routes explain the same operating cash subtotal for a consistent perimeter.",
+      "whenItMatters": "Disagreement signals a missing balance movement or classification."
+    },
+    {
+      "name": "Add-back and receipt",
+      "explanation": "An add-back removes an expense with no current cash effect; it is not cash collected.",
+      "whenItMatters": "Do not treat depreciation as a source of new bank funding."
+    },
+    {
+      "name": "Operating cash and total change",
+      "explanation": "Investing and financing also affect cash.",
+      "whenItMatters": "A positive bank change can coexist with weak operating cash."
+    },
+    {
+      "name": "Raw balance movement and cash-linked movement",
+      "explanation": "Measurement and other non-cash changes can sit inside a closing balance.",
+      "whenItMatters": "Either reverse them separately and adjust the balance movement, or use a consistent net approach."
+    }
+  ],
+  "workedExample": {
+    "id": "operating-cash-month",
+    "scenarioId": "ocf-worked-50-15-25-20-26-12-17-80-44-18-6-16-12",
+    "setup": "Open with cash 50, receivables 15, inventory 20, equipment net 40, ordinary payables 12 and equity 113. Recognise credit revenue 80, cost sold 44, cash wages 18 and depreciation 6. Close receivables at 25, inventory at 26 and payables at 17; all stock purchases are on ordinary supplier credit. Buy equipment for 16 cash and receive loan principal 12. No other event occurs.",
+    "inputs": [
+      {
+        "key": "openingCash",
+        "label": "Opening cash",
+        "value": 50,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "openingReceivables",
+        "label": "Opening receivables",
+        "value": 15,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "closingReceivables",
+        "label": "Closing receivables",
+        "value": 25,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "openingInventory",
+        "label": "Opening inventory",
+        "value": 20,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "closingInventory",
+        "label": "Closing inventory",
+        "value": 26,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "openingPayables",
+        "label": "Opening ordinary payables",
+        "value": 12,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "closingPayables",
+        "label": "Closing ordinary payables",
+        "value": 17,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "openingEquipment",
+        "label": "Opening net equipment",
+        "value": 40,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "sales",
+        "label": "Credit revenue",
+        "value": 80,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "costSold",
+        "label": "Cost sold",
+        "value": 44,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "wages",
+        "label": "Wages paid and expensed",
+        "value": 18,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "depreciation",
+        "label": "Depreciation",
+        "value": 6,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "equipmentPurchase",
+        "label": "Equipment paid for",
+        "value": 16,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "loan",
+        "label": "Loan principal received",
+        "value": 12,
+        "unit": "INR lakh"
+      }
+    ],
+    "steps": [
+      "Net profit = 80 − 44 − 18 − 6 = 12.",
+      "Operating balances: receivables rise 10, inventory rises 6 and ordinary payables rise 5. Indirect operating cash = 12 + 6 − 10 − 6 + 5 = 7.",
+      "Direct check: collections = 15 + 80 − 25 = 70; purchases = 44 + 26 − 20 = 50; supplier payments = 12 + 50 − 17 = 45.",
+      "Operating cash = collections 70 − supplier payments 45 − wages 18 = 7, matching the indirect result.",
+      "Equipment cash outflow is investing −16; loan receipt is financing +12. Total cash change = 7 − 16 + 12 = +3; cash closes at 53.",
+      "Equipment net closes at 40 + 16 − 6 = 50. Assets = cash 53 + receivables 25 + stock 26 + equipment 50 = 154. Liabilities = payables 17 + loan 12 = 29; equity = 113 + profit 12 = 125; 29 + 125 = 154."
+    ],
+    "result": "Net profit 12 reconciles to operating cash +7; total cash rises 3 to 53.",
+    "interpretation": "Operating timing absorbs 11 net, partly offset by reversing depreciation 6. Equipment and loan flows explain why the total bank movement is different again."
+  },
+  "statementEffects": {
+    "applicability": "direct",
+    "explanation": "Complete simplified statement effects for this isolated worked scenario under the stated assumptions.",
+    "changes": [
+      "Income statement: revenue 80; cost sold 44, wages 18 and depreciation 6; net profit 12.",
+      "Balance sheet: cash 53, receivables 25, stock 26, equipment 50, payables 17, debt 12 and equity 125.",
+      "Cash flow: operating +7, investing −16 and financing +12; total +3."
+    ]
+  },
+  "misconceptions": [
+    {
+      "id": "profit-cash",
+      "claim": "Net profit is already operating cash.",
+      "correction": "Reconcile non-cash costs and all operating timing balances.",
+      "diagnostic": "Which recognised sales remain uncollected?"
+    },
+    {
+      "id": "depreciation-receipt",
+      "claim": "Adding back depreciation means cash arrived.",
+      "correction": "It reverses a non-cash profit deduction; the bank still needs actual receipts.",
+      "diagnostic": "What transaction supplied the money?"
+    },
+    {
+      "id": "double-addback",
+      "claim": "Add back a write-down and also subtract the full net inventory decline.",
+      "correction": "Remove the non-cash change from the inventory movement when using an explicit add-back.",
+      "diagnostic": "Has the same loss been reversed twice?"
+    }
+  ],
+  "practice": [
+    {
+      "id": "ocf-predict-bridge",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "indirect",
+      "scenarioId": "ocf-predict-bridge-scenario",
+      "objectiveIds": [
+        "reconcile"
+      ],
+      "setup": "Independent scenario: net profit is 18 after depreciation 5. Receivables increase 8, inventory increases 3 and ordinary operating payables increase 4. Every balance movement is cash-linked; depreciation is the only non-cash item. No other operating balance, tax, interest or investing/financing item is included in profit.",
+      "inputs": [
+        {
+          "key": "profit",
+          "label": "Net profit",
+          "value": 18,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "depreciation",
+          "label": "Depreciation included in profit",
+          "value": 5,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "receivablesIncrease",
+          "label": "Receivables increase",
+          "value": 8,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "inventoryIncrease",
+          "label": "Inventory increase",
+          "value": 3,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "payablesIncrease",
+          "label": "Operating payables increase",
+          "value": 4,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "What operating cash flow follows?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "profit",
+          "text": "18",
+          "feedback": "Profit still includes non-cash depreciation and uncollected or unpaid operating amounts.",
+          "misconceptionId": "profit-cash"
+        },
+        {
+          "id": "correct",
+          "text": "16",
+          "feedback": "18 + 5 − 8 − 3 + 4 = 16.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-depreciation",
+          "text": "6",
+          "feedback": "Depreciation is reversed by adding 5, not deducting it again.",
+          "misconceptionId": "depreciation-receipt"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Operating cash = 18 + 5 − 8 − 3 + 4 = 16. Working capital increases 8 + 3 − 4 = 7; the equivalent calculation is 18 + 5 − 7 = 16.",
+      "hints": [
+        {
+          "text": "Distinguish the non-cash expense from increases in operating assets and liabilities.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Operating cash = 18 + 5 − 8 − 3 + 4 = 16. Working capital increases 8 + 3 − 4 = 7; the equivalent calculation is 18 + 5 − 7 = 16.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "How do the two equivalent bridge forms avoid double-counting?",
+        "rubric": [
+          "Show the individual signs.",
+          "Calculate net working-capital increase 7.",
+          "Use either individual changes or net change, not both."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "ocf-transfer-write-down",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "consistent",
+      "scenarioId": "ocf-transfer-write-down-scenario",
+      "objectiveIds": [
+        "noncash",
+        "reconcile"
+      ],
+      "setup": "Independent scenario: opening inventory 20 is written down by 4 under the stated recoverability assumption, leaving inventory 16. This is the only event. No purchase, sale, cash receipt, payment, liability, tax or other balance movement exists. Net profit is therefore a loss of 4.",
+      "inputs": [
+        {
+          "key": "openingInventory",
+          "label": "Opening inventory",
+          "value": 20,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "writeDown",
+          "label": "Non-cash inventory write-down",
+          "value": 4,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "closingInventory",
+          "label": "Closing net inventory",
+          "value": 16,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "profit",
+          "label": "Net profit (loss)",
+          "value": -4,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "Which bridge correctly reports operating cash?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "double",
+          "text": "Cash +4: profit −4 + write-down 4 − net inventory change (−4)",
+          "feedback": "This reverses the same loss twice. Remove the write-down from inventory movement if adding it back explicitly.",
+          "misconceptionId": "double-addback"
+        },
+        {
+          "id": "loss-cash",
+          "text": "Cash −4: the inventory loss must have been paid",
+          "feedback": "The only event is non-cash valuation.",
+          "misconceptionId": "profit-cash"
+        },
+        {
+          "id": "correct",
+          "text": "Cash 0: profit −4 − net inventory change (−4)",
+          "feedback": "The net-inventory bridge already reverses the write-down; there is no bank movement.",
+          "misconceptionId": null
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Net inventory change = 16 − 20 = −4. Net approach: −4 − (−4) = 0. Explicit approach: profit −4 + write-down 4 − cash-linked inventory change 0 = 0. Neither approach creates a receipt.",
+      "hints": [
+        {
+          "text": "Identify whether the write-down is already inside the balance movement you use.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Net inventory change = 16 − 20 = −4. Net approach: −4 − (−4) = 0. Explicit approach: profit −4 + write-down 4 − cash-linked inventory change 0 = 0. Neither approach creates a receipt.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "How must the inventory adjustment change if you use an explicit add-back?",
+        "rubric": [
+          "Show actual cash zero.",
+          "Remove the non-cash −4 from the inventory change in the explicit method.",
+          "Reject the mixed method that falsely gives +4."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E2113",
+      "to": "T07.01",
+      "kind": "learning",
+      "purpose": "Atomic concept within this original grouped topic.",
+      "conditions": "Preserves the original inventory while enabling more precise navigation.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2140",
+      "to": "A05",
+      "kind": "financial",
+      "purpose": "Increases in operating working capital generally reduce operating cash flow in the indirect reconciliation.",
+      "conditions": "Hold other cash-flow components fixed and apply the reporting framework.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D07",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "Which starting subtotal applies under the selected reporting framework and effective amendments?",
+      "How do tax, interest, lease and acquisition movements alter the reconciliation?"
+    ],
+    "conceptIds": [
+      "T07.01",
+      "A05"
+    ],
+    "limitations": "Introductory study coverage. Full statutory cash-flow presentation, taxes, interest/dividends, leases, supplier finance, acquisitions and IFRS 18 transition or jurisdiction-specific starting subtotals are deferred."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "Planned connected company case; these isolated lessons and questions do not implement its rounds or a financial model."
+    }
+  ],
+  "sources": [
+    {
+      "id": "cash-background",
+      "title": "IFRS Foundation: IAS 7 public overview",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/ias-7-statement-of-cash-flows/",
+      "role": "primary-support",
+      "supports": [
+        "Operating, investing and financing categories; direct receipts/payments and indirect non-cash/accrual adjustments; non-cash investing/financing disclosure. The overview also identifies IFRS 18 amendments. These conceptual examples do not prescribe a statutory starting subtotal or interest/dividend policy."
+      ],
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "inventory-background",
+      "title": "IFRS Foundation: IAS 2 public overview",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/ias-2-inventories/",
+      "role": "primary-support",
+      "supports": [
+        "IAS 2 background: purchase/conversion costs, cost formulas, expense on sale and lower-of-cost-and-net-realisable-value measurement. The conceptual scenarios assume their stated costs; this overview is not a complete standard or an Indian filing rule."
+      ],
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "method": "ai-content-source-arithmetic",
+    "evidence": [
+      "B2 mechanism, terminology, scope, units, source limits, feedback and independent arithmetic reviewed in docs/implementation/task-04-4-b2.md.",
+      "Worked and changed-data assessment calculations are independently recomputed in tests/b2-lessons.test.mjs. Shared route, spoiler and session-record regressions are verified separately.",
+      "Scoped AI content review; not independent professional approval, professional completeness, browser QA or learner-pilot evidence."
+    ]
+  }
+}

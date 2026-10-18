@@ -8,13 +8,14 @@ import { validateLessonPackage } from '../scripts/lesson-standard.mjs';
 const atlas=JSON.parse(readFileSync(new URL('../content/master-network.json',import.meta.url)));
 const policy=JSON.parse(readFileSync(new URL('../content/coverage-policy.json',import.meta.url)));
 const get=id=>lessonPackageForConcept(id);
+const b1Packages=['T04.01','T04.05','T06.02','A01','A02'].map(get);
 const values=item=>Object.fromEntries(item.inputs.map(i=>[i.key,i.value]));
 const action=(lesson,item,type,extra={})=>({type,conceptId:lesson.conceptId,contentVersion:lesson.contentVersion,questionId:item.id,version:item.version,...extra});
 
 test('B1 packages meet the lesson standard, explicitly scoped review and renderer mapping',()=>{
-  assert.deepEqual(lessonPackages.map(p=>p.conceptId),['T04.01','T04.05','T06.02','A01','A02']);
-  assert.equal(lessonPackages.reduce((sum,p)=>sum+p.practice.length,0),11);
-  for(const p of lessonPackages){
+  assert.deepEqual(b1Packages.map(p=>p.conceptId),['T04.01','T04.05','T06.02','A01','A02']);
+  assert.equal(b1Packages.reduce((sum,p)=>sum+p.practice.length,0),11);
+  for(const p of b1Packages){
     assert.deepEqual(validateLessonPackage(p,atlas),[],p.conceptId);
     assert.ok(p.mechanism.every(m=>m.title?.trim()),p.conceptId);
     assert.equal(p.review.state,'reviewed');assert.ok(p.review.reviewer.includes('AI'));
@@ -25,7 +26,6 @@ test('B1 packages meet the lesson standard, explicitly scoped review and rendere
   for(const entry of policy.packages)for(const id of entry.renderedConceptIds)assert.equal(get(id)?.conceptId,JSON.parse(readFileSync(new URL('../'+entry.file,import.meta.url))).conceptId,id);
   assert.equal(get('T06.04'),get('A02'));
   assert.equal(get('T05.01'),undefined,'A deep-reading alias must not imply new package integration');
-  assert.equal(get('A03'),undefined,'B2 has not been converted');
 });
 
 test('independent ledger arithmetic reconciles all accounting-equation and accrual worked balances',()=>{
@@ -91,7 +91,7 @@ test('all lesson records isolate owners, versions, first responses, assistance a
     assert.equal(record.choice,null);assert.equal(record.responses[0].correct,false);assert.equal(record.responses.at(-1).correct,true);assert.equal(record.revealed,true);
   }
   assert.deepEqual(learningCounts(state),before);
-  assert.deepEqual(lessonPracticeCounts(state.lessonPractice),{answered:11,latestCorrect:11,firstUnassisted:0,helped:0,total:11});
+  assert.deepEqual(lessonPracticeCounts(state.lessonPractice),{answered:keys.size,latestCorrect:keys.size,firstUnassisted:0,helped:0,total:keys.size});
   assert.equal(practiceKey(get('A02').practice[0]),'A02@1.0.0:collect-predict@1.0.0','Preserve the original receivables key');
   const lesson=get('T04.01'),item=lesson.practice[0];
   assert.equal(reduce(state,action(get('A01'),item,'lesson-answer',{choice:item.correctOptionId})),state,'Question cannot be answered under another lesson owner');
@@ -108,7 +108,7 @@ test('help remains question-scoped and cannot award an unassisted first response
   }
 });
 
-test('actual B1 routes render the right package, interleave checkpoints and hide every initial practice solution',async()=>{
+test('all integrated routes render their package, interleave checkpoints and hide every initial practice solution',async()=>{
   globalThis.window={location:{hash:'#atlas/lessons/T04.01'}};
   const {createServer}=await import('vite'),{default:react}=await import('@vitejs/plugin-react');
   const {createElement}=await import('react'),{renderToStaticMarkup}=await import('react-dom/server');

@@ -38,6 +38,41 @@
         "T06.04"
       ],
       "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/receivables-lesson.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/inventory.v1.json",
+      "renderedConceptIds": [
+        "A03"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b2-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/trade-payables.v1.json",
+      "renderedConceptIds": [
+        "A04"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b2-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/operating-working-capital.v1.json",
+      "renderedConceptIds": [
+        "A05"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b2-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/operating-cash-flow.v1.json",
+      "renderedConceptIds": [
+        "A06"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b2-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/three-statement-transactions.v1.json",
+      "renderedConceptIds": [
+        "T07.14"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b2-lessons.test.mjs"
     }
   ],
   "legacyReviews": {},
