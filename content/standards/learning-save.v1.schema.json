@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Finance Atlas local learning save v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["format", "schemaVersion", "savedAt", "progress"],
+  "properties": {
+    "format": {"const": "finance-atlas-learning"},
+    "schemaVersion": {"const": 1},
+    "savedAt": {"type": "string", "format": "date-time"},
+    "progress": {
+      "type": "object", "additionalProperties": false,
+      "required": ["concepts", "topics", "lessonPractice", "cases", "activeRun", "simulations", "navigation"],
+      "properties": {
+        "concepts": {
+          "type": "object", "additionalProperties": false, "required": ["saved", "explored", "recent"],
+          "properties": {
+            "saved": {"$ref": "#/$defs/ids"},
+            "explored": {"$ref": "#/$defs/ids"},
+            "recent": {"type": "array", "maxItems": 20, "items": {"type": "string", "maxLength": 40}}
+          }
+        },
+        "topics": {"type": "array", "maxItems": 1000, "items": {"$ref": "#/$defs/topic"}},
+        "lessonPractice": {"type": "array", "maxItems": 1000, "items": {"$ref": "#/$defs/practice"}},
+        "cases": {"type": "array", "maxItems": 1000, "items": {"$ref": "#/$defs/case"}},
+        "activeRun": {"type": "integer", "minimum": -1, "maximum": 999},
+        "simulations": {"type": "array", "maxItems": 1000, "items": {"$ref": "#/$defs/simulation"}},
+        "navigation": {"type": "string", "maxLength": 2048}
+      }
+    }
+  },
+  "$defs": {
+    "ids": {"type": "array", "maxItems": 1000, "uniqueItems": true, "items": {"type": "string", "maxLength": 40}},
+    "choice": {"type": "integer", "minimum": 0, "maximum": 100},
+    "selected": {"anyOf": [{"$ref": "#/$defs/choice"}, {"type": "null"}]},
+    "topic": {
+      "type": "object", "additionalProperties": false,
+      "required": ["conceptId", "questionVersion", "selectedChoice", "attempts"],
+      "properties": {
+        "conceptId": {"type": "string", "maxLength": 40}, "questionVersion": {"type": "string", "maxLength": 100},
+        "selectedChoice": {"$ref": "#/$defs/selected"},
+        "attempts": {"type": "array", "maxItems": 10000, "items": {"$ref": "#/$defs/choice"}}
+      }
+    },
+    "practice": {
+      "type": "object", "additionalProperties": false,
+      "required": ["conceptId", "contentVersion", "questionId", "questionVersion", "selectedChoice", "hints", "attempts"],
+      "properties": {
+        "conceptId": {"type": "string", "maxLength": 40}, "contentVersion": {"type": "string", "maxLength": 40},
+        "questionId": {"type": "string", "maxLength": 100}, "questionVersion": {"type": "string", "maxLength": 40},
+        "selectedChoice": {"type": ["string", "null"], "maxLength": 100},
+        "hints": {"type": "array", "uniqueItems": true, "maxItems": 100, "items": {"type": "integer", "minimum": 0, "maximum": 99}},
+        "attempts": {"type": "array", "maxItems": 10000, "items": {"type": "string", "maxLength": 100}}
+      }
+    },
+    "clueSelection": {
+      "type": "object", "additionalProperties": false, "required": ["clueId", "choice"],
+      "properties": {"clueId": {"type": "string", "maxLength": 100}, "choice": {"$ref": "#/$defs/choice"}}
+    },
+    "clueAttempt": {
+      "type": "object", "additionalProperties": false, "required": ["clueId", "choice", "helpBeforeAnswer"],
+      "properties": {"clueId": {"type": "string", "maxLength": 100}, "choice": {"$ref": "#/$defs/choice"}, "helpBeforeAnswer": {"type": "boolean"}}
+    },
+    "case": {
+      "type": "object", "additionalProperties": false,
+      "required": ["activityId", "scenarioVersion", "definitionVersion", "step", "selectedChoices", "hints", "attempts", "finished"],
+      "properties": {
+        "activityId": {"type": "string", "maxLength": 100}, "scenarioVersion": {"type": "string", "maxLength": 40}, "definitionVersion": {"type": "string", "maxLength": 100},
+        "step": {"type": "integer", "minimum": 0, "maximum": 1000},
+        "selectedChoices": {"type": "array", "maxItems": 1000, "items": {"$ref": "#/$defs/clueSelection"}},
+        "hints": {"$ref": "#/$defs/ids"},
+        "attempts": {"type": "array", "maxItems": 10000, "items": {"$ref": "#/$defs/clueAttempt"}},
+        "finished": {"type": "boolean"}
+      }
+    },
+    "simulation": {
+      "description": "Requires a registered deterministic replay validator; current runtime supports an empty simulations array only.",
+      "type": "object", "additionalProperties": false,
+      "required": ["activityId", "scenarioVersion", "period", "decisions"],
+      "properties": {
+        "activityId": {"type": "string", "maxLength": 100}, "scenarioVersion": {"type": "string", "maxLength": 40},
+        "period": {"type": "integer", "minimum": 0, "maximum": 1000},
+        "decisions": {"type": "array", "maxItems": 10000, "items": {"type": "object"}}
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "format": "finance-atlas-learning",
+  "schemaVersion": 1,
+  "savedAt": "2026-10-19T00:00:00.000Z",
+  "progress": {
+    "concepts": {"saved": [], "explored": [], "recent": []},
+    "topics": [], "lessonPractice": [], "cases": [], "activeRun": -1,
+    "simulations": [], "navigation": "#atlas"
+  }
+}
