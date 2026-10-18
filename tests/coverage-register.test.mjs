@@ -19,8 +19,8 @@ test('every stable ID has content, scoped coverage and independently tracked rev
     assert.ok(c.specialistScope.deferred.length, c.id);
     if(c.editorialReview.state==='reviewed'){assert.ok(c.editorialReview.reviewer);assert.ok(c.editorialReview.reviewedOn);assert.ok(c.editorialReview.evidence.length);assert.ok(!c.gaps.includes('editorial-review'));}else assert.ok(c.gaps.includes('editorial-review'),c.id);
   }
-  assert.equal(register.summary.editoriallyReviewedConcepts, 26);
-  assert.equal(register.summary.selectedReviewedConcepts, 25);
+  assert.equal(register.summary.editoriallyReviewedConcepts, 31);
+  assert.equal(register.summary.selectedReviewedConcepts, 30);
   assert.equal(byId('T04.01').standard.state,'integrated');
   assert.equal(byId('T04.01').standard.package,'content/lesson-packages/accounting-equation.v1.json','The separate authoring fixture is not the rendered package');
   assert.equal(byId('T04.01').editorialReview.state, 'reviewed');
@@ -33,10 +33,10 @@ test('the 20 deep-reading aliases preserve IDs; two integrated pages share one p
   assert.equal(anchor.standard.canonicalConceptId, 'A02');
   assert.deepEqual(grouped.standard, anchor.standard);
   assert.equal(anchor.editorialReview.state, 'reviewed');
-  assert.equal(register.summary.integratedLessonPages, 26);
-  assert.equal(register.summary.canonicalIntegratedPackages, 25);
-  assert.equal(register.summary.canonicalPracticeQuestions, 51);
-  assert.equal(register.summary.selectedIntegratedPages, 25);
+  assert.equal(register.summary.integratedLessonPages, 31);
+  assert.equal(register.summary.canonicalIntegratedPackages, 30);
+  assert.equal(register.summary.canonicalPracticeQuestions, 61);
+  assert.equal(register.summary.selectedIntegratedPages, 30);
   assert.ok(anchor.firstRelease); assert.equal(grouped.firstRelease, null);
 });
 

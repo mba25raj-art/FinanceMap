@@ -28,8 +28,19 @@ import b5_2 from '../content/lesson-packages/fcff.v1.json' with { type: 'json' }
 import b5_3 from '../content/lesson-packages/wacc.v1.json' with { type: 'json' };
 import b5_4 from '../content/lesson-packages/discounted-cash-flow.v1.json' with { type: 'json' };
 
+import b6_0 from '../content/lesson-packages/terminal-value.v1.json' with { type: 'json' };
+import b6_1 from '../content/lesson-packages/valuation-sensitivity.v1.json' with { type: 'json' };
+import b6_2 from '../content/lesson-packages/enterprise-value.v1.json' with { type: 'json' };
+import b6_3 from '../content/lesson-packages/equity-value.v1.json' with { type: 'json' };
+import b6_4 from '../content/lesson-packages/enterprise-equity-bridge.v1.json' with { type: 'json' };
+
 export { receivables };
 const imported = new Map([
+  ['content/lesson-packages/terminal-value.v1.json', b6_0],
+  ['content/lesson-packages/valuation-sensitivity.v1.json', b6_1],
+  ['content/lesson-packages/enterprise-value.v1.json', b6_2],
+  ['content/lesson-packages/equity-value.v1.json', b6_3],
+  ['content/lesson-packages/enterprise-equity-bridge.v1.json', b6_4],
   ['content/lesson-packages/present-future-value.v1.json', b5_0],
   ['content/lesson-packages/net-present-value.v1.json', b5_1],
   ['content/lesson-packages/fcff.v1.json', b5_2],

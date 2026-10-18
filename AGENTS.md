@@ -107,3 +107,10 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Keep supplier purchases, cost sold, credit notes and settlement separate. Define operating working capital before using its change. Reconcile direct cash, the indirect bridge and the complete balance sheet. A write-down is non-cash: if added back explicitly, remove it from the related balance movement to avoid a second reversal.
 - The B2 net-profit bridge is conceptual. Do not present it as a universal statutory starting subtotal. IAS 7/IFRS 18 effective-period and jurisdiction questions, interest/dividends, supplier finance and specialist inventory rules remain explicit deferrals.
 - Reviews are explicitly scoped Codex AI content/source/arithmetic checks. B2 completion does not complete 04.4: four batches remain, with B3 next. Interactive browser QA remains outstanding under 11.1; do not turn SSR/reducer checks into a browser or learner-pilot claim.
+
+## Selected curriculum conversion complete (Task 04.4)
+
+- All six ordered batches are integrated: thirty selected canonical packages, 31 pages including A02/T06.04, and 61 independent practice questions. Preserve each canonical concept/content/question version and the original receivables keys. Do not infer other alias integration.
+- B3 separates dated forecasts, assumed liquidity buffers, principal financing and ordinary-equity ownership. B4 separates capital expenditure, depreciation, EBIT/NOPAT and incremental cash. B5–B6 match rates, periods and claims; require WACC greater than perpetual growth; keep excess cash and included claims explicit and counted once.
+- Every batch records Codex AI content/source/arithmetic review with independent numerical checks. Professional approval and learner-pilot evidence remain separate. Interactive browser QA is still outstanding under 11.1. Curriculum completion does not implement a financial-model engine or planned activities.
+- Continue to 05.1 before enabling cross-session persistence. First-release saves are local to the browser, with versioned validation, export/import and explicit reset confirmation. Accounts/cloud synchronisation are deferred.

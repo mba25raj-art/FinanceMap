@@ -178,6 +178,41 @@
         "A19"
       ],
       "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b5-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/terminal-value.v1.json",
+      "renderedConceptIds": [
+        "T17.12"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b6-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/valuation-sensitivity.v1.json",
+      "renderedConceptIds": [
+        "T17.18"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b6-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/enterprise-value.v1.json",
+      "renderedConceptIds": [
+        "A15"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b6-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/equity-value.v1.json",
+      "renderedConceptIds": [
+        "A16"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b6-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/enterprise-equity-bridge.v1.json",
+      "renderedConceptIds": [
+        "T17.04"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b6-lessons.test.mjs"
     }
   ],
   "legacyReviews": {},

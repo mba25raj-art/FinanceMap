@@ -8,11 +8,11 @@ Content existence does not establish editorial review, professional completeness
 | --- | ---: |
 | Stable concept records | 698 |
 | Explanations / worked examples / topic quizzes | 698 / 698 / 698 |
-| Integrated lesson pages / canonical packages | 26 / 25 |
-| Distinct embedded practice questions | 51 |
-| Editorially reviewed concept records | 26 |
+| Integrated lesson pages / canonical packages | 31 / 30 |
+| Distinct embedded practice questions | 61 |
+| Editorially reviewed concept records | 31 |
 | Selected first-release concepts | 30 |
-| Selected integrated / reviewed | 25 / 25 |
+| Selected integrated / reviewed | 30 / 30 |
 | Playable labs / planned labs | 0 / 3 |
 | Playable cases / planned cases | 1 / 1 |
 | Concepts with playable applied assessment | 3 |
@@ -35,7 +35,7 @@ A playable applied assessment means an implemented case question mapped to that 
 | 04.4-B3 | Liquidity and financing | T14.03, T14.04, T14.15, A18, T07.09 | 5 | 5 |
 | 04.4-B4 | Equipment and operating profit | A07, A08, A09, A10, T12.05 | 5 | 5 |
 | 04.4-B5 | Investment and FCFF valuation | T03.01, T03.12, A11, A13, A19 | 5 | 5 |
-| 04.4-B6 | Valuation interpretation | T17.12, T17.18, A15, A16, T17.04 | 0 | 0 |
+| 04.4-B6 | Valuation interpretation | T17.12, T17.18, A15, A16, T17.04 | 5 | 5 |
 
 ## Domain coverage
 
@@ -57,7 +57,7 @@ A playable applied assessment means an implemented case question mapped to that 
 | D14: Working capital and treasury management | 17 | 17 | 4 | 4 |
 | D15: Financial planning, budgeting, and management accounting | 15 | 15 | 0 | 0 |
 | D16: Financial modelling | 16 | 16 | 0 | 0 |
-| D17: Valuation foundations and discounted cash flow | 25 | 25 | 3 | 3 |
+| D17: Valuation foundations and discounted cash flow | 25 | 25 | 8 | 8 |
 | D18: Relative valuation and specialist valuation | 18 | 18 | 0 | 0 |
 | D19: Equity markets and equity research | 17 | 17 | 0 | 0 |
 | D20: Fixed income and debt markets | 17 | 17 | 0 | 0 |

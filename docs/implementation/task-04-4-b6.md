@@ -1,0 +1,19 @@
+# Task 04.4-B6 — Valuation interpretation
+
+T17.12 Terminal growth and terminal value, T17.18 Sensitivity analysis/scenarios/reverse DCF, A15 Enterprise value, A16 Equity value and T17.04 The enterprise-to-equity value bridge now use the lesson standard. B6 adds five packages and ten independent questions. All six batches now cover the thirty selected concepts, with 61 canonical questions and 31 navigable pages including the explicit receivables alias.
+
+Review: Codex, AI content/source/arithmetic review, 19 October 2026. This is not independent professional approval, browser verification or learner-pilot evidence. Primary NYU Stern teaching sources on terminal value, cash/holdings and FCFF supply conceptual background. Each source's role is bounded in the package. All values, growth assumptions and rates are hypothetical; no historical source data is treated as a current price or recommendation.
+
+| Concept | Independent numerical control and reviewed interpretation |
+| --- | --- |
+| T17.12 | Year 3 FCFF 20 grows to first terminal cash 20.6. At WACC 11% and growth 3%, horizon value 257.5 discounts three years to 188.28178. A transfer rejects growth at/above WACC instead of publishing an algebraic quotient for an inapplicable perpetuity. |
+| T17.18 | Base next-year cash 12/(10%−2%) = 150. Rate-only change gives 120; a combined downside gives 90.90909. A separate hypothetical value 180 requires next-year cash 14.4. A reverse requirement is not a forecast fact, and cases are not probability intervals. |
+| A15 | Equity 140 + debt 50 + preferred 10 − excess cash 12 − outside investment 8 = operating EV 180. A controlled fair-value borrowing adds equal outside cash/debt and leaves the fixed operating value and residual unchanged. |
+| A16 | Consolidated operating value 240 + outside assets 25 − debt/preferred/non-controlling claims 125 = ordinary parent equity 140; 20 lakh shares give INR 7. The consolidation/ownership perimeter determines the minority adjustment. |
+| T17.04 | Supplied operating value 200 already covers required operating cash. Add excess 20 and investment 8, deduct distinct claims 88, giving ordinary equity 140 and INR 14 per supplied share. Gross and net-debt presentations must not count the same cash twice. |
+
+The cash convention is explicit: some independent examples supply an operating value that already covers a required operating cash amount. They add only separately excess cash. Another valuation that excludes all cash must reconcile its different convention. Restrictions do not automatically prove an asset is worthless or fully distributable. A simple negative residual needs further claim/distress analysis rather than publication as a negative market share price.
+
+77 content/session/route/lesson/coverage tests, the production build, four hosting checks and deterministic coverage checks pass. New tests recompute all B6 worked/practice values and assert all thirty selected IDs match their own reviewed package. Shared tests protect every initial practice state and legacy routes, case gates and canonical response histories. All 698 topic pages and 2,520 relationship identities remain intact. None of the graph relationships becomes a shipped numerical model rule merely because lessons contain calculations.
+
+All six batches are complete for scoped authored content and automated verification, with explicit AI review metadata and source/specialist limitations. Parent 04.4 can be marked Done. Interactive desktop/mobile/keyboard QA remains an identified release check under 11.1, not a claim made by these SSR/reducer tests. The existing bundle-size notice remains. Local saved-data design in 05.1 is next; persistence, model, labs, company-case rounds and learner piloting remain separate tasks. Code remains in the draft PR, unmerged and undeployed.

@@ -1,0 +1,404 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "A15",
+  "contentVersion": "1.0.0",
+  "hoverDefinition": "Enterprise value here means the value of the defined operating business before non-equity claims. Keep that operating perimeter separate from excess cash, non-operating assets and ordinary equity value.",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "Operating-value convention, claim-based reconstruction, excess cash/non-operating assets and financing neutrality under stated fixed assumptions."
+    ],
+    "deferred": [
+      "Transaction-specific enterprise-value conventions, control premiums, lease/pension valuation and professional multiple normalisation are deferred."
+    ]
+  },
+  "objectives": [
+    {
+      "id": "enterprise",
+      "statement": "Interpret and reconcile the supplied operating enterprise value.",
+      "evidence": "Separate operating assets from added non-operating assets and deducted financing claims.",
+      "outcomeIds": [
+        "LO6"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh"
+    ],
+    "timeframe": "Independent fictional teaching scenarios. Worked examples and practice start separately; they are not consecutive company-case rounds.",
+    "assumptions": [
+      "Enterprise value is explicitly operating value for this lesson; other conventions require reconciliation.",
+      "All claim and asset values refer to the same date and are supplied economic values, not automatically book/face values.",
+      "Only the stated excess cash and non-operating assets are added outside operations; no double-counting.",
+      "Pure borrowing transfer assumes no fees, value change in operations or claim repricing."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Conceptual teaching assumptions, with INR lakh as a unit rather than a jurisdiction. No tax rate, financing term, reporting classification, valuation input or management buffer is a current rule or market recommendation. Applicable framework, jurisdiction, reporting period and effective amendments require separate study."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "perimeter",
+      "title": "Name the operating value being discussed",
+      "paragraphs": [
+        "An FCFF DCF values operating assets before debt service. This lesson calls that operating enterprise value. Ordinary equity is a residual after other claims and non-operating adjustments. Published EV conventions can differ, so identify exactly which assets and claims are included.",
+        "An operating multiple should pair the operating value with a consistent operating measure, such as a defined EBIT/EBITDA, not a differently scoped net-income number. This lesson does not estimate a market multiple."
+      ]
+    },
+    {
+      "id": "reconcile",
+      "title": "Reconstruct the same value from claims",
+      "paragraphs": [
+        "Under the supplied perimeter, operating EV = ordinary equity value + debt value + preferred/other included claims − excess cash − separately valued non-operating assets. Rearranging gives the corresponding equity bridge.",
+        "Use values on the same date and avoid replacing one side with book equity while using market values elsewhere. Required operating cash already included in the operating perimeter is not an extra excess-cash addition."
+      ]
+    },
+    {
+      "id": "funding",
+      "title": "Separate borrowing from value creation",
+      "paragraphs": [
+        "A pure cash borrowing at the assumed fair claim value adds cash and debt together. If the entire new cash is excess and operations/risk are held fixed, the two bridge changes offset. It does not mechanically create operating value or ordinary-equity value.",
+        "Actual financing can change fees, risk, tax effects and feasible investment; those consequences need explicit modelling. The controlled example demonstrates bridge arithmetic, not unlimited financing neutrality in reality."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "Operating EV and total assets including non-operating assets",
+      "explanation": "The scope determines whether cash/holdings are already included.",
+      "whenItMatters": "Do not add the same asset twice."
+    },
+    {
+      "name": "Enterprise and ordinary equity",
+      "explanation": "Debt and other claims share the economic assets.",
+      "whenItMatters": "An operating DCF output is not automatically a share price."
+    },
+    {
+      "name": "Market/economic and book values",
+      "explanation": "Accounting carrying balances measure a different basis.",
+      "whenItMatters": "Use compatible values and dates in a claims reconstruction."
+    }
+  ],
+  "workedExample": {
+    "id": "enterprise-claims",
+    "scenarioId": "enterprise-claims-worked",
+    "setup": "At one valuation date, ordinary equity value is 140, debt value 50, preferred claim value 10, separately identified excess cash 12 and non-operating investment value 8. All operating assets, including any required operating cash, belong inside the operating perimeter. No other asset or claim exists.",
+    "inputs": [
+      {
+        "key": "equity",
+        "label": "Equity",
+        "value": 140,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "debt",
+        "label": "Debt",
+        "value": 50,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "preferred",
+        "label": "Preferred",
+        "value": 10,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "excess_cash",
+        "label": "Excess cash",
+        "value": 12,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "non_operating",
+        "label": "Non operating",
+        "value": 8,
+        "unit": "INR lakh"
+      }
+    ],
+    "steps": [
+      "Total value supported by capital claims = 140 + 50 + 10 = 200.",
+      "Remove separately valued non-operating resources 12 + 8 = 20.",
+      "Operating enterprise value = 200 − 20 = 180.",
+      "Reverse check: operating 180 + excess cash 12 + investment 8 − debt 50 − preferred 10 = ordinary equity 140.",
+      "Book equity or an unstated operating cash balance is not added to this reconstruction.",
+      "The answer is a value measure at a date, not current revenue, cash flow or an accounting entry."
+    ],
+    "result": "Operating enterprise value 180; combined economic assets 200; ordinary equity 140.",
+    "interpretation": "The perimeter and claims explain the relationship; naming every number enterprise value would obscure it."
+  },
+  "statementEffects": {
+    "applicability": "not-applicable",
+    "explanation": "Effects under the stated simplified scenario. Forecasts and economic values do not themselves create accounting entries.",
+    "changes": []
+  },
+  "misconceptions": [
+    {
+      "id": "equity",
+      "claim": "Enterprise value is the ordinary equity value.",
+      "correction": "Reconcile non-equity claims and non-operating assets.",
+      "diagnostic": "Which capital providers share the business value?"
+    },
+    {
+      "id": "cash",
+      "claim": "Add excess cash when reconstructing operating EV from equity and debt.",
+      "correction": "Remove the separately valued non-operating cash from the combined claims value.",
+      "diagnostic": "Are you moving toward operating or total assets?"
+    },
+    {
+      "id": "funding",
+      "claim": "Every loan receipt creates enterprise value.",
+      "correction": "Under the fixed pure-transfer assumptions, cash and debt offset.",
+      "diagnostic": "Did operations or risk actually change?"
+    }
+  ],
+  "practice": [
+    {
+      "id": "enterprise-predict",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "reconcile",
+      "scenarioId": "enterprise-predict-independent",
+      "objectiveIds": [
+        "enterprise"
+      ],
+      "setup": "Independent values at one date: ordinary equity 90, debt 30 and excess cash 10. No preferred, other asset or other claim exists. EV means operating value excluding that excess cash.",
+      "inputs": [
+        {
+          "key": "equity",
+          "label": "Equity",
+          "value": 90,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "debt",
+          "label": "Debt",
+          "value": 30,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "excess_cash",
+          "label": "Excess cash",
+          "value": 10,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "What operating enterprise value follows?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "90",
+          "feedback": "This omits the non-equity claim and cash reconciliation.",
+          "misconceptionId": "equity"
+        },
+        {
+          "id": "correct",
+          "text": "110",
+          "feedback": "Operating EV = 90 + 30 − 10 = 110. Reverse: 110 + 10 − 30 = equity 90.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "130",
+          "feedback": "Excess cash is subtracted when reconstructing operating EV from claims.",
+          "misconceptionId": "cash"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Operating EV = 90 + 30 − 10 = 110. Reverse: 110 + 10 − 30 = equity 90.",
+      "hints": [
+        {
+          "text": "Start from all claim values, then remove outside operating assets.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Operating EV = 90 + 30 − 10 = 110. Reverse: 110 + 10 − 30 = equity 90.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Why is cash added in the reverse bridge but removed here?",
+        "rubric": [
+          "State direction of the bridge.",
+          "Keep the operating perimeter.",
+          "Count each outside asset once."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "enterprise-transfer-borrowing",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "funding",
+      "scenarioId": "enterprise-transfer-borrowing-independent",
+      "objectiveIds": [
+        "enterprise"
+      ],
+      "setup": "Independent scenario: operating EV 130, debt value 80 and excess cash 10; no other claim/asset. Borrow 20 cash at an equal new debt value and retain it entirely as excess cash. Assume no fees, changed operating/risk value or claim repricing.",
+      "inputs": [
+        {
+          "key": "enterprise",
+          "label": "Enterprise",
+          "value": 130,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "debt",
+          "label": "Debt",
+          "value": 80,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "excess_cash",
+          "label": "Excess cash",
+          "value": 10,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "new_borrowing",
+          "label": "New borrowing",
+          "value": 20,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "What operating EV and ordinary equity values follow after this controlled borrowing?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "Operating EV 150; ordinary equity 80",
+          "feedback": "The new cash and debt offset; operations have not changed.",
+          "misconceptionId": "funding"
+        },
+        {
+          "id": "correct",
+          "text": "Operating EV 130; ordinary equity 60",
+          "feedback": "Before: equity = 130 + 10 − 80 = 60. After: debt 100 and excess cash 30 give equity = 130 + 30 − 100 = 60; operating EV remains 130 under the fixed assumptions.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "Operating EV 130; ordinary equity 80",
+          "feedback": "Adding the cash while ignoring the new debt invents equity value.",
+          "misconceptionId": "funding"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Before: equity = 130 + 10 − 80 = 60. After: debt 100 and excess cash 30 give equity = 130 + 30 − 100 = 60; operating EV remains 130 under the fixed assumptions.",
+      "hints": [
+        {
+          "text": "Show both sides of the borrowing in the bridge.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Before: equity = 130 + 10 − 80 = 60. After: debt 100 and excess cash 30 give equity = 130 + 30 − 100 = 60; operating EV remains 130 under the fixed assumptions.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Which real-world consequences would break the controlled assumption?",
+        "rubric": [
+          "Add cash and debt together.",
+          "Hold operations fixed only as stated.",
+          "Consider fees, risk and investment separately."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E2122",
+      "to": "T17.03",
+      "kind": "learning",
+      "purpose": "Atomic concept within this original grouped topic.",
+      "conditions": "Preserves the original inventory while enabling more precise navigation.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2163",
+      "to": "A19",
+      "kind": "financial",
+      "purpose": "Discounted operating FCFF estimates the specified operating enterprise value.",
+      "conditions": "Adjust separately for excluded non-operating assets and claims.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2164",
+      "to": "T17.04",
+      "kind": "financial",
+      "purpose": "The enterprise-to-equity bridge reconciles operating value to shareholder value.",
+      "conditions": "Apply the stated definitions, periods and teaching assumptions. This relationship is not an implemented calculation dependency.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D17",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "Which convention is used in a particular transaction or market EV multiple?",
+      "How do financing-induced risk or fees change the controlled example?"
+    ],
+    "conceptIds": [
+      "T17.03",
+      "A19",
+      "T17.04"
+    ],
+    "limitations": "Introductory study coverage. Transaction-specific enterprise-value conventions, control premiums, lease/pension valuation and professional multiple normalisation are deferred."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "The connected six-round case remains a separate implementation task; these examples do not imply playable rounds."
+    }
+  ],
+  "sources": [
+    {
+      "id": "cash",
+      "title": "Aswath Damodaran, NYU Stern: The Value of Cash and Cross Holdings",
+      "url": "https://pages.stern.nyu.edu/~adamodar/pdfiles/eqnotes/cashandholdings.pdf",
+      "supports": [
+        "Background on separately valued cash/holdings and consistent operating-cash and consolidation perimeters. The scenario supplies values and inclusion rules; book balances are not assumed to equal claim values."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "firm",
+      "title": "Aswath Damodaran, NYU Stern: Free Cashflow to the Firm",
+      "url": "https://people.stern.nyu.edu/adamodar/pdfiles/eqnotes/fcff.pdf",
+      "supports": [
+        "Background on operating value, non-operating additions and deductions for claims. Supplied hypothetical values replace any source historical company data; no present market calibration is claimed."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "method": "ai-content-source-arithmetic",
+    "evidence": [
+      "B6 topic mechanics, terminology, signs, timing, source boundaries and feedback reviewed in docs/implementation/task-04-4-b6.md.",
+      "Independent worked and assessment calculations checked in tests/b6-lessons.test.mjs; shared route, version, hint and retry regressions also apply.",
+      "Scoped AI content review, not independent professional approval, interactive browser verification or learner-pilot evidence."
+    ]
+  }
+}

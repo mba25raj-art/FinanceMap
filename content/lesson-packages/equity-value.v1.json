@@ -1,0 +1,432 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "A16",
+  "contentVersion": "1.0.0",
+  "hoverDefinition": "Ordinary equity value is the residual economic value after the operating and non-operating asset perimeter is reconciled with debt and other claims. Per-share value also requires a consistent share count.",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "Residual ordinary value, consolidated/minority claims, book versus economic equity and per-share denominators."
+    ],
+    "deferred": [
+      "Option/convertible allocation, distress valuation, control/liquidity adjustments and legal claim priorities are deferred."
+    ]
+  },
+  "objectives": [
+    {
+      "id": "equity",
+      "statement": "Calculate a supplied ordinary-equity residual and per-share amount.",
+      "evidence": "Deduct every included claim once and use the supplied ordinary share count.",
+      "outcomeIds": [
+        "LO6"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh",
+      "lakh shares"
+    ],
+    "timeframe": "Independent fictional teaching scenarios. Worked examples and practice start separately; they are not consecutive company-case rounds.",
+    "assumptions": [
+      "All asset/claim values refer to one date and a stated consolidated operating perimeter.",
+      "Non-controlling interests are deducted only where the operating value includes their share of subsidiary operations.",
+      "Ordinary shares are identical; no options, convertibles or other dilution except where stated.",
+      "The examples are economic estimates, not book-equity reconciliation, market quotes or a legal insolvency allocation."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Conceptual teaching assumptions, with INR lakh as a unit rather than a jurisdiction. No tax rate, financing term, reporting classification, valuation input or management buffer is a current rule or market recommendation. Applicable framework, jurisdiction, reporting period and effective amendments require separate study."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "residual",
+      "title": "Identify whose equity is being valued",
+      "paragraphs": [
+        "Operating value belongs to all capital providers within the model perimeter. Add separately valued non-operating assets, then deduct debt and the specified preferred, non-controlling or other claims to arrive at ordinary parent equity. Do not deduct a minority interest if the valued cash already excludes it.",
+        "Book equity is the accounting residual from carrying amounts. Economic equity value uses the chosen valuation assumptions. Neither automatically equals a current trading price or a shareholder payout."
+      ]
+    },
+    {
+      "id": "per-share",
+      "title": "Use the matching share denominator",
+      "paragraphs": [
+        "Divide ordinary-equity value by the corresponding ordinary shares outstanding. INR lakh divided by lakh shares gives INR per share. A claim for options or a larger diluted share count needs a consistent method; do not apply both adjustments automatically.",
+        "A new issue, buyback or changing share rights can affect the denominator and assets/claims together. A higher per-share result alone does not establish stronger operations."
+      ]
+    },
+    {
+      "id": "limits",
+      "title": "Interpret an estimate with unresolved claims",
+      "paragraphs": [
+        "Keep the bridge auditable by naming each asset and claim, its value basis and whether it is already in the operating model. Debt book value is not assumed equal to an economic settlement value unless supplied.",
+        "A negative simple residual signals that the supplied enterprise/claim assumptions need distress or allocation analysis. Do not mechanically publish it as a negative per-share market price or silently label it an ordinary going-concern result."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "Book equity and estimated equity value",
+      "explanation": "They use different measurement bases.",
+      "whenItMatters": "A balance-sheet residual is not a DCF output."
+    },
+    {
+      "name": "Total equity and ordinary parent equity",
+      "explanation": "Preferred and subsidiary outsiders may have separate claims.",
+      "whenItMatters": "Keep the ownership/consolidation perimeter consistent."
+    },
+    {
+      "name": "Value per share and total value",
+      "explanation": "The denominator matters alongside the total residual.",
+      "whenItMatters": "Use the same class and dilution convention."
+    }
+  ],
+  "workedExample": {
+    "id": "equity-consolidated",
+    "scenarioId": "equity-consolidated-worked",
+    "setup": "Supplied consolidated operating value is 240, including 100% of the modelled subsidiaries. Excess cash is 18 and separately valued non-operating investment 7. Debt value 100, preferred claim 15 and non-controlling claim 10 are not already deducted. There are 20 lakh identical ordinary parent shares and no other claims.",
+    "inputs": [
+      {
+        "key": "enterprise",
+        "label": "Enterprise",
+        "value": 240,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "excess_cash",
+        "label": "Excess cash",
+        "value": 18,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "non_operating",
+        "label": "Non operating",
+        "value": 7,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "debt",
+        "label": "Debt",
+        "value": 100,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "preferred",
+        "label": "Preferred",
+        "value": 15,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "minority",
+        "label": "Minority",
+        "value": 10,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "shares",
+        "label": "Ordinary parent shares",
+        "value": 20,
+        "unit": "lakh shares"
+      }
+    ],
+    "steps": [
+      "Economic asset value = operations 240 + excess cash 18 + investment 7 = 265.",
+      "Other claim values = debt 100 + preferred 15 + non-controlling interest 10 = 125.",
+      "Ordinary parent equity = 265 − 125 = 140.",
+      "Per ordinary share = 140 lakh / 20 lakh shares = INR 7.",
+      "Reverse check: ordinary 140 + other claims 125 = economic assets 265.",
+      "The minority deduction is required because the starting operating value includes 100% of the relevant subsidiary operations."
+    ],
+    "result": "Ordinary parent equity 140; INR 7 per supplied ordinary share.",
+    "interpretation": "The residual and share count are conditional valuation inputs, not guaranteed market or payout amounts."
+  },
+  "statementEffects": {
+    "applicability": "not-applicable",
+    "explanation": "Effects under the stated simplified scenario. Forecasts and economic values do not themselves create accounting entries.",
+    "changes": []
+  },
+  "misconceptions": [
+    {
+      "id": "omit",
+      "claim": "Subtract only debt even when other claims are explicitly supplied.",
+      "correction": "Deduct each included outside claim once.",
+      "diagnostic": "Whose cash is inside the consolidated operating value?"
+    },
+    {
+      "id": "book",
+      "claim": "Use accounting equity as if it were the economic residual.",
+      "correction": "Keep measurement bases consistent.",
+      "diagnostic": "Were assets valued at carrying amounts or forecast value?"
+    },
+    {
+      "id": "denominator",
+      "claim": "Use an unrelated or old share count.",
+      "correction": "Match the ordinary residual with the supplied ordinary shares.",
+      "diagnostic": "Which class and date does the denominator represent?"
+    }
+  ],
+  "practice": [
+    {
+      "id": "equityvalue-predict",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "per-share",
+      "scenarioId": "equityvalue-predict-independent",
+      "objectiveIds": [
+        "equity"
+      ],
+      "setup": "Independent supplied values: operating EV 120, excess cash 6, debt 40 and preferred claim 6. No other assets or claims exist; 10 lakh identical ordinary shares are outstanding.",
+      "inputs": [
+        {
+          "key": "enterprise",
+          "label": "Enterprise",
+          "value": 120,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "excess_cash",
+          "label": "Excess cash",
+          "value": 6,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "debt",
+          "label": "Debt",
+          "value": 40,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "preferred",
+          "label": "Preferred",
+          "value": 6,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "shares",
+          "label": "Ordinary shares",
+          "value": 10,
+          "unit": "lakh shares"
+        }
+      ],
+      "question": "What ordinary equity and per-share values follow?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "Equity 86; INR 8.6 per share",
+          "feedback": "The preferred claim 6 is not part of ordinary equity.",
+          "misconceptionId": "omit"
+        },
+        {
+          "id": "correct",
+          "text": "Equity 80; INR 8 per share",
+          "feedback": "Ordinary equity = 120 + 6 − 40 − 6 = 80 lakh. Per share = 80/10 = INR 8.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "Equity 80; INR 80 per share",
+          "feedback": "Divide by the supplied 10 lakh shares, not one lakh.",
+          "misconceptionId": "denominator"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Ordinary equity = 120 + 6 − 40 − 6 = 80 lakh. Per share = 80/10 = INR 8.",
+      "hints": [
+        {
+          "text": "Allocate the economic assets to the other claims before dividing.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Ordinary equity = 120 + 6 − 40 − 6 = 80 lakh. Per share = 80/10 = INR 8.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Which input makes the amount ordinary rather than total equity?",
+        "rubric": [
+          "Deduct preferred 6.",
+          "Use ordinary shares 10 lakh.",
+          "Keep units consistent."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "equityvalue-transfer-minority",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "limits",
+      "scenarioId": "equityvalue-transfer-minority-independent",
+      "objectiveIds": [
+        "equity"
+      ],
+      "setup": "Independent consolidated operating value 90 includes 100% of the subsidiary cash. Excess cash 4, debt value 35, preferred claim 5 and non-controlling claim 10 are supplied and not deducted yet. There are 11 lakh ordinary parent shares. No other items exist.",
+      "inputs": [
+        {
+          "key": "enterprise",
+          "label": "Enterprise",
+          "value": 90,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "excess_cash",
+          "label": "Excess cash",
+          "value": 4,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "debt",
+          "label": "Debt",
+          "value": 35,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "preferred",
+          "label": "Preferred",
+          "value": 5,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "minority",
+          "label": "Minority",
+          "value": 10,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "shares",
+          "label": "Ordinary parent shares",
+          "value": 11,
+          "unit": "lakh shares"
+        }
+      ],
+      "question": "What ordinary parent equity and per-share values are supported?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "Equity 54; INR 4.91 per share",
+          "feedback": "The supplied consolidated value includes outsiders’ subsidiary cash, requiring the minority deduction.",
+          "misconceptionId": "omit"
+        },
+        {
+          "id": "correct",
+          "text": "Equity 44; INR 4 per share",
+          "feedback": "Ordinary equity = 90 + 4 − 35 − 5 − 10 = 44. Per share = 44/11 = INR 4. The minority claim is deducted once because of the stated consolidated perimeter.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "Equity 44; INR 44 per share",
+          "feedback": "Use the 11 lakh matching ordinary shares.",
+          "misconceptionId": "denominator"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Ordinary equity = 90 + 4 − 35 − 5 − 10 = 44. Per share = 44/11 = INR 4. The minority claim is deducted once because of the stated consolidated perimeter.",
+      "hints": [
+        {
+          "text": "Check the ownership scope before the share division.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Ordinary equity = 90 + 4 − 35 − 5 − 10 = 44. Per share = 44/11 = INR 4. The minority claim is deducted once because of the stated consolidated perimeter.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "When would deducting the minority claim again be wrong?",
+        "rubric": [
+          "Identify the 100% starting perimeter.",
+          "Deduct each claim once.",
+          "Do not deduct an already excluded cash interest."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E2123",
+      "to": "T17.03",
+      "kind": "learning",
+      "purpose": "Atomic concept within this original grouped topic.",
+      "conditions": "Preserves the original inventory while enabling more precise navigation.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2165",
+      "to": "T17.04",
+      "kind": "financial",
+      "purpose": "The bridge adds relevant non-operating assets and removes non-equity claims.",
+      "conditions": "Use a consistent definition; avoid double counting cash, leases and minorities.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D17",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "How do options, convertibles and claim repricing affect the residual/share count?",
+      "When is a distressed allocation needed instead of a simple bridge?"
+    ],
+    "conceptIds": [
+      "T17.03",
+      "T17.04"
+    ],
+    "limitations": "Introductory study coverage. Option/convertible allocation, distress valuation, control/liquidity adjustments and legal claim priorities are deferred."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "The connected six-round case remains a separate implementation task; these examples do not imply playable rounds."
+    }
+  ],
+  "sources": [
+    {
+      "id": "cash",
+      "title": "Aswath Damodaran, NYU Stern: The Value of Cash and Cross Holdings",
+      "url": "https://pages.stern.nyu.edu/~adamodar/pdfiles/eqnotes/cashandholdings.pdf",
+      "supports": [
+        "Background on separately valued cash/holdings and consistent operating-cash and consolidation perimeters. The scenario supplies values and inclusion rules; book balances are not assumed to equal claim values."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "firm",
+      "title": "Aswath Damodaran, NYU Stern: Free Cashflow to the Firm",
+      "url": "https://people.stern.nyu.edu/adamodar/pdfiles/eqnotes/fcff.pdf",
+      "supports": [
+        "Background on operating value, non-operating additions and deductions for claims. Supplied hypothetical values replace any source historical company data; no present market calibration is claimed."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "method": "ai-content-source-arithmetic",
+    "evidence": [
+      "B6 topic mechanics, terminology, signs, timing, source boundaries and feedback reviewed in docs/implementation/task-04-4-b6.md.",
+      "Independent worked and assessment calculations checked in tests/b6-lessons.test.mjs; shared route, version, hint and retry regressions also apply.",
+      "Scoped AI content review, not independent professional approval, interactive browser verification or learner-pilot evidence."
+    ]
+  }
+}
