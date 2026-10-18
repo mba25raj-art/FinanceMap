@@ -1,0 +1,464 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "T07.09",
+  "contentVersion": "1.0.0",
+  "hoverDefinition": "Issuing ordinary shares raises owner funding and changes ownership fractions. Dividends and buybacks return value to owners; under the stated ordinary-equity assumptions they reduce cash and equity rather than operating profit.",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "Primary equity issue versus shareholder resale, proceeds, share-count dilution, cash dividends and buybacks under ordinary-equity assumptions."
+    ],
+    "deferred": [
+      "Legal distributable reserves, securities rules, transaction costs, complex shares, treasury-share presentation, EPS and payout optimisation are deferred."
+    ]
+  },
+  "objectives": [
+    {
+      "id": "ownership",
+      "statement": "Calculate cash proceeds and ownership after a simple ordinary share issue.",
+      "evidence": "Use newly issued shares in the denominator without treating proceeds as revenue.",
+      "outcomeIds": [
+        "LO4"
+      ]
+    },
+    {
+      "id": "payout",
+      "statement": "Trace given cash dividends and a simple buyback.",
+      "evidence": "Separate owner transactions from operating profit and recompute outstanding share fractions.",
+      "outcomeIds": [
+        "LO4"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh",
+      "lakh shares",
+      "INR per share"
+    ],
+    "timeframe": "Independent fictional teaching scenarios. Worked examples and practice start separately; they are not consecutive company-case rounds.",
+    "assumptions": [
+      "All shares are identical ordinary equity with no redemption obligation; classification is assumed.",
+      "Share counts use lakh shares; multiplying by INR per share yields INR lakh. No issuance costs, tax or other transaction.",
+      "Buyback shares cease to be outstanding by the stated simplified assumption; retained owner holdings do not change unless stated.",
+      "Payouts are assumed permitted and paid immediately. No legal conclusion or universal statutory cash-flow category is implied."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Conceptual teaching assumptions, with INR lakh as a unit rather than a jurisdiction. No tax rate, financing term, reporting classification, valuation input or management buffer is a current rule or market recommendation. Applicable framework, jurisdiction, reporting period and effective amendments require separate study."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "issue",
+      "title": "Distinguish company funding from a shareholder resale",
+      "paragraphs": [
+        "A primary issue sells new shares and the company receives the proceeds. A secondary sale between existing investors transfers ownership and normally does not deliver that sale price to the company. For the assumed ordinary issue, cash and contributed equity rise; proceeds are not sales revenue.",
+        "Cash proceeds = newly issued shares × issue price. Existing holders who buy no new shares keep their number of shares but hold a smaller fraction of the enlarged total. This is percentage dilution, not proof that the economic value of their stake has fallen."
+      ]
+    },
+    {
+      "id": "fraction",
+      "title": "Recompute the denominator",
+      "paragraphs": [
+        "After a simple issue, outstanding shares = old shares + new shares. An unchanged holding divided by the new total gives its ownership fraction. The issue price is supplied, not derived from book equity per share and not asserted to be fair value.",
+        "Voting rights, preferences, options and convertibles can make a simple fraction incomplete. These examples assume one identical ordinary class and no other claim."
+      ]
+    },
+    {
+      "id": "payout",
+      "title": "Separate owner distributions from performance",
+      "paragraphs": [
+        "A cash dividend to assumed ordinary equity holders reduces cash and equity without being an operating expense. A simple buyback pays owners for shares, reducing cash/equity and, under the stated retirement assumption, shares outstanding. Holders who do not sell then own a larger fraction of the smaller share count.",
+        "Neither action creates operating profit or guarantees a higher company value. Legal capacity, funding needs, tax, pricing and solvency require separate analysis. Classifications for actual reporting depend on framework and period; these examples label owner cash movements separately."
+      ]
+    },
+    {
+      "id": "reconcile",
+      "title": "Close the ownership and cash bridges",
+      "paragraphs": [
+        "Track issue proceeds, dividend payments and repurchase payments separately, then reconcile cash and equity. Track shares issued and removed independently of monetary equity. A higher per-share figure can result from a smaller denominator, even without stronger operations."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "Primary issue and secondary sale",
+      "explanation": "The company receives primary issue proceeds; a shareholder receives proceeds on a private resale.",
+      "whenItMatters": "Do not fund the company with an investor-to-investor transfer."
+    },
+    {
+      "name": "Ownership fraction and economic loss",
+      "explanation": "The fraction changes when the denominator changes; value also depends on the assets funded and issue terms.",
+      "whenItMatters": "Avoid treating percentage dilution alone as a value verdict."
+    },
+    {
+      "name": "Distribution and expense",
+      "explanation": "Under the ordinary-equity assumptions, payouts are owner transactions.",
+      "whenItMatters": "Do not reduce operating profit by a cash dividend or repeat a buyback as expense."
+    }
+  ],
+  "workedExample": {
+    "id": "equity-issue-payout",
+    "scenarioId": "equity-issue-payout-worked",
+    "setup": "Opening cash 10 and other assets 30 are funded by ordinary equity 40; 10 lakh shares are outstanding. Issue 5 lakh new shares for INR 4 each. Pay cash dividend 3. Repurchase and retire 1 lakh share for INR 5 each. An original holder keeps all 10 lakh original shares and does not sell in the buyback. No operating event or cost occurs.",
+    "inputs": [
+      {
+        "key": "opening_cash",
+        "label": "Opening cash",
+        "value": 10,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "other_assets",
+        "label": "Other assets",
+        "value": 30,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "opening_equity",
+        "label": "Opening equity",
+        "value": 40,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "dividend",
+        "label": "Dividend",
+        "value": 3,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "old_shares",
+        "label": "Old outstanding shares",
+        "value": 10,
+        "unit": "lakh shares"
+      },
+      {
+        "key": "new_shares",
+        "label": "New shares issued",
+        "value": 5,
+        "unit": "lakh shares"
+      },
+      {
+        "key": "issue_price",
+        "label": "Issue price",
+        "value": 4,
+        "unit": "INR per share"
+      },
+      {
+        "key": "buyback_shares",
+        "label": "Shares repurchased and retired",
+        "value": 1,
+        "unit": "lakh shares"
+      },
+      {
+        "key": "buyback_price",
+        "label": "Repurchase price",
+        "value": 5,
+        "unit": "INR per share"
+      }
+    ],
+    "steps": [
+      "Issue proceeds = 5 lakh shares × INR 4 = INR 20 lakh; cash rises 10 to 30 and equity 40 to 60.",
+      "Shares become 15 lakh. The unchanged 10 lakh holding is 10/15 = 66.67% after the issue.",
+      "Dividend payment 3 reduces cash to 27 and equity to 57; no current expense is created.",
+      "Repurchase payment = 1 × 5 = 5 lakh. Cash becomes 22 and equity 52; outstanding shares become 14 lakh.",
+      "The unchanged 10 lakh original holding is now 10/14 = 71.43%. This percentage change is separate from the price/value decision.",
+      "Assets = cash 22 + other assets 30 = 52; equity 52 and no liabilities. Profit is zero throughout."
+    ],
+    "result": "Cash 22; equity 52; outstanding shares 14 lakh; unchanged original holding 71.43%.",
+    "interpretation": "The funding issue and payouts change cash and ownership without generating operating performance."
+  },
+  "statementEffects": {
+    "applicability": "direct",
+    "explanation": "Effects under the stated simplified scenario. Forecasts and economic values do not themselves create accounting entries.",
+    "changes": [
+      "Issue: cash/equity +20. Dividend: cash/equity −3. Buyback: cash/equity −5.",
+      "No revenue or expense under the stated assumptions; final assets and equity both 52. Owner cash movements net +12."
+    ]
+  },
+  "misconceptions": [
+    {
+      "id": "revenue",
+      "claim": "Share issue proceeds are operating revenue.",
+      "correction": "The company receives owner funding, not customer consideration.",
+      "diagnostic": "Who provided the cash and in what capacity?"
+    },
+    {
+      "id": "old-denominator",
+      "claim": "Divide an old holding by the old total after an issue.",
+      "correction": "Use all shares then outstanding.",
+      "diagnostic": "How many new shares were added?"
+    },
+    {
+      "id": "payout-expense",
+      "claim": "Cash dividends and ordinary-share buybacks are operating expenses.",
+      "correction": "Under the assumed ordinary-equity treatment they reduce equity directly.",
+      "diagnostic": "Is the holder acting as an owner?"
+    }
+  ],
+  "practice": [
+    {
+      "id": "equity-predict-issue",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "fraction",
+      "scenarioId": "equity-predict-issue-independent",
+      "objectiveIds": [
+        "ownership"
+      ],
+      "setup": "Independent scenario: 8 lakh identical ordinary shares are outstanding. Issue 2 lakh new shares for INR 6 each to a new investor. Existing holders buy none; no cost or other event occurs.",
+      "inputs": [
+        {
+          "key": "old_shares",
+          "label": "Old shares",
+          "value": 8,
+          "unit": "lakh shares"
+        },
+        {
+          "key": "new_shares",
+          "label": "New shares",
+          "value": 2,
+          "unit": "lakh shares"
+        },
+        {
+          "key": "price",
+          "label": "Issue price",
+          "value": 6,
+          "unit": "INR per share"
+        }
+      ],
+      "question": "What cash proceeds and combined old-holder ownership follow?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "Proceeds 12 lakh; old holders 100%",
+          "feedback": "Their holding stays 8 but the denominator rises to 10.",
+          "misconceptionId": "old-denominator"
+        },
+        {
+          "id": "correct",
+          "text": "Proceeds 12 lakh; old holders 80%",
+          "feedback": "Proceeds = 2 × 6 = 12 lakh; total shares = 8 + 2 = 10 lakh; old-holder fraction = 8/10 = 80%. Cash and equity rise 12 without revenue.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "Revenue 12 lakh; old holders 80%",
+          "feedback": "The receipt is ordinary owner funding, not operating revenue.",
+          "misconceptionId": "revenue"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Proceeds = 2 × 6 = 12 lakh; total shares = 8 + 2 = 10 lakh; old-holder fraction = 8/10 = 80%. Cash and equity rise 12 without revenue.",
+      "hints": [
+        {
+          "text": "Separate money received from the new outstanding-share count.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Proceeds = 2 × 6 = 12 lakh; total shares = 8 + 2 = 10 lakh; old-holder fraction = 8/10 = 80%. Cash and equity rise 12 without revenue.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "What does the 20% dilution establish, and what does it not establish?",
+        "rubric": [
+          "Calculate 12 lakh funding.",
+          "Use total shares 10 lakh.",
+          "Do not infer stake-value destruction from the fraction alone."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "equity-transfer-payout",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "reconcile",
+      "scenarioId": "equity-transfer-payout-independent",
+      "objectiveIds": [
+        "payout",
+        "ownership"
+      ],
+      "setup": "Independent scenario: cash 50 and other assets 30 are funded by equity 80; 12 lakh shares are outstanding. Buy back and retire 2 lakh shares for INR 7 each, then pay dividend 4 lakh. A holder of 3 lakh shares sells none. No operating event or cost exists.",
+      "inputs": [
+        {
+          "key": "opening_cash",
+          "label": "Opening cash",
+          "value": 50,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "other_assets",
+          "label": "Other assets",
+          "value": 30,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "opening_equity",
+          "label": "Opening equity",
+          "value": 80,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "dividend",
+          "label": "Dividend",
+          "value": 4,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "old_shares",
+          "label": "Opening shares",
+          "value": 12,
+          "unit": "lakh shares"
+        },
+        {
+          "key": "buyback_shares",
+          "label": "Shares retired",
+          "value": 2,
+          "unit": "lakh shares"
+        },
+        {
+          "key": "price",
+          "label": "Buyback price",
+          "value": 7,
+          "unit": "INR per share"
+        },
+        {
+          "key": "holding",
+          "label": "Retained holding",
+          "value": 3,
+          "unit": "lakh shares"
+        }
+      ],
+      "question": "Which closing position and ownership are consistent?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "Cash 32; equity 62; retained holding 25%; profit 0",
+          "feedback": "The denominator falls from 12 to 10 lakh shares.",
+          "misconceptionId": "old-denominator"
+        },
+        {
+          "id": "correct",
+          "text": "Cash 32; equity 62; retained holding 30%; profit 0",
+          "feedback": "Buyback cash = 2×7 = 14; total payout = 14+4 = 18. Cash = 32; equity = 62; assets 32+30 = 62. Remaining shares = 10; retained fraction = 3/10 = 30%; profit remains 0.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "Cash 32; equity 62; retained holding 30%; loss 18",
+          "feedback": "The assumed owner distributions are not operating expenses.",
+          "misconceptionId": "payout-expense"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Buyback cash = 2×7 = 14; total payout = 14+4 = 18. Cash = 32; equity = 62; assets 32+30 = 62. Remaining shares = 10; retained fraction = 3/10 = 30%; profit remains 0.",
+      "hints": [
+        {
+          "text": "Track cash, monetary equity and share count in three separate lines.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Buyback cash = 2×7 = 14; total payout = 14+4 = 18. Cash = 32; equity = 62; assets 32+30 = 62. Remaining shares = 10; retained fraction = 3/10 = 30%; profit remains 0.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Why can ownership rise without operating profit?",
+        "rubric": [
+          "Use shares outstanding 10 lakh.",
+          "Keep retained holding 3 lakh.",
+          "Reconcile cash/equity payout 18 and zero profit."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E0328",
+      "to": "T07.13",
+      "kind": "learning",
+      "purpose": "Study these together to reconcile accounting performance with actual cash movement.",
+      "conditions": "A topical exploration link, not a claim that one determines the other.",
+      "computed": false
+    },
+    {
+      "edgeId": "E0329",
+      "to": "T04.05",
+      "kind": "learning",
+      "purpose": "Suggested starting knowledge: Cash accounting versus accrual accounting. It helps you reconcile accounting performance with actual cash movement.",
+      "conditions": "Suggested learning order; learners can still explore freely.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D07",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "How do different share rights, options or transaction costs change the analysis?",
+      "What legal and liquidity evidence would be needed before a real payout?"
+    ],
+    "conceptIds": [
+      "T07.13",
+      "T04.05"
+    ],
+    "limitations": "Introductory study coverage. Legal distributable reserves, securities rules, transaction costs, complex shares, treasury-share presentation, EPS and payout optimisation are deferred."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "The connected six-round case remains a separate implementation task; these examples do not imply playable rounds."
+    }
+  ],
+  "sources": [
+    {
+      "id": "ias32",
+      "title": "IFRS Foundation: IAS 32 public overview",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/ias-32-financial-instruments-presentation/",
+      "supports": [
+        "Background on liability versus equity classification and the need to examine obligations. Ordinary equity and debt classifications are explicitly assumed here; complex instruments, transaction costs and legal payout rules are deferred."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "ias7",
+      "title": "IFRS Foundation: IAS 7 public overview",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/ias-7-statement-of-cash-flows/",
+      "supports": [
+        "Background on operating, investing and financing cash and non-cash reconciliation. The examples prescribe their own conceptual classifications; statutory starting subtotals, interest/dividends and effective amendments require separate analysis."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "method": "ai-content-source-arithmetic",
+    "evidence": [
+      "B3 topic mechanics, terminology, signs, timing, source boundaries and feedback reviewed in docs/implementation/task-04-4-b3.md.",
+      "Independent worked and assessment calculations checked in tests/b3-lessons.test.mjs; shared route, version, hint and retry regressions also apply.",
+      "Scoped AI content review, not independent professional approval, interactive browser verification or learner-pilot evidence."
+    ]
+  }
+}

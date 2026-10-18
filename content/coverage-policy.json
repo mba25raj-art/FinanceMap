@@ -73,6 +73,41 @@
         "T07.14"
       ],
       "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b2-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/working-capital-days.v1.json",
+      "renderedConceptIds": [
+        "T14.03"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b3-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/cash-forecast.v1.json",
+      "renderedConceptIds": [
+        "T14.04"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b3-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/liquidity-buffer.v1.json",
+      "renderedConceptIds": [
+        "T14.15"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b3-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/net-borrowing.v1.json",
+      "renderedConceptIds": [
+        "A18"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b3-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/equity-funding-payouts.v1.json",
+      "renderedConceptIds": [
+        "T07.09"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b3-lessons.test.mjs"
     }
   ],
   "legacyReviews": {},

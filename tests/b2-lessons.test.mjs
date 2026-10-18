@@ -13,8 +13,8 @@ const answer=(lesson,item,choice)=>({type:'lesson-answer',conceptId:lesson.conce
 
 test('B2 integrates exactly its five selected concepts with independent scenarios and explicit AI review',()=>{
   assert.deepEqual(scope.batches.find(b=>b.id==='04.4-B2').conceptIds,ids);
-  assert.equal(lessonPackages.length,10);
-  assert.equal(lessonPackages.flatMap(p=>p.practice).length,21);
+  assert.deepEqual(lessonPackages.slice(5,10).map(p=>p.conceptId),ids);
+  assert.equal(lessonPackages.slice(0,10).flatMap(p=>p.practice).length,21);
   const scenarios=new Set();
   for(const id of ids){
     const p=get(id),selected=scope.concepts.find(c=>c.id===id);
@@ -142,7 +142,7 @@ test('all ten changed-data B2 assessment keys agree with independent arithmetic 
 test('B2 practice stays separate from B1, alias, topic and case records through answers and retry',()=>{
   let s=createLearningSession();const before=learningCounts(s);
   for(const id of ids){const p=get(id);for(const q of p.practice)s=reduce(s,answer(p,q,q.correctOptionId));}
-  assert.deepEqual(lessonPracticeCounts(s.lessonPractice),{answered:10,latestCorrect:10,firstUnassisted:10,helped:0,total:21});
+  assert.deepEqual(lessonPracticeCounts(s.lessonPractice),{answered:10,latestCorrect:10,firstUnassisted:10,helped:0,total:lessonPackages.flatMap(p=>p.practice).length});
   for(const p of lessonPackages.filter(p=>!ids.includes(p.conceptId)))assert.equal(lessonPracticeCounts(s.lessonPractice,p).answered,0);
   assert.deepEqual(learningCounts(s),before);
   const p=get('A06'),q=p.practice[1],key=practiceKey(q),responses=practiceRecord(s.lessonPractice,q).responses;

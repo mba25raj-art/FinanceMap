@@ -10,8 +10,19 @@ import operatingCash from '../content/lesson-packages/operating-cash-flow.v1.jso
 import transactions from '../content/lesson-packages/three-statement-transactions.v1.json' with { type: 'json' };
 import policy from '../content/coverage-policy.json' with { type: 'json' };
 
+import b3_0 from '../content/lesson-packages/working-capital-days.v1.json' with { type: 'json' };
+import b3_1 from '../content/lesson-packages/cash-forecast.v1.json' with { type: 'json' };
+import b3_2 from '../content/lesson-packages/liquidity-buffer.v1.json' with { type: 'json' };
+import b3_3 from '../content/lesson-packages/net-borrowing.v1.json' with { type: 'json' };
+import b3_4 from '../content/lesson-packages/equity-funding-payouts.v1.json' with { type: 'json' };
+
 export { receivables };
 const imported = new Map([
+  ['content/lesson-packages/working-capital-days.v1.json', b3_0],
+  ['content/lesson-packages/cash-forecast.v1.json', b3_1],
+  ['content/lesson-packages/liquidity-buffer.v1.json', b3_2],
+  ['content/lesson-packages/net-borrowing.v1.json', b3_3],
+  ['content/lesson-packages/equity-funding-payouts.v1.json', b3_4],
   ['content/lesson-packages/accounting-equation.v1.json', equation],
   ['content/lesson-packages/cash-accrual.v1.json', accrual],
   ['content/lesson-packages/cash-equivalents.v1.json', cash],
