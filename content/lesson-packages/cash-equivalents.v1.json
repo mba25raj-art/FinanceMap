@@ -1,0 +1,463 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "T06.02",
+  "contentVersion": "1.0.0",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "Cash and cash-equivalent criteria; maturity measured from acquisition; liquidity versus price risk; reported cash versus amounts usable for a decision; internal transfers."
+    ],
+    "deferred": [
+      "Overdraft exceptions, foreign-exchange translation, fund-specific valuation, complete current/non-current presentation, local adoption and tax rules."
+    ]
+  },
+  "hoverDefinition": "Cash includes cash on hand and demand deposits. A cash equivalent must be readily convertible to a known amount with insignificant value risk, and be held to meet short-term cash commitments.",
+  "objectives": [
+    {
+      "id": "classify",
+      "statement": "Classify balances using stated purpose, liquidity, maturity and value-risk facts.",
+      "evidence": "Exclude receivables and investments that fail the cash-equivalent conditions.",
+      "outcomeIds": [
+        "LO1",
+        "LO3"
+      ]
+    },
+    {
+      "id": "available",
+      "statement": "Separate reported cash from amounts available after a stated use restriction.",
+      "evidence": "Reconcile restricted amounts and explain why a qualifying internal transfer does not create cash flow.",
+      "outcomeIds": [
+        "LO3"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh"
+    ],
+    "timeframe": "A separate illustrative teaching month. Every worked example and practice scenario starts independently; these are not consecutive company-case rounds.",
+    "assumptions": [
+      "Eligibility and risk characteristics are supplied explicitly for the teaching instruments.",
+      "The stated restriction leaves the nature of the demand deposit unchanged but prevents the assessed use.",
+      "The management buffer is hypothetical; no borrowing netting, taxes or currency effects."
+    ],
+    "framework": {
+      "basis": "reporting-specific",
+      "name": "IAS 7 under IFRS Accounting Standards, introductory reference",
+      "jurisdiction": "International IFRS reference; local adoption and Indian reporting requirements not assessed",
+      "period": "Public reference material checked 19 October 2026; this is not an entity reporting-period compliance opinion",
+      "limitations": "Focus on component definitions and stated eligibility facts. No claim to cover all classification exceptions, jurisdictional adoption, or IFRS 18 effective-date consequences."
+    },
+    "abbreviations": [
+      {
+        "term": "CCE",
+        "definition": "Cash and cash equivalents: the eligible combined balance, not all current assets."
+      }
+    ]
+  },
+  "mechanism": [
+    {
+      "id": "cash-definition",
+      "title": "Distinguish money from a claim to future money",
+      "paragraphs": [
+        "Cash on hand and bank demand deposits are cash. A trade receivable is a claim on a customer, not a bank balance. Inventory and equipment are also resources, but they cannot be spent as cash without another transaction. Profit is a period’s accounting performance, not a cash asset.",
+        "Read the component note rather than assuming that every balance labelled short-term investment is cash. The business should also reconcile reported cash components to the statement of cash flows."
+      ]
+    },
+    {
+      "id": "equivalent-tests",
+      "title": "Apply all the cash-equivalent conditions",
+      "paragraphs": [
+        "A candidate investment must be held to meet short-term cash commitments, be highly liquid, convert readily to a known amount and have insignificant risk of changes in value. A short maturity supports these conditions; under IAS 7 it is normally, for example, three months or less measured from acquisition. Maturity alone is not sufficient.",
+        "A twelve-month investment bought at issue does not become a cash equivalent merely because only two months remain at the reporting date. Daily redeemability alone does not make a price-sensitive fund a cash equivalent. Assess the instrument’s substance, purpose and risk rather than its marketing name."
+      ]
+    },
+    {
+      "id": "availability",
+      "title": "Check whether the reported balance can fund this decision",
+      "paragraphs": [
+        "Accounting inclusion and operational availability are distinct questions. A contractual use restriction does not automatically remove a demand deposit from cash if its nature is unchanged. Nevertheless the amount might not be usable for a particular supplier payment. Identify the actual restriction and state the decision perimeter.",
+        "After removing amounts unavailable for the decision, a manager may also retain an explicitly assumed minimum buffer. A buffer is a management policy, not an accounting reclassification. The remainder is not automatically distributable or excess cash for valuation: upcoming commitments, debt terms and other constraints still matter."
+      ]
+    },
+    {
+      "id": "internal-transfer",
+      "title": "Do not invent a cash inflow from an internal transfer",
+      "paragraphs": [
+        "Moving money between a demand account and a qualifying cash equivalent changes the components but not their combined total. It is not an external cash flow in the cash-flow statement. A purchase of an investment that does not qualify is different and must be classified under the relevant reporting requirements."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "Cash and cash equivalents",
+      "explanation": "Demand money is cash; only investments satisfying all the stated conditions are equivalents.",
+      "whenItMatters": "Do not classify solely by the number of months on a label."
+    },
+    {
+      "name": "Acquisition maturity and remaining maturity",
+      "explanation": "The normal short-maturity assessment is from acquisition, not merely the balance-sheet date.",
+      "whenItMatters": "A long investment does not gradually reclassify just because its maturity approaches."
+    },
+    {
+      "name": "Liquidity and insignificant price risk",
+      "explanation": "An investment can be easy to sell but still change materially in price.",
+      "whenItMatters": "A daily redemption facility is insufficient on its own."
+    },
+    {
+      "name": "Reported and usable cash",
+      "explanation": "Some included balances can have restrictions relevant to a specific decision.",
+      "whenItMatters": "Avoid both overstating operational liquidity and automatically excluding every restricted deposit from reported cash."
+    },
+    {
+      "name": "Buffer and accounting classification",
+      "explanation": "A chosen minimum-cash buffer is a decision assumption.",
+      "whenItMatters": "Keep the liquidity policy visible instead of treating it as a reporting rule."
+    },
+    {
+      "name": "Cash stock and period flow",
+      "explanation": "The closing balance is a stock; receipts and payments explain its period movement.",
+      "whenItMatters": "Do not add closing cash to period income or count internal transfers as receipts."
+    }
+  ],
+  "workedExample": {
+    "id": "cash-components",
+    "scenarioId": "ce-worked-1-14-6-5-8-7",
+    "setup": "Separate balance-date illustration: Nila has physical cash 1, a demand deposit 14 (including 4 subject to a supplier-use restriction that does not change its demand nature), a qualifying treasury bill 6 acquired with two months to maturity and held for near-term payments, a non-qualifying investment 5 acquired with twelve months to maturity, receivables 8 and inventory 7. The treasury bill is readily convertible to a known amount with insignificant value risk. The restriction makes 4 unavailable for the decision under review. Assume a management buffer of 3.",
+    "inputs": [
+      {
+        "key": "cash",
+        "label": "Physical cash",
+        "value": 1,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "deposit",
+        "label": "Demand deposit including restricted portion",
+        "value": 14,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "restricted",
+        "label": "Restricted portion within the deposit",
+        "value": 4,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "qualifyingBill",
+        "label": "Qualifying treasury bill",
+        "value": 6,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "investment",
+        "label": "Non-qualifying longer investment",
+        "value": 5,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "receivables",
+        "label": "Customer receivables",
+        "value": 8,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "inventory",
+        "label": "Inventory",
+        "value": 7,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "buffer",
+        "label": "Assumed minimum buffer",
+        "value": 3,
+        "unit": "INR lakh"
+      }
+    ],
+    "steps": [
+      "Cash = physical cash 1 + demand deposit 14 = 15. The restricted portion is already inside the 14; do not add it again.",
+      "The supplied treasury-bill facts satisfy the cash-equivalent conditions, so add 6. Reported cash and cash equivalents = 21.",
+      "Exclude the longer investment 5, customer receivables 8 and inventory 7. This classification does not say those other assets have zero value.",
+      "For the specific payment decision, usable cash and equivalents = 21 − unavailable amount 4 = 17.",
+      "Amount above the assumed management buffer = 17 − 3 = 14. It is not automatically distributable or valuation excess cash.",
+      "Moving 2 from the unrestricted demand deposit into another qualifying bill reduces one component by 2 and raises another by 2. The combined reported balance remains 21."
+    ],
+    "result": "Reported cash and equivalents: 21. Usable for the stated decision: 17. Above the assumed buffer: 14.",
+    "interpretation": "The same accounts answer classification and liquidity questions differently. State whether a decision uses reported balances, usable balances or a buffer-adjusted amount."
+  },
+  "statementEffects": {
+    "applicability": "direct",
+    "explanation": "This is a balance classification and liquidity exercise, not revenue recognition or a forecast of future receipts.",
+    "changes": [
+      "Balance sheet: group cash and qualifying equivalents 21 under the stated IFRS reference assumptions; other assets remain outside that group.",
+      "Income statement: the classification or qualifying internal transfer creates no revenue or profit in this illustration.",
+      "Cash flow: an internal movement between cash and a qualifying equivalent is excluded from cash flows; total cash and equivalents do not change."
+    ]
+  },
+  "misconceptions": [
+    {
+      "id": "all-current-cash",
+      "claim": "Every current asset or sellable investment is cash.",
+      "correction": "Apply cash-equivalent conditions and exclude customer claims and stock.",
+      "diagnostic": "Can the amount be spent without collection or a price-risk-bearing sale?"
+    },
+    {
+      "id": "short-maturity-only",
+      "claim": "Any item close to maturity or redeemable daily must be a cash equivalent.",
+      "correction": "Check acquisition maturity, purpose, liquidity, known amount and value risk together.",
+      "diagnostic": "What could change the amount realised?"
+    },
+    {
+      "id": "reported-available",
+      "claim": "Every reported cash amount is available for any decision.",
+      "correction": "Assess restrictions and any stated management buffer separately.",
+      "diagnostic": "Which commitment can this balance legally or operationally fund?"
+    }
+  ],
+  "practice": [
+    {
+      "id": "ce-predict-components",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "equivalent-tests",
+      "scenarioId": "ce-predict-components-scenario",
+      "objectiveIds": [
+        "classify"
+      ],
+      "setup": "Separate scenario: demand deposit 7; bill 4 acquired with two months to maturity, held for short-term payments, readily convertible to a known amount with insignificant value risk; trade receivables 6. No other balances or restrictions.",
+      "inputs": [
+        {
+          "key": "deposit",
+          "label": "Demand deposit",
+          "value": 7,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "bill",
+          "label": "Qualifying bill",
+          "value": 4,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "receivables",
+          "label": "Trade receivables",
+          "value": 6,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "What is the reported cash-and-equivalent total?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "all-assets",
+          "text": "17",
+          "feedback": "Customer receivables still require collection; they are not cash.",
+          "misconceptionId": "all-current-cash"
+        },
+        {
+          "id": "cash-only",
+          "text": "7",
+          "feedback": "The bill meets all supplied cash-equivalent conditions.",
+          "misconceptionId": "short-maturity-only"
+        },
+        {
+          "id": "correct",
+          "text": "11",
+          "feedback": "Cash 7 plus the qualifying bill 4 gives 11.",
+          "misconceptionId": null
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Reported cash and equivalents = 7 + 4 = 11. Exclude receivables 6.",
+      "hints": [
+        {
+          "text": "Check each component against the definition rather than grouping all current assets.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Reported cash and equivalents = 7 + 4 = 11. Exclude receivables 6.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Why is the customer balance treated differently from the bill?",
+        "rubric": [
+          "Identify an outstanding customer claim.",
+          "Check all supplied bill conditions.",
+          "Sum only eligible balances."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "ce-transfer-restriction",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "availability",
+      "scenarioId": "ce-transfer-restriction-scenario",
+      "objectiveIds": [
+        "available",
+        "classify"
+      ],
+      "setup": "Separate scenario: a demand deposit is 10, including 4 subject to a restriction that leaves its demand nature unchanged but prevents use for the payment being assessed. A qualifying bill is 3. A daily redeemable fund is 5 but its redemption value can vary materially. There are no other balances or buffers.",
+      "inputs": [
+        {
+          "key": "deposit",
+          "label": "Demand deposit, including restricted portion",
+          "value": 10,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "restriction",
+          "label": "Unavailable portion of that deposit",
+          "value": 4,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "bill",
+          "label": "Qualifying bill",
+          "value": 3,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "fund",
+          "label": "Materially price-sensitive fund",
+          "value": 5,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "Which reported and usable totals follow, before any other commitments?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "correct",
+          "text": "Reported 13; usable 9",
+          "feedback": "The deposit remains cash under the stated facts, the bill qualifies, and 4 is unavailable for this decision.",
+          "misconceptionId": null
+        },
+        {
+          "id": "all-liquid",
+          "text": "Reported 18; usable 14",
+          "feedback": "Daily redemption does not overcome the fund’s material value risk.",
+          "misconceptionId": "short-maturity-only"
+        },
+        {
+          "id": "exclude-cash",
+          "text": "Reported 9; usable 9",
+          "feedback": "The restriction affects this use but is explicitly assumed not to change the deposit’s cash nature.",
+          "misconceptionId": "reported-available"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Reported total = deposit 10 + bill 3 = 13. Usable for this decision = 13 − restricted portion 4 = 9. Exclude the price-sensitive fund. A subsequent transfer between eligible components would not change the combined 13.",
+      "hints": [
+        {
+          "text": "Separate the definition test from the restriction on a particular use.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Reported total = deposit 10 + bill 3 = 13. Usable for this decision = 13 − restricted portion 4 = 9. Exclude the price-sensitive fund. A subsequent transfer between eligible components would not change the combined 13.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Why can a balance remain cash while being unavailable for this payment?",
+        "rubric": [
+          "Apply the unchanged-demand-nature assumption.",
+          "Exclude the price-sensitive fund.",
+          "Show 13 less restricted 4 equals 9."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E0248",
+      "to": "T04.01",
+      "kind": "learning",
+      "purpose": "Suggested starting knowledge: The accounting equation. It helps you explain how assets are funded and how balances change through transactions.",
+      "conditions": "Suggested learning order; learners can still explore freely.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2166",
+      "to": "T17.15",
+      "kind": "financial",
+      "purpose": "Cash is assessed for operating need before it is treated as excess cash.",
+      "conditions": "Not all balance-sheet cash is freely distributable.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D06",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "When can an overdraft be integral to cash management under a specific framework?",
+      "Which future payments or covenants can prevent cash being excess for valuation?"
+    ],
+    "conceptIds": [
+      "T17.15",
+      "T14.15"
+    ],
+    "limitations": "Overdraft netting, presentation periods, local adoption, investment-specific judgements and valuation excess-cash assessment require separate analysis."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "Planned six-round case. This lesson is a separate teaching example, not a completed case round."
+    }
+  ],
+  "sources": [
+    {
+      "id": "cash",
+      "title": "IFRS Foundation: IAS 7 overview",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/ias-7-statement-of-cash-flows/",
+      "role": "primary-support",
+      "supports": [
+        "Cash and cash-equivalent definitions, operating/investing/financing categories and component reconciliation."
+      ],
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "maturity",
+      "title": "AASB 107, published Definitions (June 2023 compilation), paragraphs 6–9",
+      "url": "https://standards.aasb.gov.au/node/3565",
+      "role": "primary-support",
+      "supports": [
+        "Acquisition-date short maturity and all cash-equivalent conditions; internal movements between cash components. Australian text used as an accessible IFRS-aligned reference, not as an Indian filing rule."
+      ],
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "restriction",
+      "title": "IFRS Interpretations Committee: March 2022 final agenda-decision text",
+      "url": "https://www.ifrs.org/news-and-events/updates/ifric/2022/ifric-update-march-2022/",
+      "role": "primary-support",
+      "supports": [
+        "A contractual restriction does not automatically remove a demand deposit from cash unless it changes its nature."
+      ],
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "evidence": [
+      "B1 terminology, units, timing, assumptions, independent arithmetic, feedback and scope review recorded in docs/implementation/task-04-4-b1.md.",
+      "Primary public IFRS/AASB background and the linked source claims checked; this is an AI content review, not independent professional approval or learner-pilot evidence.",
+      "Worked and assessment calculations independently recomputed in tests/b1-lessons.test.mjs; interaction and version/owner isolation checked separately."
+    ],
+    "method": "ai-content-source-arithmetic"
+  }
+}

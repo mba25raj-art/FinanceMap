@@ -90,3 +90,11 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Keep existence, standard conversion, editorial review and specialist scope separate. An unpublished authoring fixture is not integrated coverage. Reviews require explicit reviewer, date and evidence; structural checks cannot award review or mastery.
 - `content/first-release-scope.json` preserves the verified 30-concept selection and six five-concept batches. Keep outcome IDs, exact titles and applied scope aligned with the implementation backlog. Work in the backlog's strict order.
 - Activity records distinguish assessed concepts, supporting references and planned applications. P02 reference trails do not imply playable case coverage. Planned labs/cases have no playable route. Financial relationship records retain master direction/conditions and remain uncomputed until separately implemented and verified by model tasks.
+
+## First conversion batch (Task 04.4-B1)
+
+- `src/lesson-packages.js` maps actual integrated packages through the coverage policy. B1 covers T04.01, T04.05, T06.02, A01 and A02. Only the receivables package additionally renders on T06.04. Deep-reading aliases do not imply package integration or shared evidence.
+- Use `src/StandardLesson.jsx` for the common structure while authoring topic-specific mechanisms, distinctions and independent scenarios. Keep unit labels on every input row. Preserve expanded Atlas study, legacy quizzes, separate domain guides and the case hint/return gate.
+- Practice records include canonical lesson, content version and question version. Preserve A02's existing keys and legacy action support. New lesson actions must identify their canonical owner. My learning counts each of the eleven current questions once and shows per-lesson results separately from topic/case counts.
+- B1 package reviews name Codex and `ai-content-source-arithmetic` explicitly. These are scoped AI content reviews, not independent professional approval, professional completeness or learner-pilot evidence. Keep specialist deferrals and source limitations visible.
+- B1 is one of six batches. Keep 04.4 In progress until all batches have their own review/evidence. Interactive desktop/mobile QA was unavailable in this environment and remains a release check under 11.1; do not claim new browser verification from the SSR tests.

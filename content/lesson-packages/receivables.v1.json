@@ -79,7 +79,8 @@
         "A trade receivable begins with a customer claim arising from a qualifying sale on credit. Nila has supplied the promised goods under the scenario rules, recognises revenue and has an unconditional right to payment. Invoicing alone is not proof that revenue has been earned: first establish that the relevant recognition conditions are met. A claim still conditional on further performance is different from a receivable.",
         "A receivable is not cash. If Nila records a qualifying sale of 10 on credit, receivables and revenue each rise by 10, but collection is zero at that moment. Related inventory cost and tax must be considered separately when calculating actual profit. When the customer later pays 5 against that existing claim, cash rises by 5 and gross receivables fall by 5. The payment does not recognise the same sale again.",
         "Follow the event rather than the account label: delivery and recognition explain revenue; customer settlement explains receipts. A successful collection turns one asset into another. A receivable can support reported sales while the business still lacks money to pay suppliers."
-      ]
+      ],
+      "title": "Recognise the sale, then follow the payment"
     },
     {
       "id": "gross-net",
@@ -87,7 +88,8 @@
         "Gross receivables are the customer claims before the credit-loss allowance. The allowance estimates eligible credit shortfalls; it is a reduction of the asset carrying amount, not a cash reserve stored in a bank account. Net receivables = gross receivables − loss allowance.",
         "For example, a separate Nila balance of gross receivables 30 with an allowance of 2 has a net carrying amount of 28. The company has not collected 28 merely because the balance sheet reports it. Actual receipts depend on customer payments. A larger allowance can lower net receivables even if gross unpaid invoices and cash have not moved.",
         "Distinguish gross exposure, expected recoverability and timing. The same net balance can hide different combinations of unpaid invoices and loss estimates. Compare both balances and their movement schedules, rather than interpreting a stable net figure as stable customer quality."
-      ]
+      ],
+      "title": "Read gross and net balances together"
     },
     {
       "id": "allowance-writeoff",
@@ -95,7 +97,8 @@
         "A credit-loss allowance is an estimate before final removal of a customer balance. Expected-credit-loss approaches consider possible shortfalls and relevant information about customers and conditions; the illustrative allowance in this lesson is supplied, not derived from an actual credit model. An ageing matrix is one way to organise balances and estimate losses, but old balances are not automatically worthless and current invoices are not automatically risk-free.",
         "Increasing an allowance recognises an additional credit-loss charge under the teaching assumptions. It reduces net receivables and pre-tax earnings while generating no cash receipt. It is different from a collection, which reduces the customer claim because cash was actually paid.",
         "A write-off removes all or part of a balance when recovery is no longer reasonably expected under the governing rules. In our covered-write-off examples, both gross receivables and the existing allowance fall by the same amount. Net receivables and cash are unchanged at that instant; the loss was already allowed for. If the prior allowance is insufficient, an additional loss may need recognising. Never assume every write-off has zero new earnings impact."
-      ]
+      ],
+      "title": "Separate estimates, write-offs and receipts"
     },
     {
       "id": "cash-interpretation",
@@ -103,7 +106,8 @@
         "Reconcile closing gross receivables = opening gross receivables + recognised credit sales − collections − write-offs, plus any separately identified returns, reclassifications, currency effects or other movements. Those extra movements are zero in this lesson. Then deduct the closing allowance to obtain net receivables.",
         "Receivable growth can reflect more sales, slower collections, different terms or a changed customer mix. To investigate, compare credit sales, collections, ageing, disputes, concentration and subsequent receipts. State whether an ageing bucket measures days since invoice or days overdue; those are different clocks. DSO should use an explicitly stated sales denominator and period convention.",
         "A fall in net receivables caused by an allowance or write-off does not release customer cash. When bridging earnings to cash, use consistent gross/net movement and non-cash adjustment conventions. Do not add back a credit-loss expense and then deduct a net receivable change that already incorporates that expense without reconciling the components. Customer receipts are also different from whole-company operating cash flow and free cash flow."
-      ]
+      ],
+      "title": "Reconcile the movement before interpreting cash"
     }
   ],
   "distinctions": [
@@ -549,7 +553,7 @@
       "supports": [
         "Recognition of revenue when promised goods or services transfer."
       ],
-      "reviewedOn": "2026-10-14"
+      "reviewedOn": "2026-10-19"
     },
     {
       "id": "claims",
@@ -559,7 +563,7 @@
       "supports": [
         "Unconditional customer right versus a condition beyond the passage of time."
       ],
-      "reviewedOn": "2026-10-14"
+      "reviewedOn": "2026-10-19"
     },
     {
       "id": "credit",
@@ -569,15 +573,18 @@
       "supports": [
         "Expected-credit-loss background and removal when recovery is no longer reasonably expected. This review document is background, not the complete governing standard."
       ],
-      "reviewedOn": "2026-10-14"
+      "reviewedOn": "2026-10-19"
     }
   ],
   "review": {
-    "state": "draft",
-    "reviewer": null,
-    "reviewedOn": null,
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
     "evidence": [
-      "Primary-source background checked 14 October 2026; examples independently reconciled by calculation tests. Sample awaits learner/content-density review before batch conversion."
-    ]
+      "B1 terminology, units, timing, assumptions, independent arithmetic, feedback and scope review recorded in docs/implementation/task-04-4-b1.md.",
+      "Primary public IFRS/AASB background and the linked source claims checked; this is an AI content review, not independent professional approval or learner-pilot evidence.",
+      "Worked and assessment calculations independently recomputed in tests/b1-lessons.test.mjs; interaction and version/owner isolation checked separately."
+    ],
+    "method": "ai-content-source-arithmetic"
   }
 }

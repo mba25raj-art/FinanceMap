@@ -17,12 +17,13 @@ test('every stable ID has content, scoped coverage and independently tracked rev
     assert.equal(c.content.workedExample, true, c.id); assert.equal(c.content.topicQuiz, true, c.id);
     assert.equal(c.coverageTier, 'introductory-study');
     assert.ok(c.specialistScope.deferred.length, c.id);
-    assert.ok(c.gaps.includes('editorial-review'), c.id);
+    if(c.editorialReview.state==='reviewed'){assert.ok(c.editorialReview.reviewer);assert.ok(c.editorialReview.reviewedOn);assert.ok(c.editorialReview.evidence.length);assert.ok(!c.gaps.includes('editorial-review'));}else assert.ok(c.gaps.includes('editorial-review'),c.id);
   }
-  assert.equal(register.summary.editoriallyReviewedConcepts, 0);
-  assert.equal(register.summary.selectedReviewedConcepts, 0);
-  assert.equal(byId('T04.01').standard.state, 'not-converted', 'An unrendered authoring fixture is not a converted lesson');
-  assert.equal(byId('T04.01').editorialReview.state, 'not-reviewed');
+  assert.equal(register.summary.editoriallyReviewedConcepts, 6);
+  assert.equal(register.summary.selectedReviewedConcepts, 5);
+  assert.equal(byId('T04.01').standard.state,'integrated');
+  assert.equal(byId('T04.01').standard.package,'content/lesson-packages/accounting-equation.v1.json','The separate authoring fixture is not the rendered package');
+  assert.equal(byId('T04.01').editorialReview.state, 'reviewed');
 });
 
 test('the 20 deep-reading aliases preserve IDs; two integrated pages share one package and three practice identities', () => {
@@ -31,11 +32,11 @@ test('the 20 deep-reading aliases preserve IDs; two integrated pages share one p
   const anchor = byId('A02'), grouped = byId('T06.04');
   assert.equal(anchor.standard.canonicalConceptId, 'A02');
   assert.deepEqual(grouped.standard, anchor.standard);
-  assert.equal(anchor.editorialReview.state, 'draft');
-  assert.equal(register.summary.integratedLessonPages, 2);
-  assert.equal(register.summary.canonicalIntegratedPackages, 1);
-  assert.equal(register.summary.canonicalPracticeQuestions, 3);
-  assert.equal(register.summary.selectedIntegratedPages, 1);
+  assert.equal(anchor.editorialReview.state, 'reviewed');
+  assert.equal(register.summary.integratedLessonPages, 6);
+  assert.equal(register.summary.canonicalIntegratedPackages, 5);
+  assert.equal(register.summary.canonicalPracticeQuestions, 11);
+  assert.equal(register.summary.selectedIntegratedPages, 5);
   assert.ok(anchor.firstRelease); assert.equal(grouped.firstRelease, null);
 });
 
@@ -89,14 +90,14 @@ test('all 2,520 directed edges preserve master conditions, with learning links s
 
 test('missing content is exposed as a gap; review cannot be inferred from content or structural checks', () => {
   const modified = structuredClone(inputs);
-  delete modified.lessons['T04.01'].detail; delete modified.lessons['T04.01'].question;
-  let r = buildCoverageRegister(modified).concepts.find(c => c.id === 'T04.01');
+  delete modified.lessons['T04.02'].detail; delete modified.lessons['T04.02'].question;
+  let r = buildCoverageRegister(modified).concepts.find(c => c.id === 'T04.02');
   assert.equal(r.content.workedExample, false); assert.equal(r.content.topicQuiz, false);
   assert.ok(r.gaps.includes('missing-worked-example')); assert.ok(r.gaps.includes('missing-topic-quiz'));
   assert.equal(r.editorialReview.state, 'not-reviewed');
-  modified.policy.legacyReviews['T04.01'] = { state: 'reviewed', reviewer: null, reviewedOn: null, evidence: [] };
+  modified.policy.legacyReviews['T04.02'] = { state: 'reviewed', reviewer: null, reviewedOn: null, evidence: [] };
   assert.throws(() => buildCoverageRegister(modified), /reviewed status requires/);
-  const bad = structuredClone(inputs); bad.policy.packages[0].renderedConceptIds.push('T04.01');
+  const bad = structuredClone(inputs); bad.policy.packages[0].renderedConceptIds.push('T04.02');
   assert.throws(() => buildCoverageRegister(bad), /unsupported package alias/);
 });
 

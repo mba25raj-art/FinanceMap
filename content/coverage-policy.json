@@ -4,41 +4,121 @@
   "scopeNotice": "Content existence does not establish editorial review, professional completeness or learner mastery.",
   "packages": [
     {
+      "file": "content/lesson-packages/accounting-equation.v1.json",
+      "renderedConceptIds": [
+        "T04.01"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b1-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/cash-accrual.v1.json",
+      "renderedConceptIds": [
+        "T04.05"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b1-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/cash-equivalents.v1.json",
+      "renderedConceptIds": [
+        "T06.02"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b1-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/revenue-recognition.v1.json",
+      "renderedConceptIds": [
+        "A01"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b1-lessons.test.mjs"
+    },
+    {
       "file": "content/lesson-packages/receivables.v1.json",
-      "renderedConceptIds": ["A02", "T06.04"],
-      "implementationEvidence": "src/ReceivablesLesson.jsx; src/App.jsx; tests/receivables-lesson.test.mjs"
+      "renderedConceptIds": [
+        "A02",
+        "T06.04"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/receivables-lesson.test.mjs"
     }
   ],
   "legacyReviews": {},
   "activities": [
     {
-      "id": "P02", "kind": "case", "title": "Profitable. So where did the cash go?",
-      "availability": "available", "route": "#simulations/P02", "roadmapTask": "02.1–03.3",
-      "assessmentConcepts": ["A05", "A08", "A11"],
-      "referenceConcepts": ["T04.01", "T04.05", "A02"],
+      "id": "P02",
+      "kind": "case",
+      "title": "Profitable. So where did the cash go?",
+      "availability": "available",
+      "route": "#simulations/P02",
+      "roadmapTask": "02.1\u201303.3",
+      "assessmentConcepts": [
+        "A05",
+        "A08",
+        "A11"
+      ],
+      "referenceConcepts": [
+        "T04.01",
+        "T04.05",
+        "A02"
+      ],
       "evidence": "src/data/lessons.js:mystery.steps; src/LearningEntry.jsx:MysteryBrief; tests/learning-session.test.mjs"
     },
     {
-      "id": "LAB-COLLECTIONS", "kind": "lab", "title": "Customer collection",
-      "availability": "planned", "route": null, "roadmapTask": "07.1",
-      "plannedConcepts": ["A01", "A02", "A05", "A06", "T04.05", "T14.03", "T14.04"],
+      "id": "LAB-COLLECTIONS",
+      "kind": "lab",
+      "title": "Customer collection",
+      "availability": "planned",
+      "route": null,
+      "roadmapTask": "07.1",
+      "plannedConcepts": [
+        "A01",
+        "A02",
+        "A05",
+        "A06",
+        "T04.05",
+        "T14.03",
+        "T14.04"
+      ],
       "evidence": "Finance_Atlas_Implementation_Backlog.xlsx: Task detail 07.1; Release scope"
     },
     {
-      "id": "LAB-EQUIPMENT", "kind": "lab", "title": "Equipment investment",
-      "availability": "planned", "route": null, "roadmapTask": "07.2",
-      "plannedConcepts": ["A07", "A08", "T12.05", "T03.01", "T03.12"],
+      "id": "LAB-EQUIPMENT",
+      "kind": "lab",
+      "title": "Equipment investment",
+      "availability": "planned",
+      "route": null,
+      "roadmapTask": "07.2",
+      "plannedConcepts": [
+        "A07",
+        "A08",
+        "T12.05",
+        "T03.01",
+        "T03.12"
+      ],
       "evidence": "Finance_Atlas_Implementation_Backlog.xlsx: Task detail 07.2; Release scope"
     },
     {
-      "id": "LAB-FINANCING", "kind": "lab", "title": "Financing comparison",
-      "availability": "planned", "route": null, "roadmapTask": "07.3",
-      "plannedConcepts": ["A18", "T07.09", "A13", "A15", "A16", "T17.04"],
+      "id": "LAB-FINANCING",
+      "kind": "lab",
+      "title": "Financing comparison",
+      "availability": "planned",
+      "route": null,
+      "roadmapTask": "07.3",
+      "plannedConcepts": [
+        "A18",
+        "T07.09",
+        "A13",
+        "A15",
+        "A16",
+        "T17.04"
+      ],
       "evidence": "Finance_Atlas_Implementation_Backlog.xlsx: Task detail 07.3; Release scope"
     },
     {
-      "id": "CASE-NILA-HOMEWARE", "kind": "case", "title": "Nila Homeware: six connected rounds",
-      "availability": "planned", "route": null, "roadmapTask": "08.1–08.4",
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "title": "Nila Homeware: six connected rounds",
+      "availability": "planned",
+      "route": null,
+      "roadmapTask": "08.1\u201308.4",
       "usesFirstReleaseSelection": true,
       "evidence": "Finance_Atlas_Implementation_Backlog.xlsx: Content batches; Release scope"
     }

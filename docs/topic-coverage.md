@@ -8,11 +8,11 @@ Content existence does not establish editorial review, professional completeness
 | --- | ---: |
 | Stable concept records | 698 |
 | Explanations / worked examples / topic quizzes | 698 / 698 / 698 |
-| Integrated lesson pages / canonical packages | 2 / 1 |
-| Distinct embedded practice questions | 3 |
-| Editorially reviewed concept records | 0 |
+| Integrated lesson pages / canonical packages | 6 / 5 |
+| Distinct embedded practice questions | 11 |
+| Editorially reviewed concept records | 6 |
 | Selected first-release concepts | 30 |
-| Selected integrated / reviewed | 1 / 0 |
+| Selected integrated / reviewed | 5 / 5 |
 | Playable labs / planned labs | 0 / 3 |
 | Playable cases / planned cases | 1 / 1 |
 | Concepts with playable applied assessment | 3 |
@@ -20,7 +20,9 @@ Content existence does not establish editorial review, professional completeness
 | Learning / financial relationships | 2127 / 393 |
 | Computed model dependencies | 0 |
 
-A02 and T06.04 share the receivables package and three practice records. They remain two navigable concepts. Deep-content aliases describe reused reading material and do not merge concept IDs or independent question records. The non-integrated accounting-equation authoring example is excluded from converted coverage.
+A02 and T06.04 share the receivables package and three practice records. They remain two navigable concepts. Deep-content aliases describe reused reading material and do not merge concept IDs or independent question records. The separate accounting-equation authoring fixture is excluded from converted coverage; its integrated lesson has its own package.
+
+Review records name the reviewer and method. B1 reviews are AI content, source and arithmetic checks, not independent professional approval or learner-pilot evidence. Its six page records represent five canonical packages because the receivables alias shares its package review.
 
 A playable applied assessment means an implemented case question mapped to that concept. A reference lesson or reading-trail stop does not establish applied assessment. P02 as a case and P02 as a reference trail are kept separate. Planned activities have no playable route.
 
@@ -28,7 +30,7 @@ A playable applied assessment means an implemented case question mapped to that 
 
 | Batch | Focus | Concept IDs | Integrated pages | Reviewed concepts |
 | --- | --- | --- | ---: | ---: |
-| 04.4-B1 | Accounting and collections | T04.01, T04.05, T06.02, A01, A02 | 1 | 0 |
+| 04.4-B1 | Accounting and collections | T04.01, T04.05, T06.02, A01, A02 | 5 | 5 |
 | 04.4-B2 | Inventory and cash mechanisms | A03, A04, A05, A06, T07.14 | 0 | 0 |
 | 04.4-B3 | Liquidity and financing | T14.03, T14.04, T14.15, A18, T07.09 | 0 | 0 |
 | 04.4-B4 | Equipment and operating profit | A07, A08, A09, A10, T12.05 | 0 | 0 |
@@ -42,9 +44,9 @@ A playable applied assessment means an implemented case question mapped to that 
 | D01: Foundations of finance | 15 | 15 | 0 | 0 |
 | D02: Mathematics and quantitative foundations | 15 | 15 | 0 | 0 |
 | D03: Time value of money | 15 | 15 | 0 | 0 |
-| D04: Accounting foundations | 17 | 17 | 0 | 0 |
+| D04: Accounting foundations | 17 | 17 | 3 | 3 |
 | D05: Income statement: every major component | 22 | 22 | 0 | 0 |
-| D06: Balance sheet: every major component | 23 | 23 | 2 | 0 |
+| D06: Balance sheet: every major component | 23 | 23 | 3 | 3 |
 | D07: Cash-flow statement and three-statement connections | 19 | 19 | 0 | 0 |
 | D08: Advanced accounting and reporting | 16 | 16 | 0 | 0 |
 | D09: Financial statement analysis | 19 | 19 | 0 | 0 |

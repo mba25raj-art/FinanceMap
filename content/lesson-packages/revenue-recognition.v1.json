@@ -1,0 +1,431 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "A01",
+  "contentVersion": "1.0.0",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "Control transfer and the five-step logic; cash sale, credit sale and advances; partial delivery; revenue, receivables, contract liabilities and gross profit."
+    ],
+    "deferred": [
+      "Full contract recognition criteria, variable consideration constraints, principal/agent decisions, returns, financing components, tax and complex over-time measurement."
+    ]
+  },
+  "hoverDefinition": "Revenue represents recognised customer performance under the applicable contract, not simply an order, an invoice or a bank receipt. A qualifying credit sale can create revenue and a receivable before collection.",
+  "objectives": [
+    {
+      "id": "performance",
+      "statement": "Distinguish an advance from revenue when no promised goods have transferred.",
+      "evidence": "Record the cash receipt and unfulfilled obligation without inventing income.",
+      "outcomeIds": [
+        "LO1"
+      ]
+    },
+    {
+      "id": "credit-sale",
+      "statement": "Reconcile recognised sales, earlier advances, current receipts, receivables and gross profit.",
+      "evidence": "Apply supplied allocation and cost facts to a completed delivery without recording collection twice.",
+      "outcomeIds": [
+        "LO1"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh"
+    ],
+    "timeframe": "A separate illustrative teaching month. Every worked example and practice scenario starts independently; these are not consecutive company-case rounds.",
+    "assumptions": [
+      "A valid fixed-price arrangement and collectability conditions are assumed satisfied.",
+      "Goods are distinct, supplied allocations are valid, and control transfers on the specified delivery.",
+      "Unpaid delivered prices are unconditional; unperformed order prices are not yet unconditionally due.",
+      "No returns, financing component, variable price, tax or unmentioned cost."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Simplified conceptual teaching example. Recognition and amounts are explicitly assumed; no claim of compliance with a jurisdiction-specific reporting or tax regime."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "contract",
+      "title": "Identify the promise before looking at the invoice",
+      "paragraphs": [
+        "Start with a valid customer arrangement under the stated assumptions. Identify what has been promised, determine the consideration, allocate it among distinct promises, then recognise the allocated revenue when the promised performance is satisfied. This is the introductory logic of the IFRS 15 five-step model.",
+        "An order describes future business; an invoice documents a claim or request for payment. Neither alone proves performance. For the goods examples here, the customer obtains control on the specified completed delivery, the price is fixed and collectability conditions are assumed met."
+      ]
+    },
+    {
+      "id": "cash-timing",
+      "title": "Separate advance, credit sale and collection",
+      "paragraphs": [
+        "A cash sale combines performance and receipt at the same time. In a qualifying credit sale, performance creates revenue and an unconditional customer receivable; cash follows later. Collection reduces that receivable and increases cash without creating another sale.",
+        "When money arrives before performance, recognise the stated customer obligation rather than revenue. On fulfilling the promise, release the related advance balance into revenue. If the allocated performance price exceeds the advance applied and the right to the remainder is unconditional, record the difference as a receivable."
+      ]
+    },
+    {
+      "id": "partial",
+      "title": "Treat partial performance using the contract facts",
+      "paragraphs": [
+        "For distinct goods delivered in separate batches, recognise only the price allocated to goods whose control has transferred. The unperformed balance of an order is not automatically revenue or a receivable. For this lesson, no amount for undelivered goods is yet unconditionally due.",
+        "Some obligations qualify for recognition over time under specific criteria; others are satisfied at a point in time. Do not assume that every service, invoice schedule or cash instalment permits even monthly revenue. Complex over-time tests and progress measurement are outside these goods illustrations."
+      ]
+    },
+    {
+      "id": "profit",
+      "title": "Keep revenue, gross profit and cash distinct",
+      "paragraphs": [
+        "Revenue measures recognised sales before the related carrying cost of goods sold. Gross profit equals that revenue less cost of goods sold. Collections can include older invoices or earlier performance and need not equal current revenue.",
+        "A useful simplified contract reconciliation is recognised revenue = advance applied to that performance + current receipts allocated to it + closing related receivable, when there is no opening receivable or other adjustment. State those conditions rather than using the relationship as a universal formula."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "Cash and credit sale",
+      "explanation": "The same assumed performance can be paid immediately or later.",
+      "whenItMatters": "Revenue timing follows performance, while cash follows settlement."
+    },
+    {
+      "name": "Advance and contract liability",
+      "explanation": "A payment for an unfulfilled promise creates an obligation.",
+      "whenItMatters": "Do not turn better cash collection into unearned profit."
+    },
+    {
+      "name": "Receivable and contract asset",
+      "explanation": "A receivable is an unconditional payment right; further performance conditions can make a right a contract asset instead.",
+      "whenItMatters": "Use the actual entitlement facts rather than the presence of an invoice. Detailed contract-asset measurement is deferred."
+    },
+    {
+      "name": "Completed and uncompleted order value",
+      "explanation": "Only the satisfied performance is recognised under the stated allocation.",
+      "whenItMatters": "A large order book is not the same as current revenue."
+    },
+    {
+      "name": "Revenue and gross profit",
+      "explanation": "Revenue is sales; gross profit deducts the goods’ carrying cost.",
+      "whenItMatters": "A credit sale can improve earnings without funding the next payment."
+    },
+    {
+      "name": "Customer income and funding",
+      "explanation": "Loans and owner contributions supply finance, not customer revenue.",
+      "whenItMatters": "Separate financial backing from operating performance."
+    }
+  ],
+  "workedExample": {
+    "id": "revenue-delivery",
+    "scenarioId": "rv-worked-36-12-24-14-5",
+    "setup": "Separate contract: total fixed price 36 is allocated 24 to the first distinct goods batch and 12 to the remaining batch. The customer advances 12 in Month 0. In Month 1 Nila delivers the first batch, transfers control and has an unconditional claim for its unpaid price. The delivered goods have carrying cost 14. The customer also pays 5 during Month 1. No amount for the undelivered batch is yet unconditionally due. Other costs, tax and adjustments are excluded.",
+    "inputs": [
+      {
+        "key": "contractPrice",
+        "label": "Total contract price",
+        "value": 36,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "advance",
+        "label": "Customer advance in Month 0",
+        "value": 12,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "deliveredPrice",
+        "label": "Price allocated to Month 1 delivery",
+        "value": 24,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "deliveredCost",
+        "label": "Carrying cost of Month 1 delivered goods",
+        "value": 14,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "currentReceipts",
+        "label": "Month 1 collection",
+        "value": 5,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "remainingPrice",
+        "label": "Price allocated to undelivered batch",
+        "value": 12,
+        "unit": "INR lakh"
+      }
+    ],
+    "steps": [
+      "Month 0: cash rises 12 and the contract liability rises 12. No goods have transferred, so revenue is zero.",
+      "Month 1: recognise revenue 24 on control transfer. Apply the advance 12, extinguishing that contract liability, and recognise the remaining unconditional receivable 12.",
+      "Month 1 collection 5 reduces the receivable from 12 to 7. It does not create additional revenue.",
+      "Recognise the delivered goods’ carrying cost 14. Gross profit on the delivered batch = revenue 24 − cost 14 = 10.",
+      "At the end of Month 1: cumulative contract receipts 12 + 5 = 17; related receivable 7; cumulative recognised revenue 24. The reconciliation 17 + 7 = 24 balances.",
+      "The remaining allocated price 12 is still unperformed and is neither current revenue nor an unconditional receivable under the stated contract facts. Current-month receipts are 5, not the cumulative 17."
+    ],
+    "result": "Month 1 revenue 24, cost 14, gross profit 10 and closing related receivable 7. Month 1 cash receipts are 5.",
+    "interpretation": "The advance, delivery and collection affect different periods and balances. Revenue is not the full contract price, the current receipt or gross profit."
+  },
+  "statementEffects": {
+    "applicability": "direct",
+    "explanation": "Contract-specific effects only; the example does not present a complete company income statement or opening inventory ledger.",
+    "changes": [
+      "Month 0: cash +12 and contract liability +12; no revenue.",
+      "Month 1 delivery: revenue +24, contract liability −12, gross receivable +12 and inventory −14 with cost of goods sold +14.",
+      "Month 1 collection: cash +5 and receivable −5. Gross profit 10 is not the same as the current cash receipt 5."
+    ]
+  },
+  "misconceptions": [
+    {
+      "id": "advance-revenue",
+      "claim": "Receiving an advance proves the sale has been earned.",
+      "correction": "Identify unfulfilled performance and keep the amount as an obligation until it is earned.",
+      "diagnostic": "Has the customer received control of the promised goods?"
+    },
+    {
+      "id": "cash-revenue",
+      "claim": "Current revenue equals current or cumulative cash collections.",
+      "correction": "Allocate revenue to performance, then reconcile the customer settlement separately.",
+      "diagnostic": "Which period’s performance did the receipt settle?"
+    },
+    {
+      "id": "ignore-advance",
+      "claim": "An earlier advance has no role in the delivery receivable.",
+      "correction": "Apply the advance to the fulfilled price before determining the unpaid claim.",
+      "diagnostic": "How much of the delivered price has already been paid?"
+    }
+  ],
+  "practice": [
+    {
+      "id": "rv-predict-advance",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "cash-timing",
+      "scenarioId": "rv-predict-advance-scenario",
+      "objectiveIds": [
+        "performance"
+      ],
+      "setup": "Separate contract: a customer pays 9 now for goods to be delivered next month. No goods or service transfer this month and no expense or other event occurs.",
+      "inputs": [
+        {
+          "key": "advance",
+          "label": "Customer advance",
+          "value": 9,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "What does the receipt create this month?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "correct",
+          "text": "Cash +9 and customer obligation +9; revenue 0",
+          "feedback": "The money is received before performance, so the promise is still owed.",
+          "misconceptionId": null
+        },
+        {
+          "id": "earned",
+          "text": "Cash +9 and revenue +9",
+          "feedback": "Receipt does not satisfy the promised delivery.",
+          "misconceptionId": "advance-revenue"
+        },
+        {
+          "id": "receivable",
+          "text": "Receivable +9 and revenue +9; cash unchanged",
+          "feedback": "The customer has paid; the remaining item is the obligation to deliver.",
+          "misconceptionId": "cash-revenue"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Cash increases 9; the unfulfilled customer obligation increases 9. Current revenue remains zero.",
+      "hints": [
+        {
+          "text": "Ask what the business still owes after receiving the payment.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Cash increases 9; the unfulfilled customer obligation increases 9. Current revenue remains zero.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Why is the cash receipt compatible with zero revenue?",
+        "rubric": [
+          "State that no control has transferred.",
+          "Identify the unfulfilled obligation.",
+          "Separate receipt timing from performance."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "rv-transfer-advance-and-credit",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "profit",
+      "scenarioId": "rv-transfer-advance-and-credit-scenario",
+      "objectiveIds": [
+        "credit-sale",
+        "performance"
+      ],
+      "setup": "Separate contract: this month all qualifying goods are delivered for a fixed price of 20, with carrying cost 11. A customer advance of 6 was received last month and applies to this delivery. Collect another 4 this month. The remaining price is unconditionally due. No opening receivable, other costs, tax or adjustments exist.",
+      "inputs": [
+        {
+          "key": "price",
+          "label": "Recognised delivered price",
+          "value": 20,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "cost",
+          "label": "Carrying cost of delivered goods",
+          "value": 11,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "advance",
+          "label": "Advance from last month",
+          "value": 6,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "currentReceipt",
+          "label": "Current-month collection",
+          "value": 4,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "Which combination is correct at month end?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "cash-sales",
+          "text": "Revenue 10; receivable 10; gross loss 1",
+          "feedback": "The 10 cumulative receipts are not the performance price of 20.",
+          "misconceptionId": "cash-revenue"
+        },
+        {
+          "id": "correct",
+          "text": "Revenue 20; receivable 10; gross profit 9",
+          "feedback": "Apply both the earlier advance 6 and current payment 4 against the 20 delivered price.",
+          "misconceptionId": null
+        },
+        {
+          "id": "unapplied",
+          "text": "Revenue 20; receivable 16; gross profit 9",
+          "feedback": "This ignores the earlier 6 advance when calculating the unpaid claim.",
+          "misconceptionId": "ignore-advance"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Revenue = 20. Gross profit = 20 − 11 = 9. Closing receivable = 20 − advance 6 − current collection 4 = 10. The previous contract liability of 6 is released. Current-month receipts are only 4; the reconciliation is 20 = prior advance 6 + current receipt 4 + closing receivable 10.",
+      "hints": [
+        {
+          "text": "Allocate the recognised price between amounts already paid and the unpaid claim.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Revenue = 20. Gross profit = 20 − 11 = 9. Closing receivable = 20 − advance 6 − current collection 4 = 10. The previous contract liability of 6 is released. Current-month receipts are only 4; the reconciliation is 20 = prior advance 6 + current receipt 4 + closing receivable 10.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Why are revenue, gross profit and the current cash receipt three different numbers?",
+        "rubric": [
+          "Show revenue 20 and gross profit 9.",
+          "Reconcile the 10 receivable.",
+          "Distinguish last month’s 6 advance from this month’s 4 receipt."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E2108",
+      "to": "T04.06",
+      "kind": "learning",
+      "purpose": "Atomic concept within this original grouped topic.",
+      "conditions": "Preserves the original inventory while enabling more precise navigation.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2136",
+      "to": "A02",
+      "kind": "financial",
+      "purpose": "A qualifying sale on credit records revenue and a customer receivable.",
+      "conditions": "A cash sale does not create an outstanding receivable.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D04",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "When do over-time criteria permit recognition before the final delivery?",
+      "How do returns, variable prices or principal-agent relationships change the assessment?"
+    ],
+    "conceptIds": [
+      "T04.06",
+      "A02"
+    ],
+    "limitations": "The simple fixed-price goods example is not a complete IFRS 15 application guide or an Indian reporting assessment."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "Planned six-round case. This lesson is a separate teaching example, not a completed case round."
+    },
+    {
+      "id": "LAB-COLLECTIONS",
+      "kind": "lab",
+      "availability": "planned",
+      "purpose": "Planned lab will trace the later settlement of recognised customer claims."
+    }
+  ],
+  "sources": [
+    {
+      "id": "revenue",
+      "title": "IFRS Foundation: IFRS 15 overview",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/ifrs-15-revenue-from-contracts-with-customers/",
+      "role": "primary-support",
+      "supports": [
+        "Control transfer, the five-step revenue framework and recognition at a point in time or over time."
+      ],
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "claims",
+      "title": "IFRS Interpretations Committee staff paper, March 2019: IFRS 15 paragraph 108 and contract-asset distinction (page 12)",
+      "url": "https://www.ifrs.org/-/media/feature/meetings/2019/march/ifric/ap3-ias-23-over-time-transfer-of-constructed-good.pdf",
+      "role": "primary-support",
+      "supports": [
+        "Unconditional customer right versus a condition beyond the passage of time."
+      ],
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "evidence": [
+      "B1 terminology, units, timing, assumptions, independent arithmetic, feedback and scope review recorded in docs/implementation/task-04-4-b1.md.",
+      "Primary public IFRS/AASB background and the linked source claims checked; this is an AI content review, not independent professional approval or learner-pilot evidence.",
+      "Worked and assessment calculations independently recomputed in tests/b1-lessons.test.mjs; interaction and version/owner isolation checked separately."
+    ],
+    "method": "ai-content-source-arithmetic"
+  }
+}
