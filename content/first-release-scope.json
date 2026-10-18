@@ -1,0 +1,388 @@
+{
+  "schemaVersion": 1,
+  "source": "Finance_Atlas_Implementation_Backlog.xlsx, version 6, Content batches; Task 01.2 verified selection",
+  "batches": [
+    {
+      "id": "04.4-B1",
+      "title": "Accounting and collections",
+      "conceptIds": [
+        "T04.01",
+        "T04.05",
+        "T06.02",
+        "A01",
+        "A02"
+      ]
+    },
+    {
+      "id": "04.4-B2",
+      "title": "Inventory and cash mechanisms",
+      "conceptIds": [
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "T07.14"
+      ]
+    },
+    {
+      "id": "04.4-B3",
+      "title": "Liquidity and financing",
+      "conceptIds": [
+        "T14.03",
+        "T14.04",
+        "T14.15",
+        "A18",
+        "T07.09"
+      ]
+    },
+    {
+      "id": "04.4-B4",
+      "title": "Equipment and operating profit",
+      "conceptIds": [
+        "A07",
+        "A08",
+        "A09",
+        "A10",
+        "T12.05"
+      ]
+    },
+    {
+      "id": "04.4-B5",
+      "title": "Investment and FCFF valuation",
+      "conceptIds": [
+        "T03.01",
+        "T03.12",
+        "A11",
+        "A13",
+        "A19"
+      ]
+    },
+    {
+      "id": "04.4-B6",
+      "title": "Valuation interpretation",
+      "conceptIds": [
+        "T17.12",
+        "T17.18",
+        "A15",
+        "A16",
+        "T17.04"
+      ]
+    }
+  ],
+  "concepts": [
+    {
+      "id": "T04.01",
+      "title": "The accounting equation",
+      "firstUse": "Entry",
+      "appliedScope": "Keep assets equal to liabilities plus equity after an event.",
+      "outcomeIds": [
+        "LO1"
+      ],
+      "batchId": "04.4-B1"
+    },
+    {
+      "id": "T04.05",
+      "title": "Cash accounting versus accrual accounting",
+      "firstUse": "Entry",
+      "appliedScope": "Separate earning, invoicing, expense recognition and cash timing.",
+      "outcomeIds": [
+        "LO1",
+        "LO2"
+      ],
+      "batchId": "04.4-B1"
+    },
+    {
+      "id": "T06.02",
+      "title": "Cash and cash equivalents",
+      "firstUse": "Entry",
+      "appliedScope": "Read available cash and distinguish it from profit and receivables.",
+      "outcomeIds": [
+        "LO1",
+        "LO3"
+      ],
+      "batchId": "04.4-B1"
+    },
+    {
+      "id": "A01",
+      "title": "Revenue recognition",
+      "firstUse": "1",
+      "appliedScope": "Record a completed credit sale under the stated case rules.",
+      "outcomeIds": [
+        "LO1"
+      ],
+      "batchId": "04.4-B1"
+    },
+    {
+      "id": "A02",
+      "title": "Trade receivables",
+      "firstUse": "1–2",
+      "appliedScope": "Track invoices, collections and closing customer balances.",
+      "outcomeIds": [
+        "LO1",
+        "LO3"
+      ],
+      "batchId": "04.4-B1"
+    },
+    {
+      "id": "A03",
+      "title": "Inventory",
+      "firstUse": "1–3",
+      "appliedScope": "Track purchase cost, stock sold and unsold inventory.",
+      "outcomeIds": [
+        "LO1",
+        "LO3"
+      ],
+      "batchId": "04.4-B2"
+    },
+    {
+      "id": "A04",
+      "title": "Trade payables",
+      "firstUse": "3",
+      "appliedScope": "Track supplier credit and settlement timing.",
+      "outcomeIds": [
+        "LO1",
+        "LO3"
+      ],
+      "batchId": "04.4-B2"
+    },
+    {
+      "id": "A05",
+      "title": "Operating working capital",
+      "firstUse": "2–3",
+      "appliedScope": "Explain why changes in receivables, inventory and payables absorb or release cash.",
+      "outcomeIds": [
+        "LO2",
+        "LO3"
+      ],
+      "batchId": "04.4-B2"
+    },
+    {
+      "id": "A06",
+      "title": "Operating cash flow",
+      "firstUse": "2",
+      "appliedScope": "Reconcile net profit to operating cash flow.",
+      "outcomeIds": [
+        "LO2"
+      ],
+      "batchId": "04.4-B2"
+    },
+    {
+      "id": "T07.14",
+      "title": "How transactions move through all three statements",
+      "firstUse": "1–5",
+      "appliedScope": "Trace each chosen event across the three statements.",
+      "outcomeIds": [
+        "LO1",
+        "LO2"
+      ],
+      "batchId": "04.4-B2"
+    },
+    {
+      "id": "T14.03",
+      "title": "Inventory days, receivable days, and payable days",
+      "firstUse": "2–3",
+      "appliedScope": "Compare collection, stockholding and supplier-payment timing using stated conventions.",
+      "outcomeIds": [
+        "LO3"
+      ],
+      "batchId": "04.4-B3"
+    },
+    {
+      "id": "T14.04",
+      "title": "Cash budgeting and short-term liquidity forecasting",
+      "firstUse": "2–4",
+      "appliedScope": "Build a dated cash forecast and locate the shortfall.",
+      "outcomeIds": [
+        "LO3"
+      ],
+      "batchId": "04.4-B3"
+    },
+    {
+      "id": "T14.15",
+      "title": "Liquidity buffers and contingency funding",
+      "firstUse": "2–4",
+      "appliedScope": "Measure funding needed to maintain an explicit minimum cash balance.",
+      "outcomeIds": [
+        "LO3"
+      ],
+      "batchId": "04.4-B3"
+    },
+    {
+      "id": "A18",
+      "title": "Net borrowing",
+      "firstUse": "4",
+      "appliedScope": "Separate debt raised from debt repaid and identify future repayment obligations.",
+      "outcomeIds": [
+        "LO4"
+      ],
+      "batchId": "04.4-B3"
+    },
+    {
+      "id": "T07.09",
+      "title": "Equity issuance, buybacks, and dividends",
+      "firstUse": "4",
+      "appliedScope": "Compare equity funding and ownership dilution; buybacks and payout policy are later depth.",
+      "outcomeIds": [
+        "LO4"
+      ],
+      "batchId": "04.4-B3"
+    },
+    {
+      "id": "A07",
+      "title": "Capital expenditure",
+      "firstUse": "5",
+      "appliedScope": "Separate equipment cash payment from periodic expense recognition.",
+      "outcomeIds": [
+        "LO1",
+        "LO5"
+      ],
+      "batchId": "04.4-B4"
+    },
+    {
+      "id": "A08",
+      "title": "Depreciation",
+      "firstUse": "5",
+      "appliedScope": "Explain the non-cash charge and its add-back; use supplied depreciation rules.",
+      "outcomeIds": [
+        "LO1",
+        "LO2",
+        "LO5"
+      ],
+      "batchId": "04.4-B4"
+    },
+    {
+      "id": "A09",
+      "title": "EBIT",
+      "firstUse": "5–6",
+      "appliedScope": "Distinguish operating profit from financing effects.",
+      "outcomeIds": [
+        "LO2",
+        "LO6"
+      ],
+      "batchId": "04.4-B4"
+    },
+    {
+      "id": "A10",
+      "title": "NOPAT",
+      "firstUse": "5–6",
+      "appliedScope": "Use operating profit after the stated illustrative operating tax assumption.",
+      "outcomeIds": [
+        "LO2",
+        "LO6"
+      ],
+      "batchId": "04.4-B4"
+    },
+    {
+      "id": "T12.05",
+      "title": "Incremental cash flows",
+      "firstUse": "5",
+      "appliedScope": "Include only cash flows that change because of the proposed investment.",
+      "outcomeIds": [
+        "LO5"
+      ],
+      "batchId": "04.4-B4"
+    },
+    {
+      "id": "T03.01",
+      "title": "Present value and future value",
+      "firstUse": "Entry, 5–6",
+      "appliedScope": "Place cash flows on a timeline and discount the right period.",
+      "outcomeIds": [
+        "LO5",
+        "LO6"
+      ],
+      "batchId": "04.4-B5"
+    },
+    {
+      "id": "T03.12",
+      "title": "Net present value",
+      "firstUse": "5",
+      "appliedScope": "Evaluate a project at the stated required return.",
+      "outcomeIds": [
+        "LO5"
+      ],
+      "batchId": "04.4-B5"
+    },
+    {
+      "id": "A11",
+      "title": "Free cash flow to the firm (FCFF)",
+      "firstUse": "6",
+      "appliedScope": "Reconcile operating earnings, non-cash charges and reinvestment to FCFF.",
+      "outcomeIds": [
+        "LO2",
+        "LO6"
+      ],
+      "batchId": "04.4-B5"
+    },
+    {
+      "id": "A13",
+      "title": "Weighted average cost of capital (WACC)",
+      "firstUse": "6",
+      "appliedScope": "Interpret and use a supplied WACC matched to FCFF; full CAPM estimation is later depth.",
+      "outcomeIds": [
+        "LO6"
+      ],
+      "batchId": "04.4-B5"
+    },
+    {
+      "id": "A19",
+      "title": "Discounted cash flow (DCF)",
+      "firstUse": "6",
+      "appliedScope": "Discount explicit FCFF forecasts and an end-of-forecast terminal value.",
+      "outcomeIds": [
+        "LO6"
+      ],
+      "batchId": "04.4-B5"
+    },
+    {
+      "id": "T17.12",
+      "title": "Terminal growth and terminal value",
+      "firstUse": "6",
+      "appliedScope": "Apply supplied sustainable terminal assumptions and require WACC greater than growth.",
+      "outcomeIds": [
+        "LO6"
+      ],
+      "batchId": "04.4-B6"
+    },
+    {
+      "id": "T17.18",
+      "title": "Sensitivity analysis, scenarios, and reverse DCF",
+      "firstUse": "6",
+      "appliedScope": "Compare WACC/growth sensitivities and explain uncertainty; reverse DCF is later depth.",
+      "outcomeIds": [
+        "LO6"
+      ],
+      "batchId": "04.4-B6"
+    },
+    {
+      "id": "A15",
+      "title": "Enterprise value",
+      "firstUse": "6",
+      "appliedScope": "Interpret the value of operating assets for capital providers.",
+      "outcomeIds": [
+        "LO6"
+      ],
+      "batchId": "04.4-B6"
+    },
+    {
+      "id": "A16",
+      "title": "Equity value",
+      "firstUse": "6",
+      "appliedScope": "Interpret the residual value attributable to equity holders.",
+      "outcomeIds": [
+        "LO6"
+      ],
+      "batchId": "04.4-B6"
+    },
+    {
+      "id": "T17.04",
+      "title": "The enterprise-to-equity value bridge",
+      "firstUse": "6",
+      "appliedScope": "Bridge enterprise value to equity using debt and explicitly excess cash.",
+      "outcomeIds": [
+        "LO6"
+      ],
+      "batchId": "04.4-B6"
+    }
+  ]
+}

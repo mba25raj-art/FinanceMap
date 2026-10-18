@@ -68,7 +68,7 @@ for (const [id, choices] of Object.entries(incorrectFeedback)) {
   lesson.incorrectFeedback = choices;
 }
 if (Object.keys(output).length !== 698) throw new Error('Lesson coverage must be 698/698');
-const aliases={A01:'T05.01',A02:'T06.04',A03:'T06.05',A04:'T06.13',A06:'T07.03',A07:'T07.06',A08:'T05.10',A09:'T05.11',A10:'T17.05',A11:'T17.05',A12:'T17.05',A15:'T17.03',A16:'T17.04',A18:'T07.08',A19:'T17.07',A13:'T13.10',A14:'T13.01',A20:'T09.08',A05:'T14.01',A17:'T24.16'};
+const aliases=read('../content/lesson-aliases.json');
 for(const [id,target] of Object.entries(aliases)) if(deep[target]&&!deep[id]) deep[id]=deep[target];
 for(const [id,detail] of Object.entries(deep)) {
   if(!output[id]) throw new Error('Unknown detailed lesson '+id);
