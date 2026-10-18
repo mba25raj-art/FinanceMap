@@ -16,8 +16,19 @@ import b3_2 from '../content/lesson-packages/liquidity-buffer.v1.json' with { ty
 import b3_3 from '../content/lesson-packages/net-borrowing.v1.json' with { type: 'json' };
 import b3_4 from '../content/lesson-packages/equity-funding-payouts.v1.json' with { type: 'json' };
 
+import b4_0 from '../content/lesson-packages/capital-expenditure.v1.json' with { type: 'json' };
+import b4_1 from '../content/lesson-packages/depreciation.v1.json' with { type: 'json' };
+import b4_2 from '../content/lesson-packages/ebit.v1.json' with { type: 'json' };
+import b4_3 from '../content/lesson-packages/nopat.v1.json' with { type: 'json' };
+import b4_4 from '../content/lesson-packages/incremental-cash-flows.v1.json' with { type: 'json' };
+
 export { receivables };
 const imported = new Map([
+  ['content/lesson-packages/capital-expenditure.v1.json', b4_0],
+  ['content/lesson-packages/depreciation.v1.json', b4_1],
+  ['content/lesson-packages/ebit.v1.json', b4_2],
+  ['content/lesson-packages/nopat.v1.json', b4_3],
+  ['content/lesson-packages/incremental-cash-flows.v1.json', b4_4],
   ['content/lesson-packages/working-capital-days.v1.json', b3_0],
   ['content/lesson-packages/cash-forecast.v1.json', b3_1],
   ['content/lesson-packages/liquidity-buffer.v1.json', b3_2],

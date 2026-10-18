@@ -1,5 +1,7 @@
 # Prototype Instructions
 
+- The user authorised continuing tasks one after another on 19 October 2026. Follow backlog order, verify and save each completed task, and continue without requiring a separate “next”. Do not fabricate learner participation or bypass actual external blockers.
+
 ## Project decisions
 
 - Use the light Statement Explorer mockup as the primary visual direction; maintain the shared workspace for the connection map and missions.

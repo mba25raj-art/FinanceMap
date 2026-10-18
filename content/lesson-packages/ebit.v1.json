@@ -1,0 +1,433 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "A09",
+  "contentVersion": "1.0.0",
+  "hoverDefinition": "EBIT is earnings before interest and tax under a stated definition. Here it measures revenue less operating costs including depreciation, separating operating performance from the chosen debt funding.",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "Revenue-to-EBIT bridge, depreciation versus EBITDA, interest/tax separation and definition consistency."
+    ],
+    "deferred": [
+      "Statutory operating subtotals, exceptional adjustments, financial-sector definitions and full peer normalisation are deferred."
+    ]
+  },
+  "objectives": [
+    {
+      "id": "operating",
+      "statement": "Calculate EBIT and separate it from financing cost and net income.",
+      "evidence": "Reconcile revenue, operating expenses, depreciation, interest and supplied taxes.",
+      "outcomeIds": [
+        "LO2",
+        "LO6"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh",
+      "fraction"
+    ],
+    "timeframe": "Independent fictional teaching scenarios. Worked examples and practice start separately; they are not consecutive company-case rounds.",
+    "assumptions": [
+      "EBIT here means revenue less all stated operating costs including depreciation; there is no other income or expense.",
+      "Interest is a financing expense; rates and tax assumptions are illustrative.",
+      "Cash operating costs exclude depreciation wherever it is listed separately. No hidden double-counting.",
+      "This analytical definition is not a universal statutory operating-profit subtotal."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Conceptual teaching assumptions, with INR lakh as a unit rather than a jurisdiction. No tax rate, financing term, reporting classification, valuation input or management buffer is a current rule or market recommendation. Applicable framework, jurisdiction, reporting period and effective amendments require separate study."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "build",
+      "title": "Define the operating subtotal",
+      "paragraphs": [
+        "Begin with recognised revenue and subtract the specified cost of goods/services and operating expenses. Include current depreciation once. In these examples the resulting earnings before interest and tax is EBIT. Operating costs supplied excluding depreciation need the separate charge; costs already including it must not be charged again.",
+        "Read the definition before comparing reports. Different businesses or analytical adjustments can put other income, investments or unusual items in different places. A common label does not establish a common perimeter."
+      ]
+    },
+    {
+      "id": "bridge",
+      "title": "Move from EBIT to net income",
+      "paragraphs": [
+        "Subtract interest from EBIT to reach the simplified pre-tax result, then subtract the stated tax expense for net income. Increasing financing cost can lower net income while leaving these operating earnings unchanged. Loan principal itself is neither revenue nor interest expense.",
+        "EBITDA, under the simple no-amortisation examples, is EBIT plus depreciation. It does not deduct reinvestment or operating balance increases and is not a cash-flow total. An asset-intensive firm can have substantial EBITDA and still need cash for equipment."
+      ]
+    },
+    {
+      "id": "interpret",
+      "title": "Keep performance, cash and value distinct",
+      "paragraphs": [
+        "EBIT includes accrual revenue and expenses and therefore is not operating cash. A value calculation also needs taxes, non-cash reconciliation, reinvestment and risk. A higher EBIT from a one-off item is not automatically a sustainable forecast.",
+        "For this release, use the stated definition consistently and show its bridge rather than claiming professional comparability from the label alone."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "EBIT and net income",
+      "explanation": "Net income also reflects financing and tax under the supplied assumptions.",
+      "whenItMatters": "Use the subtotal matched to the question."
+    },
+    {
+      "name": "EBIT and EBITDA",
+      "explanation": "Depreciation is inside EBIT and added back in the simple EBITDA measure.",
+      "whenItMatters": "An add-back does not remove equipment cash needs."
+    },
+    {
+      "name": "Analytical definition and statutory subtotal",
+      "explanation": "The scenario defines the operating perimeter.",
+      "whenItMatters": "Framework/effective-period presentation needs separate study."
+    }
+  ],
+  "workedExample": {
+    "id": "ebit-income-bridge",
+    "scenarioId": "ebit-income-bridge-worked",
+    "setup": "Recognised revenue is 100. Cost sold excluding depreciation is 45; other operating expense excluding depreciation is 20; depreciation is 5. Interest expense is 6. Apply a hypothetical tax expense of 25% of positive pre-tax income with full current recognition. No other item exists.",
+    "inputs": [
+      {
+        "key": "revenue",
+        "label": "Revenue",
+        "value": 100,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "cost",
+        "label": "Cost",
+        "value": 45,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "operating_expense",
+        "label": "Operating expense",
+        "value": 20,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "depreciation",
+        "label": "Depreciation",
+        "value": 5,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "interest",
+        "label": "Interest",
+        "value": 6,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "tax_rate",
+        "label": "Hypothetical tax rate",
+        "value": 0.25,
+        "unit": "fraction"
+      }
+    ],
+    "steps": [
+      "Operating costs before depreciation = 45 + 20 = 65.",
+      "EBITDA under this definition = 100 − 65 = 35.",
+      "EBIT = 35 − depreciation 5 = 30.",
+      "Pre-tax income = 30 − interest 6 = 24.",
+      "Hypothetical tax = 24×25% = 6; net income = 18.",
+      "Changing interest changes the financing/net-income bridge, not the supplied operating revenue or costs. No cash-flow subtotal can be inferred without settlement data."
+    ],
+    "result": "EBIT 30; EBITDA 35; pre-tax income 24; net income 18.",
+    "interpretation": "These subtotals answer different questions. The rate is an example assumption, not a legal tax rule."
+  },
+  "statementEffects": {
+    "applicability": "direct",
+    "explanation": "Effects under the stated simplified scenario. Forecasts and economic values do not themselves create accounting entries.",
+    "changes": [
+      "Income-statement bridge: operating earnings 30 less interest 6 and illustrative tax 6 gives net income 18.",
+      "Settlement timing is unspecified, so no full cash-flow or closing balance sheet is inferred."
+    ]
+  },
+  "misconceptions": [
+    {
+      "id": "interest",
+      "claim": "Deduct interest when calculating EBIT.",
+      "correction": "The chosen EBIT subtotal precedes financing cost.",
+      "diagnostic": "Which word in the subtotal names that exclusion?"
+    },
+    {
+      "id": "dep",
+      "claim": "EBIT ignores depreciation.",
+      "correction": "The current operating allocation is included once.",
+      "diagnostic": "Are the supplied operating costs before or after depreciation?"
+    },
+    {
+      "id": "cash",
+      "claim": "EBITDA is money available to spend.",
+      "correction": "It omits timing, taxes and investment needs.",
+      "diagnostic": "Which cash uses remain outside the subtotal?"
+    }
+  ],
+  "practice": [
+    {
+      "id": "ebit-predict",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "bridge",
+      "scenarioId": "ebit-predict-independent",
+      "objectiveIds": [
+        "operating"
+      ],
+      "setup": "Independent scenario: revenue 70, cost sold 30 and operating expense 15 both exclude depreciation 4. Interest is 3; tax is zero by assumption. No other income or expense exists.",
+      "inputs": [
+        {
+          "key": "revenue",
+          "label": "Revenue",
+          "value": 70,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "cost",
+          "label": "Cost",
+          "value": 30,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "operating_expense",
+          "label": "Operating expense",
+          "value": 15,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "depreciation",
+          "label": "Depreciation",
+          "value": 4,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "interest",
+          "label": "Interest",
+          "value": 3,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "What EBIT and pre-tax income follow?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "EBIT 18; pre-tax income 18",
+          "feedback": "Interest belongs after EBIT.",
+          "misconceptionId": "interest"
+        },
+        {
+          "id": "correct",
+          "text": "EBIT 21; pre-tax income 18",
+          "feedback": "EBIT = 70 − 30 − 15 − 4 = 21; pre-tax income = 21 − 3 = 18.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "EBIT 25; pre-tax income 22",
+          "feedback": "Depreciation 4 must reduce operating earnings.",
+          "misconceptionId": "dep"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "EBIT = 70 − 30 − 15 − 4 = 21; pre-tax income = 21 − 3 = 18.",
+      "hints": [
+        {
+          "text": "Find the operating result before applying financing cost.",
+          "answerRevealing": false
+        },
+        {
+          "text": "EBIT = 70 − 30 − 15 − 4 = 21; pre-tax income = 21 − 3 = 18.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "How does the depreciation listing prevent double-counting?",
+        "rubric": [
+          "Subtract operating costs once.",
+          "Include separate depreciation 4.",
+          "Keep interest after EBIT."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "ebit-transfer-funding",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "interpret",
+      "scenarioId": "ebit-transfer-funding-independent",
+      "objectiveIds": [
+        "operating"
+      ],
+      "setup": "Independent comparison: identical revenue 90, cash operating expenses 52 and depreciation 8. One funding plan has interest 6; another has no interest. Hypothetical tax is 20% of positive pre-tax income, fully usable. No other item exists.",
+      "inputs": [
+        {
+          "key": "revenue",
+          "label": "Revenue",
+          "value": 90,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "operating_expense",
+          "label": "Operating expense",
+          "value": 52,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "depreciation",
+          "label": "Depreciation",
+          "value": 8,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "interest",
+          "label": "Interest",
+          "value": 6,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "tax_rate",
+          "label": "Hypothetical tax rate",
+          "value": 0.2,
+          "unit": "fraction"
+        }
+      ],
+      "question": "How do EBIT and net income compare?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "Debt-funded EBIT 24; debt-free EBIT 30",
+          "feedback": "Interest changes the financing bridge, not the supplied operating result.",
+          "misconceptionId": "interest"
+        },
+        {
+          "id": "correct",
+          "text": "Both EBIT 30; debt-funded net income 19.2, debt-free net income 24",
+          "feedback": "EBIT = 90 − 52 − 8 = 30 in both. With interest: (30 − 6)×0.8 = 19.2. Without interest: 30×0.8 = 24. The difference 4.8 is the interest cost after the assumed tax effect.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "Both EBIT 38; debt-funded net income 25.6, debt-free 30.4",
+          "feedback": "This omits depreciation from EBIT.",
+          "misconceptionId": "dep"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "EBIT = 90 − 52 − 8 = 30 in both. With interest: (30 − 6)×0.8 = 19.2. Without interest: 30×0.8 = 24. The difference 4.8 is the interest cost after the assumed tax effect.",
+      "hints": [
+        {
+          "text": "Hold operations fixed and change only the financing line.",
+          "answerRevealing": false
+        },
+        {
+          "text": "EBIT = 90 − 52 − 8 = 30 in both. With interest: (30 − 6)×0.8 = 19.2. Without interest: 30×0.8 = 24. The difference 4.8 is the interest cost after the assumed tax effect.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Why does unchanged EBIT not imply unchanged equity cash flows?",
+        "rubric": [
+          "Show EBIT 30 for both.",
+          "Calculate the stated after-tax financing effect.",
+          "Do not interpret EBITDA as cash."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E2116",
+      "to": "T05.11",
+      "kind": "learning",
+      "purpose": "Atomic concept within this original grouped topic.",
+      "conditions": "Preserves the original inventory while enabling more precise navigation.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2151",
+      "to": "A08",
+      "kind": "financial",
+      "purpose": "Depreciation reduces EBIT for depreciating operating assets.",
+      "conditions": "Apply the stated definitions, periods and teaching assumptions. This relationship is not an implemented calculation dependency.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2155",
+      "to": "A10",
+      "kind": "financial",
+      "purpose": "Operating earnings provide the profit base for after-tax operating profit.",
+      "conditions": "A simple EBIT times one-minus-tax-rate model is an assumption, not a universal tax rule.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D05",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "Which reported non-operating or unusual items should be reconciled before comparison?",
+      "How does the appropriate operating subtotal differ across reporting frameworks?"
+    ],
+    "conceptIds": [
+      "T05.11",
+      "A08",
+      "A10"
+    ],
+    "limitations": "Introductory study coverage. Statutory operating subtotals, exceptional adjustments, financial-sector definitions and full peer normalisation are deferred."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "The connected six-round case remains a separate implementation task; these examples do not imply playable rounds."
+    }
+  ],
+  "sources": [
+    {
+      "id": "valuation",
+      "title": "Aswath Damodaran, NYU Stern: An Introduction to Valuation",
+      "url": "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/background/valintro.htm",
+      "supports": [
+        "Background on after-tax operating cash before debt payments and after reinvestment. This does not supply the hypothetical tax rates or prescribe a statutory income-statement subtotal."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "ias7",
+      "title": "IFRS Foundation: IAS 7 public overview",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/ias-7-statement-of-cash-flows/",
+      "supports": [
+        "Background on operating, investing and financing cash and non-cash reconciliation. The examples prescribe their own conceptual classifications; statutory starting subtotals, interest/dividends and effective amendments require separate analysis."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "method": "ai-content-source-arithmetic",
+    "evidence": [
+      "B4 topic mechanics, terminology, signs, timing, source boundaries and feedback reviewed in docs/implementation/task-04-4-b4.md.",
+      "Independent worked and assessment calculations checked in tests/b4-lessons.test.mjs; shared route, version, hint and retry regressions also apply.",
+      "Scoped AI content review, not independent professional approval, interactive browser verification or learner-pilot evidence."
+    ]
+  }
+}

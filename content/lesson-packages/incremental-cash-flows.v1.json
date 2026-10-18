@@ -1,0 +1,469 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "T12.05",
+  "contentVersion": "1.0.0",
+  "hoverDefinition": "Incremental cash flows are future cash differences between taking a decision and the stated alternative. Include foregone opportunities and side effects; exclude sunk spending, unchanged allocations and non-cash charges as cash items.",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "With-versus-without comparison, sunk/unchanged costs, opportunity costs, cannibalisation, working capital and terminal recovery."
+    ],
+    "deferred": [
+      "Tax shields, replacement disposal tax, inflation, complex project interactions and full risk-adjusted discount-rate estimation are deferred."
+    ]
+  },
+  "objectives": [
+    {
+      "id": "difference",
+      "statement": "Identify and time only the cash flows changed by a proposed project.",
+      "evidence": "Build a complete incremental timeline including opportunity cost and released working capital.",
+      "outcomeIds": [
+        "LO5"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh",
+      "years"
+    ],
+    "timeframe": "Independent fictional teaching scenarios. Worked examples and practice start separately; they are not consecutive company-case rounds.",
+    "assumptions": [
+      "All amounts are cash at the stated dates except separately identified non-cash or past costs.",
+      "No tax, inflation or financing cost is included in the project cash perimeter. Required return will be handled separately.",
+      "Cannibalisation is supplied as lost net cash contribution, not gross sales; stated working capital is fully recovered at termination.",
+      "No other cash change or opportunity exists unless stated."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Conceptual teaching assumptions, with INR lakh as a unit rather than a jurisdiction. No tax rate, financing term, reporting classification, valuation input or management buffer is a current rule or market recommendation. Applicable framework, jurisdiction, reporting period and effective amendments require separate study."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "counterfactual",
+      "title": "Define the alternative first",
+      "paragraphs": [
+        "Compare the business with the project against the business without it over the same dates. Include only the change caused by the choice. Existing revenue or a head-office bill that continues unchanged is not incremental merely because an allocation appears in a project report.",
+        "Past research already paid is sunk at today’s decision. A future cash commitment that cannot change under either option is also excluded from the difference. A cancelable cost avoided by rejecting the project is different and must be considered."
+      ]
+    },
+    {
+      "id": "opportunity",
+      "title": "Include side effects and foregone alternatives",
+      "paragraphs": [
+        "Using a building that could otherwise earn rent has an opportunity cost, even without a new invoice. Selling a new line may reduce net cash contribution from an existing line; include that cannibalisation once. Use the net difference under the supplied alternative rather than treating every lost sales rupee as lost profit.",
+        "Depreciation is non-cash and is not a second payment. Tax consequences can make an allocation relevant indirectly, but these scenarios explicitly exclude tax. Keep financing cash separate in an unlevered project appraisal to avoid counting funding cost both in flows and the required return."
+      ]
+    },
+    {
+      "id": "timeline",
+      "title": "Place investment and release at their dates",
+      "paragraphs": [
+        "Record equipment and initial operating working capital at time zero when paid. Operating receipts less changed operating payments occur at the stated future dates. Terminal proceeds and working-capital release appear only when the scenario actually assumes them.",
+        "Do not subtract an initial investment every operating year or recover working capital twice. An undiscounted sum is not NPV: discount the dated differences at an appropriate supplied rate in the later NPV lesson."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "Sunk and avoidable future cost",
+      "explanation": "Past spending cannot change; future avoidable cash can.",
+      "whenItMatters": "The decision date determines relevance."
+    },
+    {
+      "name": "Allocation and incremental cash",
+      "explanation": "An unchanged assigned cost is not a new payment.",
+      "whenItMatters": "Compare the actual alternatives."
+    },
+    {
+      "name": "Opportunity cost and new invoice",
+      "explanation": "A foregone cash alternative can matter without an invoice.",
+      "whenItMatters": "Include the lost alternative once."
+    },
+    {
+      "name": "Depreciation and tax consequence",
+      "explanation": "The allocation is non-cash; any usable tax effect requires separate assumptions.",
+      "whenItMatters": "No tax benefit is silently introduced here."
+    }
+  ],
+  "workedExample": {
+    "id": "incremental-two-year",
+    "scenarioId": "incremental-two-year-worked",
+    "setup": "A project requires equipment 30 and operating working capital 5 now. At each of Years 1 and 2 end, incremental receipts are 18, cash operating costs 7, lost existing-line net cash contribution 2 and foregone rental cash 1. At Year 2 end equipment sells for 6 and all working capital 5 is released. Research 4 was already paid; allocated overhead 3 per year remains unchanged; depreciation 6 is non-cash. No tax or financing cash is included.",
+    "inputs": [
+      {
+        "key": "equipment",
+        "label": "Equipment",
+        "value": 30,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "working_capital",
+        "label": "Working capital",
+        "value": 5,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "receipts",
+        "label": "Receipts",
+        "value": 18,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "operating_cost",
+        "label": "Operating cost",
+        "value": 7,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "lost_contribution",
+        "label": "Lost contribution",
+        "value": 2,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "foregone_rent",
+        "label": "Foregone rent",
+        "value": 1,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "salvage",
+        "label": "Salvage",
+        "value": 6,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "sunk_research",
+        "label": "Sunk research",
+        "value": 4,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "unchanged_overhead",
+        "label": "Unchanged overhead",
+        "value": 3,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "depreciation",
+        "label": "Depreciation",
+        "value": 6,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "years",
+        "label": "Project horizon",
+        "value": 2,
+        "unit": "years"
+      }
+    ],
+    "steps": [
+      "Time zero relevant outflow = equipment 30 + working capital 5 = 35. Past research 4 is excluded.",
+      "Annual operating cash difference = receipts 18 − cost 7 − lost contribution 2 − foregone rent 1 = 8.",
+      "Unchanged overhead allocation 3 is excluded from the difference. Depreciation 6 is not another cash payment.",
+      "Year 1 incremental cash is 8 at year end.",
+      "Year 2 incremental cash is operating 8 + equipment proceeds 6 + working-capital release 5 = 19 at year end.",
+      "The cash timeline is −35, +8, +19. Undiscounted total is −8; a present-value decision additionally requires the rate and discount timing."
+    ],
+    "result": "Relevant timeline: time 0 −35, Year 1 +8, Year 2 +19.",
+    "interpretation": "The comparison includes lost alternatives and reinvestment once, while excluding past and unchanged amounts."
+  },
+  "statementEffects": {
+    "applicability": "direct",
+    "explanation": "Effects under the stated simplified scenario. Forecasts and economic values do not themselves create accounting entries.",
+    "changes": [
+      "An appraisal timeline is not a journal entry. Actual project acquisition, operations and disposal would be posted separately.",
+      "The incremental timeline identifies operating/investment differences; it is not total company cash or reported profit."
+    ]
+  },
+  "misconceptions": [
+    {
+      "id": "sunk",
+      "claim": "Include past research because it relates to the project.",
+      "correction": "Exclude amounts that cannot change at today’s decision.",
+      "diagnostic": "Would accepting or rejecting recover the past payment?"
+    },
+    {
+      "id": "noncash",
+      "claim": "Deduct depreciation as an annual cash payment.",
+      "correction": "Include the acquisition payment at its cash date; tax is excluded here.",
+      "diagnostic": "Which bank movement does the charge represent?"
+    },
+    {
+      "id": "opportunity",
+      "claim": "Ignore foregone rent because no new invoice arrives.",
+      "correction": "Include future cash lost relative to the alternative.",
+      "diagnostic": "What could the resource earn without the project?"
+    }
+  ],
+  "practice": [
+    {
+      "id": "incremental-predict",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "opportunity",
+      "scenarioId": "incremental-predict-independent",
+      "objectiveIds": [
+        "difference"
+      ],
+      "setup": "Independent annual comparison: incremental receipts 15, new cash costs 6, lost existing-product net cash contribution 2. Past research paid 3, unchanged allocated overhead 4 and non-cash depreciation 5 are also listed. No tax, financing, investment or other current-year cash difference exists.",
+      "inputs": [
+        {
+          "key": "receipts",
+          "label": "Receipts",
+          "value": 15,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "cost",
+          "label": "Cost",
+          "value": 6,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "lost_contribution",
+          "label": "Lost contribution",
+          "value": 2,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "sunk",
+          "label": "Sunk",
+          "value": 3,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "unchanged",
+          "label": "Unchanged",
+          "value": 4,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "depreciation",
+          "label": "Depreciation",
+          "value": 5,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "What is this year’s incremental operating cash?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "−5",
+          "feedback": "This subtracts past research, unchanged allocation and depreciation from the cash difference.",
+          "misconceptionId": "sunk"
+        },
+        {
+          "id": "correct",
+          "text": "7",
+          "feedback": "Incremental operating cash = 15 − 6 − 2 = 7. Exclude past 3, unchanged allocation 4 and non-cash depreciation 5 from this no-tax cash comparison.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "9",
+          "feedback": "The lost net contribution 2 is a cash side effect of choosing the project.",
+          "misconceptionId": "opportunity"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Incremental operating cash = 15 − 6 − 2 = 7. Exclude past 3, unchanged allocation 4 and non-cash depreciation 5 from this no-tax cash comparison.",
+      "hints": [
+        {
+          "text": "Keep the with-versus-without future cash differences.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Incremental operating cash = 15 − 6 − 2 = 7. Exclude past 3, unchanged allocation 4 and non-cash depreciation 5 from this no-tax cash comparison.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Which excluded amount could still matter in a different decision?",
+        "rubric": [
+          "Show the future changes 15, 6 and 2.",
+          "Explain why past research is sunk.",
+          "Do not treat an allocation as a bank payment."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "incremental-transfer-release",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "timeline",
+      "scenarioId": "incremental-transfer-release-independent",
+      "objectiveIds": [
+        "difference"
+      ],
+      "setup": "Independent two-year project: pay equipment 20 and working capital 4 now. Receive net operating cash 9 at each year end. At Year 2 end also receive equipment sale proceeds 3 and release all working capital 4. A past study cost 2 is sunk. No tax, financing or other difference exists.",
+      "inputs": [
+        {
+          "key": "equipment",
+          "label": "Equipment",
+          "value": 20,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "working_capital",
+          "label": "Working capital",
+          "value": 4,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "annual_net_cash",
+          "label": "Annual net cash",
+          "value": 9,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "salvage",
+          "label": "Salvage",
+          "value": 3,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "sunk",
+          "label": "Sunk",
+          "value": 2,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "years",
+          "label": "Horizon",
+          "value": 2,
+          "unit": "years"
+        }
+      ],
+      "question": "Which incremental cash timeline is correct?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "Time 0 −26; Year 1 +9; Year 2 +16",
+          "feedback": "The past study cost cannot be changed now.",
+          "misconceptionId": "sunk"
+        },
+        {
+          "id": "correct",
+          "text": "Time 0 −24; Year 1 +9; Year 2 +16",
+          "feedback": "Time 0 = −20 − 4 = −24. Year 1 = 9. Year 2 = 9 + 3 + 4 = 16. Past study 2 is excluded. Discounting is a separate step; no NPV is claimed.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "Time 0 −24; Year 1 +9; Year 2 +12",
+          "feedback": "The working-capital release 4 is an additional terminal receipt under the stated assumption.",
+          "misconceptionId": "opportunity"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Time 0 = −20 − 4 = −24. Year 1 = 9. Year 2 = 9 + 3 + 4 = 16. Past study 2 is excluded. Discounting is a separate step; no NPV is claimed.",
+      "hints": [
+        {
+          "text": "Place the initial tie-up and its single terminal release on the timeline.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Time 0 = −20 − 4 = −24. Year 1 = 9. Year 2 = 9 + 3 + 4 = 16. Past study 2 is excluded. Discounting is a separate step; no NPV is claimed.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Why is working capital both an initial outflow and a terminal receipt?",
+        "rubric": [
+          "Record the time-zero tie-up once.",
+          "Recover only the stated 4 at termination.",
+          "Keep an undiscounted timeline distinct from NPV."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E0553",
+      "to": "T12.04",
+      "kind": "learning",
+      "purpose": "Study these together to compare uses of capital using incremental cash flows and risk.",
+      "conditions": "A topical exploration link, not a claim that one determines the other.",
+      "computed": false
+    },
+    {
+      "edgeId": "E0556",
+      "to": "T12.06",
+      "kind": "learning",
+      "purpose": "Study these together to compare uses of capital using incremental cash flows and risk.",
+      "conditions": "A topical exploration link, not a claim that one determines the other.",
+      "computed": false
+    },
+    {
+      "edgeId": "E0557",
+      "to": "T03.12",
+      "kind": "learning",
+      "purpose": "Suggested starting knowledge: Net present value. It helps you compare uses of capital using incremental cash flows and risk.",
+      "conditions": "Suggested learning order; learners can still explore freely.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D12",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "How do taxes and disposal consequences change the project differences?",
+      "What alternative use establishes an appropriate opportunity cost?"
+    ],
+    "conceptIds": [
+      "T12.04",
+      "T12.06",
+      "T03.12"
+    ],
+    "limitations": "Introductory study coverage. Tax shields, replacement disposal tax, inflation, complex project interactions and full risk-adjusted discount-rate estimation are deferred."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "The connected six-round case remains a separate implementation task; these examples do not imply playable rounds."
+    }
+  ],
+  "sources": [
+    {
+      "id": "relevant",
+      "title": "ACCA examining team: Relevant cash flows",
+      "url": "https://www.accaglobal.com/my/en/student/exam-support-resources/foundation-level-study-resources/ffm/ffm-technical-articles/relevant-cash-flows.html",
+      "supports": [
+        "Future cash differences, sunk costs, unchanged costs and opportunity costs in investment decisions. The fictional scenarios and arithmetic are independently authored; tax and financing conventions are stated separately."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "method": "ai-content-source-arithmetic",
+    "evidence": [
+      "B4 topic mechanics, terminology, signs, timing, source boundaries and feedback reviewed in docs/implementation/task-04-4-b4.md.",
+      "Independent worked and assessment calculations checked in tests/b4-lessons.test.mjs; shared route, version, hint and retry regressions also apply.",
+      "Scoped AI content review, not independent professional approval, interactive browser verification or learner-pilot evidence."
+    ]
+  }
+}

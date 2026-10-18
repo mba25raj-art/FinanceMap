@@ -10,7 +10,7 @@
     "build": "npm run prepare:content && vite build && node scripts/prepare-sites-build.mjs",
     "preview": "vite preview",
     "test:sites": "node --test tests/sites-worker.test.mjs",
-    "test:content": "node --test tests/lesson-content.test.mjs tests/learning-session.test.mjs tests/routes.test.mjs tests/activity-context.test.mjs tests/lesson-standard.test.mjs tests/receivables-lesson.test.mjs tests/coverage-register.test.mjs tests/b1-lessons.test.mjs tests/b2-lessons.test.mjs tests/b3-lessons.test.mjs",
+    "test:content": "node --test tests/lesson-content.test.mjs tests/learning-session.test.mjs tests/routes.test.mjs tests/activity-context.test.mjs tests/lesson-standard.test.mjs tests/receivables-lesson.test.mjs tests/coverage-register.test.mjs tests/b1-lessons.test.mjs tests/b2-lessons.test.mjs tests/b3-lessons.test.mjs tests/b4-lessons.test.mjs",
     "test:lesson-standard": "node --test tests/lesson-standard.test.mjs",
     "predev": "npm run prepare:content",
     "pretest:content": "npm run prepare:content"

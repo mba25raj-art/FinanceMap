@@ -1,0 +1,393 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "A10",
+  "contentVersion": "1.0.0",
+  "hoverDefinition": "NOPAT is operating profit after an explicit hypothetical operating-tax adjustment. It separates operating earnings from funding choices; it is not automatically reported net profit, tax paid or free cash flow.",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "EBIT-to-NOPAT calculation, financing exclusion, hypothetical tax versus reported tax, and loss-benefit limits."
+    ],
+    "deferred": [
+      "Current legal tax rules, tax-loss recovery tests, deferred tax, full operating-tax normalisation and professional valuation adjustments are deferred."
+    ]
+  },
+  "objectives": [
+    {
+      "id": "tax",
+      "statement": "Calculate NOPAT under a stated operating-tax assumption and explain its limits.",
+      "evidence": "Separate after-tax operations from net income, cash taxes and unavailable loss benefits.",
+      "outcomeIds": [
+        "LO2",
+        "LO6"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh",
+      "fraction"
+    ],
+    "timeframe": "Independent fictional teaching scenarios. Worked examples and practice start separately; they are not consecutive company-case rounds.",
+    "assumptions": [
+      "EBIT uses the stated operating definition. All tax rates are hypothetical teaching inputs.",
+      "For positive operating profit, the example assumes the stated tax charge is fully applicable and usable.",
+      "Where no loss benefit is recognised, an operating loss is not mechanically reduced by multiplying by one minus the rate.",
+      "No tax rule or tax cash date is inferred; NOPAT is an analytical amount."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Conceptual teaching assumptions, with INR lakh as a unit rather than a jurisdiction. No tax rate, financing term, reporting classification, valuation input or management buffer is a current rule or market recommendation. Applicable framework, jurisdiction, reporting period and effective amendments require separate study."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "operating-tax",
+      "title": "Tax the operating earnings consistently",
+      "paragraphs": [
+        "For the simple positive-profit assumptions, NOPAT = EBIT×(1 − operating tax rate). Begin before interest so debt funding does not reduce the chosen operating measure. This supports a cash-flow-to-all-capital-providers approach when the rest of the model is consistent.",
+        "The assumed operating tax charge differs from reported tax expense or tax paid. Actual taxes can reflect financing deductions, losses, timing, jurisdictions and special items. A headline rate is insufficient to establish the right operating adjustment."
+      ]
+    },
+    {
+      "id": "net-income",
+      "title": "Bridge without mixing financing benefits",
+      "paragraphs": [
+        "Net income under the simplified funded comparison is (EBIT − interest)×(1 − rate), where every deduction is assumed fully usable. NOPAT excludes that financing reduction. Their difference is interest after the assumed tax effect, not extra operating cash received.",
+        "Do not subtract interest again from NOPAT in an FCFF build that is already intended to precede debt service. The discount rate and claims bridge handle financing consistently in later lessons."
+      ]
+    },
+    {
+      "id": "limits",
+      "title": "State how losses and reinvestment are handled",
+      "paragraphs": [
+        "Multiplying a loss by one minus a rate assumes an available benefit. When the scenario says no current benefit is recognised or usable, retain the full loss for that simplified NOPAT calculation. This is an assumption, not a jurisdictional rule about tax-loss recovery.",
+        "NOPAT is still not free cash: add back appropriate non-cash charges and subtract investment and operating working-capital needs. Do not infer dividends, cash taxes or bank balances from this analytical subtotal alone."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "NOPAT and reported net profit",
+      "explanation": "NOPAT removes the financing effect under a defined tax adjustment.",
+      "whenItMatters": "Use it only with a consistently defined operating measure."
+    },
+    {
+      "name": "Hypothetical charge and cash taxes",
+      "explanation": "An analytical tax adjustment need not equal payment in the period.",
+      "whenItMatters": "Timing requires separate cash-tax inputs."
+    },
+    {
+      "name": "Tax rate and usable loss benefit",
+      "explanation": "A nominal rate does not establish immediate loss recovery.",
+      "whenItMatters": "Follow the supplied loss assumption."
+    }
+  ],
+  "workedExample": {
+    "id": "nopat-funded",
+    "scenarioId": "nopat-funded-worked",
+    "setup": "EBIT 40, interest 8 and a hypothetical 25% tax rate. For comparison, assume the tax effect on positive income is fully usable. Also supply depreciation 6, capital expenditure 14 and a cash-linked operating working-capital increase 4. No other FCFF adjustment exists.",
+    "inputs": [
+      {
+        "key": "ebit",
+        "label": "Ebit",
+        "value": 40,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "interest",
+        "label": "Interest",
+        "value": 8,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "depreciation",
+        "label": "Depreciation",
+        "value": 6,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "capex",
+        "label": "Capex",
+        "value": 14,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "working_capital_increase",
+        "label": "Working capital increase",
+        "value": 4,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "tax_rate",
+        "label": "Hypothetical operating tax rate",
+        "value": 0.25,
+        "unit": "fraction"
+      }
+    ],
+    "steps": [
+      "Hypothetical operating tax = 40×25% = 10; NOPAT = 40 − 10 = 30.",
+      "Funded pre-tax income = 40 − 8 = 32; illustrative tax = 8; net income = 24.",
+      "NOPAT minus net income = 6, equal to interest 8×(1 − 25%). This is not a new receipt.",
+      "Operating cash before reinvestment in this analytical build = NOPAT 30 + depreciation 6 = 36.",
+      "Illustrative FCFF = 36 − capex 14 − working-capital increase 4 = 18.",
+      "No reported cash-tax payment or full closing balance sheet is inferred from these analytical inputs."
+    ],
+    "result": "NOPAT 30; comparison net income 24; illustrative FCFF 18.",
+    "interpretation": "Funding affects the comparison net income, while operating tax and reinvestment determine this FCFF build."
+  },
+  "statementEffects": {
+    "applicability": "direct",
+    "explanation": "Effects under the stated simplified scenario. Forecasts and economic values do not themselves create accounting entries.",
+    "changes": [
+      "NOPAT itself is an analytical calculation, not a new accounting entry.",
+      "Under the stated comparison, EBIT 40 less interest 8 and tax 8 gives net income 24. Cash taxes and balance-sheet timing are otherwise unspecified."
+    ]
+  },
+  "misconceptions": [
+    {
+      "id": "interest",
+      "claim": "Deduct interest before calculating NOPAT.",
+      "correction": "Use the specified operating profit before funding cost.",
+      "diagnostic": "Whose cash-flow perimeter is being measured?"
+    },
+    {
+      "id": "benefit",
+      "claim": "Every operating loss earns an immediate tax refund.",
+      "correction": "A rate does not establish an available loss benefit.",
+      "diagnostic": "Does the scenario recognise and permit use of that benefit?"
+    },
+    {
+      "id": "free-cash",
+      "claim": "NOPAT is cash free to distribute.",
+      "correction": "Reconcile non-cash costs, timing and reinvestment.",
+      "diagnostic": "What asset and working-capital commitments remain?"
+    }
+  ],
+  "practice": [
+    {
+      "id": "nopat-predict",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "net-income",
+      "scenarioId": "nopat-predict-independent",
+      "objectiveIds": [
+        "tax"
+      ],
+      "setup": "Independent scenario: EBIT 24, interest 4 and hypothetical tax rate 25%; all positive-income tax effects are fully usable. No other profit item exists.",
+      "inputs": [
+        {
+          "key": "ebit",
+          "label": "Ebit",
+          "value": 24,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "interest",
+          "label": "Interest",
+          "value": 4,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "tax_rate",
+          "label": "Hypothetical tax rate",
+          "value": 0.25,
+          "unit": "fraction"
+        }
+      ],
+      "question": "What NOPAT and comparison net income follow?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "NOPAT 15; net income 15",
+          "feedback": "NOPAT uses EBIT before interest.",
+          "misconceptionId": "interest"
+        },
+        {
+          "id": "correct",
+          "text": "NOPAT 18; net income 15",
+          "feedback": "NOPAT = 24×0.75 = 18. Comparison net income = (24 − 4)×0.75 = 15. Difference 3 is interest after the stated tax effect.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "NOPAT 24; net income 20",
+          "feedback": "The supplied positive-profit tax adjustment has not been applied.",
+          "misconceptionId": "free-cash"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "NOPAT = 24×0.75 = 18. Comparison net income = (24 − 4)×0.75 = 15. Difference 3 is interest after the stated tax effect.",
+      "hints": [
+        {
+          "text": "Separate operating tax from the funded net-income bridge.",
+          "answerRevealing": false
+        },
+        {
+          "text": "NOPAT = 24×0.75 = 18. Comparison net income = (24 − 4)×0.75 = 15. Difference 3 is interest after the stated tax effect.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Why is the NOPAT difference not an automatic cash receipt?",
+        "rubric": [
+          "Use EBIT before interest.",
+          "State the usable-tax assumption.",
+          "Keep cash-tax timing separate."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "nopat-transfer-loss",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "limits",
+      "scenarioId": "nopat-transfer-loss-independent",
+      "objectiveIds": [
+        "tax"
+      ],
+      "setup": "Independent scenario: operating EBIT is a loss of 12. The illustrative nominal tax rate is 25%, but no current tax benefit is recognised or usable for this loss. There is no interest or other item.",
+      "inputs": [
+        {
+          "key": "ebit",
+          "label": "Ebit",
+          "value": -12,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "tax_rate",
+          "label": "Illustrative nominal rate",
+          "value": 0.25,
+          "unit": "fraction"
+        }
+      ],
+      "question": "What NOPAT follows under the stated no-benefit assumption?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "−9",
+          "feedback": "Multiplication by 0.75 would invent an unavailable benefit 3.",
+          "misconceptionId": "benefit"
+        },
+        {
+          "id": "correct",
+          "text": "−12",
+          "feedback": "With no recognised usable loss benefit, the operating tax adjustment is zero and NOPAT remains −12. The nominal rate alone does not justify a +3 tax benefit.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "0",
+          "feedback": "A loss does not disappear merely because no tax is paid.",
+          "misconceptionId": "benefit"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "With no recognised usable loss benefit, the operating tax adjustment is zero and NOPAT remains −12. The nominal rate alone does not justify a +3 tax benefit.",
+      "hints": [
+        {
+          "text": "Read the loss-benefit assumption before using the shortcut formula.",
+          "answerRevealing": false
+        },
+        {
+          "text": "With no recognised usable loss benefit, the operating tax adjustment is zero and NOPAT remains −12. The nominal rate alone does not justify a +3 tax benefit.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "What additional evidence would a real tax analysis need?",
+        "rubric": [
+          "Retain the full loss.",
+          "Do not invent a refund.",
+          "Distinguish a teaching assumption from actual tax law."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E2117",
+      "to": "T17.05",
+      "kind": "learning",
+      "purpose": "Atomic concept within this original grouped topic.",
+      "conditions": "Preserves the original inventory while enabling more precise navigation.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2155",
+      "to": "A09",
+      "kind": "financial",
+      "purpose": "Operating earnings provide the profit base for after-tax operating profit.",
+      "conditions": "A simple EBIT times one-minus-tax-rate model is an assumption, not a universal tax rule.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2156",
+      "to": "A11",
+      "kind": "financial",
+      "purpose": "NOPAT is a starting point for FCFF before non-cash adjustments and reinvestment.",
+      "conditions": "Apply the stated definitions, periods and teaching assumptions. This relationship is not an implemented calculation dependency.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D17",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "How do cash taxes, losses and deferred taxes affect an operating cash build?",
+      "Which tax benefits have already been included in the discount-rate approach?"
+    ],
+    "conceptIds": [
+      "T17.05",
+      "A09",
+      "A11"
+    ],
+    "limitations": "Introductory study coverage. Current legal tax rules, tax-loss recovery tests, deferred tax, full operating-tax normalisation and professional valuation adjustments are deferred."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "The connected six-round case remains a separate implementation task; these examples do not imply playable rounds."
+    }
+  ],
+  "sources": [
+    {
+      "id": "valuation",
+      "title": "Aswath Damodaran, NYU Stern: An Introduction to Valuation",
+      "url": "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/background/valintro.htm",
+      "supports": [
+        "Background on after-tax operating cash before debt payments and after reinvestment. This does not supply the hypothetical tax rates or prescribe a statutory income-statement subtotal."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "method": "ai-content-source-arithmetic",
+    "evidence": [
+      "B4 topic mechanics, terminology, signs, timing, source boundaries and feedback reviewed in docs/implementation/task-04-4-b4.md.",
+      "Independent worked and assessment calculations checked in tests/b4-lessons.test.mjs; shared route, version, hint and retry regressions also apply.",
+      "Scoped AI content review, not independent professional approval, interactive browser verification or learner-pilot evidence."
+    ]
+  }
+}

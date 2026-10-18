@@ -108,6 +108,41 @@
         "T07.09"
       ],
       "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b3-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/capital-expenditure.v1.json",
+      "renderedConceptIds": [
+        "A07"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b4-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/depreciation.v1.json",
+      "renderedConceptIds": [
+        "A08"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b4-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/ebit.v1.json",
+      "renderedConceptIds": [
+        "A09"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b4-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/nopat.v1.json",
+      "renderedConceptIds": [
+        "A10"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b4-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/incremental-cash-flows.v1.json",
+      "renderedConceptIds": [
+        "T12.05"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b4-lessons.test.mjs"
     }
   ],
   "legacyReviews": {},

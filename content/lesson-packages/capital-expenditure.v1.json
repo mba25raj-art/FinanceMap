@@ -1,0 +1,432 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "A07",
+  "contentVersion": "1.0.0",
+  "hoverDefinition": "Capital expenditure acquires or improves a qualifying long-lived operating resource. Its cash payment, asset cost and later expense recognition can occur at different times.",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "Qualifying acquisition costs, expense versus capitalisation, cash versus credit acquisition and statement reconciliation."
+    ],
+    "deferred": [
+      "Full recognition tests, component replacements, borrowing costs, leases, revaluation and impairment require separate framework-specific study."
+    ]
+  },
+  "objectives": [
+    {
+      "id": "asset",
+      "statement": "Separate a qualifying equipment acquisition from current expense and cash settlement.",
+      "evidence": "Reconcile asset cost, cash payments, depreciation and any unpaid creditor.",
+      "outcomeIds": [
+        "LO1",
+        "LO5"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh"
+    ],
+    "timeframe": "Independent fictional teaching scenarios. Worked examples and practice start separately; they are not consecutive company-case rounds.",
+    "assumptions": [
+      "The scenario explicitly identifies qualifying equipment costs; no tax, interest, sale or valuation change.",
+      "Training and routine maintenance are expenses in these examples; stated installation/transport prepare the asset for intended use.",
+      "Given depreciation is current expense; no hidden useful-life calculation is required.",
+      "Cash equipment acquisitions are investing in these conceptual scenarios; ordinary training/maintenance payments are operating."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Conceptual teaching assumptions, with INR lakh as a unit rather than a jurisdiction. No tax rate, financing term, reporting classification, valuation input or management buffer is a current rule or market recommendation. Applicable framework, jurisdiction, reporting period and effective amendments require separate study."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "resource",
+      "title": "Identify the resource before following the payment",
+      "paragraphs": [
+        "A qualifying equipment acquisition records an asset because its service extends beyond the current period. The amount paid is not automatically a current expense. A payment for routine consumed service can instead be expense; a deposit can be a prepayment until the stated recognition conditions are met.",
+        "The examples stipulate which acquisition, transport and installation costs prepare the asset for intended use. A complete framework analysis can include more recognition and measurement conditions; calling a cost capital expenditure does not make it eligible automatically."
+      ]
+    },
+    {
+      "id": "cost",
+      "title": "Separate asset cost from running costs",
+      "paragraphs": [
+        "Add qualifying costs to the asset. Expense the training and routine maintenance identified in the scenario. Spending more does not by itself mean useful capacity or economic value has increased. Maintenance and growth spending are useful analytical categories, but both can contain qualifying acquisitions and current expenses depending on the event.",
+        "A credit acquisition raises an equipment creditor without an immediate cash payment. The asset recognised can exceed investing cash paid this period. Keep non-cash acquisition and later settlement visible rather than forcing all asset additions into current cash flow."
+      ]
+    },
+    {
+      "id": "consume",
+      "title": "Recognise use in later expense",
+      "paragraphs": [
+        "Depreciation reduces the carrying amount and current profit according to the stated allocation. It does not repeat the original payment. The cash-flow reconciliation reverses the current non-cash charge; the equipment cash payment remains a separate investing outflow.",
+        "Asset roll-forward = opening carrying amount + qualifying additions − depreciation − carrying amount removed − other stated reductions. The examples exclude the last two categories unless supplied. A balanced roll-forward is not proof that every recognition judgement is valid."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "Capitalised cost and cash paid",
+      "explanation": "Credit purchases can recognise an asset before payment.",
+      "whenItMatters": "Reconcile additions and settlement rather than equating them."
+    },
+    {
+      "name": "Maintenance and capacity investment",
+      "explanation": "Purpose and recognition matter; an everyday label does not determine accounting.",
+      "whenItMatters": "Apply the stated qualifying-cost assumptions."
+    },
+    {
+      "name": "Depreciation and payment",
+      "explanation": "The expense allocates consumption; payment settles acquisition.",
+      "whenItMatters": "Do not charge both as current operating expense."
+    }
+  ],
+  "workedExample": {
+    "id": "capex-costs",
+    "scenarioId": "capex-costs-worked",
+    "setup": "Open with cash/equity 70 and no other balances. Buy equipment for 24, pay transport 2 and installation 4; all three qualify as asset cost under the scenario. Also pay training 3 and routine maintenance 2, both current expenses. Record given depreciation 3. All amounts are cash paid except depreciation.",
+    "inputs": [
+      {
+        "key": "opening_cash",
+        "label": "Opening cash",
+        "value": 70,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "purchase",
+        "label": "Purchase",
+        "value": 24,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "transport",
+        "label": "Transport",
+        "value": 2,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "installation",
+        "label": "Installation",
+        "value": 4,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "training",
+        "label": "Training",
+        "value": 3,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "maintenance",
+        "label": "Maintenance",
+        "value": 2,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "depreciation",
+        "label": "Depreciation",
+        "value": 3,
+        "unit": "INR lakh"
+      }
+    ],
+    "steps": [
+      "Capitalised asset cost = 24 + 2 + 4 = 30.",
+      "Current cash operating expense = training 3 + maintenance 2 = 5.",
+      "Depreciation 3 reduces equipment carrying amount to 27; total expense is 5 + 3 = 8.",
+      "Cash paid = acquisition 30 + operating 5 = 35; closing cash = 70 − 35 = 35.",
+      "Loss is 8; equity closes at 62. Cash 35 + equipment 27 = assets 62 = equity 62.",
+      "Operating cash = loss −8 + depreciation 3 = −5; investing cash = −30; total cash = −35."
+    ],
+    "result": "Asset cost 30; closing equipment 27; loss 8; cash 35.",
+    "interpretation": "Recognised cost, current expense and cash outflow reconcile but describe different parts of the acquisition."
+  },
+  "statementEffects": {
+    "applicability": "direct",
+    "explanation": "Effects under the stated simplified scenario. Forecasts and economic values do not themselves create accounting entries.",
+    "changes": [
+      "Income statement: training/maintenance 5 and depreciation 3; loss 8.",
+      "Balance sheet: cash 35 and equipment 27; equity 62. Cash flow: operating −5 and investing −30."
+    ]
+  },
+  "misconceptions": [
+    {
+      "id": "all-expense",
+      "claim": "Expense the entire equipment payment immediately.",
+      "correction": "Under these assumptions retain the qualifying resource as an asset.",
+      "diagnostic": "What future service remains?"
+    },
+    {
+      "id": "all-capital",
+      "claim": "Capitalise every cost paid around the purchase.",
+      "correction": "Separate the stated training and maintenance expenses.",
+      "diagnostic": "Which costs qualify under the scenario?"
+    },
+    {
+      "id": "cash-additions",
+      "claim": "All asset additions must be cash payments this period.",
+      "correction": "Recognise unpaid additions and their creditor separately.",
+      "diagnostic": "Which amount is actually settled?"
+    }
+  ],
+  "practice": [
+    {
+      "id": "capex-predict",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "cost",
+      "scenarioId": "capex-predict-independent",
+      "objectiveIds": [
+        "asset"
+      ],
+      "setup": "Independent scenario: equipment 15 and installation 2 qualify as cost. Training 1 and routine maintenance 1 are expensed; all are cash paid. No depreciation or other event occurs.",
+      "inputs": [
+        {
+          "key": "purchase",
+          "label": "Purchase",
+          "value": 15,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "installation",
+          "label": "Installation",
+          "value": 2,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "training",
+          "label": "Training",
+          "value": 1,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "maintenance",
+          "label": "Maintenance",
+          "value": 1,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "What asset addition, current expense and total cash outflow follow?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "Asset 19; expense 0; cash outflow 19",
+          "feedback": "Training and maintenance are stipulated current expenses.",
+          "misconceptionId": "all-capital"
+        },
+        {
+          "id": "correct",
+          "text": "Asset 17; expense 2; cash outflow 19",
+          "feedback": "Asset = 15 + 2 = 17; expense = 1 + 1 = 2; cash paid = 19. Operating cash is −2 and investing cash −17 under the stated categories.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "Asset 0; expense 19; cash outflow 19",
+          "feedback": "The qualifying equipment and installation provide an asset.",
+          "misconceptionId": "all-expense"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Asset = 15 + 2 = 17; expense = 1 + 1 = 2; cash paid = 19. Operating cash is −2 and investing cash −17 under the stated categories.",
+      "hints": [
+        {
+          "text": "Group the costs by recognition before totalling cash.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Asset = 15 + 2 = 17; expense = 1 + 1 = 2; cash paid = 19. Operating cash is −2 and investing cash −17 under the stated categories.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Why does the cash outflow exceed the asset addition?",
+        "rubric": [
+          "Capitalise only 17.",
+          "Expense the stated 2.",
+          "Keep the total bank outflow 19."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "capex-transfer-credit",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "consume",
+      "scenarioId": "capex-transfer-credit-independent",
+      "objectiveIds": [
+        "asset"
+      ],
+      "setup": "Independent scenario: opening cash/equity 40. Acquire qualifying equipment costing 24; pay 18 and leave equipment creditor 6 unpaid. Record given depreciation 2. No other event occurs.",
+      "inputs": [
+        {
+          "key": "opening_cash",
+          "label": "Opening cash",
+          "value": 40,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "asset_cost",
+          "label": "Asset cost",
+          "value": 24,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "cash_paid",
+          "label": "Cash paid",
+          "value": 18,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "creditor",
+          "label": "Creditor",
+          "value": 6,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "depreciation",
+          "label": "Depreciation",
+          "value": 2,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "Which closing position and equipment cash flow reconcile?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "Cash 16; equipment 22; creditor 0; equity 38; equipment cash outflow 24",
+          "feedback": "The unpaid 6 is not a bank payment.",
+          "misconceptionId": "cash-additions"
+        },
+        {
+          "id": "correct",
+          "text": "Cash 22; equipment 22; creditor 6; equity 38; equipment cash outflow 18",
+          "feedback": "Cash = 40 − 18 = 22; equipment = 24 − 2 = 22; creditor = 6; equity = 40 − 2 = 38. Assets 44 equal 6 + 38. Equipment cash outflow is 18; the unpaid acquisition 6 is non-cash this period.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "Cash 22; equipment 0; creditor 6; equity 16; equipment cash outflow 18",
+          "feedback": "The qualifying resource remains after current depreciation.",
+          "misconceptionId": "all-expense"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Cash = 40 − 18 = 22; equipment = 24 − 2 = 22; creditor = 6; equity = 40 − 2 = 38. Assets 44 equal 6 + 38. Equipment cash outflow is 18; the unpaid acquisition 6 is non-cash this period.",
+      "hints": [
+        {
+          "text": "Separate the recognised asset cost, its settlement and consumption.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Cash = 40 − 18 = 22; equipment = 24 − 2 = 22; creditor = 6; equity = 40 − 2 = 38. Assets 44 equal 6 + 38. Equipment cash outflow is 18; the unpaid acquisition 6 is non-cash this period.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "How would the unpaid addition be explained alongside cash flow?",
+        "rubric": [
+          "Show additions 24 versus cash 18.",
+          "Retain creditor 6.",
+          "Recognise depreciation once."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E2114",
+      "to": "T07.06",
+      "kind": "learning",
+      "purpose": "Atomic concept within this original grouped topic.",
+      "conditions": "Preserves the original inventory while enabling more precise navigation.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2153",
+      "to": "A11",
+      "kind": "financial",
+      "purpose": "Cash operating capital expenditure is deducted when calculating standard FCFF.",
+      "conditions": "Keep acquisitions and non-operating investments explicitly classified.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2192",
+      "to": "T04.08",
+      "kind": "financial",
+      "purpose": "Capital expenditure is distinguished from current operating expense.",
+      "conditions": "Apply the stated definitions, periods and teaching assumptions. This relationship is not an implemented calculation dependency.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D07",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "Which replacement and restoration costs qualify under the applicable framework?",
+      "How should non-cash acquisitions and later settlements be reconciled?"
+    ],
+    "conceptIds": [
+      "T07.06",
+      "A11",
+      "T04.08"
+    ],
+    "limitations": "Introductory study coverage. Full recognition tests, component replacements, borrowing costs, leases, revaluation and impairment require separate framework-specific study."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "The connected six-round case remains a separate implementation task; these examples do not imply playable rounds."
+    }
+  ],
+  "sources": [
+    {
+      "id": "ias16",
+      "title": "IFRS Foundation: IAS 16 public overview",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/ias-16-property-plant-and-equipment/",
+      "supports": [
+        "Background on recognising and measuring property, plant and equipment, including directly attributable acquisition costs. The examples state their own recognition and depreciation assumptions; this public overview is not the full governing standard."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "ias7",
+      "title": "IFRS Foundation: IAS 7 public overview",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/ias-7-statement-of-cash-flows/",
+      "supports": [
+        "Background on operating, investing and financing cash and non-cash reconciliation. The examples prescribe their own conceptual classifications; statutory starting subtotals, interest/dividends and effective amendments require separate analysis."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "method": "ai-content-source-arithmetic",
+    "evidence": [
+      "B4 topic mechanics, terminology, signs, timing, source boundaries and feedback reviewed in docs/implementation/task-04-4-b4.md.",
+      "Independent worked and assessment calculations checked in tests/b4-lessons.test.mjs; shared route, version, hint and retry regressions also apply.",
+      "Scoped AI content review, not independent professional approval, interactive browser verification or learner-pilot evidence."
+    ]
+  }
+}
