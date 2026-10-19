@@ -179,3 +179,9 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Compute funding from the exact prior choices and disclosed dates. Show exact service, dilution and constraints before committing. Reject no funding with a positive gap and equipment purchase that breaches the full-quarter reserve. Deferring equipment does not cancel issued debt or equity.
 - Close January before the annual FCFF prediction. Forecast from actual closing operating working capital. Keep actual statements, quarter cash, standalone project NPV and continuing-company DCF separate. Subtract initial equipment once; do not recycle project liquidation into company terminal value or double-count payables/claims.
 - Stated financing and tax terms are hypothetical. The first new-debt coupon spans 365 days; later Actual/365 coupons can differ for a 366-day interval. Keep all later obligations visible even though the quarter cash check excludes them.
+
+## Company replay and comparison (Task 08.4)
+
+- Restart from an actual saved contract decision into a new record. Preserve the original and prior completed-round history. Mark prior exposure from the restarted round onward; do not describe replay observations as fresh independent evidence.
+- The alternate scenario shifts all customer receipts exactly thirty calendar days while retaining invoice dues, fee dates and all other terms. Disclose it before setup and keep it visible. No random event or lucky-outcome score.
+- Compare finished records only within the same receipt scenario and version. Use common supplied valuation rates in the comparison, keeping original chosen rates in their records. Explain cash, service, dilution and assumed operating differences; larger conditional values do not grade decision quality.

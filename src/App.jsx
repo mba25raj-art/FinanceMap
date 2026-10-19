@@ -14,7 +14,7 @@ import CollectionLab from './CollectionLab.jsx';
 import EquipmentLab from './EquipmentLab.jsx';
 import FinancingLab from './FinancingLab.jsx';
 import CompanyCase from './CompanyCase.jsx';
-import {COMPANY} from './activities/company.js';
+import {COMPANY,forkCompany} from './activities/company.js';
 import {validateSimulationRecord,activityDefinitions,activityUnfinished} from './activities/registry.js';
 import {commitActivityRecord} from './activities/records.js';
 import { AtlasEntry, MysteryBrief, SimulationEntry, LabsEntry, ResumeCard } from './LearningEntry.jsx';
@@ -197,7 +197,7 @@ function AppWorkspace({initialRoute=initial,initialAnswers={},initialDepth=true,
   function activityWorkspace(Component,id){
     const index=activityRun??simulations.findLastIndex(r=>r.activityId===id),saved=simulations[index];
     if(activityRun!==undefined&&(!saved||saved.activityId!==id))return <main className="single-view"><h1>This activity record is unavailable.</h1><button className="primary" onClick={()=>openActivity(id)}>Open the latest saved activity</button></main>;
-    return <Component key={`${id}:${index}`} record={saved||activityDefinitions[id].empty()} onCommit={(next,revision)=>setSimulations(records=>commitActivityRecord(records,index<0?simulations.length:index,next,revision))} onRestart={()=>{const count=simulations.length;setSimulations(records=>records.length===count?[...records,activityDefinitions[id].empty()]:records);openActivity(id,count);}} onCatalog={()=>go(id===COMPANY?'missions':'labs')} onConcept={conceptId=>choose(conceptId,'lesson',{...(index>=0?{returnLab:id,returnAttempt:index}:{}),clearReturn:true})}/>;
+    return <Component key={`${id}:${index}`} record={saved||activityDefinitions[id].empty()} onCommit={(next,revision)=>setSimulations(records=>commitActivityRecord(records,index<0?simulations.length:index,next,revision))} onRestart={()=>{const count=simulations.length;setSimulations(records=>records.length===count?[...records,activityDefinitions[id].empty()]:records);openActivity(id,count);}} records={simulations} recordIndex={index} onOpenRecord={i=>openActivity(COMPANY,i)} onFork={round=>{const next=forkCompany(saved,round),count=simulations.length,revision=saved.decisions.length;setSimulations(records=>records.length===count&&records[index]?.decisions.length===revision?[...records,next]:records);openActivity(COMPANY,count);}} onCatalog={()=>go(id===COMPANY?'missions':'labs')} onConcept={conceptId=>choose(conceptId,'lesson',{...(index>=0?{returnLab:id,returnAttempt:index}:{}),clearReturn:true})}/>;
   }
   const ActiveLab=labComponents[labId];
   const labsView=ActiveLab?activityWorkspace(ActiveLab,labId):<LabsEntry onConcept={id=>choose(id,'map')} onLab={id=>openLab(id)}/>;

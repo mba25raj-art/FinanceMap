@@ -1,9 +1,11 @@
 import {companyScript as s} from './activities/company.js';
 import {LabTable} from './CollectionLab.jsx';
+const shift=(date,days)=>new Date(Date.parse(date+'T00:00:00Z')+days*86400000).toISOString().slice(0,10);
 const f=n=>n.toFixed(2),pct=n=>(n*100).toFixed(2)+'%';
 export function companyOffers(round,result){
- if(round===1)return [['30-days','30-day credit · invoice due 4 February'],['60-days','60-day credit · invoice due 6 March']];
- if(round===2)return [['agent-early','Collect ten on 10 January · separate service fee 0.20'],['wait','Wait for 15 February · no service fee']];
+ const delay=s.variants.find(v=>v.id===result.variant)?.customerReceiptDelayDays||0;
+ if(round===1)return s.sale.terms.map(t=>[t.id,`${t.id==='30-days'?'30':'60'}-day credit · invoice due ${t.dueDate} · expected cash ${shift(t.dueDate,delay)}`]);
+ if(round===2)return [['agent-early',`Arrange early ten · expected cash ${shift(s.collection.earlyDate,delay)} · service fee 0.20 on 2026-01-10`],['wait',`Wait · expected cash ${shift(s.collection.waitDate,delay)} · no service fee`]];
  if(round===3)return [['cash-discount','Pay 9.50 on 12 January · inventory cost 9.50'],['supplier-credit','Inventory cost 10.00 · pay supplier 10 February']];
  if(round===4)return s.rounds[3].choices.map(id=>{const [instrument,plan]=id.split('-'),amount=result.financial.plans[plan].totalFundingNeeded,blocked=instrument==='none'?amount>0:amount===0;return [id,`${instrument==='none'?'No new funding':instrument==='debt'?'Borrow':'Issue ordinary equity'} ${f(amount)} · ${plan==='expand'?'include equipment':'operate without equipment'}`,blocked,blocked?(amount?'Funding is required for this plan.':'Use no funding for a zero gap.'):''];});
  if(round===5){const required=result.financial.plans.expand.totalFundingNeeded,raised=result.financial.funding.amount,blocked=required>raised+1e-8;return [['buy-now','Pay 30.00 on 16 January · available 17 January',blocked,blocked?'The committed funds cannot maintain cash three throughout this equipment quarter. Compare another funded experiment or defer.':''],['defer','Defer · no equipment commitment in this quarter']];}

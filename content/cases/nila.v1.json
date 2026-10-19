@@ -353,7 +353,8 @@
     "wrongPredictionCanContinue": true,
     "explanationGrading": "ungraded, visible self-check; reviewed reasoning required before any demonstrated-competency claim",
     "finish": "Explicit Finish after all six round explanations; case completion is not mastery.",
-    "save": "Registered scenario/version, ordered setup/prediction/hint/commit/explanation/finish decisions and completed-round period; replay every derived balance/score. Bind actions to decision revision and round."
+    "save": "Registered scenario/version, ordered setup/prediction/hint/commit/explanation/finish decisions and completed-round period; replay every derived balance/score. Bind actions to decision revision and round.",
+    "replay": "Restart before an actual saved contract decision into a new record, retain all prior completed rounds, mark prior exposure from the restarted round and retain the original unchanged. Compare finished strategies only within the same receipt variant, at common supplied valuation rates."
   },
   "debriefCriteria": [
     "Use recorded facts rather than realised wealth as a decision-quality score.",
@@ -370,6 +371,10 @@
   },
   "runtimeScope": {
     "availableRounds": 6,
-    "totalRounds": 6
+    "totalRounds": 6,
+    "availableVariants": [
+      "base",
+      "late-customer"
+    ]
   }
 }

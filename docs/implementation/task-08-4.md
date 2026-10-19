@@ -1,0 +1,9 @@
+# Task 08.4 — Replay, alternate branches and comparison
+
+Restart before any actual saved contract decision into a new company record. Copy earlier completed-round raw history, clear work from the restarted round onward, and append a replay marker recording prior exposure for that round and its successors. Keep the original record unchanged. Nested forks preserve earlier exposure. Appending a fork is guarded by source decision revision and current record count.
+
+The second disclosed setup variant shifts every customer receipt exactly thirty calendar days. Invoice due dates, agent fee date, supplier and operating payments, financing terms and prices remain fixed. Due and expected receipt dates are both shown before commitment; the variant remains visible throughout. It has no random events and cannot be changed inside a run.
+
+Compare only finished records in the same scenario version and receipt variant. Both enterprise/equity values use common supplied 10% WACC and 3% perpetual growth; each original selected rate stays in its record. Compare January cash/profit, funding, debt, ownership, quarter minimum and annual FCFF/value without a quality score or winner. The debrief asks for protected cash dates, accepted trade-offs, conditional assumptions and reversing evidence. Either debt/equity, deferral or expansion can have a defensible explanation. Explanations remain ungraded.
+
+Validation: 27 company checks pass, including all sixteen independently controlled scenario branches, every saved restart point, raw save round trips, nested replay, original immutability, same-scenario eligibility, common-rate comparison and SSR disclosure/spoiler checks. All 110 targeted company, save, navigation, lab and model checks pass, plus four hosting checks, the production build and coverage freshness. Live browser, keyboard, mobile and pilot checks remain outstanding. Scoped Codex AI review; no professional or learner approval. Draft PR #1; not deployed.
