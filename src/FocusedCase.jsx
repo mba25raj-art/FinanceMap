@@ -11,7 +11,7 @@ export function LessonHintDialog({ pending, onRead, onCancel }) {
   }, [pending]);
   return <dialog ref={dialog} className="lesson-hint-dialog" aria-labelledby="hint-title" onCancel={e => { e.preventDefault(); onCancel(); }}>
     <h2 id="hint-title">Read this as a hint?</h2>
-    <p>A worked lesson can reveal the answer to your current clue. Opening it will record a requested hint for this clue, while keeping your choices and run.</p>
+    <p>{pending?.transferIndex!==undefined?'Worked study or another activity can help with your unanswered transfer packet. Opening it records study help for unfinished transfer packets. Your submitted history is kept; choose Keep trying to return without revealing it.':'A worked lesson can reveal the answer to your current clue. Opening it will record a requested hint for this clue, while keeping your choices and run.'}</p>
     <div className="hint-actions"><button className="primary" onClick={onRead}>Open lesson as a hint</button><button className="secondary" ref={cancelButton} onClick={onCancel}>Keep trying</button></div>
   </dialog>;
 }

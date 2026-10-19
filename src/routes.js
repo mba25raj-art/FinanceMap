@@ -1,6 +1,6 @@
 const legacy = new Set(['statements', 'map', 'topics', 'missions', 'learning', 'resources']);
 const labIds = new Set(['LAB-COLLECTIONS', 'LAB-EQUIPMENT', 'LAB-FINANCING']);
-const practiceId='PRACTICE-FINANCE-CHECK',companyId='CASE-NILA-HOMEWARE',returnActivityIds=new Set([...labIds,companyId,practiceId]);
+const transferId='TRANSFER-FINANCE-CASE',practiceQuestionIds=new Set(['recognition','classification','error','funding','terms','npv','valuation','reasoning']),practiceId='PRACTICE-FINANCE-CHECK',companyId='CASE-NILA-HOMEWARE',returnActivityIds=new Set([...labIds,companyId,practiceId,transferId]);
 
 function parseScreen(hash, { concepts, journeys }) {
   const base = { view: 'atlas', id: 'A02', statement: 'balance' };
@@ -16,7 +16,7 @@ function parseScreen(hash, { concepts, journeys }) {
   if (legacy.has(parts[0]) && parts.length <= 2) {
     return { ...base, view: parts[0], id: id(parts[1] || params.get('concept')) };
   }
-  if(parts[0]==='learning'&&parts[1]==='practice'&&parts[2]===practiceId&&parts.length===3){const raw=params.get('attempt');if(raw!==null&&(!/^[1-9]\d*$/.test(raw)||!Number.isSafeInteger(Number(raw))))return {...base,view:'learning',message:'That practice record is unavailable.'};return {...base,view:'practice',activityRun:raw===null?undefined:Number(raw)-1};}
+  if(parts[0]==='learning'&&parts[1]==='practice'&&[practiceId,transferId].includes(parts[2])&&parts.length===3){const raw=params.get('attempt');if(raw!==null&&(!/^[1-9]\d*$/.test(raw)||!Number.isSafeInteger(Number(raw))))return {...base,view:'learning',message:'That practice record is unavailable.'};return {...base,view:parts[2]===transferId?'transfer':'practice',activityRun:raw===null?undefined:Number(raw)-1,...(practiceQuestionIds.has(params.get('question'))?{practiceQuestion:params.get('question')}: {})};}
   if (parts[0] === 'atlas') {
     if (parts.length === 1) return base;
     if (parts[1] === 'statements' && parts.length === 4 && ['balance', 'income', 'cash'].includes(parts[2]) && concepts.has(parts[3])) {
@@ -51,9 +51,9 @@ function parseScreen(hash, { concepts, journeys }) {
   return recover('This destination is unavailable. Your current session record is still here.');
 }
 
-function screenHash(view, id = 'A02', { statement = 'balance', journeyId, stop = 0, runIndex,labId,activityRun } = {}) {
+function screenHash(view, id = 'A02', { statement = 'balance', journeyId, stop = 0, runIndex,labId,activityRun,practiceQuestion } = {}) {
   const concept = encodeURIComponent(id);
-  if(view==='practice')return `#learning/practice/${practiceId}${Number.isSafeInteger(activityRun)&&activityRun>=0?`?attempt=${activityRun+1}`:''}`;
+  if(view==='practice'||view==='transfer'){const params=new URLSearchParams();if(Number.isSafeInteger(activityRun)&&activityRun>=0)params.set('attempt',String(activityRun+1));if(view==='practice'&&practiceQuestionIds.has(practiceQuestion))params.set('question',practiceQuestion);return `#learning/practice/${view==='transfer'?transferId:practiceId}${params.size?'?'+params.toString():''}`;}
   if(view==='company')return `#simulations/${companyId}${Number.isSafeInteger(activityRun)&&activityRun>=0?`?attempt=${activityRun+1}`:''}`;
   if(view==='labs')return labIds.has(labId)?`#labs/${labId}${Number.isSafeInteger(activityRun)&&activityRun>=0?`?attempt=${activityRun+1}`:''}`:'#labs';
   if (view === 'atlas' || view === 'learning') return `#${view}`;

@@ -197,3 +197,10 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Mixed-practice feedback diagnoses the failed field's calculation pattern or mechanism; do not infer a learner belief as a psychological fact. Company feedback names failed recognition, timing, funding and valuation mechanisms.
 - Direction and mechanism hints precede an explicit worked-answer reveal. Save question/version, stage and timestamp in order. Recompute help/worked-reveal-before-response per attempt; later help cannot retroactively change the first response. New records have no hints.
 - Written-judgment rubrics are visible before writing, and defensible conditional alternatives appear after an attempt or requested worked hint. No automatic free-text correctness or competency credit. Keep guided unassisted observations separate from later independent transfer evidence.
+
+## Review and unfamiliar transfer (Task 09.3)
+
+- Review suggestions are optional product hypotheses: one day after a latest mistake, three after a corrected or helped response, seven after a correct guided response. Use actual response times, expose future-clock uncertainty, preserve untimed older records and allow due-review deferral.
+- Tamarind Catering is a distinct complete-packet transfer assessment. Keep its thirteen objective fields, numerical tolerance, fictional terms and ungraded recommendation separate from guided totals. Its financing quote is not the computed budget requirement or the separately stated valuation debt.
+- Protect unanswered transfer packets from worked study, including search/history/restored routes. An explicit study action records assistance for all open unanswered packets. Keep first response, later feedback/revisions, requested help, replay exposure and scenario version separate. Local history cannot prove absence of outside help.
+- Independently reviewed competencies remain a separate empty category until actual explanation review exists. Do not accept imported awards, grade unsupported prose or combine guided correction counts with transfer understanding.

@@ -30,8 +30,9 @@ export function scorePractice(question,values){
 }
 function derive(record,checkPeriod=true){
  shape(record,['activityId','scenarioVersion','period','decisions']);if(record.activityId!==PRACTICE||record.scenarioVersion!==practiceVersion||!Number.isSafeInteger(record.period)||record.period<0||record.period>8||!Array.isArray(record.decisions)||record.decisions.length>1000)fail('Unavailable practice record version or stage. Keep the original export.');
- let variant=null,questions=[],finished=false;const responses={},hints={};
+ let variant=null,questions=[],finished=false;const responses={},hints={},deferrals={};
  for(const d of record.decisions){if(!d||typeof d!=='object'||Array.isArray(d))fail('Invalid practice decision.');if(!variant){shape(d,['type','variant']);if(d.type!=='setup')fail('Choose a practice dataset before answering.');questions=practiceQuestions(d.variant);variant=d.variant;continue;}
+  if(d.type==='review-defer'){shape(d,['type','questionId','questionVersion','until','at']);const q=questions.find(q=>q.id===d.questionId);if(!q||q.version!==d.questionVersion||!responses[q.id]?.length||!Number.isFinite(Date.parse(d.at))||new Date(d.at).toISOString()!==d.at||!Number.isFinite(Date.parse(d.until))||new Date(d.until).toISOString()!==d.until||Date.parse(d.until)-Date.parse(d.at)!==3*86400000)fail('A review deferral must follow a submitted task and last three days.');deferrals[q.id]={until:d.until,at:d.at};continue;}
   if(finished)fail('This practice record is finished. Start another record.');
   if(d.type==='finish'){shape(d,['type']);if(questions.some(q=>!responses[q.id]?.length))fail('Submit every task before finishing this practice record.');finished=true;continue;}
   const hint=d.type==='hint';shape(d,hint?['type','questionId','questionVersion','stage','at']:['type','questionId','questionVersion','values','at']);const question=questions.find(q=>q.id===d.questionId);if(!['answer','hint'].includes(d.type)||!question||d.questionVersion!==question.version)fail('Unavailable practice question version.');if(typeof d.at!=='string'||!Number.isFinite(Date.parse(d.at))||new Date(d.at).toISOString()!==d.at)fail('Invalid response timestamp.');
@@ -39,7 +40,7 @@ function derive(record,checkPeriod=true){
   (responses[question.id]??=[]).push({helpBeforeAnswer:!!hints[question.id]?.length,workedBeforeAnswer:hints[question.id]?.some(h=>h.stage===3)||false,values:structuredClone(d.values),at:d.at,...scorePractice(question,d.values)});
  }
  const answered=Object.keys(responses).length;if(checkPeriod&&answered!==record.period)fail('Practice count does not match its submitted tasks.');
- return {variant,questions,responses,hints,answered,finished,phase:!variant?'setup':finished?'complete':'working',earned:questions.reduce((n,q)=>n+(responses[q.id]?.at(-1).earned||0),0),total:questions.filter(q=>q.kind!=='judgment').reduce((n,q)=>n+q.fields.length,0)};
+ return {variant,questions,responses,hints,deferrals,answered,finished,phase:!variant?'setup':finished?'complete':'working',earned:questions.reduce((n,q)=>n+(responses[q.id]?.at(-1).earned||0),0),total:questions.filter(q=>q.kind!=='judgment').reduce((n,q)=>n+q.fields.length,0)};
 }
 export const replayPractice=record=>derive(record);
 export function addPracticeDecision(record,decision){const next=structuredClone(record);next.decisions.push(structuredClone(decision));next.period=derive(next,false).answered;return next;}
