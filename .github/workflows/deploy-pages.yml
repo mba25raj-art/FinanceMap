@@ -33,6 +33,8 @@ jobs:
         env:
           GITHUB_PAGES_BASE: ${{ steps.pages.outputs.base_path }}/
       - run: npm run test:content
+      - run: npm run test:model
+      - run: npm run test:case
       - run: npm run test:sites
       - uses: actions/upload-pages-artifact@v4
         with:

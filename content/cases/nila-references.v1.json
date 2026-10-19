@@ -1,0 +1,323 @@
+{
+  "scenarioVersion": "1.0.0",
+  "review": "Independent Decimal/date/annuity controls authored from the script, not generated from the game engine.",
+  "quarterBranches": [
+    {
+      "variant": "base",
+      "terms": "30-days",
+      "collection": "agent-early",
+      "inventory": "cash-discount",
+      "cashAtFundingDate": 20.3,
+      "operate": {
+        "funding": 0.0,
+        "firstBreach": null,
+        "unfundedClosing": 29.3
+      },
+      "expand": {
+        "funding": 19.7,
+        "firstBreach": "2026-01-16",
+        "unfundedClosing": -0.7
+      }
+    },
+    {
+      "variant": "base",
+      "terms": "30-days",
+      "collection": "agent-early",
+      "inventory": "supplier-credit",
+      "cashAtFundingDate": 29.8,
+      "operate": {
+        "funding": 0.0,
+        "firstBreach": null,
+        "unfundedClosing": 28.8
+      },
+      "expand": {
+        "funding": 20.2,
+        "firstBreach": "2026-01-16",
+        "unfundedClosing": -1.2
+      }
+    },
+    {
+      "variant": "base",
+      "terms": "30-days",
+      "collection": "wait",
+      "inventory": "cash-discount",
+      "cashAtFundingDate": 10.5,
+      "operate": {
+        "funding": 0.0,
+        "firstBreach": null,
+        "unfundedClosing": 29.5
+      },
+      "expand": {
+        "funding": 29.5,
+        "firstBreach": "2026-01-16",
+        "unfundedClosing": -0.5
+      }
+    },
+    {
+      "variant": "base",
+      "terms": "30-days",
+      "collection": "wait",
+      "inventory": "supplier-credit",
+      "cashAtFundingDate": 20.0,
+      "operate": {
+        "funding": 0.0,
+        "firstBreach": null,
+        "unfundedClosing": 29.0
+      },
+      "expand": {
+        "funding": 30.0,
+        "firstBreach": "2026-01-16",
+        "unfundedClosing": -1.0
+      }
+    },
+    {
+      "variant": "base",
+      "terms": "60-days",
+      "collection": "agent-early",
+      "inventory": "cash-discount",
+      "cashAtFundingDate": 20.3,
+      "operate": {
+        "funding": 9.7,
+        "firstBreach": "2026-02-10",
+        "unfundedClosing": 29.3
+      },
+      "expand": {
+        "funding": 39.7,
+        "firstBreach": "2026-01-16",
+        "unfundedClosing": -0.7
+      }
+    },
+    {
+      "variant": "base",
+      "terms": "60-days",
+      "collection": "agent-early",
+      "inventory": "supplier-credit",
+      "cashAtFundingDate": 29.8,
+      "operate": {
+        "funding": 10.2,
+        "firstBreach": "2026-02-10",
+        "unfundedClosing": 28.8
+      },
+      "expand": {
+        "funding": 40.2,
+        "firstBreach": "2026-01-16",
+        "unfundedClosing": -1.2
+      }
+    },
+    {
+      "variant": "base",
+      "terms": "60-days",
+      "collection": "wait",
+      "inventory": "cash-discount",
+      "cashAtFundingDate": 10.5,
+      "operate": {
+        "funding": 19.5,
+        "firstBreach": "2026-02-10",
+        "unfundedClosing": 29.5
+      },
+      "expand": {
+        "funding": 49.5,
+        "firstBreach": "2026-01-16",
+        "unfundedClosing": -0.5
+      }
+    },
+    {
+      "variant": "base",
+      "terms": "60-days",
+      "collection": "wait",
+      "inventory": "supplier-credit",
+      "cashAtFundingDate": 20.0,
+      "operate": {
+        "funding": 20.0,
+        "firstBreach": "2026-02-10",
+        "unfundedClosing": 29.0
+      },
+      "expand": {
+        "funding": 50.0,
+        "firstBreach": "2026-01-16",
+        "unfundedClosing": -1.0
+      }
+    },
+    {
+      "variant": "late-customer",
+      "terms": "30-days",
+      "collection": "agent-early",
+      "inventory": "cash-discount",
+      "cashAtFundingDate": 10.3,
+      "operate": {
+        "funding": 11.7,
+        "firstBreach": "2026-02-10",
+        "unfundedClosing": 29.3
+      },
+      "expand": {
+        "funding": 41.7,
+        "firstBreach": "2026-01-16",
+        "unfundedClosing": -0.7
+      }
+    },
+    {
+      "variant": "late-customer",
+      "terms": "30-days",
+      "collection": "agent-early",
+      "inventory": "supplier-credit",
+      "cashAtFundingDate": 19.8,
+      "operate": {
+        "funding": 12.2,
+        "firstBreach": "2026-02-10",
+        "unfundedClosing": 28.8
+      },
+      "expand": {
+        "funding": 42.2,
+        "firstBreach": "2026-01-16",
+        "unfundedClosing": -1.2
+      }
+    },
+    {
+      "variant": "late-customer",
+      "terms": "30-days",
+      "collection": "wait",
+      "inventory": "cash-discount",
+      "cashAtFundingDate": 10.5,
+      "operate": {
+        "funding": 21.5,
+        "firstBreach": "2026-02-10",
+        "unfundedClosing": 29.5
+      },
+      "expand": {
+        "funding": 51.5,
+        "firstBreach": "2026-01-16",
+        "unfundedClosing": -0.5
+      }
+    },
+    {
+      "variant": "late-customer",
+      "terms": "30-days",
+      "collection": "wait",
+      "inventory": "supplier-credit",
+      "cashAtFundingDate": 20.0,
+      "operate": {
+        "funding": 22.0,
+        "firstBreach": "2026-02-10",
+        "unfundedClosing": 29.0
+      },
+      "expand": {
+        "funding": 52.0,
+        "firstBreach": "2026-01-16",
+        "unfundedClosing": -1.0
+      }
+    },
+    {
+      "variant": "late-customer",
+      "terms": "60-days",
+      "collection": "agent-early",
+      "inventory": "cash-discount",
+      "cashAtFundingDate": 10.3,
+      "operate": {
+        "funding": 11.7,
+        "firstBreach": "2026-02-10",
+        "unfundedClosing": 9.3
+      },
+      "expand": {
+        "funding": 41.7,
+        "firstBreach": "2026-01-16",
+        "unfundedClosing": -20.7
+      }
+    },
+    {
+      "variant": "late-customer",
+      "terms": "60-days",
+      "collection": "agent-early",
+      "inventory": "supplier-credit",
+      "cashAtFundingDate": 19.8,
+      "operate": {
+        "funding": 12.2,
+        "firstBreach": "2026-02-10",
+        "unfundedClosing": 8.8
+      },
+      "expand": {
+        "funding": 42.2,
+        "firstBreach": "2026-01-16",
+        "unfundedClosing": -21.2
+      }
+    },
+    {
+      "variant": "late-customer",
+      "terms": "60-days",
+      "collection": "wait",
+      "inventory": "cash-discount",
+      "cashAtFundingDate": 10.5,
+      "operate": {
+        "funding": 21.5,
+        "firstBreach": "2026-02-10",
+        "unfundedClosing": 9.5
+      },
+      "expand": {
+        "funding": 51.5,
+        "firstBreach": "2026-01-16",
+        "unfundedClosing": -20.5
+      }
+    },
+    {
+      "variant": "late-customer",
+      "terms": "60-days",
+      "collection": "wait",
+      "inventory": "supplier-credit",
+      "cashAtFundingDate": 20.0,
+      "operate": {
+        "funding": 22.0,
+        "firstBreach": "2026-02-10",
+        "unfundedClosing": 9.0
+      },
+      "expand": {
+        "funding": 52.0,
+        "firstBreach": "2026-01-16",
+        "unfundedClosing": -21.0
+      }
+    }
+  ],
+  "default": {
+    "variant": "base",
+    "terms": "30-days",
+    "collection": "agent-early",
+    "inventory": "cash-discount",
+    "funding": "debt-expand",
+    "investment": "buy-now",
+    "fundingAmount": 19.7,
+    "cashAfterInventory": 20.3,
+    "profitAfterInventory": 7.8,
+    "receivablesAfterInventory": 40,
+    "inventoryAfterInventory": 47.5,
+    "cashAfterInvestment": 10,
+    "januaryClose": {
+      "cash": 8,
+      "receivables": 40,
+      "inventory": 47.5,
+      "equipment": 128.0913978,
+      "debt": 94.7,
+      "tradePayables": 25,
+      "interestPayable": 0.6196931,
+      "taxPayable": 0.6543409,
+      "profit": 2.6173638,
+      "equity": 102.6173638,
+      "assets": 223.5913978
+    },
+    "projectFlows": [
+      2.8,
+      12.8,
+      12.8,
+      12.8,
+      22.8
+    ],
+    "projectNPV": 15.640374788110591,
+    "deferredProjectNPV": 14.218522534645992,
+    "forecastFCFF": [
+      23.3,
+      20.8,
+      20.8,
+      20.8,
+      20.8
+    ],
+    "enterprise": 271.15849815098494,
+    "equity": 180.18446415098495
+  }
+}
