@@ -2,6 +2,7 @@ import {nilaScenario,ModelError,toPaise,fromPaise,accountIsDebit,assertTransacti
 const fail=(code,message,field,details={})=>{throw Object.assign(new ModelError(code,message,field),details);};
 const own=(o,key)=>Object.hasOwn(o,key)?o[key]:undefined;
 export function createModel(config=nilaScenario,rules={}){
+ if(Object.keys(rules).some(k=>!['depreciation','interest','taxRate'].includes(k))||['depreciation','interest'].some(k=>rules[k]!==undefined&&typeof rules[k]!=='boolean')||(rules.taxRate!==undefined&&(typeof rules.taxRate!=='number'||!Number.isFinite(rules.taxRate)||rules.taxRate<0||rules.taxRate>1)))fail('rules','Use the registered depreciation, interest and hypothetical tax rules.','rules');
  const ledger=Object.fromEntries(Object.entries(config.opening).map(([k,v])=>[k,toPaise(v,k)*(accountIsDebit(config.accounts[k])?1:-1)]));
  const register=(rows,field)=>Object.fromEntries(rows.map(r=>[r.id,{...r,balance:toPaise(r[field])}]));
  const state={scenarioId:config.id,scenarioVersion:config.version,config:structuredClone(config),rules:{depreciation:true,interest:true,taxRate:config.taxRate,...rules},openingLedger:{...ledger},ledger,
