@@ -216,3 +216,9 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Company traces replay actual same-date before/after histories for the latest committed decision. Separate immediate postings, future cash dates and conditional forecast/value. Do not disclose the next unanswered financial prediction.
 - The 22 master financial links wholly inside the selected concept set have scoped independent numerical examples in content/connections/examples.v1.json. Preserve master IDs/directions/conditions and learning-versus-financial roles. Examples do not make the entire graph a computed model; other links remain conceptual.
 - Keep the same essential causal meaning in text and labelled tables, including actual journal provenance, without requiring canvas interaction, dragging or colour. Native disclosure controls accompany the Atlas numerical examples.
+
+## Accessibility work in progress (Task 10.3)
+
+- Skip/route/activity focus, persistent activity announcements, described and dismissible statement definitions, visible focus and reduced-motion lesson scrolling are implemented pending live verification. Do not infer actual keyboard or screen-reader behavior from SSR.
+- The connected-browser retry timed out on 19 October 2026. No live accessibility, zoom or rendered-state contrast result was obtained. Follow docs/implementation/task-10-3.md; leave 10.3 In progress and 10.4 Waiting until its checks are actually resolved. Cloud-browser fallback requires approval under its tool instructions.
+- Calculated source colour-pair contrast is limited evidence, not full rendered contrast or compliance. Record actual browser/OS/assistive tool and findings before marking verification complete.
