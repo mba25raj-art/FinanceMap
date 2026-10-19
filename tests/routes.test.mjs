@@ -42,7 +42,7 @@ test('briefs and run links select screens without fabricating progress; invalid 
   assert.equal(parse('#simulations/P02').view,'brief');
   assert.equal(parse('#simulations/P02?run=2').runIndex,1);
   assert.equal(parse(routeHash('missions','A08',{runIndex:0})).runIndex,0);
-  assert.equal(parse('#simulations/CASE-NILA-HOMEWARE').view,'missions');
+  assert.equal(parse('#simulations/CASE-NILA-HOMEWARE').view,'company');
   for(const raw of ['0','-1','1.5','NaN','9007199254740992'])assert.equal(parse(`#simulations/P02?run=${raw}`).view,'brief');
   for(const hash of ['#atlas/map/not-a-concept','#atlas/trails/P99','#atlas/trails/P01?stop=-1','#unknown','#atlas/map/%broken'])assert.ok(parse(hash).message);
   for(const id of ['LAB-COLLECTIONS','LAB-EQUIPMENT','LAB-FINANCING'])assert.equal(parse(`#labs/${id}`).view,'labs');

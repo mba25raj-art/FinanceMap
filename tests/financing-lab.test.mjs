@@ -21,13 +21,13 @@ test('negotiated pre-money and higher interest recompute ownership and service s
 });
 test('registry, replay and save round trip preserve scenario versions and ungraded recommendations',()=>{
  const r=addFinancingDecision(make(),{type:'explanation',text:'Debt keeps ownership but the weaker cash branch needs 4.2 to retain the reserve.'});assert.equal(replayFinancing(r).phase,2);assert.deepEqual(replayFinancing(r),replayFinancing(structuredClone(r)));const codec=createSaveCodec({conceptIds:[],topics:{},topicVersions:{},packages:[],cases:{},validateSimulation:validateSimulationRecord}),p=emptyLearningProfile();p.simulations=[r];assert.deepEqual(codec.decode(codec.encode(p)).simulations,[r]);
- for(const [id,d]of Object.entries(activityDefinitions)){assert.equal(validateSimulationRecord(d.empty()).activityId,id);assert.ok(d.title);assert.ok(d.stages[0]);}
+ for(const [id,d]of Object.entries(activityDefinitions)){assert.equal(validateSimulationRecord(d.empty()).activityId,id);assert.ok(d.title);assert.ok(d.stages?.[0]||d.stageLabel);}
 });
 test('unsupported rates, amounts, claimed results and stages fail before results can be imported',()=>{
  for(const change of [{annualRate:NaN},{annualRate:.2},{preMoney:0},{firstFCFF:Infinity},{newOwnership:101},{raiseCategory:'correct'},{enterprise:900}])assert.throws(()=>make(change));for(const change of [{scenarioVersion:'0.0.0'},{period:2},{model:{cash:999}}])assert.throws(()=>validateSimulationRecord({...make(),...change}));
 });
 test('all three lab links retain their independent saved-run return context',()=>{
- const inventory={concepts:new Set(['A02']),journeys:new Map()};for(const id of Object.keys(activityDefinitions)){const r=parseRoute(routeHash('labs','A02',{labId:id,activityRun:2}),inventory);assert.equal(r.labId,id);assert.equal(r.activityRun,2);const detour=parseRoute(routeHash('lesson','A02',{returnLab:id,returnAttempt:2}),inventory);assert.equal(detour.returnLab,id);assert.equal(detour.returnAttempt,2);}
+ const inventory={concepts:new Set(['A02']),journeys:new Map()};for(const id of Object.keys(activityDefinitions).filter(id=>id.startsWith('LAB-'))){const r=parseRoute(routeHash('labs','A02',{labId:id,activityRun:2}),inventory);assert.equal(r.labId,id);assert.equal(r.activityRun,2);const detour=parseRoute(routeHash('lesson','A02',{returnLab:id,returnAttempt:2}),inventory);assert.equal(detour.returnLab,id);assert.equal(detour.returnAttempt,2);}
 });
 test('render conceals comparison before prediction and labels the independent mini-case and conditional values',async()=>{
  globalThis.window={location:{hash:'#labs/LAB-FINANCING'}};const {createServer}=await import('vite'),{default:react}=await import('@vitejs/plugin-react');const {createElement}=await import('react'),{renderToStaticMarkup}=await import('react-dom/server');

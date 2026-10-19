@@ -3,7 +3,7 @@ import {practiceRecord,lessonPracticeCounts} from './lesson-practice.js';
 import {learningCounts,unfinishedCaseRuns} from './learning-session.js';
 import scope from '../content/first-release-scope.json' with {type:'json'};
 
-export function learningNextSteps({session,visited=[],packages=lessonPackages,edges=[],selectedIds=scope.concepts.map(c=>c.id)}){
+export function learningNextSteps({session,visited=[],packages=lessonPackages,edges=[],activities=[],selectedIds=scope.concepts.map(c=>c.id)}){
   const reviews=new Map(),explored=new Set(visited),transfer=[];
   const add=(id,reason,priority)=>{
     const existing=reviews.get(id)||{conceptId:id,reasons:[],priority};
@@ -39,6 +39,7 @@ export function learningNextSteps({session,visited=[],packages=lessonPackages,ed
   const optional=id=>[...new Set(edges.filter(e=>e.type==='RECOMMENDED_BEFORE'&&e.to===id).map(e=>e.from))].filter(id=>!explored.has(id));
   const unfinished=unfinishedCaseRuns(session);let next;
   if(unfinished.length){const {run,index}=unfinished.at(-1);next={kind:'resume',runIndex:index,step:run.step,title:`Resume cash mystery · run ${index+1}`,reason:`Continue clue ${run.step+1} of ${run.clues.length} with the recorded choices and hints.`,preparation:[]};}
+  else if(activities.some(a=>a.unfinished)){const a=activities.filter(a=>a.unfinished).at(-1);next={kind:'activity',activityId:a.activityId,activityRun:a.index,title:`Resume ${a.title}`,reason:'Continue the saved decisions, predictions, hints and explanation without starting another experiment.',preparation:[]};}
   else if(review.length){const target=review[0];next={kind:'review',conceptId:target.conceptId,title:'Review a recorded difficulty',reason:target.reasons[0],preparation:optional(target.conceptId)};}
   else if(!session.completedCases.includes('P02'))next={kind:'brief',title:'Try the three-clue cash mystery',reason:'Apply profit and cash timing in the existing case. The brief explains the objective and optional preparation before Start.',preparation:['T04.01','T04.05','A02'].filter(id=>!explored.has(id))};
   else{

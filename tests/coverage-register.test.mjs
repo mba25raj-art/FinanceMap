@@ -56,19 +56,19 @@ test('the 30 selected concepts retain exact titles, six five-concept batches, ou
 
 test('available case assessment matches implemented clues; reference trails, support and future labs do not count as playable assessments', () => {
   const available = register.activities.filter(a => a.availability === 'available');
-  assert.equal(available.length, 4); assert.equal(available[0].id, 'P02');
+  assert.equal(available.length, 5); assert.equal(available[0].id, 'P02');
   assert.deepEqual(available[0].links.filter(l => l.role === 'assessed').map(l => l.conceptId), mystery.steps.map(s => s.concept));
   const inventory = { concepts: new Set(inputs.atlas.nodes.map(n => n.id)), journeys: new Map(inputs.atlas.journeys.map(j => [j.id, j])) };
   assert.equal(parseRoute(available[0].route, inventory).view, 'brief');
   for (const a of register.activities.filter(a => a.availability === 'planned')) assert.equal(a.route, null);
   assert.equal(register.summary.playableLabs, 3); assert.equal(register.summary.plannedLabs, 0);
-  assert.equal(register.summary.playableCases, 1); assert.equal(register.summary.plannedCases, 1);
-  assert.equal(register.summary.conceptsWithPlayableAppliedAssessment, 10);
-  assert.equal(register.summary.conceptsWithoutPlayableAppliedAssessment, 688);
+  assert.equal(register.summary.playableCases, 2); assert.equal(register.summary.plannedCases, 0);
+  assert.equal(register.summary.conceptsWithPlayableAppliedAssessment, 13);
+  assert.equal(register.summary.conceptsWithoutPlayableAppliedAssessment, 685);
   assert.ok(!byId('A02').gaps.includes('no-playable-applied-assessment'), 'Collection prediction now assesses receivables');
   assert.ok(byId('T14.03').referenceTrails.includes('P02'));
   assert.ok(byId('T14.03').gaps.includes('no-playable-applied-assessment'), 'A reference-trail stop is not a case question');
-  const bad = structuredClone(inputs); bad.policy.activities[4].route = '#simulations/CASE-NILA-HOMEWARE';
+  const bad = structuredClone(inputs); bad.policy.activities[4].availability = 'planned';
   assert.throws(() => buildCoverageRegister(bad), /cannot promise playable routes/);
 });
 

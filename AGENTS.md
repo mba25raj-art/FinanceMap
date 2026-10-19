@@ -165,3 +165,10 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Quarter cash uses the actual posted cutoff and only future known commitments. Reference fixtures independently check sixteen branches; default full-plan need is 19.7. No-funding eligibility depends on the selected plan. Do not execute a forecast overdraft or automatic loan.
 - Project assumptions produce five annual flows 2.8/12.8/12.8/12.8/22.8, including final standalone working-capital release. Continuing-company terminal FCFF does not liquidate working capital. Normalize sustaining capex/depreciation explicitly, start from actual operating balances, keep quarter/annual/project perimeters separate and deduct each claim once.
 - The alternate replay variant shifts every customer receipt thirty calendar days with unchanged contractual due dates/fees and no random score. Comparisons within a variant hold conditions fixed. Runtime proceeds first through rounds 1–3 (08.2), then 4–6 (08.3), then forks/variant UI (08.4). Run `npm run test:case` and `npm run test:model` for case/model changes; automated evidence is separate from browser and learner-pilot QA.
+
+## First company rounds (Task 08.2)
+
+- The company case is an available three-round preview, distinct from the P02 cash mystery and the three labs. Preserve the exact roadmap opening and case-specific hypothetical terms. A preview completed at 3/6 is not a finished company case.
+- Company records save only setup, hints, numerical attempts, contracts and ungraded explanations. Period counts explained rounds; stale-action protection uses decision-history length. Preserve existing version 1 prefixes as later rounds are implemented.
+- Show all financial terms before binding commitment, reveal numerical feedback after an attempt or requested worked hint, and retain first/latest/help chronology. Do not grade prose or award competency from these guided checks.
+- Actual journal postings, future cash commitments and later month-end accruals remain separate. Resume and Atlas return select the same global activity index. Automated checks do not replace the outstanding live-browser and pilot evidence.

@@ -55,12 +55,12 @@ export function MysteryBrief({ session, onResume, onStart, onConcept, message })
   </main>;
 }
 
-export function SimulationEntry({ session, onResume, onBrief, onAtlas }) {
+export function SimulationEntry({ session, onResume, onBrief, onAtlas,onCompany }) {
   const pending = unfinishedCaseRuns(session).length > 0;
   return <main className="single-view entry-main"><span className="eyebrow">SIMULATIONS</span><h1>Make a decision. Follow its consequences.</h1><p className="lead">Begin with the playable cash mystery. The longer company case will connect transactions, funding, investment and valuation.</p>
     <ResumeCard session={session} onResume={onResume}/>
     <section className="entry-case"><span className="eyebrow">PLAYABLE NOW · 3 CLUES</span><h2>Profitable. So where did the cash go?</h2><p>Discover how much cash remains after reinvestment, and explain the difference from profit.</p><p className="small muted">Cash after reinvestment: <strong>To discover</strong></p><button className={pending?'secondary':'primary'} onClick={onBrief}>See the mystery brief <ArrowRightIcon/></button></section>
-    <section className="entry-case"><span className="eyebrow">PLANNED</span><h2>Nila Homeware: six connected rounds</h2><p>Trace transactions, reconcile cash, identify a funding gap, compare financing, evaluate an investment and explain valuation assumptions.</p></section>
+    <section className="entry-case"><span className="eyebrow">AVAILABLE PREVIEW · ROUNDS 1–3 OF 6</span><h2>Nila Homeware: the first three decisions</h2><p>Record a sale, compare collection timing and choose supplier terms. Predict, inspect, commit and explain using one saved company ledger. Funding, investment and valuation follow in the full case.</p><button className="secondary" onClick={onCompany}>Open company preview</button></section>
     <button className="text-button" onClick={onAtlas}>Find a reading trail in the Atlas <ArrowRightIcon/></button>
   </main>;
 }

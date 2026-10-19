@@ -296,12 +296,28 @@
     {
       "id": "CASE-NILA-HOMEWARE",
       "kind": "case",
-      "title": "Nila Homeware: six connected rounds",
-      "availability": "planned",
-      "route": null,
+      "title": "Nila Homeware: rounds 1\u20133 preview",
+      "availability": "available",
+      "route": "#simulations/CASE-NILA-HOMEWARE",
       "roadmapTask": "08.1\u201308.4",
-      "usesFirstReleaseSelection": true,
-      "evidence": "Finance_Atlas_Implementation_Backlog.xlsx: Content batches; Release scope"
+      "evidence": "src/CompanyCase.jsx; src/activities/company.js; tests/company-runtime.test.mjs. Available scope: three of six rounds; no full-case Finish.",
+      "assessmentConcepts": [
+        "A01",
+        "T04.05",
+        "A02",
+        "A06",
+        "A03",
+        "A04"
+      ],
+      "referenceConcepts": [
+        "T04.01",
+        "T07.14",
+        "T14.03",
+        "T14.04",
+        "T14.15",
+        "A05",
+        "T06.02"
+      ]
     }
   ]
 }

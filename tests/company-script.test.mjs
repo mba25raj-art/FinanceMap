@@ -19,7 +19,7 @@ function defaultModel(){
 }
 test('case preserves roadmap opening while lab/reference contracts remain separate and labelled',()=>{
  assert.deepEqual(config.opening,original.opening);assert.equal(inLakh(balances(createModel(config))).assets,200);assert.equal(config.id,'NILA-COMPANY-CASE');assert.equal(config.loans[0].annualRate,.08);assert.equal(original.loans[0].annualRate,.12);assert.equal(config.loans[0].maturity,'2029-01-01');assert.ok(config.assumptions.some(s=>s.includes('roadmap did not specify')));
- assert.equal(script.setup.openingAssets,200);assert.equal(script.setup.openingLiabilitiesAndEquity,200);assert.equal(script.status,'scripted-not-playable');
+ assert.equal(script.setup.openingAssets,200);assert.equal(script.setup.openingLiabilitiesAndEquity,200);assert.equal(script.status,'three-round-preview');
 });
 test('six complete rounds cover all selected IDs/outcomes with ordered dates and disclosed terms',()=>{
  const selected=new Set(read('content/first-release-scope.json').concepts.map(c=>c.id)),mapped=new Set(script.setup.optionalConcepts);assert.equal(script.rounds.length,6);let date='';const outcomes=new Set();
@@ -49,5 +49,5 @@ test('project and continuing-company cash perimeters produce independent NPV/DCF
 });
 test('script defines spoiler protection, informed commitment, replay and honest reasoning evidence without publishing',()=>{
  assert.equal(script.interaction.predictionBeforeResults,true);assert.equal(script.interaction.allDecisionTermsBeforeCommit,true);assert.equal(script.interaction.wrongPredictionCanContinue,true);assert.ok(script.interaction.explanationGrading.includes('ungraded'));assert.ok(script.interaction.finish.includes('Explicit Finish'));assert.ok(script.debriefCriteria.some(s=>s.includes('wealth')));assert.equal(script.review.type,'ai-script-contract-arithmetic');
- const activity=read('content/coverage-policy.json').activities.find(a=>a.id===script.activityId);assert.equal(activity.availability,'planned');assert.equal(activity.route,null);
+ const activity=read('content/coverage-policy.json').activities.find(a=>a.id===script.activityId);assert.equal(activity.availability,'available');assert.equal(activity.route,'#simulations/CASE-NILA-HOMEWARE');assert.equal(script.runtimeScope.availableRounds,3);assert.ok(activity.title.includes('preview'));
 });

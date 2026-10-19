@@ -99,7 +99,7 @@ test('Reset cancellation changes nothing; confirmed reset deletes only the app k
 test('two tabs detect conflicting writes, imports and reset instead of silently losing newer history',()=>{
  const memory=memoryStorage(),a=createLearningStorage(memory,codec),b=createLearningStorage(memory,codec);a.save(sample());assert.equal(b.checkConflict(),true);
  assert.equal(b.save(sample()).ok,false);assert.equal(b.reset(true).kind,'conflict');assert.equal(b.importRecord(JSON.stringify(codec.encode(sample())),true).kind,'conflict');
- assert.equal(b.loadLatest().ok,true);assert.equal(b.save(sample()).ok,true);assert.equal(a.save(sample()).kind,'conflict');
+ assert.equal(b.loadLatest().ok,true);const changed=sample();changed.bookmarks=[];assert.equal(b.save(changed).ok,true);assert.equal(a.save(sample()).kind,'conflict');
 });
 
 test('actual App restores before resolving a run link, retains spoiler gates and exposes local backup controls',async()=>{

@@ -1,10 +1,10 @@
-export default function LearningNextActions({plan,title,onResume,onBrief,onConcept,onBrowse}){
+export default function LearningNextActions({plan,title,onResume,onActivity,onBrief,onConcept,onBrowse}){
   const {next,review,counts}=plan;
-  const act=()=>next.kind==='resume'?onResume(next.runIndex):next.kind==='brief'?onBrief():next.conceptId?onConcept(next.conceptId):onBrowse(true);
+  const act=()=>next.kind==='resume'?onResume(next.runIndex):next.kind==='activity'?onActivity(next.activityId,next.activityRun):next.kind==='brief'?onBrief():next.conceptId?onConcept(next.conceptId):onBrowse(true);
   return <section className="learning-next" aria-labelledby="learning-next-title">
     <span className="eyebrow">NEXT ACTION</span><h2 id="learning-next-title">{next.title}</h2><p>{next.reason}</p>
     {next.conceptId&&<p><strong>{title(next.conceptId)}</strong></p>}
-    <div className="record-actions"><button className="primary" onClick={act}>{next.kind==='resume'?'Resume this run':next.kind==='brief'?'Open the case brief':next.kind==='review'?'Review this concept':next.kind==='read'?'Open this lesson':'Find an unanswered question'}</button><button className="text-button" onClick={()=>onBrowse(false)}>Browse all topics</button></div>
+    <div className="record-actions"><button className="primary" onClick={act}>{next.kind==='resume'?'Resume this run':next.kind==='activity'?'Resume this activity':next.kind==='brief'?'Open the case brief':next.kind==='review'?'Review this concept':next.kind==='read'?'Open this lesson':'Find an unanswered question'}</button><button className="text-button" onClick={()=>onBrowse(false)}>Browse all topics</button></div>
     {!!next.preparation.length&&<details><summary>Optional preparation not yet explored</summary><p>These are reading suggestions. They do not block the task, and a visit does not prove understanding.</p>{next.preparation.map(id=><button key={id} className="saved-item" onClick={()=>onConcept(id)}>{title(id)}</button>)}</details>}
     <h3>What the record shows</h3>
     <table className="lesson-inputs"><thead><tr><th scope="col">Evidence</th><th scope="col">Observation</th></tr></thead><tbody>

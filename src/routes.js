@@ -1,5 +1,6 @@
 const legacy = new Set(['statements', 'map', 'topics', 'missions', 'learning', 'resources']);
 const labIds = new Set(['LAB-COLLECTIONS', 'LAB-EQUIPMENT', 'LAB-FINANCING']);
+const companyId='CASE-NILA-HOMEWARE',returnActivityIds=new Set([...labIds,companyId]);
 
 function parseScreen(hash, { concepts, journeys }) {
   const base = { view: 'atlas', id: 'A02', statement: 'balance' };
@@ -44,13 +45,14 @@ function parseScreen(hash, { concepts, journeys }) {
       if (!/^[1-9]\d*$/.test(raw) || !Number.isSafeInteger(Number(raw))) return { ...base, view: 'brief', message: 'That run link is unavailable. You can start or resume below.' };
       return { ...base, view: 'missions', journeyId: 'P02', runIndex: Number(raw)-1, id: id(params.get('concept') || 'A05') };
     }
-    if (parts[1] === 'CASE-NILA-HOMEWARE' && parts.length === 2) return { ...base, view: 'missions', message: 'The six-round company case is planned. Try the three-clue mystery below.' };
+    if(parts[1]===companyId&&parts.length===2){const raw=params.get('attempt');if(raw!==null&&(!/^[1-9]\d*$/.test(raw)||!Number.isSafeInteger(Number(raw))))return {...base,view:'missions',message:'That company record is unavailable. Open the company preview below.'};return {...base,view:'company',activityRun:raw===null?undefined:Number(raw)-1};}
   }
   return recover('This destination is unavailable. Your current session record is still here.');
 }
 
 function screenHash(view, id = 'A02', { statement = 'balance', journeyId, stop = 0, runIndex,labId,activityRun } = {}) {
   const concept = encodeURIComponent(id);
+  if(view==='company')return `#simulations/${companyId}${Number.isSafeInteger(activityRun)&&activityRun>=0?`?attempt=${activityRun+1}`:''}`;
   if(view==='labs')return labIds.has(labId)?`#labs/${labId}${Number.isSafeInteger(activityRun)&&activityRun>=0?`?attempt=${activityRun+1}`:''}`:'#labs';
   if (view === 'atlas' || view === 'learning') return `#${view}`;
   if (view === 'statements') return `#atlas/statements/${statement}/${concept}`;
@@ -68,7 +70,7 @@ export function parseRoute(hash, inventory) {
   const route = parseScreen(hash, inventory);
   const params=new URLSearchParams(hash.split('?')[1]||'');
   const returnLab=params.get('returnLab'),returnAttempt=params.get('returnAttempt');
-  if(labIds.has(returnLab)&&/^[1-9]\d*$/.test(returnAttempt||'')&&Number.isSafeInteger(Number(returnAttempt))){route.returnLab=returnLab;route.returnAttempt=Number(returnAttempt)-1;}
+  if(returnActivityIds.has(returnLab)&&/^[1-9]\d*$/.test(returnAttempt||'')&&Number.isSafeInteger(Number(returnAttempt))){route.returnLab=returnLab;route.returnAttempt=Number(returnAttempt)-1;}
   const raw = new URLSearchParams(hash.split('?')[1] || '').get('returnRun');
   if (raw === null) return route;
   if (!/^[1-9]\d*$/.test(raw) || !Number.isSafeInteger(Number(raw))) {
@@ -79,7 +81,7 @@ export function parseRoute(hash, inventory) {
 
 export function routeHash(view, id, options = {}) {
   let hash = screenHash(view, id, options);
-  if(labIds.has(options.returnLab)&&Number.isSafeInteger(options.returnAttempt)&&options.returnAttempt>=0)hash+=`${hash.includes('?')?'&':'?'}returnLab=${options.returnLab}&returnAttempt=${options.returnAttempt+1}`;
+  if(returnActivityIds.has(options.returnLab)&&Number.isSafeInteger(options.returnAttempt)&&options.returnAttempt>=0)hash+=`${hash.includes('?')?'&':'?'}returnLab=${options.returnLab}&returnAttempt=${options.returnAttempt+1}`;
   return Number.isSafeInteger(options.returnRun) && options.returnRun >= 0
     ? `${hash}${hash.includes('?') ? '&' : '?'}returnRun=${options.returnRun + 1}` : hash;
 }
