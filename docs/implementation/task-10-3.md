@@ -1,6 +1,10 @@
 # Task 10.3 — Accessibility implementation prepared; live verification pending
 
-Status: **In progress**, not complete. The connected Browser plugin was retried on 19 October 2026 after loading its current instructions. Runtime connection/documentation timed out with MCP -32603. No current browser screenshot, keyboard journey, rendered zoom/contrast audit or screen-reader observation was obtained. Prior SSR evidence must not be relabelled as live verification. Switching to the cloud browser requires approval under that tool's fallback instructions; no fallback was used.
+Status: **In progress**, not complete. The connected Browser plugin was retried on 19 October 2026 after loading its current instructions. Runtime connection/documentation timed out with MCP -32603. The user's subsequent “next step” authorized the proposed cloud-browser fallback. No current browser screenshot, keyboard journey, rendered zoom/contrast audit or screen-reader observation was obtained. Prior SSR evidence must not be relabelled as live verification.
+
+The cloud browser could not reach the manually started loopback preview (`net::ERR_CONNECTION_REFUSED`). The managed Sites preview supervisor then successfully started the checkout and returned its supported internal URL, `http://terminal.local:4173/`. Attempting to bind the prior error tab and navigate there was rejected by the browser URL security policy before the application could be observed. The refusal explicitly prohibited workarounds, indirect execution, raw browser commands and alternate browser surfaces to achieve the blocked action. No such workaround was attempted. The working application source was not changed to compensate for the environment limitation; the owned preview servers were stopped after recording the result.
+
+Resume the live matrix only when an approved browser can access this exact source revision, or an accessibility reviewer supplies actual observations against it. No further fallback approval is pending. Browser access and an actual screen-reader surface remain unresolved; this is an environment blocker, not an application accessibility result.
 
 All 208 automated checks (120 content, 36 case, 19 assessment, 29 model and four hosting) pass after the accessibility source changes. Build and coverage freshness also pass. These are automated/source results only.
 
