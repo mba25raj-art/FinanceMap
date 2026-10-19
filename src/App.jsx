@@ -12,6 +12,7 @@ import {createSaveCodec} from './learning-save.js';
 import assessmentVersions from '../content/assessment-versions.json';
 import CollectionLab from './CollectionLab.jsx';
 import EquipmentLab from './EquipmentLab.jsx';
+import FinancingLab from './FinancingLab.jsx';
 import {validateSimulationRecord,activityDefinitions} from './activities/registry.js';
 import {commitActivityRecord} from './activities/records.js';
 import { AtlasEntry, MysteryBrief, SimulationEntry, LabsEntry, ResumeCard } from './LearningEntry.jsx';
@@ -37,7 +38,7 @@ const getLesson=id=>{
 };
 const money=n=>n<0?`(${Math.abs(n)})`:n;
 const routeInventory={concepts:new Set(nodes.map(n=>n.id)),journeys:new Map(network.journeys.map(j=>[j.id,j]))};
-const labComponents={'LAB-COLLECTIONS':CollectionLab,'LAB-EQUIPMENT':EquipmentLab};
+const labComponents={'LAB-COLLECTIONS':CollectionLab,'LAB-EQUIPMENT':EquipmentLab,'LAB-FINANCING':FinancingLab};
 function readRoute(){return parseRoute(window.location.hash,routeInventory);}
 const initial=readRoute();
 const saveCodec=createSaveCodec({conceptIds:nodes.map(n=>n.id),topics:lessons,topicVersions:assessmentVersions.topics,packages:lessonPackages,validateSimulation:validateSimulationRecord,cases:{P02:{version:'1.0.0',fingerprint:assessmentVersions.cases.P02,clues:mystery.steps.map((c,i)=>({...c,id:`P02-C${i+1}`}))}}});

@@ -278,18 +278,20 @@
       "id": "LAB-FINANCING",
       "kind": "lab",
       "title": "Financing comparison",
-      "availability": "planned",
-      "route": null,
+      "availability": "available",
+      "route": "#labs/LAB-FINANCING",
       "roadmapTask": "07.3",
-      "plannedConcepts": [
+      "evidence": "src/FinancingLab.jsx; src/activities/financing.js; tests/financing-lab.test.mjs",
+      "assessmentConcepts": [
         "A18",
-        "T07.09",
+        "T07.09"
+      ],
+      "referenceConcepts": [
         "A13",
         "A15",
         "A16",
         "T17.04"
-      ],
-      "evidence": "Finance_Atlas_Implementation_Backlog.xlsx: Task detail 07.3; Release scope"
+      ]
     },
     {
       "id": "CASE-NILA-HOMEWARE",
