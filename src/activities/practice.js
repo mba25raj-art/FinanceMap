@@ -1,3 +1,4 @@
+import {practiceDiagnosis} from './practice-support.js';
 import {cashForecast,projectNPV,valueFCFF} from '../model/forecast.js';
 export const PRACTICE='PRACTICE-FINANCE-CHECK',practiceVersion='1.0.0';
 export const emptyPractice=()=>({activityId:PRACTICE,scenarioVersion:practiceVersion,period:0,decisions:[]});
@@ -11,7 +12,7 @@ const f=n=>n.toFixed(2),percent=n=>`${(n*100).toFixed(0)}%`;
 export function practiceQuestions(variant){
  const d=datasets[variant];if(!d)fail('Choose a supplied practice dataset.');
  const interest=d.raise*d.loanRate,ownership=100*d.raise/(d.preMoney+d.raise),forecast=cashForecast({opening:d.opening,minimum:d.minimum,events:d.receipts.map((receipts,i)=>({date:i?'2026-03-01':'2026-02-01',receipts,payments:d.payments[i]}))}),npv=projectNPV({initial:d.investment,cashFlows:d.flows,rate:d.discount}).npv,fcff=d.ebit*(1-d.tax)+d.depreciation-d.capex-d.wc,value=valueFCFF({cashFlows:[fcff,d.secondFCFF],wacc:d.wacc,growth:d.growth,debt:d.debt,excessCash:d.excess});
- const make=(id,title,outcome,concepts,prompt,fields,expected,feedback)=>({id,version:practiceVersion,title,outcomes:outcome.split(','),concepts,prompt,fields,expected,feedback,kind:fields[0].type==='text'?'judgment':fields[0].type==='number'?'numerical':id==='error'?'error-detection':'classification'});
+ const make=(id,title,outcome,concepts,prompt,fields,expected,feedback)=>({id,version:practiceVersion,title,inputs:d,outcomes:outcome.split(','),concepts,prompt,fields,expected,feedback,kind:fields[0].type==='text'?'judgment':fields[0].type==='number'?'numerical':id==='error'?'error-detection':'classification'});
  return [
  make('recognition','Recognise a credit sale','LO1,LO2',['A01','A02','A03','T04.05'],`A fictional distributor delivers a qualifying credit sale of ${d.sale}, using inventory costing ${d.cost}. No cash is received at delivery. Assume no other income or expense. Enter the immediate profit effect and cash movement. All amounts are INR lakh.`,[numeric('profit','Profit effect'),numeric('cash','Cash movement')],{profit:d.sale-d.cost,cash:0},`Delivery records revenue ${d.sale} less cost sold ${d.cost}: profit ${d.sale-d.cost}. The customer owes the sale amount; cash movement is zero.`),
  make('classification','Classify two cash events','LO4',['A06','A07','A18'],`The distributor issues ordinary equity for ${d.raise} cash, then buys equipment for ${d.raise} cash. Both events happen now. Assume no fees or immediate depreciation. Classify each cash flow and the immediate profit effect.`,[select('raise','Cash from issuing equity',categories),select('equipment','Cash paid for equipment',categories),select('profit','Immediate profit effect',[['increase','Increase'],['unchanged','Unchanged'],['decrease','Decrease']])],{raise:'financing',equipment:'investing',profit:'unchanged'},'Issuing ownership is financing cash and contributed capital. Buying equipment is investing cash exchanged for an asset. Neither event is revenue or an immediate expense under these stated assumptions.'),
@@ -25,19 +26,20 @@ export function practiceQuestions(variant){
 }
 export function scorePractice(question,values){
  shape(values,question.fields.map(f=>f.key));const checks={};for(const field of question.fields){const v=values[field.key];if(field.type==='number'){if(typeof v!=='number'||!Number.isFinite(v)||Math.abs(v)>1e9)fail('Enter a finite numerical response inside the scenario limit.');checks[field.key]=Math.abs(v-question.expected[field.key])<=field.tolerance+1e-9;}else if(field.type==='select'){if(!field.options.some(o=>o.value===v))fail('Choose an available response.');checks[field.key]=v===question.expected[field.key];}else if(typeof v!=='string'||!v.trim()||v.length>field.maxLength)fail('Write a nonblank explanation within the displayed length.');}
- return {checks,earned:question.kind==='judgment'?null:Object.values(checks).filter(Boolean).length,total:question.kind==='judgment'?null:question.fields.length,allCorrect:question.kind==='judgment'?null:Object.values(checks).every(Boolean)};
+ return {checks,diagnoses:practiceDiagnosis(question,values,checks),earned:question.kind==='judgment'?null:Object.values(checks).filter(Boolean).length,total:question.kind==='judgment'?null:question.fields.length,allCorrect:question.kind==='judgment'?null:Object.values(checks).every(Boolean)};
 }
 function derive(record,checkPeriod=true){
  shape(record,['activityId','scenarioVersion','period','decisions']);if(record.activityId!==PRACTICE||record.scenarioVersion!==practiceVersion||!Number.isSafeInteger(record.period)||record.period<0||record.period>8||!Array.isArray(record.decisions)||record.decisions.length>1000)fail('Unavailable practice record version or stage. Keep the original export.');
- let variant=null,questions=[],finished=false;const responses={};
+ let variant=null,questions=[],finished=false;const responses={},hints={};
  for(const d of record.decisions){if(!d||typeof d!=='object'||Array.isArray(d))fail('Invalid practice decision.');if(!variant){shape(d,['type','variant']);if(d.type!=='setup')fail('Choose a practice dataset before answering.');questions=practiceQuestions(d.variant);variant=d.variant;continue;}
   if(finished)fail('This practice record is finished. Start another record.');
   if(d.type==='finish'){shape(d,['type']);if(questions.some(q=>!responses[q.id]?.length))fail('Submit every task before finishing this practice record.');finished=true;continue;}
-  shape(d,['type','questionId','questionVersion','values','at']);const question=questions.find(q=>q.id===d.questionId);if(d.type!=='answer'||!question||d.questionVersion!==question.version)fail('Unavailable practice question version.');if(typeof d.at!=='string'||!Number.isFinite(Date.parse(d.at))||new Date(d.at).toISOString()!==d.at)fail('Invalid response timestamp.');
-  (responses[question.id]??=[]).push({values:structuredClone(d.values),at:d.at,...scorePractice(question,d.values)});
+  const hint=d.type==='hint';shape(d,hint?['type','questionId','questionVersion','stage','at']:['type','questionId','questionVersion','values','at']);const question=questions.find(q=>q.id===d.questionId);if(!['answer','hint'].includes(d.type)||!question||d.questionVersion!==question.version)fail('Unavailable practice question version.');if(typeof d.at!=='string'||!Number.isFinite(Date.parse(d.at))||new Date(d.at).toISOString()!==d.at)fail('Invalid response timestamp.');
+  if(hint){const prior=hints[question.id]??=[];if(d.stage!==prior.length+1||d.stage>3)fail('Request the next available hint stage.');prior.push({stage:d.stage,at:d.at});continue;}
+  (responses[question.id]??=[]).push({helpBeforeAnswer:!!hints[question.id]?.length,workedBeforeAnswer:hints[question.id]?.some(h=>h.stage===3)||false,values:structuredClone(d.values),at:d.at,...scorePractice(question,d.values)});
  }
  const answered=Object.keys(responses).length;if(checkPeriod&&answered!==record.period)fail('Practice count does not match its submitted tasks.');
- return {variant,questions,responses,answered,finished,phase:!variant?'setup':finished?'complete':'working',earned:questions.reduce((n,q)=>n+(responses[q.id]?.at(-1).earned||0),0),total:questions.filter(q=>q.kind!=='judgment').reduce((n,q)=>n+q.fields.length,0)};
+ return {variant,questions,responses,hints,answered,finished,phase:!variant?'setup':finished?'complete':'working',earned:questions.reduce((n,q)=>n+(responses[q.id]?.at(-1).earned||0),0),total:questions.filter(q=>q.kind!=='judgment').reduce((n,q)=>n+q.fields.length,0)};
 }
 export const replayPractice=record=>derive(record);
 export function addPracticeDecision(record,decision){const next=structuredClone(record);next.decisions.push(structuredClone(decision));next.period=derive(next,false).answered;return next;}

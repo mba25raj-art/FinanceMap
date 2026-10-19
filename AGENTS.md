@@ -191,3 +191,9 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - My learning includes an eight-task mixed-format practice record with starter and alternate datasets. Keep it separate from applied lab/case coverage and existing topic, lesson and cash-mystery totals.
 - Numerical tolerance is 0.01 lakh or 0.01 percentage point for ownership. Each objective field earns one check, with no pass threshold or competency label. Exact selects use stated choices; written reasoning is ungraded. No drag-only controls.
 - Save dataset and timestamped, versioned raw responses, reconstruct checks, preserve first/latest, and require explicit Finish after all submissions. Resume must not create a new record or erase mistakes.
+
+## Feedback and help (Task 09.2)
+
+- Mixed-practice feedback diagnoses the failed field's calculation pattern or mechanism; do not infer a learner belief as a psychological fact. Company feedback names failed recognition, timing, funding and valuation mechanisms.
+- Direction and mechanism hints precede an explicit worked-answer reveal. Save question/version, stage and timestamp in order. Recompute help/worked-reveal-before-response per attempt; later help cannot retroactively change the first response. New records have no hints.
+- Written-judgment rubrics are visible before writing, and defensible conditional alternatives appear after an attempt or requested worked hint. No automatic free-text correctness or competency credit. Keep guided unassisted observations separate from later independent transfer evidence.
