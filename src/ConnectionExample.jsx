@@ -1,0 +1,3 @@
+import examples from '../content/connections/examples.v1.json';
+const byId=Object.fromEntries(examples.examples.map(e=>[e.edgeId,e]));
+export default function ConnectionExample({edge}){const item=byId[edge.id];return item?<details className="connection-example"><summary>Why this connection · worked numbers</summary><p>Independent illustrative example · INR lakh except stated days and rates.</p><p>{item.example}</p><p><strong>Conditions: </strong>{item.conditions}</p><p className="small muted">This example explains the mapped mechanism. Your company decision trace uses your own saved transactions and assumptions.</p></details>:<p className="small muted">Conceptual relationship. No numerical case trace is registered for this link.</p>;}

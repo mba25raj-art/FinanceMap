@@ -2,6 +2,7 @@ import {useState} from 'react';
 import {companyScript as script,emptyCompany,replayCompany,addCompanyDecision,companyHint} from './activities/company.js';
 import {CompanyInputs,CompanyResults,companyOffers as offers} from './CompanyFinance.jsx';
 import {companyDiagnosis,reasoningRubric} from './activities/practice-support.js';
+import CompanyTrace from './CompanyTrace.jsx';
 import CompanyStory from './CompanyStory.jsx';
 import CompanyReplay from './CompanyReplay.jsx';
 import {LabTable} from './CollectionLab.jsx';
@@ -28,6 +29,6 @@ export default function CompanyCase({record=emptyCompany(),onCommit,onRestart,on
  <div className="entry-links">{round.concepts.map(id=><button key={id} className="text-button" onClick={()=>onConcept(id)}>Read {id} in the Atlas</button>)}</div></section>}
  </section>}
  {result.phase!=='setup'&&<section><h2>Your company ledger · through {result.cutoff}</h2><p>Actual posted transactions are separate from future promised receipts and payments. No future loan or overdraft is invented.</p><CompanyStatements result={result}/><details><summary>Inspect actual transaction history · INR lakh</summary><LabTable caption="Journal provenance; debit positive, credit negative" headers={['Date','Source event','Account','Signed entry']} rows={result.model.journal.map(r=>[r.date,r.sourceId,label(r.account),lakh(r.amount)])}/></details><details><summary>Inspect the known transaction schedule</summary><LabTable caption="Future scheduled events · amounts in INR lakh; not yet posted" headers={['Date','Event','Amount']} rows={result.pending.map(t=>[t.date,t.type,f(t.amount)])}/><p>The quarter forecast later combines these cash dates, the equipment plan and the minimum policy. Annual coupons and later tax remain separate disclosed obligations.</p></details>{result.completed>0&&<details><summary>Review your earlier round evidence</summary>{result.rounds.filter(r=>r.explanation).map((r,i)=><section key={i}><h3>Round {i+1} · {script.rounds[i].title}</h3><p>Choice: {r.choice}. Predictions submitted: {r.attempts.length}. Requested hint stages: {r.hints.length}.</p><p className="lab-reflection">{r.explanation}</p></section>)}</details>}</section>}
- <CompanyReplay record={record} records={records} recordIndex={recordIndex} onFork={onFork} onOpenRecord={onOpenRecord}/>
+ <CompanyTrace result={result} onConcept={onConcept}/><CompanyReplay record={record} records={records} recordIndex={recordIndex} onFork={onFork} onOpenRecord={onOpenRecord}/>
  </main>;
 }

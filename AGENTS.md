@@ -210,3 +210,9 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Character messages restate a concrete disclosed interest or obligation for the current decision. Story cannot alter the model, introduce an undisclosed event or leak a numerical prediction answer.
 - Acknowledge saved explanations and observed numerical corrections without grading prose or rewarding a lucky balance/value. Endings retain actual funding contracts after deferral and label future demand as assumed.
 - Optional event cards describe the deterministic preselected receipt variant. Keep hints, retries and saved-decision forks available without timers, streak penalties or winner labels.
+
+## Causal paths and connection examples (Task 10.2)
+
+- Company traces replay actual same-date before/after histories for the latest committed decision. Separate immediate postings, future cash dates and conditional forecast/value. Do not disclose the next unanswered financial prediction.
+- The 22 master financial links wholly inside the selected concept set have scoped independent numerical examples in content/connections/examples.v1.json. Preserve master IDs/directions/conditions and learning-versus-financial roles. Examples do not make the entire graph a computed model; other links remain conceptual.
+- Keep the same essential causal meaning in text and labelled tables, including actual journal provenance, without requiring canvas interaction, dragging or colour. Native disclosure controls accompany the Atlas numerical examples.
