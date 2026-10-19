@@ -204,3 +204,9 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Tamarind Catering is a distinct complete-packet transfer assessment. Keep its thirteen objective fields, numerical tolerance, fictional terms and ungraded recommendation separate from guided totals. Its financing quote is not the computed budget requirement or the separately stated valuation debt.
 - Protect unanswered transfer packets from worked study, including search/history/restored routes. An explicit study action records assistance for all open unanswered packets. Keep first response, later feedback/revisions, requested help, replay exposure and scenario version separate. Local history cannot prove absence of outside help.
 - Independently reviewed competencies remain a separate empty category until actual explanation review exists. Do not accept imported awards, grade unsupported prose or combine guided correction counts with transfer understanding.
+
+## Purposeful company story (Task 10.1)
+
+- Character messages restate a concrete disclosed interest or obligation for the current decision. Story cannot alter the model, introduce an undisclosed event or leak a numerical prediction answer.
+- Acknowledge saved explanations and observed numerical corrections without grading prose or rewarding a lucky balance/value. Endings retain actual funding contracts after deferral and label future demand as assumed.
+- Optional event cards describe the deterministic preselected receipt variant. Keep hints, retries and saved-decision forks available without timers, streak penalties or winner labels.
