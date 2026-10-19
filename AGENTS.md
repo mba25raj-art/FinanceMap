@@ -172,3 +172,10 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Company records save only setup, hints, numerical attempts, contracts and ungraded explanations. Period counts explained rounds; stale-action protection uses decision-history length. Preserve existing version 1 prefixes as later rounds are implemented.
 - Show all financial terms before binding commitment, reveal numerical feedback after an attempt or requested worked hint, and retain first/latest/help chronology. Do not grade prose or award competency from these guided checks.
 - Actual journal postings, future cash commitments and later month-end accruals remain separate. Resume and Atlas return select the same global activity index. Automated checks do not replace the outstanding live-browser and pilot evidence.
+
+## Complete company case (Task 08.3)
+
+- All six Nila rounds are available with an explicit Finish after six saved explanations. Existing 08.2 version 1 prefixes continue at round four. Company completion is separate from P02 and is not a competency award.
+- Compute funding from the exact prior choices and disclosed dates. Show exact service, dilution and constraints before committing. Reject no funding with a positive gap and equipment purchase that breaches the full-quarter reserve. Deferring equipment does not cancel issued debt or equity.
+- Close January before the annual FCFF prediction. Forecast from actual closing operating working capital. Keep actual statements, quarter cash, standalone project NPV and continuing-company DCF separate. Subtract initial equipment once; do not recycle project liquidation into company terminal value or double-count payables/claims.
+- Stated financing and tax terms are hypothetical. The first new-debt coupon spans 365 days; later Actual/365 coupons can differ for a 366-day interval. Keep all later obligations visible even though the quarter cash check excludes them.

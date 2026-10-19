@@ -45,7 +45,7 @@ function parseScreen(hash, { concepts, journeys }) {
       if (!/^[1-9]\d*$/.test(raw) || !Number.isSafeInteger(Number(raw))) return { ...base, view: 'brief', message: 'That run link is unavailable. You can start or resume below.' };
       return { ...base, view: 'missions', journeyId: 'P02', runIndex: Number(raw)-1, id: id(params.get('concept') || 'A05') };
     }
-    if(parts[1]===companyId&&parts.length===2){const raw=params.get('attempt');if(raw!==null&&(!/^[1-9]\d*$/.test(raw)||!Number.isSafeInteger(Number(raw))))return {...base,view:'missions',message:'That company record is unavailable. Open the company preview below.'};return {...base,view:'company',activityRun:raw===null?undefined:Number(raw)-1};}
+    if(parts[1]===companyId&&parts.length===2){const raw=params.get('attempt');if(raw!==null&&(!/^[1-9]\d*$/.test(raw)||!Number.isSafeInteger(Number(raw))))return {...base,view:'missions',message:'That company record is unavailable. Open the company case below.'};return {...base,view:'company',activityRun:raw===null?undefined:Number(raw)-1};}
   }
   return recover('This destination is unavailable. Your current session record is still here.');
 }

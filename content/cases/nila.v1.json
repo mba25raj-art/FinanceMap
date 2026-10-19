@@ -1,7 +1,7 @@
 {
   "activityId": "CASE-NILA-HOMEWARE",
   "scenarioVersion": "1.0.0",
-  "status": "three-round-preview",
+  "status": "available",
   "title": "Nila Homeware: six connected rounds",
   "modelScenarioFile": "content/model/nila-case.v1.json",
   "audience": "MBA beginner-to-intermediate; optional refresher lessons; arithmetic only; untimed",
@@ -369,7 +369,7 @@
     "scope": "Complete six-round script, source opening, concept IDs, disclosed terms and independent default numerical controls. Not professional approval, live-browser testing or learner-pilot evidence."
   },
   "runtimeScope": {
-    "availableRounds": 3,
+    "availableRounds": 6,
     "totalRounds": 6
   }
 }

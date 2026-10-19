@@ -15,8 +15,8 @@ Content existence does not establish editorial review, professional completeness
 | Selected integrated / reviewed | 30 / 30 |
 | Playable labs / planned labs | 3 / 0 |
 | Playable cases / planned cases | 2 / 0 |
-| Concepts with playable applied assessment | 13 |
-| Concepts without playable applied assessment | 685 |
+| Concepts with playable applied assessment | 26 |
+| Concepts without playable applied assessment | 672 |
 | Learning / financial relationships | 2127 / 393 |
 | Computed model dependencies | 0 |
 

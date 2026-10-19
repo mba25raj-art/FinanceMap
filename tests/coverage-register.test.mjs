@@ -63,8 +63,8 @@ test('available case assessment matches implemented clues; reference trails, sup
   for (const a of register.activities.filter(a => a.availability === 'planned')) assert.equal(a.route, null);
   assert.equal(register.summary.playableLabs, 3); assert.equal(register.summary.plannedLabs, 0);
   assert.equal(register.summary.playableCases, 2); assert.equal(register.summary.plannedCases, 0);
-  assert.equal(register.summary.conceptsWithPlayableAppliedAssessment, 13);
-  assert.equal(register.summary.conceptsWithoutPlayableAppliedAssessment, 685);
+  assert.equal(register.summary.conceptsWithPlayableAppliedAssessment, 26);
+  assert.equal(register.summary.conceptsWithoutPlayableAppliedAssessment, 672);
   assert.ok(!byId('A02').gaps.includes('no-playable-applied-assessment'), 'Collection prediction now assesses receivables');
   assert.ok(byId('T14.03').referenceTrails.includes('P02'));
   assert.ok(byId('T14.03').gaps.includes('no-playable-applied-assessment'), 'A reference-trail stop is not a case question');
