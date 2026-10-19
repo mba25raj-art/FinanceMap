@@ -260,17 +260,19 @@
       "id": "LAB-EQUIPMENT",
       "kind": "lab",
       "title": "Equipment investment",
-      "availability": "planned",
-      "route": null,
+      "availability": "available",
+      "route": "#labs/LAB-EQUIPMENT",
       "roadmapTask": "07.2",
-      "plannedConcepts": [
+      "evidence": "src/EquipmentLab.jsx; src/activities/equipment.js; tests/equipment-lab.test.mjs",
+      "assessmentConcepts": [
         "A07",
         "A08",
-        "T12.05",
-        "T03.01",
         "T03.12"
       ],
-      "evidence": "Finance_Atlas_Implementation_Backlog.xlsx: Task detail 07.2; Release scope"
+      "referenceConcepts": [
+        "T12.05",
+        "T03.01"
+      ]
     },
     {
       "id": "LAB-FINANCING",

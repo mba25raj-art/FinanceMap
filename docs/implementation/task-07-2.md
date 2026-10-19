@@ -1,0 +1,11 @@
+# 07.2 — equipment investment lab
+
+Learners commit acquisition/payment/availability/life assumptions and an acquisition-day prediction before results. The same ledger closes all twelve months and reconciles statements; a no-purchase baseline isolates the new asset's depreciation and profit effect from existing equipment. A separate supplier creditor records free one-month credit when chosen. Payment remains investing cash.
+
+Buy-now and July-delay branches use identical selected terms, fixed price, disclosed capacity (100 additional annual orders) and assumed net receipts of six at two availability anniversaries. The two-receipt project window assumes no additional working capital, later cash or terminal value, even if an accounting carrying amount remains. Accounting useful life is not a hidden cash-flow generator. Actual/365 NPV includes the payment exactly once.
+
+The separately disclosed cash forecast includes operating payments 15 in March, receipt 8 in June and minimum 3. Default January acquisition has positive NPV 0.41322314 but needs funding eight before June; July's later benefits reduce present value while avoiding that early buffer gap. These are conditional comparisons, not a single winning strategy or a professional recommendation.
+
+Registered records preserve prediction and ungraded explanation, derive results through deterministic replay and use the existing local backup/recovery/return workflow. Checks cover recognition versus settlement, availability, useful life, baseline accounting, exact NPV, funding dates, invalid versions/results, save round trip and hidden initial UI. Automated render evidence does not establish interactive browser, keyboard or mobile QA; 11.1 retains that gap. Next: 07.3 financing comparison.
+
+Validation: 39 targeted lab, route, save/recovery and coverage checks passed. After removing duplicate branch computation, all seven equipment checks passed again; the two changed entry/lesson availability checks also passed. Production build, four hosting checks and deterministic coverage passed. The broader 698-page rendering check passed in 07.1; no new live-browser or pilot evidence is claimed. Existing bundle-size and SSR WebSocket-port notices remain.

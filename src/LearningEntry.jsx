@@ -1,5 +1,6 @@
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import { unfinishedCaseRuns } from './learning-session.js';
+import activityPolicy from '../content/coverage-policy.json';
 
 export function ResumeCard({ session, onResume }) {
   const pending = unfinishedCaseRuns(session).at(-1);
@@ -66,5 +67,5 @@ export function SimulationEntry({ session, onResume, onBrief, onAtlas }) {
 
 export function LabsEntry({ onConcept,onLab }) {
   const labs=[['Customer collection','Predict collection and inspect cash, receivables and the funding timeline.','A02','LAB-COLLECTIONS'],['Equipment investment','Connect equipment purchase, depreciation and project value.','A07','LAB-EQUIPMENT'],['Financing comparison','Compare repayment pressure, ownership dilution and value.','A18','LAB-FINANCING']];
-  return <main className="single-view entry-main"><span className="eyebrow">LABS</span><h1>Change one thing. Understand the effect.</h1><p className="lead">Try customer collection now. Equipment and financing experiments follow next; their reference lessons are available.</p><div className="entry-options labs-options">{labs.map(([name,description,id,lab])=><section key={id}><span className="eyebrow">{lab==='LAB-COLLECTIONS'?'AVAILABLE LAB':'PLANNED LAB'}</span><h2>{name}</h2><p>{description}</p>{lab==='LAB-COLLECTIONS'&&<button className="primary" onClick={()=>onLab(lab)}>Open collection lab</button>}<button className="text-button" onClick={()=>onConcept(id)}>Read the related concept <ArrowRightIcon/></button></section>)}</div></main>;
+  return <main className="single-view entry-main"><span className="eyebrow">LABS</span><h1>Change one thing. Understand the effect.</h1><p className="lead">Try collection and equipment investment now. Financing comparison follows next; its reference lesson is available.</p><div className="entry-options labs-options">{labs.map(([name,description,id,lab])=><section key={id}><span className="eyebrow">{activityPolicy.activities.some(a=>a.id===lab&&a.availability==='available')?'AVAILABLE LAB':'PLANNED LAB'}</span><h2>{name}</h2><p>{description}</p>{activityPolicy.activities.some(a=>a.id===lab&&a.availability==='available')&&<button className="primary" onClick={()=>onLab(lab)}>Open {name.toLowerCase()} lab</button>}<button className="text-button" onClick={()=>onConcept(id)}>Read the related concept <ArrowRightIcon/></button></section>)}</div></main>;
 }

@@ -142,3 +142,10 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Preserve every experiment and resume its exact record from My learning or a lesson return link. Reject stale duplicate commits. Export objects and new decisions must not share mutable nested data with the active profile.
 - The fixed operating/supplier payments belong to a disclosed separate forecast, not the lab ledger. Payment timing changes the funding path, not sale profit. Guided predictions and ungraded prose award no demonstrated-understanding label.
 - Collection is available; equipment and financing remain planned pending their own ordered tasks. Continue 07.2 next. Browser/keyboard/mobile QA remains outstanding under 11.1; do not claim it from SSR/reducer tests.
+
+## Equipment investment lab (Task 07.2)
+
+- LAB-EQUIPMENT 1.0.0 registers timing/life/acquisition-day predictions and an optional ungraded explanation. Periods 0–2 correspond to committed stages. Resume and lesson returns select the existing record; derived statements are never imported.
+- Isolate new-equipment depreciation/profit against an identically closed no-purchase baseline. Acquisition, free one-month supplier credit, cash settlement and availability are distinct events. Useful lives are 24/36 months, residual zero; no invisible capacity benefit is inferred from depreciation.
+- Explicitly disclose 100 additional annual orders and hypothetical net receipts six at the first two availability anniversaries. The two-receipt project window assumes no later cash, additional working capital or terminal proceeds even if accounting carrying value remains. Both branches use the same terms and Actual/365 discounting from 1 January 2026.
+- Default buy-now NPV is 0.41322314 but its separate cash forecast needs eight before June receipts. July delay avoids that early funding gap while reducing present value. Value, affordability and decision quality remain separate; no branch receives a mastery label. Financing is still planned until 07.3.

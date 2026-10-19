@@ -262,7 +262,7 @@ test('guided entry, case brief, resume and missing-run screens show honest next 
     assert.ok(reference.includes('ATLAS READING TRAIL'));
     assert.ok(reference.includes('STOP 1 OF 8'));
     assert.ok(!reference.includes('CASE CLUE'));
-    const labs=render('labs');assert.equal((labs.match(/PLANNED LAB/g)||[]).length,2);
+    const labs=render('labs');assert.equal((labs.match(/PLANNED LAB/g)||[]).length,1);
     const focused=render('missions',s,{journeyId:'P02',runIndex:0,id:'A08'});
     assert.ok(focused.includes('focused-workspace')&&focused.includes('Open full lesson'));
     assert.ok(!focused.includes('deeper-content')&&!focused.includes('Topic quiz'),'Case workspace mounts the detailed companion lesson');
