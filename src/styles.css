@@ -63,3 +63,8 @@
 .record-import{display:flex;flex-direction:column;gap:.35rem;font-size:.9rem}
 .record-import input{max-width:100%;font:inherit}
 .retention-notice{margin:1rem auto;padding:.8rem 1rem;max-width:1260px;background:#fff3d4;color:#493d24;border:1px solid #ddc78e;border-radius:8px}
+.learning-next{margin:1.5rem 0;padding:1.5rem;border:1px solid #bfd2ca;border-radius:12px;background:#f0f6f1}
+.learning-next h2{margin-top:.4rem}
+.learning-next table{width:100%}
+.learning-next td,.learning-next th{white-space:normal;overflow-wrap:anywhere}
+.review-next li{margin:.8rem 0}

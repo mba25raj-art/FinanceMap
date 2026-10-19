@@ -122,3 +122,9 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Save only the app key; never call localStorage.clear(). Corrupt/unsupported storage pauses overwrite. Failed or conflicting writes keep the last stored bytes and current memory record with honest export/recovery controls. Reset and Import replacement need their learner-facing confirmations.
 - Browser restore precedes run-link resolution and retains the unanswered-detour hint gate. Do not autosave an empty record immediately after Reset. Scroll remains in memory; future model saves must replay validated registered decisions rather than trust imported balances.
 - Automated storage/SSR evidence does not establish interactive reload, native file chooser, mobile or keyboard QA. The extension connection timed out again in this task; carry browser verification under 11.1 without marking it passed.
+
+## My learning (Task 05.3)
+
+- Lead with the latest unfinished run, then recorded difficulties, then an available brief/selected lesson. Resume never starts or replays. Keep manual browsing and optional directed preparation available.
+- Keep explored visits, submitted practice and independent first transfer-result observations separate. The 01.2 specification requires a result plus explanation for demonstrated work. Ungraded self-check reflections do not award demonstrated understanding; reasoning evidence follows Chunk 09.
+- Aggregate case first/latest evidence across replays, retain corrected first mistakes for review, and keep A02 aliases canonical. Suggestions are derived views of validated records, not imported mastery flags. Extend activity recommendations only when their verified implementations become available.
