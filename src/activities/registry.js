@@ -3,7 +3,9 @@ import {EQUIPMENT,replayEquipment,emptyEquipment} from './equipment.js';
 import {emptyCollection} from './collections.js';
 import {FINANCING,replayFinancing,emptyFinancing} from './financing.js';
 import {COMPANY,replayCompany,emptyCompany} from './company.js';
+import {PRACTICE,emptyPractice,replayPractice} from './practice.js';
 export const activityDefinitions={
+ [PRACTICE]:{title:"Mixed finance practice",empty:emptyPractice,replay:replayPractice,stageLabel:r=>`${r.period}/8 tasks submitted`,isUnfinished:r=>!replayPractice(r).finished},
  [COLLECTIONS]:{title:'Customer collection',empty:emptyCollection,replay:replayCollection,stages:['setup','prediction next','result; explanation next','explanation saved']},
  [EQUIPMENT]:{title:'Equipment investment',empty:emptyEquipment,replay:replayEquipment,stages:['setup and prediction','result; explanation next','explanation saved']},
  [FINANCING]:{title:'Financing comparison',empty:emptyFinancing,replay:replayFinancing,stages:['setup and prediction','result; recommendation next','recommendation saved']},

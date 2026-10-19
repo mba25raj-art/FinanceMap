@@ -74,7 +74,7 @@
       }
     },
     "simulation": {
-      "description": "Requires a registered deterministic replay validator; the runtime currently registers LAB-COLLECTIONS, LAB-EQUIPMENT LAB-FINANCING and the six-round CASE-NILA-HOMEWARE 1.0.0 and rejects unregistered versions.",
+      "description": "Requires a registered deterministic replay validator; the runtime currently registers LAB-COLLECTIONS, LAB-EQUIPMENT LAB-FINANCING and the six-round CASE-NILA-HOMEWARE 1.0.0, PRACTICE-FINANCE-CHECK 1.0.0 and rejects unregistered versions.",
       "type": "object", "additionalProperties": false,
       "required": ["activityId", "scenarioVersion", "period", "decisions"],
       "properties": {

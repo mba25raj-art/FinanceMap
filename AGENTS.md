@@ -185,3 +185,9 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Restart from an actual saved contract decision into a new record. Preserve the original and prior completed-round history. Mark prior exposure from the restarted round onward; do not describe replay observations as fresh independent evidence.
 - The alternate scenario shifts all customer receipts exactly thirty calendar days while retaining invoice dues, fee dates and all other terms. Disclose it before setup and keep it visible. No random event or lucky-outcome score.
 - Compare finished records only within the same receipt scenario and version. Use common supplied valuation rates in the comparison, keeping original chosen rates in their records. Explain cash, service, dilution and assumed operating differences; larger conditional values do not grade decision quality.
+
+## Mixed practice (Task 09.1)
+
+- My learning includes an eight-task mixed-format practice record with starter and alternate datasets. Keep it separate from applied lab/case coverage and existing topic, lesson and cash-mystery totals.
+- Numerical tolerance is 0.01 lakh or 0.01 percentage point for ownership. Each objective field earns one check, with no pass threshold or competency label. Exact selects use stated choices; written reasoning is ungraded. No drag-only controls.
+- Save dataset and timestamped, versioned raw responses, reconstruct checks, preserve first/latest, and require explicit Finish after all submissions. Resume must not create a new record or erase mistakes.
