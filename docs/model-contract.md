@@ -27,7 +27,7 @@ The chart separates cash, customer claims, stock, equipment cost/accumulated dep
 | Tax | Hypothetical 20% on positive period pre-tax income, no loss benefit or deferred tax. Accrual and later payment are separate. The reference-core sequence switches this and interest/depreciation off. |
 | Period close | Generated accruals have deterministic period IDs and cannot be posted twice. Close seals the period; changing earlier choices requires replay from the original scenario. |
 
-Transactions carry stable IDs and nondecreasing dates; same-date order is explicit. A failed operation leaves the prior state unchanged. Reject duplicate IDs, unsupported fields, invalid dates, non-finite/negative/over-limit inputs and inconsistent settlement/availability dates. `src/model/contract.js` provides current input validation and field-specific messages before posting implementation in 06.2. Outstanding-balance, stock and cash checks belong to that posting stage.
+Transactions carry stable IDs and nondecreasing dates; same-date order is explicit. A failed operation leaves the prior state unchanged. Reject duplicate IDs, unsupported fields, invalid dates, non-finite/negative/over-limit inputs and inconsistent settlement/availability dates. `src/model/contract.js` provides current input validation and field-specific messages before the posting rules in 06.2. Outstanding-balance, stock and cash checks belong to that posting stage.
 
 Cash cannot become negative in an executed ledger; return a funding problem with the unmet amount and buffer requirement, without inventing a loan or partially posting. The hypothetical minimum cash 3 is a separate policy signal. A funded transaction can be bank-affordable while missing that policy buffer. Activities must state/enforce their selected constraints. Forecasts may show negative unfunded cash explicitly as a funding need, not an executed balance.
 
@@ -41,7 +41,7 @@ The operating working-capital perimeter is receivables + inventory − ordinary 
 
 ## Forecast and valuation handoff
 
-06.4 must add dated receipts/payments and cumulative funding to an explicit minimum, project NPV, forecast operating drivers/reinvestment and a scoped FCFF DCF. FCFF uses operating tax/earnings before debt service and excludes borrowing; reported operating cash and total cash remain different measures. Match cash-flow/rate currency, period and claims; require WACC greater than perpetual growth. Add only explicitly excess cash under the operating perimeter and deduct each included claim once.
+Task 06.4 implements dated receipts/payments and cumulative funding to an explicit minimum, project NPV, forecast operating drivers/reinvestment and a scoped FCFF DCF. FCFF uses operating tax/earnings before debt service and excludes borrowing; reported operating cash and total cash remain different measures. Match cash-flow/rate currency, period and claims; require WACC greater than perpetual growth. Add only explicitly excess cash under the operating perimeter and deduct each included claim once.
 
 Preserve the independent 01.2 controls: cash forecast 6→1→−2 needs cumulative funding 2 then 5 to hold minimum 3; loan 10 at 12% for one year costs 1.2, while equity 10 at pre-money 40 dilutes new ownership to 20%; project −10/+6/+6 has NPV about 0.41322 at 10%; FCFF 10/12 with growth 3% gives enterprise 164.93506 at WACC 10% and 127.97619 at 12%. These fixtures are not cumulative company rounds.
 
@@ -53,4 +53,4 @@ Additional independent fixtures cover accrual settlement, full-month depreciatio
 
 Saves retain the registered scenario/version, current period and committed decisions. Rebuild journals, statements and valuation through validated deterministic replay; never accept imported balances or scores. Curriculum relationships remain distinct from the calculation rules. Only explicit documented model rules may support causal traces; no learning/navigation edge automatically becomes a dependency.
 
-Review is a scoped Codex AI contract/source/arithmetic check. It is not professional approval, current legal guidance or learner-pilot evidence. Sources: retrieved implementation roadmap page 16 and 01.2 learner/outcome specification; conceptual IAS 7/IAS 16 background already bounded in the relevant lesson packages. Task 06.2 implements posting next.
+Review is a scoped Codex AI contract/source/arithmetic check. It is not professional approval, current legal guidance or learner-pilot evidence. Sources: retrieved implementation roadmap page 16 and 01.2 learner/outcome specification; conceptual IAS 7/IAS 16 background already bounded in the relevant lesson packages. Tasks 06.2–06.4 implement posting, statements, close, forecasts and valuation; their numerical checks are recorded separately.
