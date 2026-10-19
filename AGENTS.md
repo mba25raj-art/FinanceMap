@@ -8,7 +8,7 @@
 - Keep the user informed about decisions that affect navigation, content coverage, example data, or persistence.
 - Preserve the master atlas IDs and distinguish financial relationships from preparation/navigation relationships.
 - Label incomplete lessons as mapped topics. Use illustrative INR lakh company figures; do not imply they come from an actual company.
-- Progress is session-only until cross-session storage is explicitly designed.
+- Local browser persistence is designed and implemented in 05.1/05.2. Save only the validated versioned learning record; unavailable storage falls back to memory with a visible message. No account/cloud or cross-device promise.
 
 Run the local server yourself and open the preview in the browser available to this environment. Do not give the user server-start instructions when you can run it.
 
@@ -114,3 +114,11 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - B3 separates dated forecasts, assumed liquidity buffers, principal financing and ordinary-equity ownership. B4 separates capital expenditure, depreciation, EBIT/NOPAT and incremental cash. B5–B6 match rates, periods and claims; require WACC greater than perpetual growth; keep excess cash and included claims explicit and counted once.
 - Every batch records Codex AI content/source/arithmetic review with independent numerical checks. Professional approval and learner-pilot evidence remain separate. Interactive browser QA is still outstanding under 11.1. Curriculum completion does not implement a financial-model engine or planned activities.
 - Continue to 05.1 before enabling cross-session persistence. First-release saves are local to the browser, with versioned validation, export/import and explicit reset confirmation. Accounts/cloud synchronisation are deferred.
+
+## Local save and resume (Tasks 05.1–05.2)
+
+- `docs/saved-data-contract.md` and the v1 schema define the browser-owned record. `learning-save.js` validates imported identities, versions, choice bounds, hint history and progression; it reconstructs correctness and completion from installed definitions. Never trust imported scores or answer keys.
+- Preserve topic/lesson/case first/latest attempts, help and retry state, explicit Finish, run order and canonical A02 keys. Generate assessment fingerprints from actual question/data/option/answer definitions. Unknown versions remain recovery data rather than credited progress.
+- Save only the app key; never call localStorage.clear(). Corrupt/unsupported storage pauses overwrite. Failed or conflicting writes keep the last stored bytes and current memory record with honest export/recovery controls. Reset and Import replacement need their learner-facing confirmations.
+- Browser restore precedes run-link resolution and retains the unanswered-detour hint gate. Do not autosave an empty record immediately after Reset. Scroll remains in memory; future model saves must replay validated registered decisions rather than trust imported balances.
+- Automated storage/SSR evidence does not establish interactive reload, native file chooser, mobile or keyboard QA. The extension connection timed out again in this task; carry browser verification under 11.1 without marking it passed.

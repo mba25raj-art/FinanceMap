@@ -20,7 +20,7 @@ export function LessonPractice({item,records,dispatch}) {
     {record.responses.length>0&&<p className="attempt-record small"><strong>First lesson-practice answer:</strong> “{first.text}” — {record.responses[0].correct?'correct':'not correct'}{record.responses[0].hinted?', after requested help':''}. Latest submission: {record.responses.at(-1).correct?'correct':'not correct'}. {record.responses.length} submitted answer(s).</p>}
     {record.hints.length>0&&<p className="small muted">Requested help is recorded for this question. It does not submit an answer or advance a case.</p>}
     {record.choice!==null&&<button className="text-button" onClick={()=>send('lesson-retry')}>Retry this lesson question</button>}
-    <p className="small muted">Lesson practice is separate from the topic quiz and case clues. Retry keeps your first response. Progress is session-only.</p>
+    <p className="small muted">Lesson practice is separate from the topic quiz and case clues. Retry keeps your first response. See My learning for local-save status and backup controls.</p>
   </section>;
 }
 

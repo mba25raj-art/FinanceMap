@@ -17,7 +17,7 @@ export function AtlasEntry({ session, onResume, onBrief, onExplore, onStatements
   return <main className="single-view entry-main">
     <span className="eyebrow">FINANCE ATLAS</span><h1>Connect the numbers to the decisions.</h1>
     <p className="lead">Learn why one finance idea leads to another. Start with a guided mystery, or explore a concept at your own pace.</p>
-    <p className="small muted entry-note">No account needed. Your learning record stays in this open page; refreshing or closing resets it.</p>
+    <p className="small muted entry-note">No account needed. Local-save status, export, import and reset controls are in My learning.</p>
     <ResumeCard session={session} onResume={onResume}/>
     <div className="entry-options">
       <section><span className="eyebrow">GUIDED BEGINNER ROUTE</span><h2>Why can profit leave you short of cash?</h2>

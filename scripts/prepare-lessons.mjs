@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { parseDeepLessons } from './deep-lesson-format.mjs';
-import { lessons as core } from '../src/data/lessons.js';
+import { lessons as core, mystery } from '../src/data/lessons.js';
 const read = path => JSON.parse(readFileSync(new URL(path, import.meta.url), 'utf8'));
 const atlas = read('../content/master-network.json');
 const guides = read('../content/domain-guides.json');
@@ -81,6 +82,12 @@ for (const n of atlas.nodes) {
   if (!l || !l.summary || !l.example || !l.question || l.options.length !== 3 || new Set(l.options).size !== 3 || !Number.isInteger(l.correct) || l.correct < 0 || l.correct > 2) throw new Error(`Invalid assessment: ${n.id}`);
 }
 writeFileSync(new URL('../src/data/complete-lessons.json', import.meta.url), JSON.stringify(output));
+const assessmentDigest=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
+writeFileSync(new URL('../content/assessment-versions.json',import.meta.url),JSON.stringify({
+  schemaVersion:1,
+  topics:Object.fromEntries(Object.entries(output).map(([id,l])=>[id,assessmentDigest([l.question,l.quizContext||'',l.example,l.options,l.correct])])),
+  cases:{P02:assessmentDigest(mystery.steps.map(c=>[c.concept,c.question,c.options,c.correct]))},
+},null,2)+'\n');
 writeFileSync(new URL('../src/data/domain-study-guides.json', import.meta.url), JSON.stringify(domainDepth));
 writeFileSync(new URL('../content/lesson-coverage.json', import.meta.url), JSON.stringify({
   totalConcepts: atlas.nodes.length, lessons: Object.keys(output).length, examples: Object.keys(output).length,

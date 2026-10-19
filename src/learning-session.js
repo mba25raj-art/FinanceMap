@@ -1,5 +1,5 @@
 import { lessonPracticeReducer } from './lesson-practice.js';
-// Session-only records. Clearing a choice for practice never deletes a response.
+// In-memory reducer; validated local persistence is owned by learning-save.js. Retry retains responses.
 export function createLearningSession(initialAnswers = {}, lessons = {}) {
   let state = { answers: {}, topics: {}, runs: [], activeRun: -1, completedCases: [] };
   for (const [id, choice] of Object.entries(initialAnswers)) {

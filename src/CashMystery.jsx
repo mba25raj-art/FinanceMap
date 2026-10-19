@@ -35,7 +35,7 @@ export default function CashMystery({ step, answers, hints, responses = {}, runN
       <p>₹20 lakh NOPAT + ₹5 lakh depreciation − ₹8 lakh capex − ₹10 lakh invested in working capital = <strong>₹7 lakh FCFF.</strong></p>
       <p>Profit, cash, and value are connected—through reinvestment.</p>
       <button className="primary" onClick={onExploreValuation}>Follow cash into valuation <ArrowRightIcon/></button>
-      <p className="small muted">This case counts once as solved in this session. Replay keeps your earlier answers and completion record.</p>
+      <p className="small muted">This case counts once as solved in this learning record. Replay keeps your earlier answers and completion record.</p>
       <button className="text-button" onClick={onRestart}>Replay case (keeps your record)</button>
     </div> : <section className="mission-question">
       <h2>{clue.title}</h2><p>{clue.question}</p>

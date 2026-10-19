@@ -218,7 +218,7 @@ test('mystery solutions and worked lessons appear only after a valid attempt or 
     assert.ok(learning.includes('Case P02 · Run 1 · finished'));
     assert.ok(learning.includes('Case P02 · Run 2 · unfinished'));
     assert.ok(learning.includes('Adds ₹10 lakh of cash'),'Original wrong answer absent from review');
-    assert.ok(learning.includes('refreshing or closing it resets the session'));
+    assert.ok(learning.includes('Export a backup in My learning'));
 
   }finally{await server.close();delete globalThis.window;}
 });

@@ -9,7 +9,7 @@ export function AttemptRecord({ responses = [], options, label = 'First answer' 
   </p>;
 }
 
-export default function LearningProgress({ session, explored, topicLessons = {}, topicTitle = id => id, caseSteps = {} }) {
+export default function LearningProgress({ session, explored, topicLessons = {}, topicTitle = id => id, caseSteps = {}, retention = "Current learning is in memory. Check My learning for save status." }) {
   const counts = learningCounts(session);
   return <>
     <div className="learning-stats">
@@ -18,7 +18,7 @@ export default function LearningProgress({ session, explored, topicLessons = {},
       <div><strong>{counts.cluesAnswered}</strong><span>Case clues answered</span></div>
       <div><strong>{counts.casesSolved}</strong><span>Distinct cases solved</span></div>
     </div>
-    <p className="small muted">Session totals count each concept, topic quiz, case clue and finished case once. A topic quiz in a companion lesson is separate from the case clue. Visiting a concept is exploration, not proof of mastery.</p>
+    <p className="small muted">Learning totals count each concept, topic quiz, case clue and finished case once. A topic quiz in a companion lesson is separate from the case clue. Visiting a concept is exploration, not proof of mastery.</p>
     <div className="answer-summary">
       <section><h2>Topic quiz record</h2>
         <p><strong>{counts.topicsLatestCorrect} of {counts.topicsAnswered}</strong> correct on the latest submitted answer.</p>
@@ -29,8 +29,8 @@ export default function LearningProgress({ session, explored, topicLessons = {},
         <p><strong>{counts.cluesFirstCorrect} of {counts.cluesAnswered}</strong> correct on the first submitted answer, without a requested hint.</p>
       </section>
     </div>
-    <p className="small muted">Retry clears the current selection, while these records keep your submitted answers. Replays update the latest answer and preserve the first answer from this session. Finishing a replay does not add another distinct case. {counts.completedRuns} completed {counts.completedRuns === 1 ? 'run' : 'runs'} this session.</p>
-    <p className="small muted session-note">Progress lasts only while this page stays open; refreshing or closing it resets the session.</p>
+    <p className="small muted">Retry clears the current selection, while these records keep your submitted answers. Replays update the latest answer and preserve the first answer in this learning record. Finishing a replay does not add another distinct case. {counts.completedRuns} completed {counts.completedRuns === 1 ? 'run' : 'runs'} in this learning record.</p>
+    <p className="small muted session-note">{retention}</p>
     {!!counts.topicsAnswered && <details className="session-history"><summary>Review topic quiz answers</summary>
       {Object.entries(session.topics).map(([id, responses]) => <section key={id}>
         <h3>{topicTitle(id)}</h3>
