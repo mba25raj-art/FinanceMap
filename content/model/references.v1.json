@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "source": "Finance_Atlas_Implementation_Roadmap.docx, page 16; Finance_Atlas_Task_01_2_Learner_and_Outcomes.md; retrieved 19 October 2026",
+  "core": {
+    "id": "roadmap-core", "scenarioId": "NILA-HOMEWARE", "scenarioVersion": "1.0.0",
+    "rules": {"depreciation": false, "interest": false, "taxRate": 0},
+    "transactions": [
+      {"id": "ref-sale", "type": "credit-sale", "date": "2026-01-05", "amount": 20, "cost": 12, "dueDate": "2026-02-04"},
+      {"id": "ref-collection", "type": "collection", "date": "2026-01-10", "amount": 10, "invoiceId": "opening-customers"},
+      {"id": "ref-borrow", "type": "borrowing", "date": "2026-01-15", "amount": 20, "annualRate": 0.12, "maturity": "2027-01-15"},
+      {"id": "ref-equipment", "type": "equipment-purchase", "date": "2026-01-15", "amount": 30, "cashPaid": 30, "residual": 0, "lifeMonths": 60, "availableDate": "2026-01-16"}
+    ],
+    "expected": [
+      {"after": 1, "cash": 20, "receivables": 50, "inventory": 38, "equipment": 100, "payables": 25, "debt": 75, "profit": 8, "equity": 108, "assets": 208},
+      {"after": 2, "cash": 30, "receivables": 40, "inventory": 38, "equipment": 100, "payables": 25, "debt": 75, "profit": 8, "equity": 108, "assets": 208},
+      {"after": 4, "cash": 20, "receivables": 40, "inventory": 38, "equipment": 130, "payables": 25, "debt": 95, "profit": 8, "equity": 108, "assets": 228}
+    ],
+    "cashFlow": {"operating": 10, "investing": -30, "financing": 20, "change": 0}
+  },
+  "independent": {
+    "note": "These are independent checks, not cumulative company rounds.",
+    "accrual": {"expense": 6, "payment": 4, "remainingPayable": 2, "profitEffect": -6, "cashEffect": -4},
+    "depreciation": {"cost": 24, "residual": 0, "lifeMonths": 12, "fullMonthCharge": 2, "closingNet": 22, "cashEffect": 0},
+    "interest": {"principal": 10, "annualRate": 0.12, "days": 365, "expense": 1.2, "principalAfterInterest": 10},
+    "tax": {"revenue": 10, "cost": 4, "rate": 0.2, "preTax": 6, "expense": 1.2, "netIncome": 4.8},
+    "cashForecast": {"opening": 6, "minimum": 3, "receipts": [4,5], "payments": [9,8], "unfundedClosing": [1,-2], "firstBreach": 0, "cumulativeRequired": [2,5], "stagedDraws": [2,3]},
+    "financing": {"need": 10, "annualRate": 0.12, "years": 1, "interest": 1.2, "totalRepayment": 11.2, "preMoney": 40, "postMoney": 50, "newOwnership": 0.2},
+    "project": {"initial": 10, "cashFlows": [6,6], "rate": 0.1, "npv": 0.4132231404958673},
+    "valuation": {"fcff": [10,12], "wacc": 0.1, "growth": 0.03, "debt": 30, "excessCash": 2, "terminal": 176.57142857142858, "enterprise": 164.93506493506493, "equity": 136.93506493506493, "higherWacc": 0.12, "higherEnterprise": 127.97619047619045, "higherEquity": 99.97619047619045}
+  }
+}
