@@ -74,7 +74,7 @@
       }
     },
     "simulation": {
-      "description": "Requires a registered deterministic replay validator; current runtime supports an empty simulations array only.",
+      "description": "Requires a registered deterministic replay validator; the runtime currently registers LAB-COLLECTIONS 1.0.0 and rejects unregistered versions.",
       "type": "object", "additionalProperties": false,
       "required": ["activityId", "scenarioVersion", "period", "decisions"],
       "properties": {

@@ -13,10 +13,10 @@ Content existence does not establish editorial review, professional completeness
 | Editorially reviewed concept records | 31 |
 | Selected first-release concepts | 30 |
 | Selected integrated / reviewed | 30 / 30 |
-| Playable labs / planned labs | 0 / 3 |
+| Playable labs / planned labs | 1 / 2 |
 | Playable cases / planned cases | 1 / 1 |
-| Concepts with playable applied assessment | 3 |
-| Concepts without playable applied assessment | 695 |
+| Concepts with playable applied assessment | 6 |
+| Concepts without playable applied assessment | 692 |
 | Learning / financial relationships | 2127 / 393 |
 | Computed model dependencies | 0 |
 

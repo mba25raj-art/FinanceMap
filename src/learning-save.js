@@ -18,7 +18,7 @@ export const emptyLearningProfile=()=>({session:{...createLearningSession(),less
 export const hasLearningRecord=p=>Boolean(p.bookmarks.length||p.visited.length||Object.keys(p.session.topics).length||Object.keys(p.session.lessonPractice||{}).length||p.session.runs.length||p.simulations?.length);
 
 // The catalog is trusted authored code. Imported scores, answer keys and account balances are never used.
-export function createSaveCodec({conceptIds,topics,topicVersions,packages,cases}){
+export function createSaveCodec({conceptIds,topics,topicVersions,packages,cases,validateSimulation}){
   const concepts=new Set(conceptIds),questions=new Map();
   for(const lesson of packages)for(const item of lesson.practice){
     const key=`${lesson.conceptId}@${lesson.contentVersion}:${item.id}@${item.version}`;
@@ -91,7 +91,10 @@ export function createSaveCodec({conceptIds,topics,topicVersions,packages,cases}
       session.runs.push(run);
     }
     session.activeRun=integer(p.activeRun,-1,session.runs.length-1,'Active run');
-    if(list(p.simulations,1000,'Simulation records').length)fail('This simulation save version has no registered replay implementation yet. Keep the original export.');
+    profile.simulations=list(p.simulations,1000,'Simulation records').map(record=>{
+      if(!validateSimulation)fail('This simulation save version has no registered replay implementation yet. Keep the original export.');
+      return validateSimulation(record);
+    });
     profile.navigation=str(p.navigation,2048,'Saved route');if(!profile.navigation.startsWith('#'))fail('Saved route must be a local application hash.');
     return profile;
   }
@@ -108,7 +111,7 @@ export function createSaveCodec({conceptIds,topics,topicVersions,packages,cases}
         const definition=cases[run.id];if(!definition)fail('Cannot save an unregistered case version.');
         return {activityId:run.id,scenarioVersion:definition.version,definitionVersion:definition.fingerprint,step:run.step,selectedChoices:Object.entries(run.answers).map(([i,choice])=>({clueId:definition.clues[i].id,choice})),hints:Object.keys(run.hints).filter(i=>run.hints[i]).map(i=>definition.clues[i].id),attempts:Object.entries(run.responses).flatMap(([i,answers])=>answers.map(a=>({clueId:definition.clues[i].id,choice:a.choice,helpBeforeAnswer:a.hinted}))),finished:run.complete};
       }),
-      activeRun:s.activeRun,simulations:profile.simulations||[],navigation:profile.navigation||'#atlas',
+      activeRun:s.activeRun,simulations:structuredClone(profile.simulations||[]),navigation:profile.navigation||'#atlas',
     };
     const document={format:'finance-atlas-learning',schemaVersion:1,savedAt:date.toISOString(),progress};
     decode(document);return document;

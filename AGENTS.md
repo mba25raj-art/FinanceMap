@@ -128,3 +128,17 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Lead with the latest unfinished run, then recorded difficulties, then an available brief/selected lesson. Resume never starts or replays. Keep manual browsing and optional directed preparation available.
 - Keep explored visits, submitted practice and independent first transfer-result observations separate. The 01.2 specification requires a result plus explanation for demonstrated work. Ungraded self-check reflections do not award demonstrated understanding; reasoning evidence follows Chunk 09.
 - Aggregate case first/latest evidence across replays, retain corrected first mistakes for review, and keep A02 aliases canonical. Suggestions are derived views of validated records, not imported mastery flags. Extend activity recommendations only when their verified implementations become available.
+
+## Verified company model (Tasks 06.1–06.4)
+
+- Nila model 1.0.0 preserves the roadmap opening cash/receivables/inventory/equipment 20/30/50/100 and payables/debt/equity 25/75/100. Added dates, rates, useful lives, tax and shares are labelled hypothetical. Keep the core reference free of depreciation, interest and tax.
+- Internal journals use integer paise, immutable posting and actual event provenance. Explicit references settle partial outstanding items without repeated income/expense. Negative executed cash is rejected with a funding requirement; the minimum-cash policy is a separate signal. Failed decisions leave state untouched.
+- Three statements, indirect cash and equity reconcile from the same dated history. Monthly depreciation, Actual/365 interest and positive-income hypothetical tax close separately and only once. Rebuild sealed history through deterministic replay.
+- Daily cash forecasts may show unfunded negative cash; they never execute loans. Keep financing outside FCFF. NPV includes each investment once; DCF uses supplied matching WACC, growth below WACC, sustainable terminal cash, explicit excess cash and each claim once. Navigation edges do not become calculation rules.
+
+## Customer collection lab (Task 07.1)
+
+- LAB-COLLECTIONS 1.0.0 commits sale inputs, a payment-date/account/category prediction and an optional ungraded explanation. Derive model results by registered replay; never import balances or scores. The stage equals committed decision count (0–3). Keep initial collection results concealed until the prediction.
+- Preserve every experiment and resume its exact record from My learning or a lesson return link. Reject stale duplicate commits. Export objects and new decisions must not share mutable nested data with the active profile.
+- The fixed operating/supplier payments belong to a disclosed separate forecast, not the lab ledger. Payment timing changes the funding path, not sale profit. Guided predictions and ungraded prose award no demonstrated-understanding label.
+- Collection is available; equipment and financing remain planned pending their own ordered tasks. Continue 07.2 next. Browser/keyboard/mobile QA remains outstanding under 11.1; do not claim it from SSR/reducer tests.

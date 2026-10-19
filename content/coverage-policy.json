@@ -240,19 +240,21 @@
       "id": "LAB-COLLECTIONS",
       "kind": "lab",
       "title": "Customer collection",
-      "availability": "planned",
-      "route": null,
+      "availability": "available",
+      "route": "#labs/LAB-COLLECTIONS",
       "roadmapTask": "07.1",
-      "plannedConcepts": [
-        "A01",
+      "evidence": "src/CollectionLab.jsx; src/activities/collections.js; tests/collection-lab.test.mjs",
+      "assessmentConcepts": [
         "A02",
-        "A05",
         "A06",
-        "T04.05",
+        "T04.05"
+      ],
+      "referenceConcepts": [
+        "A01",
+        "A05",
         "T14.03",
         "T14.04"
-      ],
-      "evidence": "Finance_Atlas_Implementation_Backlog.xlsx: Task detail 07.1; Release scope"
+      ]
     },
     {
       "id": "LAB-EQUIPMENT",

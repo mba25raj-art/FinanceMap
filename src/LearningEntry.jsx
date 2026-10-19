@@ -50,7 +50,7 @@ export function MysteryBrief({ session, onResume, onStart, onConcept, message })
       <div className="entry-links"><button className="text-button" onClick={()=>onConcept('T04.01')}>The accounting equation <ArrowRightIcon/></button><button className="text-button" onClick={()=>onConcept('T04.05')}>Cash versus accrual accounting <ArrowRightIcon/></button><button className="text-button" onClick={()=>onConcept('A02')}>Customer invoices and collections <ArrowRightIcon/></button></div>
     </section>
     <div className="brief-actions">{pending?<><button className="primary" onClick={()=>onResume(pending.index)}>Resume cash mystery <ArrowRightIcon/></button><button className="text-button" onClick={onStart}>Start another run (keeps history)</button><p className="small muted">Resume returns to run {pending.index+1}, clue {pending.run.step+1} of 3.</p></>:<button className="primary" onClick={onStart}>{completed?'Replay cash mystery':'Start cash mystery'}<ArrowRightIcon/></button>}</div>
-    <p className="small muted entry-note">Your choices and first answers are kept for this open session. Refreshing or closing resets them. Starting or replaying does not count as finishing.</p>
+    <p className="small muted entry-note">Your choices and first answers use the local-save status shown in My learning. Export a backup before clearing browser data. Starting or replaying does not count as finishing.</p>
   </main>;
 }
 
@@ -64,7 +64,7 @@ export function SimulationEntry({ session, onResume, onBrief, onAtlas }) {
   </main>;
 }
 
-export function LabsEntry({ onConcept }) {
-  const labs=[['Customer collection','Explore an invoice, delayed payment and the effects of collection.','A02'],['Equipment investment','Connect equipment purchase, depreciation and project value.','A07'],['Financing comparison','Compare repayment pressure, ownership dilution and value.','A18']];
-  return <main className="single-view entry-main"><span className="eyebrow">LABS</span><h1>Change one thing. Understand the effect.</h1><p className="lead">These three experiments are planned. Their reference lessons are available now.</p><div className="entry-options labs-options">{labs.map(([name,description,id])=><section key={id}><span className="eyebrow">PLANNED LAB</span><h2>{name}</h2><p>{description}</p><button className="text-button" onClick={()=>onConcept(id)}>Read the related concept <ArrowRightIcon/></button></section>)}</div></main>;
+export function LabsEntry({ onConcept,onLab }) {
+  const labs=[['Customer collection','Predict collection and inspect cash, receivables and the funding timeline.','A02','LAB-COLLECTIONS'],['Equipment investment','Connect equipment purchase, depreciation and project value.','A07','LAB-EQUIPMENT'],['Financing comparison','Compare repayment pressure, ownership dilution and value.','A18','LAB-FINANCING']];
+  return <main className="single-view entry-main"><span className="eyebrow">LABS</span><h1>Change one thing. Understand the effect.</h1><p className="lead">Try customer collection now. Equipment and financing experiments follow next; their reference lessons are available.</p><div className="entry-options labs-options">{labs.map(([name,description,id,lab])=><section key={id}><span className="eyebrow">{lab==='LAB-COLLECTIONS'?'AVAILABLE LAB':'PLANNED LAB'}</span><h2>{name}</h2><p>{description}</p>{lab==='LAB-COLLECTIONS'&&<button className="primary" onClick={()=>onLab(lab)}>Open collection lab</button>}<button className="text-button" onClick={()=>onConcept(id)}>Read the related concept <ArrowRightIcon/></button></section>)}</div></main>;
 }

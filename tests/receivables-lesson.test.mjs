@@ -63,7 +63,7 @@ test('rendered checkpoint protects its solution and both receivables routes reus
       const html=renderToStaticMarkup(createElement(App,{initialRoute:{view:'lesson',id},initialSession:s}));
       assert.ok(html.includes('NILA HOMEWARE'));assert.ok(html.includes('First lesson-practice answer'));
       assert.ok(html.indexOf(prediction.question)<html.indexOf('Read gross and net balances together'),'Checkpoint is not interleaved');
-      assert.ok(html.includes('BROADER STUDY GUIDE'));assert.ok(html.includes('Apply it in the cash mystery'));assert.ok(html.includes('customer-collection lab is planned'));
+      assert.ok(html.includes('BROADER STUDY GUIDE'));assert.ok(html.includes('Apply it in the cash mystery'));assert.ok(html.includes('Try customer collection'));
     }
     assert.equal(lessonPracticeCounts(s.lessonPractice).answered,1,'Two concept routes duplicate the assessment record');
   }finally{await server.close();delete globalThis.window;}
