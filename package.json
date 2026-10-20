@@ -16,7 +16,8 @@
     "test:lesson-standard": "node --test tests/lesson-standard.test.mjs",
     "predev": "npm run prepare:content",
     "pretest:content": "npm run prepare:content",
-    "test:practice": "node --test tests/practice-*.test.mjs"
+    "test:practice": "node --test tests/practice-*.test.mjs",
+    "test:accessibility": "node --test tests/activity-accessibility.test.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "5.0.4",

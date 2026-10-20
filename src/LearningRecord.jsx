@@ -1,5 +1,6 @@
 import {useCallback,useEffect,useRef,useState} from 'react';
 import {createLearningStorage,emptyLearningProfile,LEARNING_STORAGE_KEY,MAX_SAVE_BYTES} from './learning-save.js';
+import {focusContent} from './activity-accessibility.js';
 
 function browserStorage(){try{return window.localStorage||null;}catch{return null;}}
 function download(text,name){
@@ -56,7 +57,7 @@ export default function LearningRecord({codec,children,controlled=false}){
     if(!result.ok){setStatus({...result});return result;}
     live.current=result.profile;previous.current=JSON.stringify(result.profile);setRestored(result.profile);setEpoch(n=>n+1);setStatus({...result,message:messageFor(result.kind)});
     window.history.replaceState({},'',reset?'#atlas':'#learning');
-    requestAnimationFrame(()=>{const target=document.querySelector(reset?'.brand':'.learning-main');target?.focus?.({preventScroll:true});});return result;
+    requestAnimationFrame(()=>focusContent(document.querySelector(reset?'.brand':'.learning-main'),{preventScroll:true}));return result;
   }
   function exportCurrent(){try{download(JSON.stringify(codec.encode(live.current),null,2),`Finance_Atlas_Learning_${new Date().toISOString().slice(0,10)}.json`);}catch(e){setStatus({kind:'error',message:`Export failed: ${e.message}`});}}
   const controls=<LearningSaveControls codec={codec} status={status} hasOriginal={storage.raw()!==null} onExport={exportCurrent} onOriginal={()=>download(storage.raw()||'',`Finance_Atlas_Recovery_${new Date().toISOString().slice(0,10)}.json`)} onImport={raw=>replace(storage.importRecord(raw,true))} onReset={()=>replace(storage.reset(true),true)} onLatest={()=>replace(storage.loadLatest())}/>;

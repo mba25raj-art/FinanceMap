@@ -36,6 +36,7 @@ jobs:
       - run: npm run test:model
       - run: npm run test:case
       - run: npm run test:practice
+      - run: npm run test:accessibility
       - run: npm run test:sites
       - uses: actions/upload-pages-artifact@v4
         with:

@@ -6,7 +6,7 @@ The cloud browser could not reach the manually started loopback preview (`net::E
 
 Resume the live matrix only when an approved browser can access this exact source revision, or an accessibility reviewer supplies actual observations against it. No further fallback approval is pending. Browser access and an actual screen-reader surface remain unresolved; this is an environment blocker, not an application accessibility result.
 
-All 208 automated checks (120 content, 36 case, 19 assessment, 29 model and four hosting) pass after the accessibility source changes. Build and coverage freshness also pass. These are automated/source results only.
+All 211 automated checks (120 content, 36 case, 19 assessment, 29 model, four hosting and three accessibility unit/markup checks) pass after the accessibility source changes. Build and coverage freshness also pass. These are automated/source results only.
 
 Source improvements prepared:
 
@@ -15,6 +15,15 @@ Source improvements prepared:
 - Native statement controls expose the short definition through aria-describedby. Hover/focus/tap equivalents retain the full concept action; Escape dismisses a tooltip, and the pointer can remain over it.
 - Explicit visible focus for search, summary and textarea controls, plus reduced-motion behavior for programmatic lesson scrolling and CSS animation/transition rules.
 - Existing native forms, button alternatives to canvas/dragging, text/table causal paths and labelled units are retained.
+
+### Source review continuation · 20 October 2026
+
+The user authorized continuing with the needed permissions. The existing browser URL-policy refusal remains in force; this continuation made no browser attempt and does not claim that general permission overrides it.
+
+- Corrected a concrete focus defect: the activity wrapper previously assigned `tabindex=-1` even to the native explanation textarea after a commitment. The shared focus helper now preserves existing native Tab order, and only adds a programmatic focus target to non-focusable reading content.
+- Added labelled feedback targets to all three labs and a saved-reflection target after their explanations. Practice-task selection moves focus to its new heading without requiring a new saved answer. Import/load replacement can programmatically focus My learning, including when that destination was already open.
+- Use one persistent activity announcement region rather than competing inner status regions. Restoring a saved record starts with an empty announcement instead of announcing its old response as newly saved. New responses carry a changing response count so repeated submissions produce a distinct status message; counts do not disclose financial answers or imply competency.
+- `npm run test:accessibility` checks the native-focus contract, restored/repeated announcement messages and rendered feedback/table semantics for all six applied/assessment workspaces. It runs in the existing release build job. The tests use unit objects and server-rendered markup; they do not execute a keyboard, render zoom or observe assistive speech. Every live matrix item below remains Not run.
 
 Calculated contrast ratios from explicit source tokens (not rendered/composited-state measurements): body #101f38 on #fcfbf8 15.91; muted #5d6b7b on #fcfbf8 5.26; white text on primary #116c72 6.16; teal #116c72 on paper 5.95; focus #246657 on paper 6.52; focus on white 6.75; body text on story #f0f5f1 14.93. These cover those exact pairs only and are not an accessibility conformance claim.
 
