@@ -7,7 +7,17 @@
     <meta name="description" content="Explore 698 finance concepts, study detailed examples, and solve a guided cash mystery with session resume." />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><main id="workspace-boot" style="max-width:42rem;margin:3rem auto;padding:1rem;font-family:system-ui,sans-serif">
+      <h1>Finance Atlas</h1><p id="workspace-boot-status" role="status">Loading your learning workspace…</p><button id="workspace-boot-retry" type="button" hidden>Retry loading the workspace</button>
+      <noscript>JavaScript is needed for the interactive lessons and local learning record.</noscript>
+    </main></div>
+    <script>
+      (()=>{const status=document.getElementById('workspace-boot-status'),retry=document.getElementById('workspace-boot-retry');
+        const failed=()=>{if(!document.getElementById('workspace-boot'))return;status.textContent='The workspace could not be loaded. Your saved learning record has not been changed.';retry.hidden=false;};
+        window.addEventListener('error',failed);document.addEventListener('error',event=>{if(event.target.tagName==='SCRIPT')failed();},true);
+        retry.addEventListener('click',()=>window.location.reload());
+      })();
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

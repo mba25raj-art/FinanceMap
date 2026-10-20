@@ -15,7 +15,7 @@ function Confirmation({kind,preview,onConfirm,onCancel}){
   return <dialog ref={ref} className="lesson-hint-dialog" aria-labelledby="record-confirm-title" onCancel={e=>{e.preventDefault();onCancel();}}>
     <h2 id="record-confirm-title">{reset?'Reset this browser’s learning record?':importing?'Replace with this imported record?':'Load the latest saved record?'}</h2>
     <p>{reset?'This deletes saved concepts, attempts, hints and activity records from this browser and clears the open learning record. Downloaded backups and unrelated site data stay intact.':'This replaces the record currently open on this page. Export a backup first if you want to retain its changes. Records are replaced, not merged.'}</p>
-    {preview&&<p>{preview.bookmarks.length} saved concepts, {Object.keys(preview.session.topics).length} topic quizzes with attempts, {Object.keys(preview.session.lessonPractice).length} lesson-practice records and {preview.session.runs.length} case runs in the import.</p>}
+    {preview&&<p>{preview.bookmarks.length} saved concepts, {Object.keys(preview.session.topics).length} topic quizzes with attempts, {Object.keys(preview.session.lessonPractice).length} lesson-practice records, {preview.session.runs.length} cash-mystery run records and {preview.simulations.length} applied activity records in the import.</p>}
     <div className="hint-actions"><button className="primary" onClick={onConfirm}>{reset?'Delete local learning record':importing?'Replace this browser’s learning record':'Load latest and replace open changes'}</button><button className="secondary" ref={cancel} onClick={onCancel}>Cancel</button></div>
   </dialog>;
 }

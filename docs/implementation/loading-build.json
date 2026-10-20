@@ -1,0 +1,22 @@
+{
+  "measurement": "Built asset bytes and gzip transfer estimate; not device/network load time",
+  "htmlBytes": 1594,
+  "htmlGzipBytes": 826,
+  "initialFiles": [
+    {
+      "file": "assets/index-BGWuu5LU.js",
+      "bytes": 2683688,
+      "gzipBytes": 484429
+    },
+    {
+      "file": "assets/index-B6SVC4s0.css",
+      "bytes": 39022,
+      "gzipBytes": 8643
+    }
+  ],
+  "initialBytes": 2722710,
+  "initialGzipBytes": 493072,
+  "deferredStudyChunks": 40,
+  "largestStudyChunkBytes": 51215,
+  "totalDeferredStudyBytes": 1075409
+}

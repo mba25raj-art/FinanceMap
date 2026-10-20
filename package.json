@@ -17,7 +17,9 @@
     "predev": "npm run prepare:content",
     "pretest:content": "npm run prepare:content",
     "test:practice": "node --test tests/practice-*.test.mjs",
-    "test:accessibility": "node --test tests/activity-accessibility.test.mjs"
+    "test:accessibility": "node --test tests/activity-accessibility.test.mjs",
+    "test:loading": "node --test tests/study-loading.test.mjs",
+    "check:loading": "node scripts/check-loading.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "5.0.4",

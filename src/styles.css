@@ -80,3 +80,5 @@
 .skip-link{position:fixed;top:.5rem;left:.5rem;z-index:100;background:#101f38;color:#fff;padding:.8rem 1rem;transform:translateY(-200%)}.skip-link:focus{transform:translateY(0)}
 summary:focus-visible,textarea:focus-visible,[tabindex="-1"]:focus-visible{outline:3px solid #246657;outline-offset:4px}.search-wrap input:focus-visible{outline:3px solid #246657;outline-offset:4px}.tooltip{pointer-events:auto;max-width:calc(100vw - 2rem)}.tooltip.dismissed{display:none!important}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.study-loading{border:1px solid var(--line);padding:1rem;border-radius:6px;margin-block:1rem}.study-loading p{margin-block:.5rem}
+.lab-form,.lab-form label,.lab-form fieldset,.company-feedback{min-inline-size:0}.lab-form legend{max-inline-size:100%;overflow-wrap:anywhere}.lab-form button,.lab-main h1,.lab-main h2,.entry-links button{overflow-wrap:anywhere}

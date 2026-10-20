@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync, mkdirSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { parseDeepLessons } from './deep-lesson-format.mjs';
 import { lessons as core, mystery } from '../src/data/lessons.js';
@@ -82,6 +82,17 @@ for (const n of atlas.nodes) {
   if (!l || !l.summary || !l.example || !l.question || l.options.length !== 3 || new Set(l.options).size !== 3 || !Number.isInteger(l.correct) || l.correct < 0 || l.correct > 2) throw new Error(`Invalid assessment: ${n.id}`);
 }
 writeFileSync(new URL('../src/data/complete-lessons.json', import.meta.url), JSON.stringify(output));
+// Keep compact lesson/assessment metadata available to navigation and save validation.
+// Full topic mechanisms and area guides are fetched only when study is opened.
+writeFileSync(new URL('../src/data/lesson-summaries.json',import.meta.url),JSON.stringify(Object.fromEntries(Object.entries(output).map(([id,{detail,...lesson}])=>[id,{...lesson,detail:!!detail}]))));
+const conceptDomains=Object.fromEntries(atlas.nodes.map(n=>[n.id,n.domain]));
+writeFileSync(new URL('../src/data/study-manifest.json',import.meta.url),JSON.stringify({schemaVersion:1,conceptDomains,domains:atlas.domains.map(d=>d.id)}));
+mkdirSync(new URL('../src/data/study/',import.meta.url),{recursive:true});
+for(const domain of atlas.domains){
+ const details=Object.fromEntries(atlas.nodes.filter(n=>n.domain===domain.id).map(n=>[n.id,deep[n.id]]));
+ if(Object.values(details).some(d=>!d))throw new Error('Missing deferred study material for '+domain.id);
+ writeFileSync(new URL(`../src/data/study/${domain.id}.json`,import.meta.url),JSON.stringify({domain:domain.id,details,guide:domainDepth[domain.id]}));
+}
 const assessmentDigest=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
 writeFileSync(new URL('../content/assessment-versions.json',import.meta.url),JSON.stringify({
   schemaVersion:1,
