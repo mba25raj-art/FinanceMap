@@ -55,5 +55,10 @@ test('rendered activities expose named feedback and a single initially empty ann
    assert.ok(html.includes('aria-live="polite" aria-atomic="true"></p>'),`${name} restore must not announce an old save as a new one`);
    assert.ok(html.includes('<caption>'));assert.ok(html.includes('scope="col"'));assert.ok(html.includes('scope="row"'));
   }
+  const explained=company(company(companyRecord,{type:'commit',round:1,choice:'30-days'}),{type:'explain',round:1,text:'The invoice is recognised now and collected later under the disclosed terms.'});
+  const {default:Case}=await server.ssrLoadModule('/src/CompanyCase.jsx');
+  const acknowledged=renderToStaticMarkup(createElement(Frame,{record:explained},createElement(Case,{record:explained,records:[]})));
+  assert.ok(acknowledged.includes('Written reasoning remains ungraded'));
+  assert.equal((acknowledged.match(/role="status"/g)||[]).length,1,'Story acknowledgments must not create a second live region or announce old work on restore');
  }finally{await server.close();}
 });

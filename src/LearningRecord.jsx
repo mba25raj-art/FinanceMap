@@ -10,7 +10,7 @@ function download(text,name){
 
 function Confirmation({kind,preview,onConfirm,onCancel}){
   const ref=useRef(null),cancel=useRef(null);
-  useEffect(()=>{const previous=document.activeElement;ref.current.showModal();cancel.current.focus();return()=>{ref.current?.close();if(previous?.isConnected)previous.focus();};},[]);
+  useEffect(()=>{const previous=document.activeElement,dialog=ref.current;dialog.showModal();cancel.current.focus();return()=>{dialog.close();requestAnimationFrame(()=>{if(previous?.isConnected)previous.focus({preventScroll:true});});};},[]);
   const reset=kind==='reset',importing=kind==='import';
   return <dialog ref={ref} className="lesson-hint-dialog" aria-labelledby="record-confirm-title" onCancel={e=>{e.preventDefault();onCancel();}}>
     <h2 id="record-confirm-title">{reset?'Reset this browser’s learning record?':importing?'Replace with this imported record?':'Load the latest saved record?'}</h2>
