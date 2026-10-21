@@ -81,3 +81,9 @@ Retested six production states (1,883 text instances): My learning, collection s
 The three accessibility regression tests, production build, loading dependency/manifest check and coverage freshness check pass for this CSS-only follow-up. The prior full 214-check run is attached to `3d6b8f8`; it was not represented as a new full-suite run for this style change. The isolated preview was stopped before the final rebuild and refreshed with its exact current HTML, manifest and stylesheet before retesting.
 
 Task 10.3 stays In progress. Actual assistive speech, zoom/mobile/orientation, enabled reduced motion, physical touch and the rest of the rendered-state inventory remain open. The real learner pilot and public release are still pending.
+
+## Reviewer preparation · 21 October
+
+The restored local Browser connection timed out while requesting its documented API. The supported cloud Chrome browser still exposed no browser capabilities for zoom, viewport/orientation, assistive speech or motion preferences; no device or speech test was claimed from that capability check. No new application interaction was performed.
+
+`docs/accessibility-review.md` now supplies an unfilled A01–A11 technical review sequence, candidate/version and environment fields, exact route fragments, expected behaviour, observations and repair/retest records. It covers actual speech, zoom/reflow, motion preference, native input/error states, dialogs, remaining contrast states and physical touch. It distinguishes desktop localhost from a preview reachable by a phone and does not imply that this candidate is publicly deployed. All reviewer results are Not run. The next required evidence comes from a real available device/screen-reader setup; there is no general permission request pending.
