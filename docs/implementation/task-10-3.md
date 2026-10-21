@@ -60,3 +60,24 @@ Exported the technical browser record through the real backup control. Its real 
 Pointer selection and a click inside the visible short definition were also exercised. Physical touch remains unverified. The baseline cash-flow tab, remaining two mystery clues, wrong-first/retry/correct, explicit Finish, My learning and reload checks passed; technical records remain excluded from the learner pilot. See task-11-1.md for the current build/recovery checks.
 
 Actual assistive speech, 200%/400%/mobile/orientation, enabled reduced-motion and the remaining rendered-state inventory remain required. No browser capability for those device/preference controls was exposed. The task stays In progress; independent later implementation and pilot preparation do not alter its completion evidence.
+
+## Rendered contrast continuation · 20 October
+
+Sampled nine production desktop states (2,160 text instances across repeated states): My learning, Labs, collection setup, guided entry, the initial topic catalogue, selected receivables/full lesson, wrong and corrected topic feedback, and the Reset confirmation. This is a bounded colour-pair sample, not the complete state inventory. Details and exclusions are in `contrast-desktop.json`.
+
+Three concrete style problems were repaired:
+
+| Target | Before | Retested after |
+| --- | --- | --- |
+| Collection input boundary, inside/outside | 2.78 / 2.68 | 4.14 / 4.01 |
+| Catalogue dropdown boundary, inside/outside | 1.35 / 1.33 | 4.08 / 4.01 |
+| Relationship dropdown boundary | 1.27 | 4.01 |
+| Statement context caption, 18px regular | 4.42 | 5.26 |
+
+Editable controls share `--control-line: #6b817e`; the search frame uses it too. The statement caption now uses the existing muted-text token. Decorative separators are unchanged. The control border changes do not replace existing keyboard focus outlines or selected-state colours.
+
+Retested six production states (1,883 text instances): My learning, collection setup, catalogue filters, selected receivables, incorrect topic feedback and corrected feedback. All sampled ordinary/large text pairs and the visible sampled form/dropdown boundaries meet their respective 4.5/3 and 3 contrast thresholds. This does not cover every hover/focus/native popup, placeholder, icon/graph, clipping/occlusion or modal backdrop condition. No new conformance claim is made.
+
+The three accessibility regression tests, production build, loading dependency/manifest check and coverage freshness check pass for this CSS-only follow-up. The prior full 214-check run is attached to `3d6b8f8`; it was not represented as a new full-suite run for this style change. The isolated preview was stopped before the final rebuild and refreshed with its exact current HTML, manifest and stylesheet before retesting.
+
+Task 10.3 stays In progress. Actual assistive speech, zoom/mobile/orientation, enabled reduced motion, physical touch and the rest of the rendered-state inventory remain open. The real learner pilot and public release are still pending.
