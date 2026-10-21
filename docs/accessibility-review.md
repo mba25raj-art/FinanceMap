@@ -2,7 +2,7 @@
 
 Prepared 21 October 2026. **No reviewer results have been entered.**
 
-Application candidate: `1895c1e156f7e0de64653d0505f0636d893383a5`, draft PR #1 in `mba25raj-art/FinanceMap`. Later documentation-only commits may contain this form without changing that application candidate. Record the actual tested source SHA and preview URL below. The public Pages site is not evidence that this candidate is deployed.
+Application candidate: `e076d874d157735bcd52c3a60f27b5e8a82e27a7`, draft PR #1 in `mba25raj-art/FinanceMap`. This includes the final answer-control and placeholder changes and the complete 214-check rerun. Later documentation-only commits may contain this form without changing that application candidate. Record the actual tested source SHA and preview URL below. The public Pages site is not evidence that this candidate is deployed.
 
 ## Prepare the session
 
