@@ -237,3 +237,5 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 ## Publication instruction · 21 October 2026
 
 - Raj explicitly requested “make it live and check”. Publish the verified candidate through the existing GitHub Pages workflow and check the deployed version. This supersedes holding publication for the previously unperformed human/device checks; it does not supply those results or mark their backlog tasks complete. Retain their open status and report the limitations. No new general publication permission is pending. Preserve the prior main commit and record actual workflow/deployment evidence and any live verification limits.
+
+- Publication completed on 21 October: Pages deployed `dfd496a09595392b57c14e7e6a75d339ec5f877d` through successful run 39586373787 at https://mba25raj-art.github.io/FinanceMap/. Public assets, lesson/quiz/reload/backup, Cash flow and the complete six-round company case were verified. See docs/implementation/live-release-2026-10-21.json. Keep human/device/performance and actual learner-pilot tasks open; publication is not their evidence.

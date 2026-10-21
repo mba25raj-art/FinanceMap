@@ -1,0 +1,396 @@
+{
+  "checkedAt": "2026-10-21T10:48:24.488613+00:00",
+  "url": "https://mba25raj-art.github.io/FinanceMap/",
+  "deploymentSha": "dfd496a09595392b57c14e7e6a75d339ec5f877d",
+  "workflowRun": 39586373787,
+  "files": [
+    {
+      "path": "",
+      "status": 200,
+      "bytes": 1616,
+      "sha256": "b980439f74bbbbb757ea1c1b52c8f8e9205d0a72a8715473f80e572a03809ddb",
+      "matchesLocal": false,
+      "contentType": "text/html; charset=utf-8",
+      "comparisonNote": "Local HTML uses root asset paths. Public HTML uses the verified /FinanceMap/ paths and index-BnyR616E.js from the saved prefixed build report.",
+      "matchesExpectedPagesAssetPaths": true
+    },
+    {
+      "path": "assets/index-BnyR616E.js",
+      "status": 200,
+      "bytes": 2683721,
+      "sha256": "eea49017780f723c8b8336ce127200a82acc096b9193a171f92d18c1c0093712",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/index-502pYN2x.css",
+      "status": 200,
+      "bytes": 39185,
+      "sha256": "3508950295b277bd2b0f4e9b24c493b1e3b57cb8324dce71df6b18c53e90619e",
+      "matchesLocal": true,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "path": "assets/D01-6cyHgw8L.js",
+      "status": 200,
+      "bytes": 26719,
+      "sha256": "afc447c9e9493590794016f4736458a6da23924a275542a8d6c2c1e6f79eb57b",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D02-3SFd9fsY.js",
+      "status": 200,
+      "bytes": 23852,
+      "sha256": "7a00309a5bfcddff11e313ac5986cb4b9d73d60c39cc452abc6b56a2e7e00dd0",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D03-BvHE_Afb.js",
+      "status": 200,
+      "bytes": 22487,
+      "sha256": "a11c496de182cf35e514a548e8839ef12ad770cc5e740e7ed3104807db897d41",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D04-DpNkTAKW.js",
+      "status": 200,
+      "bytes": 28458,
+      "sha256": "d5154158262b557e552292f1ffd2d654b1c89a5aa2d514c0d0dd4afe89ac21da",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D05-Ci_HeGhp.js",
+      "status": 200,
+      "bytes": 48510,
+      "sha256": "942003c9432a09ef180d7fba09414a3c5b5230146c3138f6f1dd24a150703f71",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D06-BCiWOesY.js",
+      "status": 200,
+      "bytes": 49917,
+      "sha256": "bc4cc669494b07126c2f94c3cfe676e19934da7fdb54b9b1b2e73f35f3e05eef",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D07-BiS5vv9X.js",
+      "status": 200,
+      "bytes": 39751,
+      "sha256": "b6c4e18f7c78fcb00a961794327f2eaa0c3cf1d61804cd06c0eb76b0bfa3d7b7",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D08-BaHqt0pV.js",
+      "status": 200,
+      "bytes": 25514,
+      "sha256": "874cfcab69fc1da5ca06cf235d3988292ddbce66726c7f98ec98a4b633a7e786",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D09-DEMS-P0-.js",
+      "status": 200,
+      "bytes": 28930,
+      "sha256": "0fc2ef2a2b6a4896aa10e40d775641a67b2f01183b98147e936808439f8e8019",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D10-DcXOgEZ9.js",
+      "status": 200,
+      "bytes": 23765,
+      "sha256": "8363c6e48c07f26b85370b4ee5928de2dafdfe59fd9cea6385699ef17b2f6881",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D11-C8LazwVc.js",
+      "status": 200,
+      "bytes": 23087,
+      "sha256": "7b9e7b17ba8165f761471bd5d9d96fafc95d3bcdbdf050cef1bac1f67cf6d6bb",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D12-BhfmDjrt.js",
+      "status": 200,
+      "bytes": 23070,
+      "sha256": "ee65d8003892eafd7e9aaea2afd52e1188675f824ef3ebca1a81a09b37f509dd",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D13-DAB-w9EY.js",
+      "status": 200,
+      "bytes": 31384,
+      "sha256": "12c651845156890aadb4c4d06017fe125af74ca880a30e0ca86926ae5688393c",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D14-BzFIzCOO.js",
+      "status": 200,
+      "bytes": 26782,
+      "sha256": "78eaa8bf819fef10b468504c5ca224e77ed744c64916e6069e98530b44188920",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D15-BJX60edx.js",
+      "status": 200,
+      "bytes": 22347,
+      "sha256": "25fbc9a1243ec1a56d029bf25f8ba6d1286c9ee8cbb59b1997c14d13175305fd",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D16-DcBaw_hP.js",
+      "status": 200,
+      "bytes": 23585,
+      "sha256": "32fb21c4f109b897c60fde7430604ac47742e489d4a3e0d3275e98922a4fc3f2",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D17-DqXYcMRI.js",
+      "status": 200,
+      "bytes": 51215,
+      "sha256": "fd4ba7c74ce274013d9ac49ba140ec676f5fd53db11d2583acde309206be85b7",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D18-BACTkgqh.js",
+      "status": 200,
+      "bytes": 26300,
+      "sha256": "41c50140074eb28478e98826cc484150fdf1a5c21d4375816b358e7425d8d947",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D19-zmyxFaBY.js",
+      "status": 200,
+      "bytes": 24280,
+      "sha256": "02d7ed877abacfa8cf14a4d2ee0a6a742918da685660f5ae7de584dab14c4eab",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D20-BB3vwW6Q.js",
+      "status": 200,
+      "bytes": 24131,
+      "sha256": "1b0aa4c1440cdb1dd2639f1b4071b6b3570b0ab90498b07e11a0ad15e8665e98",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D21-C4KhgLPX.js",
+      "status": 200,
+      "bytes": 27078,
+      "sha256": "2c7af2b3657853a977bbbf59710b5dd4aa8280100fd242ef8fb81d0f0e83615c",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D22-D9ZFbjjB.js",
+      "status": 200,
+      "bytes": 26577,
+      "sha256": "104386a559a57d14ba4388b0fd92d4443b7e68ee834ab878346d755d6d686206",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D23-ExsdWswT.js",
+      "status": 200,
+      "bytes": 26814,
+      "sha256": "50dab1a78e4bc9c76836271329d2dab279d157b5aa84e9ea999e2df7aec02f3f",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D24-BU_5R1Ov.js",
+      "status": 200,
+      "bytes": 31010,
+      "sha256": "b35314faccb06af092d6573c41d05a982728a5afd9d70cf50820f1cff6a2714d",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D25-1LvC3Qkw.js",
+      "status": 200,
+      "bytes": 22455,
+      "sha256": "fe8e8a73d1b43c616c1352b843a36772975a31a5fde3b891c3bf6acaed728805",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D26-DFqbed6g.js",
+      "status": 200,
+      "bytes": 26603,
+      "sha256": "dfb278e31c6597bba49849df8b55b16dae2067f9031e7608f5e3c7b6217268c7",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D27-CkxvD1zh.js",
+      "status": 200,
+      "bytes": 23455,
+      "sha256": "94130635a00adf371e1e6f27bdd1b41af8f6385edf952d775fa27e679ba5d582",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D28-D4nLayX0.js",
+      "status": 200,
+      "bytes": 24083,
+      "sha256": "9cba14989514de7c820b75cf99d29911045555ad28c88f9fb576a351aab99340",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D29-DwLBhV4C.js",
+      "status": 200,
+      "bytes": 22286,
+      "sha256": "53812d9b8972b5cbf3908f70477d78f449bcd55fc8c8aaaccebd0a90db5edc2a",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D30-BbKHlypU.js",
+      "status": 200,
+      "bytes": 24475,
+      "sha256": "d0beb8550665a26651f780993838c3159fa49c77e397c3f67aa661ee81139d6c",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D31-CPBLPCRw.js",
+      "status": 200,
+      "bytes": 22082,
+      "sha256": "ddffe72065255210f7a663381d258682ffa8cd6707d36b334ed87287c82f23e1",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D32-Dz3zgY27.js",
+      "status": 200,
+      "bytes": 21975,
+      "sha256": "633b250510f1d40f57efdffff96f641a371351974ca44d8dc5b6b5d347b47c54",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D33-B6CTbYOj.js",
+      "status": 200,
+      "bytes": 21615,
+      "sha256": "1830b8eedee0fbc37408ee62f14eef1529c30a52f3e15e2b15259dfb26052525",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D34-Cz7RlJ9k.js",
+      "status": 200,
+      "bytes": 20525,
+      "sha256": "cf42034d1c6bc3f1b1f537fea8d12e16bab968efd128f4b741b34293935ce13d",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D35-CazihAnw.js",
+      "status": 200,
+      "bytes": 19514,
+      "sha256": "2996960d583dcb50670699865c1dda2d62ae022913b4d418520076853154ef23",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D36-Bg9CBR3N.js",
+      "status": 200,
+      "bytes": 23537,
+      "sha256": "4003b7137762eb170a6e2ed77eb34298fba3a0716d91903604fa0cca00365a6f",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D37-CtsjxDE6.js",
+      "status": 200,
+      "bytes": 19855,
+      "sha256": "ec5f1e21212a5095405b76ecf0b8b35a5ad9a691258b83162f10b938514cc300",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D38-zZ4IBWGY.js",
+      "status": 200,
+      "bytes": 23816,
+      "sha256": "fa86b7dae1615424d644cacabbbe78dd9a6fb3689b965ef1c255df0d53def432",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D39-02LhZTFN.js",
+      "status": 200,
+      "bytes": 29133,
+      "sha256": "7046da7cdea853b3a0e40043331dbde0041c0d7c93e4ce503bf7fe71d44d80fe",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/D40-CdLJwtxz.js",
+      "status": 200,
+      "bytes": 24437,
+      "sha256": "8fab1c7ee7af74cb45e6d0ebb05050bb44d131ecbf087da3f6f5b1e16853c139",
+      "matchesLocal": true,
+      "contentType": "application/javascript; charset=utf-8"
+    }
+  ],
+  "workflowUrl": "https://github.com/mba25raj-art/FinanceMap/actions/runs/39586373787",
+  "deployedAt": "2026-10-21T10:41:50Z",
+  "priorSuccessfulDeployment": {
+    "sha": "c4e504c626c19423f0f5030015acef0b942096da",
+    "runId": 37913423584
+  },
+  "ci": {
+    "build": "success",
+    "deploy": "success",
+    "testChecks": 214
+  },
+  "browser": {
+    "name": "Chrome cloud browser",
+    "versionAndOS": "Not exposed",
+    "scope": "Technical QA on public GitHub Pages origin. New record, no learner data or competency evidence.",
+    "checks": [
+      "Homepage renders and default route resolves to #atlas",
+      "Stable A02 statement link renders complete lesson and deferred domain study",
+      "Wrong topic answer, Retry and correct answer preserve first/latest records",
+      "My learning reload restores 0/1 first correct and 1/1 latest correct",
+      "All six company rounds predicted, committed and explained; explicit Finish",
+      "Company finished state and six explanations persist after reload",
+      "Control totals: funding 19.70, project NPV 15.64, first FCFF 23.30, EV 271.16, equity 180.18",
+      "My learning lists the six-round applied record separately from short cash-mystery totals",
+      "Actual JSON backup download parses with one applied record and topic attempts [1,0]",
+      "Cash flow navigation shows OCF 11, capex -8, net change 5 and closing cash 20"
+    ],
+    "screenshot": "finance-atlas-live-1792579830483.jpg",
+    "consoleObservation": "Captured tail contained extension metadata errors sourced to chrome-extension://. No application failure observed; this is not an exhaustive console audit."
+  },
+  "remaining": [
+    "Actual screen-reader speech",
+    "200/400 percent zoom and physical mobile/orientation/touch",
+    "Enabled reduced-motion preference",
+    "Full rendered state/contrast inventory",
+    "Actual device/network loading and interaction timing",
+    "5\u201310 willing learner pilot and resulting fixes"
+  ],
+  "notRetestedLive": [
+    "Import replacement/reset and withheld-asset recovery: prior isolated production QA retained, not re-executed on public origin",
+    "Full mixed practice and transfer: automated controls and prior isolated browser QA retained"
+  ]
+}

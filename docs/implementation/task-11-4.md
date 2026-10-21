@@ -1,6 +1,6 @@
 # Task 11.4 — Release and rollback preparation
 
-Status: **Waiting; no merge, Pages publication or public verification performed.** The user requested all remaining steps; no new general publication-permission question is pending. Verification and actual learner-pilot gates are still open.
+Status: **Published and verified on 21 October 2026 at the user’s explicit instruction.** The preceding preparation checklist below is retained as history. The user authorised publication before the remaining assistive/device/performance and learner-pilot checks; those tasks remain open.
 
 ## Concrete release candidate
 
@@ -30,3 +30,13 @@ The rollback has not been executed. The preceding public deployment and final pu
 Raj requested “make it live and check” after being told the updated candidate was still a draft and the device/assistive/performance/pilot checks were open. The instruction authorises publishing the verified current candidate now through existing GitHub Pages. Those human checks and pilot results remain unperformed and must not be marked complete. The earlier hold on publication is superseded for this release; implementation/backlog status and observed results remain separate.
 
 Before publication, main is `c4e504c626c19423f0f5030015acef0b942096da`; retain it as the preceding source. A source SHA alone is not proof of the preceding deployed build. The final application candidate passed 214 checks and both root/Pages-prefix builds. This continuation changes publication records only. Actual merge, workflow, deployed SHA, returned URL and post-deploy findings will be recorded after execution.
+
+## Completed publication and public verification · 21 October
+
+PR #1 merged to `dfd496a09595392b57c14e7e6a75d339ec5f877d`. GitHub Actions [run 39586373787](https://github.com/mba25raj-art/FinanceMap/actions/runs/39586373787) passed all build and test gates, then Pages reported success at 10:41:50 UTC. The returned environment URL is [Finance Atlas](https://mba25raj-art.github.io/FinanceMap/). The preceding successfully deployed source was `c4e504c626c19423f0f5030015acef0b942096da`, confirmed by successful build/deploy jobs in run 37913423584. Rollback remains unexecuted.
+
+The live HTML returned HTTP 200 and the expected Pages-prefixed JS/CSS paths. Both entry assets and all forty study bundles returned HTTP 200 and byte-matched the tested local files. Root-built local HTML differs only in the expected base-prefixed asset references. Detailed file hashes and bounded browser findings are in `live-release-2026-10-21.json`.
+
+Public-origin Chrome QA opened the full A02 lesson, submitted wrong/retry/correct quiz answers, and confirmed first/latest history after reload. The contracted-date company case completed all six predictions, choices, explanations and explicit Finish, with funding 19.70, NPV 15.64, first FCFF 23.30, enterprise value 271.16 and equity residual 180.18. Finished state survived reload. My learning kept the company record separate from short-mystery counts. A real JSON backup downloaded and parsed. Cash flow navigation showed OCF 11, capex −8, net change 5 and closing cash 20. These are technical QA records.
+
+Actual assistive speech, zoom/physical mobile/preferences, comprehensive rendered-state checks, device timing and willing-learner pilot remain unperformed. Full practice/transfer, import/reset and withheld-file recovery were not repeated publicly; prior isolated-production and automated evidence is retained. Exact Chrome version and OS were not exposed. Publication does not mark those independent tasks complete.
