@@ -24,3 +24,9 @@ Before publication, resolve actual screen-reader/device/preference checks, run t
 If the published candidate introduces a blocker, use a normal revert commit/PR for the release merge on main, run the same workflow and verify that the restored public assets/journey match the retained prior deployment. Preserve later saved browser records; do not instruct learners to clear their data as a rollback. Keep Export available and retain unsupported records rather than silently overwriting them.
 
 The rollback has not been executed. The preceding public deployment and final public URL still require verification at release time.
+
+## Explicit publication instruction · 21 October
+
+Raj requested “make it live and check” after being told the updated candidate was still a draft and the device/assistive/performance/pilot checks were open. The instruction authorises publishing the verified current candidate now through existing GitHub Pages. Those human checks and pilot results remain unperformed and must not be marked complete. The earlier hold on publication is superseded for this release; implementation/backlog status and observed results remain separate.
+
+Before publication, main is `c4e504c626c19423f0f5030015acef0b942096da`; retain it as the preceding source. A source SHA alone is not proof of the preceding deployed build. The final application candidate passed 214 checks and both root/Pages-prefix builds. This continuation changes publication records only. Actual merge, workflow, deployed SHA, returned URL and post-deploy findings will be recorded after execution.
