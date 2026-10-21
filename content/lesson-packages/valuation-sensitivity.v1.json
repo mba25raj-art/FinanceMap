@@ -1,0 +1,423 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "T17.18",
+  "contentVersion": "1.0.0",
+  "hoverDefinition": "Sensitivity changes one assumption, scenarios combine coherent assumptions, and reverse DCF solves what a supplied price would require. These tools expose dependence; they do not assign probabilities or prove a forecast.",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "One-variable and two-variable comparisons, coherent scenarios, simple reverse-DCF algebra and uncertainty interpretation."
+    ],
+    "deferred": [
+      "Probabilistic simulation, full multi-stage reverse DCF, forecast calibration and investment recommendation are deferred."
+    ]
+  },
+  "objectives": [
+    {
+      "id": "uncertainty",
+      "statement": "Compare valuation assumptions and solve a simple implied cash requirement.",
+      "evidence": "Keep other inputs fixed for sensitivity and distinguish a required forecast from an observed fact.",
+      "outcomeIds": [
+        "LO6"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh",
+      "fraction"
+    ],
+    "timeframe": "Independent fictional teaching scenarios. Worked examples and practice start separately; they are not consecutive company-case rounds.",
+    "assumptions": [
+      "Use the simple current-value stable FCFF model V = next-year FCFF/(r−g), with r>g.",
+      "Next-year FCFF is supplied after sustainable reinvestment; growth begins after that cash flow.",
+      "In one-variable sensitivity, hold the supplied next-year cash and all other inputs fixed. Scenarios explicitly state all changes.",
+      "All values/prices are hypothetical; no scenario probability or forecast truth is inferred."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Conceptual teaching assumptions, with INR lakh as a unit rather than a jurisdiction. No tax rate, financing term, reporting classification, valuation input or management buffer is a current rule or market recommendation. Applicable framework, jurisdiction, reporting period and effective amendments require separate study."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "sensitivity",
+      "title": "Ask which assumption changed",
+      "paragraphs": [
+        "A sensitivity changes one driver while holding the others fixed, such as WACC at constant next-year FCFF and growth. A two-way table changes two named drivers in a grid. Recompute every affected formula; do not paste old terminal amounts into a changed-rate model.",
+        "For the supplied stable model, a higher r or lower g reduces positive-cash value when other inputs are fixed. Near r=g, small changes create very large swings. The table is a map of assumptions, not evidence that every cell is equally plausible."
+      ]
+    },
+    {
+      "id": "scenario",
+      "title": "Keep combined assumptions coherent",
+      "paragraphs": [
+        "A scenario changes a set of linked operating and risk assumptions, such as lower cash generation and higher required return. Name the case and its inputs. Do not call unrelated best values a coherent upside or attach probabilities without evidence.",
+        "Use the same claims, date, currency and model across cases. Explain the operating reason for changes and identify which assumptions drive the difference rather than treating the range as a statistical confidence interval."
+      ]
+    },
+    {
+      "id": "reverse",
+      "title": "Solve the supplied value’s implied requirement",
+      "paragraphs": [
+        "A reverse DCF treats a hypothetical operating value as an input and solves for an unknown forecast driver. In this simple model, implied next-year FCFF = operating value×(r−g). More complex models may require solving a multi-period forecast.",
+        "The implied cash is what the assumed price/rate/growth combination requires. It is not a forecast guaranteed by the price, proof of overvaluation or a probability. Compare the requirement with operational evidence and feasible reinvestment."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "Sensitivity and scenario",
+      "explanation": "One isolates a driver; the other changes a stated group.",
+      "whenItMatters": "Keep the comparison question clear."
+    },
+    {
+      "name": "Range and confidence interval",
+      "explanation": "A set of assumed outputs does not establish outcome probabilities.",
+      "whenItMatters": "Do not give an uncertainty band a statistical claim without evidence."
+    },
+    {
+      "name": "Reverse requirement and prediction",
+      "explanation": "Solving an input from a price does not show the input will occur.",
+      "whenItMatters": "Use the result as a question for business evidence."
+    }
+  ],
+  "workedExample": {
+    "id": "sensitivity-stable",
+    "scenarioId": "sensitivity-stable-worked",
+    "setup": "Base model uses next-year FCFF 12, WACC 10%, growth 2% and V = FCFF1/(r−g). A rate-only sensitivity uses WACC 12% with cash/growth unchanged. A downside scenario uses FCFF1 10, WACC 12% and growth 1%. Separately ask what next-year cash a hypothetical operating value 180 requires at base rates.",
+    "inputs": [
+      {
+        "key": "next_fcff",
+        "label": "Next fcff",
+        "value": 12,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "downside_fcff",
+        "label": "Downside fcff",
+        "value": 10,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "reverse_value",
+        "label": "Reverse value",
+        "value": 180,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "rate",
+        "label": "Base WACC",
+        "value": 0.1,
+        "unit": "fraction"
+      },
+      {
+        "key": "growth",
+        "label": "Base growth",
+        "value": 0.02,
+        "unit": "fraction"
+      },
+      {
+        "key": "higher_rate",
+        "label": "Rate sensitivity/downside WACC",
+        "value": 0.12,
+        "unit": "fraction"
+      },
+      {
+        "key": "downside_growth",
+        "label": "Downside growth",
+        "value": 0.01,
+        "unit": "fraction"
+      }
+    ],
+    "steps": [
+      "Base value = 12/(0.10−0.02) = 150.",
+      "Rate-only sensitivity = 12/(0.12−0.02) = 120, a decline 30 with other inputs fixed.",
+      "Coherent stated downside = 10/(0.12−0.01) = 90.909..., displayed 90.91.",
+      "This downside changes cash, risk/return and growth; it is not a one-variable result.",
+      "For supplied operating value 180 at base rates, implied next-year FCFF = 180×(0.10−0.02) = 14.4.",
+      "The required 14.4 exceeds the base assumption 12; that is a modelling requirement to investigate, not proof of a future result."
+    ],
+    "result": "Base 150; rate sensitivity 120; downside 90.91; reverse requirement 14.4.",
+    "interpretation": "Each number answers a different question about assumptions and should retain its label."
+  },
+  "statementEffects": {
+    "applicability": "not-applicable",
+    "explanation": "Effects under the stated simplified scenario. Forecasts and economic values do not themselves create accounting entries.",
+    "changes": []
+  },
+  "misconceptions": [
+    {
+      "id": "freeze",
+      "claim": "Change WACC but keep a model-derived terminal value frozen.",
+      "correction": "Recompute all formulas depending on the changed assumption.",
+      "diagnostic": "Which denominator or terminal input depends on this rate?"
+    },
+    {
+      "id": "probability",
+      "claim": "A chosen scenario range is a statistical confidence interval.",
+      "correction": "Assumption cases do not establish probabilities.",
+      "diagnostic": "What evidence supplies the distribution?"
+    },
+    {
+      "id": "prediction",
+      "claim": "An implied cash requirement is a forecast fact.",
+      "correction": "Reverse DCF solves a condition, not its likelihood.",
+      "diagnostic": "What operational evidence supports meeting it?"
+    }
+  ],
+  "practice": [
+    {
+      "id": "sensitivity-predict",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "scenario",
+      "scenarioId": "sensitivity-predict-independent",
+      "objectiveIds": [
+        "uncertainty"
+      ],
+      "setup": "Independent stable model: next-year FCFF 8, growth 2%. Compare WACC 10% and 12%, holding the supplied next-year cash and growth fixed; V = FCFF1/(r−g).",
+      "inputs": [
+        {
+          "key": "next_fcff",
+          "label": "Next fcff",
+          "value": 8,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "growth",
+          "label": "Growth",
+          "value": 0.02,
+          "unit": "fraction"
+        },
+        {
+          "key": "base_rate",
+          "label": "Base WACC",
+          "value": 0.1,
+          "unit": "fraction"
+        },
+        {
+          "key": "higher_rate",
+          "label": "Higher WACC",
+          "value": 0.12,
+          "unit": "fraction"
+        }
+      ],
+      "question": "Which comparison is correct?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "Value stays 100 because the cash forecast is unchanged",
+          "feedback": "The discount-rate spread is part of the model.",
+          "misconceptionId": "freeze"
+        },
+        {
+          "id": "correct",
+          "text": "Value falls from 100 to 80",
+          "feedback": "Base = 8/(0.10−0.02) = 100; higher-rate value = 8/(0.12−0.02) = 80. This is a controlled sensitivity, not a probability interval.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "80 to 100 is the model’s confidence interval",
+          "feedback": "No probabilities or statistical coverage have been supplied.",
+          "misconceptionId": "probability"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Base = 8/(0.10−0.02) = 100; higher-rate value = 8/(0.12−0.02) = 80. This is a controlled sensitivity, not a probability interval.",
+      "hints": [
+        {
+          "text": "Change the rate in the denominator and retain the other inputs.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Base = 8/(0.10−0.02) = 100; higher-rate value = 8/(0.12−0.02) = 80. This is a controlled sensitivity, not a probability interval.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "What does the comparison isolate?",
+        "rubric": [
+          "Hold cash and growth fixed.",
+          "Recompute both values.",
+          "Do not invent scenario probabilities."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "sensitivity-transfer-reverse",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "reverse",
+      "scenarioId": "sensitivity-transfer-reverse-independent",
+      "objectiveIds": [
+        "uncertainty"
+      ],
+      "setup": "Independent reverse-DCF exercise: hypothetical operating value 150, matched WACC 12% and perpetual growth 2%. Use the stable next-year cash model. A separate analyst forecast is next-year FCFF 12.",
+      "inputs": [
+        {
+          "key": "value",
+          "label": "Value",
+          "value": 150,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "forecast_fcff",
+          "label": "Forecast fcff",
+          "value": 12,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "rate",
+          "label": "WACC",
+          "value": 0.12,
+          "unit": "fraction"
+        },
+        {
+          "key": "growth",
+          "label": "Growth",
+          "value": 0.02,
+          "unit": "fraction"
+        }
+      ],
+      "question": "What implied next-year cash and interpretation follow?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "Implied FCFF 15; it is guaranteed to occur because the value is 150",
+          "feedback": "Reverse DCF does not establish a forecast’s truth.",
+          "misconceptionId": "prediction"
+        },
+        {
+          "id": "correct",
+          "text": "Implied FCFF 15; the supplied value requires more cash than the separate forecast 12",
+          "feedback": "Implied FCFF = 150×(0.12−0.02) = 15. The separate forecast 12 would support value 120 under those rates. The gap identifies a requirement to investigate, not a guaranteed outcome.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "Implied FCFF 12; preserve the forecast when solving the price requirement",
+          "feedback": "That freezes the unknown rather than solving the model.",
+          "misconceptionId": "freeze"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Implied FCFF = 150×(0.12−0.02) = 15. The separate forecast 12 would support value 120 under those rates. The gap identifies a requirement to investigate, not a guaranteed outcome.",
+      "hints": [
+        {
+          "text": "Rearrange value = cash/spread to solve for cash.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Implied FCFF = 150×(0.12−0.02) = 15. The separate forecast 12 would support value 120 under those rates. The gap identifies a requirement to investigate, not a guaranteed outcome.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "What operating evidence would you seek next?",
+        "rubric": [
+          "Show requirement 15 versus forecast 12.",
+          "Keep rates/perimeter constant.",
+          "Do not turn algebra into a prediction."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E0835",
+      "to": "T17.19",
+      "kind": "learning",
+      "purpose": "Study these together to match cash flows, reinvestment, discount rates and investor claims.",
+      "conditions": "A topical exploration link, not a claim that one determines the other.",
+      "computed": false
+    },
+    {
+      "edgeId": "E0836",
+      "to": "T03.01",
+      "kind": "learning",
+      "purpose": "Suggested starting knowledge: Present value and future value. It helps you match cash flows, reinvestment, discount rates and investor claims.",
+      "conditions": "Suggested learning order; learners can still explore freely.",
+      "computed": false
+    },
+    {
+      "edgeId": "E0838",
+      "to": "T17.19",
+      "kind": "learning",
+      "purpose": "Study these together to match cash flows, reinvestment, discount rates and investor claims.",
+      "conditions": "A topical exploration link, not a claim that one determines the other.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D17",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "How should operating scenarios link margins, reinvestment and risk consistently?",
+      "What different combinations of forecast drivers could support the same price?"
+    ],
+    "conceptIds": [
+      "T17.19",
+      "T03.01",
+      "T17.19"
+    ],
+    "limitations": "Introductory study coverage. Probabilistic simulation, full multi-stage reverse DCF, forecast calibration and investment recommendation are deferred."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "The connected six-round case remains a separate implementation task; these examples do not imply playable rounds."
+    }
+  ],
+  "sources": [
+    {
+      "id": "terminal",
+      "title": "Aswath Damodaran, NYU Stern: Estimating Terminal Value",
+      "url": "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/valquestions/termvalapproaches.htm",
+      "supports": [
+        "Background on horizon value, stable-growth versus liquidation assumptions and sustainable terminal inputs. All growth, cash and rate values here are hypothetical, not current economic forecasts."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "firm",
+      "title": "Aswath Damodaran, NYU Stern: Free Cashflow to the Firm",
+      "url": "https://people.stern.nyu.edu/adamodar/pdfiles/eqnotes/fcff.pdf",
+      "supports": [
+        "Background on operating value, non-operating additions and deductions for claims. Supplied hypothetical values replace any source historical company data; no present market calibration is claimed."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "method": "ai-content-source-arithmetic",
+    "evidence": [
+      "B6 topic mechanics, terminology, signs, timing, source boundaries and feedback reviewed in docs/implementation/task-04-4-b6.md.",
+      "Independent worked and assessment calculations checked in tests/b6-lessons.test.mjs; shared route, version, hint and retry regressions also apply.",
+      "Scoped AI content review, not independent professional approval, interactive browser verification or learner-pilot evidence."
+    ]
+  }
+}

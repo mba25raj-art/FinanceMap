@@ -1,0 +1,595 @@
+{
+  "date": "2026-10-21",
+  "surface": "Supported cloud Chrome/CDP isolated production preview; technical record only",
+  "method": "Observed computed solid colours and sRGB contrast. Focus-ring values are included only for observed :focus-visible targets. Placeholder data is retained only for the visible search placeholder. Zero-width borders do not establish a visible boundary. Values are rounded for display; the old placeholder exact ratio is preserved separately.",
+  "scope": "Answer borders/indicators, search placeholder, keyboard focus, wrong/correct feedback, detailed-lesson defaults and native validation focus. Not a complete hover, graph/icon, native-popup, touch, screen-reader, zoom or preference audit.",
+  "oldSearchPlaceholderExactRatio": 4.497678199127358,
+  "nativeValidationSpeechObserved": false,
+  "reloadObservation": "My learning retained first answer incorrect, latest correct, with two submissions after reload. This technical cloud record had one topic quiz and no applied runs; no old participant history is claimed.",
+  "states": [
+    {
+      "label": "Default statement choices and search",
+      "groups": [
+        {
+          "background": [
+            244,
+            244,
+            243,
+            1
+          ],
+          "border": "rgb(107, 129, 126)",
+          "borderInside": 3.77,
+          "borderOutside": 4.01,
+          "borderWidth": "1px",
+          "className": "search-wrap",
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "focusVisible": false,
+          "tag": "DIV",
+          "text": "",
+          "textRatio": 14.96,
+          "count": 1
+        },
+        {
+          "background": [
+            244,
+            244,
+            243,
+            1
+          ],
+          "border": "rgb(16, 31, 56)",
+          "borderInside": 14.96,
+          "borderOutside": 14.96,
+          "borderWidth": "0px",
+          "className": "",
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "focusVisible": false,
+          "label": "Search finance concepts",
+          "placeholder": {
+            "color": "rgb(99, 113, 135)",
+            "opacity": "1",
+            "ratio": 4.5
+          },
+          "tag": "INPUT",
+          "text": "",
+          "textRatio": 14.96,
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "border": "rgb(17, 108, 114)",
+          "borderInside": 5.95,
+          "borderOutside": 5.43,
+          "borderWidth": "0px",
+          "className": "active",
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "focusVisible": false,
+          "tag": "BUTTON",
+          "text": "Balance sheet",
+          "textRatio": 5.95,
+          "count": 1
+        },
+        {
+          "background": [
+            240,
+            241,
+            238,
+            1
+          ],
+          "border": "rgb(98, 109, 120)",
+          "borderInside": 4.66,
+          "borderOutside": 4.66,
+          "borderWidth": "0px",
+          "className": "",
+          "color": "rgb(98, 109, 120)",
+          "complex": false,
+          "disabled": false,
+          "focusVisible": false,
+          "tag": "BUTTON",
+          "text": "Income",
+          "textRatio": 4.66,
+          "count": 2
+        },
+        {
+          "background": [
+            255,
+            253,
+            251,
+            1
+          ],
+          "border": "rgb(216, 223, 226)",
+          "borderInside": 1.33,
+          "borderOutside": 1.22,
+          "borderWidth": "1px",
+          "className": "choice ",
+          "color": "rgb(48, 68, 94)",
+          "complex": false,
+          "disabled": false,
+          "focusVisible": false,
+          "tag": "BUTTON",
+          "text": "Cash +4 and new revenue +4",
+          "textRatio": 9.79,
+          "count": 9
+        },
+        {
+          "background": [
+            255,
+            255,
+            255,
+            1
+          ],
+          "border": "rgb(167, 179, 189)",
+          "borderInside": 2.14,
+          "borderOutside": 2.11,
+          "borderWidth": "2px",
+          "className": "radio",
+          "color": "rgb(48, 68, 94)",
+          "complex": false,
+          "disabled": false,
+          "focusVisible": false,
+          "tag": "SPAN",
+          "text": "",
+          "textRatio": 9.93,
+          "count": 12
+        },
+        {
+          "background": [
+            255,
+            253,
+            251,
+            1
+          ],
+          "border": "rgb(216, 223, 226)",
+          "borderInside": 1.33,
+          "borderOutside": 1.3,
+          "borderWidth": "1px",
+          "className": "choice  ",
+          "color": "rgb(48, 68, 94)",
+          "complex": false,
+          "disabled": false,
+          "focusVisible": false,
+          "tag": "BUTTON",
+          "text": "Cash rises; receivables fall",
+          "textRatio": 9.79,
+          "count": 3
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "border": "rgb(107, 129, 126)",
+          "borderInside": 4.01,
+          "borderOutside": 4.01,
+          "borderWidth": "1px",
+          "className": "",
+          "color": "rgb(88, 104, 121)",
+          "complex": false,
+          "disabled": false,
+          "focusVisible": false,
+          "label": "Filter concept relationships",
+          "tag": "SELECT",
+          "text": "All linksFinancial linksLearning links",
+          "textRatio": 5.53,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "label": "Before fix: keyboard-focused topic answer",
+      "groups": [
+        {
+          "background": [
+            255,
+            253,
+            251,
+            1
+          ],
+          "border": "rgb(216, 223, 226)",
+          "borderInside": 1.33,
+          "borderOutside": 1.3,
+          "borderWidth": "1px",
+          "className": "choice  ",
+          "color": "rgb(48, 68, 94)",
+          "complex": false,
+          "disabled": false,
+          "focusVisible": true,
+          "outline": "rgb(80, 143, 145)",
+          "outlineOffset": "4px",
+          "outlineOutside": 3.57,
+          "outlineWidth": "3px",
+          "tag": "BUTTON",
+          "text": "Revenue rises again",
+          "textRatio": 9.79,
+          "count": 1
+        },
+        {
+          "background": [
+            255,
+            255,
+            255,
+            1
+          ],
+          "border": "rgb(167, 179, 189)",
+          "borderInside": 2.14,
+          "borderOutside": 2.11,
+          "borderWidth": "2px",
+          "className": "radio",
+          "color": "rgb(48, 68, 94)",
+          "complex": false,
+          "disabled": false,
+          "focusVisible": false,
+          "tag": "SPAN",
+          "text": "",
+          "textRatio": 9.93,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "label": "After fix: default quiz controls and placeholder",
+      "groups": [
+        {
+          "background": [
+            244,
+            244,
+            243,
+            1
+          ],
+          "border": "rgb(16, 31, 56)",
+          "borderInside": 14.96,
+          "borderOutside": 14.96,
+          "borderWidth": "0px",
+          "className": "",
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "focusVisible": false,
+          "label": "Search finance concepts",
+          "placeholder": {
+            "color": "rgb(93, 107, 123)",
+            "opacity": "1",
+            "ratio": 4.95
+          },
+          "tag": "INPUT",
+          "text": "",
+          "textRatio": 14.96,
+          "count": 1
+        },
+        {
+          "background": [
+            255,
+            253,
+            251,
+            1
+          ],
+          "border": "rgb(107, 129, 126)",
+          "borderInside": 4.08,
+          "borderOutside": 4.01,
+          "borderWidth": "1px",
+          "className": "choice  ",
+          "color": "rgb(48, 68, 94)",
+          "complex": false,
+          "disabled": false,
+          "focusVisible": false,
+          "tag": "BUTTON",
+          "text": "Cash rises; receivables fall",
+          "textRatio": 9.79,
+          "count": 1
+        },
+        {
+          "background": [
+            255,
+            255,
+            255,
+            1
+          ],
+          "border": "rgb(107, 129, 126)",
+          "borderInside": 4.14,
+          "borderOutside": 4.08,
+          "borderWidth": "2px",
+          "className": "radio",
+          "color": "rgb(48, 68, 94)",
+          "complex": false,
+          "disabled": false,
+          "focusVisible": false,
+          "tag": "SPAN",
+          "text": "",
+          "textRatio": 9.93,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "label": "After fix: keyboard-focused answer",
+      "groups": [
+        {
+          "background": [
+            255,
+            253,
+            251,
+            1
+          ],
+          "border": "rgb(107, 129, 126)",
+          "borderInside": 4.08,
+          "borderOutside": 4.01,
+          "borderWidth": "1px",
+          "className": "choice  ",
+          "color": "rgb(48, 68, 94)",
+          "complex": false,
+          "disabled": false,
+          "focusVisible": true,
+          "outline": "rgb(80, 143, 145)",
+          "outlineOffset": "4px",
+          "outlineOutside": 3.57,
+          "outlineWidth": "3px",
+          "tag": "BUTTON",
+          "text": "Revenue rises again",
+          "textRatio": 9.79,
+          "count": 1
+        },
+        {
+          "background": [
+            255,
+            255,
+            255,
+            1
+          ],
+          "border": "rgb(107, 129, 126)",
+          "borderInside": 4.14,
+          "borderOutside": 4.08,
+          "borderWidth": "2px",
+          "className": "radio",
+          "color": "rgb(48, 68, 94)",
+          "complex": false,
+          "disabled": false,
+          "focusVisible": false,
+          "tag": "SPAN",
+          "text": "",
+          "textRatio": 9.93,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "label": "After fix: incorrect selection and feedback",
+      "groups": [
+        {
+          "background": [
+            234,
+            244,
+            239,
+            1
+          ],
+          "border": "rgb(17, 108, 114)",
+          "borderInside": 5.48,
+          "borderOutside": 5.95,
+          "borderWidth": "1px",
+          "className": "choice chosen ",
+          "color": "rgb(48, 68, 94)",
+          "complex": false,
+          "disabled": false,
+          "focusVisible": true,
+          "outline": "rgb(80, 143, 145)",
+          "outlineOffset": "4px",
+          "outlineOutside": 3.57,
+          "outlineWidth": "3px",
+          "tag": "BUTTON",
+          "text": "Revenue rises again",
+          "textRatio": 8.84,
+          "count": 1
+        },
+        {
+          "background": [
+            255,
+            255,
+            255,
+            1
+          ],
+          "border": "rgb(17, 108, 114)",
+          "borderInside": 6.16,
+          "borderOutside": 5.48,
+          "borderWidth": "7px",
+          "className": "radio",
+          "color": "rgb(48, 68, 94)",
+          "complex": false,
+          "disabled": false,
+          "focusVisible": false,
+          "tag": "SPAN",
+          "text": "",
+          "textRatio": 9.93,
+          "count": 1
+        },
+        {
+          "background": [
+            245,
+            237,
+            223,
+            1
+          ],
+          "border": "rgb(118, 83, 46)",
+          "borderInside": 5.93,
+          "borderOutside": 6.66,
+          "borderWidth": "0px",
+          "className": "feedback retry",
+          "color": "rgb(118, 83, 46)",
+          "complex": false,
+          "disabled": false,
+          "focusVisible": false,
+          "tag": "DIV",
+          "text": "Not quite. The sale was already recognised when the receivable arose. Collecting that rece",
+          "textRatio": 5.93,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "label": "After fix: corrected selection and feedback",
+      "groups": [
+        {
+          "background": [
+            234,
+            244,
+            239,
+            1
+          ],
+          "border": "rgb(17, 108, 114)",
+          "borderInside": 5.48,
+          "borderOutside": 5.95,
+          "borderWidth": "1px",
+          "className": "choice chosen correct",
+          "color": "rgb(20, 91, 78)",
+          "complex": false,
+          "disabled": false,
+          "focusVisible": true,
+          "outline": "rgb(80, 143, 145)",
+          "outlineOffset": "4px",
+          "outlineOutside": 3.57,
+          "outlineWidth": "3px",
+          "tag": "BUTTON",
+          "text": "Cash rises; receivables fall",
+          "textRatio": 7.09,
+          "count": 1
+        },
+        {
+          "background": [
+            255,
+            255,
+            255,
+            1
+          ],
+          "border": "rgb(17, 108, 114)",
+          "borderInside": 6.16,
+          "borderOutside": 5.48,
+          "borderWidth": "7px",
+          "className": "radio",
+          "color": "rgb(20, 91, 78)",
+          "complex": false,
+          "disabled": false,
+          "focusVisible": false,
+          "tag": "SPAN",
+          "text": "",
+          "textRatio": 7.97,
+          "count": 1
+        },
+        {
+          "background": [
+            231,
+            241,
+            231,
+            1
+          ],
+          "border": "rgb(36, 90, 75)",
+          "borderInside": 6.87,
+          "borderOutside": 7.69,
+          "borderWidth": "0px",
+          "className": "feedback success",
+          "color": "rgb(36, 90, 75)",
+          "complex": false,
+          "disabled": false,
+          "focusVisible": false,
+          "tag": "DIV",
+          "text": "Correct. Cash rises by \u20b95 lakh and receivables fall by \u20b95 lakh. Revenue was recognised whe",
+          "textRatio": 6.87,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "label": "After fix: native required-field focus",
+      "groups": [
+        {
+          "background": [
+            255,
+            255,
+            255,
+            1
+          ],
+          "border": "rgb(107, 129, 126)",
+          "borderInside": 4.14,
+          "borderOutside": 4.01,
+          "borderWidth": "1px",
+          "className": "",
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "focusVisible": true,
+          "label": "Selling price \u00b7 INR lakh",
+          "outline": "rgb(36, 102, 87)",
+          "outlineOffset": "3px",
+          "outlineOutside": 6.52,
+          "outlineWidth": "3px",
+          "tag": "INPUT",
+          "text": "",
+          "textRatio": 16.47,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "label": "After fix: detailed-lesson practice indicators",
+      "groups": [
+        {
+          "background": [
+            255,
+            253,
+            251,
+            1
+          ],
+          "border": "rgb(107, 129, 126)",
+          "borderInside": 4.08,
+          "borderOutside": 3.74,
+          "borderWidth": "1px",
+          "className": "choice ",
+          "color": "rgb(48, 68, 94)",
+          "complex": false,
+          "disabled": false,
+          "focusVisible": false,
+          "tag": "BUTTON",
+          "text": "Cash +4 and new revenue +4",
+          "textRatio": 9.79,
+          "count": 3
+        },
+        {
+          "background": [
+            255,
+            255,
+            255,
+            1
+          ],
+          "border": "rgb(107, 129, 126)",
+          "borderInside": 4.14,
+          "borderOutside": 4.08,
+          "borderWidth": "2px",
+          "className": "radio",
+          "color": "rgb(48, 68, 94)",
+          "complex": false,
+          "disabled": false,
+          "focusVisible": false,
+          "tag": "SPAN",
+          "text": "",
+          "textRatio": 9.93,
+          "count": 3
+        }
+      ]
+    }
+  ],
+  "nativeValidationCheck": {
+    "focused": true,
+    "required": true,
+    "validationMessage": "Please fill out this field.",
+    "valueMissing": true
+  }
+}

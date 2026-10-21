@@ -1,0 +1,397 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "T03.01",
+  "contentVersion": "1.0.0",
+  "hoverDefinition": "Future value compounds money forward; present value discounts a dated amount back. The rate period, number of periods and cash-flow dates must agree.",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "Single-sum compounding/discounting, multiple dated receipts, periodic-rate matching and time-zero treatment."
+    ],
+    "deferred": [
+      "Continuous compounding, irregular-date conventions, term structures and complete annuity/perpetuity families are deferred."
+    ]
+  },
+  "objectives": [
+    {
+      "id": "timeline",
+      "statement": "Move cash correctly between dates using a supplied periodic rate.",
+      "evidence": "Match rate frequency to periods and discount each dated receipt separately.",
+      "outcomeIds": [
+        "LO5",
+        "LO6"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh",
+      "fraction",
+      "years",
+      "months"
+    ],
+    "timeframe": "Independent fictional teaching scenarios. Worked examples and practice start separately; they are not consecutive company-case rounds.",
+    "assumptions": [
+      "All rates are hypothetical effective rates per stated period, except the explicitly nominal monthly-compounded transfer scenario.",
+      "Cash arrives at the stated period end; time zero is today. No tax, fee, default or intermediate receipt unless stated.",
+      "Retain precision through the calculation and round displayed INR lakh to two decimals."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Conceptual teaching assumptions, with INR lakh as a unit rather than a jurisdiction. No tax rate, financing term, reporting classification, valuation input or management buffer is a current rule or market recommendation. Applicable framework, jurisdiction, reporting period and effective amendments require separate study."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "forward",
+      "title": "Compound over the actual number of periods",
+      "paragraphs": [
+        "For a supplied periodic rate r and n periods, future value FV = present amount PV×(1+r)^n. Each period earns the assumed rate on the accumulated amount. Simple interest would use a different convention and must be labelled.",
+        "The rate is a required/assumed return, not a guarantee of investment performance. A positive rate makes a fixed future amount less valuable today than the same nominal amount today."
+      ]
+    },
+    {
+      "id": "back",
+      "title": "Discount each dated amount to one common date",
+      "paragraphs": [
+        "Rearrange the same relationship: PV = FV/(1+r)^n. Discount each receipt by the periods from today to its own date, then add values at the common date. An amount at time zero has exponent zero and needs no additional discount.",
+        "Do not add nominal cash from different dates and then apply one arbitrary exponent. For an investment decision, an immediate outflow and future receipts can be combined only after they are brought to a consistent date."
+      ]
+    },
+    {
+      "id": "frequency",
+      "title": "Match frequency and the stated convention",
+      "paragraphs": [
+        "If a nominal annual rate is explicitly quoted with monthly compounding, the stated monthly rate is nominal annual rate divided by 12. Count months for the exponent. An effective annual rate would instead require an equivalent-period conversion; dividing it by 12 is not exact.",
+        "A currency label and a rate number are insufficient: also match nominal versus real cash, timing and risk. This lesson supplies those conventions instead of estimating a current rate."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "Simple and compound growth",
+      "explanation": "Compound growth applies to the accumulated amount; simple growth uses the original base.",
+      "whenItMatters": "Use the convention actually stated."
+    },
+    {
+      "name": "Nominal quoted and effective periodic rate",
+      "explanation": "A nominal annual quote with a compounding frequency differs from an effective annual return.",
+      "whenItMatters": "Do not mix a monthly exponent with an annual effective rate."
+    },
+    {
+      "name": "Future sum and current value",
+      "explanation": "They measure money at different dates.",
+      "whenItMatters": "Compare alternatives at one date before adding them."
+    }
+  ],
+  "workedExample": {
+    "id": "pv-fv-timeline",
+    "scenarioId": "pv-fv-timeline-worked",
+    "setup": "At an assumed effective annual 10%, one alternative invests 100 now for two years with no interim withdrawal. Separately, value an alternative stream receiving 55 at Year 1 end and 60.5 at Year 2 end. These are alternatives, not one cumulative account.",
+    "inputs": [
+      {
+        "key": "present",
+        "label": "Present",
+        "value": 100,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "year1",
+        "label": "Year1",
+        "value": 55,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "year2",
+        "label": "Year2",
+        "value": 60.5,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "rate",
+        "label": "Effective annual rate",
+        "value": 0.1,
+        "unit": "fraction"
+      },
+      {
+        "key": "years",
+        "label": "Compounding years",
+        "value": 2,
+        "unit": "years"
+      }
+    ],
+    "steps": [
+      "First alternative: after Year 1, 100×1.10 = 110.",
+      "After Year 2, 110×1.10 = 121; equivalently 100×1.10².",
+      "Discounting the Year 2 amount back: 121/1.10² = 100.",
+      "Separate stream: Year 1 present value = 55/1.10 = 50.",
+      "Year 2 present value = 60.5/1.10² = 50; total present value = 100.",
+      "The two alternatives have equal present value under the supplied assumptions; their nominal totals and timing differ."
+    ],
+    "result": "FV of 100 is 121 after two years; PV of the separate 55/60.5 stream is 100.",
+    "interpretation": "Compounding and discounting are reciprocal operations when dates and rates match."
+  },
+  "statementEffects": {
+    "applicability": "not-applicable",
+    "explanation": "Effects under the stated simplified scenario. Forecasts and economic values do not themselves create accounting entries.",
+    "changes": []
+  },
+  "misconceptions": [
+    {
+      "id": "direction",
+      "claim": "Multiply a future receipt to find its value today.",
+      "correction": "Discount by dividing by the compound factor.",
+      "diagnostic": "Which date are you moving toward?"
+    },
+    {
+      "id": "period",
+      "claim": "Use an annual rate for each monthly period.",
+      "correction": "Match the periodic rate and exponent to the quoted convention.",
+      "diagnostic": "How many compounding periods are there?"
+    },
+    {
+      "id": "sum",
+      "claim": "Add nominal dated receipts before discounting them all alike.",
+      "correction": "Discount each date separately.",
+      "diagnostic": "When is each receipt available?"
+    }
+  ],
+  "practice": [
+    {
+      "id": "pv-predict",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "back",
+      "scenarioId": "pv-predict-independent",
+      "objectiveIds": [
+        "timeline"
+      ],
+      "setup": "Independent single receipt: 72 at Year 2 end, with an assumed effective annual rate of 20% and no other cash flow.",
+      "inputs": [
+        {
+          "key": "receipt",
+          "label": "Receipt",
+          "value": 72,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "rate",
+          "label": "Effective annual rate",
+          "value": 0.2,
+          "unit": "fraction"
+        },
+        {
+          "key": "years",
+          "label": "Years to receipt",
+          "value": 2,
+          "unit": "years"
+        }
+      ],
+      "question": "What is its present value?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "103.68",
+          "feedback": "Multiplying moves the future amount further forward.",
+          "misconceptionId": "direction"
+        },
+        {
+          "id": "correct",
+          "text": "50",
+          "feedback": "PV = 72/(1.20²) = 72/1.44 = 50.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "60",
+          "feedback": "Discounting once ignores the second year.",
+          "misconceptionId": "period"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "PV = 72/(1.20²) = 72/1.44 = 50.",
+      "hints": [
+        {
+          "text": "Count the two years between today and receipt.",
+          "answerRevealing": false
+        },
+        {
+          "text": "PV = 72/(1.20²) = 72/1.44 = 50.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "How would you verify the result by compounding forward?",
+        "rubric": [
+          "Compound 50 by 1.2 twice.",
+          "Keep the amount and rate in the same annual periods.",
+          "Do not treat 72 as today’s value."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "pv-transfer-monthly",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "frequency",
+      "scenarioId": "pv-transfer-monthly-independent",
+      "objectiveIds": [
+        "timeline"
+      ],
+      "setup": "Independent deposit: place 80 now for six months. The hypothetical nominal annual rate is 12%, explicitly compounded monthly at 1% each month. No fee or withdrawal occurs.",
+      "inputs": [
+        {
+          "key": "present",
+          "label": "Present",
+          "value": 80,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "nominal_rate",
+          "label": "Nominal annual quote",
+          "value": 0.12,
+          "unit": "fraction"
+        },
+        {
+          "key": "monthly_rate",
+          "label": "Specified monthly rate",
+          "value": 0.01,
+          "unit": "fraction"
+        },
+        {
+          "key": "months",
+          "label": "Number of monthly periods",
+          "value": 6,
+          "unit": "months"
+        }
+      ],
+      "question": "What future value follows, rounded to two decimals?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "157.91",
+          "feedback": "This applies the annual quote as though it were a monthly rate.",
+          "misconceptionId": "period"
+        },
+        {
+          "id": "correct",
+          "text": "84.92",
+          "feedback": "FV = 80×1.01⁶ = 84.921612..., displayed 84.92. Use six monthly periods at the specified monthly rate.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "89.60",
+          "feedback": "A full annual simple-interest calculation does not follow the six monthly periods.",
+          "misconceptionId": "period"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "FV = 80×1.01⁶ = 84.921612..., displayed 84.92. Use six monthly periods at the specified monthly rate.",
+      "hints": [
+        {
+          "text": "Use the monthly rate with the monthly count.",
+          "answerRevealing": false
+        },
+        {
+          "text": "FV = 80×1.01⁶ = 84.921612..., displayed 84.92. Use six monthly periods at the specified monthly rate.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Why is dividing an effective annual rate by 12 a different question?",
+        "rubric": [
+          "Identify the explicitly nominal quote.",
+          "Use the supplied 1% periodic rate.",
+          "Retain precision before display rounding."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E0091",
+      "to": "T03.02",
+      "kind": "learning",
+      "purpose": "Study these together to compare amounts received or paid at different times on a consistent basis.",
+      "conditions": "A topical exploration link, not a claim that one determines the other.",
+      "computed": false
+    },
+    {
+      "edgeId": "E0092",
+      "to": "T02.03",
+      "kind": "learning",
+      "purpose": "Suggested starting knowledge: Simple interest and compound interest. It helps you compare amounts received or paid at different times on a consistent basis.",
+      "conditions": "Suggested learning order; learners can still explore freely.",
+      "computed": false
+    },
+    {
+      "edgeId": "E0094",
+      "to": "T03.02",
+      "kind": "learning",
+      "purpose": "Study these together to compare amounts received or paid at different times on a consistent basis.",
+      "conditions": "A topical exploration link, not a claim that one determines the other.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D03",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "How would an effective annual rate be converted to an equivalent monthly rate?",
+      "Which convention applies to irregular cash dates?"
+    ],
+    "conceptIds": [
+      "T03.02",
+      "T02.03",
+      "T03.02"
+    ],
+    "limitations": "Introductory study coverage. Continuous compounding, irregular-date conventions, term structures and complete annuity/perpetuity families are deferred."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "The connected six-round case remains a separate implementation task; these examples do not imply playable rounds."
+    }
+  ],
+  "sources": [
+    {
+      "id": "appraisal",
+      "title": "ACCA: Investment appraisal",
+      "url": "https://www.accaglobal.com/gb/en/student/exam-support-resources/prodipsust-study-resources/technical-articles/investment-appraisal.html",
+      "supports": [
+        "Background on dated incremental cash flows and NPV. Scenario inputs, discount rates and all calculations are authored assumptions, not investment recommendations."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "method": "ai-content-source-arithmetic",
+    "evidence": [
+      "B5 topic mechanics, terminology, signs, timing, source boundaries and feedback reviewed in docs/implementation/task-04-4-b5.md.",
+      "Independent worked and assessment calculations checked in tests/b5-lessons.test.mjs; shared route, version, hint and retry regressions also apply.",
+      "Scoped AI content review, not independent professional approval, interactive browser verification or learner-pilot evidence."
+    ]
+  }
+}

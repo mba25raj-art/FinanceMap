@@ -1,0 +1,441 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "T17.04",
+  "contentVersion": "1.0.0",
+  "hoverDefinition": "The enterprise-to-equity bridge reconciles a defined operating value to ordinary owners: add assets outside operations, then deduct debt and other included claims once. Cash treatment must match the starting valuation perimeter.",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "Stepwise operating-to-ordinary-equity bridge, explicitly excess cash, non-operating investments, other claims and double-counting controls."
+    ],
+    "deferred": [
+      "Full debt-like negotiations, tax leakage, pension/lease adjustments, option valuation and transaction-specific settlement mechanics are deferred."
+    ]
+  },
+  "objectives": [
+    {
+      "id": "bridge",
+      "statement": "Build and reverse-check the supplied enterprise-to-equity bridge.",
+      "evidence": "Add only outside assets and deduct each included claim using a consistent perimeter.",
+      "outcomeIds": [
+        "LO6"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh",
+      "lakh shares"
+    ],
+    "timeframe": "Independent fictional teaching scenarios. Worked examples and practice start separately; they are not consecutive company-case rounds.",
+    "assumptions": [
+      "The supplied operating value explicitly includes the economic operating-cash requirement; only separately excess cash is added.",
+      "All values are same-date economic estimates. Debt-like/other claims are supplied, distinct and not already reflected in operating value.",
+      "No restricted cash or unlisted non-operating asset/claim; tax leakage and transaction fees are excluded.",
+      "The share count, where given, matches the ordinary residual."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Conceptual teaching assumptions, with INR lakh as a unit rather than a jurisdiction. No tax rate, financing term, reporting classification, valuation input or management buffer is a current rule or market recommendation. Applicable framework, jurisdiction, reporting period and effective amendments require separate study."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "start",
+      "title": "Write the starting perimeter before adjusting",
+      "paragraphs": [
+        "State whether the valuation covers operations only, which subsidiaries it includes and how operating cash is handled. A standard formula cannot repair a mismatch between the value and the bridge. This lesson’s supplied operating value includes the stated operating-cash requirement; the bridge adds only separately excess cash.",
+        "If another model excludes all cash or separately includes interest from cash, reconcile that convention rather than copying these additions unchanged. Restricted or difficult-to-access assets may need a separate valuation, not an automatic assumption of either full distributability or zero value."
+      ]
+    },
+    {
+      "id": "bridge",
+      "title": "Name every addition and deduction",
+      "paragraphs": [
+        "Ordinary equity = operating value + outside excess cash + other separately valued non-operating assets − debt − preferred/other supplied claims − non-controlling interests where included in the starting cash perimeter. Use the supplied value basis for each item.",
+        "Show gross debt and excess cash explicitly, or an equivalent consistently defined net-debt line; do not subtract net debt and add the same cash again. Similarly, do not deduct an obligation already represented as an operating cash outflow without reconciling it."
+      ]
+    },
+    {
+      "id": "controls",
+      "title": "Reverse the bridge and test the definition",
+      "paragraphs": [
+        "Add the allocated claims back to ordinary equity and remove outside assets to recover the original operating value. Keep operating cash, claims and share count definitions visible. A mechanical balance is a useful control but cannot establish that each supplied economic value is correct.",
+        "The bridge does not itself cause a payout or a journal entry. Cash availability, future funding needs and legal distributions require separate evidence. Sensitivity in operating value can have a larger proportional effect on the smaller equity residual."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "Gross-debt bridge and net-debt shortcut",
+      "explanation": "They can be equivalent only with the same cash definition.",
+      "whenItMatters": "Do not count cash twice."
+    },
+    {
+      "name": "Operating cash and excess cash",
+      "explanation": "The starting perimeter determines whether cash is already valued.",
+      "whenItMatters": "No blanket addition of every bank balance."
+    },
+    {
+      "name": "Debt-like claim and operating obligation",
+      "explanation": "Some claims may already be reflected in operating cash forecasts.",
+      "whenItMatters": "Avoid deducting the same burden twice."
+    }
+  ],
+  "workedExample": {
+    "id": "bridge-gross",
+    "scenarioId": "bridge-gross-worked",
+    "setup": "Supplied operating value 200 includes the stated operating-cash requirement. Reported cash is 35, with 15 required inside that operating perimeter, leaving 20 excess. A non-operating investment is valued separately at 8. Debt 70, a distinct supplied debt-like claim 5, preferred claim 10 and included non-controlling claim 3 remain to be deducted. There are 10 lakh ordinary shares.",
+    "inputs": [
+      {
+        "key": "enterprise",
+        "label": "Enterprise",
+        "value": 200,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "reported_cash",
+        "label": "Reported cash",
+        "value": 35,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "required_cash",
+        "label": "Required cash",
+        "value": 15,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "non_operating",
+        "label": "Non operating",
+        "value": 8,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "debt",
+        "label": "Debt",
+        "value": 70,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "debt_like",
+        "label": "Debt like",
+        "value": 5,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "preferred",
+        "label": "Preferred",
+        "value": 10,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "minority",
+        "label": "Minority",
+        "value": 3,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "shares",
+        "label": "Ordinary shares",
+        "value": 10,
+        "unit": "lakh shares"
+      }
+    ],
+    "steps": [
+      "Outside excess cash = 35 − required operating cash 15 = 20. The 15 is already covered by the supplied operating value.",
+      "Add outside assets: 200 + 20 + investment 8 = 228.",
+      "Deduct distinct claims: debt 70 + debt-like 5 + preferred 10 + non-controlling 3 = 88.",
+      "Ordinary equity = 228 − 88 = 140; per share = 140/10 = INR 14.",
+      "Reverse check: 140 + 88 − outside assets 28 = starting operating value 200.",
+      "A net-debt shortcut would need the same excess-cash definition. Do not also add the 20 after deducting net debt that already subtracts it."
+    ],
+    "result": "Ordinary equity 140; INR 14 per supplied share.",
+    "interpretation": "The cash requirement and each claim are explicit assumptions, not universal deductions inferred from accounting labels."
+  },
+  "statementEffects": {
+    "applicability": "not-applicable",
+    "explanation": "Effects under the stated simplified scenario. Forecasts and economic values do not themselves create accounting entries.",
+    "changes": []
+  },
+  "misconceptions": [
+    {
+      "id": "all-cash",
+      "claim": "Add all reported cash even though some is already in the operating perimeter.",
+      "correction": "Add only the separately outside asset under the supplied convention.",
+      "diagnostic": "Which cash value is already included?"
+    },
+    {
+      "id": "net-double",
+      "claim": "Subtract net debt and add the same excess cash again.",
+      "correction": "Choose one consistent gross or net presentation.",
+      "diagnostic": "Where has this cash already entered the arithmetic?"
+    },
+    {
+      "id": "claim",
+      "claim": "Ignore a distinct supplied non-equity claim.",
+      "correction": "Reconcile each included claim once.",
+      "diagnostic": "Which provider still has a share of the economic assets?"
+    }
+  ],
+  "practice": [
+    {
+      "id": "bridge-predict",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "bridge",
+      "scenarioId": "bridge-predict-independent",
+      "objectiveIds": [
+        "bridge"
+      ],
+      "setup": "Independent supplied operating value 160 already includes required operating cash 8. Reported cash 20 therefore contains excess 12. Debt value 50 and a distinct other claim 4 are not yet deducted. No other asset/claim exists.",
+      "inputs": [
+        {
+          "key": "enterprise",
+          "label": "Enterprise",
+          "value": 160,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "reported_cash",
+          "label": "Reported cash",
+          "value": 20,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "required_cash",
+          "label": "Required cash",
+          "value": 8,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "debt",
+          "label": "Debt",
+          "value": 50,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "other_claim",
+          "label": "Other claim",
+          "value": 4,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "What ordinary equity follows under the stated perimeter?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "126",
+          "feedback": "Adding all reported cash repeats the required cash already included in operating value.",
+          "misconceptionId": "all-cash"
+        },
+        {
+          "id": "correct",
+          "text": "118",
+          "feedback": "Excess = 20 − 8 = 12. Equity = 160 + 12 − 50 − 4 = 118. Reverse: 118 + 54 − 12 = 160.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "122",
+          "feedback": "The distinct other claim 4 must be deducted.",
+          "misconceptionId": "claim"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Excess = 20 − 8 = 12. Equity = 160 + 12 − 50 − 4 = 118. Reverse: 118 + 54 − 12 = 160.",
+      "hints": [
+        {
+          "text": "Define outside cash before deducting the named claims.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Excess = 20 − 8 = 12. Equity = 160 + 12 − 50 − 4 = 118. Reverse: 118 + 54 − 12 = 160.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "How would a net-debt shortcut need to be defined?",
+        "rubric": [
+          "Use excess 12, not reported 20.",
+          "Include other claim 4.",
+          "Do not add excess twice."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "bridge-transfer-net-debt",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "controls",
+      "scenarioId": "bridge-transfer-net-debt-independent",
+      "objectiveIds": [
+        "bridge"
+      ],
+      "setup": "Independent supplied operating value 150 excludes excess cash 10, and gross debt value is 60. No other outside asset/claim exists. A consistent net-debt measure is given as 50 = gross debt 60 less that same excess cash 10.",
+      "inputs": [
+        {
+          "key": "enterprise",
+          "label": "Enterprise",
+          "value": 150,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "excess_cash",
+          "label": "Excess cash",
+          "value": 10,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "gross_debt",
+          "label": "Gross debt",
+          "value": 60,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "net_debt",
+          "label": "Net debt",
+          "value": 50,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "Which two bridge presentations agree?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "150 − 50 + 10 = 110",
+          "feedback": "The net-debt 50 already includes the same cash deduction.",
+          "misconceptionId": "net-double"
+        },
+        {
+          "id": "correct",
+          "text": "150 + 10 − 60 = 100, and 150 − 50 = 100",
+          "feedback": "Gross presentation: 150 + 10 − 60 = 100. Net presentation: 150 − (60−10) = 100. Adding cash after using that net debt would count it twice.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "150 − 60 = 90, with no cash addition needed",
+          "feedback": "This omits the separately valued excess cash 10.",
+          "misconceptionId": "all-cash"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Gross presentation: 150 + 10 − 60 = 100. Net presentation: 150 − (60−10) = 100. Adding cash after using that net debt would count it twice.",
+      "hints": [
+        {
+          "text": "Expand the net-debt definition before comparing the forms.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Gross presentation: 150 + 10 − 60 = 100. Net presentation: 150 − (60−10) = 100. Adding cash after using that net debt would count it twice.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Which evidence would justify using this shortcut on a real company?",
+        "rubric": [
+          "Match the excess-cash definition.",
+          "Check other claims and outside assets.",
+          "Use consistent economic values and dates."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E0790",
+      "to": "T17.03",
+      "kind": "learning",
+      "purpose": "Study these together to match cash flows, reinvestment, discount rates and investor claims.",
+      "conditions": "A topical exploration link, not a claim that one determines the other.",
+      "computed": false
+    },
+    {
+      "edgeId": "E0793",
+      "to": "T17.03",
+      "kind": "learning",
+      "purpose": "Study these together to match cash flows, reinvestment, discount rates and investor claims.",
+      "conditions": "A topical exploration link, not a claim that one determines the other.",
+      "computed": false
+    },
+    {
+      "edgeId": "E0794",
+      "to": "T03.01",
+      "kind": "learning",
+      "purpose": "Suggested starting knowledge: Present value and future value. It helps you match cash flows, reinvestment, discount rates and investor claims.",
+      "conditions": "Suggested learning order; learners can still explore freely.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D17",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "Which debt-like obligations are already reflected in the operating cash forecast?",
+      "How should restricted assets or different consolidation scopes be valued consistently?"
+    ],
+    "conceptIds": [
+      "T17.03",
+      "T17.03",
+      "T03.01"
+    ],
+    "limitations": "Introductory study coverage. Full debt-like negotiations, tax leakage, pension/lease adjustments, option valuation and transaction-specific settlement mechanics are deferred."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "The connected six-round case remains a separate implementation task; these examples do not imply playable rounds."
+    }
+  ],
+  "sources": [
+    {
+      "id": "cash",
+      "title": "Aswath Damodaran, NYU Stern: The Value of Cash and Cross Holdings",
+      "url": "https://pages.stern.nyu.edu/~adamodar/pdfiles/eqnotes/cashandholdings.pdf",
+      "supports": [
+        "Background on separately valued cash/holdings and consistent operating-cash and consolidation perimeters. The scenario supplies values and inclusion rules; book balances are not assumed to equal claim values."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "firm",
+      "title": "Aswath Damodaran, NYU Stern: Free Cashflow to the Firm",
+      "url": "https://people.stern.nyu.edu/adamodar/pdfiles/eqnotes/fcff.pdf",
+      "supports": [
+        "Background on operating value, non-operating additions and deductions for claims. Supplied hypothetical values replace any source historical company data; no present market calibration is claimed."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "method": "ai-content-source-arithmetic",
+    "evidence": [
+      "B6 topic mechanics, terminology, signs, timing, source boundaries and feedback reviewed in docs/implementation/task-04-4-b6.md.",
+      "Independent worked and assessment calculations checked in tests/b6-lessons.test.mjs; shared route, version, hint and retry regressions also apply.",
+      "Scoped AI content review, not independent professional approval, interactive browser verification or learner-pilot evidence."
+    ]
+  }
+}

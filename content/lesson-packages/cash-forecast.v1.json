@@ -1,0 +1,419 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "T14.04",
+  "contentVersion": "1.0.0",
+  "hoverDefinition": "A cash forecast schedules expected receipts and payments by date. It rolls opening cash forward and reveals when a funding gap occurs, even if profit or a later closing balance is positive.",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "Dated cash roll-forward, receipts versus recognised sales, gross payments, timing scenarios and explicit funding gaps."
+    ],
+    "deferred": [
+      "Probabilistic collections models, treasury systems, foreign-currency hedging and multi-entity pooling are deferred."
+    ]
+  },
+  "objectives": [
+    {
+      "id": "forecast",
+      "statement": "Build a dated cash forecast and locate the earliest funding gap.",
+      "evidence": "Calculate each period before and after explicit funding without inventing receipts.",
+      "outcomeIds": [
+        "LO3"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh"
+    ],
+    "timeframe": "Independent fictional teaching scenarios. Worked examples and practice start separately; they are not consecutive company-case rounds.",
+    "assumptions": [
+      "Forecast inputs are assumptions, not guaranteed cash receipts.",
+      "In weekly examples all stated receipts precede stated payments; no other intraweek movement occurs. Dated transfer data override that convention.",
+      "Funding draws occur before the payment that requires them. A hypothetical minimum cash balance is a management assumption.",
+      "No interest, tax, fees or repayment unless stated."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Conceptual teaching assumptions, with INR lakh as a unit rather than a jurisdiction. No tax rate, financing term, reporting classification, valuation input or management buffer is a current rule or market recommendation. Applicable framework, jurisdiction, reporting period and effective amendments require separate study."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "calendar",
+      "title": "Translate operations into a payment calendar",
+      "paragraphs": [
+        "Record opening usable cash, receipt dates, payment dates and the source of each estimate. A credit sale enters the forecast on its expected collection date, rather than automatically on the sales date. Include old receivable collections and previously recognised supplier obligations when they fall due.",
+        "Do not include depreciation as a payment, but include an equipment deposit, tax instalment or loan principal when the stated cash date falls in the horizon. Classify flows for explanation after ensuring all actual cash movements are included."
+      ]
+    },
+    {
+      "id": "roll",
+      "title": "Roll cash forward in sequence",
+      "paragraphs": [
+        "Before-funding closing cash = opening cash + receipts − payments. Any funding or repayment is a separate dated line. The funded closing balance becomes the next period’s opening balance. A negative forecast is a warning of unmet funding, not a bank balance silently supported by an invented loan.",
+        "For a stated minimum, the incremental draw needed is max(0, minimum − before-funding balance), subject to actual availability. If existing funding carries forward, do not draw the same amount again merely because the next column starts from an old unfunded path."
+      ]
+    },
+    {
+      "id": "timing",
+      "title": "Check the trough within the period",
+      "paragraphs": [
+        "Month-end cash can hide a payment before the customer receipt. Use dates fine enough to cover the decision. Where receipt and payment order is uncertain, show a downside sequence and the funding deadline.",
+        "Separate a base forecast from stress assumptions such as a delayed customer payment. Update forecast versus actual, retain the variance reason and refresh the remaining horizon. A forecast revision does not itself post revenue, cash or a liability."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "Profit forecast and cash forecast",
+      "explanation": "Recognition timing differs from collection/payment timing.",
+      "whenItMatters": "A profitable month can still contain a funding shortfall."
+    },
+    {
+      "name": "Unfunded and funded path",
+      "explanation": "A forecast gap identifies need; a confirmed draw supplies cash and creates an obligation.",
+      "whenItMatters": "Show the funding action explicitly."
+    },
+    {
+      "name": "Closing balance and lowest dated balance",
+      "explanation": "The period closing total can recover after an earlier trough.",
+      "whenItMatters": "Funding must arrive before the first blocked payment."
+    }
+  ],
+  "workedExample": {
+    "id": "forecast-two-weeks",
+    "scenarioId": "forecast-two-weeks-worked",
+    "setup": "Opening usable cash is 12. Week 1 receipts of 4 arrive Monday and payments of 18 fall Friday. Week 2 receipts of 20 arrive Monday and payments of 5 Friday. The assumed minimum is 3. A facility permits a draw before Week 1 Friday; no fees, interest or repayment occur.",
+    "inputs": [
+      {
+        "key": "opening",
+        "label": "Opening",
+        "value": 12,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "w1_receipts",
+        "label": "W1 receipts",
+        "value": 4,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "w1_payments",
+        "label": "W1 payments",
+        "value": 18,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "w2_receipts",
+        "label": "W2 receipts",
+        "value": 20,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "w2_payments",
+        "label": "W2 payments",
+        "value": 5,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "minimum",
+        "label": "Minimum",
+        "value": 3,
+        "unit": "INR lakh"
+      }
+    ],
+    "steps": [
+      "Unfunded Week 1 close = 12 + 4 − 18 = −2; the payment is not affordable without action.",
+      "Week 1 draw required to reach minimum = 3 − (−2) = 5, received before Friday.",
+      "Funded Week 1 close = −2 + 5 = 3. This 3 is Week 2 opening cash.",
+      "Week 2 funded close = 3 + 20 − 5 = 18; no additional draw is needed.",
+      "Without any funding, Week 2 would close at −2 + 20 − 5 = 13. Its positive close does not repair the earlier payment deadline.",
+      "The assumed sequence makes Friday the relevant weekly low; a different receipt date requires a finer forecast."
+    ],
+    "result": "Draw 5 before Week 1 Friday; funded closes are 3 and 18.",
+    "interpretation": "A dated shortage needs a dated response; later receipts cannot retrospectively pay an earlier bill."
+  },
+  "statementEffects": {
+    "applicability": "direct",
+    "explanation": "Effects under the stated simplified scenario. Forecasts and economic values do not themselves create accounting entries.",
+    "changes": [
+      "The forecast itself creates no accounting entry.",
+      "If the loan draw 5 occurs, cash and debt rise by 5; actual receipts/payments are recorded when they occur."
+    ]
+  },
+  "misconceptions": [
+    {
+      "id": "profit",
+      "claim": "Recognised sales are immediate forecast receipts.",
+      "correction": "Use the expected collection date and separately track uncertainty.",
+      "diagnostic": "When will the customer actually pay?"
+    },
+    {
+      "id": "late",
+      "claim": "A positive later closing balance proves every earlier payment is covered.",
+      "correction": "Check each dated low and funding deadline.",
+      "diagnostic": "Which payment comes before the receipt?"
+    },
+    {
+      "id": "auto",
+      "claim": "A negative forecast automatically creates borrowing.",
+      "correction": "Record only an explicitly available and selected funding action.",
+      "diagnostic": "What agreement makes cash drawable in time?"
+    }
+  ],
+  "practice": [
+    {
+      "id": "forecast-predict",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "roll",
+      "scenarioId": "forecast-predict-independent",
+      "objectiveIds": [
+        "forecast"
+      ],
+      "setup": "Independent single-period forecast: usable opening cash 8, receipts 2 before payments 13. Minimum cash is 2. A draw can occur before the payment; no fee, interest or repayment applies.",
+      "inputs": [
+        {
+          "key": "opening",
+          "label": "Opening",
+          "value": 8,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "receipts",
+          "label": "Receipts",
+          "value": 2,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "payments",
+          "label": "Payments",
+          "value": 13,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "minimum",
+          "label": "Minimum",
+          "value": 2,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "What funding draw is needed to end at the stated minimum?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "3",
+          "feedback": "3 only covers the negative balance; it does not preserve the minimum 2.",
+          "misconceptionId": "auto"
+        },
+        {
+          "id": "correct",
+          "text": "5",
+          "feedback": "Before funding = 8 + 2 − 13 = −3. Draw = 2 − (−3) = 5. Funded closing cash = 2.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "0",
+          "feedback": "The before-funding balance is negative; a forecast does not create cash.",
+          "misconceptionId": "auto"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Before funding = 8 + 2 − 13 = −3. Draw = 2 − (−3) = 5. Funded closing cash = 2.",
+      "hints": [
+        {
+          "text": "Find the unfunded balance before comparing it with the minimum.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Before funding = 8 + 2 − 13 = −3. Draw = 2 − (−3) = 5. Funded closing cash = 2.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Why is the draw larger than the amount needed to avoid zero?",
+        "rubric": [
+          "Calculate −3 before funding.",
+          "Include minimum 2.",
+          "Show the explicit draw 5."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "forecast-transfer-date",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "timing",
+      "scenarioId": "forecast-transfer-date-independent",
+      "objectiveIds": [
+        "forecast"
+      ],
+      "setup": "Independent dated forecast: opening usable cash 10. Payment 18 is due on Day 1; customer receipt 20 arrives on Day 2. Minimum usable cash is 4. A draw can arrive before Day 1 payment and remains outstanding, with no costs or other events.",
+      "inputs": [
+        {
+          "key": "opening",
+          "label": "Opening",
+          "value": 10,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "day1_payment",
+          "label": "Day1 payment",
+          "value": 18,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "day2_receipt",
+          "label": "Day2 receipt",
+          "value": 20,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "minimum",
+          "label": "Minimum",
+          "value": 4,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "What draw is required before Day 1, and what is Day 2 closing cash after it?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "Draw 0; Day 2 closes at 12",
+          "feedback": "The positive total hides the earlier shortfall and minimum requirement.",
+          "misconceptionId": "late"
+        },
+        {
+          "id": "correct",
+          "text": "Draw 12; Day 2 closes at 24",
+          "feedback": "Day 1 before funding = 10 − 18 = −8. Draw 4 − (−8) = 12; Day 1 closes at 4. Day 2 closes at 4 + 20 = 24.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "Draw 8; Day 2 closes at 20",
+          "feedback": "8 avoids negative cash but leaves zero after Day 1, below minimum 4.",
+          "misconceptionId": "auto"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Day 1 before funding = 10 − 18 = −8. Draw 4 − (−8) = 12; Day 1 closes at 4. Day 2 closes at 4 + 20 = 24.",
+      "hints": [
+        {
+          "text": "Put the payment and receipt on their own dates.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Day 1 before funding = 10 − 18 = −8. Draw 4 − (−8) = 12; Day 1 closes at 4. Day 2 closes at 4 + 20 = 24.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Why is a net monthly total insufficient?",
+        "rubric": [
+          "Identify the Day 1 trough −8.",
+          "Fund before the payment.",
+          "Carry the actual funded closing balance forward."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E0652",
+      "to": "T14.15",
+      "kind": "learning",
+      "purpose": "Study these together to manage the timing gap between cash receipts, payments and funding.",
+      "conditions": "A topical exploration link, not a claim that one determines the other.",
+      "computed": false
+    },
+    {
+      "edgeId": "E0653",
+      "to": "T06.01",
+      "kind": "learning",
+      "purpose": "Suggested starting knowledge: Current versus non-current classification. It helps you manage the timing gap between cash receipts, payments and funding.",
+      "conditions": "Suggested learning order; learners can still explore freely.",
+      "computed": false
+    },
+    {
+      "edgeId": "E0676",
+      "to": "T14.12",
+      "kind": "learning",
+      "purpose": "Study these together to manage the timing gap between cash receipts, payments and funding.",
+      "conditions": "A topical exploration link, not a claim that one determines the other.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D14",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "How should forecast error and overdue customer receipts change the next update?",
+      "What daily timing must be modelled when several large payments fall in one week?"
+    ],
+    "conceptIds": [
+      "T14.15",
+      "T06.01",
+      "T14.12"
+    ],
+    "limitations": "Introductory study coverage. Probabilistic collections models, treasury systems, foreign-currency hedging and multi-entity pooling are deferred."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "The connected six-round case remains a separate implementation task; these examples do not imply playable rounds."
+    }
+  ],
+  "sources": [
+    {
+      "id": "wcm",
+      "title": "ACCA: Working capital management",
+      "url": "https://www.accaglobal.com/gb/en/student/exam-support-resources/fundamentals-exams-study-resources/f9/technical-articles/wcm.html",
+      "supports": [
+        "Background on the operating cycle, period conventions and liquidity/profitability trade-offs. Buffer amounts and forecast dates in this lesson are authored assumptions, not recommended thresholds."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "ias7",
+      "title": "IFRS Foundation: IAS 7 public overview",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/ias-7-statement-of-cash-flows/",
+      "supports": [
+        "Background on operating, investing and financing cash and non-cash reconciliation. The examples prescribe their own conceptual classifications; statutory starting subtotals, interest/dividends and effective amendments require separate analysis."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "method": "ai-content-source-arithmetic",
+    "evidence": [
+      "B3 topic mechanics, terminology, signs, timing, source boundaries and feedback reviewed in docs/implementation/task-04-4-b3.md.",
+      "Independent worked and assessment calculations checked in tests/b3-lessons.test.mjs; shared route, version, hint and retry regressions also apply.",
+      "Scoped AI content review, not independent professional approval, interactive browser verification or learner-pilot evidence."
+    ]
+  }
+}

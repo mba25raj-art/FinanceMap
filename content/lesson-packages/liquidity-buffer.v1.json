@@ -1,0 +1,437 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "T14.15",
+  "contentVersion": "1.0.0",
+  "hoverDefinition": "A liquidity buffer is a stated reserve of usable cash for uncertainty. Funding need depends on the lowest forecast balance, restrictions, committed availability and the time required to draw funds.",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "Usable cash versus reported cash, hypothetical minimums, stress gaps, facility availability and residual shortfalls."
+    ],
+    "deferred": [
+      "Regulated liquidity requirements, covenant legal interpretation, optimal buffer estimation and treasury risk systems are deferred."
+    ]
+  },
+  "objectives": [
+    {
+      "id": "funding",
+      "statement": "Measure funding needed to maintain an explicit cash minimum.",
+      "evidence": "Deduct restricted cash and count only funding available before the forecast trough.",
+      "outcomeIds": [
+        "LO3"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh"
+    ],
+    "timeframe": "Independent fictional teaching scenarios. Worked examples and practice start separately; they are not consecutive company-case rounds.",
+    "assumptions": [
+      "The minimum is hypothetical management policy, not a universal or regulated ratio.",
+      "Restricted cash cannot support the assessed payments.",
+      "Only explicitly committed, usable capacity drawable before the deadline is counted; a possible offer is excluded.",
+      "No costs, interest or new cash events beyond the data."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Conceptual teaching assumptions, with INR lakh as a unit rather than a jurisdiction. No tax rate, financing term, reporting classification, valuation input or management buffer is a current rule or market recommendation. Applicable framework, jurisdiction, reporting period and effective amendments require separate study."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "usable",
+      "title": "Start with cash available for this use",
+      "paragraphs": [
+        "Reported cash can include amounts unavailable for the proposed payment. Identify restrictions and avoid counting the same deposit both as cash and collateral capacity. Receivables and undrawn loans are not current cash.",
+        "A buffer is a chosen minimum balance. It can help absorb forecast error, but its size depends on payment volatility, access to finance, opportunity cost and operating consequences. The lesson supplies a hypothetical amount rather than recommending one."
+      ]
+    },
+    {
+      "id": "gap",
+      "title": "Measure need at the forecast low",
+      "paragraphs": [
+        "Required funding = max(0, stated minimum − forecast usable cash before funding). A balance of zero may be below the chosen buffer. Test the worst relevant date and the selected stress case; do not rely solely on the final horizon balance.",
+        "Available funding is a separate test. Deduct only committed undrawn capacity that remains accessible under the scenario and arrives before the gap. Required funding minus timely usable funding, floored at zero, is the residual shortfall."
+      ]
+    },
+    {
+      "id": "contingency",
+      "title": "Make the contingency actionable",
+      "paragraphs": [
+        "A contingency identifies a trigger, amount, source, draw deadline, conditions and responsible decision. A hoped-for loan approval is not confirmed capacity. Consider earlier collection, deferring optional expenditure or raising longer funding only where the scenario permits those changes.",
+        "A facility draw creates debt and future service obligations. A larger buffer may reduce immediate risk but does not repair an unprofitable business or permanently fund a growing cash gap. Re-test the forecast after each action and stress."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "Cash and undrawn facility",
+      "explanation": "Only cash is already held; a facility requires a valid timely draw.",
+      "whenItMatters": "Report capacity separately from the bank balance."
+    },
+    {
+      "name": "Committed and uncommitted funding",
+      "explanation": "An agreement may still have conditions; an unapproved offer is uncertain.",
+      "whenItMatters": "Count only the capacity explicitly usable in the given scenario."
+    },
+    {
+      "name": "Avoiding negative cash and maintaining a buffer",
+      "explanation": "Zero can still miss an assumed positive minimum.",
+      "whenItMatters": "Include the full minimum in the funding target."
+    }
+  ],
+  "workedExample": {
+    "id": "buffer-restricted",
+    "scenarioId": "buffer-restricted-worked",
+    "setup": "Reported cash is 9, of which 3 cannot fund the assessed operations. Before the trough, receipts 10 arrive and payments 22 fall due. The assumed usable-cash minimum is 4. A committed undrawn facility of 7 is usable before the payment; an additional possible loan of 5 is unapproved and excluded.",
+    "inputs": [
+      {
+        "key": "reported_cash",
+        "label": "Reported cash",
+        "value": 9,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "restricted",
+        "label": "Restricted",
+        "value": 3,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "receipts",
+        "label": "Receipts",
+        "value": 10,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "payments",
+        "label": "Payments",
+        "value": 22,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "minimum",
+        "label": "Minimum",
+        "value": 4,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "committed",
+        "label": "Committed",
+        "value": 7,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "unapproved",
+        "label": "Unapproved",
+        "value": 5,
+        "unit": "INR lakh"
+      }
+    ],
+    "steps": [
+      "Opening usable cash = 9 − restricted 3 = 6.",
+      "Before-funding usable cash at the trough = 6 + 10 − 22 = −6.",
+      "Funding needed to maintain minimum = 4 − (−6) = 10.",
+      "Only committed timely capacity 7 is counted. The unapproved 5 is not drawable cash.",
+      "After a permitted draw 7, forecast usable cash is 1; residual gap to minimum is 4 − 1 = 3.",
+      "The restriction remains on the separate 3. It cannot be used to conceal the residual usable-cash gap."
+    ],
+    "result": "Required funding 10; usable facility 7; residual shortfall 3.",
+    "interpretation": "The proposed draw partly solves the payment problem but does not meet the assumed liquidity policy."
+  },
+  "statementEffects": {
+    "applicability": "direct",
+    "explanation": "Effects under the stated simplified scenario. Forecasts and economic values do not themselves create accounting entries.",
+    "changes": [
+      "A forecast or buffer choice has no immediate accounting entry.",
+      "An actual facility draw 7 increases cash and debt by 7; restricted cash remains separately unavailable for the assessed use."
+    ]
+  },
+  "misconceptions": [
+    {
+      "id": "restricted",
+      "claim": "All reported cash can fund any payment.",
+      "correction": "Exclude amounts unavailable for the specified use.",
+      "diagnostic": "Is the restriction compatible with this payment?"
+    },
+    {
+      "id": "promise",
+      "claim": "Count a possible lender offer as available cash.",
+      "correction": "Use only explicitly confirmed, accessible and timely capacity.",
+      "diagnostic": "Can funds be drawn before the deadline?"
+    },
+    {
+      "id": "zero",
+      "claim": "Funding only has to restore cash to zero.",
+      "correction": "A stated positive minimum requires additional funding.",
+      "diagnostic": "What balance does policy require?"
+    }
+  ],
+  "practice": [
+    {
+      "id": "buffer-predict",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "gap",
+      "scenarioId": "buffer-predict-independent",
+      "objectiveIds": [
+        "funding"
+      ],
+      "setup": "Independent forecast: cash 11 includes restricted 2. Net cash payments before the trough exceed receipts by 10. Assumed usable minimum is 3. Committed capacity 4 is fully drawable before the trough; no other funding is available.",
+      "inputs": [
+        {
+          "key": "reported_cash",
+          "label": "Reported cash",
+          "value": 11,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "restricted",
+          "label": "Restricted",
+          "value": 2,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "net_payments",
+          "label": "Net payments",
+          "value": 10,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "minimum",
+          "label": "Minimum",
+          "value": 3,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "committed",
+          "label": "Committed",
+          "value": 4,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "What required funding and residual shortfall follow?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "Required 2; residual 0",
+          "feedback": "This calculation incorrectly spends the restricted 2.",
+          "misconceptionId": "restricted"
+        },
+        {
+          "id": "correct",
+          "text": "Required 4; residual 0",
+          "feedback": "Usable cash = 11 − 2 = 9; trough before funding = 9 − 10 = −1; required = 3 − (−1) = 4. Capacity 4 covers it, leaving residual 0 and usable cash 3.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "Required 1; residual 0",
+          "feedback": "1 only reaches zero and omits the minimum 3.",
+          "misconceptionId": "zero"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Usable cash = 11 − 2 = 9; trough before funding = 9 − 10 = −1; required = 3 − (−1) = 4. Capacity 4 covers it, leaving residual 0 and usable cash 3.",
+      "hints": [
+        {
+          "text": "Separate usable cash, policy target and confirmed capacity.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Usable cash = 11 − 2 = 9; trough before funding = 9 − 10 = −1; required = 3 − (−1) = 4. Capacity 4 covers it, leaving residual 0 and usable cash 3.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Which restriction and timing facts make the capacity sufficient?",
+        "rubric": [
+          "Exclude restricted 2.",
+          "Target usable cash 3.",
+          "Count the confirmed 4 only once."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "buffer-transfer-stress",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "contingency",
+      "scenarioId": "buffer-transfer-stress-independent",
+      "objectiveIds": [
+        "funding"
+      ],
+      "setup": "Independent stress forecast: usable opening cash 6; net payments before the trough 9; minimum 2. Confirmed timely facility capacity is 3. A further possible lender offer 4 is unapproved and cannot be counted.",
+      "inputs": [
+        {
+          "key": "usable_cash",
+          "label": "Usable cash",
+          "value": 6,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "net_payments",
+          "label": "Net payments",
+          "value": 9,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "minimum",
+          "label": "Minimum",
+          "value": 2,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "committed",
+          "label": "Committed",
+          "value": 3,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "unapproved",
+          "label": "Unapproved",
+          "value": 4,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "Which residual gap remains after the confirmed draw?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "0",
+          "feedback": "The unapproved offer cannot be treated as timely capacity.",
+          "misconceptionId": "promise"
+        },
+        {
+          "id": "correct",
+          "text": "2",
+          "feedback": "Before funding = 6 − 9 = −3. Need = 2 − (−3) = 5. Confirmed capacity 3 leaves residual 2; the possible offer is excluded.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "3",
+          "feedback": "3 is the unfunded amount below zero; the residual after drawing 3 is measured against minimum 2.",
+          "misconceptionId": "zero"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Before funding = 6 − 9 = −3. Need = 2 − (−3) = 5. Confirmed capacity 3 leaves residual 2; the possible offer is excluded.",
+      "hints": [
+        {
+          "text": "Compare the stress need with confirmed timely funding.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Before funding = 6 − 9 = −3. Need = 2 − (−3) = 5. Confirmed capacity 3 leaves residual 2; the possible offer is excluded.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "What must a viable contingency resolve?",
+        "rubric": [
+          "Identify required 5 and capacity 3.",
+          "Specify the remaining 2 and deadline.",
+          "Do not book a hoped-for receipt."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E0652",
+      "to": "T14.04",
+      "kind": "learning",
+      "purpose": "Study these together to manage the timing gap between cash receipts, payments and funding.",
+      "conditions": "A topical exploration link, not a claim that one determines the other.",
+      "computed": false
+    },
+    {
+      "edgeId": "E0670",
+      "to": "T14.10",
+      "kind": "learning",
+      "purpose": "Study these together to manage the timing gap between cash receipts, payments and funding.",
+      "conditions": "A topical exploration link, not a claim that one determines the other.",
+      "computed": false
+    },
+    {
+      "edgeId": "E0679",
+      "to": "T14.13",
+      "kind": "learning",
+      "purpose": "Study these together to manage the timing gap between cash receipts, payments and funding.",
+      "conditions": "A topical exploration link, not a claim that one determines the other.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D14",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "How should correlated receipt delays and facility conditions be stress-tested?",
+      "What evidence would support changing the buffer policy?"
+    ],
+    "conceptIds": [
+      "T14.04",
+      "T14.10",
+      "T14.13"
+    ],
+    "limitations": "Introductory study coverage. Regulated liquidity requirements, covenant legal interpretation, optimal buffer estimation and treasury risk systems are deferred."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "The connected six-round case remains a separate implementation task; these examples do not imply playable rounds."
+    }
+  ],
+  "sources": [
+    {
+      "id": "wcm",
+      "title": "ACCA: Working capital management",
+      "url": "https://www.accaglobal.com/gb/en/student/exam-support-resources/fundamentals-exams-study-resources/f9/technical-articles/wcm.html",
+      "supports": [
+        "Background on the operating cycle, period conventions and liquidity/profitability trade-offs. Buffer amounts and forecast dates in this lesson are authored assumptions, not recommended thresholds."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "ias7",
+      "title": "IFRS Foundation: IAS 7 public overview",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/ias-7-statement-of-cash-flows/",
+      "supports": [
+        "Background on operating, investing and financing cash and non-cash reconciliation. The examples prescribe their own conceptual classifications; statutory starting subtotals, interest/dividends and effective amendments require separate analysis."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "method": "ai-content-source-arithmetic",
+    "evidence": [
+      "B3 topic mechanics, terminology, signs, timing, source boundaries and feedback reviewed in docs/implementation/task-04-4-b3.md.",
+      "Independent worked and assessment calculations checked in tests/b3-lessons.test.mjs; shared route, version, hint and retry regressions also apply.",
+      "Scoped AI content review, not independent professional approval, interactive browser verification or learner-pilot evidence."
+    ]
+  }
+}

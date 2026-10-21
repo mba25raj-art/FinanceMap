@@ -1,0 +1,390 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "T17.12",
+  "contentVersion": "1.0.0",
+  "hoverDefinition": "Terminal value estimates the cash stream after the explicit forecast. In a stable-growth FCFF model it uses the next period’s sustainable cash flow divided by WACC minus growth, then must be discounted from the horizon date.",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "Next-period numerator, horizon date, WACC/growth constraint, sustainable reinvestment and terminal-value alternatives."
+    ],
+    "deferred": [
+      "Full stable-state forecasting, return-on-capital/reinvestment calibration, exit-multiple selection and professional macroeconomic growth estimation are deferred."
+    ]
+  },
+  "objectives": [
+    {
+      "id": "terminal",
+      "statement": "Calculate and interpret a supplied stable-growth terminal value.",
+      "evidence": "Use next-period FCFF, require WACC greater than growth and distinguish future value from present value.",
+      "outcomeIds": [
+        "LO6"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh",
+      "fraction",
+      "years"
+    ],
+    "timeframe": "Independent fictional teaching scenarios. Worked examples and practice start separately; they are not consecutive company-case rounds.",
+    "assumptions": [
+      "FCFF is already after the reinvestment needed to sustain the stated growth.",
+      "WACC and growth are hypothetical effective annual rates matched to currency and nominal/real basis.",
+      "The steady-state pattern begins after the explicit horizon; annual cash is at period ends.",
+      "No current economic growth recommendation or liquidation value is inferred."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Conceptual teaching assumptions, with INR lakh as a unit rather than a jurisdiction. No tax rate, financing term, reporting classification, valuation input or management buffer is a current rule or market recommendation. Applicable framework, jurisdiction, reporting period and effective amendments require separate study."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "horizon",
+      "title": "Define the cash beyond the forecast",
+      "paragraphs": [
+        "An explicit forecast ends at Year n, while the business may continue. Terminal value at the end of Year n summarises the later cash stream. It is a value at that date, not automatically today. The final explicit-year FCFF remains outside that later stream and is counted once.",
+        "A finite-life liquidation assumption is different from a continuing stable-growth business. An exit multiple introduces a pricing/comparability assumption. The numerical examples use only the supplied stable-growth FCFF convention."
+      ]
+    },
+    {
+      "id": "formula",
+      "title": "Use the first cash flow after the horizon",
+      "paragraphs": [
+        "With constant annual growth g and matched WACC r, terminal FCFF at n+1 = FCFF_n×(1+g), and terminal value_n = FCFF_(n+1)/(r−g). The convergent positive-cash perpetuity used here requires r>g. At equality the denominator is zero; above it the stable perpetual model is inapplicable.",
+        "Discount the resulting horizon value by (1+r)^n to reach time zero. Do not use FCFF_n directly as the numerator unless the scenario instead supplies the next-period cash already. Do not grow an already supplied next-period cash again."
+      ]
+    },
+    {
+      "id": "sustainable",
+      "title": "Check that growth can be funded",
+      "paragraphs": [
+        "A long-run growth assumption must be consistent with operations, risk, margins and reinvestment. Increasing growth while freezing all investment can invent free expansion. The examples explicitly assume their FCFF is after sustainable reinvestment.",
+        "As r approaches g the value becomes extremely sensitive. Mathematical validity alone does not establish economic plausibility. Show terminal dependence and test alternatives rather than treating one number as a sale guarantee."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "Final explicit cash and first terminal cash",
+      "explanation": "The next-period numerator is one period later.",
+      "whenItMatters": "Avoid a missed or doubled growth step."
+    },
+    {
+      "name": "Horizon value and current value",
+      "explanation": "The perpetuity formula values the stream at the horizon date.",
+      "whenItMatters": "Apply the full horizon discount."
+    },
+    {
+      "name": "Stable growth and liquidation",
+      "explanation": "One continues cash generation; the other ends operations and realises assets.",
+      "whenItMatters": "Use a method consistent with the scenario."
+    }
+  ],
+  "workedExample": {
+    "id": "terminal-year-three",
+    "scenarioId": "terminal-year-three-worked",
+    "setup": "Year 3 FCFF is 20. Thereafter assume sustainable annual growth 3% with matched WACC 11%; all reinvestment is already in the FCFF pattern. The stable stream starts in Year 4. Calculate the terminal value at Year 3 end and its present value. Explicit Years 1–3 cash is valued separately and not supplied here.",
+    "inputs": [
+      {
+        "key": "final_fcff",
+        "label": "Final fcff",
+        "value": 20,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "growth",
+        "label": "Perpetual growth",
+        "value": 0.03,
+        "unit": "fraction"
+      },
+      {
+        "key": "rate",
+        "label": "Matched WACC",
+        "value": 0.11,
+        "unit": "fraction"
+      },
+      {
+        "key": "horizon",
+        "label": "Horizon date",
+        "value": 3,
+        "unit": "years"
+      }
+    ],
+    "steps": [
+      "First terminal cash is Year 4 FCFF = 20×1.03 = 20.6.",
+      "Spread = 11% − 3% = 8%, positive as required.",
+      "Terminal value at Year 3 end = 20.6/0.08 = 257.5.",
+      "Present terminal contribution = 257.5/1.11³ = 188.281780...",
+      "The complete operating value would add separately discounted explicit Years 1–3 FCFF.",
+      "Neither 257.5 nor its present value is a guaranteed market sale price or an ordinary-equity value."
+    ],
+    "result": "Terminal value 257.50 at Year 3 end; present contribution about 188.28.",
+    "interpretation": "The valuation is highly dependent on the sustainable cash/rate assumptions and correct timing."
+  },
+  "statementEffects": {
+    "applicability": "not-applicable",
+    "explanation": "Effects under the stated simplified scenario. Forecasts and economic values do not themselves create accounting entries.",
+    "changes": []
+  },
+  "misconceptions": [
+    {
+      "id": "numerator",
+      "claim": "Use final explicit-year cash without its required growth step.",
+      "correction": "Use first terminal-period FCFF under the stated convention.",
+      "diagnostic": "Is the supplied amount before or after the horizon?"
+    },
+    {
+      "id": "date",
+      "claim": "Treat the terminal value as current value.",
+      "correction": "Discount from its horizon date.",
+      "diagnostic": "How many periods lie between today and that date?"
+    },
+    {
+      "id": "invalid",
+      "claim": "Use the perpetual formula when growth is at least WACC.",
+      "correction": "Reject the inapplicable stable-growth assumptions instead of reporting a misleading value.",
+      "diagnostic": "Does the denominator support a convergent stream?"
+    }
+  ],
+  "practice": [
+    {
+      "id": "terminal-predict",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "formula",
+      "scenarioId": "terminal-predict-independent",
+      "objectiveIds": [
+        "terminal"
+      ],
+      "setup": "Independent data: final explicit Year 2 FCFF 15; perpetual growth 2%; matched WACC 12%. FCFF is after sustainable reinvestment and the terminal stream starts Year 3.",
+      "inputs": [
+        {
+          "key": "final_fcff",
+          "label": "Final fcff",
+          "value": 15,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "growth",
+          "label": "Perpetual growth",
+          "value": 0.02,
+          "unit": "fraction"
+        },
+        {
+          "key": "rate",
+          "label": "WACC",
+          "value": 0.12,
+          "unit": "fraction"
+        },
+        {
+          "key": "horizon",
+          "label": "Horizon date",
+          "value": 2,
+          "unit": "years"
+        }
+      ],
+      "question": "What terminal value belongs at Year 2 end?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "150",
+          "feedback": "This uses final-year 15 without growing it to the first terminal cash.",
+          "misconceptionId": "numerator"
+        },
+        {
+          "id": "correct",
+          "text": "153",
+          "feedback": "Year 3 FCFF = 15×1.02 = 15.3. Terminal value at Year 2 end = 15.3/(0.12−0.02) = 153.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "121.97",
+          "feedback": "This is approximately the discounted present contribution, not the Year 2 horizon amount.",
+          "misconceptionId": "date"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Year 3 FCFF = 15×1.02 = 15.3. Terminal value at Year 2 end = 15.3/(0.12−0.02) = 153.",
+      "hints": [
+        {
+          "text": "Identify the next-period numerator before applying the spread.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Year 3 FCFF = 15×1.02 = 15.3. Terminal value at Year 2 end = 15.3/(0.12−0.02) = 153.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "How would you bring this amount to today?",
+        "rubric": [
+          "Use 15.3 as first terminal cash.",
+          "Use positive spread 0.10.",
+          "Discount the 153 by 1.12² for its present contribution."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "terminal-transfer-invalid",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "sustainable",
+      "scenarioId": "terminal-transfer-invalid-independent",
+      "objectiveIds": [
+        "terminal"
+      ],
+      "setup": "Independent proposed terminal assumptions: final FCFF 9, perpetual growth 9% and WACC 8%, with a continuing positive cash stream. No alternative finite-life assumption is supplied.",
+      "inputs": [
+        {
+          "key": "final_fcff",
+          "label": "Final fcff",
+          "value": 9,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "growth",
+          "label": "Proposed perpetual growth",
+          "value": 0.09,
+          "unit": "fraction"
+        },
+        {
+          "key": "rate",
+          "label": "Proposed WACC",
+          "value": 0.08,
+          "unit": "fraction"
+        }
+      ],
+      "question": "What should this stable-growth calculation report?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "Terminal value −981",
+          "feedback": "A negative algebraic quotient does not value this divergent positive perpetual stream.",
+          "misconceptionId": "invalid"
+        },
+        {
+          "id": "correct",
+          "text": "Assumptions inapplicable: require WACC greater than perpetual growth",
+          "feedback": "The stated growth 9% exceeds WACC 8%; the convergent stable-growth model is inapplicable. Revise the economic assumptions or use a justified alternative model rather than publishing either quotient.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "Terminal value +981",
+          "feedback": "Changing the sign does not repair inapplicable assumptions.",
+          "misconceptionId": "invalid"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "The stated growth 9% exceeds WACC 8%; the convergent stable-growth model is inapplicable. Revise the economic assumptions or use a justified alternative model rather than publishing either quotient.",
+      "hints": [
+        {
+          "text": "Check the rate/growth condition before calculating a value.",
+          "answerRevealing": false
+        },
+        {
+          "text": "The stated growth 9% exceeds WACC 8%; the convergent stable-growth model is inapplicable. Revise the economic assumptions or use a justified alternative model rather than publishing either quotient.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Why is changing the denominator’s sign not a solution?",
+        "rubric": [
+          "Identify growth greater than WACC.",
+          "Explain the lack of convergence.",
+          "Require a justified alternative assumption."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E0802",
+      "to": "T17.07",
+      "kind": "learning",
+      "purpose": "Study these together to match cash flows, reinvestment, discount rates and investor claims.",
+      "conditions": "A topical exploration link, not a claim that one determines the other.",
+      "computed": false
+    },
+    {
+      "edgeId": "E0811",
+      "to": "T17.10",
+      "kind": "learning",
+      "purpose": "Study these together to match cash flows, reinvestment, discount rates and investor claims.",
+      "conditions": "A topical exploration link, not a claim that one determines the other.",
+      "computed": false
+    },
+    {
+      "edgeId": "E0814",
+      "to": "T17.11",
+      "kind": "learning",
+      "purpose": "Study these together to match cash flows, reinvestment, discount rates and investor claims.",
+      "conditions": "A topical exploration link, not a claim that one determines the other.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D17",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "What reinvestment and risk changes are required at the transition to stable growth?",
+      "When does a finite-life liquidation approach fit the business better?"
+    ],
+    "conceptIds": [
+      "T17.07",
+      "T17.10",
+      "T17.11"
+    ],
+    "limitations": "Introductory study coverage. Full stable-state forecasting, return-on-capital/reinvestment calibration, exit-multiple selection and professional macroeconomic growth estimation are deferred."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "The connected six-round case remains a separate implementation task; these examples do not imply playable rounds."
+    }
+  ],
+  "sources": [
+    {
+      "id": "terminal",
+      "title": "Aswath Damodaran, NYU Stern: Estimating Terminal Value",
+      "url": "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/valquestions/termvalapproaches.htm",
+      "supports": [
+        "Background on horizon value, stable-growth versus liquidation assumptions and sustainable terminal inputs. All growth, cash and rate values here are hypothetical, not current economic forecasts."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "method": "ai-content-source-arithmetic",
+    "evidence": [
+      "B6 topic mechanics, terminology, signs, timing, source boundaries and feedback reviewed in docs/implementation/task-04-4-b6.md.",
+      "Independent worked and assessment calculations checked in tests/b6-lessons.test.mjs; shared route, version, hint and retry regressions also apply.",
+      "Scoped AI content review, not independent professional approval, interactive browser verification or learner-pilot evidence."
+    ]
+  }
+}

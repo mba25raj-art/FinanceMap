@@ -1,0 +1,459 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "T04.05",
+  "contentVersion": "1.0.0",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "Earning versus collection; expense versus payment; receivables, accruals, prepayments and customer advances; a reconciled profit-to-cash comparison."
+    ],
+    "deferred": [
+      "Complete statutory cash-basis rules, tax eligibility, complex contracts, depreciation schedules and full cash-flow classification."
+    ]
+  },
+  "hoverDefinition": "Accrual accounting records economic performance when it occurs. Cash-based records follow receipts and payments. The timing difference is carried in balances such as receivables, payables, prepayments and customer advances.",
+  "objectives": [
+    {
+      "id": "timing",
+      "statement": "Calculate period profit and operating cash movement from separate earning, collection, expense and payment data.",
+      "evidence": "Reconcile the difference using closing customer and supplier/employee balances.",
+      "outcomeIds": [
+        "LO1",
+        "LO2"
+      ]
+    },
+    {
+      "id": "deferrals",
+      "statement": "Allocate a prepaid cost and a partly fulfilled customer advance to the current period.",
+      "evidence": "Separate expense from prepaid asset and revenue from the remaining contract liability.",
+      "outcomeIds": [
+        "LO1",
+        "LO2"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh",
+      "months"
+    ],
+    "timeframe": "A separate illustrative teaching month. Every worked example and practice scenario starts independently; these are not consecutive company-case rounds.",
+    "assumptions": [
+      "All stated revenue and expenses satisfy the simplified recognition assumptions.",
+      "Insurance coverage is consumed equally each month.",
+      "No tax, interest, depreciation, impairment or unmentioned operating balance.",
+      "The cash-basis comparison includes stated operating receipts and payments only."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Simplified conceptual teaching example. Recognition and amounts are explicitly assumed; no claim of compliance with a jurisdiction-specific reporting or tax regime."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "two-clocks",
+      "title": "Follow the performance clock and the cash clock",
+      "paragraphs": [
+        "A qualifying delivery can earn revenue in one period and be collected in another. Consuming a resource or receiving employee service can create an expense before payment. Accrual accounting records those economic effects in their own periods and carries the unpaid amounts as balances.",
+        "A simple cash-basis comparison follows operating money received and paid. In this lesson its result is called an operating cash surplus. It is not a universal legal cash-basis income calculation: borrowing and owner contributions are funding, and equipment purchases need their own treatment."
+      ]
+    },
+    {
+      "id": "accrued",
+      "title": "Identify amounts earned or incurred but unsettled",
+      "paragraphs": [
+        "Trade receivables track recognised customer claims that remain unpaid. An accrued wage expense creates an obligation for service already received. Later collection or payment settles the balance; it does not repeat the original revenue or expense.",
+        "For a simple period with no other adjustments, profit minus an increase in receivables plus an increase in unpaid operating costs approaches operating cash. Each adjustment must use the same period and a consistent balance definition. Add inventory and prepaid movements when those exist."
+      ]
+    },
+    {
+      "id": "deferred",
+      "title": "Identify cash that arrives before performance",
+      "paragraphs": [
+        "A payment for coverage extending into future months initially creates a prepaid asset under the stated assumptions. The consumed portion becomes expense. A customer advance creates an obligation to perform; it becomes revenue only as the promised goods or services are transferred under the contract.",
+        "Do not force an expense merely to match a sales number. Recognition follows the resource consumed or obligation incurred. The illustrations assume equal insurance coverage per month, and specified customer performance; actual contracts can require a different pattern."
+      ]
+    },
+    {
+      "id": "bridge",
+      "title": "Reconcile before drawing a conclusion",
+      "paragraphs": [
+        "Begin with actual receipts and payments to calculate operating cash movement. Calculate accrual profit independently, then bridge the two using changes in operating balances. Exclude funding receipts from operating income. A business can report a profit while customers still owe it money or while it pays for resources used in future periods."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "Accrued income and customer receipt",
+      "explanation": "Income may be recognised before or after cash collection, depending on the performance.",
+      "whenItMatters": "A bank receipt alone does not establish current revenue."
+    },
+    {
+      "name": "Accrued expense and settlement",
+      "explanation": "The cost of service received can precede its payment.",
+      "whenItMatters": "Paying a previously recorded expense does not create it again."
+    },
+    {
+      "name": "Prepaid asset and consumed expense",
+      "explanation": "The unconsumed right is an asset; the period’s consumed part is expense.",
+      "whenItMatters": "A multi-period payment should not automatically be charged entirely to one month."
+    },
+    {
+      "name": "Customer advance and revenue",
+      "explanation": "An advance carries an unfulfilled promise until the stated performance occurs.",
+      "whenItMatters": "Cash can improve while the business still owes goods or services."
+    },
+    {
+      "name": "Operating cash surplus and total cash change",
+      "explanation": "Borrowing, capital injections and equipment payments can affect cash without being current operating income or expense.",
+      "whenItMatters": "Label the cash perimeter before comparing it with profit."
+    }
+  ],
+  "workedExample": {
+    "id": "accrual-month",
+    "scenarioId": "ac-worked-30-18-12-6-4-6",
+    "setup": "Separate month: opening cash is 20 and inventory is 12, funded by opening equity 32. Nila delivers all that inventory in qualifying credit sales of 30 and collects 18. Wages of 6 are incurred, of which 4 are paid. It also pays 6 for three equal months of insurance beginning this month. No other events or balances exist.",
+    "inputs": [
+      {
+        "key": "openingCash",
+        "label": "Opening cash",
+        "value": 20,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "openingInventory",
+        "label": "Opening inventory, all sold this month",
+        "value": 12,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "sales",
+        "label": "Recognised credit sales",
+        "value": 30,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "receipts",
+        "label": "Customer collections",
+        "value": 18,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "wageExpense",
+        "label": "Wages incurred",
+        "value": 6,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "wagePayment",
+        "label": "Wages paid",
+        "value": 4,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "insurancePayment",
+        "label": "Three-month insurance paid",
+        "value": 6,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "coverageMonths",
+        "label": "Equal coverage months",
+        "value": 3,
+        "unit": "months"
+      }
+    ],
+    "steps": [
+      "Revenue is 30; the 12 carrying cost of inventory sold is expense.",
+      "Wage expense is 6 even though only 4 is paid. Wages payable close at 2.",
+      "Insurance expense = 6 ÷ 3 = 2; the remaining prepaid asset is 4.",
+      "Accrual profit = 30 − 12 − 6 − 2 = 10. Receivables close at 30 − 18 = 12.",
+      "Operating cash movement = receipts 18 − wages paid 4 − insurance paid 6 = +8. Closing cash is 20 + 8 = 28.",
+      "Bridge from profit: 10 − receivables increase 12 + inventory decrease 12 + wages payable increase 2 − prepaid increase 4 = 8.",
+      "Closing assets = cash 28 + receivables 12 + prepaid insurance 4 = 44. Liabilities 2 + equity (32 + profit 10) 42 = 44."
+    ],
+    "result": "Accrual profit is 10; operating cash movement is +8; cash closes at 28.",
+    "interpretation": "The inventory payment occurred before this month, some wages remain unpaid and some insurance is unconsumed. Every timing difference must be included before interpreting the two totals."
+  },
+  "statementEffects": {
+    "applicability": "direct",
+    "explanation": "These are complete simplified operating movements for this separate example, excluding tax, financing, investments and other non-cash items.",
+    "changes": [
+      "Income statement: revenue 30; inventory expense 12, wage expense 6 and insurance expense 2; profit 10.",
+      "Balance sheet: cash 28, receivables 12, prepaid insurance 4, wages payable 2 and equity 42.",
+      "Cash flow: current customer receipts 18 less current operating payments 10 gives +8."
+    ]
+  },
+  "misconceptions": [
+    {
+      "id": "cash-is-profit",
+      "claim": "Current profit is simply money received minus all money paid.",
+      "correction": "Identify earned revenue, consumed resources, operating balances and funding separately.",
+      "diagnostic": "What did the business earn or consume this period?"
+    },
+    {
+      "id": "all-prepaid-expense",
+      "claim": "A payment covering future months is entirely this month’s expense.",
+      "correction": "Allocate the consumed coverage under the stated assumption and retain the rest as an asset.",
+      "diagnostic": "How much service is still owed to the business?"
+    },
+    {
+      "id": "advance-earned",
+      "claim": "A customer advance is already earned revenue.",
+      "correction": "The unperformed portion remains an obligation.",
+      "diagnostic": "What performance has actually occurred?"
+    }
+  ],
+  "practice": [
+    {
+      "id": "ac-predict-profit-and-cash",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "accrued",
+      "scenarioId": "ac-predict-profit-and-cash-scenario",
+      "objectiveIds": [
+        "timing"
+      ],
+      "setup": "Separate Nila installation-service example: all service qualifying for revenue of 24 is completed this month, and customers pay 9. Wage service of 7 is received, with 5 paid. There is no inventory, tax, prepayment or other event and no opening operating balances.",
+      "inputs": [
+        {
+          "key": "revenue",
+          "label": "Earned service revenue",
+          "value": 24,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "receipts",
+          "label": "Customer receipts",
+          "value": 9,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "expense",
+          "label": "Wages incurred",
+          "value": 7,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "payment",
+          "label": "Wages paid",
+          "value": 5,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "What are accrual profit and operating cash movement?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "cash-only",
+          "text": "Profit 4; operating cash +4",
+          "feedback": "4 is the operating cash result. Revenue and expense timing still need recognition.",
+          "misconceptionId": "cash-is-profit"
+        },
+        {
+          "id": "correct",
+          "text": "Profit 17; operating cash +4",
+          "feedback": "Profit is 24 − 7. Cash is 9 − 5; receivables 15 and wages payable 2 explain the gap.",
+          "misconceptionId": null
+        },
+        {
+          "id": "sales-cash",
+          "text": "Profit 17; operating cash +17",
+          "feedback": "Recognised income is not the same as collected money.",
+          "misconceptionId": "cash-is-profit"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Profit = 24 − 7 = 17. Operating cash = 9 − 5 = 4. Bridge: 17 − receivables increase 15 + wages payable increase 2 = 4.",
+      "hints": [
+        {
+          "text": "Compute the performance result and the bank movements independently.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Profit = 24 − 7 = 17. Operating cash = 9 − 5 = 4. Bridge: 17 − receivables increase 15 + wages payable increase 2 = 4.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Why can this service be profitable before the customers settle?",
+        "rubric": [
+          "Show profit 17 and cash +4.",
+          "Identify receivables 15 and wages payable 2.",
+          "Reconcile the 13 difference."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "ac-transfer-advance-prepayment",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "deferred",
+      "scenarioId": "ac-transfer-advance-prepayment-scenario",
+      "objectiveIds": [
+        "deferrals",
+        "timing"
+      ],
+      "setup": "Separate scenario: pay 12 for six equal months of insurance beginning now. Receive a customer advance of 8 and complete the part of the promise allocated a price of 3 this month. No other expenses, receipts or payments occur. The unfulfilled promise is still owed; no receivable arises.",
+      "inputs": [
+        {
+          "key": "insurance",
+          "label": "Insurance payment",
+          "value": 12,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "months",
+          "label": "Equal coverage months",
+          "value": 6,
+          "unit": "months"
+        },
+        {
+          "key": "advance",
+          "label": "Customer advance received",
+          "value": 8,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "earned",
+          "label": "Price allocated to performance completed",
+          "value": 3,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "Which current-month result and closing balances follow?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "all-expense",
+          "text": "Loss 9; prepaid asset 0; customer liability 5; cash −4",
+          "feedback": "Only 2 of insurance coverage is consumed this month.",
+          "misconceptionId": "all-prepaid-expense"
+        },
+        {
+          "id": "all-revenue",
+          "text": "Profit 6; prepaid asset 10; customer liability 0; cash −4",
+          "feedback": "The unfulfilled portion 5 remains an obligation.",
+          "misconceptionId": "advance-earned"
+        },
+        {
+          "id": "correct",
+          "text": "Profit 1; prepaid asset 10; customer liability 5; cash −4",
+          "feedback": "Revenue 3 less insurance expense 2 gives profit 1; cash is 8 − 12.",
+          "misconceptionId": null
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Insurance expense = 12 ÷ 6 = 2; prepaid asset = 10. Revenue = 3; customer liability = 8 − 3 = 5. Profit = 1. Cash movement = 8 − 12 = −4. Bridge: profit 1 − prepaid increase 10 + customer liability increase 5 = −4.",
+      "hints": [
+        {
+          "text": "Separate the part consumed or performed from the future portion of each payment.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Insurance expense = 12 ÷ 6 = 2; prepaid asset = 10. Revenue = 3; customer liability = 8 − 3 = 5. Profit = 1. Cash movement = 8 − 12 = −4. Bridge: profit 1 − prepaid increase 10 + customer liability increase 5 = −4.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "How do the two future obligations explain profit exceeding cash movement?",
+        "rubric": [
+          "Separate expense 2 from prepaid 10.",
+          "Separate earned 3 from unperformed 5.",
+          "Bridge profit 1 to cash −4."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E0148",
+      "to": "T04.06",
+      "kind": "learning",
+      "purpose": "Study these together to recognise and measure transactions before interpreting financial statements.",
+      "conditions": "A topical exploration link, not a claim that one determines the other.",
+      "computed": false
+    },
+    {
+      "edgeId": "E0311",
+      "to": "T07.03",
+      "kind": "learning",
+      "purpose": "Suggested starting knowledge: Cash accounting versus accrual accounting. It helps you reconcile accounting performance with actual cash movement.",
+      "conditions": "Suggested learning order; learners can still explore freely.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D04",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "How do non-cash depreciation and impairment extend the profit-to-cash bridge?",
+      "Why must opening and closing balances use matching definitions?"
+    ],
+    "conceptIds": [
+      "T07.03",
+      "A08"
+    ],
+    "limitations": "The operating comparison is not a complete cash-basis tax or statutory reporting method."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "Planned six-round case. This lesson is a separate teaching example, not a completed case round."
+    },
+    {
+      "id": "LAB-COLLECTIONS",
+      "kind": "lab",
+      "availability": "planned",
+      "purpose": "Planned collection experiment; study the timing mechanism now."
+    }
+  ],
+  "sources": [
+    {
+      "id": "accrual",
+      "title": "AASB publication of the Conceptual Framework, Chapter 1, paragraph 1.17",
+      "url": "https://standards.aasb.gov.au/node/7463",
+      "role": "primary-support",
+      "supports": [
+        "Accrual accounting records economic effects in their periods even when related receipts or payments occur in another period. Australian publication used as conceptual background, not as an Indian filing rule."
+      ],
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "cash",
+      "title": "IFRS Foundation: IAS 7 overview",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/ias-7-statement-of-cash-flows/",
+      "role": "primary-support",
+      "supports": [
+        "Cash and cash-equivalent definitions, operating/investing/financing categories and component reconciliation."
+      ],
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "evidence": [
+      "B1 terminology, units, timing, assumptions, independent arithmetic, feedback and scope review recorded in docs/implementation/task-04-4-b1.md.",
+      "Primary public IFRS/AASB background and the linked source claims checked; this is an AI content review, not independent professional approval or learner-pilot evidence.",
+      "Worked and assessment calculations independently recomputed in tests/b1-lessons.test.mjs; interaction and version/owner isolation checked separately."
+    ],
+    "method": "ai-content-source-arithmetic"
+  }
+}

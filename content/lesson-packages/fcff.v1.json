@@ -1,0 +1,435 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "A11",
+  "contentVersion": "1.0.0",
+  "hoverDefinition": "FCFF measures operating cash after taxes and reinvestment before debt service. In the stated simple build it is NOPAT plus non-cash depreciation, less capital expenditure and cash-linked operating working-capital growth.",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "Operating cash perimeter, NOPAT bridge, depreciation/reinvestment, working-capital signs and financing exclusions."
+    ],
+    "deferred": [
+      "Full tax/lease normalisation, acquisition adjustments, stock compensation, specialist financial businesses and complete professional FCFF estimation are deferred."
+    ]
+  },
+  "objectives": [
+    {
+      "id": "fcff",
+      "statement": "Reconcile after-tax operating earnings to FCFF without including financing.",
+      "evidence": "Use consistent non-cash and working-capital adjustments and interpret a decline in operating balances.",
+      "outcomeIds": [
+        "LO2",
+        "LO6"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh",
+      "fraction"
+    ],
+    "timeframe": "Independent fictional teaching scenarios. Worked examples and practice start separately; they are not consecutive company-case rounds.",
+    "assumptions": [
+      "Hypothetical operating tax is fully applicable/usable on the stated positive EBIT.",
+      "Depreciation is the only non-cash operating expense; working-capital changes are cash-linked and consistently defined.",
+      "Capital expenditure is cash acquisition spending. No other reinvestment, non-operating asset or cash adjustment.",
+      "Debt proceeds, principal repayment and interest are excluded from this FCFF perimeter; it is not necessarily reported operating cash."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Conceptual teaching assumptions, with INR lakh as a unit rather than a jurisdiction. No tax rate, financing term, reporting classification, valuation input or management buffer is a current rule or market recommendation. Applicable framework, jurisdiction, reporting period and effective amendments require separate study."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "perimeter",
+      "title": "Define cash for all operating capital providers",
+      "paragraphs": [
+        "FCFF is built before debt interest/principal service and after the reinvestment needed by the forecast operations. It therefore differs from cash available just to ordinary equity holders. A loan receipt can increase the bank balance without increasing FCFF.",
+        "Start with the specified after-tax operating earnings. For the simple positive-income assumption NOPAT = EBIT×(1−operating tax rate). Keep financing tax effects out of this operating build unless a consistent alternative method explicitly handles them."
+      ]
+    },
+    {
+      "id": "reinvest",
+      "title": "Bridge accounting earnings to cash after reinvestment",
+      "paragraphs": [
+        "FCFF = NOPAT + depreciation − cash capital expenditure − cash-linked increase in operating working capital in these examples. Depreciation reverses a non-cash cost already inside EBIT; the actual asset payment still uses cash.",
+        "Working-capital growth absorbs cash, while a release contributes cash under the stated perimeter. Use either the defined net change or the component changes, not both. Remove non-cash measurement effects consistently before separately adding them back."
+      ]
+    },
+    {
+      "id": "interpret",
+      "title": "Keep FCFF separate from a distribution promise",
+      "paragraphs": [
+        "Positive FCFF does not prove the amount can be paid immediately to shareholders: debt service, restricted cash, timing and other claims remain relevant. Negative FCFF may reflect investment or operating weakness; interpret the cause and funding requirement.",
+        "Discount future FCFF at a rate matched to all capital-provider claims and risk. Do not add new borrowing as operating value or subtract debt service and then also apply the same enterprise-to-equity claims deduction without reconciling the chosen approach."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "FCFF and equity cash flow",
+      "explanation": "FCFF precedes debt service; equity cash follows a different claims perimeter.",
+      "whenItMatters": "Match the rate and valuation bridge."
+    },
+    {
+      "name": "Depreciation and capital expenditure",
+      "explanation": "One is a non-cash allocation; the other is cash reinvestment.",
+      "whenItMatters": "Adding back one does not excuse omitting the other."
+    },
+    {
+      "name": "Working-capital increase and release",
+      "explanation": "The period change determines absorption or release.",
+      "whenItMatters": "Use a consistent operating definition and cash-linked movement."
+    }
+  ],
+  "workedExample": {
+    "id": "fcff-operating-build",
+    "scenarioId": "fcff-operating-build-worked",
+    "setup": "EBIT is 50 and the hypothetical operating tax rate 20%, fully usable. Depreciation 8 is already in EBIT. Cash capital expenditure is 18 and cash-linked operating working capital increases 6. Net borrowing 10 and interest 4 are listed for contrast and excluded from this FCFF build. No other adjustment exists.",
+    "inputs": [
+      {
+        "key": "ebit",
+        "label": "Ebit",
+        "value": 50,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "depreciation",
+        "label": "Depreciation",
+        "value": 8,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "capex",
+        "label": "Capex",
+        "value": 18,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "working_capital_increase",
+        "label": "Working capital increase",
+        "value": 6,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "net_borrowing",
+        "label": "Net borrowing",
+        "value": 10,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "interest",
+        "label": "Interest",
+        "value": 4,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "tax_rate",
+        "label": "Hypothetical operating tax rate",
+        "value": 0.2,
+        "unit": "fraction"
+      }
+    ],
+    "steps": [
+      "NOPAT = 50×(1−20%) = 40.",
+      "Add back depreciation 8 already deducted from EBIT: 40 + 8 = 48.",
+      "Subtract operating working-capital increase 6: unlevered operating cash in this build is 42.",
+      "Subtract cash capital expenditure 18: FCFF = 24.",
+      "Net borrowing 10 and interest 4 do not enter this before-debt-service operating cash perimeter.",
+      "Check the equivalent form: NOPAT 40 − net investment (18 − 8) 10 − working-capital increase 6 = 24."
+    ],
+    "result": "Illustrative FCFF 24 before debt service.",
+    "interpretation": "The loan can fund cash needs, but it does not generate additional operating free cash flow."
+  },
+  "statementEffects": {
+    "applicability": "direct",
+    "explanation": "Effects under the stated simplified scenario. Forecasts and economic values do not themselves create accounting entries.",
+    "changes": [
+      "FCFF is an analytical cash-flow build, not a new entry or necessarily reported operating cash.",
+      "Specified operating profit, tax and reinvestment adjustments yield before-debt-service cash 24; financing settlement and complete company balances require separate data."
+    ]
+  },
+  "misconceptions": [
+    {
+      "id": "borrowing",
+      "claim": "Add net borrowing to FCFF.",
+      "correction": "Keep lender funding outside cash generated by operating assets.",
+      "diagnostic": "Does this flow arise from operations or a capital provider?"
+    },
+    {
+      "id": "interest",
+      "claim": "Subtract debt interest in this FCFF build.",
+      "correction": "The specified build precedes debt service.",
+      "diagnostic": "Are you switching to an equity cash perimeter?"
+    },
+    {
+      "id": "release",
+      "claim": "Always subtract a working-capital decrease.",
+      "correction": "A cash-linked release contributes cash under the stated assumptions.",
+      "diagnostic": "Did operations tie up more or release funds?"
+    },
+    {
+      "id": "noncash",
+      "claim": "Omit the reversal of depreciation already included in EBIT.",
+      "correction": "Add back the non-cash charge once in the specified cash bridge.",
+      "diagnostic": "Which non-cash cost reduced the starting earnings?"
+    }
+  ],
+  "practice": [
+    {
+      "id": "fcff-predict",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "reinvest",
+      "scenarioId": "fcff-predict-independent",
+      "objectiveIds": [
+        "fcff"
+      ],
+      "setup": "Independent data: EBIT 32, hypothetical operating tax 25%, depreciation 4 already in EBIT, cash capex 10 and cash-linked operating working-capital increase 3. No other adjustment exists.",
+      "inputs": [
+        {
+          "key": "ebit",
+          "label": "Ebit",
+          "value": 32,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "depreciation",
+          "label": "Depreciation",
+          "value": 4,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "capex",
+          "label": "Capex",
+          "value": 10,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "working_capital_increase",
+          "label": "Working capital increase",
+          "value": 3,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "tax_rate",
+          "label": "Hypothetical operating tax rate",
+          "value": 0.25,
+          "unit": "fraction"
+        }
+      ],
+      "question": "What FCFF follows?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "11",
+          "feedback": "Depreciation already reduced EBIT and must be reversed once in the cash bridge.",
+          "misconceptionId": "noncash"
+        },
+        {
+          "id": "correct",
+          "text": "15",
+          "feedback": "NOPAT = 32×0.75 = 24; FCFF = 24 + 4 − 10 − 3 = 15.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "21",
+          "feedback": "A working-capital increase uses cash; it is not a receipt.",
+          "misconceptionId": "release"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "NOPAT = 32×0.75 = 24; FCFF = 24 + 4 − 10 − 3 = 15.",
+      "hints": [
+        {
+          "text": "Reconcile operating earnings, non-cash cost and the two reinvestment uses.",
+          "answerRevealing": false
+        },
+        {
+          "text": "NOPAT = 32×0.75 = 24; FCFF = 24 + 4 − 10 − 3 = 15.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "What assumptions make the working-capital adjustment valid?",
+        "rubric": [
+          "Use cash-linked changes.",
+          "Do not double-count non-cash movements.",
+          "Keep the defined operating perimeter."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "fcff-transfer-release",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "interpret",
+      "scenarioId": "fcff-transfer-release-independent",
+      "objectiveIds": [
+        "fcff"
+      ],
+      "setup": "Independent data: NOPAT 20, depreciation 3, cash capex 12 and a cash-linked operating working-capital decrease of 5. New net borrowing 9 is shown separately. There are no other adjustments.",
+      "inputs": [
+        {
+          "key": "nopat",
+          "label": "Nopat",
+          "value": 20,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "depreciation",
+          "label": "Depreciation",
+          "value": 3,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "capex",
+          "label": "Capex",
+          "value": 12,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "working_capital_decrease",
+          "label": "Working capital decrease",
+          "value": 5,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "net_borrowing",
+          "label": "Net borrowing",
+          "value": 9,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "What FCFF follows before debt service?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "25",
+          "feedback": "The additional 9 is lender funding, not FCFF.",
+          "misconceptionId": "borrowing"
+        },
+        {
+          "id": "correct",
+          "text": "16",
+          "feedback": "FCFF = 20 + 3 − 12 + 5 = 16. Net borrowing 9 is excluded. The same change entered as closing less opening is −5, so subtracting that change adds 5.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "6",
+          "feedback": "A working-capital release adds 5 instead of subtracting it.",
+          "misconceptionId": "release"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "FCFF = 20 + 3 − 12 + 5 = 16. Net borrowing 9 is excluded. The same change entered as closing less opening is −5, so subtracting that change adds 5.",
+      "hints": [
+        {
+          "text": "Separate the source of funding from the released operating balance.",
+          "answerRevealing": false
+        },
+        {
+          "text": "FCFF = 20 + 3 − 12 + 5 = 16. Net borrowing 9 is excluded. The same change entered as closing less opening is −5, so subtracting that change adds 5.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Why does a positive FCFF not guarantee a shareholder payout?",
+        "rubric": [
+          "Exclude borrowing.",
+          "Identify the release sign.",
+          "Consider debt claims and payment timing separately."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E2118",
+      "to": "T17.05",
+      "kind": "learning",
+      "purpose": "Atomic concept within this original grouped topic.",
+      "conditions": "Preserves the original inventory while enabling more precise navigation.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2152",
+      "to": "A08",
+      "kind": "financial",
+      "purpose": "Non-cash depreciation deducted in operating profit is added back in the standard FCFF build.",
+      "conditions": "Avoid adding it twice; account for associated reinvestment separately.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2153",
+      "to": "A07",
+      "kind": "financial",
+      "purpose": "Cash operating capital expenditure is deducted when calculating standard FCFF.",
+      "conditions": "Keep acquisitions and non-operating investments explicitly classified.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D17",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "Which non-cash or acquisition adjustments are needed in a real company bridge?",
+      "How do leases and non-operating assets change the consistent cash perimeter?"
+    ],
+    "conceptIds": [
+      "T17.05",
+      "A08",
+      "A07"
+    ],
+    "limitations": "Introductory study coverage. Full tax/lease normalisation, acquisition adjustments, stock compensation, specialist financial businesses and complete professional FCFF estimation are deferred."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "The connected six-round case remains a separate implementation task; these examples do not imply playable rounds."
+    }
+  ],
+  "sources": [
+    {
+      "id": "fcff",
+      "title": "Aswath Damodaran, NYU Stern: Free Cashflow to the Firm lecture notes",
+      "url": "https://people.stern.nyu.edu/adamodar/pdfiles/eqnotes/fcff.pdf",
+      "supports": [
+        "Background on operating cash after reinvestment, consistent firm cash/rate matching, terminal values and claims bridges. Historical company examples and market rates in the notes are not used as current data."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "method": "ai-content-source-arithmetic",
+    "evidence": [
+      "B5 topic mechanics, terminology, signs, timing, source boundaries and feedback reviewed in docs/implementation/task-04-4-b5.md.",
+      "Independent worked and assessment calculations checked in tests/b5-lessons.test.mjs; shared route, version, hint and retry regressions also apply.",
+      "Scoped AI content review, not independent professional approval, interactive browser verification or learner-pilot evidence."
+    ]
+  }
+}

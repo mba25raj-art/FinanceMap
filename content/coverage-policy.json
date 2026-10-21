@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "coverageTier": "introductory-study",
+  "scopeNotice": "Content existence does not establish editorial review, professional completeness or learner mastery.",
+  "packages": [
+    {
+      "file": "content/lesson-packages/accounting-equation.v1.json",
+      "renderedConceptIds": [
+        "T04.01"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b1-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/cash-accrual.v1.json",
+      "renderedConceptIds": [
+        "T04.05"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b1-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/cash-equivalents.v1.json",
+      "renderedConceptIds": [
+        "T06.02"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b1-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/revenue-recognition.v1.json",
+      "renderedConceptIds": [
+        "A01"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b1-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/receivables.v1.json",
+      "renderedConceptIds": [
+        "A02",
+        "T06.04"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/receivables-lesson.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/inventory.v1.json",
+      "renderedConceptIds": [
+        "A03"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b2-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/trade-payables.v1.json",
+      "renderedConceptIds": [
+        "A04"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b2-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/operating-working-capital.v1.json",
+      "renderedConceptIds": [
+        "A05"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b2-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/operating-cash-flow.v1.json",
+      "renderedConceptIds": [
+        "A06"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b2-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/three-statement-transactions.v1.json",
+      "renderedConceptIds": [
+        "T07.14"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b2-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/working-capital-days.v1.json",
+      "renderedConceptIds": [
+        "T14.03"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b3-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/cash-forecast.v1.json",
+      "renderedConceptIds": [
+        "T14.04"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b3-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/liquidity-buffer.v1.json",
+      "renderedConceptIds": [
+        "T14.15"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b3-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/net-borrowing.v1.json",
+      "renderedConceptIds": [
+        "A18"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b3-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/equity-funding-payouts.v1.json",
+      "renderedConceptIds": [
+        "T07.09"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b3-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/capital-expenditure.v1.json",
+      "renderedConceptIds": [
+        "A07"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b4-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/depreciation.v1.json",
+      "renderedConceptIds": [
+        "A08"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b4-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/ebit.v1.json",
+      "renderedConceptIds": [
+        "A09"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b4-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/nopat.v1.json",
+      "renderedConceptIds": [
+        "A10"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b4-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/incremental-cash-flows.v1.json",
+      "renderedConceptIds": [
+        "T12.05"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b4-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/present-future-value.v1.json",
+      "renderedConceptIds": [
+        "T03.01"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b5-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/net-present-value.v1.json",
+      "renderedConceptIds": [
+        "T03.12"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b5-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/fcff.v1.json",
+      "renderedConceptIds": [
+        "A11"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b5-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/wacc.v1.json",
+      "renderedConceptIds": [
+        "A13"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b5-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/discounted-cash-flow.v1.json",
+      "renderedConceptIds": [
+        "A19"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b5-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/terminal-value.v1.json",
+      "renderedConceptIds": [
+        "T17.12"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b6-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/valuation-sensitivity.v1.json",
+      "renderedConceptIds": [
+        "T17.18"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b6-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/enterprise-value.v1.json",
+      "renderedConceptIds": [
+        "A15"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b6-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/equity-value.v1.json",
+      "renderedConceptIds": [
+        "A16"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b6-lessons.test.mjs"
+    },
+    {
+      "file": "content/lesson-packages/enterprise-equity-bridge.v1.json",
+      "renderedConceptIds": [
+        "T17.04"
+      ],
+      "implementationEvidence": "src/StandardLesson.jsx; src/lesson-packages.js; tests/b6-lessons.test.mjs"
+    }
+  ],
+  "legacyReviews": {},
+  "activities": [
+    {
+      "id": "P02",
+      "kind": "case",
+      "title": "Profitable. So where did the cash go?",
+      "availability": "available",
+      "route": "#simulations/P02",
+      "roadmapTask": "02.1–03.3",
+      "assessmentConcepts": [
+        "A05",
+        "A08",
+        "A11"
+      ],
+      "referenceConcepts": [
+        "T04.01",
+        "T04.05",
+        "A02"
+      ],
+      "evidence": "src/data/lessons.js:mystery.steps; src/LearningEntry.jsx:MysteryBrief; tests/learning-session.test.mjs"
+    },
+    {
+      "id": "LAB-COLLECTIONS",
+      "kind": "lab",
+      "title": "Customer collection",
+      "availability": "available",
+      "route": "#labs/LAB-COLLECTIONS",
+      "roadmapTask": "07.1",
+      "evidence": "src/CollectionLab.jsx; src/activities/collections.js; tests/collection-lab.test.mjs",
+      "assessmentConcepts": [
+        "A02",
+        "A06",
+        "T04.05"
+      ],
+      "referenceConcepts": [
+        "A01",
+        "A05",
+        "T14.03",
+        "T14.04"
+      ]
+    },
+    {
+      "id": "LAB-EQUIPMENT",
+      "kind": "lab",
+      "title": "Equipment investment",
+      "availability": "available",
+      "route": "#labs/LAB-EQUIPMENT",
+      "roadmapTask": "07.2",
+      "evidence": "src/EquipmentLab.jsx; src/activities/equipment.js; tests/equipment-lab.test.mjs",
+      "assessmentConcepts": [
+        "A07",
+        "A08",
+        "T03.12"
+      ],
+      "referenceConcepts": [
+        "T12.05",
+        "T03.01"
+      ]
+    },
+    {
+      "id": "LAB-FINANCING",
+      "kind": "lab",
+      "title": "Financing comparison",
+      "availability": "available",
+      "route": "#labs/LAB-FINANCING",
+      "roadmapTask": "07.3",
+      "evidence": "src/FinancingLab.jsx; src/activities/financing.js; tests/financing-lab.test.mjs",
+      "assessmentConcepts": [
+        "A18",
+        "T07.09"
+      ],
+      "referenceConcepts": [
+        "A13",
+        "A15",
+        "A16",
+        "T17.04"
+      ]
+    },
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "title": "Nila Homeware: six connected rounds",
+      "availability": "available",
+      "route": "#simulations/CASE-NILA-HOMEWARE",
+      "roadmapTask": "08.1–08.4",
+      "evidence": "src/CompanyCase.jsx; src/CompanyFinance.jsx; src/activities/company.js; tests/company-runtime.test.mjs; tests/company-finance.test.mjs. Six rounds, explicit Finish and ungraded written recommendation.",
+      "assessmentConcepts": [
+        "A01",
+        "T04.05",
+        "A02",
+        "A06",
+        "A03",
+        "A04",
+        "T14.04",
+        "T14.15",
+        "A18",
+        "T07.09",
+        "A07",
+        "A08",
+        "T12.05",
+        "T03.01",
+        "T03.12",
+        "A09",
+        "A10",
+        "A11",
+        "A13",
+        "A15",
+        "A16",
+        "A19",
+        "T17.12",
+        "T17.18",
+        "T17.04"
+      ],
+      "referenceConcepts": [
+        "T04.01",
+        "T07.14",
+        "T14.03",
+        "A05",
+        "T06.02"
+      ]
+    }
+  ]
+}

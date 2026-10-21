@@ -1,0 +1,423 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "A13",
+  "contentVersion": "1.0.0",
+  "hoverDefinition": "WACC combines required returns for debt and equity using a stated financing mix. It must match the cash flow’s claims, currency, risk and period; a supplied WACC is an assumption rather than a guaranteed return.",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "Market-value weights, pre-tax/after-tax debt cost, FCFF matching and limits of fixed financing assumptions."
+    ],
+    "deferred": [
+      "Full CAPM/beta estimation, market calibration, country risk, changing leverage and optimal capital structure are deferred."
+    ]
+  },
+  "objectives": [
+    {
+      "id": "match",
+      "statement": "Calculate a supplied two-source WACC and match it to FCFF.",
+      "evidence": "Use consistent weights and apply an assumed debt tax benefit once.",
+      "outcomeIds": [
+        "LO6"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh",
+      "fraction"
+    ],
+    "timeframe": "Independent fictional teaching scenarios. Worked examples and practice start separately; they are not consecutive company-case rounds.",
+    "assumptions": [
+      "Only ordinary equity and debt exist; supplied values are hypothetical market-value weights.",
+      "Costs are hypothetical required annual returns matched to the forecast currency and risk.",
+      "The stated debt tax effect is fully usable when a pre-tax rate is supplied; an already after-tax rate is not adjusted again.",
+      "Capital structure and risks are held fixed for the example, not claimed invariant in reality."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Conceptual teaching assumptions, with INR lakh as a unit rather than a jurisdiction. No tax rate, financing term, reporting classification, valuation input or management buffer is a current rule or market recommendation. Applicable framework, jurisdiction, reporting period and effective amendments require separate study."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "weights",
+      "title": "Weight the required returns by the same capital total",
+      "paragraphs": [
+        "With debt D and equity E, weights are E/(D+E) and D/(D+E). They sum to one. In this teaching approach use the supplied market-value mix rather than replacing it silently with accounting balances. Other capital claims require an expanded model.",
+        "An equity required return is not the dividend yield; a debt cost used for valuation is not automatically the coupon on an old loan. This lesson supplies both inputs and does not estimate current market returns."
+      ]
+    },
+    {
+      "id": "tax",
+      "title": "Apply the specified debt-tax convention once",
+      "paragraphs": [
+        "For a pre-tax debt cost kd and fully usable tax rate t, WACC = equity weight×ke + debt weight×kd×(1−t). If the debt input is already after tax, use it directly rather than applying the tax factor twice.",
+        "The assumption about usable tax benefits matters. Losses, legal limitations or a different valuation method can alter the adjustment. A number labelled tax rate is not evidence of an actual benefit."
+      ]
+    },
+    {
+      "id": "match",
+      "title": "Match the rate to the forecast claims and risk",
+      "paragraphs": [
+        "Use a consistently defined WACC for the corresponding FCFF, not for cash already reduced by debt service. Match currency, nominal/real basis, period and risk. A company-wide rate may be inappropriate for a project with different operating risk.",
+        "Changing debt weight while holding every cost fixed is only a mechanical sensitivity. In reality more leverage can change debt/equity required returns, constraints and risk. Do not claim that substituting debt creates unlimited value."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "Required return and promised payment",
+      "explanation": "The rate prices risk/claims; it is not guaranteed cash performance.",
+      "whenItMatters": "Avoid treating a valuation assumption as a bank quote."
+    },
+    {
+      "name": "Pre-tax and after-tax debt cost",
+      "explanation": "A specified usable-tax factor applies to a pre-tax input once.",
+      "whenItMatters": "Check labels before calculation."
+    },
+    {
+      "name": "FCFF/WACC and equity/cost of equity",
+      "explanation": "They are different claims pairs.",
+      "whenItMatters": "Do not mix the flow and rate."
+    }
+  ],
+  "workedExample": {
+    "id": "wacc-two-source",
+    "scenarioId": "wacc-two-source-worked",
+    "setup": "Assume market-value equity 80 and debt 20, required equity return 14% and pre-tax debt cost 8%. The hypothetical tax rate 25% provides a fully usable debt tax effect. These annual inputs match the FCFF currency and risk.",
+    "inputs": [
+      {
+        "key": "equity",
+        "label": "Equity",
+        "value": 80,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "debt",
+        "label": "Debt",
+        "value": 20,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "equity_cost",
+        "label": "Required equity return",
+        "value": 0.14,
+        "unit": "fraction"
+      },
+      {
+        "key": "debt_cost",
+        "label": "Pre-tax debt cost",
+        "value": 0.08,
+        "unit": "fraction"
+      },
+      {
+        "key": "tax_rate",
+        "label": "Assumed usable tax rate",
+        "value": 0.25,
+        "unit": "fraction"
+      }
+    ],
+    "steps": [
+      "Capital total = 80 + 20 = 100; equity weight 80% and debt weight 20%.",
+      "Assumed after-tax debt cost = 8%×(1−25%) = 6%.",
+      "Equity contribution = 80%×14% = 11.2 percentage points.",
+      "Debt contribution = 20%×6% = 1.2 percentage points.",
+      "WACC = 11.2% + 1.2% = 12.4%. The weights sum to 100%.",
+      "Use 0.124 per annual discount period for matched FCFF, not a monthly rate or a rate for after-debt-service equity cash."
+    ],
+    "result": "Hypothetical WACC 12.4% per year.",
+    "interpretation": "This is a consistent weighted assumption; it does not establish current financing availability or an optimal structure."
+  },
+  "statementEffects": {
+    "applicability": "not-applicable",
+    "explanation": "Effects under the stated simplified scenario. Forecasts and economic values do not themselves create accounting entries.",
+    "changes": []
+  },
+  "misconceptions": [
+    {
+      "id": "double-tax",
+      "claim": "Apply a tax reduction again to an already after-tax debt input.",
+      "correction": "Read whether the supplied debt cost is pre-tax or after tax.",
+      "diagnostic": "Has the benefit already been included?"
+    },
+    {
+      "id": "weights",
+      "claim": "Average the two rates without looking at weights.",
+      "correction": "Use the share of each capital source in the same total.",
+      "diagnostic": "Are debt and equity equally weighted?"
+    },
+    {
+      "id": "mismatch",
+      "claim": "Use WACC for cash already after all debt service.",
+      "correction": "Pair FCFF with WACC and equity cash with cost of equity.",
+      "diagnostic": "Which claims have the cash flows already paid?"
+    }
+  ],
+  "practice": [
+    {
+      "id": "wacc-predict",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "tax",
+      "scenarioId": "wacc-predict-independent",
+      "objectiveIds": [
+        "match"
+      ],
+      "setup": "Independent assumptions: market-value equity 60, debt 40, equity required return 15%, pre-tax debt cost 10% and fully usable hypothetical tax rate 20%. Inputs match annual FCFF.",
+      "inputs": [
+        {
+          "key": "equity",
+          "label": "Equity",
+          "value": 60,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "debt",
+          "label": "Debt",
+          "value": 40,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "equity_cost",
+          "label": "Required equity return",
+          "value": 0.15,
+          "unit": "fraction"
+        },
+        {
+          "key": "debt_cost",
+          "label": "Pre-tax debt cost",
+          "value": 0.1,
+          "unit": "fraction"
+        },
+        {
+          "key": "tax_rate",
+          "label": "Usable hypothetical tax rate",
+          "value": 0.2,
+          "unit": "fraction"
+        }
+      ],
+      "question": "What WACC follows?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "13.0%",
+          "feedback": "This omits the supplied debt tax adjustment.",
+          "misconceptionId": "double-tax"
+        },
+        {
+          "id": "correct",
+          "text": "12.2%",
+          "feedback": "After-tax debt cost = 10%×0.8 = 8%. WACC = 0.6×15% + 0.4×8% = 12.2%.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "11.5%",
+          "feedback": "This uses equal weights instead of the supplied 60/40 mix.",
+          "misconceptionId": "weights"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "After-tax debt cost = 10%×0.8 = 8%. WACC = 0.6×15% + 0.4×8% = 12.2%.",
+      "hints": [
+        {
+          "text": "Compute weights and the labelled debt rate separately.",
+          "answerRevealing": false
+        },
+        {
+          "text": "After-tax debt cost = 10%×0.8 = 8%. WACC = 0.6×15% + 0.4×8% = 12.2%.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "What would make this rate unsuitable for another project?",
+        "rubric": [
+          "Check claims and risk.",
+          "Match currency and annual periods.",
+          "Do not assume a company rate fits every project."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "wacc-transfer-after-tax",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "match",
+      "scenarioId": "wacc-transfer-after-tax-independent",
+      "objectiveIds": [
+        "match"
+      ],
+      "setup": "Independent assumptions: equity and debt each have 50% market-value weight. Equity required return is 12%. The debt cost is explicitly already after tax at 6%. A nominal tax rate 25% is shown as background; no second adjustment is permitted. Inputs match annual FCFF.",
+      "inputs": [
+        {
+          "key": "equity_weight",
+          "label": "Equity weight",
+          "value": 0.5,
+          "unit": "fraction"
+        },
+        {
+          "key": "debt_weight",
+          "label": "Debt weight",
+          "value": 0.5,
+          "unit": "fraction"
+        },
+        {
+          "key": "equity_cost",
+          "label": "Required equity return",
+          "value": 0.12,
+          "unit": "fraction"
+        },
+        {
+          "key": "after_tax_debt",
+          "label": "Already after-tax debt cost",
+          "value": 0.06,
+          "unit": "fraction"
+        },
+        {
+          "key": "tax_rate",
+          "label": "Background nominal tax rate",
+          "value": 0.25,
+          "unit": "fraction"
+        }
+      ],
+      "question": "Which rate and cash-flow pairing are consistent?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "WACC 8.25%; use with matched FCFF",
+          "feedback": "This applies the tax factor twice.",
+          "misconceptionId": "double-tax"
+        },
+        {
+          "id": "correct",
+          "text": "WACC 9%; use with matched FCFF",
+          "feedback": "WACC = 0.5×12% + 0.5×6% = 9%. The debt input already contains the assumed tax adjustment. Pair it with matched FCFF.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "WACC 9%; use with after-debt-service equity cash",
+          "feedback": "The calculated rate covers both debt and equity claims.",
+          "misconceptionId": "mismatch"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "WACC = 0.5×12% + 0.5×6% = 9%. The debt input already contains the assumed tax adjustment. Pair it with matched FCFF.",
+      "hints": [
+        {
+          "text": "Read the debt input’s tax label before applying any factor.",
+          "answerRevealing": false
+        },
+        {
+          "text": "WACC = 0.5×12% + 0.5×6% = 9%. The debt input already contains the assumed tax adjustment. Pair it with matched FCFF.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Why is the correct numeric rate still insufficient without a matching cash flow?",
+        "rubric": [
+          "Do not reduce 6% again.",
+          "Verify weights sum to one.",
+          "Identify the all-capital-provider cash perimeter."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E2120",
+      "to": "T13.10",
+      "kind": "learning",
+      "purpose": "Atomic concept within this original grouped topic.",
+      "conditions": "Preserves the original inventory while enabling more precise navigation.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2157",
+      "to": "A11",
+      "kind": "financial",
+      "purpose": "FCFF is discounted at a matching WACC in a standard enterprise DCF.",
+      "conditions": "Risk, currency, nominal/real basis and tax treatment must align.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2173",
+      "to": "A20",
+      "kind": "financial",
+      "purpose": "ROIC above a comparable cost of capital is a value-creation diagnostic.",
+      "conditions": "Use forward economics and matching capital/risk definitions; one historical spread is not proof.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D13",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "How do market risk, leverage and tax-benefit availability change the inputs?",
+      "When should a project have a different required return?"
+    ],
+    "conceptIds": [
+      "T13.10",
+      "A11",
+      "A20"
+    ],
+    "limitations": "Introductory study coverage. Full CAPM/beta estimation, market calibration, country risk, changing leverage and optimal capital structure are deferred."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "The connected six-round case remains a separate implementation task; these examples do not imply playable rounds."
+    }
+  ],
+  "sources": [
+    {
+      "id": "intro",
+      "title": "Aswath Damodaran, NYU Stern: An Introduction to Valuation",
+      "url": "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/background/valintro.htm",
+      "supports": [
+        "Background on matching cash-flow claims and discount rates, and market-value financing weights. Numerical inputs here are independent hypothetical teaching assumptions."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "fcff",
+      "title": "Aswath Damodaran, NYU Stern: Free Cashflow to the Firm lecture notes",
+      "url": "https://people.stern.nyu.edu/adamodar/pdfiles/eqnotes/fcff.pdf",
+      "supports": [
+        "Background on operating cash after reinvestment, consistent firm cash/rate matching, terminal values and claims bridges. Historical company examples and market rates in the notes are not used as current data."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "method": "ai-content-source-arithmetic",
+    "evidence": [
+      "B5 topic mechanics, terminology, signs, timing, source boundaries and feedback reviewed in docs/implementation/task-04-4-b5.md.",
+      "Independent worked and assessment calculations checked in tests/b5-lessons.test.mjs; shared route, version, hint and retry regressions also apply.",
+      "Scoped AI content review, not independent professional approval, interactive browser verification or learner-pilot evidence."
+    ]
+  }
+}

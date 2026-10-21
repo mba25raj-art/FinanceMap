@@ -1,0 +1,426 @@
+{
+  "specVersion": 1,
+  "status": "planned",
+  "task": "03.1",
+  "destinations": [
+    {
+      "id": "atlas",
+      "label": "Atlas",
+      "description": "Understand a finance concept and follow its connections.",
+      "entry": "#atlas"
+    },
+    {
+      "id": "labs",
+      "label": "Labs",
+      "description": "Change one assumption and see what happens.",
+      "entry": "#labs"
+    },
+    {
+      "id": "simulations",
+      "label": "Simulations",
+      "description": "Run a company through connected finance decisions.",
+      "entry": "#simulations"
+    },
+    {
+      "id": "learning",
+      "label": "My learning",
+      "description": "Resume your work and review your answers.",
+      "entry": "#learning"
+    }
+  ],
+  "legacyViews": [
+    {
+      "view": "statements",
+      "destination": "atlas",
+      "target": "#atlas/statements/balance/{conceptId}"
+    },
+    {
+      "view": "map",
+      "destination": "atlas",
+      "target": "#atlas/map/{conceptId}"
+    },
+    {
+      "view": "topics",
+      "destination": "atlas",
+      "target": "#atlas/topics/{conceptId}"
+    },
+    {
+      "view": "missions",
+      "destination": "simulations",
+      "target": "#simulations?concept={conceptId}",
+      "createsRun": false
+    },
+    {
+      "view": "learning",
+      "destination": "learning",
+      "target": "#learning?concept={conceptId}"
+    },
+    {
+      "view": "resources",
+      "destination": "atlas",
+      "target": "#atlas/sources/{conceptId}"
+    }
+  ],
+  "routePatterns": [
+    "#atlas",
+    "#atlas/statements/{statement}/{conceptId}",
+    "#atlas/topics/{conceptId}",
+    "#atlas/map/{conceptId}",
+    "#atlas/lessons/{conceptId}",
+    "#atlas/trails/{journeyId}?stop={index}",
+    "#atlas/sources/{conceptId}",
+    "#labs",
+    "#labs/{labId}",
+    "#labs/{labId}?run={runId}",
+    "#simulations",
+    "#simulations/{caseId}",
+    "#simulations/{caseId}?run={runId}",
+    "#learning"
+  ],
+  "learningRelationshipTypes": [
+    "PART_OF",
+    "EXPLORE_WITH",
+    "RECOMMENDED_BEFORE",
+    "DEEPENS"
+  ],
+  "inventory": {
+    "concepts": 698,
+    "domains": 40,
+    "relationships": 2520,
+    "journeys": 24
+  },
+  "trails": [
+    {
+      "id": "P01",
+      "destination": "atlas",
+      "route": "#atlas/trails/P01",
+      "nodesSource": {
+        "file": "content/master-network.json",
+        "journeyId": "P01",
+        "field": "nodes",
+        "preserveOrder": true
+      }
+    },
+    {
+      "id": "P02",
+      "destination": "atlas",
+      "route": "#atlas/trails/P02",
+      "nodesSource": {
+        "file": "content/master-network.json",
+        "journeyId": "P02",
+        "field": "nodes",
+        "preserveOrder": true
+      }
+    },
+    {
+      "id": "P03",
+      "destination": "atlas",
+      "route": "#atlas/trails/P03",
+      "nodesSource": {
+        "file": "content/master-network.json",
+        "journeyId": "P03",
+        "field": "nodes",
+        "preserveOrder": true
+      }
+    },
+    {
+      "id": "P04",
+      "destination": "atlas",
+      "route": "#atlas/trails/P04",
+      "nodesSource": {
+        "file": "content/master-network.json",
+        "journeyId": "P04",
+        "field": "nodes",
+        "preserveOrder": true
+      }
+    },
+    {
+      "id": "P05",
+      "destination": "atlas",
+      "route": "#atlas/trails/P05",
+      "nodesSource": {
+        "file": "content/master-network.json",
+        "journeyId": "P05",
+        "field": "nodes",
+        "preserveOrder": true
+      }
+    },
+    {
+      "id": "P06",
+      "destination": "atlas",
+      "route": "#atlas/trails/P06",
+      "nodesSource": {
+        "file": "content/master-network.json",
+        "journeyId": "P06",
+        "field": "nodes",
+        "preserveOrder": true
+      }
+    },
+    {
+      "id": "P07",
+      "destination": "atlas",
+      "route": "#atlas/trails/P07",
+      "nodesSource": {
+        "file": "content/master-network.json",
+        "journeyId": "P07",
+        "field": "nodes",
+        "preserveOrder": true
+      }
+    },
+    {
+      "id": "P08",
+      "destination": "atlas",
+      "route": "#atlas/trails/P08",
+      "nodesSource": {
+        "file": "content/master-network.json",
+        "journeyId": "P08",
+        "field": "nodes",
+        "preserveOrder": true
+      }
+    },
+    {
+      "id": "P09",
+      "destination": "atlas",
+      "route": "#atlas/trails/P09",
+      "nodesSource": {
+        "file": "content/master-network.json",
+        "journeyId": "P09",
+        "field": "nodes",
+        "preserveOrder": true
+      }
+    },
+    {
+      "id": "P10",
+      "destination": "atlas",
+      "route": "#atlas/trails/P10",
+      "nodesSource": {
+        "file": "content/master-network.json",
+        "journeyId": "P10",
+        "field": "nodes",
+        "preserveOrder": true
+      }
+    },
+    {
+      "id": "P11",
+      "destination": "atlas",
+      "route": "#atlas/trails/P11",
+      "nodesSource": {
+        "file": "content/master-network.json",
+        "journeyId": "P11",
+        "field": "nodes",
+        "preserveOrder": true
+      }
+    },
+    {
+      "id": "P12",
+      "destination": "atlas",
+      "route": "#atlas/trails/P12",
+      "nodesSource": {
+        "file": "content/master-network.json",
+        "journeyId": "P12",
+        "field": "nodes",
+        "preserveOrder": true
+      }
+    },
+    {
+      "id": "P13",
+      "destination": "atlas",
+      "route": "#atlas/trails/P13",
+      "nodesSource": {
+        "file": "content/master-network.json",
+        "journeyId": "P13",
+        "field": "nodes",
+        "preserveOrder": true
+      }
+    },
+    {
+      "id": "P14",
+      "destination": "atlas",
+      "route": "#atlas/trails/P14",
+      "nodesSource": {
+        "file": "content/master-network.json",
+        "journeyId": "P14",
+        "field": "nodes",
+        "preserveOrder": true
+      }
+    },
+    {
+      "id": "P15",
+      "destination": "atlas",
+      "route": "#atlas/trails/P15",
+      "nodesSource": {
+        "file": "content/master-network.json",
+        "journeyId": "P15",
+        "field": "nodes",
+        "preserveOrder": true
+      }
+    },
+    {
+      "id": "P16",
+      "destination": "atlas",
+      "route": "#atlas/trails/P16",
+      "nodesSource": {
+        "file": "content/master-network.json",
+        "journeyId": "P16",
+        "field": "nodes",
+        "preserveOrder": true
+      }
+    },
+    {
+      "id": "P17",
+      "destination": "atlas",
+      "route": "#atlas/trails/P17",
+      "nodesSource": {
+        "file": "content/master-network.json",
+        "journeyId": "P17",
+        "field": "nodes",
+        "preserveOrder": true
+      }
+    },
+    {
+      "id": "P18",
+      "destination": "atlas",
+      "route": "#atlas/trails/P18",
+      "nodesSource": {
+        "file": "content/master-network.json",
+        "journeyId": "P18",
+        "field": "nodes",
+        "preserveOrder": true
+      }
+    },
+    {
+      "id": "P19",
+      "destination": "atlas",
+      "route": "#atlas/trails/P19",
+      "nodesSource": {
+        "file": "content/master-network.json",
+        "journeyId": "P19",
+        "field": "nodes",
+        "preserveOrder": true
+      }
+    },
+    {
+      "id": "P20",
+      "destination": "atlas",
+      "route": "#atlas/trails/P20",
+      "nodesSource": {
+        "file": "content/master-network.json",
+        "journeyId": "P20",
+        "field": "nodes",
+        "preserveOrder": true
+      }
+    },
+    {
+      "id": "P21",
+      "destination": "atlas",
+      "route": "#atlas/trails/P21",
+      "nodesSource": {
+        "file": "content/master-network.json",
+        "journeyId": "P21",
+        "field": "nodes",
+        "preserveOrder": true
+      }
+    },
+    {
+      "id": "P22",
+      "destination": "atlas",
+      "route": "#atlas/trails/P22",
+      "nodesSource": {
+        "file": "content/master-network.json",
+        "journeyId": "P22",
+        "field": "nodes",
+        "preserveOrder": true
+      }
+    },
+    {
+      "id": "P23",
+      "destination": "atlas",
+      "route": "#atlas/trails/P23",
+      "nodesSource": {
+        "file": "content/master-network.json",
+        "journeyId": "P23",
+        "field": "nodes",
+        "preserveOrder": true
+      }
+    },
+    {
+      "id": "P24",
+      "destination": "atlas",
+      "route": "#atlas/trails/P24",
+      "nodesSource": {
+        "file": "content/master-network.json",
+        "journeyId": "P24",
+        "field": "nodes",
+        "preserveOrder": true
+      }
+    }
+  ],
+  "activities": [
+    {
+      "kind": "simulation",
+      "id": "P02",
+      "destination": "simulations",
+      "status": "existing-three-clue-case",
+      "concepts": [
+        "A05",
+        "A08",
+        "A11"
+      ],
+      "scenarioVersionRequiredBeforePersistence": true
+    },
+    {
+      "kind": "lab",
+      "id": "LAB-COLLECTIONS",
+      "destination": "labs",
+      "status": "planned",
+      "scope": "Customer collection",
+      "roadmapTask": "07.1"
+    },
+    {
+      "kind": "lab",
+      "id": "LAB-EQUIPMENT",
+      "destination": "labs",
+      "status": "planned",
+      "scope": "Equipment investment",
+      "roadmapTask": "07.2"
+    },
+    {
+      "kind": "lab",
+      "id": "LAB-FINANCING",
+      "destination": "labs",
+      "status": "planned",
+      "scope": "Financing comparison",
+      "roadmapTask": "07.3"
+    },
+    {
+      "kind": "simulation",
+      "id": "CASE-NILA-HOMEWARE",
+      "destination": "simulations",
+      "status": "planned-six-round-company-case",
+      "extendsMasterJourney": "P02",
+      "scenarioVersionRequiredBeforePersistence": true
+    }
+  ],
+  "returnContextFields": [
+    "token",
+    "activityKind",
+    "activityId",
+    "runId",
+    "scenarioVersion",
+    "checkpoint",
+    "originRoute",
+    "viewportSnapshot",
+    "hintState"
+  ],
+  "invariants": {
+    "navigationCreatesRun": false,
+    "resumeCreatesRun": false,
+    "finishRequiredForCompletion": true,
+    "recordsRemainSessionOnlyUntil": "05.2",
+    "missingRunOpensBrief": true,
+    "unansweredLessonRequiresHintOptIn": true,
+    "contextPropagatesThroughConceptLinks": true,
+    "financialEdgesAreNotAutomaticallyCalculated": true
+  },
+  "sourceCommit": "ea219af22a3c81dbe8fe25dcd497cc03125c6a05"
+}

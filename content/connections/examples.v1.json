@@ -1,0 +1,329 @@
+{
+  "version": "1.0.0",
+  "units": "INR lakh except explicitly stated days/rates",
+  "review": {
+    "reviewer": "Codex",
+    "type": "ai-content-arithmetic",
+    "date": "2026-10-19",
+    "scope": "Independent selected-link illustrations; not a global graph calculation engine or professional review."
+  },
+  "examples": [
+    {
+      "edgeId": "E2135",
+      "fromId": "T04.05",
+      "toId": "A02",
+      "kind": "credit-sale",
+      "inputs": {
+        "sale": 20
+      },
+      "expected": 20,
+      "example": "Recognise a qualifying credit delivery of 20. Revenue and receivables each increase 20; cash at delivery is unchanged.",
+      "conditions": "Recognition criteria are met; this is a credit delivery with no advance or collection. Tax and assigned stock cost are outside this single-link example."
+    },
+    {
+      "edgeId": "E2136",
+      "fromId": "A01",
+      "toId": "A02",
+      "kind": "credit-sale",
+      "inputs": {
+        "sale": 20
+      },
+      "expected": 20,
+      "example": "A qualifying credit sale of 20 creates receivables 20. A cash sale for the same amount would instead create cash 20 and no outstanding customer balance.",
+      "conditions": "Compare the same qualifying sale with only its payment term changed."
+    },
+    {
+      "edgeId": "E2137",
+      "fromId": "A02",
+      "toId": "A05",
+      "kind": "owc",
+      "inputs": {
+        "ar": 30,
+        "inventory": 50,
+        "payables": 25
+      },
+      "expected": 55,
+      "example": "Receivables 30 + inventory 50 − operating supplier payables 25 = operating working capital 55. Receivables increasing ten, with the other components fixed, increases this balance to 65.",
+      "conditions": "Only operating receivables belong in this definition; keep other components fixed for the marginal comparison."
+    },
+    {
+      "edgeId": "E2138",
+      "fromId": "A03",
+      "toId": "A05",
+      "kind": "owc",
+      "inputs": {
+        "ar": 30,
+        "inventory": 50,
+        "payables": 25
+      },
+      "expected": 55,
+      "example": "Receivables 30 + inventory 50 − trade payables 25 = operating working capital 55. Inventory increasing ten with receivables/payables fixed increases the balance to 65.",
+      "conditions": "Use the operating inventory carrying amount and matched dates. A credit purchase can also change payables, so inspect both movements."
+    },
+    {
+      "edgeId": "E2139",
+      "fromId": "A04",
+      "toId": "A05",
+      "kind": "owc",
+      "inputs": {
+        "ar": 30,
+        "inventory": 50,
+        "payables": 35
+      },
+      "expected": 45,
+      "example": "Hold receivables 30 and inventory 50 fixed. Leaving operating supplier payables at 35 rather than paying ten down to 25 gives operating working capital 45 rather than 55, and retains cash ten.",
+      "conditions": "This compares payment timing for an already-recognised operating obligation; equipment creditors, loans, interest and tax claims are excluded."
+    },
+    {
+      "edgeId": "E2140",
+      "fromId": "A05",
+      "toId": "A06",
+      "kind": "indirect",
+      "inputs": {
+        "profit": 8,
+        "depreciation": 0,
+        "change": 10
+      },
+      "expected": -2,
+      "example": "Profit eight + depreciation zero − increase in operating working capital ten = operating cash outflow two in this simplified bridge.",
+      "conditions": "Hold other cash-flow and payable adjustments fixed. This is an illustrative indirect reconciliation, not a universal reporting subtotal."
+    },
+    {
+      "edgeId": "E2141",
+      "fromId": "A02",
+      "toId": "T14.03",
+      "kind": "days",
+      "inputs": {
+        "average": 10,
+        "annualFlow": 120,
+        "days": 365
+      },
+      "expected": 30.416666666666664,
+      "example": "Average operating receivables ten / annual credit sales 120 × 365 = 30.42 receivable days.",
+      "conditions": "Use average balances, the matching credit-sales period and consistent currency/units; seasonality can limit interpretation."
+    },
+    {
+      "edgeId": "E2142",
+      "fromId": "A03",
+      "toId": "T14.03",
+      "kind": "days",
+      "inputs": {
+        "average": 12,
+        "annualFlow": 72,
+        "days": 365
+      },
+      "expected": 60.83333333333333,
+      "example": "Average inventory twelve / annual cost of sales seventy-two × 365 = 60.83 inventory days.",
+      "conditions": "Match inventory valuation, the cost denominator and the reporting period; revenue is not substituted for cost."
+    },
+    {
+      "edgeId": "E2143",
+      "fromId": "A04",
+      "toId": "T14.03",
+      "kind": "days",
+      "inputs": {
+        "average": 8,
+        "annualFlow": 48,
+        "days": 365
+      },
+      "expected": 60.83333333333333,
+      "example": "Average operating supplier payables eight / annual credit purchases forty-eight × 365 = 60.83 payable days.",
+      "conditions": "Use relevant credit purchases when available; disclose a cost-of-sales proxy rather than silently treating it as purchases."
+    },
+    {
+      "edgeId": "E2151",
+      "fromId": "A08",
+      "toId": "A09",
+      "kind": "ebit",
+      "inputs": {
+        "revenue": 100,
+        "cost": 40,
+        "opex": 30,
+        "dep": 10
+      },
+      "expected": 20,
+      "example": "Revenue 100 − cost sold 40 − other operating costs 30 − depreciation ten = EBIT twenty. Before depreciation the same operating subtotal is thirty.",
+      "conditions": "Depreciation relates to the operating assets in this EBIT perimeter. It is not the acquisition cash payment."
+    },
+    {
+      "edgeId": "E2152",
+      "fromId": "A08",
+      "toId": "A11",
+      "kind": "fcff",
+      "inputs": {
+        "nopat": 16,
+        "dep": 10,
+        "capex": 10,
+        "change": 2
+      },
+      "expected": 14,
+      "example": "NOPAT sixteen + non-cash depreciation ten − cash operating capex ten − increase in operating working capital two = FCFF fourteen. Opening working capital eighteen and closing twenty imply a change of two, not twenty.",
+      "conditions": "Depreciation was deducted in operating profit once. Keep reinvestment separate, use the change in operating working capital, and exclude financing flows."
+    },
+    {
+      "edgeId": "E2153",
+      "fromId": "A07",
+      "toId": "A11",
+      "kind": "fcff",
+      "inputs": {
+        "nopat": 16,
+        "dep": 10,
+        "capex": 10,
+        "change": 2
+      },
+      "expected": 14,
+      "example": "NOPAT sixteen + non-cash depreciation ten − cash operating capex ten − increase in operating working capital two = FCFF fourteen. Opening working capital eighteen and closing twenty imply a change of two, not twenty.",
+      "conditions": "Depreciation was deducted in operating profit once. Keep reinvestment separate, use the change in operating working capital, and exclude financing flows."
+    },
+    {
+      "edgeId": "E2154",
+      "fromId": "A05",
+      "toId": "A11",
+      "kind": "fcff",
+      "inputs": {
+        "nopat": 16,
+        "dep": 10,
+        "capex": 10,
+        "change": 2
+      },
+      "expected": 14,
+      "example": "NOPAT sixteen + non-cash depreciation ten − cash operating capex ten − increase in operating working capital two = FCFF fourteen. Opening working capital eighteen and closing twenty imply a change of two, not twenty.",
+      "conditions": "Depreciation was deducted in operating profit once. Keep reinvestment separate, use the change in operating working capital, and exclude financing flows."
+    },
+    {
+      "edgeId": "E2156",
+      "fromId": "A10",
+      "toId": "A11",
+      "kind": "fcff",
+      "inputs": {
+        "nopat": 16,
+        "dep": 10,
+        "capex": 10,
+        "change": 2
+      },
+      "expected": 14,
+      "example": "NOPAT sixteen + non-cash depreciation ten − cash operating capex ten − increase in operating working capital two = FCFF fourteen. Opening working capital eighteen and closing twenty imply a change of two, not twenty.",
+      "conditions": "Depreciation was deducted in operating profit once. Keep reinvestment separate, use the change in operating working capital, and exclude financing flows."
+    },
+    {
+      "edgeId": "E2155",
+      "fromId": "A09",
+      "toId": "A10",
+      "kind": "nopat",
+      "inputs": {
+        "ebit": 20,
+        "tax": 0.2
+      },
+      "expected": 16,
+      "example": "Hypothetical EBIT twenty × (1 − operating tax rate 20%) = NOPAT sixteen.",
+      "conditions": "This assumes positive operating taxable income and a simplified operating tax charge; interest and financing tax shields are outside this example."
+    },
+    {
+      "edgeId": "E2157",
+      "fromId": "A11",
+      "toId": "A13",
+      "kind": "pv",
+      "inputs": {
+        "cash": 14,
+        "rate": 0.1
+      },
+      "expected": 12.727272727272727,
+      "example": "FCFF fourteen at one annual year end discounted at a supplied matching 10% WACC has present value 12.73.",
+      "conditions": "This is one specified flow, not a complete enterprise valuation. Match risk, currency, annual period, nominal/real basis and tax treatment."
+    },
+    {
+      "edgeId": "E2160",
+      "fromId": "A18",
+      "toId": "A11",
+      "kind": "financing-excluded",
+      "inputs": {
+        "fcff": 14,
+        "borrowing": 10
+      },
+      "expected": 14,
+      "example": "Operating FCFF is fourteen. Borrowing ten is a separate financing cash inflow; it does not turn FCFF into twenty-four.",
+      "conditions": "Hold the operating assumptions fixed. Debt may affect risk, tax shields and claims through separately modelled financing channels."
+    },
+    {
+      "edgeId": "E2161",
+      "fromId": "A11",
+      "toId": "A19",
+      "kind": "dcf",
+      "inputs": {
+        "flows": [
+          10,
+          12
+        ],
+        "wacc": 0.1,
+        "growth": 0.03
+      },
+      "expected": 164.93506493506487,
+      "example": "Annual FCFF ten and twelve, supplied WACC 10% and sustainable perpetual growth 3% imply terminal value 176.57 at year two and operating enterprise value 164.94 at t0.",
+      "conditions": "Assume a continuing business after reinvestment, annual year-end flows, WACC above growth and a consistent operating perimeter. This is conditional value, not an observed price."
+    },
+    {
+      "edgeId": "E2163",
+      "fromId": "A19",
+      "toId": "A15",
+      "kind": "dcf",
+      "inputs": {
+        "flows": [
+          10,
+          12
+        ],
+        "wacc": 0.1,
+        "growth": 0.03
+      },
+      "expected": 164.93506493506487,
+      "example": "Annual FCFF ten and twelve, supplied WACC 10% and sustainable perpetual growth 3% imply terminal value 176.57 at year two and operating enterprise value 164.94 at t0.",
+      "conditions": "Assume a continuing business after reinvestment, annual year-end flows, WACC above growth and a consistent operating perimeter. This is conditional value, not an observed price."
+    },
+    {
+      "edgeId": "E2164",
+      "fromId": "A15",
+      "toId": "T17.04",
+      "kind": "equity",
+      "inputs": {
+        "enterprise": 164.93506493506487,
+        "debt": 30,
+        "excessCash": 2,
+        "otherClaims": 0
+      },
+      "expected": 136.93506493506487,
+      "example": "Operating enterprise value 164.94 − debt thirty + excess cash two = equity residual 136.94, using unrounded values for the calculation.",
+      "conditions": "Only cash above the operating reserve is added. No other claims or non-operating assets are assumed; ordinary operating payables are already in working capital."
+    },
+    {
+      "edgeId": "E2165",
+      "fromId": "T17.04",
+      "toId": "A16",
+      "kind": "equity",
+      "inputs": {
+        "enterprise": 164.93506493506487,
+        "debt": 30,
+        "excessCash": 2,
+        "otherClaims": 0
+      },
+      "expected": 136.93506493506487,
+      "example": "Operating enterprise value 164.94 − debt thirty + excess cash two = equity residual 136.94, using unrounded values for the calculation.",
+      "conditions": "Only cash above the operating reserve is added. No other claims or non-operating assets are assumed; ordinary operating payables are already in working capital."
+    },
+    {
+      "edgeId": "E2220",
+      "fromId": "T12.05",
+      "toId": "T03.12",
+      "kind": "npv",
+      "inputs": {
+        "initial": 10,
+        "flows": [
+          6,
+          6
+        ],
+        "rate": 0.1
+      },
+      "expected": 0.41322314049586684,
+      "example": "Pay ten at t0 and receive complete incremental cash six at each of two annual year ends. NPV at 10% is 0.41 lakh.",
+      "conditions": "The flows already include applicable operating tax and reinvestment. No additional terminal or financing flows; initial investment is subtracted once."
+    }
+  ]
+}

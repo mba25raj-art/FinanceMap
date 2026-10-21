@@ -1,0 +1,416 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "A08",
+  "contentVersion": "1.0.0",
+  "hoverDefinition": "Depreciation allocates a depreciable asset’s cost over its expected use under a stated method. It reduces carrying value and profit without a current cash payment; adding it back in a cash bridge creates no receipt.",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "Depreciable base, straight-line/time allocation, method distinctions, carrying value and consistent operating cash add-back."
+    ],
+    "deferred": [
+      "Full useful-life review, component accounting, impairment/revaluation, tax allowances and disposal gains are deferred."
+    ]
+  },
+  "objectives": [
+    {
+      "id": "allocation",
+      "statement": "Calculate a given depreciation allocation and reconcile its statement effects.",
+      "evidence": "Separate cash purchase, current charge, accumulated depreciation and net carrying amount.",
+      "outcomeIds": [
+        "LO1",
+        "LO2",
+        "LO5"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh",
+      "years",
+      "fraction"
+    ],
+    "timeframe": "Independent fictional teaching scenarios. Worked examples and practice start separately; they are not consecutive company-case rounds.",
+    "assumptions": [
+      "Straight-line consumption, residual value, useful life and use fraction are supplied assumptions.",
+      "No impairment, revaluation, disposal, tax or other event. The charge is expensed rather than included in unsold inventory.",
+      "Purchases are cash investing flows; depreciation has no current bank entry."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Conceptual teaching assumptions, with INR lakh as a unit rather than a jurisdiction. No tax rate, financing term, reporting classification, valuation input or management buffer is a current rule or market recommendation. Applicable framework, jurisdiction, reporting period and effective amendments require separate study."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "base",
+      "title": "Identify the depreciable amount",
+      "paragraphs": [
+        "For the stated straight-line examples, annual charge = (cost − residual value) ÷ useful life. Cost is the recognised asset amount; residual value is the assumed amount not allocated over that life. A residual estimate does not guarantee future sale proceeds.",
+        "Start from the date available for use and apply the stated time convention. The examples supply a full-year or half-year fraction. Do not infer a tax allowance, market price or cash payment from the accounting charge."
+      ]
+    },
+    {
+      "id": "method",
+      "title": "Match allocation to the assumed consumption",
+      "paragraphs": [
+        "Straight-line allocates evenly over time. A declining-balance method applies a stated rate to a remaining base, producing a different pattern. A units-of-production method follows a stated quantity of use. Each requires an appropriate consumption assumption; these numerical questions use straight-line only.",
+        "Accumulated depreciation is the total allocation recorded to date. Net carrying amount is cost less accumulated depreciation and any other stated adjustments. An older asset can have low carrying value and still be useful; depreciation is not an asset valuation forecast."
+      ]
+    },
+    {
+      "id": "cash",
+      "title": "Reconcile the non-cash charge once",
+      "paragraphs": [
+        "The charge lowers equipment’s net carrying value and equity through profit. Cash changed on the acquisition/payment date, not because the period’s depreciation was recorded. In an indirect bridge, add back the expensed non-cash depreciation because it reduced the starting profit.",
+        "That add-back does not recover the equipment cost or fund a replacement automatically. Capital expenditure still uses cash; a full cash flow must include its separate acquisition payment. If depreciation is embedded in inventory rather than current expense, the bridge requires a consistent inventory treatment."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "Allocation and valuation",
+      "explanation": "Depreciation allocates an assumed depreciable base; it is not a market-price estimate.",
+      "whenItMatters": "Do not treat carrying amount as a guaranteed resale value."
+    },
+    {
+      "name": "Book and tax depreciation",
+      "explanation": "Accounting allocation and allowable tax deductions can differ.",
+      "whenItMatters": "No tax benefit is implied without an explicit usable-tax assumption."
+    },
+    {
+      "name": "Add-back and funding",
+      "explanation": "The bridge removes a non-cash profit cost; it supplies no new receipt.",
+      "whenItMatters": "Replacement needs must still be financed."
+    }
+  ],
+  "workedExample": {
+    "id": "depreciation-full-year",
+    "scenarioId": "depreciation-full-year-worked",
+    "setup": "Open with cash/equity 80. Buy equipment for 36 cash, available for use at the start of a full year. Assumed residual value is 6, useful life 5 years and straight-line consumption. No other event occurs.",
+    "inputs": [
+      {
+        "key": "opening_cash",
+        "label": "Opening cash",
+        "value": 80,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "cost",
+        "label": "Cost",
+        "value": 36,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "residual",
+        "label": "Residual",
+        "value": 6,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "life",
+        "label": "Useful life",
+        "value": 5,
+        "unit": "years"
+      },
+      {
+        "key": "fraction",
+        "label": "Fraction of annual use",
+        "value": 1,
+        "unit": "fraction"
+      }
+    ],
+    "steps": [
+      "Depreciable amount = 36 − 6 = 30.",
+      "Annual depreciation = 30 ÷ 5 = 6; the full-year fraction is 1.",
+      "Closing accumulated depreciation = 6; net equipment = 36 − 6 = 30.",
+      "Loss 6 reduces equity 80 to 74. Cash after purchase is 44 and does not change when the charge is recorded.",
+      "Assets = cash 44 + equipment 30 = 74 = equity 74.",
+      "Operating cash = loss −6 + depreciation 6 = 0. Investing cash is −36; total cash declines 36."
+    ],
+    "result": "Depreciation 6; net equipment 30; loss 6; cash 44.",
+    "interpretation": "The expense reflects the supplied consumption schedule, while the bank paid for the asset once."
+  },
+  "statementEffects": {
+    "applicability": "direct",
+    "explanation": "Effects under the stated simplified scenario. Forecasts and economic values do not themselves create accounting entries.",
+    "changes": [
+      "Income statement: depreciation expense 6. Balance sheet: equipment cost 36 less accumulated 6 = 30; equity 74.",
+      "Operating cash 0 after the non-cash reversal; equipment payment is investing −36."
+    ]
+  },
+  "misconceptions": [
+    {
+      "id": "cash",
+      "claim": "Depreciation is another cash payment.",
+      "correction": "The period charge has no bank entry.",
+      "diagnostic": "When did the supplier receive cash?"
+    },
+    {
+      "id": "residual",
+      "claim": "Depreciate the whole cost despite a supplied residual.",
+      "correction": "Allocate cost less the assumed residual.",
+      "diagnostic": "What part is outside the depreciable base?"
+    },
+    {
+      "id": "time",
+      "claim": "Always charge a full year, even when use begins midyear.",
+      "correction": "Apply the stated available-for-use convention and fraction.",
+      "diagnostic": "How much of the period is covered?"
+    }
+  ],
+  "practice": [
+    {
+      "id": "dep-predict",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "method",
+      "scenarioId": "dep-predict-independent",
+      "objectiveIds": [
+        "allocation"
+      ],
+      "setup": "Independent asset is available for a full year: cost 28, residual 4, life 4 years and straight-line use. No prior depreciation, tax or other adjustment exists.",
+      "inputs": [
+        {
+          "key": "cost",
+          "label": "Cost",
+          "value": 28,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "residual",
+          "label": "Residual",
+          "value": 4,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "life",
+          "label": "Useful life",
+          "value": 4,
+          "unit": "years"
+        },
+        {
+          "key": "fraction",
+          "label": "Annual fraction",
+          "value": 1,
+          "unit": "fraction"
+        }
+      ],
+      "question": "What annual charge and closing net carrying amount follow?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "Charge 7; net carrying amount 21",
+          "feedback": "The supplied residual 4 is outside the depreciable base.",
+          "misconceptionId": "residual"
+        },
+        {
+          "id": "correct",
+          "text": "Charge 6; net carrying amount 22",
+          "feedback": "Charge = (28 − 4)/4 = 6. Net carrying amount = 28 − 6 = 22. Recording depreciation has cash effect zero.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "Charge 6; net carrying amount 22; current cash payment 6",
+          "feedback": "The charge itself does not pay cash.",
+          "misconceptionId": "cash"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Charge = (28 − 4)/4 = 6. Net carrying amount = 28 − 6 = 22. Recording depreciation has cash effect zero.",
+      "hints": [
+        {
+          "text": "Calculate the base before dividing by useful life.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Charge = (28 − 4)/4 = 6. Net carrying amount = 28 − 6 = 22. Recording depreciation has cash effect zero.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "What does the net amount establish about future sale proceeds?",
+        "rubric": [
+          "Show base 24 and charge 6.",
+          "Keep cash effect zero.",
+          "Do not treat 22 as a resale guarantee."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "dep-transfer-half-year",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "cash",
+      "scenarioId": "dep-transfer-half-year-independent",
+      "objectiveIds": [
+        "allocation"
+      ],
+      "setup": "Independent scenario: buy equipment for 30 cash, available 1 July in a 12-month calendar year. Assume exactly half-year straight-line use, residual 6 and life 4 years. No other event or tax occurs.",
+      "inputs": [
+        {
+          "key": "cost",
+          "label": "Cost",
+          "value": 30,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "residual",
+          "label": "Residual",
+          "value": 6,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "life",
+          "label": "Useful life",
+          "value": 4,
+          "unit": "years"
+        },
+        {
+          "key": "fraction",
+          "label": "Supplied half-year fraction",
+          "value": 0.5,
+          "unit": "fraction"
+        }
+      ],
+      "question": "What charge, closing net equipment and acquisition cash outflow follow?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "Charge 6; net equipment 24; cash outflow 30",
+          "feedback": "Only the stipulated half-year fraction is charged.",
+          "misconceptionId": "time"
+        },
+        {
+          "id": "correct",
+          "text": "Charge 3; net equipment 27; cash outflow 30",
+          "feedback": "Annual charge = (30 − 6)/4 = 6; half-year charge = 6×0.5 = 3. Net equipment = 27. Cash acquisition is 30; the charge has no further cash effect.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "Charge 3; net equipment 27; cash outflow 33",
+          "feedback": "Depreciation is not a second supplier payment.",
+          "misconceptionId": "cash"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Annual charge = (30 − 6)/4 = 6; half-year charge = 6×0.5 = 3. Net equipment = 27. Cash acquisition is 30; the charge has no further cash effect.",
+      "hints": [
+        {
+          "text": "Apply the use fraction after finding the annual allocation.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Annual charge = (30 − 6)/4 = 6; half-year charge = 6×0.5 = 3. Net equipment = 27. Cash acquisition is 30; the charge has no further cash effect.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "How would the loss bridge to operating cash in this isolated scenario?",
+        "rubric": [
+          "Loss 3 plus depreciation 3 gives operating cash zero.",
+          "Keep equipment cash outflow 30 separate.",
+          "Do not expense a full year."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E2115",
+      "to": "T05.10",
+      "kind": "learning",
+      "purpose": "Atomic concept within this original grouped topic.",
+      "conditions": "Preserves the original inventory while enabling more precise navigation.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2151",
+      "to": "A09",
+      "kind": "financial",
+      "purpose": "Depreciation reduces EBIT for depreciating operating assets.",
+      "conditions": "Apply the stated definitions, periods and teaching assumptions. This relationship is not an implemented calculation dependency.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2152",
+      "to": "A11",
+      "kind": "financial",
+      "purpose": "Non-cash depreciation deducted in operating profit is added back in the standard FCFF build.",
+      "conditions": "Avoid adding it twice; account for associated reinvestment separately.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D05",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "How should a change in useful-life or residual estimate affect future allocations?",
+      "What changes when depreciation is allocated into unsold inventory?"
+    ],
+    "conceptIds": [
+      "T05.10",
+      "A09",
+      "A11"
+    ],
+    "limitations": "Introductory study coverage. Full useful-life review, component accounting, impairment/revaluation, tax allowances and disposal gains are deferred."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "The connected six-round case remains a separate implementation task; these examples do not imply playable rounds."
+    }
+  ],
+  "sources": [
+    {
+      "id": "ias16",
+      "title": "IFRS Foundation: IAS 16 public overview",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/ias-16-property-plant-and-equipment/",
+      "supports": [
+        "Background on recognising and measuring property, plant and equipment, including directly attributable acquisition costs. The examples state their own recognition and depreciation assumptions; this public overview is not the full governing standard."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "ias7",
+      "title": "IFRS Foundation: IAS 7 public overview",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/ias-7-statement-of-cash-flows/",
+      "supports": [
+        "Background on operating, investing and financing cash and non-cash reconciliation. The examples prescribe their own conceptual classifications; statutory starting subtotals, interest/dividends and effective amendments require separate analysis."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "method": "ai-content-source-arithmetic",
+    "evidence": [
+      "B4 topic mechanics, terminology, signs, timing, source boundaries and feedback reviewed in docs/implementation/task-04-4-b4.md.",
+      "Independent worked and assessment calculations checked in tests/b4-lessons.test.mjs; shared route, version, hint and retry regressions also apply.",
+      "Scoped AI content review, not independent professional approval, interactive browser verification or learner-pilot evidence."
+    ]
+  }
+}

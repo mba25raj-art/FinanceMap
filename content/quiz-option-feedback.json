@@ -1,0 +1,30 @@
+{
+  "A02": {
+    "Revenue rises again": "The sale was already recognised when the receivable arose. Collecting that receivable settles the customer's debt; it does not record the sale a second time.",
+    "Profit falls": "Collecting the existing receivable is not an expense or a write-off. Cash replaces the receivable, so this collection alone does not reduce profit."
+  },
+  "T04.01": {
+    "Rise ₹5": "Counting only the cash increase overlooks the equal reduction in the existing receivable. Both are assets, so the collection changes their composition rather than their total.",
+    "Fall ₹5": "Counting only the receivable reduction overlooks the cash received. The two asset movements offset each other."
+  },
+  "A08": {
+    "Cash increases by ₹4 lakh": "Adding back depreciation in a profit-to-cash reconciliation does not create a cash receipt. The question specifies no new cash payment or receipt from the depreciation charge itself.",
+    "Revenue decreases": "Depreciation is an expense allocation, not a reduction in sales revenue. The additional expense reduces before-tax profit."
+  },
+  "A11": {
+    "Cost of equity only": "The cost of equity applies to equity cash flows. FCFF is available to both debt and equity providers, so using only the equity rate mismatches the cash-flow claimants.",
+    "Revenue growth rate": "Revenue growth describes an operating assumption. It does not measure the required return for the capital providers whose cash flows are being valued."
+  },
+  "T02.01": {
+    "0.5": "0.5 is the change in percentage points. Convert it into basis points by multiplying by 100.",
+    "500": "500 basis points would be five percentage points. This rate increases by only half a percentage point."
+  },
+  "T03.12": {
+    "₹4.55": "₹4.55 uses the 10% discount rate from the separate worked example. This question specifies 15%, so the next-year payment must be discounted at 15%.",
+    "₹15": "₹15 is the undiscounted difference between ₹115 received next year and ₹100 paid today. NPV first converts the future receipt to today's value."
+  },
+  "T17.05": {
+    "WACC unchanged": "WACC matches cash flows for all capital providers. FCFE is the cash flow attributable to equity holders after the financing adjustments, so it needs the equity required return.",
+    "Historical cost of debt": "A past borrowing rate measures a debt financing cost, not the required return for the equity holders receiving FCFE."
+  }
+}

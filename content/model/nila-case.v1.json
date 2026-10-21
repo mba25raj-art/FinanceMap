@@ -1,0 +1,98 @@
+{
+  "id": "NILA-COMPANY-CASE",
+  "version": "1.0.0",
+  "fictional": true,
+  "currency": "INR",
+  "displayUnit": "INR lakh",
+  "startDate": "2026-01-01",
+  "endDate": "2027-12-31",
+  "metadataEndDate": "2035-12-31",
+  "period": "calendar-month",
+  "minimumCash": 3,
+  "taxRate": 0.2,
+  "openingSharesLakh": 10,
+  "opening": {
+    "cash": 20,
+    "receivables": 30,
+    "inventory": 50,
+    "equipmentCost": 100,
+    "accumulatedDepreciation": 0,
+    "tradePayables": 25,
+    "equipmentPayables": 0,
+    "accruedOperating": 0,
+    "debt": 75,
+    "interestPayable": 0,
+    "taxPayable": 0,
+    "contributedCapital": 100,
+    "openingRetainedEarnings": 0,
+    "distributions": 0,
+    "revenue": 0,
+    "costOfSales": 0,
+    "operatingExpense": 0,
+    "depreciationExpense": 0,
+    "interestExpense": 0,
+    "taxExpense": 0
+  },
+  "accounts": {
+    "cash": "asset",
+    "receivables": "asset",
+    "inventory": "asset",
+    "equipmentCost": "asset",
+    "accumulatedDepreciation": "contra-asset",
+    "tradePayables": "liability",
+    "equipmentPayables": "liability",
+    "accruedOperating": "liability",
+    "debt": "liability",
+    "interestPayable": "liability",
+    "taxPayable": "liability",
+    "contributedCapital": "equity",
+    "openingRetainedEarnings": "equity",
+    "distributions": "contra-equity",
+    "revenue": "income",
+    "costOfSales": "expense",
+    "operatingExpense": "expense",
+    "depreciationExpense": "expense",
+    "interestExpense": "expense",
+    "taxExpense": "expense"
+  },
+  "receivables": [
+    {
+      "id": "opening-customers",
+      "amount": 30,
+      "dueDate": "2026-02-15"
+    }
+  ],
+  "payables": [
+    {
+      "id": "opening-suppliers",
+      "amount": 25,
+      "dueDate": "2026-02-10"
+    }
+  ],
+  "equipment": [
+    {
+      "id": "opening-equipment",
+      "cost": 100,
+      "accumulated": 0,
+      "residual": 0,
+      "lifeMonths": 60,
+      "availableDate": "2026-01-01"
+    }
+  ],
+  "loans": [
+    {
+      "id": "opening-debt",
+      "principal": 75,
+      "annualRate": 0.08,
+      "startDate": "2026-01-01",
+      "maturity": "2029-01-01"
+    }
+  ],
+  "assumptions": [
+    "The roadmap opening 20/30/50/100 assets and 25/75/100 funding is preserved. This case-specific contract is separate from the reference-core and financing mini-case.",
+    "Opening debt 75 carries hypothetical 8% Actual/365 interest, annual cash coupons on 31 December and principal due 1 January 2029. The roadmap did not specify these terms.",
+    "Opening equipment uses equivalent remaining cost 100, residual zero and 60 months; opening ten lakh shares and contributed capital allocation are teaching assumptions.",
+    "Positive monthly pre-tax income accrues hypothetical 20% tax with no loss benefit; tax cash is outside this quarter, on 31 March 2027. No current tax-law claim.",
+    "Minimum cash three is a scenario operating policy. Forecast failures never execute an overdraft or automatic loan."
+  ]
+}

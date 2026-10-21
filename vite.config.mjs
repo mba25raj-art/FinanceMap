@@ -5,6 +5,7 @@ export default defineConfig({
   base: process.env.GITHUB_PAGES_BASE || "/",
   build: {
     outDir: "dist/client",
+    manifest: true,
   },
   optimizeDeps: {
     include: ["react", "react-dom/client"],

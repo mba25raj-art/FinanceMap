@@ -1,0 +1,463 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "A03",
+  "contentVersion": "1.0.0",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "Purchase cost and freight, raw materials/work in progress/finished goods, cost assignment, sold versus unsold stock, write-downs and cash timing."
+    ],
+    "deferred": [
+      "Detailed production overhead allocation, abnormal waste, taxes, borrowing costs, consignment, biological assets and full IAS 2 measurement/reversal requirements are deferred."
+    ]
+  },
+  "hoverDefinition": "Inventory holds the cost of goods awaiting sale or production. Selling stock transfers its carrying cost to expense; paying suppliers and writing stock down are different events.",
+  "objectives": [
+    {
+      "id": "stock-flow",
+      "statement": "Roll purchase costs into inventory and move the cost sold into expense.",
+      "evidence": "Reconcile opening stock, purchases, cost sold and closing stock.",
+      "outcomeIds": [
+        "LO1",
+        "LO3"
+      ]
+    },
+    {
+      "id": "valuation",
+      "statement": "Separate a non-cash inventory write-down from a purchase payment.",
+      "evidence": "Calculate inventory and profit after a stated recoverability limit without inventing cash.",
+      "outcomeIds": [
+        "LO1",
+        "LO3"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh"
+    ],
+    "timeframe": "A separate illustrative teaching month. Worked and practice scenarios start independently; they are not consecutive company-case rounds.",
+    "assumptions": [
+      "All inventory is owned and goods transfers qualify for the stated sale recognition.",
+      "Freight in the worked example brings goods to saleable location and condition; its stated amount is included in inventory cost.",
+      "No tax, discounts, returns, losses or costs other than those stated. Stated cost sold is already assigned consistently.",
+      "A stated net realisable value is a teaching measurement assumption; no unmentioned valuation change or financing exists."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Simplified conceptual teaching scenarios in INR lakh; currency does not establish jurisdiction. Recognition, operating perimeter and cash classifications are stated assumptions. Primary public IFRS overviews provide background, not a claim of compliance. Jurisdiction, reporting period, effective amendments and complete disclosure requirements require separate study."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "cost-pool",
+      "title": "Build the cost pool before measuring profit",
+      "paragraphs": [
+        "Inventory is a resource held for sale, being made for sale, or consumed in production. A purchase exchanges cash or creates a supplier obligation for that resource. It does not automatically create a current expense. Include only costs that qualify for the chosen accounting basis; the examples explicitly identify the costs included.",
+        "Raw materials enter production, work in progress is unfinished production, and finished goods await sale. A retailer may hold purchased merchandise instead. Movement between these categories changes composition, without by itself creating sales or cash."
+      ]
+    },
+    {
+      "id": "sold-stock",
+      "title": "Transfer the cost sold into expense",
+      "paragraphs": [
+        "Opening inventory + qualifying additions − cost sold − losses or write-downs = closing carrying inventory, when no other movements exist. The sales price determines revenue; the assigned carrying cost determines the inventory expense. They are different amounts.",
+        "For distinct items, actual identification can be appropriate. FIFO assigns older costs first; weighted average pools comparable costs. A cost formula is an accounting allocation, not necessarily a description of physical dispatch. The worked example supplies the assigned cost sold so no costing convention is hidden."
+      ]
+    },
+    {
+      "id": "recoverability",
+      "title": "Test unsold stock without inventing a receipt",
+      "paragraphs": [
+        "Under the stated lower-of-cost-and-net-realisable-value teaching rule, compare unsold cost with the estimated selling price less completion and selling costs. A shortfall reduces the asset and profit now; it does not collect money. A later sale has its own revenue, carrying-cost release and collection.",
+        "The public IAS 2 overview supports this background. It is not a complete cost-allocation or reversal manual. The examples state the recoverable amount directly and defer reversals and specialist inventory rules."
+      ]
+    },
+    {
+      "id": "cash-timing",
+      "title": "Keep the stock roll-forward separate from the bank",
+      "paragraphs": [
+        "Credit inventory purchases raise inventory and payables without an immediate cash outflow. Paying a supplier reduces cash and the payable. A cash sale creates an operating receipt; a credit sale first creates a receivable. Stock can therefore fall without cash increasing.",
+        "When reconciling profit to cash, a write-down already reflected in net inventory movement must not also be added back without adjusting that movement. A06 develops both consistent approaches."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "Inventory and equipment",
+      "explanation": "Inventory is intended for sale or production consumption; equipment supports operations over time.",
+      "whenItMatters": "The same physical item can have a different role depending on the business."
+    },
+    {
+      "name": "Cost and selling price",
+      "explanation": "Cost is the assigned resource amount; selling price is the customer consideration.",
+      "whenItMatters": "Use cost, not revenue, in the inventory roll-forward."
+    },
+    {
+      "name": "Cost formula and physical flow",
+      "explanation": "FIFO and weighted average allocate cost; they need not reproduce physical movement.",
+      "whenItMatters": "A change in input prices can change reported margins and closing stock."
+    },
+    {
+      "name": "Write-down and sale",
+      "explanation": "A write-down recognises lost recoverability without a customer transaction.",
+      "whenItMatters": "A lower stock balance is not evidence of cash released."
+    }
+  ],
+  "workedExample": {
+    "id": "inventory-month",
+    "scenarioId": "inv-worked-40-10-20-2-18-30-24-11",
+    "setup": "Opening cash 40 and inventory 10 are funded by equity 50, with no liabilities. Buy goods for 20 on supplier credit and pay qualifying freight 2 in cash. Sell goods with assigned cost 18 for recognised revenue 30 on credit, collecting 24. Unsold cost is 14; its stated net realisable value is 11. Apply the stated lower-of-cost-and-NRV rule. No supplier principal is paid and no other event occurs.",
+    "inputs": [
+      {
+        "key": "openingCash",
+        "label": "Opening cash",
+        "value": 40,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "openingInventory",
+        "label": "Opening inventory",
+        "value": 10,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "creditPurchase",
+        "label": "Goods bought on credit",
+        "value": 20,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "freight",
+        "label": "Qualifying freight paid",
+        "value": 2,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "costSold",
+        "label": "Assigned cost sold",
+        "value": 18,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "sales",
+        "label": "Recognised credit sales",
+        "value": 30,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "collections",
+        "label": "Customer collections",
+        "value": 24,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "nrv",
+        "label": "Unsold stock net realisable value",
+        "value": 11,
+        "unit": "INR lakh"
+      }
+    ],
+    "steps": [
+      "Inventory cost available = 10 + 20 + 2 = 32. Credit purchases also create a payable of 20; freight uses cash 2.",
+      "Expense the assigned cost sold 18. Before the valuation test, unsold cost = 32 − 18 = 14.",
+      "Write-down = 14 − 11 = 3. Closing inventory is 11; total inventory expense is 18 + 3 = 21.",
+      "Profit = revenue 30 − inventory expense 21 = 9. Receivables = 30 − 24 = 6.",
+      "Operating cash = customer receipts 24 − freight paid 2 = +22; cash closes at 62. Neither the credit purchase nor the write-down is a cash payment.",
+      "Closing assets = cash 62 + receivables 6 + inventory 11 = 79. Payables 20 + equity (50 + 9) 59 = 79.",
+      "Using net inventory movement: profit 9 − receivable increase 6 − inventory increase 1 + payable increase 20 = operating cash 22. Do not add the write-down again."
+    ],
+    "result": "Inventory closes at 11, profit is 9 and operating cash is +22.",
+    "interpretation": "The goods cost 32 before sale and valuation. The unsold resource is 11, while supplier credit, customer collection and freight determine this month’s cash."
+  },
+  "statementEffects": {
+    "applicability": "direct",
+    "explanation": "Complete simplified statement effects for this isolated worked scenario under the stated assumptions.",
+    "changes": [
+      "Income statement: revenue 30, cost sold 18 and write-down 3; profit 9.",
+      "Balance sheet: cash 62, receivables 6, inventory 11, trade payables 20 and equity 59.",
+      "Cash flow: operating receipts 24 and freight payment 2; net operating +22; no investing or financing cash."
+    ]
+  },
+  "misconceptions": [
+    {
+      "id": "purchase-expense",
+      "claim": "Every inventory purchase is immediately an expense.",
+      "correction": "Retain the unsold qualifying cost as an asset; expense the carrying cost sold or lost.",
+      "diagnostic": "What stock remains available?"
+    },
+    {
+      "id": "price-cost",
+      "claim": "Inventory leaves at its selling price.",
+      "correction": "Release its assigned carrying cost, not the customer price.",
+      "diagnostic": "Which amount was recorded as inventory?"
+    },
+    {
+      "id": "write-cash",
+      "claim": "Writing down stock releases cash.",
+      "correction": "A write-down is a non-cash asset and profit reduction.",
+      "diagnostic": "Which bank receipt occurred?"
+    }
+  ],
+  "practice": [
+    {
+      "id": "inv-predict-cost-pool",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "sold-stock",
+      "scenarioId": "inv-predict-cost-pool-scenario",
+      "objectiveIds": [
+        "stock-flow"
+      ],
+      "setup": "Independent scenario: buy goods for 12 cash and pay qualifying freight 3 cash. Sell part for 16 cash; its assigned cost including allocated freight is 9. No opening inventory, write-down, tax or other event exists.",
+      "inputs": [
+        {
+          "key": "purchase",
+          "label": "Goods bought for cash",
+          "value": 12,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "freight",
+          "label": "Qualifying freight paid",
+          "value": 3,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "costSold",
+          "label": "Assigned cost sold",
+          "value": 9,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "sales",
+          "label": "Cash sales",
+          "value": 16,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "What are closing inventory, profit and operating cash movement?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "all-expense",
+          "text": "Inventory 0; profit 1; cash +1",
+          "feedback": "The unsold cost remains an asset, so payment 15 is not all current expense.",
+          "misconceptionId": "purchase-expense"
+        },
+        {
+          "id": "correct",
+          "text": "Inventory 6; profit 7; cash +1",
+          "feedback": "Cost available 15 less cost sold 9 leaves 6. Profit is 16 − 9; cash is 16 − 15.",
+          "misconceptionId": null
+        },
+        {
+          "id": "selling-price",
+          "text": "Inventory −1; profit 0; cash +1",
+          "feedback": "Releasing revenue 16 instead of cost 9 confuses price with inventory cost.",
+          "misconceptionId": "price-cost"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Inventory = 12 + 3 − 9 = 6. Profit = 16 − 9 = 7. Operating cash = 16 − 12 − 3 = +1. Profit 7 − inventory increase 6 = cash 1.",
+      "hints": [
+        {
+          "text": "First allocate resource cost between sold and unsold goods, then compute bank movements.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Inventory = 12 + 3 − 9 = 6. Profit = 16 − 9 = 7. Operating cash = 16 − 12 − 3 = +1. Profit 7 − inventory increase 6 = cash 1.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Why does profit exceed the cash movement?",
+        "rubric": [
+          "Identify unsold inventory 6.",
+          "Use assigned cost 9 in profit.",
+          "Reconcile profit 7 less inventory increase 6 to cash 1."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "inv-transfer-write-down",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "recoverability",
+      "scenarioId": "inv-transfer-write-down-scenario",
+      "objectiveIds": [
+        "stock-flow",
+        "valuation"
+      ],
+      "setup": "Independent scenario: opening inventory is 18. Buy more for 10 cash, sell goods of assigned cost 12 for 20 cash, then value the remaining stock at a stated net realisable value of 13 under the lower-of-cost-and-NRV assumption. No other events, tax or supplier credit exist.",
+      "inputs": [
+        {
+          "key": "openingInventory",
+          "label": "Opening inventory",
+          "value": 18,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "purchase",
+          "label": "Cash purchases",
+          "value": 10,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "costSold",
+          "label": "Assigned cost sold",
+          "value": 12,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "sales",
+          "label": "Cash sales",
+          "value": 20,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "nrv",
+          "label": "Closing net realisable value",
+          "value": 13,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "Which closing inventory, profit and operating cash movement are consistent?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "write-receipt",
+          "text": "Inventory 13; profit 5; cash +13",
+          "feedback": "The write-down 3 does not generate a bank receipt.",
+          "misconceptionId": "write-cash"
+        },
+        {
+          "id": "ignore-write",
+          "text": "Inventory 16; profit 8; cash +10",
+          "feedback": "Unsold cost 16 exceeds the stated recoverable limit 13.",
+          "misconceptionId": "write-cash"
+        },
+        {
+          "id": "correct",
+          "text": "Inventory 13; profit 5; cash +10",
+          "feedback": "Unsold cost 16 is written down by 3; only receipts 20 less purchases 10 affect cash.",
+          "misconceptionId": null
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Unsold cost = 18 + 10 − 12 = 16; write-down = 3; closing inventory = 13. Profit = 20 − 12 − 3 = 5. Operating cash = 20 − 10 = +10. Net inventory falls by 5, so profit 5 − (−5) = cash 10.",
+      "hints": [
+        {
+          "text": "Separate valuation from receipts and supplier payments.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Unsold cost = 18 + 10 − 12 = 16; write-down = 3; closing inventory = 13. Profit = 20 − 12 − 3 = 5. Operating cash = 20 − 10 = +10. Net inventory falls by 5, so profit 5 − (−5) = cash 10.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "How can stock fall by 5 while the write-down itself creates no cash?",
+        "rubric": [
+          "Separate cost sold 12 from write-down 3.",
+          "Calculate cash from the two bank movements.",
+          "Do not add the write-down twice in a net-inventory bridge."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E2110",
+      "to": "T06.05",
+      "kind": "learning",
+      "purpose": "Atomic concept within this original grouped topic.",
+      "conditions": "Preserves the original inventory while enabling more precise navigation.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2138",
+      "to": "A05",
+      "kind": "financial",
+      "purpose": "Operating inventory is included in operating working capital.",
+      "conditions": "Use the stated operating perimeter and transaction assumptions; this displayed relationship is not a calculated model dependency.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2142",
+      "to": "T14.03",
+      "kind": "financial",
+      "purpose": "Inventory days relate inventory balances to the appropriate cost-of-sales denominator.",
+      "conditions": "Match inventory valuation and reporting periods.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D06",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "How do costing methods and abnormal production costs affect comparable margins?",
+      "How do consignment, obsolescence evidence and later recoveries change recognition?"
+    ],
+    "conceptIds": [
+      "T06.05",
+      "A05",
+      "T14.03"
+    ],
+    "limitations": "Introductory study coverage. Detailed production overhead allocation, abnormal waste, taxes, borrowing costs, consignment, biological assets and full IAS 2 measurement/reversal requirements are deferred."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "Planned connected company case; these isolated lessons and questions do not implement its rounds or a financial model."
+    }
+  ],
+  "sources": [
+    {
+      "id": "inventory-background",
+      "title": "IFRS Foundation: IAS 2 public overview",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/ias-2-inventories/",
+      "role": "primary-support",
+      "supports": [
+        "IAS 2 background: purchase/conversion costs, cost formulas, expense on sale and lower-of-cost-and-net-realisable-value measurement. The conceptual scenarios assume their stated costs; this overview is not a complete standard or an Indian filing rule."
+      ],
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "cash-background",
+      "title": "IFRS Foundation: IAS 7 public overview",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/ias-7-statement-of-cash-flows/",
+      "role": "primary-support",
+      "supports": [
+        "Operating, investing and financing categories; direct receipts/payments and indirect non-cash/accrual adjustments; non-cash investing/financing disclosure. The overview also identifies IFRS 18 amendments. These conceptual examples do not prescribe a statutory starting subtotal or interest/dividend policy."
+      ],
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "method": "ai-content-source-arithmetic",
+    "evidence": [
+      "B2 mechanism, terminology, scope, units, source limits, feedback and independent arithmetic reviewed in docs/implementation/task-04-4-b2.md.",
+      "Worked and changed-data assessment calculations are independently recomputed in tests/b2-lessons.test.mjs. Shared route, spoiler and session-record regressions are verified separately.",
+      "Scoped AI content review; not independent professional approval, professional completeness, browser QA or learner-pilot evidence."
+    ]
+  }
+}

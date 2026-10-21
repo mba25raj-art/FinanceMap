@@ -1,0 +1,380 @@
+{
+  "activityId": "CASE-NILA-HOMEWARE",
+  "scenarioVersion": "1.0.0",
+  "status": "available",
+  "title": "Nila Homeware: six connected rounds",
+  "modelScenarioFile": "content/model/nila-case.v1.json",
+  "audience": "MBA beginner-to-intermediate; optional refresher lessons; arithmetic only; untimed",
+  "objective": "Keep the disclosed cash commitments viable, distinguish recognition from settlement and make a conditional funding/investment/value recommendation supported by your own model trace.",
+  "units": "INR lakh",
+  "minimumCash": 3,
+  "cashForecastEnd": "2026-03-31",
+  "characters": [
+    {
+      "id": "founder",
+      "name": "Mira",
+      "role": "Founder; preserve operating capacity and explain the funding plan."
+    },
+    {
+      "id": "customer",
+      "name": "Arun at Maple Retail",
+      "role": "A fictional customer who values payment flexibility."
+    },
+    {
+      "id": "lender",
+      "name": "Lata at Fieldstone Credit",
+      "role": "A fictional lender with the disclosed fixed offer; no unstated covenant or automatic approval."
+    }
+  ],
+  "setup": {
+    "date": "2026-01-01",
+    "openingAssets": 200,
+    "openingLiabilitiesAndEquity": 200,
+    "newEquipmentCost": 30,
+    "optionalConcepts": [
+      "T04.01",
+      "T04.05",
+      "T06.02"
+    ],
+    "notice": "The opening allocation is supplied, not a score puzzle. Reference-core and lab examples are independent. No result is a professional recommendation or mastery award."
+  },
+  "calendar": {
+    "openingSupplierPayment": "2026-02-10",
+    "openingCustomerDue": "2026-02-15",
+    "operatingPayments": [
+      {
+        "date": "2026-01-31",
+        "amount": 2
+      },
+      {
+        "date": "2026-02-28",
+        "amount": 2
+      },
+      {
+        "date": "2026-03-31",
+        "amount": 2
+      }
+    ],
+    "newDebtFirstCoupon": "2027-01-15",
+    "newDebtMaturity": "2029-01-15",
+    "openingDebtCoupon": "2026-12-31",
+    "openingDebtMaturity": "2029-01-01",
+    "taxCashDate": "2027-03-31"
+  },
+  "variants": [
+    {
+      "id": "base",
+      "title": "Contracted dates",
+      "customerReceiptDelayDays": 0,
+      "disclosure": "Receipts occur on the stated scenario dates."
+    },
+    {
+      "id": "late-customer",
+      "title": "Receipts arrive 30 days later",
+      "customerReceiptDelayDays": 30,
+      "disclosure": "Choose this disclosed replay variant before starting. Every customer receipt moves exactly 30 calendar days; original invoice due dates and all supplier/payment/funding terms stay fixed. No random event."
+    }
+  ],
+  "sale": {
+    "amount": 20,
+    "cost": 12,
+    "date": "2026-01-05",
+    "terms": [
+      {
+        "id": "30-days",
+        "dueDate": "2026-02-04"
+      },
+      {
+        "id": "60-days",
+        "dueDate": "2026-03-06"
+      }
+    ],
+    "recognition": "Delivery and the stated recognition conditions are satisfied for either credit term. Selling price and assigned cost do not change. Longer credit is not assumed to create unmodelled sales."
+  },
+  "collection": {
+    "invoiceId": "opening-customers",
+    "amount": 10,
+    "earlyDate": "2026-01-10",
+    "waitDate": "2026-02-15",
+    "remainingOpeningAmount": 20,
+    "remainingOpeningDate": "2026-02-15",
+    "agentFee": 0.2,
+    "agentFeeDate": "2026-01-10",
+    "disclosure": "The optional agent supplies a consumed collection service for 0.2 on 10 January and arranges the ten-lakh early receipt. The fee is a separate operating cost, not a reduction of the invoice. In the late variant the promised receipt also shifts 30 days; the fee date does not. No revenue is recorded again at collection."
+  },
+  "inventory": {
+    "date": "2026-01-12",
+    "cashPrice": 9.5,
+    "creditPrice": 10,
+    "creditDue": "2026-02-10",
+    "disclosure": "The same replenishment lot costs 9.5 if paid now or 10 on supplier credit. Record its actual acquisition cost as inventory; none of this new lot is sold in January. No hidden fee or expense at purchase."
+  },
+  "funding": {
+    "date": "2026-01-15",
+    "loanAnnualRate": 0.12,
+    "loanLimit": 60,
+    "preMoney": 100,
+    "fee": 0,
+    "amountRule": "Peak cumulative funding to hold minimum cash three over the disclosed quarter; evaluate either operating commitments alone or those commitments plus the tentative 30 equipment payment. Same cash requirement for debt and equity.",
+    "instruments": [
+      "debt",
+      "equity",
+      "none"
+    ],
+    "plans": [
+      "operate",
+      "expand"
+    ],
+    "disclosure": "Debt has annual simple Actual/365 coupons, first 15 January 2027, principal 15 January 2029, no fee, collateral requirement or hidden covenant. The hypothetical offer is available up to 60. Ordinary equity is issued at stipulated pre-money 100, no preference, promised dividend or repayment. None is allowed only when the selected plan has zero funding need. No automatic borrowing."
+  },
+  "investment": {
+    "date": "2026-01-16",
+    "availableDate": "2026-01-17",
+    "cost": 30,
+    "residual": 0,
+    "lifeMonths": 60,
+    "choices": [
+      "buy-now",
+      "defer"
+    ],
+    "projectRate": 0.1,
+    "projectYears": 5,
+    "incrementalAnnualOrders": 40,
+    "pricePerOrder": 1,
+    "costPerOrder": 0.4,
+    "incrementalAnnualOperatingCost": 2,
+    "incrementalAnnualDepreciation": 6,
+    "incrementalAnnualMaintenanceCapex": 6,
+    "additionalWorkingCapital": 10,
+    "disclosure": "The stated demand/capacity assumption is forty additional orders a year for five years at the supplied price/cost. Operating tax 20%, no loss benefit. Maintenance capex six a year maintains the projected capacity; depreciation alone does not create cash. Invest thirty once, tie up ten additional working capital at year-one end and release it only at the standalone project end. No disposal proceeds. No demand uplift is automatic in realised January accounts. Deferral creates no purchase commitment within this quarter; a one-year delay is only a stated NPV comparison.",
+    "projectDiscountConvention": "Annual end-of-project-year periods, initial cost at t0; delayed comparison shifts every project cash flow one full year."
+  },
+  "forecast": {
+    "years": 5,
+    "baseUnits": 100,
+    "price": 1,
+    "unitCost": 0.4,
+    "operatingCosts": 30,
+    "depreciation": 20,
+    "maintenanceCapex": 20,
+    "taxRate": 0.2,
+    "baseClosingWorkingCapital": {
+      "receivables": 20,
+      "inventory": 50,
+      "tradePayables": 20,
+      "accruedOperating": 0
+    },
+    "expandedClosingWorkingCapital": {
+      "receivables": 25,
+      "inventory": 55,
+      "tradePayables": 20,
+      "accruedOperating": 0
+    },
+    "waccOptions": [
+      0.1,
+      0.12
+    ],
+    "growthOptions": [
+      0,
+      0.03
+    ],
+    "disclosure": "Start from the learner’s actual closing January operating working capital. Future annual drivers are normalized planning assumptions, not future posted statements. Base annual equipment maintenance/depreciation twenty preserves capacity; expansion adds the disclosed drivers. The company continues after year five with required reinvestment, so do not add the standalone project’s working-capital liquidation to company terminal FCFF. Terminal growth applies to normalized cash after reinvestment and WACC must exceed it. Value after January decisions; do not deduct the already-paid equipment again. Add only cash above operating minimum three; deduct debt, accrued interest and tax claims once, and exclude ordinary trade payables already in working capital. No financing tax shield is added to FCFF. The quarter cash forecast and annual FCFF are different perimeters and are not summed."
+  },
+  "rounds": [
+    {
+      "id": "R1",
+      "title": "Deliver the sale; choose customer credit",
+      "date": "2026-01-05",
+      "outcomes": [
+        "LO1"
+      ],
+      "concepts": [
+        "T04.01",
+        "T04.05",
+        "A01",
+        "A02",
+        "T07.14"
+      ],
+      "prediction": "For a qualifying credit sale 20 with assigned stock cost 12, enter the profit effect and cash movement at delivery.",
+      "responseFields": [
+        "profit",
+        "cash"
+      ],
+      "choices": [
+        "30-days",
+        "60-days"
+      ],
+      "explanation": "Separate revenue, the customer claim, cost sold and stock. Explain why credit terms change collection timing rather than delivery recognition."
+    },
+    {
+      "id": "R2",
+      "title": "Collect early or wait",
+      "date": "2026-01-10",
+      "outcomes": [
+        "LO1",
+        "LO2"
+      ],
+      "concepts": [
+        "A02",
+        "A06",
+        "T14.03",
+        "T14.04",
+        "T14.15"
+      ],
+      "prediction": "For settlement of an existing invoice by cash ten, excluding any separate agent service, enter the revenue effect and operating cash movement.",
+      "responseFields": [
+        "revenue",
+        "operatingCash"
+      ],
+      "choices": [
+        "agent-early",
+        "wait"
+      ],
+      "explanation": "Show cash and receivables moving equally. Attribute any 0.2 expense to the separate service, not to collection. Explain the timing trade-off."
+    },
+    {
+      "id": "R3",
+      "title": "Replenish stock; compare supplier terms",
+      "date": "2026-01-12",
+      "outcomes": [
+        "LO1",
+        "LO2"
+      ],
+      "concepts": [
+        "A03",
+        "A04",
+        "A05"
+      ],
+      "prediction": "For the ten-lakh all-credit purchase with no new stock sold, enter the immediate profit effect and trade-payable increase.",
+      "responseFields": [
+        "profit",
+        "payables"
+      ],
+      "choices": [
+        "cash-discount",
+        "supplier-credit"
+      ],
+      "explanation": "Compare carrying cost, cash timing and supplier credit. A purchase is not cost sold; paying a supplier does not create a second expense."
+    },
+    {
+      "id": "R4",
+      "title": "Find the dated gap and fund a plan",
+      "date": "2026-01-15",
+      "outcomes": [
+        "LO3",
+        "LO4"
+      ],
+      "concepts": [
+        "T14.04",
+        "T14.15",
+        "A18",
+        "T07.09"
+      ],
+      "prediction": "Using your posted cash and all disclosed receipts/payments, predict the peak cumulative funding to maintain three through 31 March if equipment thirty is paid on 16 January.",
+      "responseFields": [
+        "fundingGap"
+      ],
+      "choices": [
+        "debt-operate",
+        "equity-operate",
+        "debt-expand",
+        "equity-expand",
+        "none-operate",
+        "none-expand"
+      ],
+      "explanation": "After the prediction, inspect the exact gap, service and dilution before committing. Cite the first breach and why profit or a DCF cannot itself meet it. No-funding choices require a zero gap; do not conceal this condition."
+    },
+    {
+      "id": "R5",
+      "title": "Evaluate capacity and investment",
+      "date": "2026-01-16",
+      "outcomes": [
+        "LO5"
+      ],
+      "concepts": [
+        "A07",
+        "A08",
+        "T12.05",
+        "T03.01",
+        "T03.12"
+      ],
+      "prediction": "Using the supplied five-year incremental drivers, tax, maintenance, working capital and ten-percent rate, calculate project NPV.",
+      "responseFields": [
+        "npv"
+      ],
+      "choices": [
+        "buy-now",
+        "defer"
+      ],
+      "explanation": "Inspect NPV and funding after predicting, before purchase. Buy only when the committed funding keeps the full quarter viable. Distinguish initial cash, subsequent depreciation, assumed demand and the condition for changing your choice."
+    },
+    {
+      "id": "R6",
+      "title": "Close January and value the continuing business",
+      "date": "2026-01-31",
+      "outcomes": [
+        "LO1",
+        "LO2",
+        "LO6"
+      ],
+      "concepts": [
+        "A09",
+        "A10",
+        "A11",
+        "A13",
+        "A15",
+        "A16",
+        "A19",
+        "T17.12",
+        "T17.18",
+        "T17.04"
+      ],
+      "prediction": "Use the displayed annual operating drivers and your closing working-capital balances to calculate first forecast-year FCFF, before financing.",
+      "responseFields": [
+        "fcff"
+      ],
+      "choices": [
+        "wacc10-growth0",
+        "wacc10-growth3",
+        "wacc12-growth0",
+        "wacc12-growth3"
+      ],
+      "explanation": "Inspect reconciled statements, sensitivity and claims bridge. Recommend a conditional plan citing cash dates, financing obligations/dilution, project assumptions and valuation limits. Explain what evidence would reverse it."
+    }
+  ],
+  "interaction": {
+    "stages": [
+      "predict",
+      "inspect-and-decide",
+      "explain"
+    ],
+    "predictionBeforeResults": true,
+    "allDecisionTermsBeforeCommit": true,
+    "wrongPredictionCanContinue": true,
+    "explanationGrading": "ungraded, visible self-check; reviewed reasoning required before any demonstrated-competency claim",
+    "finish": "Explicit Finish after all six round explanations; case completion is not mastery.",
+    "save": "Registered scenario/version, ordered setup/prediction/hint/commit/explanation/finish decisions and completed-round period; replay every derived balance/score. Bind actions to decision revision and round.",
+    "replay": "Restart before an actual saved contract decision into a new record, retain all prior completed rounds, mark prior exposure from the restarted round and retain the original unchanged. Compare finished strategies only within the same receipt variant, at common supplied valuation rates."
+  },
+  "debriefCriteria": [
+    "Use recorded facts rather than realised wealth as a decision-quality score.",
+    "Show the first cash breach and whether the chosen plan met the stated reserve.",
+    "Separate committed accounting effects, future contracts, normalized forecasts and unsupported expectations.",
+    "State service/dilution and at least one demand, working-capital, discount-rate or refinancing condition.",
+    "Preserve wrong-first, assistance, correction and written explanations; never automatically grade unsupported prose."
+  ],
+  "review": {
+    "reviewer": "Codex",
+    "type": "ai-script-contract-arithmetic",
+    "date": "2026-10-19",
+    "scope": "Complete six-round script, source opening, concept IDs, disclosed terms and independent default numerical controls. Not professional approval, live-browser testing or learner-pilot evidence."
+  },
+  "runtimeScope": {
+    "availableRounds": 6,
+    "totalRounds": 6,
+    "availableVariants": [
+      "base",
+      "late-customer"
+    ]
+  }
+}

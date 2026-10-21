@@ -1,0 +1,442 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "T04.01",
+  "contentVersion": "1.0.0",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "Asset, liability and equity meanings; two-sided transaction effects; owner funding, borrowing, revenue, expenses and distributions; a reconciled sequence."
+    ],
+    "deferred": [
+      "Detailed recognition and valuation rules, other comprehensive income, consolidation and complex financial instruments."
+    ]
+  },
+  "hoverDefinition": "Recognised assets equal liabilities plus equity. Each transaction changes resources, creditor claims or the owners’ residual interest in a way that preserves this identity.",
+  "objectives": [
+    {
+      "id": "identity",
+      "statement": "Predict all affected balances after an asset exchange and a borrowing.",
+      "evidence": "Reconcile cash, equipment, liabilities and equity without counting the financing as revenue.",
+      "outcomeIds": [
+        "LO1"
+      ]
+    },
+    {
+      "id": "earnings",
+      "statement": "Explain how a credit sale, inventory consumption and owner distributions affect equity.",
+      "evidence": "Keep capital, profit and cash movements separate and reconcile assets to claims.",
+      "outcomeIds": [
+        "LO1"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh"
+    ],
+    "timeframe": "A separate illustrative teaching month. Every worked example and practice scenario starts independently; these are not consecutive company-case rounds.",
+    "assumptions": [
+      "All resources described as assets qualify at the stated carrying amounts.",
+      "No tax, interest, depreciation, impairment or other comprehensive income.",
+      "The worked month and every practice task are independent scenarios."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Simplified conceptual teaching example. Recognition and amounts are explicitly assumed; no claim of compliance with a jurisdiction-specific reporting or tax regime."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "elements",
+      "title": "Start with resources and claims",
+      "paragraphs": [
+        "An asset is a recognised economic resource controlled by the business. A liability is a present obligation. Equity is the residual interest after liabilities, so assets − liabilities = equity. Reordering the same identity gives assets = liabilities + equity.",
+        "A bank balance is one asset, not the whole asset side. Inventory, equipment and customer receivables can remain valuable resources even when no cash is immediately available. Equity is neither the bank balance nor automatically the business’s market value."
+      ]
+    },
+    {
+      "id": "two-sided",
+      "title": "Trace both sides before adding totals",
+      "paragraphs": [
+        "A cash equipment purchase reduces cash and increases equipment. Total assets can be unchanged. A purchase on supplier credit increases inventory and a liability. Borrowing increases cash and debt. Owner funding increases cash and contributed equity. None of these funding events is customer revenue.",
+        "Recording both sides is essential. A balanced statement alone does not establish that every item was recorded, measured correctly or recoverable. Equal errors on both sides can still leave the equation balanced."
+      ]
+    },
+    {
+      "id": "equity-change",
+      "title": "Explain why equity changes",
+      "paragraphs": [
+        "Revenue increases equity through earnings when the stated recognition conditions are met. Expenses reduce earnings and equity when resources are consumed or obligations arise. In a credit sale, receivables can rise before any customer pays. Inventory sold becomes an expense at its assumed carrying cost.",
+        "For this simplified period, closing equity = opening equity + owner contributions + profit − owner distributions. A distribution reduces equity and cash without being an operating expense. Paying a previously recorded supplier liability reduces cash and the liability without recording that expense again."
+      ]
+    },
+    {
+      "id": "reconcile",
+      "title": "Use the identity as a diagnostic",
+      "paragraphs": [
+        "List opening balances, post each event, then reconcile closing resources and claims. Also compare cash movement with profit: they answer different questions. An omitted purchase, duplicated sale or misclassified loan should be investigated through the underlying events, not hidden in an unexplained balancing amount."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "Contributed capital and earned equity",
+      "explanation": "Owners can contribute resources; operations can generate retained earnings. Both affect equity through different routes.",
+      "whenItMatters": "A capital injection is not revenue and does not improve operating margin."
+    },
+    {
+      "name": "Borrowing and income",
+      "explanation": "Debt supplies cash while creating a repayment obligation. Revenue represents recognised customer performance.",
+      "whenItMatters": "Do not interpret debt-financed cash growth as sales growth."
+    },
+    {
+      "name": "Asset purchase and expense",
+      "explanation": "An assumed qualifying resource is recorded as an asset; its later consumption is a separate event.",
+      "whenItMatters": "A payment does not by itself establish the period’s expense."
+    },
+    {
+      "name": "Credit sale and collection",
+      "explanation": "A qualifying sale creates revenue and a claim; collection exchanges the claim for cash.",
+      "whenItMatters": "Do not count the same sale as new revenue when collected."
+    },
+    {
+      "name": "Distribution and operating cost",
+      "explanation": "A distribution transfers value to owners. It reduces equity without reducing the period’s operating profit.",
+      "whenItMatters": "Keep payout decisions separate from operating performance."
+    },
+    {
+      "name": "Accounting equity and market value",
+      "explanation": "Book equity is a residual of recognised carrying amounts; market value reflects other expectations and risks.",
+      "whenItMatters": "A balanced book statement is not a company valuation."
+    }
+  ],
+  "workedExample": {
+    "id": "equation-walkthrough",
+    "scenarioId": "eq-worked-40-20-12-18-7-8-3",
+    "setup": "Separate month: Nila starts with cash 40 and contributed equity 40. It borrows 20, buys inventory 12 on supplier credit, sells some of it for cash 18 at a carrying cost of 7, pays suppliers 8 and distributes 3 to owners. Figures are INR lakh. No other balances or events exist.",
+    "inputs": [
+      {
+        "key": "openingCash",
+        "label": "Opening cash and contributed equity, each",
+        "value": 40,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "borrowing",
+        "label": "New borrowing",
+        "value": 20,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "inventoryPurchase",
+        "label": "Inventory bought on supplier credit",
+        "value": 12,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "sales",
+        "label": "Cash sales",
+        "value": 18,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "costSold",
+        "label": "Carrying cost of goods sold",
+        "value": 7,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "supplierPayment",
+        "label": "Supplier payment",
+        "value": 8,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "distribution",
+        "label": "Owner distribution",
+        "value": 3,
+        "unit": "INR lakh"
+      }
+    ],
+    "steps": [
+      "Opening: assets 40 = liabilities 0 + equity 40.",
+      "Borrow 20: cash 60 = debt 20 + equity 40. Profit is unchanged.",
+      "Buy inventory on credit: cash 60 + inventory 12 = debt 20 + payables 12 + equity 40 = 72.",
+      "Cash sale: cash rises to 78; inventory falls to 5. Profit is 18 − 7 = 11, so equity rises to 51. Assets 83 = liabilities 32 + equity 51.",
+      "Pay suppliers 8: cash 70, inventory 5 and payables 4. Assets 75 = debt 20 + payables 4 + equity 51.",
+      "Distribute 3: cash 67 and equity 48. Closing assets 67 + 5 = 72 = liabilities 20 + 4 + equity 48.",
+      "Cash rose by 27, from 40 to 67. Operating receipts less supplier payments were 18 − 8 = 10. Borrowing less distribution supplied another 20 − 3 = 17. The 27 cash increase is different from profit of 11."
+    ],
+    "result": "Closing assets 72 = liabilities 24 + equity 48. Closing cash is 67; profit is 11.",
+    "interpretation": "Inventory still on hand is a resource; supplier credit and debt are claims. Profit increases equity, while borrowing and distributions explain cash movements outside profit."
+  },
+  "statementEffects": {
+    "applicability": "direct",
+    "explanation": "The same events explain the balance sheet, simplified period profit and classified cash movements. Opening owner funding predates this teaching month.",
+    "changes": [
+      "Balance sheet: cash 67, inventory 5, debt 20, trade payables 4 and equity 48.",
+      "Income statement: sales 18 less cost of goods sold 7 gives profit 11.",
+      "Cash flow: operating +10, financing +17, total +27. The credit purchase itself is non-cash at acquisition."
+    ]
+  },
+  "misconceptions": [
+    {
+      "id": "cash-only",
+      "claim": "A cash payment always reduces total assets.",
+      "correction": "Include the acquired asset as well as remaining cash.",
+      "diagnostic": "What recognised resource replaced the payment?"
+    },
+    {
+      "id": "funding-income",
+      "claim": "Borrowing is revenue because it increases cash.",
+      "correction": "The cash receipt is matched by a liability, not income.",
+      "diagnostic": "Who must be repaid?"
+    },
+    {
+      "id": "profit-cash",
+      "claim": "Profit or equity must equal cash.",
+      "correction": "Receivables, inventory, debt and distributions create differences.",
+      "diagnostic": "Reconcile the closing resources and claims, not just the bank balance."
+    }
+  ],
+  "practice": [
+    {
+      "id": "eq-predict-funded-equipment",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "two-sided",
+      "scenarioId": "eq-predict-funded-equipment-scenario",
+      "objectiveIds": [
+        "identity"
+      ],
+      "setup": "Separate scenario: cash and equity start at 50, with no liabilities. Borrow 15, then pay 20 for equipment that qualifies as an asset. No expense or other event occurs.",
+      "inputs": [
+        {
+          "key": "openingCash",
+          "label": "Opening cash and equity, each",
+          "value": 50,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "loan",
+          "label": "Borrowing",
+          "value": 15,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "equipment",
+          "label": "Cash equipment purchase",
+          "value": 20,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "Which position follows both transactions?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "balanced",
+          "text": "Cash 45 + equipment 20 = liabilities 15 + equity 50",
+          "feedback": "Borrowing adds a resource and an obligation; equipment replaces cash.",
+          "misconceptionId": null
+        },
+        {
+          "id": "cash-total",
+          "text": "Total assets 45 = liabilities 15 + equity 30",
+          "feedback": "45 is cash only. The equipment remains an asset.",
+          "misconceptionId": "cash-only"
+        },
+        {
+          "id": "loan-income",
+          "text": "Total assets 65 = liabilities 0 + equity 65",
+          "feedback": "The borrowed 15 is a creditor claim, not income.",
+          "misconceptionId": "funding-income"
+        }
+      ],
+      "correctOptionId": "balanced",
+      "solution": "Cash = 50 + 15 − 20 = 45; assets = 45 + 20 = 65 = liabilities 15 + equity 50.",
+      "hints": [
+        {
+          "text": "Classify the funding receipt before tracing the resource bought.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Cash = 50 + 15 − 20 = 45; assets = 45 + 20 = 65 = liabilities 15 + equity 50.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Why does the loan change total assets while the equipment purchase does not?",
+        "rubric": [
+          "Identify cash, equipment and debt.",
+          "Show both sides equal 65.",
+          "Explain why neither event creates revenue."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "eq-transfer-credit-sale",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "equity-change",
+      "scenarioId": "eq-transfer-credit-sale-scenario",
+      "objectiveIds": [
+        "identity",
+        "earnings"
+      ],
+      "setup": "Separate scenario: opening cash and equity are 30. Buy inventory 10 on supplier credit. Deliver qualifying goods on credit for 16, with inventory carrying cost 6. No collections, supplier payments, tax, distributions or other events occur.",
+      "inputs": [
+        {
+          "key": "openingCash",
+          "label": "Opening cash and equity, each",
+          "value": 30,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "purchase",
+          "label": "Credit inventory purchase",
+          "value": 10,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "sale",
+          "label": "Recognised credit sale",
+          "value": 16,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "cost",
+          "label": "Cost of goods sold",
+          "value": 6,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "Which closing position correctly separates profit and cash?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "cash-sale",
+          "text": "Cash 46; inventory 4; liabilities 10; equity 40",
+          "feedback": "The customer has not paid. The 16 is a receivable, not cash.",
+          "misconceptionId": "profit-cash"
+        },
+        {
+          "id": "balanced",
+          "text": "Cash 30; inventory 4; receivables 16; liabilities 10; equity 40",
+          "feedback": "Profit 10 raises equity to 40 while cash stays 30.",
+          "misconceptionId": null
+        },
+        {
+          "id": "no-earnings",
+          "text": "Assets 50; liabilities 10; equity 30",
+          "feedback": "The 10 profit must be included in equity. The stated equation would not balance.",
+          "misconceptionId": "profit-cash"
+        }
+      ],
+      "correctOptionId": "balanced",
+      "solution": "Profit = 16 − 6 = 10. Equity = 30 + 10 = 40. Assets = cash 30 + inventory (10 − 6) 4 + receivables 16 = 50 = payables 10 + equity 40.",
+      "hints": [
+        {
+          "text": "Trace the sale and the inventory consumed as two effects.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Profit = 16 − 6 = 10. Equity = 30 + 10 = 40. Assets = cash 30 + inventory (10 − 6) 4 + receivables 16 = 50 = payables 10 + equity 40.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "What explains equity exceeding the bank balance?",
+        "rubric": [
+          "Show the 10 profit.",
+          "Distinguish a receivable from a receipt.",
+          "Reconcile assets 50 to liabilities 10 plus equity 40."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E0136",
+      "to": "T04.02",
+      "kind": "learning",
+      "purpose": "Study these together to recognise and measure transactions before interpreting financial statements.",
+      "conditions": "A topical exploration link, not a claim that one determines the other.",
+      "computed": false
+    },
+    {
+      "edgeId": "E0248",
+      "to": "T06.02",
+      "kind": "learning",
+      "purpose": "Suggested starting knowledge: The accounting equation. It helps you explain how assets are funded and how balances change through transactions.",
+      "conditions": "Suggested learning order; learners can still explore freely.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D04",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "Why can a perfectly balanced statement still contain an omitted obligation?",
+      "When can carrying amounts differ from economic value?"
+    ],
+    "conceptIds": [
+      "T04.02",
+      "T04.10"
+    ],
+    "limitations": "Recognition, valuation, consolidation and other comprehensive income require separate treatment."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "Planned six-round case. This lesson is a separate teaching example, not a completed case round."
+    }
+  ],
+  "sources": [
+    {
+      "id": "framework",
+      "title": "IFRS Foundation: Conceptual Framework overview",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/conceptual-framework/",
+      "role": "primary-support",
+      "supports": [
+        "Definitions of financial-statement elements and the distinction between recognition and measurement."
+      ],
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "accrual",
+      "title": "AASB publication of the Conceptual Framework, Chapter 1, paragraph 1.17",
+      "url": "https://standards.aasb.gov.au/node/7463",
+      "role": "primary-support",
+      "supports": [
+        "Accrual accounting records economic effects in their periods even when related receipts or payments occur in another period. Australian publication used as conceptual background, not as an Indian filing rule."
+      ],
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "evidence": [
+      "B1 terminology, units, timing, assumptions, independent arithmetic, feedback and scope review recorded in docs/implementation/task-04-4-b1.md.",
+      "Primary public IFRS/AASB background and the linked source claims checked; this is an AI content review, not independent professional approval or learner-pilot evidence.",
+      "Worked and assessment calculations independently recomputed in tests/b1-lessons.test.mjs; interaction and version/owner isolation checked separately."
+    ],
+    "method": "ai-content-source-arithmetic"
+  }
+}

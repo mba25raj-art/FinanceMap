@@ -1,0 +1,7147 @@
+{
+  "date": "2026-10-20",
+  "surface": "Supported cloud Chrome/CDP production preview; exact browser/OS version not exposed",
+  "method": "Read rendered computed foreground and ancestor background colours, alpha composite solid backgrounds, and calculate sRGB relative-luminance contrast. Threshold 4.5:1 ordinary text, 3:1 large text; 3:1 sampled control boundaries. Samples are repeated text instances across states, not unique strings or an exhaustive compliance test.",
+  "scope": {
+    "beforeStates": 9,
+    "beforeTextInstances": 2160,
+    "retestedStates": 6,
+    "retestedTextInstances": 1883
+  },
+  "limits": [
+    "No actual screen-reader, zoom/mobile/orientation or enabled reduced-motion result.",
+    "Not an exhaustive hover, focus, validation, native-popup, graph/icon, placeholder or pseudo-element inventory.",
+    "Text inside rendered, laid-out elements is sampled even below the viewport; clipping, occlusion and modal backdrop blending are not independently resolved.",
+    "Complex opacity, background-image, filter or blend cases are flagged rather than assigned a pass.",
+    "Zero-width border values on borderless controls do not establish a visible boundary.",
+    "Keyboard QA answers remain technical records, not learner observations or competencies."
+  ],
+  "findings": [
+    {
+      "target": "Lab inputs/selects/textareas",
+      "before": "#8c9f9d; 2.78:1 inside / 2.68:1 outside",
+      "after": "#6b817e; measured collection inputs 4.14:1 inside / 4.01:1 outside"
+    },
+    {
+      "target": "Catalogue and relationship dropdowns",
+      "before": "1.35/1.33:1 catalogue; 1.27:1 relationship filter",
+      "after": "4.08/4.01:1 catalogue; 4.01:1 relationship filter"
+    },
+    {
+      "target": "Statement context caption",
+      "before": "#687789 on #fcfbf8; 4.42:1 at 18px regular",
+      "after": "Shared muted #5d6b7b; 5.26:1"
+    }
+  ],
+  "before": [
+    {
+      "label": "My learning: restored record",
+      "url": "http://terminal.local:4173/#learning",
+      "textSamples": 131,
+      "pairs": [
+        {
+          "background": [
+            16,
+            31,
+            56,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "ratio": 16.47,
+          "required": 4.5,
+          "examples": [
+            "Skip to main content"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "36px",
+          "fontWeight": "700",
+          "ratio": 15.91,
+          "required": 3,
+          "examples": [
+            "Finance Atlas",
+            "Your curiosity leaves a trail.",
+            "Review when it helps"
+          ],
+          "count": 15
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 5.26,
+          "required": 4.5,
+          "examples": [
+            "Atlas",
+            "Labs",
+            "Simulations"
+          ],
+          "count": 37
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "600",
+          "ratio": 15.91,
+          "required": 4.5,
+          "examples": [
+            "My learning",
+            "Suggested intervals are a product hypothesis to test: one day after an incorrect latest response, th",
+            "Recognise a credit sale"
+          ],
+          "count": 34
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "11px",
+          "fontWeight": "600",
+          "ratio": 5.95,
+          "required": 4.5,
+          "examples": [
+            "MY LEARNING",
+            "Review this task",
+            "Open the unfamiliar transfer case"
+          ],
+          "count": 12
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(82, 99, 120)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "27px",
+          "fontWeight": "400",
+          "ratio": 5.94,
+          "required": 3,
+          "examples": [
+            "Return to an idea, revisit a decision, or follow a new thread."
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            240,
+            246,
+            241,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "11px",
+          "fontWeight": "600",
+          "ratio": 5.62,
+          "required": 4.5,
+          "examples": [
+            "NEXT ACTION",
+            "Browse all topics",
+            "Depreciation"
+          ],
+          "count": 4
+        },
+        {
+          "background": [
+            240,
+            246,
+            241,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "40px",
+          "fontWeight": "700",
+          "ratio": 15.02,
+          "required": 3,
+          "examples": [
+            "Review a recorded difficulty",
+            "What the record shows"
+          ],
+          "count": 2
+        },
+        {
+          "background": [
+            240,
+            246,
+            241,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "ratio": 15.02,
+          "required": 4.5,
+          "examples": [
+            "A cash-mystery response was corrected after an earlier mistake.",
+            "Depreciation",
+            "Evidence"
+          ],
+          "count": 15
+        },
+        {
+          "background": [
+            17,
+            108,
+            114,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "19px",
+          "fontWeight": "400",
+          "ratio": 6.16,
+          "required": 4.5,
+          "examples": [
+            "Review this concept"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            240,
+            246,
+            241,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "ratio": 4.97,
+          "required": 4.5,
+          "examples": [
+            "Correcting an answer does not erase the first attempt. The self-check explanation rubric is not auto"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            247,
+            249,
+            246,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "40px",
+          "fontWeight": "700",
+          "ratio": 15.56,
+          "required": 3,
+          "examples": [
+            "Local learning record"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            247,
+            249,
+            246,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "ratio": 15.56,
+          "required": 4.5,
+          "examples": [
+            "Keep learning in this browser, or download a JSON backup to import later. No account or cloud sync. ",
+            "Your validated learning record is restored in this browser.",
+            "Import JSON backup"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            247,
+            249,
+            246,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "15px",
+          "fontWeight": "400",
+          "ratio": 5.81,
+          "required": 4.5,
+          "examples": [
+            "Reset local learning record"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 4.99,
+          "required": 4.5,
+          "examples": [
+            "Finance Atlas \u00b7 Follow your curiosity."
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 5.64,
+          "required": 4.5,
+          "examples": [
+            "All topics",
+            "Sources & master documents"
+          ],
+          "count": 2
+        }
+      ],
+      "controls": [
+        {
+          "background": [
+            244,
+            244,
+            243,
+            1
+          ],
+          "border": "rgb(16, 31, 56)",
+          "borderAgainstInside": 14.96,
+          "borderAgainstOutside": 14.96,
+          "borderWidth": "0px",
+          "complex": false,
+          "disabled": false,
+          "label": "Search finance concepts",
+          "tag": "INPUT"
+        },
+        {
+          "background": [
+            247,
+            249,
+            246,
+            1
+          ],
+          "border": "rgb(16, 31, 56)",
+          "borderAgainstInside": 15.56,
+          "borderAgainstOutside": 15.56,
+          "borderWidth": "0px",
+          "complex": false,
+          "disabled": false,
+          "label": "Import JSON backup",
+          "tag": "INPUT"
+        }
+      ]
+    },
+    {
+      "label": "Labs catalogue",
+      "url": "http://terminal.local:4173/#labs",
+      "textSamples": 27,
+      "pairs": [
+        {
+          "background": [
+            16,
+            31,
+            56,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "ratio": 16.47,
+          "required": 4.5,
+          "examples": [
+            "Skip to main content"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "36px",
+          "fontWeight": "700",
+          "ratio": 15.91,
+          "required": 3,
+          "examples": [
+            "Finance Atlas",
+            "Change one thing. Understand the effect.",
+            "Customer collection"
+          ],
+          "count": 5
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 5.26,
+          "required": 4.5,
+          "examples": [
+            "Atlas",
+            "Simulations",
+            "My learning"
+          ],
+          "count": 6
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "600",
+          "ratio": 15.91,
+          "required": 4.5,
+          "examples": [
+            "Labs"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "11px",
+          "fontWeight": "600",
+          "ratio": 5.95,
+          "required": 4.5,
+          "examples": [
+            "LABS",
+            "AVAILABLE LAB",
+            "Read the related concept"
+          ],
+          "count": 7
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(82, 99, 120)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "27px",
+          "fontWeight": "400",
+          "ratio": 5.94,
+          "required": 3,
+          "examples": [
+            "Predict a change, inspect the calculated consequences and explain the mechanism. All three experimen"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            17,
+            108,
+            114,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "19px",
+          "fontWeight": "400",
+          "ratio": 6.16,
+          "required": 4.5,
+          "examples": [
+            "Open  customer collection  lab",
+            "Open  equipment investment  lab",
+            "Open  financing comparison  lab"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 4.99,
+          "required": 4.5,
+          "examples": [
+            "Finance Atlas \u00b7 Follow your curiosity."
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 5.64,
+          "required": 4.5,
+          "examples": [
+            "All topics",
+            "Sources & master documents"
+          ],
+          "count": 2
+        }
+      ],
+      "controls": [
+        {
+          "background": [
+            244,
+            244,
+            243,
+            1
+          ],
+          "border": "rgb(16, 31, 56)",
+          "borderAgainstInside": 14.96,
+          "borderAgainstOutside": 14.96,
+          "borderWidth": "0px",
+          "complex": false,
+          "disabled": false,
+          "label": "Search finance concepts",
+          "tag": "INPUT"
+        }
+      ]
+    },
+    {
+      "label": "Collection setup controls",
+      "url": "http://terminal.local:4173/#labs/LAB-COLLECTIONS",
+      "textSamples": 20,
+      "pairs": [
+        {
+          "background": [
+            16,
+            31,
+            56,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "ratio": 16.47,
+          "required": 4.5,
+          "examples": [
+            "Skip to main content"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "36px",
+          "fontWeight": "700",
+          "ratio": 15.91,
+          "required": 3,
+          "examples": [
+            "Finance Atlas",
+            "A sale is not its collection.",
+            "1. Record the delivered sale \u00b7 5 January"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 5.26,
+          "required": 4.5,
+          "examples": [
+            "Atlas",
+            "Simulations",
+            "My learning"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "600",
+          "ratio": 15.91,
+          "required": 4.5,
+          "examples": [
+            "Labs",
+            "/ Customer collection",
+            "All amounts are INR lakh. Start: cash 20, receivables 30, inventory 50, equipment 100; payables 25, "
+          ],
+          "count": 6
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "15px",
+          "fontWeight": "400",
+          "ratio": 5.95,
+          "required": 4.5,
+          "examples": [
+            "Labs",
+            "GUIDED EXPERIMENT \u00b7 FICTIONAL NILA HOMEWARE"
+          ],
+          "count": 2
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(82, 99, 120)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "27px",
+          "fontWeight": "400",
+          "ratio": 5.94,
+          "required": 3,
+          "examples": [
+            "Record a qualifying credit sale, predict the settlement effect and choose when the customer pays."
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            17,
+            108,
+            114,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "19px",
+          "fontWeight": "400",
+          "ratio": 6.16,
+          "required": 4.5,
+          "examples": [
+            "Commit the credit sale"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 4.99,
+          "required": 4.5,
+          "examples": [
+            "Finance Atlas \u00b7 Follow your curiosity."
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 5.64,
+          "required": 4.5,
+          "examples": [
+            "All topics",
+            "Sources & master documents"
+          ],
+          "count": 2
+        }
+      ],
+      "controls": [
+        {
+          "background": [
+            244,
+            244,
+            243,
+            1
+          ],
+          "border": "rgb(16, 31, 56)",
+          "borderAgainstInside": 14.96,
+          "borderAgainstOutside": 14.96,
+          "borderWidth": "0px",
+          "complex": false,
+          "disabled": false,
+          "label": "Search finance concepts",
+          "tag": "INPUT"
+        },
+        {
+          "background": [
+            255,
+            255,
+            255,
+            1
+          ],
+          "border": "rgb(140, 159, 157)",
+          "borderAgainstInside": 2.78,
+          "borderAgainstOutside": 2.68,
+          "borderWidth": "1px",
+          "complex": false,
+          "disabled": false,
+          "label": "Selling price \u00b7 INR lakh",
+          "tag": "INPUT"
+        },
+        {
+          "background": [
+            255,
+            255,
+            255,
+            1
+          ],
+          "border": "rgb(140, 159, 157)",
+          "borderAgainstInside": 2.78,
+          "borderAgainstOutside": 2.68,
+          "borderWidth": "1px",
+          "complex": false,
+          "disabled": false,
+          "label": "Assigned inventory cost sold \u00b7 INR lakh",
+          "tag": "INPUT"
+        }
+      ]
+    },
+    {
+      "label": "Atlas guided entry",
+      "url": "http://terminal.local:4173/#atlas",
+      "textSamples": 125,
+      "pairs": [
+        {
+          "background": [
+            16,
+            31,
+            56,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "ratio": 16.47,
+          "required": 4.5,
+          "examples": [
+            "Skip to main content"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "36px",
+          "fontWeight": "700",
+          "ratio": 15.91,
+          "required": 3,
+          "examples": [
+            "Finance Atlas",
+            "Connect the numbers to the decisions.",
+            "Why can profit leave you short of cash?"
+          ],
+          "count": 29
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "600",
+          "ratio": 15.91,
+          "required": 4.5,
+          "examples": [
+            "Atlas"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 5.26,
+          "required": 4.5,
+          "examples": [
+            "Labs",
+            "Simulations",
+            "My learning"
+          ],
+          "count": 34
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "11px",
+          "fontWeight": "600",
+          "ratio": 5.95,
+          "required": 4.5,
+          "examples": [
+            "FINANCE ATLAS",
+            "GUIDED BEGINNER ROUTE",
+            "FREE EXPLORATION"
+          ],
+          "count": 55
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(82, 99, 120)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "27px",
+          "fontWeight": "400",
+          "ratio": 5.94,
+          "required": 3,
+          "examples": [
+            "Learn why one finance idea leads to another. Start with a guided mystery, or explore a concept at yo"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            17,
+            108,
+            114,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "19px",
+          "fontWeight": "400",
+          "ratio": 6.16,
+          "required": 4.5,
+          "examples": [
+            "See the mystery brief"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 4.99,
+          "required": 4.5,
+          "examples": [
+            "Finance Atlas \u00b7 Follow your curiosity."
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 5.64,
+          "required": 4.5,
+          "examples": [
+            "All topics",
+            "Sources & master documents"
+          ],
+          "count": 2
+        }
+      ],
+      "controls": [
+        {
+          "background": [
+            244,
+            244,
+            243,
+            1
+          ],
+          "border": "rgb(16, 31, 56)",
+          "borderAgainstInside": 14.96,
+          "borderAgainstOutside": 14.96,
+          "borderWidth": "0px",
+          "complex": false,
+          "disabled": false,
+          "label": "Search finance concepts",
+          "tag": "INPUT"
+        }
+      ]
+    },
+    {
+      "label": "Topic catalogue: initial cards and domain filters",
+      "url": "http://terminal.local:4173/#atlas/topics/A02",
+      "textSamples": 555,
+      "pairs": [
+        {
+          "background": [
+            16,
+            31,
+            56,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "ratio": 16.47,
+          "required": 4.5,
+          "examples": [
+            "Skip to main content"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "36px",
+          "fontWeight": "700",
+          "ratio": 15.91,
+          "required": 3,
+          "examples": [
+            "Finance Atlas",
+            "A world of finance.",
+            "What finance is: allocating capital across time and uncertainty"
+          ],
+          "count": 71
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "600",
+          "ratio": 15.91,
+          "required": 4.5,
+          "examples": [
+            "Atlas",
+            "ECL",
+            "DSO"
+          ],
+          "count": 42
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 5.26,
+          "required": 4.5,
+          "examples": [
+            "Labs",
+            "Simulations",
+            "My learning"
+          ],
+          "count": 78
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "11px",
+          "fontWeight": "600",
+          "ratio": 5.95,
+          "required": 4.5,
+          "examples": [
+            "THE COMPLETE CURRICULUM",
+            "Surprise me with a topic",
+            "T01.01  \u00b7  Foundation"
+          ],
+          "count": 85
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(82, 99, 120)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "27px",
+          "fontWeight": "400",
+          "ratio": 5.94,
+          "required": 3,
+          "examples": [
+            "40 areas. 698 lessons, examples, and quizzes. Pick your next question."
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            224,
+            236,
+            230,
+            1
+          ],
+          "color": "rgb(39, 102, 92)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "10px",
+          "fontWeight": "400",
+          "ratio": 5.51,
+          "required": 4.5,
+          "examples": [
+            "Lesson + quiz"
+          ],
+          "count": 48
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(83, 98, 118)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "27px",
+          "fontWeight": "400",
+          "ratio": 6.01,
+          "required": 3,
+          "examples": [
+            "You made the sale. When does the cash arrive?"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(55, 75, 101)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "21px",
+          "fontWeight": "400",
+          "ratio": 8.61,
+          "required": 4.5,
+          "examples": [
+            "Trade receivables are customer amounts due for recognised sales. They are claims to collect cash; a "
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            237,
+            243,
+            239,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "20px",
+          "fontWeight": "700",
+          "ratio": 14.64,
+          "required": 3,
+          "examples": [
+            "Closing gross = opening gross + credit sales \u2212 collections \u2212 write-offs (no other movements)"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(65, 83, 107)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "500",
+          "ratio": 7.59,
+          "required": 4.5,
+          "examples": [
+            "Connects to:"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(64, 83, 108)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "ratio": 7.6,
+          "required": 4.5,
+          "examples": [
+            "Separate recognising a qualifying credit sale from collecting an existing invoice.",
+            "Reconcile opening balances, credit sales, collections, write-offs and a closing allowance.",
+            "Explain a write-off already covered by an allowance."
+          ],
+          "count": 90
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "11px",
+          "fontWeight": "600",
+          "ratio": 5.56,
+          "required": 4.5,
+          "examples": [
+            "PREDICT BEFORE READING ON  \u00b7 SEPARATE NILA SCENARIO",
+            "Scenario inputs \u00b7 each unit is shown",
+            "Give me a directional hint"
+          ],
+          "count": 12
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "23px",
+          "fontWeight": "700",
+          "ratio": 14.87,
+          "required": 3,
+          "examples": [
+            "What changes when Nila receives this payment?",
+            "Which combination gives closing gross receivables, closing net receivables and customer receipts?",
+            "Which statement is correct immediately after the covered write-off?"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(64, 83, 108)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "ratio": 7.1,
+          "required": 4.5,
+          "examples": [
+            "Separate Nila scenario: an existing recognised customer invoice is 9. The customer pays 4 against it",
+            "Input",
+            "Value"
+          ],
+          "count": 45
+        },
+        {
+          "background": [
+            255,
+            253,
+            251,
+            1
+          ],
+          "color": "rgb(48, 68, 94)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 9.79,
+          "required": 4.5,
+          "examples": [
+            "Cash +4 and new revenue +4",
+            "Cash +4, receivables \u22124, no new revenue",
+            "Cash and receivables both stay unchanged"
+          ],
+          "count": 12
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "ratio": 4.92,
+          "required": 4.5,
+          "examples": [
+            "Lesson practice is separate from the topic quiz and case clues. Retry keeps your first response. See"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            238,
+            244,
+            238,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "11px",
+          "fontWeight": "600",
+          "ratio": 5.51,
+          "required": 4.5,
+          "examples": [
+            "A worked example \u00b7 illustrative \u00b7 separate from practice",
+            "Scenario inputs \u00b7 each unit is shown",
+            "BROADER DOMAIN CASE \u00b7 ILLUSTRATIVE"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            238,
+            244,
+            238,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "23px",
+          "fontWeight": "700",
+          "ratio": 14.75,
+          "required": 3,
+          "examples": [
+            "Work through it step by step"
+          ],
+          "count": 2
+        },
+        {
+          "background": [
+            238,
+            244,
+            238,
+            1
+          ],
+          "color": "rgb(64, 83, 108)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "ratio": 7.04,
+          "required": 4.5,
+          "examples": [
+            "A worked example: Nila opens the teaching month with gross receivables 20 and an allowance of 2. It ",
+            "Input",
+            "Value"
+          ],
+          "count": 38
+        },
+        {
+          "background": [
+            17,
+            108,
+            114,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "19px",
+          "fontWeight": "400",
+          "ratio": 6.16,
+          "required": 4.5,
+          "examples": [
+            "Open company preview \u00b7 rounds 1\u20133",
+            "Try  customer collection",
+            "Apply it in the cash mystery"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(66, 86, 109)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "20px",
+          "fontWeight": "400",
+          "ratio": 7.29,
+          "required": 4.5,
+          "examples": [
+            "A customer pays \u20b95 lakh against a previously recognised receivable. With no new sale or other event,",
+            "Topic quiz answers are counted separately from case clues. Retry clears this choice and keeps your r"
+          ],
+          "count": 2
+        },
+        {
+          "background": [
+            17,
+            108,
+            114,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "19px",
+          "fontWeight": "700",
+          "ratio": 6.16,
+          "required": 3,
+          "examples": [
+            "Trace it through the statements"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(101, 115, 129)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 4.69,
+          "required": 4.5,
+          "examples": [
+            "Recognition criteria must first be met.",
+            "A cash sale does not create an outstanding receivable.",
+            "Exclude non-operating receivables when defining the operating perimeter."
+          ],
+          "count": 8
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 4.99,
+          "required": 4.5,
+          "examples": [
+            "Finance Atlas \u00b7 Follow your curiosity."
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 5.64,
+          "required": 4.5,
+          "examples": [
+            "All topics",
+            "Sources & master documents"
+          ],
+          "count": 2
+        }
+      ],
+      "controls": [
+        {
+          "background": [
+            244,
+            244,
+            243,
+            1
+          ],
+          "border": "rgb(16, 31, 56)",
+          "borderAgainstInside": 14.96,
+          "borderAgainstOutside": 14.96,
+          "borderWidth": "0px",
+          "complex": false,
+          "disabled": false,
+          "label": "Search finance concepts",
+          "tag": "INPUT"
+        },
+        {
+          "background": [
+            255,
+            253,
+            250,
+            1
+          ],
+          "border": "rgb(214, 221, 223)",
+          "borderAgainstInside": 1.35,
+          "borderAgainstOutside": 1.33,
+          "borderWidth": "1px",
+          "complex": false,
+          "disabled": false,
+          "label": "Finance areaAll 40 areas1. Foundations of finance2. Mathematics and quantitative foundatio",
+          "tag": "SELECT"
+        },
+        {
+          "background": [
+            255,
+            253,
+            250,
+            1
+          ],
+          "border": "rgb(214, 221, 223)",
+          "borderAgainstInside": 1.35,
+          "borderAgainstOutside": 1.33,
+          "borderWidth": "1px",
+          "complex": false,
+          "disabled": false,
+          "label": "DepthAll levelsFoundationCoreAppliedAdvancedSpecialist",
+          "tag": "SELECT"
+        },
+        {
+          "background": [
+            255,
+            253,
+            250,
+            1
+          ],
+          "border": "rgb(214, 221, 223)",
+          "borderAgainstInside": 1.35,
+          "borderAgainstOutside": 1.33,
+          "borderWidth": "1px",
+          "complex": false,
+          "disabled": false,
+          "label": "PracticeAll conceptsNot answered yetAnswered correctlyQuestions to retry",
+          "tag": "SELECT"
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "border": "rgb(220, 225, 227)",
+          "borderAgainstInside": 1.27,
+          "borderAgainstOutside": 1.27,
+          "borderWidth": "1px",
+          "complex": false,
+          "disabled": false,
+          "label": "Filter concept relationships",
+          "tag": "SELECT"
+        }
+      ]
+    },
+    {
+      "label": "Statement explorer: selected receivables and full lesson",
+      "url": "http://terminal.local:4173/#atlas/statements/balance/A02",
+      "textSamples": 383,
+      "pairs": [
+        {
+          "background": [
+            16,
+            31,
+            56,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "ratio": 16.47,
+          "required": 4.5,
+          "examples": [
+            "Skip to main content"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "36px",
+          "fontWeight": "700",
+          "ratio": 15.91,
+          "required": 3,
+          "examples": [
+            "Finance Atlas",
+            "Every number has a story",
+            "Assets"
+          ],
+          "count": 25
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "600",
+          "ratio": 15.91,
+          "required": 4.5,
+          "examples": [
+            "Atlas",
+            "\u20b9 lakh",
+            "Cash"
+          ],
+          "count": 56
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 5.26,
+          "required": 4.5,
+          "examples": [
+            "Labs",
+            "Simulations",
+            "My learning"
+          ],
+          "count": 25
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(82, 99, 120)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "27px",
+          "fontWeight": "400",
+          "ratio": 5.94,
+          "required": 3,
+          "examples": [
+            "Explore how a balance sheet connects to the rest of finance."
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(104, 119, 137)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "ratio": 4.42,
+          "required": 4.5,
+          "examples": [
+            "Illustrative company \u00b7 figures in \u20b9 lakh"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "ratio": 5.95,
+          "required": 4.5,
+          "examples": [
+            "Balance sheet",
+            "See the connection atlas",
+            "Try a finance mystery"
+          ],
+          "count": 37
+        },
+        {
+          "background": [
+            240,
+            241,
+            238,
+            1
+          ],
+          "color": "rgb(98, 109, 120)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "ratio": 4.66,
+          "required": 4.5,
+          "examples": [
+            "Income",
+            "Cash flow"
+          ],
+          "count": 2
+        },
+        {
+          "background": [
+            226,
+            242,
+            241,
+            1
+          ],
+          "color": "rgb(7, 83, 98)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "22px",
+          "fontWeight": "700",
+          "ratio": 7.51,
+          "required": 3,
+          "examples": [
+            "Trade receivables",
+            "30"
+          ],
+          "count": 2
+        },
+        {
+          "background": [
+            239,
+            240,
+            240,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "22px",
+          "fontWeight": "700",
+          "ratio": 14.42,
+          "required": 3,
+          "examples": [
+            "Total assets",
+            "200",
+            "Total liabilities & equity"
+          ],
+          "count": 4
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(83, 98, 118)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "27px",
+          "fontWeight": "400",
+          "ratio": 6.01,
+          "required": 3,
+          "examples": [
+            "You made the sale. When does the cash arrive?"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(55, 75, 101)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "21px",
+          "fontWeight": "400",
+          "ratio": 8.61,
+          "required": 4.5,
+          "examples": [
+            "Trade receivables are customer amounts due for recognised sales. They are claims to collect cash; a "
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            237,
+            243,
+            239,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "20px",
+          "fontWeight": "700",
+          "ratio": 14.64,
+          "required": 3,
+          "examples": [
+            "Closing gross = opening gross + credit sales \u2212 collections \u2212 write-offs (no other movements)"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(65, 83, 107)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "500",
+          "ratio": 7.59,
+          "required": 4.5,
+          "examples": [
+            "Connects to:"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(64, 83, 108)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "ratio": 7.6,
+          "required": 4.5,
+          "examples": [
+            "Separate recognising a qualifying credit sale from collecting an existing invoice.",
+            "Reconcile opening balances, credit sales, collections, write-offs and a closing allowance.",
+            "Explain a write-off already covered by an allowance."
+          ],
+          "count": 90
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "11px",
+          "fontWeight": "600",
+          "ratio": 5.56,
+          "required": 4.5,
+          "examples": [
+            "PREDICT BEFORE READING ON  \u00b7 SEPARATE NILA SCENARIO",
+            "Scenario inputs \u00b7 each unit is shown",
+            "Give me a directional hint"
+          ],
+          "count": 12
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "23px",
+          "fontWeight": "700",
+          "ratio": 14.87,
+          "required": 3,
+          "examples": [
+            "What changes when Nila receives this payment?",
+            "Which combination gives closing gross receivables, closing net receivables and customer receipts?",
+            "Which statement is correct immediately after the covered write-off?"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(64, 83, 108)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "ratio": 7.1,
+          "required": 4.5,
+          "examples": [
+            "Separate Nila scenario: an existing recognised customer invoice is 9. The customer pays 4 against it",
+            "Input",
+            "Value"
+          ],
+          "count": 45
+        },
+        {
+          "background": [
+            255,
+            253,
+            251,
+            1
+          ],
+          "color": "rgb(48, 68, 94)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 9.79,
+          "required": 4.5,
+          "examples": [
+            "Cash +4 and new revenue +4",
+            "Cash +4, receivables \u22124, no new revenue",
+            "Cash and receivables both stay unchanged"
+          ],
+          "count": 12
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "ratio": 4.92,
+          "required": 4.5,
+          "examples": [
+            "Lesson practice is separate from the topic quiz and case clues. Retry keeps your first response. See"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            238,
+            244,
+            238,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "11px",
+          "fontWeight": "600",
+          "ratio": 5.51,
+          "required": 4.5,
+          "examples": [
+            "A worked example \u00b7 illustrative \u00b7 separate from practice",
+            "Scenario inputs \u00b7 each unit is shown",
+            "BROADER DOMAIN CASE \u00b7 ILLUSTRATIVE"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            238,
+            244,
+            238,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "23px",
+          "fontWeight": "700",
+          "ratio": 14.75,
+          "required": 3,
+          "examples": [
+            "Work through it step by step"
+          ],
+          "count": 2
+        },
+        {
+          "background": [
+            238,
+            244,
+            238,
+            1
+          ],
+          "color": "rgb(64, 83, 108)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "ratio": 7.04,
+          "required": 4.5,
+          "examples": [
+            "A worked example: Nila opens the teaching month with gross receivables 20 and an allowance of 2. It ",
+            "Input",
+            "Value"
+          ],
+          "count": 38
+        },
+        {
+          "background": [
+            17,
+            108,
+            114,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "19px",
+          "fontWeight": "400",
+          "ratio": 6.16,
+          "required": 4.5,
+          "examples": [
+            "Open company preview \u00b7 rounds 1\u20133",
+            "Try  customer collection",
+            "Apply it in the cash mystery"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(66, 86, 109)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "20px",
+          "fontWeight": "400",
+          "ratio": 7.29,
+          "required": 4.5,
+          "examples": [
+            "A customer pays \u20b95 lakh against a previously recognised receivable. With no new sale or other event,",
+            "Topic quiz answers are counted separately from case clues. Retry clears this choice and keeps your r"
+          ],
+          "count": 2
+        },
+        {
+          "background": [
+            17,
+            108,
+            114,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "19px",
+          "fontWeight": "700",
+          "ratio": 6.16,
+          "required": 3,
+          "examples": [
+            "Trace it through the statements"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(101, 115, 129)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 4.69,
+          "required": 4.5,
+          "examples": [
+            "Recognition criteria must first be met.",
+            "A cash sale does not create an outstanding receivable.",
+            "Exclude non-operating receivables when defining the operating perimeter."
+          ],
+          "count": 8
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 4.99,
+          "required": 4.5,
+          "examples": [
+            "Finance Atlas \u00b7 Follow your curiosity."
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 5.64,
+          "required": 4.5,
+          "examples": [
+            "All topics",
+            "Sources & master documents"
+          ],
+          "count": 2
+        }
+      ],
+      "controls": [
+        {
+          "background": [
+            244,
+            244,
+            243,
+            1
+          ],
+          "border": "rgb(16, 31, 56)",
+          "borderAgainstInside": 14.96,
+          "borderAgainstOutside": 14.96,
+          "borderWidth": "0px",
+          "complex": false,
+          "disabled": false,
+          "label": "Search finance concepts",
+          "tag": "INPUT"
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "border": "rgb(220, 225, 227)",
+          "borderAgainstInside": 1.27,
+          "borderAgainstOutside": 1.27,
+          "borderWidth": "1px",
+          "complex": false,
+          "disabled": false,
+          "label": "Filter concept relationships",
+          "tag": "SELECT"
+        }
+      ]
+    },
+    {
+      "label": "Receivables quiz: incorrect response",
+      "url": "http://terminal.local:4173/#atlas/statements/balance/A02",
+      "textSamples": 388,
+      "pairs": [
+        {
+          "background": [
+            16,
+            31,
+            56,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "ratio": 16.47,
+          "required": 4.5,
+          "examples": [
+            "Skip to main content"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "36px",
+          "fontWeight": "700",
+          "ratio": 15.91,
+          "required": 3,
+          "examples": [
+            "Finance Atlas",
+            "Every number has a story",
+            "Assets"
+          ],
+          "count": 25
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "600",
+          "ratio": 15.91,
+          "required": 4.5,
+          "examples": [
+            "Atlas",
+            "\u20b9 lakh",
+            "Cash"
+          ],
+          "count": 56
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 5.26,
+          "required": 4.5,
+          "examples": [
+            "Labs",
+            "Simulations",
+            "My learning"
+          ],
+          "count": 25
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(82, 99, 120)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "27px",
+          "fontWeight": "400",
+          "ratio": 5.94,
+          "required": 3,
+          "examples": [
+            "Explore how a balance sheet connects to the rest of finance."
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(104, 119, 137)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "ratio": 4.42,
+          "required": 4.5,
+          "examples": [
+            "Illustrative company \u00b7 figures in \u20b9 lakh"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "ratio": 5.95,
+          "required": 4.5,
+          "examples": [
+            "Balance sheet",
+            "See the connection atlas",
+            "Try a finance mystery"
+          ],
+          "count": 39
+        },
+        {
+          "background": [
+            240,
+            241,
+            238,
+            1
+          ],
+          "color": "rgb(98, 109, 120)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "ratio": 4.66,
+          "required": 4.5,
+          "examples": [
+            "Income",
+            "Cash flow"
+          ],
+          "count": 2
+        },
+        {
+          "background": [
+            226,
+            242,
+            241,
+            1
+          ],
+          "color": "rgb(7, 83, 98)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "22px",
+          "fontWeight": "700",
+          "ratio": 7.51,
+          "required": 3,
+          "examples": [
+            "Trade receivables",
+            "30"
+          ],
+          "count": 2
+        },
+        {
+          "background": [
+            239,
+            240,
+            240,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "22px",
+          "fontWeight": "700",
+          "ratio": 14.42,
+          "required": 3,
+          "examples": [
+            "Total assets",
+            "200",
+            "Total liabilities & equity"
+          ],
+          "count": 4
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(83, 98, 118)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "27px",
+          "fontWeight": "400",
+          "ratio": 6.01,
+          "required": 3,
+          "examples": [
+            "You made the sale. When does the cash arrive?"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(55, 75, 101)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "21px",
+          "fontWeight": "400",
+          "ratio": 8.61,
+          "required": 4.5,
+          "examples": [
+            "Trade receivables are customer amounts due for recognised sales. They are claims to collect cash; a "
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            237,
+            243,
+            239,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "20px",
+          "fontWeight": "700",
+          "ratio": 14.64,
+          "required": 3,
+          "examples": [
+            "Closing gross = opening gross + credit sales \u2212 collections \u2212 write-offs (no other movements)"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(65, 83, 107)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "500",
+          "ratio": 7.59,
+          "required": 4.5,
+          "examples": [
+            "Connects to:"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(64, 83, 108)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "ratio": 7.6,
+          "required": 4.5,
+          "examples": [
+            "Separate recognising a qualifying credit sale from collecting an existing invoice.",
+            "Reconcile opening balances, credit sales, collections, write-offs and a closing allowance.",
+            "Explain a write-off already covered by an allowance."
+          ],
+          "count": 90
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "11px",
+          "fontWeight": "600",
+          "ratio": 5.56,
+          "required": 4.5,
+          "examples": [
+            "PREDICT BEFORE READING ON  \u00b7 SEPARATE NILA SCENARIO",
+            "Scenario inputs \u00b7 each unit is shown",
+            "Give me a directional hint"
+          ],
+          "count": 12
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "23px",
+          "fontWeight": "700",
+          "ratio": 14.87,
+          "required": 3,
+          "examples": [
+            "What changes when Nila receives this payment?",
+            "Which combination gives closing gross receivables, closing net receivables and customer receipts?",
+            "Which statement is correct immediately after the covered write-off?"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(64, 83, 108)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "ratio": 7.1,
+          "required": 4.5,
+          "examples": [
+            "Separate Nila scenario: an existing recognised customer invoice is 9. The customer pays 4 against it",
+            "Input",
+            "Value"
+          ],
+          "count": 45
+        },
+        {
+          "background": [
+            255,
+            253,
+            251,
+            1
+          ],
+          "color": "rgb(48, 68, 94)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 9.79,
+          "required": 4.5,
+          "examples": [
+            "Cash +4 and new revenue +4",
+            "Cash +4, receivables \u22124, no new revenue",
+            "Cash and receivables both stay unchanged"
+          ],
+          "count": 11
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "ratio": 4.92,
+          "required": 4.5,
+          "examples": [
+            "Lesson practice is separate from the topic quiz and case clues. Retry keeps your first response. See"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            238,
+            244,
+            238,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "11px",
+          "fontWeight": "600",
+          "ratio": 5.51,
+          "required": 4.5,
+          "examples": [
+            "A worked example \u00b7 illustrative \u00b7 separate from practice",
+            "Scenario inputs \u00b7 each unit is shown",
+            "BROADER DOMAIN CASE \u00b7 ILLUSTRATIVE"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            238,
+            244,
+            238,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "23px",
+          "fontWeight": "700",
+          "ratio": 14.75,
+          "required": 3,
+          "examples": [
+            "Work through it step by step"
+          ],
+          "count": 2
+        },
+        {
+          "background": [
+            238,
+            244,
+            238,
+            1
+          ],
+          "color": "rgb(64, 83, 108)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "ratio": 7.04,
+          "required": 4.5,
+          "examples": [
+            "A worked example: Nila opens the teaching month with gross receivables 20 and an allowance of 2. It ",
+            "Input",
+            "Value"
+          ],
+          "count": 38
+        },
+        {
+          "background": [
+            17,
+            108,
+            114,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "19px",
+          "fontWeight": "400",
+          "ratio": 6.16,
+          "required": 4.5,
+          "examples": [
+            "Open company preview \u00b7 rounds 1\u20133",
+            "Try  customer collection",
+            "Apply it in the cash mystery"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(66, 86, 109)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "20px",
+          "fontWeight": "400",
+          "ratio": 7.29,
+          "required": 4.5,
+          "examples": [
+            "A customer pays \u20b95 lakh against a previously recognised receivable. With no new sale or other event,",
+            "\u201c Revenue rises again \u201d \u2014  not correct .   1  submitted  answer . Retrying keeps this record.",
+            "First answer :"
+          ],
+          "count": 4
+        },
+        {
+          "background": [
+            234,
+            244,
+            239,
+            1
+          ],
+          "color": "rgb(48, 68, 94)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "20px",
+          "fontWeight": "400",
+          "ratio": 8.84,
+          "required": 4.5,
+          "examples": [
+            "Revenue rises again"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            245,
+            237,
+            223,
+            1
+          ],
+          "color": "rgb(118, 83, 46)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 5.93,
+          "required": 4.5,
+          "examples": [
+            "Not quite. The sale was already recognised when the receivable arose. Collecting that receivable set"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            17,
+            108,
+            114,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "19px",
+          "fontWeight": "700",
+          "ratio": 6.16,
+          "required": 3,
+          "examples": [
+            "Trace it through the statements"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(101, 115, 129)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 4.69,
+          "required": 4.5,
+          "examples": [
+            "Recognition criteria must first be met.",
+            "A cash sale does not create an outstanding receivable.",
+            "Exclude non-operating receivables when defining the operating perimeter."
+          ],
+          "count": 8
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 4.99,
+          "required": 4.5,
+          "examples": [
+            "Finance Atlas \u00b7 Follow your curiosity."
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 5.64,
+          "required": 4.5,
+          "examples": [
+            "All topics",
+            "Sources & master documents"
+          ],
+          "count": 2
+        }
+      ],
+      "controls": [
+        {
+          "background": [
+            244,
+            244,
+            243,
+            1
+          ],
+          "border": "rgb(16, 31, 56)",
+          "borderAgainstInside": 14.96,
+          "borderAgainstOutside": 14.96,
+          "borderWidth": "0px",
+          "complex": false,
+          "disabled": false,
+          "label": "Search finance concepts",
+          "tag": "INPUT"
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "border": "rgb(220, 225, 227)",
+          "borderAgainstInside": 1.27,
+          "borderAgainstOutside": 1.27,
+          "borderWidth": "1px",
+          "complex": false,
+          "disabled": false,
+          "label": "Filter concept relationships",
+          "tag": "SELECT"
+        }
+      ]
+    },
+    {
+      "label": "Receivables quiz: corrected success",
+      "url": "http://terminal.local:4173/#atlas/statements/balance/A02",
+      "textSamples": 388,
+      "pairs": [
+        {
+          "background": [
+            16,
+            31,
+            56,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "ratio": 16.47,
+          "required": 4.5,
+          "examples": [
+            "Skip to main content"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "36px",
+          "fontWeight": "700",
+          "ratio": 15.91,
+          "required": 3,
+          "examples": [
+            "Finance Atlas",
+            "Every number has a story",
+            "Assets"
+          ],
+          "count": 25
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "600",
+          "ratio": 15.91,
+          "required": 4.5,
+          "examples": [
+            "Atlas",
+            "\u20b9 lakh",
+            "Cash"
+          ],
+          "count": 56
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 5.26,
+          "required": 4.5,
+          "examples": [
+            "Labs",
+            "Simulations",
+            "My learning"
+          ],
+          "count": 25
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(82, 99, 120)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "27px",
+          "fontWeight": "400",
+          "ratio": 5.94,
+          "required": 3,
+          "examples": [
+            "Explore how a balance sheet connects to the rest of finance."
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(104, 119, 137)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "ratio": 4.42,
+          "required": 4.5,
+          "examples": [
+            "Illustrative company \u00b7 figures in \u20b9 lakh"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "ratio": 5.95,
+          "required": 4.5,
+          "examples": [
+            "Balance sheet",
+            "See the connection atlas",
+            "Try a finance mystery"
+          ],
+          "count": 39
+        },
+        {
+          "background": [
+            240,
+            241,
+            238,
+            1
+          ],
+          "color": "rgb(98, 109, 120)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "ratio": 4.66,
+          "required": 4.5,
+          "examples": [
+            "Income",
+            "Cash flow"
+          ],
+          "count": 2
+        },
+        {
+          "background": [
+            226,
+            242,
+            241,
+            1
+          ],
+          "color": "rgb(7, 83, 98)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "22px",
+          "fontWeight": "700",
+          "ratio": 7.51,
+          "required": 3,
+          "examples": [
+            "Trade receivables",
+            "30"
+          ],
+          "count": 2
+        },
+        {
+          "background": [
+            239,
+            240,
+            240,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "22px",
+          "fontWeight": "700",
+          "ratio": 14.42,
+          "required": 3,
+          "examples": [
+            "Total assets",
+            "200",
+            "Total liabilities & equity"
+          ],
+          "count": 4
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(83, 98, 118)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "27px",
+          "fontWeight": "400",
+          "ratio": 6.01,
+          "required": 3,
+          "examples": [
+            "You made the sale. When does the cash arrive?"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(55, 75, 101)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "21px",
+          "fontWeight": "400",
+          "ratio": 8.61,
+          "required": 4.5,
+          "examples": [
+            "Trade receivables are customer amounts due for recognised sales. They are claims to collect cash; a "
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            237,
+            243,
+            239,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "20px",
+          "fontWeight": "700",
+          "ratio": 14.64,
+          "required": 3,
+          "examples": [
+            "Closing gross = opening gross + credit sales \u2212 collections \u2212 write-offs (no other movements)"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(65, 83, 107)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "500",
+          "ratio": 7.59,
+          "required": 4.5,
+          "examples": [
+            "Connects to:"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(64, 83, 108)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "ratio": 7.6,
+          "required": 4.5,
+          "examples": [
+            "Separate recognising a qualifying credit sale from collecting an existing invoice.",
+            "Reconcile opening balances, credit sales, collections, write-offs and a closing allowance.",
+            "Explain a write-off already covered by an allowance."
+          ],
+          "count": 90
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "11px",
+          "fontWeight": "600",
+          "ratio": 5.56,
+          "required": 4.5,
+          "examples": [
+            "PREDICT BEFORE READING ON  \u00b7 SEPARATE NILA SCENARIO",
+            "Scenario inputs \u00b7 each unit is shown",
+            "Give me a directional hint"
+          ],
+          "count": 12
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "23px",
+          "fontWeight": "700",
+          "ratio": 14.87,
+          "required": 3,
+          "examples": [
+            "What changes when Nila receives this payment?",
+            "Which combination gives closing gross receivables, closing net receivables and customer receipts?",
+            "Which statement is correct immediately after the covered write-off?"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(64, 83, 108)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "ratio": 7.1,
+          "required": 4.5,
+          "examples": [
+            "Separate Nila scenario: an existing recognised customer invoice is 9. The customer pays 4 against it",
+            "Input",
+            "Value"
+          ],
+          "count": 45
+        },
+        {
+          "background": [
+            255,
+            253,
+            251,
+            1
+          ],
+          "color": "rgb(48, 68, 94)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 9.79,
+          "required": 4.5,
+          "examples": [
+            "Cash +4 and new revenue +4",
+            "Cash +4, receivables \u22124, no new revenue",
+            "Cash and receivables both stay unchanged"
+          ],
+          "count": 11
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "ratio": 4.92,
+          "required": 4.5,
+          "examples": [
+            "Lesson practice is separate from the topic quiz and case clues. Retry keeps your first response. See"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            238,
+            244,
+            238,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "11px",
+          "fontWeight": "600",
+          "ratio": 5.51,
+          "required": 4.5,
+          "examples": [
+            "A worked example \u00b7 illustrative \u00b7 separate from practice",
+            "Scenario inputs \u00b7 each unit is shown",
+            "BROADER DOMAIN CASE \u00b7 ILLUSTRATIVE"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            238,
+            244,
+            238,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "23px",
+          "fontWeight": "700",
+          "ratio": 14.75,
+          "required": 3,
+          "examples": [
+            "Work through it step by step"
+          ],
+          "count": 2
+        },
+        {
+          "background": [
+            238,
+            244,
+            238,
+            1
+          ],
+          "color": "rgb(64, 83, 108)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "ratio": 7.04,
+          "required": 4.5,
+          "examples": [
+            "A worked example: Nila opens the teaching month with gross receivables 20 and an allowance of 2. It ",
+            "Input",
+            "Value"
+          ],
+          "count": 38
+        },
+        {
+          "background": [
+            17,
+            108,
+            114,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "19px",
+          "fontWeight": "400",
+          "ratio": 6.16,
+          "required": 4.5,
+          "examples": [
+            "Open company preview \u00b7 rounds 1\u20133",
+            "Try  customer collection",
+            "Apply it in the cash mystery"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(66, 86, 109)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "20px",
+          "fontWeight": "400",
+          "ratio": 7.29,
+          "required": 4.5,
+          "examples": [
+            "A customer pays \u20b95 lakh against a previously recognised receivable. With no new sale or other event,",
+            "\u201c Revenue rises again \u201d \u2014  not correct .   2  submitted  answers . Retrying keeps this record.",
+            "First answer :"
+          ],
+          "count": 4
+        },
+        {
+          "background": [
+            234,
+            244,
+            239,
+            1
+          ],
+          "color": "rgb(20, 91, 78)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "20px",
+          "fontWeight": "400",
+          "ratio": 7.09,
+          "required": 4.5,
+          "examples": [
+            "Cash rises; receivables fall"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            231,
+            241,
+            231,
+            1
+          ],
+          "color": "rgb(36, 90, 75)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 6.87,
+          "required": 4.5,
+          "examples": [
+            "Correct. Cash rises by \u20b95 lakh and receivables fall by \u20b95 lakh. Revenue was recognised when the sale"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            17,
+            108,
+            114,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "19px",
+          "fontWeight": "700",
+          "ratio": 6.16,
+          "required": 3,
+          "examples": [
+            "Trace it through the statements"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(101, 115, 129)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 4.69,
+          "required": 4.5,
+          "examples": [
+            "Recognition criteria must first be met.",
+            "A cash sale does not create an outstanding receivable.",
+            "Exclude non-operating receivables when defining the operating perimeter."
+          ],
+          "count": 8
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 4.99,
+          "required": 4.5,
+          "examples": [
+            "Finance Atlas \u00b7 Follow your curiosity."
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 5.64,
+          "required": 4.5,
+          "examples": [
+            "All topics",
+            "Sources & master documents"
+          ],
+          "count": 2
+        }
+      ],
+      "controls": [
+        {
+          "background": [
+            244,
+            244,
+            243,
+            1
+          ],
+          "border": "rgb(16, 31, 56)",
+          "borderAgainstInside": 14.96,
+          "borderAgainstOutside": 14.96,
+          "borderWidth": "0px",
+          "complex": false,
+          "disabled": false,
+          "label": "Search finance concepts",
+          "tag": "INPUT"
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "border": "rgb(220, 225, 227)",
+          "borderAgainstInside": 1.27,
+          "borderAgainstOutside": 1.27,
+          "borderWidth": "1px",
+          "complex": false,
+          "disabled": false,
+          "label": "Filter concept relationships",
+          "tag": "SELECT"
+        }
+      ]
+    },
+    {
+      "label": "Reset confirmation: cancel focused",
+      "url": "http://terminal.local:4173/#learning",
+      "textSamples": 143,
+      "pairs": [
+        {
+          "background": [
+            16,
+            31,
+            56,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "ratio": 16.47,
+          "required": 4.5,
+          "examples": [
+            "Skip to main content"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "36px",
+          "fontWeight": "700",
+          "ratio": 15.91,
+          "required": 3,
+          "examples": [
+            "Finance Atlas",
+            "Your curiosity leaves a trail.",
+            "Review when it helps"
+          ],
+          "count": 17
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 5.26,
+          "required": 4.5,
+          "examples": [
+            "Atlas",
+            "Labs",
+            "Simulations"
+          ],
+          "count": 42
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "600",
+          "ratio": 15.91,
+          "required": 4.5,
+          "examples": [
+            "My learning",
+            "Suggested intervals are a product hypothesis to test: one day after an incorrect latest response, th",
+            "Recognise a credit sale"
+          ],
+          "count": 34
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "11px",
+          "fontWeight": "600",
+          "ratio": 5.95,
+          "required": 4.5,
+          "examples": [
+            "MY LEARNING",
+            "Review this task",
+            "Open the unfamiliar transfer case"
+          ],
+          "count": 14
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(82, 99, 120)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "27px",
+          "fontWeight": "400",
+          "ratio": 5.94,
+          "required": 3,
+          "examples": [
+            "Return to an idea, revisit a decision, or follow a new thread."
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            240,
+            246,
+            241,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "11px",
+          "fontWeight": "600",
+          "ratio": 5.62,
+          "required": 4.5,
+          "examples": [
+            "NEXT ACTION",
+            "Browse all topics",
+            "Trade receivables"
+          ],
+          "count": 5
+        },
+        {
+          "background": [
+            240,
+            246,
+            241,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "40px",
+          "fontWeight": "700",
+          "ratio": 15.02,
+          "required": 3,
+          "examples": [
+            "Review a recorded difficulty",
+            "What the record shows"
+          ],
+          "count": 2
+        },
+        {
+          "background": [
+            240,
+            246,
+            241,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "ratio": 15.02,
+          "required": 4.5,
+          "examples": [
+            "Topic answer was corrected after an earlier mistake.",
+            "Trade receivables",
+            "Evidence"
+          ],
+          "count": 16
+        },
+        {
+          "background": [
+            17,
+            108,
+            114,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "19px",
+          "fontWeight": "400",
+          "ratio": 6.16,
+          "required": 4.5,
+          "examples": [
+            "Review this concept",
+            "Delete local learning record"
+          ],
+          "count": 2
+        },
+        {
+          "background": [
+            240,
+            246,
+            241,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "ratio": 4.97,
+          "required": 4.5,
+          "examples": [
+            "Correcting an answer does not erase the first attempt. The self-check explanation rubric is not auto"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            247,
+            249,
+            246,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "40px",
+          "fontWeight": "700",
+          "ratio": 15.56,
+          "required": 3,
+          "examples": [
+            "Local learning record"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            247,
+            249,
+            246,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "ratio": 15.56,
+          "required": 4.5,
+          "examples": [
+            "Keep learning in this browser, or download a JSON backup to import later. No account or cloud sync. ",
+            "Learning saved in this browser.  Saved 20/10/2026, 11:05:56.",
+            "Import JSON backup"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            247,
+            249,
+            246,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "15px",
+          "fontWeight": "400",
+          "ratio": 5.81,
+          "required": 4.5,
+          "examples": [
+            "Reset local learning record"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 4.99,
+          "required": 4.5,
+          "examples": [
+            "Finance Atlas \u00b7 Follow your curiosity."
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 5.64,
+          "required": 4.5,
+          "examples": [
+            "All topics",
+            "Sources & master documents"
+          ],
+          "count": 2
+        }
+      ],
+      "controls": [
+        {
+          "background": [
+            244,
+            244,
+            243,
+            1
+          ],
+          "border": "rgb(16, 31, 56)",
+          "borderAgainstInside": 14.96,
+          "borderAgainstOutside": 14.96,
+          "borderWidth": "0px",
+          "complex": false,
+          "disabled": false,
+          "label": "Search finance concepts",
+          "tag": "INPUT"
+        },
+        {
+          "background": [
+            247,
+            249,
+            246,
+            1
+          ],
+          "border": "rgb(16, 31, 56)",
+          "borderAgainstInside": 15.56,
+          "borderAgainstOutside": 15.56,
+          "borderWidth": "0px",
+          "complex": false,
+          "disabled": false,
+          "label": "Import JSON backup",
+          "tag": "INPUT"
+        }
+      ]
+    }
+  ],
+  "after": [
+    {
+      "label": "After fix: My learning",
+      "url": "http://terminal.local:4173/#learning",
+      "textSamples": 139,
+      "pairs": [
+        {
+          "background": [
+            16,
+            31,
+            56,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "ratio": 16.47,
+          "required": 4.5,
+          "examples": [
+            "Skip to main content"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "36px",
+          "fontWeight": "700",
+          "ratio": 15.91,
+          "required": 3,
+          "examples": [
+            "Finance Atlas",
+            "Your curiosity leaves a trail.",
+            "Review when it helps"
+          ],
+          "count": 16
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 5.26,
+          "required": 4.5,
+          "examples": [
+            "Atlas",
+            "Labs",
+            "Simulations"
+          ],
+          "count": 41
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "600",
+          "ratio": 15.91,
+          "required": 4.5,
+          "examples": [
+            "My learning",
+            "Suggested intervals are a product hypothesis to test: one day after an incorrect latest response, th",
+            "Recognise a credit sale"
+          ],
+          "count": 34
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "11px",
+          "fontWeight": "600",
+          "ratio": 5.95,
+          "required": 4.5,
+          "examples": [
+            "MY LEARNING",
+            "Review this task",
+            "Open the unfamiliar transfer case"
+          ],
+          "count": 13
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(82, 99, 120)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "27px",
+          "fontWeight": "400",
+          "ratio": 5.94,
+          "required": 3,
+          "examples": [
+            "Return to an idea, revisit a decision, or follow a new thread."
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            240,
+            246,
+            241,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "11px",
+          "fontWeight": "600",
+          "ratio": 5.62,
+          "required": 4.5,
+          "examples": [
+            "NEXT ACTION",
+            "Browse all topics",
+            "Trade receivables"
+          ],
+          "count": 5
+        },
+        {
+          "background": [
+            240,
+            246,
+            241,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "40px",
+          "fontWeight": "700",
+          "ratio": 15.02,
+          "required": 3,
+          "examples": [
+            "Review a recorded difficulty",
+            "What the record shows"
+          ],
+          "count": 2
+        },
+        {
+          "background": [
+            240,
+            246,
+            241,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "ratio": 15.02,
+          "required": 4.5,
+          "examples": [
+            "Topic answer was corrected after an earlier mistake.",
+            "Trade receivables",
+            "Evidence"
+          ],
+          "count": 16
+        },
+        {
+          "background": [
+            17,
+            108,
+            114,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "19px",
+          "fontWeight": "400",
+          "ratio": 6.16,
+          "required": 4.5,
+          "examples": [
+            "Review this concept"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            240,
+            246,
+            241,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "ratio": 4.97,
+          "required": 4.5,
+          "examples": [
+            "Correcting an answer does not erase the first attempt. The self-check explanation rubric is not auto"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            247,
+            249,
+            246,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "40px",
+          "fontWeight": "700",
+          "ratio": 15.56,
+          "required": 3,
+          "examples": [
+            "Local learning record"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            247,
+            249,
+            246,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "ratio": 15.56,
+          "required": 4.5,
+          "examples": [
+            "Keep learning in this browser, or download a JSON backup to import later. No account or cloud sync. ",
+            "Your validated learning record is restored in this browser.",
+            "Import JSON backup"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            247,
+            249,
+            246,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "15px",
+          "fontWeight": "400",
+          "ratio": 5.81,
+          "required": 4.5,
+          "examples": [
+            "Reset local learning record"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 4.99,
+          "required": 4.5,
+          "examples": [
+            "Finance Atlas \u00b7 Follow your curiosity."
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 5.64,
+          "required": 4.5,
+          "examples": [
+            "All topics",
+            "Sources & master documents"
+          ],
+          "count": 2
+        }
+      ],
+      "controls": [
+        {
+          "background": [
+            244,
+            244,
+            243,
+            1
+          ],
+          "border": "rgb(16, 31, 56)",
+          "borderAgainstInside": 14.96,
+          "borderAgainstOutside": 14.96,
+          "borderWidth": "0px",
+          "complex": false,
+          "disabled": false,
+          "label": "Search finance concepts",
+          "tag": "INPUT"
+        },
+        {
+          "background": [
+            247,
+            249,
+            246,
+            1
+          ],
+          "border": "rgb(16, 31, 56)",
+          "borderAgainstInside": 15.56,
+          "borderAgainstOutside": 15.56,
+          "borderWidth": "0px",
+          "complex": false,
+          "disabled": false,
+          "label": "Import JSON backup",
+          "tag": "INPUT"
+        }
+      ]
+    },
+    {
+      "label": "After fix: collection form boundaries",
+      "url": "http://terminal.local:4173/#labs/LAB-COLLECTIONS",
+      "textSamples": 20,
+      "pairs": [
+        {
+          "background": [
+            16,
+            31,
+            56,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "ratio": 16.47,
+          "required": 4.5,
+          "examples": [
+            "Skip to main content"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "36px",
+          "fontWeight": "700",
+          "ratio": 15.91,
+          "required": 3,
+          "examples": [
+            "Finance Atlas",
+            "A sale is not its collection.",
+            "1. Record the delivered sale \u00b7 5 January"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 5.26,
+          "required": 4.5,
+          "examples": [
+            "Atlas",
+            "Simulations",
+            "My learning"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "600",
+          "ratio": 15.91,
+          "required": 4.5,
+          "examples": [
+            "Labs",
+            "/ Customer collection",
+            "All amounts are INR lakh. Start: cash 20, receivables 30, inventory 50, equipment 100; payables 25, "
+          ],
+          "count": 6
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "15px",
+          "fontWeight": "400",
+          "ratio": 5.95,
+          "required": 4.5,
+          "examples": [
+            "Labs",
+            "GUIDED EXPERIMENT \u00b7 FICTIONAL NILA HOMEWARE"
+          ],
+          "count": 2
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(82, 99, 120)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "27px",
+          "fontWeight": "400",
+          "ratio": 5.94,
+          "required": 3,
+          "examples": [
+            "Record a qualifying credit sale, predict the settlement effect and choose when the customer pays."
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            17,
+            108,
+            114,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "19px",
+          "fontWeight": "400",
+          "ratio": 6.16,
+          "required": 4.5,
+          "examples": [
+            "Commit the credit sale"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 4.99,
+          "required": 4.5,
+          "examples": [
+            "Finance Atlas \u00b7 Follow your curiosity."
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 5.64,
+          "required": 4.5,
+          "examples": [
+            "All topics",
+            "Sources & master documents"
+          ],
+          "count": 2
+        }
+      ],
+      "controls": [
+        {
+          "background": [
+            244,
+            244,
+            243,
+            1
+          ],
+          "border": "rgb(16, 31, 56)",
+          "borderAgainstInside": 14.96,
+          "borderAgainstOutside": 14.96,
+          "borderWidth": "0px",
+          "complex": false,
+          "disabled": false,
+          "label": "Search finance concepts",
+          "tag": "INPUT"
+        },
+        {
+          "background": [
+            255,
+            255,
+            255,
+            1
+          ],
+          "border": "rgb(107, 129, 126)",
+          "borderAgainstInside": 4.14,
+          "borderAgainstOutside": 4.01,
+          "borderWidth": "1px",
+          "complex": false,
+          "disabled": false,
+          "label": "Selling price \u00b7 INR lakh",
+          "tag": "INPUT"
+        },
+        {
+          "background": [
+            255,
+            255,
+            255,
+            1
+          ],
+          "border": "rgb(107, 129, 126)",
+          "borderAgainstInside": 4.14,
+          "borderAgainstOutside": 4.01,
+          "borderWidth": "1px",
+          "complex": false,
+          "disabled": false,
+          "label": "Assigned inventory cost sold \u00b7 INR lakh",
+          "tag": "INPUT"
+        }
+      ]
+    },
+    {
+      "label": "After fix: topic catalogue filters",
+      "url": "http://terminal.local:4173/#atlas/topics/A02",
+      "textSamples": 560,
+      "pairs": [
+        {
+          "background": [
+            16,
+            31,
+            56,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "ratio": 16.47,
+          "required": 4.5,
+          "examples": [
+            "Skip to main content"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "36px",
+          "fontWeight": "700",
+          "ratio": 15.91,
+          "required": 3,
+          "examples": [
+            "Finance Atlas",
+            "A world of finance.",
+            "What finance is: allocating capital across time and uncertainty"
+          ],
+          "count": 71
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "600",
+          "ratio": 15.91,
+          "required": 4.5,
+          "examples": [
+            "Atlas",
+            "ECL",
+            "DSO"
+          ],
+          "count": 42
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 5.26,
+          "required": 4.5,
+          "examples": [
+            "Labs",
+            "Simulations",
+            "My learning"
+          ],
+          "count": 78
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "11px",
+          "fontWeight": "600",
+          "ratio": 5.95,
+          "required": 4.5,
+          "examples": [
+            "THE COMPLETE CURRICULUM",
+            "Surprise me with a topic",
+            "T01.01  \u00b7  Foundation"
+          ],
+          "count": 87
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(82, 99, 120)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "27px",
+          "fontWeight": "400",
+          "ratio": 5.94,
+          "required": 3,
+          "examples": [
+            "40 areas. 698 lessons, examples, and quizzes. Pick your next question."
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            224,
+            236,
+            230,
+            1
+          ],
+          "color": "rgb(39, 102, 92)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "10px",
+          "fontWeight": "400",
+          "ratio": 5.51,
+          "required": 4.5,
+          "examples": [
+            "Lesson + quiz"
+          ],
+          "count": 48
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(83, 98, 118)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "27px",
+          "fontWeight": "400",
+          "ratio": 6.01,
+          "required": 3,
+          "examples": [
+            "You made the sale. When does the cash arrive?"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(55, 75, 101)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "21px",
+          "fontWeight": "400",
+          "ratio": 8.61,
+          "required": 4.5,
+          "examples": [
+            "Trade receivables are customer amounts due for recognised sales. They are claims to collect cash; a "
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            237,
+            243,
+            239,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "20px",
+          "fontWeight": "700",
+          "ratio": 14.64,
+          "required": 3,
+          "examples": [
+            "Closing gross = opening gross + credit sales \u2212 collections \u2212 write-offs (no other movements)"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(65, 83, 107)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "500",
+          "ratio": 7.59,
+          "required": 4.5,
+          "examples": [
+            "Connects to:"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(64, 83, 108)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "ratio": 7.6,
+          "required": 4.5,
+          "examples": [
+            "Separate recognising a qualifying credit sale from collecting an existing invoice.",
+            "Reconcile opening balances, credit sales, collections, write-offs and a closing allowance.",
+            "Explain a write-off already covered by an allowance."
+          ],
+          "count": 90
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "11px",
+          "fontWeight": "600",
+          "ratio": 5.56,
+          "required": 4.5,
+          "examples": [
+            "PREDICT BEFORE READING ON  \u00b7 SEPARATE NILA SCENARIO",
+            "Scenario inputs \u00b7 each unit is shown",
+            "Give me a directional hint"
+          ],
+          "count": 12
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "23px",
+          "fontWeight": "700",
+          "ratio": 14.87,
+          "required": 3,
+          "examples": [
+            "What changes when Nila receives this payment?",
+            "Which combination gives closing gross receivables, closing net receivables and customer receipts?",
+            "Which statement is correct immediately after the covered write-off?"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(64, 83, 108)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "ratio": 7.1,
+          "required": 4.5,
+          "examples": [
+            "Separate Nila scenario: an existing recognised customer invoice is 9. The customer pays 4 against it",
+            "Input",
+            "Value"
+          ],
+          "count": 45
+        },
+        {
+          "background": [
+            255,
+            253,
+            251,
+            1
+          ],
+          "color": "rgb(48, 68, 94)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 9.79,
+          "required": 4.5,
+          "examples": [
+            "Cash +4 and new revenue +4",
+            "Cash +4, receivables \u22124, no new revenue",
+            "Cash and receivables both stay unchanged"
+          ],
+          "count": 11
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "ratio": 4.92,
+          "required": 4.5,
+          "examples": [
+            "Lesson practice is separate from the topic quiz and case clues. Retry keeps your first response. See"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            238,
+            244,
+            238,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "11px",
+          "fontWeight": "600",
+          "ratio": 5.51,
+          "required": 4.5,
+          "examples": [
+            "A worked example \u00b7 illustrative \u00b7 separate from practice",
+            "Scenario inputs \u00b7 each unit is shown",
+            "BROADER DOMAIN CASE \u00b7 ILLUSTRATIVE"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            238,
+            244,
+            238,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "23px",
+          "fontWeight": "700",
+          "ratio": 14.75,
+          "required": 3,
+          "examples": [
+            "Work through it step by step"
+          ],
+          "count": 2
+        },
+        {
+          "background": [
+            238,
+            244,
+            238,
+            1
+          ],
+          "color": "rgb(64, 83, 108)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "ratio": 7.04,
+          "required": 4.5,
+          "examples": [
+            "A worked example: Nila opens the teaching month with gross receivables 20 and an allowance of 2. It ",
+            "Input",
+            "Value"
+          ],
+          "count": 38
+        },
+        {
+          "background": [
+            17,
+            108,
+            114,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "19px",
+          "fontWeight": "400",
+          "ratio": 6.16,
+          "required": 4.5,
+          "examples": [
+            "Open company preview \u00b7 rounds 1\u20133",
+            "Try  customer collection",
+            "Apply it in the cash mystery"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(66, 86, 109)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "20px",
+          "fontWeight": "400",
+          "ratio": 7.29,
+          "required": 4.5,
+          "examples": [
+            "A customer pays \u20b95 lakh against a previously recognised receivable. With no new sale or other event,",
+            "\u201c Revenue rises again \u201d \u2014  not correct .   2  submitted  answers . Retrying keeps this record.",
+            "First answer :"
+          ],
+          "count": 4
+        },
+        {
+          "background": [
+            234,
+            244,
+            239,
+            1
+          ],
+          "color": "rgb(20, 91, 78)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "20px",
+          "fontWeight": "400",
+          "ratio": 7.09,
+          "required": 4.5,
+          "examples": [
+            "Cash rises; receivables fall"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            231,
+            241,
+            231,
+            1
+          ],
+          "color": "rgb(36, 90, 75)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 6.87,
+          "required": 4.5,
+          "examples": [
+            "Correct. Cash rises by \u20b95 lakh and receivables fall by \u20b95 lakh. Revenue was recognised when the sale"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            17,
+            108,
+            114,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "19px",
+          "fontWeight": "700",
+          "ratio": 6.16,
+          "required": 3,
+          "examples": [
+            "Trace it through the statements"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(101, 115, 129)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 4.69,
+          "required": 4.5,
+          "examples": [
+            "Recognition criteria must first be met.",
+            "A cash sale does not create an outstanding receivable.",
+            "Exclude non-operating receivables when defining the operating perimeter."
+          ],
+          "count": 8
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 4.99,
+          "required": 4.5,
+          "examples": [
+            "Finance Atlas \u00b7 Follow your curiosity."
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 5.64,
+          "required": 4.5,
+          "examples": [
+            "All topics",
+            "Sources & master documents"
+          ],
+          "count": 2
+        }
+      ],
+      "controls": [
+        {
+          "background": [
+            244,
+            244,
+            243,
+            1
+          ],
+          "border": "rgb(16, 31, 56)",
+          "borderAgainstInside": 14.96,
+          "borderAgainstOutside": 14.96,
+          "borderWidth": "0px",
+          "complex": false,
+          "disabled": false,
+          "label": "Search finance concepts",
+          "tag": "INPUT"
+        },
+        {
+          "background": [
+            255,
+            253,
+            250,
+            1
+          ],
+          "border": "rgb(107, 129, 126)",
+          "borderAgainstInside": 4.08,
+          "borderAgainstOutside": 4.01,
+          "borderWidth": "1px",
+          "complex": false,
+          "disabled": false,
+          "label": "Finance areaAll 40 areas1. Foundations of finance2. Mathematics and quantitative foundatio",
+          "tag": "SELECT"
+        },
+        {
+          "background": [
+            255,
+            253,
+            250,
+            1
+          ],
+          "border": "rgb(107, 129, 126)",
+          "borderAgainstInside": 4.08,
+          "borderAgainstOutside": 4.01,
+          "borderWidth": "1px",
+          "complex": false,
+          "disabled": false,
+          "label": "DepthAll levelsFoundationCoreAppliedAdvancedSpecialist",
+          "tag": "SELECT"
+        },
+        {
+          "background": [
+            255,
+            253,
+            250,
+            1
+          ],
+          "border": "rgb(107, 129, 126)",
+          "borderAgainstInside": 4.08,
+          "borderAgainstOutside": 4.01,
+          "borderWidth": "1px",
+          "complex": false,
+          "disabled": false,
+          "label": "PracticeAll conceptsNot answered yetAnswered correctlyQuestions to retry",
+          "tag": "SELECT"
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "border": "rgb(107, 129, 126)",
+          "borderAgainstInside": 4.01,
+          "borderAgainstOutside": 4.01,
+          "borderWidth": "1px",
+          "complex": false,
+          "disabled": false,
+          "label": "Filter concept relationships",
+          "tag": "SELECT"
+        }
+      ]
+    },
+    {
+      "label": "After fix: selected receivables and statement caption",
+      "url": "http://terminal.local:4173/#atlas/statements/balance/A02",
+      "textSamples": 388,
+      "pairs": [
+        {
+          "background": [
+            16,
+            31,
+            56,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "ratio": 16.47,
+          "required": 4.5,
+          "examples": [
+            "Skip to main content"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "36px",
+          "fontWeight": "700",
+          "ratio": 15.91,
+          "required": 3,
+          "examples": [
+            "Finance Atlas",
+            "Every number has a story",
+            "Assets"
+          ],
+          "count": 25
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "600",
+          "ratio": 15.91,
+          "required": 4.5,
+          "examples": [
+            "Atlas",
+            "\u20b9 lakh",
+            "Cash"
+          ],
+          "count": 56
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 5.26,
+          "required": 4.5,
+          "examples": [
+            "Labs",
+            "Simulations",
+            "My learning"
+          ],
+          "count": 26
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(82, 99, 120)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "27px",
+          "fontWeight": "400",
+          "ratio": 5.94,
+          "required": 3,
+          "examples": [
+            "Explore how a balance sheet connects to the rest of finance."
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "ratio": 5.95,
+          "required": 4.5,
+          "examples": [
+            "Balance sheet",
+            "See the connection atlas",
+            "Try a finance mystery"
+          ],
+          "count": 39
+        },
+        {
+          "background": [
+            240,
+            241,
+            238,
+            1
+          ],
+          "color": "rgb(98, 109, 120)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "ratio": 4.66,
+          "required": 4.5,
+          "examples": [
+            "Income",
+            "Cash flow"
+          ],
+          "count": 2
+        },
+        {
+          "background": [
+            226,
+            242,
+            241,
+            1
+          ],
+          "color": "rgb(7, 83, 98)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "22px",
+          "fontWeight": "700",
+          "ratio": 7.51,
+          "required": 3,
+          "examples": [
+            "Trade receivables",
+            "30"
+          ],
+          "count": 2
+        },
+        {
+          "background": [
+            239,
+            240,
+            240,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "22px",
+          "fontWeight": "700",
+          "ratio": 14.42,
+          "required": 3,
+          "examples": [
+            "Total assets",
+            "200",
+            "Total liabilities & equity"
+          ],
+          "count": 4
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(83, 98, 118)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "27px",
+          "fontWeight": "400",
+          "ratio": 6.01,
+          "required": 3,
+          "examples": [
+            "You made the sale. When does the cash arrive?"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(55, 75, 101)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "21px",
+          "fontWeight": "400",
+          "ratio": 8.61,
+          "required": 4.5,
+          "examples": [
+            "Trade receivables are customer amounts due for recognised sales. They are claims to collect cash; a "
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            237,
+            243,
+            239,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "20px",
+          "fontWeight": "700",
+          "ratio": 14.64,
+          "required": 3,
+          "examples": [
+            "Closing gross = opening gross + credit sales \u2212 collections \u2212 write-offs (no other movements)"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(65, 83, 107)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "500",
+          "ratio": 7.59,
+          "required": 4.5,
+          "examples": [
+            "Connects to:"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(64, 83, 108)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "ratio": 7.6,
+          "required": 4.5,
+          "examples": [
+            "Separate recognising a qualifying credit sale from collecting an existing invoice.",
+            "Reconcile opening balances, credit sales, collections, write-offs and a closing allowance.",
+            "Explain a write-off already covered by an allowance."
+          ],
+          "count": 90
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "11px",
+          "fontWeight": "600",
+          "ratio": 5.56,
+          "required": 4.5,
+          "examples": [
+            "PREDICT BEFORE READING ON  \u00b7 SEPARATE NILA SCENARIO",
+            "Scenario inputs \u00b7 each unit is shown",
+            "Give me a directional hint"
+          ],
+          "count": 12
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "23px",
+          "fontWeight": "700",
+          "ratio": 14.87,
+          "required": 3,
+          "examples": [
+            "What changes when Nila receives this payment?",
+            "Which combination gives closing gross receivables, closing net receivables and customer receipts?",
+            "Which statement is correct immediately after the covered write-off?"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(64, 83, 108)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "ratio": 7.1,
+          "required": 4.5,
+          "examples": [
+            "Separate Nila scenario: an existing recognised customer invoice is 9. The customer pays 4 against it",
+            "Input",
+            "Value"
+          ],
+          "count": 45
+        },
+        {
+          "background": [
+            255,
+            253,
+            251,
+            1
+          ],
+          "color": "rgb(48, 68, 94)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 9.79,
+          "required": 4.5,
+          "examples": [
+            "Cash +4 and new revenue +4",
+            "Cash +4, receivables \u22124, no new revenue",
+            "Cash and receivables both stay unchanged"
+          ],
+          "count": 11
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "ratio": 4.92,
+          "required": 4.5,
+          "examples": [
+            "Lesson practice is separate from the topic quiz and case clues. Retry keeps your first response. See"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            238,
+            244,
+            238,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "11px",
+          "fontWeight": "600",
+          "ratio": 5.51,
+          "required": 4.5,
+          "examples": [
+            "A worked example \u00b7 illustrative \u00b7 separate from practice",
+            "Scenario inputs \u00b7 each unit is shown",
+            "BROADER DOMAIN CASE \u00b7 ILLUSTRATIVE"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            238,
+            244,
+            238,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "23px",
+          "fontWeight": "700",
+          "ratio": 14.75,
+          "required": 3,
+          "examples": [
+            "Work through it step by step"
+          ],
+          "count": 2
+        },
+        {
+          "background": [
+            238,
+            244,
+            238,
+            1
+          ],
+          "color": "rgb(64, 83, 108)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "ratio": 7.04,
+          "required": 4.5,
+          "examples": [
+            "A worked example: Nila opens the teaching month with gross receivables 20 and an allowance of 2. It ",
+            "Input",
+            "Value"
+          ],
+          "count": 38
+        },
+        {
+          "background": [
+            17,
+            108,
+            114,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "19px",
+          "fontWeight": "400",
+          "ratio": 6.16,
+          "required": 4.5,
+          "examples": [
+            "Open company preview \u00b7 rounds 1\u20133",
+            "Try  customer collection",
+            "Apply it in the cash mystery"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(66, 86, 109)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "20px",
+          "fontWeight": "400",
+          "ratio": 7.29,
+          "required": 4.5,
+          "examples": [
+            "A customer pays \u20b95 lakh against a previously recognised receivable. With no new sale or other event,",
+            "\u201c Revenue rises again \u201d \u2014  not correct .   2  submitted  answers . Retrying keeps this record.",
+            "First answer :"
+          ],
+          "count": 4
+        },
+        {
+          "background": [
+            234,
+            244,
+            239,
+            1
+          ],
+          "color": "rgb(20, 91, 78)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "20px",
+          "fontWeight": "400",
+          "ratio": 7.09,
+          "required": 4.5,
+          "examples": [
+            "Cash rises; receivables fall"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            231,
+            241,
+            231,
+            1
+          ],
+          "color": "rgb(36, 90, 75)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 6.87,
+          "required": 4.5,
+          "examples": [
+            "Correct. Cash rises by \u20b95 lakh and receivables fall by \u20b95 lakh. Revenue was recognised when the sale"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            17,
+            108,
+            114,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "19px",
+          "fontWeight": "700",
+          "ratio": 6.16,
+          "required": 3,
+          "examples": [
+            "Trace it through the statements"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(101, 115, 129)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 4.69,
+          "required": 4.5,
+          "examples": [
+            "Recognition criteria must first be met.",
+            "A cash sale does not create an outstanding receivable.",
+            "Exclude non-operating receivables when defining the operating perimeter."
+          ],
+          "count": 8
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 4.99,
+          "required": 4.5,
+          "examples": [
+            "Finance Atlas \u00b7 Follow your curiosity."
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 5.64,
+          "required": 4.5,
+          "examples": [
+            "All topics",
+            "Sources & master documents"
+          ],
+          "count": 2
+        }
+      ],
+      "controls": [
+        {
+          "background": [
+            244,
+            244,
+            243,
+            1
+          ],
+          "border": "rgb(16, 31, 56)",
+          "borderAgainstInside": 14.96,
+          "borderAgainstOutside": 14.96,
+          "borderWidth": "0px",
+          "complex": false,
+          "disabled": false,
+          "label": "Search finance concepts",
+          "tag": "INPUT"
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "border": "rgb(107, 129, 126)",
+          "borderAgainstInside": 4.01,
+          "borderAgainstOutside": 4.01,
+          "borderWidth": "1px",
+          "complex": false,
+          "disabled": false,
+          "label": "Filter concept relationships",
+          "tag": "SELECT"
+        }
+      ]
+    },
+    {
+      "label": "After fix: incorrect topic feedback",
+      "url": "http://terminal.local:4173/#atlas/statements/balance/A02",
+      "textSamples": 388,
+      "pairs": [
+        {
+          "background": [
+            16,
+            31,
+            56,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "ratio": 16.47,
+          "required": 4.5,
+          "examples": [
+            "Skip to main content"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "36px",
+          "fontWeight": "700",
+          "ratio": 15.91,
+          "required": 3,
+          "examples": [
+            "Finance Atlas",
+            "Every number has a story",
+            "Assets"
+          ],
+          "count": 25
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "600",
+          "ratio": 15.91,
+          "required": 4.5,
+          "examples": [
+            "Atlas",
+            "\u20b9 lakh",
+            "Cash"
+          ],
+          "count": 56
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 5.26,
+          "required": 4.5,
+          "examples": [
+            "Labs",
+            "Simulations",
+            "My learning"
+          ],
+          "count": 26
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(82, 99, 120)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "27px",
+          "fontWeight": "400",
+          "ratio": 5.94,
+          "required": 3,
+          "examples": [
+            "Explore how a balance sheet connects to the rest of finance."
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "ratio": 5.95,
+          "required": 4.5,
+          "examples": [
+            "Balance sheet",
+            "See the connection atlas",
+            "Try a finance mystery"
+          ],
+          "count": 39
+        },
+        {
+          "background": [
+            240,
+            241,
+            238,
+            1
+          ],
+          "color": "rgb(98, 109, 120)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "ratio": 4.66,
+          "required": 4.5,
+          "examples": [
+            "Income",
+            "Cash flow"
+          ],
+          "count": 2
+        },
+        {
+          "background": [
+            226,
+            242,
+            241,
+            1
+          ],
+          "color": "rgb(7, 83, 98)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "22px",
+          "fontWeight": "700",
+          "ratio": 7.51,
+          "required": 3,
+          "examples": [
+            "Trade receivables",
+            "30"
+          ],
+          "count": 2
+        },
+        {
+          "background": [
+            239,
+            240,
+            240,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "22px",
+          "fontWeight": "700",
+          "ratio": 14.42,
+          "required": 3,
+          "examples": [
+            "Total assets",
+            "200",
+            "Total liabilities & equity"
+          ],
+          "count": 4
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(83, 98, 118)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "27px",
+          "fontWeight": "400",
+          "ratio": 6.01,
+          "required": 3,
+          "examples": [
+            "You made the sale. When does the cash arrive?"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(55, 75, 101)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "21px",
+          "fontWeight": "400",
+          "ratio": 8.61,
+          "required": 4.5,
+          "examples": [
+            "Trade receivables are customer amounts due for recognised sales. They are claims to collect cash; a "
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            237,
+            243,
+            239,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "20px",
+          "fontWeight": "700",
+          "ratio": 14.64,
+          "required": 3,
+          "examples": [
+            "Closing gross = opening gross + credit sales \u2212 collections \u2212 write-offs (no other movements)"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(65, 83, 107)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "500",
+          "ratio": 7.59,
+          "required": 4.5,
+          "examples": [
+            "Connects to:"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(64, 83, 108)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "ratio": 7.6,
+          "required": 4.5,
+          "examples": [
+            "Separate recognising a qualifying credit sale from collecting an existing invoice.",
+            "Reconcile opening balances, credit sales, collections, write-offs and a closing allowance.",
+            "Explain a write-off already covered by an allowance."
+          ],
+          "count": 90
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "11px",
+          "fontWeight": "600",
+          "ratio": 5.56,
+          "required": 4.5,
+          "examples": [
+            "PREDICT BEFORE READING ON  \u00b7 SEPARATE NILA SCENARIO",
+            "Scenario inputs \u00b7 each unit is shown",
+            "Give me a directional hint"
+          ],
+          "count": 12
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "23px",
+          "fontWeight": "700",
+          "ratio": 14.87,
+          "required": 3,
+          "examples": [
+            "What changes when Nila receives this payment?",
+            "Which combination gives closing gross receivables, closing net receivables and customer receipts?",
+            "Which statement is correct immediately after the covered write-off?"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(64, 83, 108)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "ratio": 7.1,
+          "required": 4.5,
+          "examples": [
+            "Separate Nila scenario: an existing recognised customer invoice is 9. The customer pays 4 against it",
+            "Input",
+            "Value"
+          ],
+          "count": 45
+        },
+        {
+          "background": [
+            255,
+            253,
+            251,
+            1
+          ],
+          "color": "rgb(48, 68, 94)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 9.79,
+          "required": 4.5,
+          "examples": [
+            "Cash +4 and new revenue +4",
+            "Cash +4, receivables \u22124, no new revenue",
+            "Cash and receivables both stay unchanged"
+          ],
+          "count": 11
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "ratio": 4.92,
+          "required": 4.5,
+          "examples": [
+            "Lesson practice is separate from the topic quiz and case clues. Retry keeps your first response. See"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            238,
+            244,
+            238,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "11px",
+          "fontWeight": "600",
+          "ratio": 5.51,
+          "required": 4.5,
+          "examples": [
+            "A worked example \u00b7 illustrative \u00b7 separate from practice",
+            "Scenario inputs \u00b7 each unit is shown",
+            "BROADER DOMAIN CASE \u00b7 ILLUSTRATIVE"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            238,
+            244,
+            238,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "23px",
+          "fontWeight": "700",
+          "ratio": 14.75,
+          "required": 3,
+          "examples": [
+            "Work through it step by step"
+          ],
+          "count": 2
+        },
+        {
+          "background": [
+            238,
+            244,
+            238,
+            1
+          ],
+          "color": "rgb(64, 83, 108)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "ratio": 7.04,
+          "required": 4.5,
+          "examples": [
+            "A worked example: Nila opens the teaching month with gross receivables 20 and an allowance of 2. It ",
+            "Input",
+            "Value"
+          ],
+          "count": 38
+        },
+        {
+          "background": [
+            17,
+            108,
+            114,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "19px",
+          "fontWeight": "400",
+          "ratio": 6.16,
+          "required": 4.5,
+          "examples": [
+            "Open company preview \u00b7 rounds 1\u20133",
+            "Try  customer collection",
+            "Apply it in the cash mystery"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(66, 86, 109)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "20px",
+          "fontWeight": "400",
+          "ratio": 7.29,
+          "required": 4.5,
+          "examples": [
+            "A customer pays \u20b95 lakh against a previously recognised receivable. With no new sale or other event,",
+            "\u201c Revenue rises again \u201d \u2014  not correct .   3  submitted  answers . Retrying keeps this record.",
+            "First answer :"
+          ],
+          "count": 4
+        },
+        {
+          "background": [
+            234,
+            244,
+            239,
+            1
+          ],
+          "color": "rgb(48, 68, 94)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "20px",
+          "fontWeight": "400",
+          "ratio": 8.84,
+          "required": 4.5,
+          "examples": [
+            "Revenue rises again"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            245,
+            237,
+            223,
+            1
+          ],
+          "color": "rgb(118, 83, 46)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 5.93,
+          "required": 4.5,
+          "examples": [
+            "Not quite. The sale was already recognised when the receivable arose. Collecting that receivable set"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            17,
+            108,
+            114,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "19px",
+          "fontWeight": "700",
+          "ratio": 6.16,
+          "required": 3,
+          "examples": [
+            "Trace it through the statements"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(101, 115, 129)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 4.69,
+          "required": 4.5,
+          "examples": [
+            "Recognition criteria must first be met.",
+            "A cash sale does not create an outstanding receivable.",
+            "Exclude non-operating receivables when defining the operating perimeter."
+          ],
+          "count": 8
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 4.99,
+          "required": 4.5,
+          "examples": [
+            "Finance Atlas \u00b7 Follow your curiosity."
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 5.64,
+          "required": 4.5,
+          "examples": [
+            "All topics",
+            "Sources & master documents"
+          ],
+          "count": 2
+        }
+      ],
+      "controls": [
+        {
+          "background": [
+            244,
+            244,
+            243,
+            1
+          ],
+          "border": "rgb(16, 31, 56)",
+          "borderAgainstInside": 14.96,
+          "borderAgainstOutside": 14.96,
+          "borderWidth": "0px",
+          "complex": false,
+          "disabled": false,
+          "label": "Search finance concepts",
+          "tag": "INPUT"
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "border": "rgb(107, 129, 126)",
+          "borderAgainstInside": 4.01,
+          "borderAgainstOutside": 4.01,
+          "borderWidth": "1px",
+          "complex": false,
+          "disabled": false,
+          "label": "Filter concept relationships",
+          "tag": "SELECT"
+        }
+      ]
+    },
+    {
+      "label": "After fix: corrected topic feedback",
+      "url": "http://terminal.local:4173/#atlas/statements/balance/A02",
+      "textSamples": 388,
+      "pairs": [
+        {
+          "background": [
+            16,
+            31,
+            56,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "ratio": 16.47,
+          "required": 4.5,
+          "examples": [
+            "Skip to main content"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "36px",
+          "fontWeight": "700",
+          "ratio": 15.91,
+          "required": 3,
+          "examples": [
+            "Finance Atlas",
+            "Every number has a story",
+            "Assets"
+          ],
+          "count": 25
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "600",
+          "ratio": 15.91,
+          "required": 4.5,
+          "examples": [
+            "Atlas",
+            "\u20b9 lakh",
+            "Cash"
+          ],
+          "count": 56
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 5.26,
+          "required": 4.5,
+          "examples": [
+            "Labs",
+            "Simulations",
+            "My learning"
+          ],
+          "count": 26
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(82, 99, 120)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "27px",
+          "fontWeight": "400",
+          "ratio": 5.94,
+          "required": 3,
+          "examples": [
+            "Explore how a balance sheet connects to the rest of finance."
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "ratio": 5.95,
+          "required": 4.5,
+          "examples": [
+            "Balance sheet",
+            "See the connection atlas",
+            "Try a finance mystery"
+          ],
+          "count": 39
+        },
+        {
+          "background": [
+            240,
+            241,
+            238,
+            1
+          ],
+          "color": "rgb(98, 109, 120)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "ratio": 4.66,
+          "required": 4.5,
+          "examples": [
+            "Income",
+            "Cash flow"
+          ],
+          "count": 2
+        },
+        {
+          "background": [
+            226,
+            242,
+            241,
+            1
+          ],
+          "color": "rgb(7, 83, 98)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "22px",
+          "fontWeight": "700",
+          "ratio": 7.51,
+          "required": 3,
+          "examples": [
+            "Trade receivables",
+            "30"
+          ],
+          "count": 2
+        },
+        {
+          "background": [
+            239,
+            240,
+            240,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "22px",
+          "fontWeight": "700",
+          "ratio": 14.42,
+          "required": 3,
+          "examples": [
+            "Total assets",
+            "200",
+            "Total liabilities & equity"
+          ],
+          "count": 4
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(83, 98, 118)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "27px",
+          "fontWeight": "400",
+          "ratio": 6.01,
+          "required": 3,
+          "examples": [
+            "You made the sale. When does the cash arrive?"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(55, 75, 101)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "21px",
+          "fontWeight": "400",
+          "ratio": 8.61,
+          "required": 4.5,
+          "examples": [
+            "Trade receivables are customer amounts due for recognised sales. They are claims to collect cash; a "
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            237,
+            243,
+            239,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "20px",
+          "fontWeight": "700",
+          "ratio": 14.64,
+          "required": 3,
+          "examples": [
+            "Closing gross = opening gross + credit sales \u2212 collections \u2212 write-offs (no other movements)"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(65, 83, 107)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "16px",
+          "fontWeight": "500",
+          "ratio": 7.59,
+          "required": 4.5,
+          "examples": [
+            "Connects to:"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(64, 83, 108)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "ratio": 7.6,
+          "required": 4.5,
+          "examples": [
+            "Separate recognising a qualifying credit sale from collecting an existing invoice.",
+            "Reconcile opening balances, credit sales, collections, write-offs and a closing allowance.",
+            "Explain a write-off already covered by an allowance."
+          ],
+          "count": 90
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "11px",
+          "fontWeight": "600",
+          "ratio": 5.56,
+          "required": 4.5,
+          "examples": [
+            "PREDICT BEFORE READING ON  \u00b7 SEPARATE NILA SCENARIO",
+            "Scenario inputs \u00b7 each unit is shown",
+            "Give me a directional hint"
+          ],
+          "count": 12
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "23px",
+          "fontWeight": "700",
+          "ratio": 14.87,
+          "required": 3,
+          "examples": [
+            "What changes when Nila receives this payment?",
+            "Which combination gives closing gross receivables, closing net receivables and customer receipts?",
+            "Which statement is correct immediately after the covered write-off?"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(64, 83, 108)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "ratio": 7.1,
+          "required": 4.5,
+          "examples": [
+            "Separate Nila scenario: an existing recognised customer invoice is 9. The customer pays 4 against it",
+            "Input",
+            "Value"
+          ],
+          "count": 45
+        },
+        {
+          "background": [
+            255,
+            253,
+            251,
+            1
+          ],
+          "color": "rgb(48, 68, 94)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 9.79,
+          "required": 4.5,
+          "examples": [
+            "Cash +4 and new revenue +4",
+            "Cash +4, receivables \u22124, no new revenue",
+            "Cash and receivables both stay unchanged"
+          ],
+          "count": 11
+        },
+        {
+          "background": [
+            246,
+            243,
+            237,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "ratio": 4.92,
+          "required": 4.5,
+          "examples": [
+            "Lesson practice is separate from the topic quiz and case clues. Retry keeps your first response. See"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            238,
+            244,
+            238,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "11px",
+          "fontWeight": "600",
+          "ratio": 5.51,
+          "required": 4.5,
+          "examples": [
+            "A worked example \u00b7 illustrative \u00b7 separate from practice",
+            "Scenario inputs \u00b7 each unit is shown",
+            "BROADER DOMAIN CASE \u00b7 ILLUSTRATIVE"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            238,
+            244,
+            238,
+            1
+          ],
+          "color": "rgb(16, 31, 56)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "23px",
+          "fontWeight": "700",
+          "ratio": 14.75,
+          "required": 3,
+          "examples": [
+            "Work through it step by step"
+          ],
+          "count": 2
+        },
+        {
+          "background": [
+            238,
+            244,
+            238,
+            1
+          ],
+          "color": "rgb(64, 83, 108)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "ratio": 7.04,
+          "required": 4.5,
+          "examples": [
+            "A worked example: Nila opens the teaching month with gross receivables 20 and an allowance of 2. It ",
+            "Input",
+            "Value"
+          ],
+          "count": 38
+        },
+        {
+          "background": [
+            17,
+            108,
+            114,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "19px",
+          "fontWeight": "400",
+          "ratio": 6.16,
+          "required": 4.5,
+          "examples": [
+            "Open company preview \u00b7 rounds 1\u20133",
+            "Try  customer collection",
+            "Apply it in the cash mystery"
+          ],
+          "count": 3
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(66, 86, 109)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "20px",
+          "fontWeight": "400",
+          "ratio": 7.29,
+          "required": 4.5,
+          "examples": [
+            "A customer pays \u20b95 lakh against a previously recognised receivable. With no new sale or other event,",
+            "\u201c Revenue rises again \u201d \u2014  not correct .   4  submitted  answers . Retrying keeps this record.",
+            "First answer :"
+          ],
+          "count": 4
+        },
+        {
+          "background": [
+            234,
+            244,
+            239,
+            1
+          ],
+          "color": "rgb(20, 91, 78)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "20px",
+          "fontWeight": "400",
+          "ratio": 7.09,
+          "required": 4.5,
+          "examples": [
+            "Cash rises; receivables fall"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            231,
+            241,
+            231,
+            1
+          ],
+          "color": "rgb(36, 90, 75)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "ratio": 6.87,
+          "required": 4.5,
+          "examples": [
+            "Correct. Cash rises by \u20b95 lakh and receivables fall by \u20b95 lakh. Revenue was recognised when the sale"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            17,
+            108,
+            114,
+            1
+          ],
+          "color": "rgb(255, 255, 255)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "19px",
+          "fontWeight": "700",
+          "ratio": 6.16,
+          "required": 3,
+          "examples": [
+            "Trace it through the statements"
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "color": "rgb(101, 115, 129)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 4.69,
+          "required": 4.5,
+          "examples": [
+            "Recognition criteria must first be met.",
+            "A cash sale does not create an outstanding receivable.",
+            "Exclude non-operating receivables when defining the operating perimeter."
+          ],
+          "count": 8
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(93, 107, 123)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 4.99,
+          "required": 4.5,
+          "examples": [
+            "Finance Atlas \u00b7 Follow your curiosity."
+          ],
+          "count": 1
+        },
+        {
+          "background": [
+            246,
+            245,
+            240,
+            1
+          ],
+          "color": "rgb(17, 108, 114)",
+          "complex": false,
+          "disabled": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "ratio": 5.64,
+          "required": 4.5,
+          "examples": [
+            "All topics",
+            "Sources & master documents"
+          ],
+          "count": 2
+        }
+      ],
+      "controls": [
+        {
+          "background": [
+            244,
+            244,
+            243,
+            1
+          ],
+          "border": "rgb(16, 31, 56)",
+          "borderAgainstInside": 14.96,
+          "borderAgainstOutside": 14.96,
+          "borderWidth": "0px",
+          "complex": false,
+          "disabled": false,
+          "label": "Search finance concepts",
+          "tag": "INPUT"
+        },
+        {
+          "background": [
+            252,
+            251,
+            248,
+            1
+          ],
+          "border": "rgb(107, 129, 126)",
+          "borderAgainstInside": 4.01,
+          "borderAgainstOutside": 4.01,
+          "borderWidth": "1px",
+          "complex": false,
+          "disabled": false,
+          "label": "Filter concept relationships",
+          "tag": "SELECT"
+        }
+      ]
+    }
+  ]
+}

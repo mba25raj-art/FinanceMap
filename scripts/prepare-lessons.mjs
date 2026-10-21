@@ -1,11 +1,13 @@
-import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync, mkdirSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { parseDeepLessons } from './deep-lesson-format.mjs';
-import { lessons as core } from '../src/data/lessons.js';
+import { lessons as core, mystery } from '../src/data/lessons.js';
 const read = path => JSON.parse(readFileSync(new URL(path, import.meta.url), 'utf8'));
 const atlas = read('../content/master-network.json');
 const guides = read('../content/domain-guides.json');
 const prompts = read('../content/quiz-prompts.json');
 const feedback = read('../content/quiz-feedback.json');
+const incorrectFeedback = read('../content/quiz-option-feedback.json');
 const output = {};
 const domainDepth = parseDeepLessons(readFileSync(new URL('../content/domain-depth.guide',import.meta.url),'utf8'));
 if(Object.keys(domainDepth).length!==atlas.domains.length) throw new Error('Every domain requires a detailed study guide');
@@ -56,8 +58,18 @@ for (const atom of atlas.atoms) {
   if (!core[atom.id]) throw new Error(`Missing anchor lesson ${atom.id}`);
   output[atom.id] = {...core[atom.id], stage: 'Core concept lesson'};
 }
+// Key explanations by option text so rotating the choices cannot mispair them.
+for (const [id, choices] of Object.entries(incorrectFeedback)) {
+  const lesson = output[id];
+  if (!lesson) throw new Error(`Unknown feedback concept: ${id}`);
+  for (const [choice, explanation] of Object.entries(choices)) {
+    if (!lesson.options.includes(choice) || choice === lesson.options[lesson.correct]) throw new Error(`Invalid incorrect feedback choice: ${id}: ${choice}`);
+    if (typeof explanation !== 'string' || !explanation.trim() || /^(Exactly|Correct)[.!]/i.test(explanation)) throw new Error(`Invalid incorrect feedback explanation: ${id}: ${choice}`);
+  }
+  lesson.incorrectFeedback = choices;
+}
 if (Object.keys(output).length !== 698) throw new Error('Lesson coverage must be 698/698');
-const aliases={A01:'T05.01',A02:'T06.04',A03:'T06.05',A04:'T06.13',A06:'T07.03',A07:'T07.06',A08:'T05.10',A09:'T05.11',A10:'T17.05',A11:'T17.05',A12:'T17.05',A15:'T17.03',A16:'T17.04',A18:'T07.08',A19:'T17.07',A13:'T13.10',A14:'T13.01',A20:'T09.08',A05:'T14.01',A17:'T24.16'};
+const aliases=read('../content/lesson-aliases.json');
 for(const [id,target] of Object.entries(aliases)) if(deep[target]&&!deep[id]) deep[id]=deep[target];
 for(const [id,detail] of Object.entries(deep)) {
   if(!output[id]) throw new Error('Unknown detailed lesson '+id);
@@ -70,6 +82,23 @@ for (const n of atlas.nodes) {
   if (!l || !l.summary || !l.example || !l.question || l.options.length !== 3 || new Set(l.options).size !== 3 || !Number.isInteger(l.correct) || l.correct < 0 || l.correct > 2) throw new Error(`Invalid assessment: ${n.id}`);
 }
 writeFileSync(new URL('../src/data/complete-lessons.json', import.meta.url), JSON.stringify(output));
+// Keep compact lesson/assessment metadata available to navigation and save validation.
+// Full topic mechanisms and area guides are fetched only when study is opened.
+writeFileSync(new URL('../src/data/lesson-summaries.json',import.meta.url),JSON.stringify(Object.fromEntries(Object.entries(output).map(([id,{detail,...lesson}])=>[id,{...lesson,detail:!!detail}]))));
+const conceptDomains=Object.fromEntries(atlas.nodes.map(n=>[n.id,n.domain]));
+writeFileSync(new URL('../src/data/study-manifest.json',import.meta.url),JSON.stringify({schemaVersion:1,conceptDomains,domains:atlas.domains.map(d=>d.id)}));
+mkdirSync(new URL('../src/data/study/',import.meta.url),{recursive:true});
+for(const domain of atlas.domains){
+ const details=Object.fromEntries(atlas.nodes.filter(n=>n.domain===domain.id).map(n=>[n.id,deep[n.id]]));
+ if(Object.values(details).some(d=>!d))throw new Error('Missing deferred study material for '+domain.id);
+ writeFileSync(new URL(`../src/data/study/${domain.id}.json`,import.meta.url),JSON.stringify({domain:domain.id,details,guide:domainDepth[domain.id]}));
+}
+const assessmentDigest=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
+writeFileSync(new URL('../content/assessment-versions.json',import.meta.url),JSON.stringify({
+  schemaVersion:1,
+  topics:Object.fromEntries(Object.entries(output).map(([id,l])=>[id,assessmentDigest([l.question,l.quizContext||'',l.example,l.options,l.correct])])),
+  cases:{P02:assessmentDigest(mystery.steps.map(c=>[c.concept,c.question,c.options,c.correct]))},
+},null,2)+'\n');
 writeFileSync(new URL('../src/data/domain-study-guides.json', import.meta.url), JSON.stringify(domainDepth));
 writeFileSync(new URL('../content/lesson-coverage.json', import.meta.url), JSON.stringify({
   totalConcepts: atlas.nodes.length, lessons: Object.keys(output).length, examples: Object.keys(output).length,

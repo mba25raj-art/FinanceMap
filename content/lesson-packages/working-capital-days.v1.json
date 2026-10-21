@@ -1,0 +1,458 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "T14.03",
+  "contentVersion": "1.0.0",
+  "hoverDefinition": "Inventory, receivable and payable days compare average operating balances with matched period flows. Together they estimate the cash operating cycle under stated conventions.",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "Matched balances and flows, average versus closing proxies, inventory/receivable/payable days, the cash cycle and interpretation limits."
+    ],
+    "deferred": [
+      "Seasonal daily modelling, manufacturing subcycles, credit-loss adjustments and causal estimates from a ratio change are deferred."
+    ]
+  },
+  "objectives": [
+    {
+      "id": "days",
+      "statement": "Calculate and interpret three operating-day measures using supplied conventions.",
+      "evidence": "Use credit sales for receivables, cost sold for stock and credit purchases for supplier payables.",
+      "outcomeIds": [
+        "LO3"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh",
+      "days"
+    ],
+    "timeframe": "Independent fictional teaching scenarios. Worked examples and practice start separately; they are not consecutive company-case rounds.",
+    "assumptions": [
+      "All balances are representative period averages; all stated sales/purchases are credit transactions.",
+      "Use the supplied 360-day or other period length, not an unstated calendar convention. No tax or valuation distortion.",
+      "Ratios are estimates of aggregate timing, not invoice due dates or a cash forecast."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Conceptual teaching assumptions, with INR lakh as a unit rather than a jurisdiction. No tax rate, financing term, reporting classification, valuation input or management buffer is a current rule or market recommendation. Applicable framework, jurisdiction, reporting period and effective amendments require separate study."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "match",
+      "title": "Match each balance to its flow",
+      "paragraphs": [
+        "Inventory days = average inventory ÷ period cost of sales × days in the period. Receivable days = average trade receivables ÷ period credit sales × period days. Payable days = average ordinary trade payables ÷ period credit purchases × period days. Each numerator and denominator must use compatible units and operating scope.",
+        "Purchases and cost sold differ when stock changes. Cost of sales may be a documented payable-days proxy when purchases are unavailable; it must not silently replace known credit purchases. A zero denominator makes the ratio undefined, not zero days."
+      ]
+    },
+    {
+      "id": "cycle",
+      "title": "Combine the operating timing",
+      "paragraphs": [
+        "Cash operating cycle = inventory days + receivable days − payable days. Inventory holding and customer credit delay recovery; agreed supplier credit offsets part of the wait. A negative cycle means customers can pay before the relevant supplier settlement in the simplified pattern.",
+        "Average balances smooth the period. Closing balances are a stated proxy when averages are unavailable, and can be distorted by seasonality or a one-off payment. Do not annualise a monthly denominator and then multiply by monthly days again."
+      ]
+    },
+    {
+      "id": "interpret",
+      "title": "Investigate before changing policy",
+      "paragraphs": [
+        "A longer cycle can increase funding tied up, but the ratio alone does not identify the cause. Slow sales, deliberate safety stock, customer mix, disputed invoices or changed terms can all matter. Look at ageing, due dates and the period cash forecast.",
+        "Faster collection may affect sales or discounts; less stock can create stock-outs; delayed supplier payment may breach terms. Compare like periods and definitions, then test feasible actions rather than assuming every lower ratio is better."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "Average and closing balance",
+      "explanation": "The average represents the flow period; closing is a point-in-time proxy.",
+      "whenItMatters": "State which one is used before comparing years."
+    },
+    {
+      "name": "Credit purchases and cost sold",
+      "explanation": "Supplier credit funds purchases, including unsold stock.",
+      "whenItMatters": "Known purchases are the appropriate denominator here."
+    },
+    {
+      "name": "Cycle estimate and due-date forecast",
+      "explanation": "Days summarise aggregate timing; a forecast schedules actual receipts/payments.",
+      "whenItMatters": "A short cycle does not rule out a large payment tomorrow."
+    }
+  ],
+  "workedExample": {
+    "id": "days-360",
+    "scenarioId": "days-360-worked",
+    "setup": "Independent annual scenario: average stock 24, receivables 30 and ordinary payables 15. Annual cost sold is 180, credit sales 300 and credit purchases 150. Assume a 360-day year and representative averages.",
+    "inputs": [
+      {
+        "key": "inventory",
+        "label": "Inventory",
+        "value": 24,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "receivables",
+        "label": "Receivables",
+        "value": 30,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "payables",
+        "label": "Payables",
+        "value": 15,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "cost_sold",
+        "label": "Cost sold",
+        "value": 180,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "credit_sales",
+        "label": "Credit sales",
+        "value": 300,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "credit_purchases",
+        "label": "Credit purchases",
+        "value": 150,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "period_days",
+        "label": "Period length",
+        "value": 360,
+        "unit": "days"
+      }
+    ],
+    "steps": [
+      "Inventory days = 24 ÷ 180 × 360 = 48.",
+      "Receivable days = 30 ÷ 300 × 360 = 36.",
+      "Payable days = 15 ÷ 150 × 360 = 36.",
+      "Cash operating cycle = 48 + 36 − 36 = 48 days.",
+      "Using cost sold 180 for payables would give 30 days instead of 36; it is not the stated purchases basis.",
+      "The result describes an aggregate timing pattern, not an instruction to pay any invoice late."
+    ],
+    "result": "Inventory 48 days, receivables 36 days, payables 36 days; cash cycle 48 days.",
+    "interpretation": "Use the ratio to locate a question, then inspect operational evidence and dated cash needs."
+  },
+  "statementEffects": {
+    "applicability": "not-applicable",
+    "explanation": "Effects under the stated simplified scenario. Forecasts and economic values do not themselves create accounting entries.",
+    "changes": []
+  },
+  "misconceptions": [
+    {
+      "id": "denominator",
+      "claim": "All day measures use revenue.",
+      "correction": "Use the flow that corresponds to each balance.",
+      "diagnostic": "What transaction creates the balance?"
+    },
+    {
+      "id": "proxy",
+      "claim": "Closing balance and average are always interchangeable.",
+      "correction": "A closing proxy can differ materially in seasonal operations.",
+      "diagnostic": "Is the balance representative of the period?"
+    },
+    {
+      "id": "sum",
+      "claim": "Add supplier days to the cash cycle.",
+      "correction": "Subtract agreed supplier credit from stock plus collection time.",
+      "diagnostic": "Which wait is funded by the supplier?"
+    }
+  ],
+  "practice": [
+    {
+      "id": "days-predict",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "cycle",
+      "scenarioId": "days-predict-independent",
+      "objectiveIds": [
+        "days"
+      ],
+      "setup": "Separate 300-day trading period: representative average stock 10, receivables 12 and payables 8; cost sold 100, credit sales 120 and credit purchases 80. No other component is included.",
+      "inputs": [
+        {
+          "key": "inventory",
+          "label": "Inventory",
+          "value": 10,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "receivables",
+          "label": "Receivables",
+          "value": 12,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "payables",
+          "label": "Payables",
+          "value": 8,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "cost_sold",
+          "label": "Cost sold",
+          "value": 100,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "credit_sales",
+          "label": "Credit sales",
+          "value": 120,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "credit_purchases",
+          "label": "Credit purchases",
+          "value": 80,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "period_days",
+          "label": "Period length",
+          "value": 300,
+          "unit": "days"
+        }
+      ],
+      "question": "What are inventory, receivable and payable days and the cash cycle?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "30, 30 and 30 days; cash cycle 90 days",
+          "feedback": "Supplier credit offsets part of the operating wait.",
+          "misconceptionId": "sum"
+        },
+        {
+          "id": "correct",
+          "text": "30, 30 and 30 days; cash cycle 30 days",
+          "feedback": "Each matched ratio is 30 days: 10/100×300, 12/120×300 and 8/80×300. Cycle = 30 + 30 − 30 = 30.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "25, 30 and 20 days; cash cycle 35 days",
+          "feedback": "Using sales for stock and supplier balances mismatches the flows.",
+          "misconceptionId": "denominator"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Each matched ratio is 30 days: 10/100×300, 12/120×300 and 8/80×300. Cycle = 30 + 30 − 30 = 30.",
+      "hints": [
+        {
+          "text": "Match each average balance to its own period flow.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Each matched ratio is 30 days: 10/100×300, 12/120×300 and 8/80×300. Cycle = 30 + 30 − 30 = 30.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Why is the denominator different for each balance?",
+        "rubric": [
+          "Identify the three flows.",
+          "Use the 300-day convention.",
+          "Subtract supplier days."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "days-transfer-purchases",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "interpret",
+      "scenarioId": "days-transfer-purchases-independent",
+      "objectiveIds": [
+        "days"
+      ],
+      "setup": "Separate annual scenario, 360 days: average inventory 15, receivables 20, payables 20; cost sold 180, credit sales 180 and credit purchases 240. Use actual credit purchases for payable days.",
+      "inputs": [
+        {
+          "key": "inventory",
+          "label": "Inventory",
+          "value": 15,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "receivables",
+          "label": "Receivables",
+          "value": 20,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "payables",
+          "label": "Payables",
+          "value": 20,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "cost_sold",
+          "label": "Cost sold",
+          "value": 180,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "credit_sales",
+          "label": "Credit sales",
+          "value": 180,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "credit_purchases",
+          "label": "Credit purchases",
+          "value": 240,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "period_days",
+          "label": "Period length",
+          "value": 360,
+          "unit": "days"
+        }
+      ],
+      "question": "Which payable days and cycle use the stated convention?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "Payables 40 days; cycle 30 days",
+          "feedback": "Cost sold 180 is not the supplied credit purchases 240.",
+          "misconceptionId": "denominator"
+        },
+        {
+          "id": "correct",
+          "text": "Payables 30 days; cycle 40 days",
+          "feedback": "Inventory = 15/180×360 = 30; receivables = 20/180×360 = 40; payables = 20/240×360 = 30; cycle = 30 + 40 − 30 = 40 days.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "Payables 30 days; cycle 100 days",
+          "feedback": "The cash cycle subtracts payable days.",
+          "misconceptionId": "sum"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Inventory = 15/180×360 = 30; receivables = 20/180×360 = 40; payables = 20/240×360 = 30; cycle = 30 + 40 − 30 = 40 days.",
+      "hints": [
+        {
+          "text": "Purchases exceed cost sold; do not silently replace one with the other.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Inventory = 15/180×360 = 30; receivables = 20/180×360 = 40; payables = 20/240×360 = 30; cycle = 30 + 40 − 30 = 40 days.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "What would the cost-of-sales proxy conceal?",
+        "rubric": [
+          "Show actual payable days 30.",
+          "Reconcile the cycle 40.",
+          "Label any proxy before making comparisons."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E0646",
+      "to": "T14.02",
+      "kind": "learning",
+      "purpose": "Study these together to manage the timing gap between cash receipts, payments and funding.",
+      "conditions": "A topical exploration link, not a claim that one determines the other.",
+      "computed": false
+    },
+    {
+      "edgeId": "E0649",
+      "to": "T14.02",
+      "kind": "learning",
+      "purpose": "Study these together to manage the timing gap between cash receipts, payments and funding.",
+      "conditions": "A topical exploration link, not a claim that one determines the other.",
+      "computed": false
+    },
+    {
+      "edgeId": "E0650",
+      "to": "T06.01",
+      "kind": "learning",
+      "purpose": "Suggested starting knowledge: Current versus non-current classification. It helps you manage the timing gap between cash receipts, payments and funding.",
+      "conditions": "Suggested learning order; learners can still explore freely.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D14",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "How do daily seasonality and ageing change the reading of an annual average?",
+      "How would terms, discounts and stock-outs change a proposed cycle reduction?"
+    ],
+    "conceptIds": [
+      "T14.02",
+      "T14.02",
+      "T06.01"
+    ],
+    "limitations": "Introductory study coverage. Seasonal daily modelling, manufacturing subcycles, credit-loss adjustments and causal estimates from a ratio change are deferred."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "The connected six-round case remains a separate implementation task; these examples do not imply playable rounds."
+    }
+  ],
+  "sources": [
+    {
+      "id": "ratios",
+      "title": "ACCA: How to approach performance appraisal questions",
+      "url": "https://www.accaglobal.com/sg/en/student/exam-support-resources/fundamentals-exams-study-resources/f7/technical-articles/appraisal-questions.html",
+      "supports": [
+        "Inventory/cost-of-sales, receivables/credit-sales and payables/credit-purchases ratio conventions. All averaging periods, denominators and year lengths are supplied in the teaching data."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "wcm",
+      "title": "ACCA: Working capital management",
+      "url": "https://www.accaglobal.com/gb/en/student/exam-support-resources/fundamentals-exams-study-resources/f9/technical-articles/wcm.html",
+      "supports": [
+        "Background on the operating cycle, period conventions and liquidity/profitability trade-offs. Buffer amounts and forecast dates in this lesson are authored assumptions, not recommended thresholds."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "method": "ai-content-source-arithmetic",
+    "evidence": [
+      "B3 topic mechanics, terminology, signs, timing, source boundaries and feedback reviewed in docs/implementation/task-04-4-b3.md.",
+      "Independent worked and assessment calculations checked in tests/b3-lessons.test.mjs; shared route, version, hint and retry regressions also apply.",
+      "Scoped AI content review, not independent professional approval, interactive browser verification or learner-pilot evidence."
+    ]
+  }
+}

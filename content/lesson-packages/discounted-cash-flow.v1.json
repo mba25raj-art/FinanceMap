@@ -1,0 +1,430 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "A19",
+  "contentVersion": "1.0.0",
+  "hoverDefinition": "A DCF values a defined future cash stream by discounting it at a matched rate. In an FCFF model, discount explicit forecasts and the end-of-forecast terminal amount to obtain operating value before the claims bridge.",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "Forecast date conventions, matched FCFF/WACC, separate terminal amount, no double-counting and conditional operating value."
+    ],
+    "deferred": [
+      "Full forecasting, terminal reinvestment estimation, changing-rate models, professional calibration and complete claims valuation are deferred."
+    ]
+  },
+  "objectives": [
+    {
+      "id": "dcf",
+      "statement": "Discount explicit FCFF and an end-of-horizon terminal value without repeating cash.",
+      "evidence": "Place the terminal amount at its supplied date and distinguish operating from equity value.",
+      "outcomeIds": [
+        "LO6"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh",
+      "fraction",
+      "years"
+    ],
+    "timeframe": "Independent fictional teaching scenarios. Worked examples and practice start separately; they are not consecutive company-case rounds.",
+    "assumptions": [
+      "All FCFF inputs are complete before debt service and match the hypothetical effective annual WACC.",
+      "Cash occurs at year ends. Supplied terminal value is at the final forecast year end and covers only later cash flows.",
+      "No additional initial investment, excess cash, debt or other claim is folded into the operating value unless explicitly stated.",
+      "Retain precision and round displayed INR lakh at the end. Terminal values are assumptions, not sale guarantees."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Conceptual teaching assumptions, with INR lakh as a unit rather than a jurisdiction. No tax rate, financing term, reporting classification, valuation input or management buffer is a current rule or market recommendation. Applicable framework, jurisdiction, reporting period and effective amendments require separate study."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "define",
+      "title": "Define the asset and forecast perimeter",
+      "paragraphs": [
+        "For these FCFF examples, estimate operating value from future cash after operating taxes/reinvestment and before debt service. Discount at a matched WACC. A valuation of equity cash after debt service requires a different rate and perimeter.",
+        "The valuation date is time zero. A cash flow already included in a forecast must not also be added separately as a balance-sheet asset or a second investment item without reconciling the perimeter."
+      ]
+    },
+    {
+      "id": "terminal",
+      "title": "Place the terminal amount at its own date",
+      "paragraphs": [
+        "Operating value = sum of explicit FCFF_t/(1+WACC)^t + terminal value_n/(1+WACC)^n. The supplied terminal value covers cash after Year n. Year n FCFF remains an explicit period cash flow; including it once does not duplicate the terminal stream.",
+        "Terminal value is not automatically today’s value. Discount it for the full n periods. The later terminal-growth lesson explains how to estimate it and why WACC must exceed perpetual growth in that model."
+      ]
+    },
+    {
+      "id": "interpret",
+      "title": "Report a conditional value and the right claims",
+      "paragraphs": [
+        "Separate explicit-period PV from terminal PV so the dependence on long-run assumptions is visible. Compare feasible forecasts and sensitivity rather than presenting an output with many decimals as certainty.",
+        "The result here is operating enterprise value. Bridge separately for excess cash, debt and other claims before stating ordinary equity value. The calculation itself does not post a gain, generate cash or establish a market transaction price."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "Explicit forecast and terminal stream",
+      "explanation": "The explicit years and the later stream cover different dates.",
+      "whenItMatters": "Avoid adding the first terminal-period cash flow twice."
+    },
+    {
+      "name": "End-of-horizon and current value",
+      "explanation": "Terminal value belongs at the supplied future date.",
+      "whenItMatters": "Discount it with the correct exponent."
+    },
+    {
+      "name": "Operating value and equity value",
+      "explanation": "Non-operating assets and non-equity claims need a separate bridge.",
+      "whenItMatters": "Do not label a before-debt result as ordinary equity value."
+    }
+  ],
+  "workedExample": {
+    "id": "dcf-three-years",
+    "scenarioId": "dcf-three-years-worked",
+    "setup": "Hypothetical annual FCFF is 12 at Year 1 end, 15 at Year 2 end and 18 at Year 3 end. A supplied terminal value of 180 at Year 3 end covers all cash after Year 3 and excludes Year 3 FCFF. Matched effective annual WACC is 10%. No claims bridge is included.",
+    "inputs": [
+      {
+        "key": "year1",
+        "label": "Year1",
+        "value": 12,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "year2",
+        "label": "Year2",
+        "value": 15,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "year3",
+        "label": "Year3",
+        "value": 18,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "terminal",
+        "label": "Terminal",
+        "value": 180,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "rate",
+        "label": "Matched annual WACC",
+        "value": 0.1,
+        "unit": "fraction"
+      },
+      {
+        "key": "horizon",
+        "label": "Terminal date",
+        "value": 3,
+        "unit": "years"
+      }
+    ],
+    "steps": [
+      "Year 1 FCFF PV = 12/1.1 = 10.909090...",
+      "Year 2 FCFF PV = 15/1.1² = 12.396694...",
+      "Year 3 FCFF PV = 18/1.1³ = 13.523666...",
+      "Explicit-period PV = 36.829451...",
+      "Terminal PV = 180/1.1³ = 135.236664...",
+      "Operating value = 172.066115..., displayed 172.07. It is not yet ordinary equity value."
+    ],
+    "result": "Conditional operating enterprise value 172.07.",
+    "interpretation": "Most value comes from the terminal assumption; that dependence should be visible rather than concealed in one total."
+  },
+  "statementEffects": {
+    "applicability": "not-applicable",
+    "explanation": "Effects under the stated simplified scenario. Forecasts and economic values do not themselves create accounting entries.",
+    "changes": []
+  },
+  "misconceptions": [
+    {
+      "id": "terminal-now",
+      "claim": "Add terminal value without discounting it.",
+      "correction": "Bring the supplied future amount to today.",
+      "diagnostic": "At which date is terminal value measured?"
+    },
+    {
+      "id": "equity",
+      "claim": "An FCFF operating value is automatically ordinary equity value.",
+      "correction": "Reconcile non-operating assets and claims separately.",
+      "diagnostic": "Who else has a claim on operating value?"
+    },
+    {
+      "id": "duplicate",
+      "claim": "Count the explicit final year again inside a terminal amount that starts afterward.",
+      "correction": "Follow the supplied coverage dates and count each cash flow once.",
+      "diagnostic": "Which years does the terminal amount cover?"
+    }
+  ],
+  "practice": [
+    {
+      "id": "dcf-predict",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "terminal",
+      "scenarioId": "dcf-predict-independent",
+      "objectiveIds": [
+        "dcf"
+      ],
+      "setup": "Independent FCFF forecast: 10 at Year 1 end and 11 at Year 2 end. Supplied terminal value 121 is at Year 2 end and covers only Years 3 onward. Matched annual WACC 10%. No non-operating assets or claims bridge is included.",
+      "inputs": [
+        {
+          "key": "year1",
+          "label": "Year1",
+          "value": 10,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "year2",
+          "label": "Year2",
+          "value": 11,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "terminal",
+          "label": "Terminal",
+          "value": 121,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "rate",
+          "label": "Annual WACC",
+          "value": 0.1,
+          "unit": "fraction"
+        },
+        {
+          "key": "horizon",
+          "label": "Terminal date",
+          "value": 2,
+          "unit": "years"
+        }
+      ],
+      "question": "What operating value follows, rounded to two decimals?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "139.18",
+          "feedback": "This adds terminal value 121 as if it were already at time zero.",
+          "misconceptionId": "terminal-now"
+        },
+        {
+          "id": "correct",
+          "text": "118.18",
+          "feedback": "Value = 10/1.1 + 11/1.1² + 121/1.1² = 118.181818..., displayed 118.18. The terminal PV is 100.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "128.18",
+          "feedback": "This discounts the terminal amount for only one of its two years.",
+          "misconceptionId": "terminal-now"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Value = 10/1.1 + 11/1.1² + 121/1.1² = 118.181818..., displayed 118.18. The terminal PV is 100.",
+      "hints": [
+        {
+          "text": "Place both Year 2 amounts at the same date before discounting.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Value = 10/1.1 + 11/1.1² + 121/1.1² = 118.181818..., displayed 118.18. The terminal PV is 100.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Why is Year 2 FCFF included alongside terminal value?",
+        "rubric": [
+          "Terminal covers Year 3 onward.",
+          "Year 2 cash appears once.",
+          "Use exponent 2 for the terminal amount."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "dcf-transfer-date",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "interpret",
+      "scenarioId": "dcf-transfer-date-independent",
+      "objectiveIds": [
+        "dcf"
+      ],
+      "setup": "Independent FCFF forecast: 6 at Year 1 end and 8 at Year 2 end; a supplied terminal value 60 at Year 2 end covers only later cash. Matched annual WACC is 20%. Debt and excess cash have not been supplied.",
+      "inputs": [
+        {
+          "key": "year1",
+          "label": "Year1",
+          "value": 6,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "year2",
+          "label": "Year2",
+          "value": 8,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "terminal",
+          "label": "Terminal",
+          "value": 60,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "rate",
+          "label": "Annual WACC",
+          "value": 0.2,
+          "unit": "fraction"
+        },
+        {
+          "key": "horizon",
+          "label": "Terminal date",
+          "value": 2,
+          "unit": "years"
+        }
+      ],
+      "question": "Which value and label are supported?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "Operating value 70.56; ordinary equity value still needs a bridge",
+          "feedback": "This adds the future terminal amount without its full discount.",
+          "misconceptionId": "terminal-now"
+        },
+        {
+          "id": "correct",
+          "text": "Operating value 52.22; ordinary equity value still needs a claims bridge",
+          "feedback": "Value = 6/1.2 + (8+60)/1.2² = 52.222222..., displayed 52.22. It is an operating value; debt, excess cash and other claims require a separate bridge.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "Ordinary equity value 52.22 with no further information",
+          "feedback": "An operating value does not establish all remaining claims.",
+          "misconceptionId": "equity"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Value = 6/1.2 + (8+60)/1.2² = 52.222222..., displayed 52.22. It is an operating value; debt, excess cash and other claims require a separate bridge.",
+      "hints": [
+        {
+          "text": "Identify the common Year 2 date and the valuation perimeter.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Value = 6/1.2 + (8+60)/1.2² = 52.222222..., displayed 52.22. It is an operating value; debt, excess cash and other claims require a separate bridge.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "What information is still missing for ordinary equity holders?",
+        "rubric": [
+          "Discount terminal 60 for two years.",
+          "Keep operating and equity labels distinct.",
+          "Request a consistent claims/non-operating-assets bridge."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E2126",
+      "to": "T17.07",
+      "kind": "learning",
+      "purpose": "Atomic concept within this original grouped topic.",
+      "conditions": "Preserves the original inventory while enabling more precise navigation.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2161",
+      "to": "A11",
+      "kind": "financial",
+      "purpose": "An enterprise DCF discounts future FCFF and a consistent terminal value.",
+      "conditions": "Apply the stated definitions, periods and teaching assumptions. This relationship is not an implemented calculation dependency.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2162",
+      "to": "A12",
+      "kind": "financial",
+      "purpose": "An equity DCF discounts future FCFE and an equity-consistent terminal value.",
+      "conditions": "Apply the stated definitions, periods and teaching assumptions. This relationship is not an implemented calculation dependency.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D17",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "How should terminal reinvestment and growth be estimated consistently?",
+      "Which forecast assumptions drive most of the result?"
+    ],
+    "conceptIds": [
+      "T17.07",
+      "A11",
+      "A12"
+    ],
+    "limitations": "Introductory study coverage. Full forecasting, terminal reinvestment estimation, changing-rate models, professional calibration and complete claims valuation are deferred."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "The connected six-round case remains a separate implementation task; these examples do not imply playable rounds."
+    }
+  ],
+  "sources": [
+    {
+      "id": "fcff",
+      "title": "Aswath Damodaran, NYU Stern: Free Cashflow to the Firm lecture notes",
+      "url": "https://people.stern.nyu.edu/adamodar/pdfiles/eqnotes/fcff.pdf",
+      "supports": [
+        "Background on operating cash after reinvestment, consistent firm cash/rate matching, terminal values and claims bridges. Historical company examples and market rates in the notes are not used as current data."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "intro",
+      "title": "Aswath Damodaran, NYU Stern: An Introduction to Valuation",
+      "url": "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/background/valintro.htm",
+      "supports": [
+        "Background on matching cash-flow claims and discount rates, and market-value financing weights. Numerical inputs here are independent hypothetical teaching assumptions."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "method": "ai-content-source-arithmetic",
+    "evidence": [
+      "B5 topic mechanics, terminology, signs, timing, source boundaries and feedback reviewed in docs/implementation/task-04-4-b5.md.",
+      "Independent worked and assessment calculations checked in tests/b5-lessons.test.mjs; shared route, version, hint and retry regressions also apply.",
+      "Scoped AI content review, not independent professional approval, interactive browser verification or learner-pilot evidence."
+    ]
+  }
+}

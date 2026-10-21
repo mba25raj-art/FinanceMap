@@ -1,0 +1,42 @@
+{
+  "id": "NILA-HOMEWARE",
+  "version": "1.0.0",
+  "fictional": true,
+  "currency": "INR",
+  "displayUnit": "INR lakh",
+  "startDate": "2026-01-01",
+  "endDate": "2027-12-31",
+  "metadataEndDate": "2035-12-31",
+  "period": "calendar-month",
+  "minimumCash": 3,
+  "taxRate": 0.2,
+  "openingSharesLakh": 10,
+  "opening": {
+    "cash": 20, "receivables": 30, "inventory": 50, "equipmentCost": 100,
+    "accumulatedDepreciation": 0, "tradePayables": 25, "equipmentPayables": 0,
+    "accruedOperating": 0, "debt": 75, "interestPayable": 0, "taxPayable": 0,
+    "contributedCapital": 100, "openingRetainedEarnings": 0, "distributions": 0,
+    "revenue": 0, "costOfSales": 0, "operatingExpense": 0,
+    "depreciationExpense": 0, "interestExpense": 0, "taxExpense": 0
+  },
+  "accounts": {
+    "cash": "asset", "receivables": "asset", "inventory": "asset", "equipmentCost": "asset",
+    "accumulatedDepreciation": "contra-asset", "tradePayables": "liability", "equipmentPayables": "liability",
+    "accruedOperating": "liability", "debt": "liability", "interestPayable": "liability", "taxPayable": "liability",
+    "contributedCapital": "equity", "openingRetainedEarnings": "equity", "distributions": "contra-equity",
+    "revenue": "income", "costOfSales": "expense", "operatingExpense": "expense",
+    "depreciationExpense": "expense", "interestExpense": "expense", "taxExpense": "expense"
+  },
+  "receivables": [{"id": "opening-customers", "amount": 30, "dueDate": "2026-02-15"}],
+  "payables": [{"id": "opening-suppliers", "amount": 25, "dueDate": "2026-02-10"}],
+  "equipment": [{"id": "opening-equipment", "cost": 100, "accumulated": 0, "residual": 0, "lifeMonths": 60, "availableDate": "2026-01-01"}],
+  "loans": [{"id": "opening-debt", "principal": 75, "annualRate": 0.12, "startDate": "2026-01-01", "maturity": "2026-12-31"}],
+  "assumptions": [
+    "The roadmap's opening equipment 100 is represented as an equivalent remaining cost 100, no opening accumulated depreciation and 60 remaining months. The reference-core sequence disables depreciation, interest and tax.",
+    "The roadmap gives total equity 100; allocating it to contributed capital, and the ten lakh opening shares, are teaching assumptions.",
+    "Opening due dates, 12% debt rate, 20% tax rate and minimum cash 3 are authored hypothetical extensions, not current legal or market terms.",
+    "Inventory cost sold is supplied and must not exceed the available carrying balance. No manufacturing costing, impairment, returns or foreign currency.",
+    "Interest uses Actual/365 simple daily accrual; depreciation is straight-line with actual available days per calendar month; tax applies only to positive period pre-tax income with no loss benefit.",
+    "Ordinary customer/supplier, operating expense, interest and tax payments are operating cash; equipment settlement investing; principal/owner funding and distributions financing. This is a conceptual classification convention, not statutory compliance."
+  ]
+}

@@ -1,0 +1,419 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "A18",
+  "contentVersion": "1.0.0",
+  "hoverDefinition": "Net borrowing is debt principal raised less principal repaid during the period. Interest, fees and non-cash debt changes are separate; a funding receipt creates repayment obligations rather than income.",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "Gross proceeds/repayments, principal versus interest, debt roll-forward, refinancing and the cash-versus-balance distinction."
+    ],
+    "deferred": [
+      "Effective-interest accounting, debt modification, leases, foreign currency, covenant and legal classification analysis are deferred."
+    ]
+  },
+  "objectives": [
+    {
+      "id": "principal",
+      "statement": "Calculate net borrowing and reconcile debt principal and financing cash.",
+      "evidence": "Keep interest outside principal and recognise future repayment even when net borrowing is zero.",
+      "outcomeIds": [
+        "LO4"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh"
+    ],
+    "timeframe": "Independent fictional teaching scenarios. Worked examples and practice start separately; they are not consecutive company-case rounds.",
+    "assumptions": [
+      "Debt amounts are principal; all stated loans are simple cash borrowings without fees unless specified.",
+      "No non-cash debt movement, discount, currency remeasurement or lease exists.",
+      "For teaching, principal cash is financing; interest/fees are shown separately and their statutory category is not prescribed.",
+      "No tax or other transaction."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Conceptual teaching assumptions, with INR lakh as a unit rather than a jurisdiction. No tax rate, financing term, reporting classification, valuation input or management buffer is a current rule or market recommendation. Applicable framework, jurisdiction, reporting period and effective amendments require separate study."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "gross",
+      "title": "Show proceeds and repayments before netting",
+      "paragraphs": [
+        "Net borrowing = cash principal proceeds − cash principal repayments for the period. A positive amount adds funding; a negative amount returns principal to lenders. Two large gross flows may net to zero while replacing a maturing loan with another agreement.",
+        "The number describes a flow, not closing debt and not debt minus cash. Closing debt = opening principal + new principal − principal repaid under the simple no-other-change assumptions."
+      ]
+    },
+    {
+      "id": "separate",
+      "title": "Separate the cost from the principal",
+      "paragraphs": [
+        "Principal borrowing raises cash and debt without revenue. Principal repayment lowers both without expense. Interest is a cost of using funding; a fee may have accounting treatment different from a cash payment, so the lesson states any fee assumption explicitly.",
+        "Actual debt balances can move through accrued interest, fees, leases, acquisitions or currency changes. In those cases debt change is not automatically cash net borrowing. Use a financing-liability reconciliation and a consistent definition."
+      ]
+    },
+    {
+      "id": "obligation",
+      "title": "Read what remains to be repaid",
+      "paragraphs": [
+        "Borrowing can solve a current cash gap while creating future principal and interest requirements. Check amount, maturity, rate, security, conditions and the cash available at repayment. A loan receipt does not by itself improve operating profitability.",
+        "In an FCFF valuation, debt proceeds/repayments are financing flows and are excluded from operating free cash flow. Their effect belongs in financing and the enterprise-to-equity bridge rather than being added as operating value."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "Net borrowing and net debt",
+      "explanation": "One is a period principal flow; the other is a balance-sheet/valuation measure with a specified cash deduction.",
+      "whenItMatters": "Do not compare them as if they were interchangeable."
+    },
+    {
+      "name": "Principal and interest",
+      "explanation": "Principal changes the obligation; interest is the cost of funding.",
+      "whenItMatters": "Paying a lender can contain both, requiring a split."
+    },
+    {
+      "name": "Net zero and no refinancing",
+      "explanation": "New debt can exactly replace repaid debt.",
+      "whenItMatters": "Maturity and conditions can change even when the net is zero."
+    }
+  ],
+  "workedExample": {
+    "id": "borrowing-month",
+    "scenarioId": "borrowing-month-worked",
+    "setup": "Opening cash 15, equipment net 35, debt principal 30 and equity 20. Receive new loan principal 18, repay principal 8 and pay/expense interest 2. No other events or balances exist; there are no fees or non-cash debt movements.",
+    "inputs": [
+      {
+        "key": "opening_cash",
+        "label": "Opening cash",
+        "value": 15,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "equipment",
+        "label": "Equipment",
+        "value": 35,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "opening_debt",
+        "label": "Opening debt",
+        "value": 30,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "draw",
+        "label": "Draw",
+        "value": 18,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "repayment",
+        "label": "Repayment",
+        "value": 8,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "interest",
+        "label": "Interest",
+        "value": 2,
+        "unit": "INR lakh"
+      }
+    ],
+    "steps": [
+      "Net borrowing = proceeds 18 − principal repayment 8 = +10.",
+      "Closing principal debt = 30 + 18 − 8 = 40.",
+      "Interest 2 is not part of net borrowing; it creates a loss 2 under the stated expense assumption.",
+      "Closing cash = 15 + 18 − 8 − 2 = 23. Total cash increase 8 differs from principal funding 10.",
+      "Equipment remains 35; assets = 23 + 35 = 58. Debt 40 + equity (20 − 2) 18 = 58.",
+      "The 40 principal remains owed under its stated loan terms; the cash receipt was not revenue."
+    ],
+    "result": "Net borrowing +10; debt 40; cash 23; loss 2.",
+    "interpretation": "Principal funding and funding cost answer different questions and reconcile to different subtotals."
+  },
+  "statementEffects": {
+    "applicability": "direct",
+    "explanation": "Effects under the stated simplified scenario. Forecasts and economic values do not themselves create accounting entries.",
+    "changes": [
+      "Principal receipts/repayments change cash and debt; they do not create income/expense.",
+      "The stated interest reduces profit and equity by 2. Total cash changes +8; principal financing contribution is +10."
+    ]
+  },
+  "misconceptions": [
+    {
+      "id": "interest",
+      "claim": "Deduct interest when defining net borrowing principal.",
+      "correction": "Separate the principal flow from funding costs.",
+      "diagnostic": "How much repayment reduces principal?"
+    },
+    {
+      "id": "income",
+      "claim": "A loan receipt is revenue.",
+      "correction": "It creates a debt obligation, not earned income.",
+      "diagnostic": "What remains repayable?"
+    },
+    {
+      "id": "zero",
+      "claim": "Net borrowing zero means no debt activity.",
+      "correction": "Gross refinancing can net to zero.",
+      "diagnostic": "Were old and new loans both transacted?"
+    }
+  ],
+  "practice": [
+    {
+      "id": "borrowing-predict",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "separate",
+      "scenarioId": "borrowing-predict-independent",
+      "objectiveIds": [
+        "principal"
+      ],
+      "setup": "Independent scenario: opening debt 20; draw principal 9, repay principal 4 and pay interest 1. No fees or non-cash debt movements occur.",
+      "inputs": [
+        {
+          "key": "opening_debt",
+          "label": "Opening debt",
+          "value": 20,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "draw",
+          "label": "Draw",
+          "value": 9,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "repayment",
+          "label": "Repayment",
+          "value": 4,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "interest",
+          "label": "Interest",
+          "value": 1,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "What are net borrowing and closing principal debt?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "Net borrowing +4; debt 24",
+          "feedback": "Interest is not a principal repayment.",
+          "misconceptionId": "interest"
+        },
+        {
+          "id": "correct",
+          "text": "Net borrowing +5; debt 25",
+          "feedback": "Net borrowing = 9 − 4 = 5; closing principal = 20 + 5 = 25. Cash movement from these events is 9 − 4 − 1 = 4, separate from the principal subtotal.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "Net borrowing +9; debt 29",
+          "feedback": "The principal repayment 4 must be included.",
+          "misconceptionId": "zero"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Net borrowing = 9 − 4 = 5; closing principal = 20 + 5 = 25. Cash movement from these events is 9 − 4 − 1 = 4, separate from the principal subtotal.",
+      "hints": [
+        {
+          "text": "Split the lender payment into principal and cost.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Net borrowing = 9 − 4 = 5; closing principal = 20 + 5 = 25. Cash movement from these events is 9 − 4 − 1 = 4, separate from the principal subtotal.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Why is cash movement smaller than net borrowing?",
+        "rubric": [
+          "Show principal flow +5.",
+          "Keep interest 1 separate.",
+          "Reconcile closing debt 25."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "borrowing-transfer-refinance",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "obligation",
+      "scenarioId": "borrowing-transfer-refinance-independent",
+      "objectiveIds": [
+        "principal"
+      ],
+      "setup": "Independent refinancing scenario: opening debt 40. Receive a new loan principal 25 and immediately repay old principal 25. Pay a separate cash fee 1, expensed by explicit teaching assumption. No interest or non-cash principal change occurs.",
+      "inputs": [
+        {
+          "key": "opening_debt",
+          "label": "Opening debt",
+          "value": 40,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "draw",
+          "label": "Draw",
+          "value": 25,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "repayment",
+          "label": "Repayment",
+          "value": 25,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "fee",
+          "label": "Fee",
+          "value": 1,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "Which statement correctly describes this period?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "wrong-one",
+          "text": "No debt transaction occurred because the net is zero",
+          "feedback": "The gross proceeds and repayment each occurred.",
+          "misconceptionId": "zero"
+        },
+        {
+          "id": "correct",
+          "text": "Net borrowing 0; closing debt 40; cash falls 1 from the fee",
+          "feedback": "Net principal = 25 − 25 = 0; closing principal = 40. The two principal cash flows offset; fee cash is −1. Maturities/conditions may differ even though the net principal is unchanged.",
+          "misconceptionId": null
+        },
+        {
+          "id": "wrong-two",
+          "text": "Net borrowing −1; debt 39",
+          "feedback": "The fee is not principal repayment under the stated assumption.",
+          "misconceptionId": "interest"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Net principal = 25 − 25 = 0; closing principal = 40. The two principal cash flows offset; fee cash is −1. Maturities/conditions may differ even though the net principal is unchanged.",
+      "hints": [
+        {
+          "text": "Show both gross principal flows before the fee.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Net principal = 25 − 25 = 0; closing principal = 40. The two principal cash flows offset; fee cash is −1. Maturities/conditions may differ even though the net principal is unchanged.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "What refinancing evidence matters beyond the net amount?",
+        "rubric": [
+          "Identify both 25 flows.",
+          "Keep fee outside principal.",
+          "Inspect the new maturity and conditions."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E2125",
+      "to": "T07.08",
+      "kind": "learning",
+      "purpose": "Atomic concept within this original grouped topic.",
+      "conditions": "Preserves the original inventory while enabling more precise navigation.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2159",
+      "to": "A12",
+      "kind": "financial",
+      "purpose": "Net borrowing is included in a conventional FCFE reconciliation.",
+      "conditions": "Other financing claims and lease treatment must be consistent.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2160",
+      "to": "A11",
+      "kind": "financial",
+      "purpose": "Financing debt proceeds and principal repayments do not form operating FCFF.",
+      "conditions": "Debt can change risk, tax shields and value through financing channels.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D07",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "Which non-cash changes explain a difference between debt movement and principal cash?",
+      "How would maturity, rate or conditions affect a funding comparison?"
+    ],
+    "conceptIds": [
+      "T07.08",
+      "A12",
+      "A11"
+    ],
+    "limitations": "Introductory study coverage. Effective-interest accounting, debt modification, leases, foreign currency, covenant and legal classification analysis are deferred."
+  },
+  "activityLinks": [
+    {
+      "id": "CASE-NILA-HOMEWARE",
+      "kind": "case",
+      "availability": "planned",
+      "purpose": "The connected six-round case remains a separate implementation task; these examples do not imply playable rounds."
+    }
+  ],
+  "sources": [
+    {
+      "id": "ias7",
+      "title": "IFRS Foundation: IAS 7 public overview",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/ias-7-statement-of-cash-flows/",
+      "supports": [
+        "Background on operating, investing and financing cash and non-cash reconciliation. The examples prescribe their own conceptual classifications; statutory starting subtotals, interest/dividends and effective amendments require separate analysis."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "ias32",
+      "title": "IFRS Foundation: IAS 32 public overview",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/ias-32-financial-instruments-presentation/",
+      "supports": [
+        "Background on liability versus equity classification and the need to examine obligations. Ordinary equity and debt classifications are explicitly assumed here; complex instruments, transaction costs and legal payout rules are deferred."
+      ],
+      "role": "primary-support",
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "method": "ai-content-source-arithmetic",
+    "evidence": [
+      "B3 topic mechanics, terminology, signs, timing, source boundaries and feedback reviewed in docs/implementation/task-04-4-b3.md.",
+      "Independent worked and assessment calculations checked in tests/b3-lessons.test.mjs; shared route, version, hint and retry regressions also apply.",
+      "Scoped AI content review, not independent professional approval, interactive browser verification or learner-pilot evidence."
+    ]
+  }
+}

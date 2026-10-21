@@ -1,0 +1,510 @@
+{
+  "schemaVersion": 1,
+  "conceptId": "A05",
+  "contentVersion": "1.0.0",
+  "scope": {
+    "coverageTier": "introductory-study",
+    "covered": [
+      "Explicit operating perimeter, receivables/inventory/payables movements, stock versus change, cash absorption/release and negative operating working capital."
+    ],
+    "deferred": [
+      "Full valuation definitions, acquisition/foreign-currency/non-cash reconciliations, seasonal forecasting and a dynamic company model are deferred."
+    ]
+  },
+  "hoverDefinition": "Operating working capital is operating current assets less operating current liabilities under a stated definition. Growth in receivables or stock can absorb cash; ordinary supplier credit can partly offset it.",
+  "objectives": [
+    {
+      "id": "perimeter",
+      "statement": "Calculate operating working capital and its change using a stated perimeter.",
+      "evidence": "Keep cash and financing debt outside the stated receivables-plus-inventory-minus-payables measure.",
+      "outcomeIds": [
+        "LO2",
+        "LO3"
+      ]
+    },
+    {
+      "id": "cash-bridge",
+      "statement": "Explain and calculate the cash effect of operating balance changes.",
+      "evidence": "Reconcile a simple operating cash flow and interpret a negative balance without assuming safety.",
+      "outcomeIds": [
+        "LO2",
+        "LO3"
+      ]
+    }
+  ],
+  "context": {
+    "entity": "Nila Homeware",
+    "fictional": true,
+    "exampleRole": "isolated-example",
+    "units": [
+      "INR lakh"
+    ],
+    "timeframe": "A separate illustrative teaching month. Worked and practice scenarios start independently; they are not consecutive company-case rounds.",
+    "assumptions": [
+      "Operating working capital here means trade receivables + inventory − ordinary trade payables only. Cash, equipment and financing debt are excluded.",
+      "All changes in these three balances arise from the stated ordinary operating transactions. No allowance, write-down, acquisition, foreign exchange or reclassification exists.",
+      "No tax, interest, unmentioned accrual, prepayment or other operating balance exists. Depreciation is the only stated non-cash expense.",
+      "Payment timing follows agreed terms; no conclusion about liquidity safety follows from one closing ratio."
+    ],
+    "framework": {
+      "basis": "conceptual",
+      "name": null,
+      "jurisdiction": null,
+      "period": null,
+      "limitations": "Simplified conceptual teaching scenarios in INR lakh; currency does not establish jurisdiction. Recognition, operating perimeter and cash classifications are stated assumptions. Primary public IFRS overviews provide background, not a claim of compliance. Jurisdiction, reporting period, effective amendments and complete disclosure requirements require separate study."
+    },
+    "abbreviations": []
+  },
+  "mechanism": [
+    {
+      "id": "perimeter",
+      "title": "State what the measure includes",
+      "paragraphs": [
+        "Working capital can mean total current assets less total current liabilities. Operating working capital uses an operating subset. This lesson defines it as receivables + inventory − ordinary trade payables, excluding cash and financing debt. Another analysis may include operating prepayments or accruals; label the definition before comparing results.",
+        "This is a measure of a balance at a date, not money in the bank and not a universally prescribed statement subtotal. A supplier liability is subtracted because it funds part of the operating resource balance."
+      ]
+    },
+    {
+      "id": "movement",
+      "title": "Use the change, not the closing stock, in the bridge",
+      "paragraphs": [
+        "Change means closing less opening on the same basis. In the simple cash-linked perimeter, the working-capital contribution to operating cash is − change in receivables − change in inventory + change in payables, or minus change in operating working capital.",
+        "A receivable increase means some recognised sales remain uncollected. An inventory increase means purchases exceed cost consumed. A payable increase means some purchases remain unpaid. Decreases reverse those directions under these assumptions."
+      ]
+    },
+    {
+      "id": "bridge",
+      "title": "Explain the whole cash bridge",
+      "paragraphs": [
+        "Start with the stated profit measure and adjust consistent non-cash costs and operating balance changes. Do not subtract both the individual balance movements and the total working-capital change. They are two presentations of the same adjustment.",
+        "Balance-sheet changes alone may include write-downs, acquisitions, currency effects or reclassifications. Those are not necessarily operating cash flows. Reconcile them before treating minus a balance change as a cash contribution; A06 shows a non-cash inventory exception."
+      ]
+    },
+    {
+      "id": "interpret",
+      "title": "Read a negative balance with its obligations",
+      "paragraphs": [
+        "Negative operating working capital means included operating liabilities exceed included operating assets at that date. It can arise when suppliers fund inventory and customers pay quickly. Further declines can release cash within this simplified perimeter.",
+        "That is not a guarantee of spare cash or a sustainable advantage. A contraction, supplier demand for faster payment, seasonal stock build or overdue bills can reverse the benefit. Check due dates, expected receipts, stock quality and available cash separately."
+      ]
+    }
+  ],
+  "distinctions": [
+    {
+      "name": "Balance and movement",
+      "explanation": "Operating working capital is a stock; its period change is a bridge input.",
+      "whenItMatters": "Deducting the entire closing balance misstates current cash flow."
+    },
+    {
+      "name": "Operating and total working capital",
+      "explanation": "The operating definition excludes cash and financing debt here; total current net assets may include them.",
+      "whenItMatters": "Definitions must be aligned before comparing businesses."
+    },
+    {
+      "name": "Cash-linked and non-cash movements",
+      "explanation": "A write-down can lower inventory without a receipt.",
+      "whenItMatters": "Reconcile measurement effects before inferring cash released."
+    },
+    {
+      "name": "Negative balance and liquidity safety",
+      "explanation": "Supplier funding can exceed included assets while settlement obligations still fall due.",
+      "whenItMatters": "Test timing and sustainability rather than treating the sign as a health score."
+    }
+  ],
+  "workedExample": {
+    "id": "working-capital-month",
+    "scenarioId": "owc-worked-12-20-18-25-10-16-60-40-8-4",
+    "setup": "Opening cash is 40, receivables 12, inventory 18, equipment net carrying value 30 and trade payables 10; opening equity is 90. This month credit revenue is 60, cost sold 40, cash wages 8 and equipment depreciation 4. Closing receivables are 20, inventory 25 and payables 16. All goods purchases are on ordinary supplier credit. No equipment purchases or other events occur.",
+    "inputs": [
+      {
+        "key": "openingCash",
+        "label": "Opening cash",
+        "value": 40,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "openingReceivables",
+        "label": "Opening receivables",
+        "value": 12,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "closingReceivables",
+        "label": "Closing receivables",
+        "value": 20,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "openingInventory",
+        "label": "Opening inventory",
+        "value": 18,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "closingInventory",
+        "label": "Closing inventory",
+        "value": 25,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "openingPayables",
+        "label": "Opening trade payables",
+        "value": 10,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "closingPayables",
+        "label": "Closing trade payables",
+        "value": 16,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "openingEquipment",
+        "label": "Opening net equipment",
+        "value": 30,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "sales",
+        "label": "Credit revenue",
+        "value": 60,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "costSold",
+        "label": "Cost sold",
+        "value": 40,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "wages",
+        "label": "Wages paid and expensed",
+        "value": 8,
+        "unit": "INR lakh"
+      },
+      {
+        "key": "depreciation",
+        "label": "Depreciation expense",
+        "value": 4,
+        "unit": "INR lakh"
+      }
+    ],
+    "steps": [
+      "Opening operating working capital = 12 + 18 − 10 = 20. Closing = 20 + 25 − 16 = 29. Increase = 9.",
+      "Receivables rise 8 and stock rises 7, together absorbing 15 relative to profit before these timing effects. Payables rise 6, offsetting part; net absorption is 9.",
+      "Profit = 60 − 40 − 8 − 4 = 8. Operating cash = 8 + depreciation 4 − working-capital increase 9 = +3.",
+      "Direct check: customer receipts = opening receivables 12 + sales 60 − closing receivables 20 = 52. Purchases = cost sold 40 + closing stock 25 − opening stock 18 = 47.",
+      "Supplier payments = opening payables 10 + purchases 47 − closing payables 16 = 41. Receipts 52 − supplier payments 41 − wages 8 = cash 3.",
+      "Cash closes at 43; equipment net is 26. Assets 43 + 20 + 25 + 26 = 114; payables 16 + equity (90 + 8) 98 = 114."
+    ],
+    "result": "Operating working capital rises from 20 to 29, absorbing 9; profit is 8 and operating cash is +3.",
+    "interpretation": "Profit before the non-cash depreciation effect provides 12, but the operating cycle absorbs 9. The 29 closing balance is not the amount to deduct for this month."
+  },
+  "statementEffects": {
+    "applicability": "direct",
+    "explanation": "Complete simplified statement effects for this isolated worked scenario under the stated assumptions.",
+    "changes": [
+      "Income statement: revenue 60, cost sold 40, wages 8 and depreciation 4; profit 8.",
+      "Balance sheet: cash 43, receivables 20, stock 25, equipment 26, payables 16 and equity 98.",
+      "Cash flow: operating receipts 52 less supplier payments 41 and wages 8 gives +3. No investing or financing cash."
+    ]
+  },
+  "misconceptions": [
+    {
+      "id": "closing-change",
+      "claim": "Deduct closing operating working capital from every period’s profit.",
+      "correction": "Deduct its cash-linked change on a consistent basis.",
+      "diagnostic": "What was already tied up at the beginning?"
+    },
+    {
+      "id": "payable-sign",
+      "claim": "An increase in ordinary payables absorbs cash like an asset increase.",
+      "correction": "It defers payment relative to purchases under the stated assumptions.",
+      "diagnostic": "Which supplier amount remains unpaid?"
+    },
+    {
+      "id": "negative-safe",
+      "claim": "Negative operating working capital guarantees liquidity safety.",
+      "correction": "The included liabilities still need settlement and the cycle can reverse.",
+      "diagnostic": "When do receipts and payments actually fall due?"
+    }
+  ],
+  "practice": [
+    {
+      "id": "owc-predict-change",
+      "version": "1.0.0",
+      "stage": "checkpoint",
+      "afterMechanismId": "movement",
+      "scenarioId": "owc-predict-change-scenario",
+      "objectiveIds": [
+        "perimeter",
+        "cash-bridge"
+      ],
+      "setup": "Independent scenario: opening/closing receivables are 7/13, inventory 16/19 and ordinary trade payables 9/14. Define operating working capital as receivables + inventory − trade payables. Every movement comes from ordinary operations; no non-cash change or other operating balance exists. Hold other cash-flow components fixed.",
+      "inputs": [
+        {
+          "key": "openingReceivables",
+          "label": "Opening receivables",
+          "value": 7,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "closingReceivables",
+          "label": "Closing receivables",
+          "value": 13,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "openingInventory",
+          "label": "Opening inventory",
+          "value": 16,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "closingInventory",
+          "label": "Closing inventory",
+          "value": 19,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "openingPayables",
+          "label": "Opening payables",
+          "value": 9,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "closingPayables",
+          "label": "Closing payables",
+          "value": 14,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "What is the change and its contribution to operating cash?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "closing",
+          "text": "Closing 18, so cash contribution −18",
+          "feedback": "18 is the closing stock of working capital, not its period change.",
+          "misconceptionId": "closing-change"
+        },
+        {
+          "id": "wrong-sign",
+          "text": "Increase 14, so cash contribution −14",
+          "feedback": "The payable increase 5 offsets asset increases rather than adding to them.",
+          "misconceptionId": "payable-sign"
+        },
+        {
+          "id": "correct",
+          "text": "Increase 4, so cash contribution −4",
+          "feedback": "Opening 14 and closing 18 give increase 4; the simple cash contribution is −4.",
+          "misconceptionId": null
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Opening = 7 + 16 − 9 = 14; closing = 13 + 19 − 14 = 18. Change = +4. Cash contribution = −6 − 3 + 5 = −4.",
+      "hints": [
+        {
+          "text": "Compute opening and closing using the same perimeter before applying a cash sign.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Opening = 7 + 16 − 9 = 14; closing = 13 + 19 − 14 = 18. Change = +4. Cash contribution = −6 − 3 + 5 = −4.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "Which component offsets the two operating asset increases?",
+        "rubric": [
+          "Show opening 14 and closing 18.",
+          "Use the payable increase as +5 in the cash bridge.",
+          "Do not equate closing 18 with cash absorbed this period."
+        ],
+        "grading": "self-check"
+      }
+    },
+    {
+      "id": "owc-transfer-negative",
+      "version": "1.0.0",
+      "stage": "transfer",
+      "afterMechanismId": "interpret",
+      "scenarioId": "owc-transfer-negative-scenario",
+      "objectiveIds": [
+        "perimeter",
+        "cash-bridge"
+      ],
+      "setup": "Independent scenario: receivables move 4 to 5, stock 6 to 7 and ordinary trade payables 15 to 19. Use receivables + stock − trade payables. All movements are from ordinary operating transactions; no non-cash change or other operating balance exists. Hold other cash-flow components fixed. No future cash forecast or overdue status is supplied.",
+      "inputs": [
+        {
+          "key": "openingReceivables",
+          "label": "Opening receivables",
+          "value": 4,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "closingReceivables",
+          "label": "Closing receivables",
+          "value": 5,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "openingInventory",
+          "label": "Opening inventory",
+          "value": 6,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "closingInventory",
+          "label": "Closing inventory",
+          "value": 7,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "openingPayables",
+          "label": "Opening payables",
+          "value": 15,
+          "unit": "INR lakh"
+        },
+        {
+          "key": "closingPayables",
+          "label": "Closing payables",
+          "value": 19,
+          "unit": "INR lakh"
+        }
+      ],
+      "question": "Which cash contribution and interpretation follow?",
+      "responseType": "single-choice",
+      "options": [
+        {
+          "id": "guarantee",
+          "text": "Cash contribution +2; the business is guaranteed safe",
+          "feedback": "The arithmetic works, but a balance cannot guarantee future settlement capacity.",
+          "misconceptionId": "negative-safe"
+        },
+        {
+          "id": "correct",
+          "text": "Cash contribution +2; supplier funding exceeds the included operating assets",
+          "feedback": "Working capital goes from −5 to −7, so change −2 contributes +2; future liquidity still needs a forecast.",
+          "misconceptionId": null
+        },
+        {
+          "id": "sign",
+          "text": "Cash contribution −2; lower working capital always uses cash",
+          "feedback": "Under these assumptions, a decline contributes cash rather than absorbing it.",
+          "misconceptionId": "payable-sign"
+        }
+      ],
+      "correctOptionId": "correct",
+      "solution": "Opening working capital = 4 + 6 − 15 = −5; closing = 5 + 7 − 19 = −7. Change = −2, giving a +2 cash contribution. This is not total operating cash flow or a prediction of future safety.",
+      "hints": [
+        {
+          "text": "Compare the movement in supplier funding with the two asset increases.",
+          "answerRevealing": false
+        },
+        {
+          "text": "Opening working capital = 4 + 6 − 15 = −5; closing = 5 + 7 − 19 = −7. Change = −2, giving a +2 cash contribution. This is not total operating cash flow or a prediction of future safety.",
+          "answerRevealing": true
+        }
+      ],
+      "revealPolicy": "after-attempt-or-hint",
+      "reflection": {
+        "prompt": "What information is still needed before calling this safe?",
+        "rubric": [
+          "Reconcile −5 to −7.",
+          "Identify +2 as a contribution, not total cash flow.",
+          "Ask for receipt/payment dates and cash availability."
+        ],
+        "grading": "self-check"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "edgeId": "E2137",
+      "to": "A02",
+      "kind": "financial",
+      "purpose": "Operating receivables are one component of operating working capital.",
+      "conditions": "Exclude non-operating receivables when defining the operating perimeter.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2138",
+      "to": "A03",
+      "kind": "financial",
+      "purpose": "Operating inventory is included in operating working capital.",
+      "conditions": "Use the stated operating perimeter and transaction assumptions; this displayed relationship is not a calculated model dependency.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2139",
+      "to": "A04",
+      "kind": "financial",
+      "purpose": "Operating supplier payables reduce operating working capital.",
+      "conditions": "Use the stated operating perimeter and transaction assumptions; this displayed relationship is not a calculated model dependency.",
+      "computed": false
+    },
+    {
+      "edgeId": "E2140",
+      "to": "A06",
+      "kind": "financial",
+      "purpose": "Increases in operating working capital generally reduce operating cash flow in the indirect reconciliation.",
+      "conditions": "Hold other cash-flow components fixed and apply the reporting framework.",
+      "computed": false
+    }
+  ],
+  "domainContext": {
+    "guideId": "D14",
+    "role": "broader-domain-guidance"
+  },
+  "deeper": {
+    "questions": [
+      "How should acquisitions, write-downs and currency translation be removed from a cash bridge?",
+      "How do seasonality and changing supplier terms affect a weekly cash forecast?"
+    ],
+    "conceptIds": [
+      "A02",
+      "A03",
+      "A04",
+      "A06"
+    ],
+    "limitations": "Introductory study coverage. Full valuation definitions, acquisition/foreign-currency/non-cash reconciliations, seasonal forecasting and a dynamic company model are deferred."
+  },
+  "activityLinks": [
+    {
+      "id": "P02",
+      "kind": "case",
+      "availability": "available",
+      "purpose": "Apply cash-timing reasoning in the existing three-clue mystery; its assessment and completion records remain separate."
+    },
+    {
+      "id": "LAB-COLLECTIONS",
+      "kind": "lab",
+      "availability": "planned",
+      "purpose": "Planned customer collection experiment; no new playable lab is introduced here."
+    }
+  ],
+  "sources": [
+    {
+      "id": "cash-background",
+      "title": "IFRS Foundation: IAS 7 public overview",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/ias-7-statement-of-cash-flows/",
+      "role": "primary-support",
+      "supports": [
+        "Operating, investing and financing categories; direct receipts/payments and indirect non-cash/accrual adjustments; non-cash investing/financing disclosure. The overview also identifies IFRS 18 amendments. These conceptual examples do not prescribe a statutory starting subtotal or interest/dividend policy."
+      ],
+      "reviewedOn": "2026-10-19"
+    }
+  ],
+  "review": {
+    "state": "reviewed",
+    "reviewer": "Codex (AI content, source and arithmetic review)",
+    "reviewedOn": "2026-10-19",
+    "method": "ai-content-source-arithmetic",
+    "evidence": [
+      "B2 mechanism, terminology, scope, units, source limits, feedback and independent arithmetic reviewed in docs/implementation/task-04-4-b2.md.",
+      "Worked and changed-data assessment calculations are independently recomputed in tests/b2-lessons.test.mjs. Shared route, spoiler and session-record regressions are verified separately.",
+      "Scoped AI content review; not independent professional approval, professional completeness, browser QA or learner-pilot evidence."
+    ]
+  }
+}

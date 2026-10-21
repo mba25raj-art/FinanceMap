@@ -1,0 +1,21 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {emptyCompany,replayCompany,addCompanyDecision as add} from '../src/activities/company.js';
+import {companyStory} from '../src/activities/company-story.js';
+const options=['30-days','agent-early','cash-discount','debt-expand','buy-now','wacc10-growth3'];
+function make(choices=options,variant='base'){let r=add(emptyCompany(),{type:'setup',variant});for(const choice of choices){const {round,expected}=replayCompany(r);r=add(r,{type:'predict',round,values:expected});r=add(r,{type:'commit',round,choice});r=add(r,{type:'explain',round,text:'A saved conditional explanation for self-review.'});}return r;}
+test('character stakes follow the current decision without changing financial state or disclosing a worked result',()=>{
+ assert.equal(companyStory(replayCompany(emptyCompany())),null);for(let n=0;n<6;n++){const r=make(options.slice(0,n)),result=replayCompany(r),before=JSON.stringify(result),story=companyStory(result);assert.ok(story.speaker&&story.role&&story.message);assert.ok(!story.message.includes('19.70'));assert.ok(!story.message.includes('15.64'));assert.ok(!story.message.includes('23.30'));assert.equal(JSON.stringify(result),before);assert.deepEqual(companyStory(replayCompany(structuredClone(r))),story);}
+});
+test('feedback acknowledges saved reasoning and corrected calculations without grading the prose',()=>{
+ let r=add(emptyCompany(),{type:'setup',variant:'base'});r=add(r,{type:'predict',round:1,values:{profit:20,cash:20}});r=add(r,{type:'predict',round:1,values:{profit:8,cash:0}});r=add(r,{type:'commit',round:1,choice:'30-days'});r=add(r,{type:'explain',round:1,text:'Any nonblank explanation remains ungraded.'});const story=companyStory(replayCompany(r));assert.ok(story.acknowledgment.includes('corrected the numerical check'));assert.ok(story.acknowledgment.includes('earlier response remains'));assert.ok(!story.acknowledgment.includes('competent'));assert.ok(!story.acknowledgment.includes('mastered'));
+});
+test('alternate endings retain financing contracts and condition assumed capacity rather than rank the paths',()=>{
+ const debt=companyStory(replayCompany(make())),equity=companyStory(replayCompany(make([...options.slice(0,3),'equity-expand',...options.slice(4)]))),defer=companyStory(replayCompany(make([...options.slice(0,4),'defer',options[5]]))),none=companyStory(replayCompany(make([...options.slice(0,3),'none-operate','defer',options[5]])));
+ assert.ok(debt.ending.includes('19.70 remains outstanding'));assert.ok(debt.ending.includes('15 January 2029'));assert.ok(equity.ending.includes('16.46%'));assert.ok(defer.ending.includes('despite deferral'));assert.ok(none.ending.includes('No new funding'));assert.ok(!debt.ending.includes('best'));assert.ok(!equity.ending.includes('winner'));assert.ok(companyStory(replayCompany(make(options,'late-customer'))).event.includes('thirty calendar days later'));
+});
+test('story and event cards render with accessible text while pre-answer financial results stay hidden',async()=>{
+ globalThis.window={location:{hash:'#simulations/CASE-NILA-HOMEWARE'}};const {createServer}=await import('vite'),{default:react}=await import('@vitejs/plugin-react'),{createElement}=await import('react'),{renderToStaticMarkup}=await import('react-dom/server');const server=await createServer({configFile:false,plugins:[react()],server:{middlewareMode:true,hmr:false,watch:null},optimizeDeps:{noDiscovery:true,include:[]},appType:'custom'});
+ try{const {default:Case}=await server.ssrLoadModule('/src/CompanyCase.jsx');const initial=renderToStaticMarkup(createElement(Case,{record:make([])}));assert.ok(initial.includes('Business message'));assert.ok(initial.includes('Arun at Maple Retail'));assert.ok(initial.includes('Optional scenario event card'));assert.ok(!initial.includes('Company prediction feedback'));assert.ok(!initial.includes('The path you chose'));const final=renderToStaticMarkup(createElement(Case,{record:make()}));assert.ok(final.includes('Your chosen company path'));assert.ok(final.includes('Written reasoning remains ungraded'));assert.ok(final.includes('do not assign a decision-quality'));
+ }finally{await server.close();delete globalThis.window;}
+});

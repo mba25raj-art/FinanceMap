@@ -4,14 +4,22 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "prepare:content": "node scripts/prepare-content.mjs && node scripts/prepare-lessons.mjs",
+    "prepare:content": "node scripts/prepare-content.mjs && node scripts/prepare-lessons.mjs && node scripts/lesson-standard.mjs content/lesson-packages/receivables.v1.json && node scripts/prepare-coverage.mjs",
+    "check:coverage": "node scripts/prepare-coverage.mjs --check",
     "dev": "vite",
     "build": "npm run prepare:content && vite build && node scripts/prepare-sites-build.mjs",
     "preview": "vite preview",
     "test:sites": "node --test tests/sites-worker.test.mjs",
-    "test:content": "node --test tests/lesson-content.test.mjs",
+    "test:model": "node --test tests/model-*.test.mjs",
+    "test:case": "node --test tests/company-*.test.mjs",
+    "test:content": "node --test tests/lesson-content.test.mjs tests/learning-session.test.mjs tests/routes.test.mjs tests/activity-context.test.mjs tests/lesson-standard.test.mjs tests/receivables-lesson.test.mjs tests/coverage-register.test.mjs tests/b1-lessons.test.mjs tests/b2-lessons.test.mjs tests/b3-lessons.test.mjs tests/b4-lessons.test.mjs tests/b5-lessons.test.mjs tests/b6-lessons.test.mjs tests/learning-save.test.mjs tests/learning-next.test.mjs tests/collection-lab.test.mjs tests/equipment-lab.test.mjs tests/financing-lab.test.mjs",
+    "test:lesson-standard": "node --test tests/lesson-standard.test.mjs",
     "predev": "npm run prepare:content",
-    "pretest:content": "npm run prepare:content"
+    "pretest:content": "npm run prepare:content",
+    "test:practice": "node --test tests/practice-*.test.mjs",
+    "test:accessibility": "node --test tests/activity-accessibility.test.mjs",
+    "test:loading": "node --test tests/study-loading.test.mjs",
+    "check:loading": "node scripts/check-loading.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "5.0.4",

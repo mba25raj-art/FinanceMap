@@ -1,0 +1,11 @@
+# 07.3 — financing comparison lab
+
+The separate NILA-FUNDING 1.0.0 mini-case starts with cash/equipment/equity 20/20/40, no existing debt and ten lakh founder shares. It is explicitly not a cumulative Nila case round. Both routes raise ten and buy identical equipment for ten. A loan has one-year simple 12%/18% interest, bullet service and no fee; ordinary equity uses a supplied pre-money value with no promised repayment or dividend.
+
+Learners commit terms, one common operating scenario and classification/profit/ownership predictions before seeing comparisons. Borrowing/issue and acquisition post through the shared ledger; the future service and operating cash remain clearly labelled forecasts. FCFF 10/12 (or a common weaker first year), required operating reserve 18, explicitly excess cash two, supplied WACC 10% and growth 3% support the conditional DCF. The already funded investment is not deducted again. Claims bridge once; founder ownership applies to the equity residual. Pre-money is stipulated, not inferred from book equity or claimed as a market quote. WACC is held fixed to isolate effects, not to claim financing never affects risk or value.
+
+Default service is 11.2, leaving 18.8 cash against reserve 18. Common first-year cash five leaves 13.8 after service and requires explicit funding 4.2; equity retains more cash but dilutes ownership. No loan payment or refinancing is silently executed from a forecast. Recommendations use a visible reflection criterion and are ungraded. Model/source/numerical review is scoped Codex AI evidence, not professional or pilot approval.
+
+All three labs are available through their catalog and concept links, retain versioned replayable decisions and use the existing local save/recovery/return workflow. The full company case remains planned until Chunk 08. Automated render checks do not replace interactive desktop/mobile/keyboard QA under 11.1.
+
+Validation: all 47 targeted lab, route, save/recovery and coverage checks passed, along with the two updated entry/lesson checks, all 29 numerical model checks, the production build, four hosting checks and deterministic coverage. The independent mini-case opening and loan/ownership/DCF controls reconcile. Existing bundle-size and concurrent SSR WebSocket-port notices remain. These are automated checks, not a live-browser or learner-pilot claim.
