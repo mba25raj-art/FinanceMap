@@ -1,0 +1,125 @@
+{
+  "checkedAt": "2026-10-21T15:45:59+05:30",
+  "baseCommit": "325515a7bcc272dbcd4e61763545040ec17fb1b0",
+  "applicationChanges": [
+    "src/styles.css"
+  ],
+  "testedStylesheetGitBlob": "0afb488c0a419a99d60b5095392d9c3034d6cb8e",
+  "automatedTests": {
+    "content": {
+      "tests": 120,
+      "pass": 120,
+      "fail": 0
+    },
+    "case": {
+      "tests": 36,
+      "pass": 36,
+      "fail": 0
+    },
+    "practice": {
+      "tests": 19,
+      "pass": 19,
+      "fail": 0
+    },
+    "model": {
+      "tests": 29,
+      "pass": 29,
+      "fail": 0
+    },
+    "sites": {
+      "tests": 4,
+      "pass": 4,
+      "fail": 0
+    },
+    "accessibility": {
+      "tests": 3,
+      "pass": 3,
+      "fail": 0
+    },
+    "study-loading": {
+      "tests": 3,
+      "pass": 3,
+      "fail": 0
+    }
+  },
+  "totalPassed": 214,
+  "totalFailed": 0,
+  "coverageFreshness": {
+    "passed": true,
+    "concepts": 698,
+    "relationships": 2520,
+    "editoriallyReviewedConcepts": 31
+  },
+  "prefixedBuild": {
+    "base": "/FinanceMap/",
+    "htmlAssetPaths": [
+      "/FinanceMap/assets/index-BnyR616E.js",
+      "/FinanceMap/assets/index-502pYN2x.css"
+    ],
+    "footprint": {
+      "measurement": "Built asset bytes and gzip transfer estimate; not device/network load time",
+      "htmlBytes": 1616,
+      "htmlGzipBytes": 831,
+      "initialFiles": [
+        {
+          "file": "assets/index-BnyR616E.js",
+          "bytes": 2683721,
+          "gzipBytes": 484441
+        },
+        {
+          "file": "assets/index-502pYN2x.css",
+          "bytes": 39185,
+          "gzipBytes": 8651
+        }
+      ],
+      "initialBytes": 2722906,
+      "initialGzipBytes": 493092,
+      "deferredStudyChunks": 40,
+      "largestStudyChunkBytes": 51215,
+      "totalDeferredStudyBytes": 1075409
+    }
+  },
+  "rootBuild": {
+    "htmlAssetPaths": [
+      "/assets/index-BTm7zRyi.js",
+      "/assets/index-502pYN2x.css"
+    ],
+    "footprint": {
+      "measurement": "Built asset bytes and gzip transfer estimate; not device/network load time",
+      "htmlBytes": 1594,
+      "htmlGzipBytes": 826,
+      "initialFiles": [
+        {
+          "file": "assets/index-BTm7zRyi.js",
+          "bytes": 2683688,
+          "gzipBytes": 484429
+        },
+        {
+          "file": "assets/index-502pYN2x.css",
+          "bytes": 39185,
+          "gzipBytes": 8651
+        }
+      ],
+      "initialBytes": 2722873,
+      "initialGzipBytes": 493080,
+      "deferredStudyChunks": 40,
+      "largestStudyChunkBytes": 51215,
+      "totalDeferredStudyBytes": 1075409
+    }
+  },
+  "browserFollowup": {
+    "controlStatesRetested": 6,
+    "nativeValidationFocusObserved": true,
+    "topicWrongCorrectRetryReloadObserved": true,
+    "source": "control-states-2026-10-21.json"
+  },
+  "notEstablished": [
+    "Actual screen-reader speech",
+    "Actual 200/400% zoom and physical mobile/orientation/touch",
+    "Enabled reduced-motion journey",
+    "Complete hover/focus/native-popup/graph/icon and compositing inventory",
+    "Actual device/network loading and interaction timings",
+    "Willing-learner pilot or participant consent/results",
+    "Public deployment or post-deploy verification"
+  ]
+}

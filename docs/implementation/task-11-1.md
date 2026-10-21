@@ -39,3 +39,9 @@ No unresolved calculation defect is known from these controls. That is limited t
 ## Final automated gate result
 
 All 214 checks pass: 120 content/route/save/lesson renders (including all 698 pages), 36 case, 19 assessment, 29 model, four hosting, three accessibility unit/markup and three study-loading checks. Production build, coverage freshness and the loading/HTML-manifest checks pass. A separate build with the /FinanceMap/ Pages prefix produced matching script/stylesheet paths; the root-base build was then restored and rechecked. This is asset-path preparation, not public deployment verification.
+
+## Complete candidate gate rerun · 21 October
+
+The complete suite was rerun after the final answer-border/indicator and placeholder changes: 120 content, 36 case, 19 assessment, 29 model, four hosting, three accessibility and three study-loading checks — **214 passed, zero failed**. Both root-base and `/FinanceMap/` builds passed; their HTML script/stylesheet paths matched the manifests and existing assets, and the forty study bundles remained deferred. Coverage freshness passed for 698 concepts and 2,520 relationships. `release-checks-2026-10-21.json` retains the tested stylesheet blob, base source commit, counts and build footprints. No financial/application logic changed in this follow-up.
+
+Additional live desktop evidence and the measured control fixes are in task-10-3.md. Native required-field focus, wrong/retry/correct topic feedback and reload retention were observed. No speech, phone timing or participant result was inferred. The pilot kit, accessibility reviewer protocol and release/rollback method are prepared; actual external verification/pilot evidence still keeps the ordered tasks and publication open.

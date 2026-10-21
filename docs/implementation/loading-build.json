@@ -1,21 +1,21 @@
 {
   "measurement": "Built asset bytes and gzip transfer estimate; not device/network load time",
   "htmlBytes": 1594,
-  "htmlGzipBytes": 827,
+  "htmlGzipBytes": 826,
   "initialFiles": [
     {
-      "file": "assets/index-C3ef40IO.js",
+      "file": "assets/index-BTm7zRyi.js",
       "bytes": 2683688,
       "gzipBytes": 484429
     },
     {
-      "file": "assets/index-DY3pQj7M.css",
-      "bytes": 39156,
-      "gzipBytes": 8663
+      "file": "assets/index-502pYN2x.css",
+      "bytes": 39185,
+      "gzipBytes": 8651
     }
   ],
-  "initialBytes": 2722844,
-  "initialGzipBytes": 493092,
+  "initialBytes": 2722873,
+  "initialGzipBytes": 493080,
   "deferredStudyChunks": 40,
   "largestStudyChunkBytes": 51215,
   "totalDeferredStudyBytes": 1075409
